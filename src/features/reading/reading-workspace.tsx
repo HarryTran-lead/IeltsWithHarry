@@ -556,7 +556,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
               : <Fragment key={part.start}>{part.text}</Fragment>)}</p>
             {translation?.(index)}
             {!practicing && afterParagraph?.(index)}
-            {!practicing && selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
+            {selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
               <div><strong>Dịch đoạn đã chọn</strong><button type="button" onClick={() => setSelectionTranslation(null)}>Ẩn</button></div>
               {selectionTranslation.busy ? <p>Đang dịch…</p> : selectionTranslation.error
                 ? <p role="alert">{selectionTranslation.error} <button type="button" onClick={() => void translateSelection(selectionTranslation)}>Thử lại</button></p>
@@ -610,7 +610,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
-      {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
+      {popover.selectedText && onTranslateSelection && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
       {popover.word && (() => {
         const meaning = lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…";
         return lookupToolId && (toolsMin || practicing) && openTool !== lookupToolId

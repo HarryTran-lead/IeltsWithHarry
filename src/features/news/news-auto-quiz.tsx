@@ -211,6 +211,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const shown = useMemo(() => wrongIds.length ? questions.filter((question) => wrongIds.includes(question.id))
     : partial ? questions.filter((question) => types.includes(question.question_type)) : questions, [wrongIds, partial, questions, types]);
   const graded = shown.length > 0 && shown.every((question) => reviews[question.id]);
+  // Timed sittings hide question translation until the answers are graded.
+  const canTranslate = !examMode || graded;
   const answered = shown.filter((question) => isAnswered(answers[question.id])).length;
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
   // The reader's question strip shows which questions have an answer and, once graded, which are right.
@@ -419,7 +421,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
       <h2>{wrongIds.length ? `Ôn lại ${shown.length} câu sai` : `${shown.length} câu hỏi ${partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}`}</h2>
-      <p>{examMode ? `Luyện một bài đọc · 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. Không có dịch hoặc tra từ; câu bỏ trống được tính sai.` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      <p>{examMode ? `Luyện một bài đọc · 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. ${graded ? "Đã nộp bài: giờ có thể dịch bài đọc, dịch câu hỏi và tra từ để xem lại." : "Không có dịch hoặc tra từ; câu bỏ trống được tính sai."}` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
       {examMode&&<p role="status">{draftStatus||"Đáp án sẽ tự lưu khi thay đổi."}{!graded&&!examExpired&&<button type="button" onClick={()=>setDraftRetry((value)=>value+1)}>Lưu lại</button>}</p>}
       {wrongIds.length ? <button type="button" className="button subtle" onClick={() => setWrongIds([])}>Xem lại toàn bộ câu hỏi</button> : !examMode && onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
       {examExpired && !graded && <p className="form-error" role="status">Hết giờ. Bài đã khóa; nộp để xem kết quả, kể cả câu bỏ trống.</p>}
@@ -451,7 +453,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
             const prompt=promptWithoutWordLimit(question.prompt);const gap=/_{3,}|\.{3,}|…/.exec(prompt);const value=answers[question.id];
             return <div className="news-group-gap" key={question.id} data-q={number} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>
               {questionText(question,0,gap?.index??prompt.length)} <label><b>({number})</b><input type="text" maxLength={60} autoComplete="off" aria-label={`Chỗ trống ${number}`} value={typeof value==="string"?value:""} disabled={graded||examExpired} onChange={(event)=>setAnswers((current)=>({...current,[question.id]:event.target.value}))}/></label>{gap&&questionText(question,gap.index+gap[0].length,prompt.length)}
-              {section.type==="note_completion"&&!sharedNoteWordLimit&&<small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}{!examMode&&<button type="button" className="news-completion-translate" aria-label={`Dịch câu ${number}`} disabled={translatingId===question.id} onClick={()=>void toggleTranslation(question)}><Languages size={12}/>{translatingId===question.id?"…":translationVisible[question.id]?"Ẩn dịch":"Dịch"}</button>}{!examMode&&translationVisible[question.id]&&translations[question.id]&&<small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
+              {section.type==="note_completion"&&!sharedNoteWordLimit&&<small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}{canTranslate&&<button type="button" className="news-completion-translate" aria-label={`Dịch câu ${number}`} disabled={translatingId===question.id} onClick={()=>void toggleTranslation(question)}><Languages size={12}/>{translatingId===question.id?"…":translationVisible[question.id]?"Ẩn dịch":"Dịch"}</button>}{canTranslate&&translationVisible[question.id]&&translations[question.id]&&<small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
               {highlightMenu(question,number)}
             </div>;
           })}
@@ -468,9 +470,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
               const valueStart = question.prompt.indexOf(row.value);
               return <tr key={question.id} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
                 <th scope="row" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}><small className="news-completion-number">Câu {number}</small>{questionTextInSource(question,row.label)}
-                   {!examMode && <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
+                   {canTranslate && <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
                     <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>}
-                   {!examMode && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
+                   {canTranslate && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
                 </th>
                 <td onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{questionTextInSource(question,row.value.slice(0, marker.index),Math.max(0,valueStart))}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
                    aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
@@ -513,8 +515,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
               {index < flowChart.length - 1 && <span className="news-flow-chart-arrow" aria-hidden="true">↓</span>}
             </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{question.prompt.includes(visiblePrompt)?questionText(question,question.prompt.indexOf(visiblePrompt),question.prompt.indexOf(visiblePrompt)+visiblePrompt.length):visiblePrompt}</h3>}
             {question.question_type === "note_completion" && !sharedNoteWordLimit && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
-             <div className="news-question-tools">{!examMode && <button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button>}<span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
-             {!examMode && translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
+             <div className="news-question-tools">{canTranslate && <button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button>}<span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
+             {canTranslate && translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
             {selection?.p===0&&!table&&highlightMenu(question,number)}
             {table && <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${number}`}>
               <thead><tr>{table.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
