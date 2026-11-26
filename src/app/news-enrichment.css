@@ -152,11 +152,11 @@
 
 /* Gaps inside the sentence: number badge and an underlined field. */
 .news-gap{display:inline-flex;align-items:center;gap:8px;padding:0 8px;vertical-align:middle}
-.news-gap-input{min-width:120px;width:120px;field-sizing:content;max-width:100%;padding:0 2px;border:0;border-bottom:1px solid #000;border-radius:0;background:transparent;color:#1d1d1f;font:inherit;font-weight:700;line-height:20px}
-.news-gap-input:focus{outline:none;border-bottom:2px solid #13a62e}
-.news-gap-input:disabled{opacity:1;-webkit-text-fill-color:#1d1d1f}
-.news-gap.is-correct .news-gap-input{border-bottom-color:#13a62e;color:#0f7a26;-webkit-text-fill-color:#0f7a26}
-.news-gap.is-wrong .news-gap-input{border-bottom-color:#d93025;color:#b3261e;-webkit-text-fill-color:#b3261e;text-decoration:line-through}
+.news-auto-quiz input.news-gap-input{min-width:120px;width:120px;field-sizing:content;max-width:100%;padding:0 2px;border:0;border-bottom:1px solid #000;border-radius:0;background:transparent;color:#1d1d1f;font:inherit;font-weight:700;line-height:20px}
+.news-auto-quiz input.news-gap-input:focus{outline:none;border-bottom:2px solid #13a62e}
+.news-auto-quiz input.news-gap-input:disabled{opacity:1;-webkit-text-fill-color:#1d1d1f}
+.news-auto-quiz .news-gap.is-correct input.news-gap-input{border-bottom-color:#13a62e;color:#0f7a26;-webkit-text-fill-color:#0f7a26}
+.news-auto-quiz .news-gap.is-wrong input.news-gap-input{border-bottom-color:#d93025;color:#b3261e;-webkit-text-fill-color:#b3261e;text-decoration:line-through}
 .news-gap-line{margin:4px 0 0 44px}
 .news-auto-quiz .news-group-completion{margin:12px 0;padding:8px 12px;border:1px solid #d1d5db;border-radius:0;background:transparent;line-height:2rem}
 .news-auto-quiz .news-group-completion.short_answer{padding:0;border:0}

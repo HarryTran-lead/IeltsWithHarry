@@ -71,9 +71,12 @@ function optionLetter(option: string, index: number) {
   return /^(?:paragraph\s+)?([A-Z])\.?$/i.exec(option.trim())?.[1].toUpperCase() ?? String.fromCharCode(65 + index);
 }
 
+function letterList(letters: string[]) {
+  return letters.length > 1 ? `${letters.slice(0, -1).join(", ")} or ${letters[letters.length - 1]}` : letters[0] ?? "A";
+}
+
 function choiceLetters(count: number) {
-  const letters = Array.from({ length: Math.max(1, count) }, (_, index) => String.fromCharCode(65 + index));
-  return letters.length > 1 ? `${letters.slice(0, -1).join(", ")} or ${letters[letters.length - 1]}` : letters[0];
+  return letterList(Array.from({ length: Math.max(1, count) }, (_, index) => String.fromCharCode(65 + index)));
 }
 
 function wordLimitInstruction(limit = 3) {
@@ -94,7 +97,8 @@ function blockInstructions(type: QuestionType, first: number, last: number, opti
       "Choose **NOT GIVEN** if it is impossible to say what the writer thinks about this"];
     case "matching_headings": return ["Choose the correct heading for each paragraph from the list of headings below."];
     case "matching_information": return ["Which paragraph contains the following information?",
-      `Choose the correct letter, **${pool?.length ? `${optionLetter(pool[0], 0)}–${optionLetter(pool[pool.length - 1], pool.length - 1)}` : "A–F"}**.`];
+      // A set offers at most four paragraphs (C, D, G, H), so the letters are listed rather than given as a range.
+      `Choose the correct letter, **${pool?.length ? letterList(pool.map(optionLetter)) : "A, B, C or D"}**.`];
     case "matching_features": return [`Look at the following statements (Questions ${span}) and the list below.`,
       "Match each statement with the correct person, organisation or place."];
     case "matching_sentence_endings": return ["Complete each sentence with the correct ending below."];
