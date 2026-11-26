@@ -52,6 +52,12 @@ export function validatePassageMap(map: PassageMap, article: string): string[] {
   return issues;
 }
 
+/**
+ * Answer length for written forms other than notes (which keep their own [W1]/[W2] group tag): Cambridge
+ * papers set ONE WORD ONLY or NO MORE THAN TWO WORDS, so no answer runs past two words.
+ */
+export const WRITTEN_WORD_LIMIT = 2;
+
 /** Structural checks are necessary but never treated as semantic proof. */
 export function validateCandidate(item: Candidate, article: string, map: PassageMap): string[] {
   const errors: string[] = [];
@@ -93,7 +99,7 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
     if (type === "matching_sentence_endings" && /[.!?]\s*$/.test(item.prompt)) errors.push("SENTENCE_STEM");
   } else {
     if (item.options.length || item.option_notes.length || item.correct_index !== -1) errors.push("WRITTEN_SHAPE");
-    if (typeof item.answer !== "string" || !item.answer.trim() || words(item.answer).length > 3
+    if (typeof item.answer !== "string" || !item.answer.trim() || words(item.answer).length > (type === "note_completion" ? 3 : WRITTEN_WORD_LIMIT)
       || !item.supporting_sentence?.includes(item.answer)) errors.push("WRITTEN_ANSWER");
     if (item.prompt && normalize(item.prompt).includes(normalize(item.answer))) errors.push("ANSWER_LEAK");
     if (gapTypes.has(type) && (item.prompt?.match(otherGap) ?? []).length !== 1) errors.push("ONE_GAP");

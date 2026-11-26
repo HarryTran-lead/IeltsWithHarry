@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { quizExcerpt } from "../enrichment";
 import { MIN_BLOCK, selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
-import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, QuizFailureReason, TokenUsage } from "./types";
+import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, PassageStyle, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
 import { choiceTypes, gapTypes, type IeltsQuestionType } from "../ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
@@ -18,6 +18,24 @@ const inFlight = new Map<string, Promise<FactoryResult>>();
 const MAX_CACHE = 64;
 function fingerprint(articleId: string, title: string, article: string, guidance: string, model: string) {
   return createHash("sha256").update(JSON.stringify([FACTORY_VERSION, model, articleId, title, article, guidance])).digest("hex");
+}
+const PASSAGE_LEVEL: Record<PassageStyle, 1 | 2 | 3> = { factual: 1, sections: 2, argument: 3 };
+function passageLevelOf(style: unknown) {
+  return typeof style === "string" && Object.hasOwn(PASSAGE_LEVEL, style) ? PASSAGE_LEVEL[style as PassageStyle] : undefined;
+}
+/**
+ * Written items other than notes carry their block's word limit as a [W1]/[W2] tag, as notes already do, so
+ * the paper can print ONE WORD ONLY or NO MORE THAN TWO WORDS for the block (one block per form).
+ */
+function withWordLimitTags(items: Candidate[]): Candidate[] {
+  const limits = new Map<string, number>();
+  for (const item of items) {
+    if (item.correct_index >= 0 || item.type === "note_completion" || /\n\[W[123]\]$/.test(item.prompt)) continue;
+    const length = item.answer.trim().split(/\s+/).filter(Boolean).length;
+    limits.set(item.type, Math.min(3, Math.max(limits.get(item.type) ?? 1, length)));
+  }
+  return items.map((item) => limits.has(item.type) && item.type !== "note_completion" && item.correct_index < 0
+    && !/\n\[W[123]\]$/.test(item.prompt) ? { ...item, prompt: `${item.prompt}\n[W${limits.get(item.type)}]` } : item);
 }
 function toLegacy(item: Candidate): AdaptiveQuestion {
   return {
@@ -96,7 +114,7 @@ function result(state: FactoryResult["state"], model: string, fingerprintValue: 
   const failure: QuizFailureReason | null = state === "READY" ? null : providerFailure?.reason
     ?? (issues.includes("PASSAGE_TOO_SHORT") ? "too_short" : "quality");
   return {
-    state, model, questions: state === "READY" ? accepted.map(toLegacy) : [],
+    state, model, questions: state === "READY" ? withWordLimitTags(accepted).map(toLegacy) : [],
     imageQuery: state === "READY" ? imageQuery.replace(/[^\p{L}\p{N} -]/gu, " ").trim().slice(0, 80) : "",
     audit: {
       version: FACTORY_VERSION, fingerprint: fingerprintValue, requests: budget.used,
@@ -264,13 +282,16 @@ export async function generateNewsQuizV2(
   if (cached) return { ...cached, audit: { ...cached.audit, requests: 0 } };
   const pending = inFlight.get(key);
   if (pending) return pending;
-  const run = async () => {
+  // The IELTS passage the article reads like, from the passage map; reported with the result.
+  let passageLevel: 1 | 2 | 3 | undefined;
+  const runInner = async () => {
     const budget = new ArticleRequestBudget(MAX_ARTICLE_REQUESTS);
     const deadline = Date.now() + v2Timing.runBudgetMs;
     const timeLeft = () => Date.now() + v2Timing.requestTimeoutMs <= deadline;
     const target = targetQuestionCount(excerpt);
     if (target < 6) return result("PENDING_QUALITY", model, key, budget, null, null, 0, 0, [], ["PASSAGE_TOO_SHORT"]);
-    const selected = selectQuestionTypes(excerpt, excerpt.match(/[\p{L}\p{N}]+/gu)?.length ?? 0, articleId);
+    const excerptWords = excerpt.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
+    let selected = selectQuestionTypes(excerpt, excerptWords, articleId);
     let generationTokens: TokenUsage | null = null;
     let qaTokens: TokenUsage | null = null;
     let candidateCount = 0;
@@ -284,6 +305,9 @@ export async function generateNewsQuizV2(
       usedModel = mapModel;
       generationTokens = mapped.usage;
       const passageMap = mapped.data?.passage_map as PassageMap;
+      // The passage map says which IELTS passage the article reads like; the forms follow that passage's templates.
+      passageLevel = passageLevelOf(passageMap?.passage_style);
+      if (passageLevel) selected = selectQuestionTypes(excerpt, excerptWords, articleId, passageLevel, Boolean(passageMap?.writer_view?.trim()));
       const paragraphMapUsable = !validatePassageMap(passageMap, fullArticle)
         .some((issue) => issue === "PASSAGE_MAP_SCHEMA" || PARAGRAPH_MAP_ISSUES.has(issue));
       // Step 2: small batches of at most five items; an outage in one batch keeps the others.
@@ -431,6 +455,10 @@ export async function generateNewsQuizV2(
         [], [cause instanceof Error ? cause.message : "Unknown provider failure"], "",
         { reason: providerReasons[kind], retryAfterMs: cause instanceof FactoryProviderError ? cause.retryAfterMs : null });
     }
+  };
+  const run = async (): Promise<FactoryResult> => {
+    const output = await runInner();
+    return passageLevel ? { ...output, passageLevel } : output;
   };
   const promise = run();
   inFlight.set(key, promise);
