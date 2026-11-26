@@ -3,7 +3,7 @@
   "id": "band-4.5-022",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "public transport",
   "meaningVi": "giao thông công cộng",
   "promptVi": "Giao thông công cộng thuận tiện hơn khi có nhiều tuyến xe buýt.",
@@ -25,7 +25,7 @@
   "id": "band-4.5-023",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "balanced diet",
   "meaningVi": "chế độ ăn cân bằng",
   "promptVi": "Một chế độ ăn cân bằng có thể giúp trẻ em phát triển khỏe mạnh.",
@@ -47,7 +47,7 @@
   "id": "band-4.5-024",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "online learning",
   "meaningVi": "học trực tuyến",
   "promptVi": "Học trực tuyến cho phép tôi xem lại bài giảng sau giờ học.",
@@ -69,7 +69,7 @@
   "id": "band-4.5-cal-01",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "stays open longer",
   "meaningVi": "mở cửa lâu hơn",
   "promptVi": "Nếu thư viện mở cửa lâu hơn, nhiều học sinh có thể học ở đó.",
@@ -81,7 +81,13 @@
   ],
   "explanationVi": "If nêu điều kiện có thể xảy ra; can nêu kết quả.",
   "rationaleVi": "Câu điều kiện cơ bản với từ vựng thông dụng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If the library stays open longer, more students can to study there.",
+    "correction": "If the library stays open longer, more students can study there.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can study)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -91,19 +97,26 @@
   "id": "band-4.5-cal-02",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "uses too much data",
   "meaningVi": "dùng quá nhiều dữ liệu",
   "promptVi": "Mặc dù ứng dụng tiện lợi, đôi khi nó dùng quá nhiều dữ liệu.",
   "referenceAnswers": [
-   "Although the app is convenient, it sometimes uses too much data."
+   "Although the app is convenient, it sometimes uses too much data.",
+   "Even though the app is convenient, it sometimes uses too much data."
   ],
   "grammarTags": [
    "basic-concession"
   ],
   "explanationVi": "Although nêu sự tương phản giữa tiện ích và hạn chế.",
   "rationaleVi": "Một nhượng bộ đơn giản về trải nghiệm thường ngày.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although the app is convenient, but it sometimes uses too much data.",
+    "correction": "Although the app is convenient, it sometimes uses too much data.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -113,19 +126,26 @@
   "id": "band-4.5-exp-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "join a club",
   "meaningVi": "gia nhập một câu lạc bộ",
   "promptVi": "Nếu bạn muốn nâng cao thể lực, bạn nên gia nhập một câu lạc bộ ở trung tâm thể thao địa phương.",
   "referenceAnswers": [
-   "If you want to improve your fitness, you should join a club at your local sports centre."
+   "If you want to improve your fitness, you should join a club at your local sports centre.",
+   "If you want to improve your fitness, you should join a club at your local sports center."
   ],
   "grammarTags": [
    "Conditional sentence (Type 1)"
   ],
   "explanationVi": "Cấu trúc điều kiện loại 1 'If + S + V (hiện tại), S + should + V' dùng để đưa ra lời khuyên thực tế.",
   "rationaleVi": "Sử dụng câu điều kiện loại 1 với lời khuyên đơn giản và từ vựng chủ đề thể thao quen thuộc, rất phù hợp với trình độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If you want to improve your fitness, you should to join a club at your local sports centre.",
+    "correction": "If you want to improve your fitness, you should join a club at your local sports centre.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should join)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -135,19 +155,26 @@
   "id": "band-4.5-exp-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "book in advance",
   "meaningVi": "đặt trước",
   "promptVi": "Mặc dù vé tàu khá đắt, nhiều du khách vẫn đặt trước để đảm bảo có chỗ ngồi tốt.",
   "referenceAnswers": [
-   "Although train tickets are quite expensive, many tourists still book in advance to secure good seats."
+   "Although train tickets are quite expensive, many tourists still book in advance to secure good seats.",
+   "Even though train tickets are quite expensive, many tourists still book in advance to secure good seats."
   ],
   "grammarTags": [
    "Concession clause with Although"
   ],
   "explanationVi": "Mệnh đề nhượng bộ đứng đầu câu với 'Although' chỉ sự đối lập giữa giá vé đắt và hành động đặt trước.",
   "rationaleVi": "Mệnh đề nhượng bộ 'Although' là cấu trúc câu phức cơ bản giúp người học mức 4.5 thể hiện ý kiến đối lập đơn giản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although train tickets are quite expensive, but many tourists still book in advance to secure good seats.",
+    "correction": "Although train tickets are quite expensive, many tourists still book in advance to secure good seats.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -157,7 +184,7 @@
   "id": "band-4.5-exp-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "stay healthy",
   "meaningVi": "giữ gìn sức khỏe",
   "promptVi": "Nhiều người cố gắng giữ gìn sức khỏe mặc dù họ phải làm việc nhiều giờ mỗi ngày.",
@@ -179,7 +206,7 @@
   "id": "band-4.5-exp-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "save time",
   "meaningVi": "tiết kiệm thời gian",
   "promptVi": "Sử dụng điện thoại thông minh có thể giúp bạn tiết kiệm thời gian nếu bạn quản lý các ứng dụng hiệu quả.",
@@ -201,7 +228,7 @@
   "id": "band-4.5-exp-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "recycle rubbish",
   "meaningVi": "tái chế rác thải",
   "promptVi": "Dù thời tiết xấu, người dân địa phương vẫn cố gắng tái chế rác thải vào mỗi cuối tuần.",
@@ -223,7 +250,7 @@
   "id": "band-4.5-exp-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "get a promotion",
   "meaningVi": "được thăng chức",
   "promptVi": "Trừ khi nhân viên hoàn thành dự án đúng hạn, họ sẽ khó có thể được thăng chức trong năm nay.",
@@ -235,7 +262,13 @@
   ],
   "explanationVi": "Từ nối 'Unless' thay thế cho 'If ... not' để diễn tả một điều kiện phủ định.",
   "rationaleVi": "Áp dụng cấu trúc điều kiện phủ định với 'Unless' giúp nâng cao khả năng biến đổi câu điều kiện ở cấp độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless employees complete the project on time, they will to struggle to get a promotion this year.",
+    "correction": "Unless employees complete the project on time, they will struggle to get a promotion this year.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will struggle)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -245,7 +278,7 @@
   "id": "band-4.5-exp-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "green space",
   "meaningVi": "không gian xanh",
   "promptVi": "Thành phố này có nhiều tòa nhà cao tầng; tuy nhiên, hội đồng địa phương vẫn dành đất cho không gian xanh.",
@@ -267,7 +300,7 @@
   "id": "band-4.5-exp-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "cook at home",
   "meaningVi": "nấu ăn ở nhà",
   "promptVi": "Nếu bạn nấu ăn ở nhà thường xuyên hơn, bạn sẽ tiết kiệm được nhiều tiền hơn mỗi tháng.",
@@ -279,7 +312,13 @@
   ],
   "explanationVi": "Câu điều kiện loại 1 diễn tả một giả định có thật và có khả năng xảy ra ở hiện tại hoặc tương lai.",
   "rationaleVi": "Cấu trúc câu điều kiện quen thuộc đi kèm các từ vựng đời sống đơn giản giúp củng cố nền tảng ngữ pháp 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If you cook at home more often, you will to save more money every month.",
+    "correction": "If you cook at home more often, you will save more money every month.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will save)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -289,7 +328,7 @@
   "id": "band-4.5-exp-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "pass the exam",
   "meaningVi": "thi đỗ kỳ thi",
   "promptVi": "Dù bài kiểm tra có khó, các học sinh vẫn sẽ học tập chăm chỉ để thi đỗ kỳ thi.",
@@ -301,7 +340,13 @@
   ],
   "explanationVi": "'Even if' được sử dụng để nêu lên một giả thiết nhượng bộ (cho dù/ngay cả khi).",
   "rationaleVi": "Sử dụng 'Even if' để nhấn mạnh tính nhượng bộ của điều kiện là bước phát triển phù hợp cho trình độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even if the test is difficult, students will to work hard to pass the exam.",
+    "correction": "Even if the test is difficult, students will work hard to pass the exam.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will work)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -311,12 +356,13 @@
   "id": "band-4.5-exp-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "pay the rent",
   "meaningVi": "trả tiền thuê nhà",
   "promptVi": "Miễn là người thuê nhà trả tiền thuê nhà đúng hạn, chủ nhà sẽ không tăng giá vào năm nay.",
   "referenceAnswers": [
-   "As long as tenants pay the rent on time, the landlord will not increase the price this year."
+   "As long as tenants pay the rent on time, the landlord will not increase the price this year.",
+   "As long as tenants pay the rent on time, the landlord won't increase the price this year."
   ],
   "grammarTags": [
    "Conditional phrase (As long as)"
@@ -333,7 +379,7 @@
   "id": "band-4.5-exp-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reduce energy consumption",
   "meaningVi": "giảm tiêu thụ năng lượng",
   "promptVi": "Mặc dù chi phí lắp đặt cao, nhiều gia đình vẫn cố gắng giảm tiêu thụ năng lượng bằng cách dùng năng lượng mặt trời.",
@@ -355,7 +401,7 @@
   "id": "band-4.5-exp-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "protect local traditions",
   "meaningVi": "bảo vệ các truyền thống địa phương",
   "promptVi": "Nếu hội đồng thành phố đầu tư nhiều hơn vào bảo tàng, cộng đồng có thể bảo vệ các truyền thống địa phương tốt hơn.",
@@ -367,7 +413,13 @@
   ],
   "explanationVi": "Mệnh đề điều kiện kết hợp động từ khuyết thiếu 'can' ở mệnh đề chỉ kết quả để thể hiện khả năng.",
   "rationaleVi": "Kết hợp động từ khuyết thiếu vào câu điều kiện cơ bản giúp đáp ứng chuẩn diễn đạt logic ở trình độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If the council invests more in museums, the community can to protect local traditions better.",
+    "correction": "If the council invests more in museums, the community can protect local traditions better.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can protect)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -377,19 +429,26 @@
   "id": "band-4.5-exp-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "flat",
   "meaningVi": "căn hộ",
   "promptVi": "Mặc dù tiếng ồn từ đường phố lớn, căn hộ nhỏ này vẫn rất thoải mái cho sinh viên.",
   "referenceAnswers": [
-   "Although the noise from the street is loud, this small flat is still very comfortable for students."
+   "Although the noise from the street is loud, this small flat is still very comfortable for students.",
+   "Even though the noise from the street is loud, this small flat is still very comfortable for students."
   ],
   "grammarTags": [
    "Concession clause (Although)"
   ],
   "explanationVi": "Cấu trúc 'Although + mệnh đề' được dùng để biểu thị sự nhượng bộ ở mức độ cơ bản, thích hợp cho trình độ 4.5.",
   "rationaleVi": "Mẫu câu sử dụng từ vựng chủ đề nhà ở quen thuộc và cấu trúc nhượng bộ cơ bản 'although', hoàn toàn phù hợp với mục tiêu IELTS 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although the noise from the street is loud, but this small flat is still very comfortable for students.",
+    "correction": "Although the noise from the street is loud, this small flat is still very comfortable for students.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -399,7 +458,7 @@
   "id": "band-4.5-exp-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "ingredients",
   "meaningVi": "nguyên liệu",
   "promptVi": "Bạn có thể nấu một bữa ăn ngon nếu bạn mua các nguyên liệu tươi ở chợ địa phương.",
@@ -411,7 +470,13 @@
   ],
   "explanationVi": "Mệnh đề điều kiện 'if' ở hiện tại đơn kết hợp với 'can + động từ nguyên mẫu' biểu thị khả năng thực tế.",
   "rationaleVi": "Câu diễn đạt điều kiện đơn giản trong ngữ cảnh nấu ăn hằng ngày, giúp người học luyện tập phản xạ ghép mệnh đề điều kiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "You can to cook a delicious meal if you buy fresh ingredients at the local market.",
+    "correction": "You can cook a delicious meal if you buy fresh ingredients at the local market.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can cook)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -421,7 +486,7 @@
   "id": "band-4.5-exp-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "cycle lanes",
   "meaningVi": "làn đường cho xe đạp",
   "promptVi": "Việc đi lại bằng xe đạp sẽ an toàn hơn trừ khi thành phố thiếu các làn đường cho xe đạp riêng biệt.",
@@ -443,12 +508,13 @@
   "id": "band-4.5-exp-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "outdoor matches",
   "meaningVi": "các trận đấu ngoài trời",
   "promptVi": "Dù trời mưa nhẹ, ban tổ chức vẫn không hủy các trận đấu ngoài trời vào cuối tuần.",
   "referenceAnswers": [
-   "Despite the light rain, the organisers did not cancel the outdoor matches at the weekend."
+   "Despite the light rain, the organisers did not cancel the outdoor matches at the weekend.",
+   "Despite the light rain, the organisers didn't cancel the outdoor matches at the weekend."
   ],
   "grammarTags": [
    "Concession with preposition (Despite)"
@@ -465,7 +531,7 @@
   "id": "band-4.5-exp-017",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "tuition fees",
   "meaningVi": "học phí",
   "promptVi": "Nếu chính phủ giảm học phí, nhiều bạn trẻ từ nông thôn sẽ có cơ hội học đại học.",
@@ -477,7 +543,13 @@
   ],
   "explanationVi": "Câu điều kiện loại 1 (If + present simple, will + verb) diễn tả một khả năng có thật trong tương lai.",
   "rationaleVi": "Chủ đề giáo dục gần gũi với người học IELTS, câu ứng dụng điều kiện loại 1 rõ ràng mà không cần thuật ngữ quá phức tạp.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If the government reduces tuition fees, many young people from rural areas will to have the chance to go to university.",
+    "correction": "If the government reduces tuition fees, many young people from rural areas will have the chance to go to university.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will have)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -487,7 +559,7 @@
   "id": "band-4.5-exp-018",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "flexible hours",
   "meaningVi": "giờ làm việc linh hoạt",
   "promptVi": "Nhân viên văn phòng có thể đạt được sự cân bằng giữa công việc và cuộc sống tốt hơn, miễn là quản lý của họ cho phép giờ làm việc linh hoạt.",
@@ -499,7 +571,13 @@
   ],
   "explanationVi": "Cụm 'provided that' làm liên từ điều kiện tương đương với 'if' hoặc 'as long as', biểu thị điều kiện bắt buộc.",
   "rationaleVi": "Giới thiệu cụm điều kiện 'provided that' mở rộng vốn từ nối cho học viên level 4.5 mà vẫn giữ ngữ pháp dễ tiếp thu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Office workers can to achieve a better work-life balance, provided that their manager allows flexible hours.",
+    "correction": "Office workers can achieve a better work-life balance, provided that their manager allows flexible hours.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can achieve)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -509,7 +587,7 @@
   "id": "band-4.5-exp-019",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "regular exercise",
   "meaningVi": "việc tập thể dục thường xuyên",
   "promptVi": "Bệnh nhân nhận thấy sức khỏe cải thiện rõ rệt; tuy nhiên, họ vẫn cần duy trì việc tập thể dục thường xuyên.",
@@ -531,7 +609,7 @@
   "id": "band-4.5-exp-020",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "plastic waste",
   "meaningVi": "rác thải nhựa",
   "promptVi": "Bất chấp các chiến dịch nâng cao nhận thức, lượng rác thải nhựa ở các đại dương vẫn tiếp tục tăng.",
@@ -543,7 +621,13 @@
   ],
   "explanationVi": "'In spite of' đi kèm cụm danh từ biểu thị sự nhượng bộ tương tự như 'despite'.",
   "rationaleVi": "Giúp học viên củng cố cấu trúc nhượng bộ dạng cụm từ (in spite of + noun phrase) trên chủ đề môi trường đại chúng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In spite of awareness campaigns, the amount of plastic wastes in the oceans continues to rise.",
+    "correction": "In spite of awareness campaigns, the amount of plastic waste in the oceans continues to rise.",
+    "reasonVi": "'Waste' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -553,12 +637,13 @@
   "id": "band-4.5-exp-021",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "internet connection",
   "meaningVi": "kết nối internet",
   "promptVi": "Trừ khi có kết nối internet ổn định, sinh viên sẽ không thể tải tài liệu học tập xuống.",
   "referenceAnswers": [
-   "Unless there is a stable internet connection, students will not be able to download learning materials."
+   "Unless there is a stable internet connection, students will not be able to download learning materials.",
+   "Unless there is a stable internet connection, students won't be able to download learning materials."
   ],
   "grammarTags": [
    "Negative condition (Unless)"
@@ -575,19 +660,26 @@
   "id": "band-4.5-exp-022",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "traditional festivals",
   "meaningVi": "các lễ hội truyền thống",
   "promptVi": "Ngay cả khi cuộc sống hiện đại thay đổi nhiều thói quen, người dân địa phương vẫn giữ gìn các lễ hội truyền thống mỗi năm.",
   "referenceAnswers": [
-   "Even though modern life changes many habits, local people still preserve traditional festivals every year."
+   "Even though modern life changes many habits, local people still preserve traditional festivals every year.",
+   "Although modern life changes many habits, local people still preserve traditional festivals every year."
   ],
   "grammarTags": [
    "Emphatic concession (Even though)"
   ],
   "explanationVi": "'Even though' dùng để nhấn mạnh sự nhượng bộ mạnh mẽ hơn so với 'although'.",
   "rationaleVi": "Luyện tập 'even though' giúp nâng cao khả năng biểu đạt nhượng bộ rõ nét trong bài nói/viết IELTS cơ bản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though modern life changes many habits, but local people still preserve traditional festivals every year.",
+    "correction": "Even though modern life changes many habits, local people still preserve traditional festivals every year.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -597,7 +689,7 @@
   "id": "band-4.5-exp-023",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "special discounts",
   "meaningVi": "các khoản giảm giá đặc biệt",
   "promptVi": "Khách hàng sẽ chi tiêu nhiều hơn tại các cửa hàng bán lẻ với điều kiện họ nhận được các khoản giảm giá đặc biệt.",
@@ -609,7 +701,13 @@
   ],
   "explanationVi": "Cụm 'on condition that' được dùng để đặt ra điều kiện cụ thể cho một hành động diễn ra.",
   "rationaleVi": "Cung cấp cho học viên 4.5 thêm một cấu trúc điều kiện tự nhiên, phù hợp với ngữ cảnh mua sắm - tiêu dùng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Customers will to spend more money at retail shops on condition that they receive special discounts.",
+    "correction": "Customers will spend more money at retail shops on condition that they receive special discounts.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will spend)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -619,7 +717,7 @@
   "id": "band-4.5-exp-024",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "public parks",
   "meaningVi": "các công viên công cộng",
   "promptVi": "Ngay cả khi mật độ dân số gia tăng, chính quyền thành phố vẫn muốn xây thêm các công viên công cộng.",
@@ -641,19 +739,26 @@
   "id": "band-4.5-exp-025",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "provide extra support",
   "meaningVi": "cung cấp sự hỗ trợ thêm",
   "promptVi": "Mặc dù khóa học khá ngắn, giáo viên vẫn cố gắng cung cấp sự hỗ trợ thêm cho những học sinh yếu hơn.",
   "referenceAnswers": [
-   "Although the course is quite short, teachers still try to provide extra support for weaker students."
+   "Although the course is quite short, teachers still try to provide extra support for weaker students.",
+   "Even though the course is quite short, teachers still try to provide extra support for weaker students."
   ],
   "grammarTags": [
    "Concession - Although"
   ],
   "explanationVi": "Mệnh đề nhượng bộ bắt đầu bằng 'Although' đi kèm với cụm động từ thông dụng 'provide extra support'.",
   "rationaleVi": "Mẫu câu nhượng bộ cơ bản kết hợp từ vựng chủ đề giáo dục phổ biến, rất phù hợp cho tiêu chuẩn đầu ra Level 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although the course is quite short, but teachers still try to provide extra support for weaker students.",
+    "correction": "Although the course is quite short, teachers still try to provide extra support for weaker students.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -663,7 +768,7 @@
   "id": "band-4.5-exp-026",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "electric buses",
   "meaningVi": "xe buýt điện",
   "promptVi": "Nhiều thành phố lớn vẫn sử dụng xe buýt chạy bằng dầu diesel mặc dù xe buýt điện thân thiện với môi trường hơn.",
@@ -685,7 +790,7 @@
   "id": "band-4.5-exp-027",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "fresh vegetables",
   "meaningVi": "rau tươi",
   "promptVi": "Trừ khi bạn bảo quản rau tươi trong tủ lạnh, chúng sẽ bị hỏng chỉ sau hai ngày.",
@@ -697,7 +802,13 @@
   ],
   "explanationVi": "'Unless' mang nghĩa 'phủ định của if' (nếu không), kết hợp mệnh đề điều kiện hiện tại đơn.",
   "rationaleVi": "Cấu trúc điều kiện phủ định với 'Unless' là trọng tâm ngữ pháp nhượng bộ/điều kiện ở mức 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless you store fresh vegetables in the fridge, they will to spoil after just two days.",
+    "correction": "Unless you store fresh vegetables in the fridge, they will spoil after just two days.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will spoil)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -707,7 +818,7 @@
   "id": "band-4.5-exp-028",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "regular exercise",
   "meaningVi": "tập thể dục đều đặn",
   "promptVi": "Mặc dù tập thể dục đều đặn, một số người vẫn gặp khó khăn trong việc ngủ ngon vào ban đêm.",
@@ -729,7 +840,7 @@
   "id": "band-4.5-exp-029",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "manage their schedule",
   "meaningVi": "quản lý lịch trình của họ",
   "promptVi": "Miễn là công nhân quản lý lịch trình của họ một cách cẩn thận, họ có thể hoàn thành công việc trước giờ nghỉ trưa.",
@@ -741,7 +852,13 @@
   ],
   "explanationVi": "Cụm liên từ 'Provided that' diễn đạt điều kiện bắt buộc tương tự như 'if' hay 'as long as'.",
   "rationaleVi": "Giới thiệu liên từ chỉ điều kiện mở rộng nhưng cú pháp đơn giản, vừa sức với trình độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Provided that workers manage their schedule carefully, they can to complete their tasks before lunch break.",
+    "correction": "Provided that workers manage their schedule carefully, they can complete their tasks before lunch break.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can complete)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -751,12 +868,13 @@
   "id": "band-4.5-exp-030",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "pedestrian zones",
   "meaningVi": "khu vực dành cho người đi bộ",
   "promptVi": "Mật độ giao thông ở trung tâm rất đông đúc; tuy nhiên, thành phố đã tạo ra một vài khu vực dành cho người đi bộ để giảm khói bụi.",
   "referenceAnswers": [
-   "Traffic density in the centre is very high; however, the city has created several pedestrian zones to reduce exhaust fumes."
+   "Traffic density in the centre is very high; however, the city has created several pedestrian zones to reduce exhaust fumes.",
+   "Traffic density in the center is very high; however, the city has created several pedestrian zones to reduce exhaust fumes."
   ],
   "grammarTags": [
    "Concession - However"
@@ -773,7 +891,7 @@
   "id": "band-4.5-exp-031",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "team building activities",
   "meaningVi": "các hoạt động gắn kết đội ngũ",
   "promptVi": "Nhân viên sẽ cảm thấy thoải mái hơn tại nơi làm việc nếu công ty tổ chức thêm các hoạt động gắn kết đội ngũ.",
@@ -785,7 +903,13 @@
   ],
   "explanationVi": "Mệnh đề chính đứng trước mệnh đề 'if' tạo nên sự đa dạng về vị trí điều kiện trong câu.",
   "rationaleVi": "Thay đổi vị trí mệnh đề điều kiện để tránh khuôn mẫu cố định, đúng yêu cầu thiết kế đề thi.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Employees will to feel more comfortable at work if the company organises more team building activities.",
+    "correction": "Employees will feel more comfortable at work if the company organises more team building activities.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will feel)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -795,7 +919,7 @@
   "id": "band-4.5-exp-032",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "wind turbines",
   "meaningVi": "tua-bin gió",
   "promptVi": "Bất chấp chi phí bảo trì cao, việc xây dựng các tua-bin gió vẫn đem lại nguồn điện sạch cho vùng ven biển.",
@@ -817,7 +941,7 @@
   "id": "band-4.5-exp-033",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "local handicrafts",
   "meaningVi": "đồ thủ công mỹ nghệ địa phương",
   "promptVi": "Nếu khách du lịch mua đồ thủ công mỹ nghệ địa phương, họ sẽ giúp hỗ trợ thu nhập của các nghệ nhân truyền thống.",
@@ -839,7 +963,7 @@
   "id": "band-4.5-exp-034",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "online shopping",
   "meaningVi": "mua sắm trực tuyến",
   "promptVi": "Ngay cả khi mua sắm trực tuyến trở nên phổ biến hơn, nhiều người tiêu dùng vẫn thích đến các siêu thị truyền thống.",
@@ -861,7 +985,7 @@
   "id": "band-4.5-exp-035",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "family meals",
   "meaningVi": "các bữa ăn gia đình",
   "promptVi": "Trừ khi cha mẹ dành thời gian cho các bữa ăn gia đình, con cái của họ có thể dễ cảm thấy xa cách.",
@@ -873,7 +997,13 @@
   ],
   "explanationVi": "'Unless' đi cùng động từ khuyết thiếu 'may' ở mệnh đề chính để thể hiện một khả năng có thể xảy ra.",
   "rationaleVi": "Sử dụng 'Unless' kết hợp động từ khuyết thiếu cơ bản 'may' tạo mức độ nhận thức phù hợp Level 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless parents make time for family meals, their children may to easily feel disconnected.",
+    "correction": "Unless parents make time for family meals, their children may easily feel disconnected.",
+    "reasonVi": "Sau động từ khuyết thiếu 'may' dùng động từ nguyên mẫu không có 'to' (may easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -883,7 +1013,7 @@
   "id": "band-4.5-exp-036",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "family members",
   "meaningVi": "các thành viên trong gia đình",
   "promptVi": "Các thành viên trong gia đình sẽ gắn kết hơn nếu họ dành ít nhất ba mươi phút trò chuyện mỗi tối.",
@@ -895,7 +1025,13 @@
   ],
   "explanationVi": "Mẫu câu sử dụng điều kiện cơ bản với 'if' kết hợp với từ vựng thuộc chủ đề gia đình ('family members', 'conversation').",
   "rationaleVi": "Câu thể hiện một điều kiện đơn giản với cấu trúc 'if + hiện tại đơn, tương lai đơn', hoàn toàn phù hợp với độ khó IELTS 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Family members will to become closer if they spend at least thirty minutes having a conversation every evening.",
+    "correction": "Family members will become closer if they spend at least thirty minutes having a conversation every evening.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will become)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -905,19 +1041,26 @@
   "id": "band-4.5-exp-037",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "science lab",
   "meaningVi": "phòng thí nghiệm khoa học",
   "promptVi": "Mặc dù phòng thí nghiệm khoa học khá nhỏ, học sinh vẫn có thể thực hiện các thí nghiệm cơ bản một cách an toàn.",
   "referenceAnswers": [
-   "Although the science lab is quite small, students can still carry out basic experiments safely."
+   "Although the science lab is quite small, students can still carry out basic experiments safely.",
+   "Even though the science lab is quite small, students can still carry out basic experiments safely."
   ],
   "grammarTags": [
    "Concession (although) - School topic"
   ],
   "explanationVi": "Sử dụng từ nối nhượng bộ 'Although' ở đầu câu kết hợp với danh từ ghép 'science lab'.",
   "rationaleVi": "Cấu trúc nhượng bộ cơ bản 'Although + mệnh đề' được dùng chính xác để trình bày hai ý tương phản nhẹ nhàng ở mức độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although the science lab is quite small, but students can still carry out basic experiments safely.",
+    "correction": "Although the science lab is quite small, students can still carry out basic experiments safely.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -927,7 +1070,7 @@
   "id": "band-4.5-exp-038",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "exercise",
   "meaningVi": "tập thể dục",
   "promptVi": "Trừ khi bạn uống đủ nước trong suốt cả ngày, bạn sẽ nhanh chóng cảm thấy mệt mỏi khi tập thể dục.",
@@ -939,7 +1082,13 @@
   ],
   "explanationVi": "Dùng 'Unless' ở mệnh đề đầu để thể hiện điều kiện phủ định ('trừ khi') trong ngữ cảnh sức khỏe.",
   "rationaleVi": "Cách dùng từ phủ định điều kiện 'unless' là cấu trúc ngữ pháp quan trọng cần đạt ở trình độ 4.5 mà không phức tạp hóa câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless you drink enough water throughout the day, you will to quickly feel tired during exercise.",
+    "correction": "Unless you drink enough water throughout the day, you will quickly feel tired during exercise.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will quickly)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -949,7 +1098,7 @@
   "id": "band-4.5-exp-039",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "training courses",
   "meaningVi": "các khóa đào tạo",
   "promptVi": "Nhân viên có thể cải thiện kỹ năng của mình với điều kiện công ty cung cấp các khóa đào tạo hằng tháng.",
@@ -961,7 +1110,13 @@
   ],
   "explanationVi": "Từ nối 'provided that' diễn đạt điều kiện 'với điều kiện là' nối hai mệnh đề độc lập.",
   "rationaleVi": "Mẫu câu ứng dụng liên từ điều kiện 'provided that' trong môi trường làm việc thông dụng, đáp ứng mục tiêu bài học 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Employees can to improve their skills provided that the company offers training courses every month.",
+    "correction": "Employees can improve their skills provided that the company offers training courses every month.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can improve)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -971,7 +1126,7 @@
   "id": "band-4.5-exp-040",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "long-distance buses",
   "meaningVi": "xe buýt đường dài",
   "promptVi": "Nhiều du khách thích đi xe buýt đường dài hơn, mặc dù hành trình mất thêm vài giờ.",
@@ -993,7 +1148,7 @@
   "id": "band-4.5-exp-041",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "fresh ingredients",
   "meaningVi": "nguyên liệu tươi",
   "promptVi": "Nếu bạn cho quá nhiều muối vào món súp, nó sẽ làm hỏng vị tự nhiên của các nguyên liệu tươi.",
@@ -1005,7 +1160,13 @@
   ],
   "explanationVi": "Câu điều kiện loại 1 với 'If' ở đầu câu nói về nguyên nhân - kết quả trong việc nấu ăn.",
   "rationaleVi": "Cấu trúc điều kiện đơn giản cùng các từ vựng đời sống ('salt', 'soup', 'fresh ingredients') thuộc phạm vi cấp độ 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If you add too much salt to the soup, it will to ruin the natural taste of the fresh ingredients.",
+    "correction": "If you add too much salt to the soup, it will ruin the natural taste of the fresh ingredients.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will ruin)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1015,7 +1176,7 @@
   "id": "band-4.5-exp-042",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "local businesses",
   "meaningVi": "doanh nghiệp địa phương",
   "promptVi": "Các doanh nghiệp địa phương nhỏ có thể phát triển ổn định miễn là khách hàng thanh toán tiền hàng đúng hạn.",
@@ -1027,7 +1188,13 @@
   ],
   "explanationVi": "Liên từ 'as long as' được dùng để chỉ điều kiện 'miễn là' giữa hai mệnh đề.",
   "rationaleVi": "Sử dụng cụm từ diễn đạt điều kiện quen thuộc 'as long as' với từ vựng kinh tế mua bán cơ bản, phù hợp tiêu chí 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Small local businesses can to grow steadily as long as customers pay for goods on time.",
+    "correction": "Small local businesses can grow steadily as long as customers pay for goods on time.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can grow)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1037,12 +1204,13 @@
   "id": "band-4.5-exp-043",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "tree-planting campaigns",
   "meaningVi": "các chiến dịch trồng cây",
   "promptVi": "Chất lượng không khí ở trung tâm thành phố vẫn còn kém; tuy nhiên, các chiến dịch trồng cây đang dần được mở rộng.",
   "referenceAnswers": [
-   "Air quality in the city centre remains poor; however, tree-planting campaigns are slowly expanding."
+   "Air quality in the city centre remains poor; however, tree-planting campaigns are slowly expanding.",
+   "Air quality in the city center remains poor; however, tree-planting campaigns are slowly expanding."
   ],
   "grammarTags": [
    "Concession (however) - Environment topic"
@@ -1059,7 +1227,7 @@
   "id": "band-4.5-exp-044",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "maintenance fees",
   "meaningVi": "phí bảo trì",
   "promptVi": "Các căn hộ chung cư cao tầng rất phổ biến đối với các cặp vợ chồng trẻ, mặc dù phí bảo trì hằng tháng khá đắt.",
@@ -1081,7 +1249,7 @@
   "id": "band-4.5-exp-045",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "electronic appliances",
   "meaningVi": "các thiết bị điện tử",
   "promptVi": "Hóa đơn tiền điện sẽ giảm đáng kể nếu các hộ gia đình tắt các thiết bị điện tử khi không sử dụng.",
@@ -1093,7 +1261,13 @@
   ],
   "explanationVi": "Mệnh đề kết quả đứng trước, mệnh đề 'if' đứng sau chỉ điều kiện tiết kiệm năng lượng.",
   "rationaleVi": "Câu thể hiện mối quan hệ điều kiện - kết quả thiết thực bằng cấu trúc câu điều kiện cơ bản dành cho level 4.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Electricity bills will to decrease significantly if households turn off electronic appliances when not in use.",
+    "correction": "Electricity bills will decrease significantly if households turn off electronic appliances when not in use.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will decrease)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1103,17 +1277,18 @@
   "id": "esl-v2-r09-u01-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi đã làm việc tại thư viện này được ba năm và vẫn làm ở đây.",
   "referenceAnswers": [
-   "I have worked at this library for three years, and I still work here."
+   "I have worked at this library for three years, and I still work here.",
+   "I've worked at this library for three years, and I still work here."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have worked + for diễn tả khoảng thời gian bắt đầu trong quá khứ và vẫn tiếp diễn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have worked + for diễn tả khoảng thời gian bắt đầu trong quá khứ và vẫn tiếp diễn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1125,13 +1300,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r09-u01-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Lan đã học tiếng Nhật từ năm 2022 và chưa bỏ cuộc.",
   "referenceAnswers": [
    "Lan has studied Japanese since 2022 and has not given up."
@@ -1141,7 +1319,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has studied + since + mốc thời gian; chưa bỏ cuộc tiếp tục đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has studied + since + mốc thời gian; chưa bỏ cuộc tiếp tục đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1153,13 +1331,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi vừa nhận được email xác nhận nên giờ có thể đặt vé.",
   "referenceAnswers": [
    "We have just received the confirmation email, so we can book the tickets now."
@@ -1169,7 +1348,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have just received chỉ kết quả mới xảy ra và có ảnh hưởng hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have just received chỉ kết quả mới xảy ra và có ảnh hưởng hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1181,23 +1360,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi chưa từng đi tàu điện ngầm, nhưng tôi muốn thử.",
   "referenceAnswers": [
-   "I have never taken the underground, but I would like to try it."
+   "I have never taken the underground, but I would like to try it.",
+   "I've never taken the underground, but I would like to try it."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have never + V3 diễn đạt trải nghiệm chưa từng có, không dùng quá khứ đơn khi không có mốc cụ thể. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have never + V3 diễn đạt trải nghiệm chưa từng có, không dùng quá khứ đơn khi không có mốc cụ thể. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1209,13 +1390,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn đã nộp bài tập về nhà chưa?",
   "referenceAnswers": [
    "Have you submitted your homework yet?"
@@ -1225,7 +1407,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Have + subject + V3 ... yet dùng hỏi việc đã hoàn thành tính đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "Have + subject + V3 ... yet dùng hỏi việc đã hoàn thành tính đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1237,13 +1419,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành",
+  "targetTerm": "homework",
+  "meaningVi": "bài tập về nhà"
  },
  {
   "id": "esl-v2-r09-u01-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Bố tôi đã sửa chiếc xe đạp, vì vậy giờ tôi có thể dùng nó.",
   "referenceAnswers": [
    "My father has repaired the bicycle, so I can use it now."
@@ -1253,7 +1438,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has repaired nhấn kết quả hiện tại chiếc xe dùng được. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has repaired nhấn kết quả hiện tại chiếc xe dùng được. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1265,13 +1450,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Họ đã sống ở thành phố này từ khi kết hôn.",
   "referenceAnswers": [
    "They have lived in this city since they got married."
@@ -1281,7 +1467,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: since + mệnh đề quá khứ chỉ điểm bắt đầu của hành động tiếp diễn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "since + mệnh đề quá khứ chỉ điểm bắt đầu của hành động tiếp diễn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1293,23 +1479,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi đã đọc cuốn sách này hai lần, nhưng vẫn chưa hiểu phần kết.",
   "referenceAnswers": [
-   "I have read this book twice, but I still do not understand the ending."
+   "I have read this book twice, but I still do not understand the ending.",
+   "I've read this book twice, but I still do not understand the ending.",
+   "I have read this book twice, but I still don't understand the ending."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have read + twice nêu số lần tính đến hiện tại; still phản ánh trạng thái hiện thời. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have read + twice nêu số lần tính đến hiện tại; still phản ánh trạng thái hiện thời. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1321,13 +1510,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Khách sạn đã thay đổi giờ trả phòng, nên hãy kiểm tra lại thông báo.",
   "referenceAnswers": [
    "The hotel has changed its check-out time, so please check the notice again."
@@ -1337,7 +1527,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has changed nêu thay đổi có hiệu lực ở hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has changed nêu thay đổi có hiệu lực ở hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1349,13 +1539,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành",
+  "targetTerm": "hotel",
+  "meaningVi": "khách sạn"
  },
  {
   "id": "esl-v2-r09-u01-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Từ sáng đến giờ, chúng tôi đã trả lời hơn hai mươi câu hỏi.",
   "referenceAnswers": [
    "We have answered more than twenty questions since this morning."
@@ -1365,7 +1558,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: since this morning phù hợp hiện tại hoàn thành vì khoảng thời gian còn tính tới hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "since this morning phù hợp hiện tại hoàn thành vì khoảng thời gian còn tính tới hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1377,13 +1570,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r09-u01-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy đã làm mất chìa khóa và hiện vẫn chưa tìm thấy nó.",
   "referenceAnswers": [
    "She has lost her keys and has not found them yet."
@@ -1393,7 +1589,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has lost và has not found diễn tả kết quả còn ảnh hưởng đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has lost và has not found diễn tả kết quả còn ảnh hưởng đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1405,23 +1601,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Đây là lần đầu tiên tôi tham gia một buổi phỏng vấn trực tuyến.",
   "referenceAnswers": [
-   "This is the first time I have attended an online interview."
+   "This is the first time I have attended an online interview.",
+   "This is the first time I've attended an online interview."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: This is the first time + present perfect dùng cho trải nghiệm lần đầu tính đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "This is the first time + present perfect dùng cho trải nghiệm lần đầu tính đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1433,13 +1631,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhóm đã hoàn thành phần thiết kế nhưng chưa kiểm tra các liên kết.",
   "referenceAnswers": [
    "The team has finished the design but has not tested the links yet."
@@ -1449,7 +1648,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Hai hành động ở hiện tại hoàn thành phân biệt việc hoàn tất với việc chưa làm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "Hai hành động ở hiện tại hoàn thành phân biệt việc hoàn tất với việc chưa làm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1461,23 +1660,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi đã chờ xe buýt được nửa giờ và nó vẫn chưa tới.",
   "referenceAnswers": [
-   "I have been waiting for the bus for half an hour, and it still has not arrived."
+   "I have been waiting for the bus for half an hour, and it still has not arrived.",
+   "I've been waiting for the bus for half an hour, and it still has not arrived."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have been waiting làm nổi bật quá trình kéo dài đến hiện tại; has not arrived yet là kết quả chưa xảy ra. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have been waiting làm nổi bật quá trình kéo dài đến hiện tại; has not arrived yet là kết quả chưa xảy ra. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1489,13 +1690,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Từ đầu học kỳ, điểm nghe của Minh đã cải thiện đáng kể.",
   "referenceAnswers": [
    "Minh's listening scores have improved considerably since the start of the semester."
@@ -1505,7 +1707,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have improved + since đánh dấu thay đổi từ quá khứ tới hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have improved + since đánh dấu thay đổi từ quá khứ tới hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1517,13 +1719,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi đã nhiều lần thử mở tệp, nhưng nó vẫn báo lỗi.",
   "referenceAnswers": [
    "We have tried to open the file several times, but it still shows an error."
@@ -1533,7 +1736,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have tried several times nêu nỗ lực lặp lại; still shows nhấn tình trạng chưa đổi. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have tried several times nêu nỗ lực lặp lại; still shows nhấn tình trạng chưa đổi. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1545,23 +1748,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành"
  },
  {
   "id": "esl-v2-r09-u01-017",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Hiện tại hoàn thành",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mặc dù đã nhận được lời mời, tôi vẫn chưa quyết định có tham dự hay không.",
   "referenceAnswers": [
-   "Although I have received the invitation, I have not decided whether to attend yet."
+   "Although I have received the invitation, I have not decided whether to attend yet.",
+   "Although I've received the invitation, I have not decided whether to attend yet.",
+   "Even though I have received the invitation, I have not decided whether to attend yet."
   ],
   "grammarTags": [
    "r09_u01",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nối hai thông tin đối lập; have not decided yet là trạng thái quyết định hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nối hai thông tin đối lập; have not decided yet là trạng thái quyết định hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U01), chủ đề Hiện tại hoàn thành.",
   "commonErrors": [
    {
@@ -1573,13 +1779,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại hoàn thành",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u02-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Người phụ nữ đang nói chuyện với giáo viên là mẹ của Nam.",
   "referenceAnswers": [
    "The woman who is talking to the teacher is Nam's mother."
@@ -1589,7 +1798,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who bổ nghĩa cho the woman và làm chủ ngữ trong mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who bổ nghĩa cho the woman và làm chủ ngữ trong mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1601,13 +1810,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chiếc máy tính mà tôi mua tuần trước đã bị hỏng.",
   "referenceAnswers": [
    "The computer that I bought last week has broken down."
@@ -1617,7 +1827,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that bổ nghĩa cho vật; mệnh đề xác định không thêm dấu phẩy. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that bổ nghĩa cho vật; mệnh đề xác định không thêm dấu phẩy. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1629,13 +1839,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "last week",
+  "meaningVi": "tuần trước"
  },
  {
   "id": "esl-v2-r09-u02-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Đây là con đường dẫn tới trạm xe buýt mới.",
   "referenceAnswers": [
    "This is the road that leads to the new bus station."
@@ -1645,7 +1858,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that leads bổ nghĩa cho the road; chủ ngữ số ít cần leads. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that leads bổ nghĩa cho the road; chủ ngữ số ít cần leads. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1657,13 +1870,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thích những câu chuyện khiến người đọc suy nghĩ.",
   "referenceAnswers": [
    "I like stories that make readers think."
@@ -1673,7 +1887,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that làm chủ ngữ thay stories trong mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that làm chủ ngữ thay stories trong mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1685,13 +1899,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn có biết học sinh đã giành giải nhất không?",
   "referenceAnswers": [
    "Do you know the student who won first prize?"
@@ -1701,7 +1916,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who won xác định học sinh, không lặp đại từ he/she trong mệnh đề. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who won xác định học sinh, không lặp đại từ he/she trong mệnh đề. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1713,13 +1928,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc áo mà chị gái tặng tôi rất vừa.",
   "referenceAnswers": [
    "The shirt that my sister gave me fits well."
@@ -1729,7 +1945,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that làm tân ngữ của gave; không thêm it sau gave me. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that làm tân ngữ của gave; không thêm it sau gave me. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1741,13 +1957,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhà hàng phục vụ món chay vừa mở cửa gần trường tôi.",
   "referenceAnswers": [
    "The restaurant that serves vegetarian food has just opened near my school."
@@ -1757,7 +1974,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that serves bổ nghĩa cho nhà hàng, không nói rằng mọi nhà hàng đều phục vụ món chay. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that serves bổ nghĩa cho nhà hàng, không nói rằng mọi nhà hàng đều phục vụ món chay. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1769,13 +1986,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tôi cần một ứng dụng giúp tôi theo dõi chi tiêu.",
   "referenceAnswers": [
    "I need an app that helps me track my spending."
@@ -1785,7 +2003,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that helps + object + bare infinitive; app số ít đi với helps. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that helps + object + bare infinitive; app số ít đi với helps. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1797,13 +2015,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Người hướng dẫn mà chúng tôi gặp sáng nay đã trả lời mọi câu hỏi.",
   "referenceAnswers": [
    "The guide whom we met this morning answered all our questions."
@@ -1813,7 +2032,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: whom làm tân ngữ chỉ người; who hoặc that cũng thường được chấp nhận trong lời nói. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "whom làm tân ngữ chỉ người; who hoặc that cũng thường được chấp nhận trong lời nói. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1825,13 +2044,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r09-u02-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những cuốn sách được đặt trên kệ cao nhất là tài liệu tham khảo.",
   "referenceAnswers": [
    "The books that are placed on the top shelf are reference materials."
@@ -1841,7 +2063,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that are placed dùng bị động để xác định nhóm sách. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that are placed dùng bị động để xác định nhóm sách. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1853,13 +2075,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Tôi đã gặp một bác sĩ nói tiếng Việt rất lưu loát.",
   "referenceAnswers": [
    "I met a doctor who speaks Vietnamese very fluently."
@@ -1869,7 +2092,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who speaks bổ nghĩa cho a doctor, không tách thành hai câu rời. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who speaks bổ nghĩa cho a doctor, không tách thành hai câu rời. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1881,13 +2104,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "fluently",
+  "meaningVi": "một cách trôi chảy / lưu loát"
  },
  {
   "id": "esl-v2-r09-u02-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cây cầu nối hai ngôi làng đã được sửa xong.",
   "referenceAnswers": [
    "The bridge that connects the two villages has been repaired."
@@ -1897,7 +2123,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that connects xác định cây cầu; has been repaired diễn tả kết quả bị động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that connects xác định cây cầu; has been repaired diễn tả kết quả bị động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1909,13 +2135,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "bridge",
+  "meaningVi": "cây cầu"
  },
  {
   "id": "esl-v2-r09-u02-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Đó là lý do khiến tôi quyết định đổi lịch.",
   "referenceAnswers": [
    "That is the reason why I decided to change the schedule."
@@ -1925,7 +2154,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: why chỉ lý do; không dùng thêm because sau the reason why trong cùng cấu trúc. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "why chỉ lý do; không dùng thêm because sau the reason why trong cùng cấu trúc. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1937,13 +2166,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Căn phòng mà chúng tôi học hôm qua có cửa sổ lớn.",
   "referenceAnswers": [
    "The room where we studied yesterday has large windows."
@@ -1953,7 +2183,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: where tương đương in which để chỉ nơi diễn ra việc học. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "where tương đương in which để chỉ nơi diễn ra việc học. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1965,13 +2195,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r09-u02-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi muốn cảm ơn những người đã tình nguyện giúp chúng tôi.",
   "referenceAnswers": [
    "I want to thank the people who volunteered to help us."
@@ -1981,7 +2214,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who volunteered bổ nghĩa cho people, không thêm they. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who volunteered bổ nghĩa cho people, không thêm they. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -1993,13 +2226,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Món ăn mà bạn giới thiệu hóa ra lại khá cay.",
   "referenceAnswers": [
    "The dish that you recommended turned out to be quite spicy."
@@ -2009,7 +2243,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that là tân ngữ của recommended; turned out to be diễn tả kết quả trải nghiệm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that là tân ngữ của recommended; turned out to be diễn tả kết quả trải nghiệm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -2021,13 +2255,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ"
  },
  {
   "id": "esl-v2-r09-u02-017",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Mệnh đề quan hệ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Một số học sinh dùng các ứng dụng có thể đọc văn bản thành tiếng để luyện nghe.",
   "referenceAnswers": [
    "Some students use apps that can read text aloud to practise listening."
@@ -2037,7 +2272,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that can read... giới hạn đúng nhóm apps; to practise listening là mục đích. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that can read... giới hạn đúng nhóm apps; to practise listening là mục đích. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U02), chủ đề Mệnh đề quan hệ.",
   "commonErrors": [
    {
@@ -2049,23 +2284,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề quan hệ",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r09-u03-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Trừ khi trời ngừng mưa, chúng tôi sẽ không tổ chức buổi dã ngoại.",
   "referenceAnswers": [
-   "Unless it stops raining, we will not hold the picnic."
+   "Unless it stops raining, we will not hold the picnic.",
+   "Unless it stops raining, we won't hold the picnic."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless = if not; mệnh đề điều kiện dùng hiện tại đơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless = if not; mệnh đề điều kiện dùng hiện tại đơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2077,13 +2316,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thể mượn máy ảnh miễn là trả nó trước thứ Hai.",
   "referenceAnswers": [
    "You may borrow the camera as long as you return it before Monday."
@@ -2093,7 +2333,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: as long as diễn tả điều kiện cần đáp ứng, không phải thời lượng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "as long as diễn tả điều kiện cần đáp ứng, không phải thời lượng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2105,23 +2345,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu không có vé hợp lệ, khách sẽ không được vào.",
   "referenceAnswers": [
-   "Visitors will not be allowed in unless they have a valid ticket."
+   "Visitors will not be allowed in unless they have a valid ticket.",
+   "Visitors won't be allowed in unless they have a valid ticket."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless có nghĩa trừ khi; allowed in dùng bị động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless có nghĩa trừ khi; allowed in dùng bị động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2133,13 +2375,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng",
+  "targetTerm": "ticket",
+  "meaningVi": "tấm vé"
  },
  {
   "id": "esl-v2-r09-u03-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Chúng tôi sẽ đặt phòng trước với điều kiện khách sạn cho phép hủy miễn phí.",
   "referenceAnswers": [
    "We will book the room provided that the hotel allows free cancellation."
@@ -2149,7 +2394,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: provided that nêu điều kiện cụ thể để tiến hành đặt phòng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "provided that nêu điều kiện cụ thể để tiến hành đặt phòng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2161,13 +2406,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng",
+  "targetTerm": "hotel",
+  "meaningVi": "khách sạn"
  },
  {
   "id": "esl-v2-r09-u03-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Miễn là bạn lưu bản sao, bạn có thể chỉnh sửa tệp gốc.",
   "referenceAnswers": [
    "As long as you save a copy, you can edit the original file."
@@ -2177,7 +2425,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: as long as + hiện tại đơn; can nêu sự cho phép có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "as long as + hiện tại đơn; can nêu sự cho phép có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2189,23 +2437,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi sẽ không gửi báo cáo nếu chưa được quản lý phê duyệt.",
   "referenceAnswers": [
-   "I will not send the report unless my manager approves it."
+   "I will not send the report unless my manager approves it.",
+   "I'll not send the report unless my manager approves it.",
+   "I won't send the report unless my manager approves it."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless thay cho if...not; approves ở hiện tại đơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless thay cho if...not; approves ở hiện tại đơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2217,13 +2468,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng",
+  "targetTerm": "report",
+  "meaningVi": "bản báo cáo"
  },
  {
   "id": "esl-v2-r09-u03-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Bạn sẽ bỏ lỡ chuyến tàu trừ khi rời nhà ngay.",
   "referenceAnswers": [
    "You will miss the train unless you leave home now."
@@ -2233,7 +2487,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless nêu ngoại lệ giúp tránh kết quả bất lợi. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless nêu ngoại lệ giúp tránh kết quả bất lợi. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2245,23 +2499,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chúng ta có thể đi bộ đến đó nếu đường không bị ngập.",
   "referenceAnswers": [
-   "We can walk there if the road is not flooded."
+   "We can walk there if the road is not flooded.",
+   "We can walk there if the road isn't flooded."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if + present simple; can chỉ khả năng tùy điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "if + present simple; can chỉ khả năng tùy điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2273,13 +2529,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Với điều kiện mọi thành viên đồng ý, nhóm sẽ công bố kế hoạch.",
   "referenceAnswers": [
    "Provided that all members agree, the team will announce the plan."
@@ -2289,7 +2546,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: provided that đặt điều kiện đồng thuận trước hành động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "provided that đặt điều kiện đồng thuận trước hành động. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2301,23 +2558,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu không ghi tên, bạn sẽ không nhận được chứng nhận tham dự.",
   "referenceAnswers": [
-   "You will not receive an attendance certificate unless you register your name."
+   "You will not receive an attendance certificate unless you register your name.",
+   "You won't receive an attendance certificate unless you register your name."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless nêu hành động bắt buộc để nhận chứng nhận. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless nêu hành động bắt buộc để nhận chứng nhận. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2329,23 +2588,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi chỉ mua chiếc bàn này nếu nó vừa với căn phòng.",
   "referenceAnswers": [
-   "I will buy this desk only if it fits in the room."
+   "I will buy this desk only if it fits in the room.",
+   "I'll buy this desk only if it fits in the room."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: only if nhấn điều kiện cần; fits phải chia số ít. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "only if nhấn điều kiện cần; fits phải chia số ít. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2357,13 +2618,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng ta sẽ tiến hành khảo sát miễn là người tham gia đồng ý.",
   "referenceAnswers": [
    "We will conduct the survey as long as the participants consent."
@@ -2373,7 +2635,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: as long as nói điều kiện đồng ý, không hàm ý chắc chắn mọi người đồng ý. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "as long as nói điều kiện đồng ý, không hàm ý chắc chắn mọi người đồng ý. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2385,23 +2647,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu chất lượng âm thanh không đủ tốt, chúng tôi sẽ ghi âm lại.",
   "referenceAnswers": [
-   "If the sound quality is not good enough, we will record it again."
+   "If the sound quality is not good enough, we will record it again.",
+   "If the sound quality isn't good enough, we will record it again."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if + hiện tại đơn + will nêu phương án dự phòng tương lai. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "if + hiện tại đơn + will nêu phương án dự phòng tương lai. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2413,23 +2677,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng",
+  "targetTerm": "quality",
+  "meaningVi": "chất lượng"
  },
  {
   "id": "esl-v2-r09-u03-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn không thể sử dụng phòng thí nghiệm trừ khi có người giám sát.",
   "referenceAnswers": [
-   "You cannot use the laboratory unless a supervisor is present."
+   "You cannot use the laboratory unless a supervisor is present.",
+   "You can't use the laboratory unless a supervisor is present."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless chỉ ngoại lệ; is present thể hiện có mặt, không phải sở hữu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless chỉ ngoại lệ; is present thể hiện có mặt, không phải sở hữu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2441,23 +2709,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi sẽ đi cùng các bạn với điều kiện chúng ta về trước mười giờ.",
   "referenceAnswers": [
-   "I will go with you on condition that we return before ten."
+   "I will go with you on condition that we return before ten.",
+   "I'll go with you on condition that we return before ten."
   ],
   "grammarTags": [
    "r09_u03",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: on condition that là liên từ điều kiện tương đương provided that. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "on condition that là liên từ điều kiện tương đương provided that. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2469,13 +2739,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Trừ khi số liệu được kiểm tra lại, chúng ta không nên đưa ra kết luận.",
   "referenceAnswers": [
    "Unless the figures are checked again, we should not draw a conclusion."
@@ -2485,7 +2756,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless + bị động hiện tại; should not nêu khuyến nghị có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless + bị động hiện tại; should not nêu khuyến nghị có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2497,13 +2768,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u03-017",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Điều kiện mở rộng",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhóm có thể kéo dài thời hạn nếu khách hàng đồng ý bằng văn bản.",
   "referenceAnswers": [
    "The team may extend the deadline provided that the client agrees in writing."
@@ -2513,7 +2785,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may giữ mức độ khả năng; provided that xác định điều kiện chấp thuận bằng văn bản. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "may giữ mức độ khả năng; provided that xác định điều kiện chấp thuận bằng văn bản. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U03), chủ đề Điều kiện mở rộng.",
   "commonErrors": [
    {
@@ -2525,13 +2797,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện mở rộng"
  },
  {
   "id": "esl-v2-r09-u04-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Do hệ thống bị quá tải, một số học viên không thể đăng nhập.",
   "referenceAnswers": [
    "Some students could not log in because the system was overloaded."
@@ -2541,7 +2814,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because + mệnh đề nguyên nhân; could not biểu thị kết quả quá khứ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because + mệnh đề nguyên nhân; could not biểu thị kết quả quá khứ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2553,13 +2826,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Việc thiếu nhân viên đã khiến thời gian chờ kéo dài.",
   "referenceAnswers": [
    "A shortage of staff has led to longer waiting times."
@@ -2569,7 +2843,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has led to + cụm danh từ chỉ hệ quả; shortage of staff là nguyên nhân. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has led to + cụm danh từ chỉ hệ quả; shortage of staff là nguyên nhân. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2581,13 +2855,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Chúng tôi đổi địa điểm vì hội trường cũ đang được sửa chữa.",
   "referenceAnswers": [
    "We changed the venue because the old hall was being renovated."
@@ -2597,7 +2872,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: was being renovated là bị động tiếp diễn trong quá khứ, lý do đổi địa điểm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "was being renovated là bị động tiếp diễn trong quá khứ, lý do đổi địa điểm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2609,13 +2884,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Vì giá nguyên liệu tăng, cửa hàng buộc phải điều chỉnh thực đơn.",
   "referenceAnswers": [
    "The shop had to adjust its menu because ingredient prices had risen."
@@ -2625,7 +2901,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because diễn đạt nguyên nhân; had risen đặt biến động giá trước quyết định. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because diễn đạt nguyên nhân; had risen đặt biến động giá trước quyết định. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2637,13 +2913,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Nhờ có biển chỉ dẫn mới, khách ít bị lạc hơn.",
   "referenceAnswers": [
    "Thanks to the new signs, visitors get lost less often."
@@ -2653,7 +2930,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: thanks to + cụm danh từ diễn tả nguyên nhân tích cực; less often nêu tần suất giảm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "thanks to + cụm danh từ diễn tả nguyên nhân tích cực; less often nêu tần suất giảm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2665,13 +2942,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bởi vì thông báo đến quá muộn, nhiều người không kịp thay đổi kế hoạch.",
   "referenceAnswers": [
    "Many people could not change their plans because the notice arrived too late."
@@ -2681,7 +2959,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because + mệnh đề, too late nói thông báo trễ so với nhu cầu đổi kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because + mệnh đề, too late nói thông báo trễ so với nhu cầu đổi kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2693,13 +2971,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Sự chậm trễ trong khâu vận chuyển đã dẫn đến việc thiếu hàng tạm thời.",
   "referenceAnswers": [
    "The shipping delay led to a temporary shortage of stock."
@@ -2709,7 +2988,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: led to + danh từ, không dùng to + động từ nguyên mẫu trong nghĩa gây ra. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "led to + danh từ, không dùng to + động từ nguyên mẫu trong nghĩa gây ra. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2721,23 +3000,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Do thiếu bằng chứng, nhóm nghiên cứu chưa thể xác nhận giả thuyết.",
   "referenceAnswers": [
-   "Because of insufficient evidence, the research team cannot yet confirm the hypothesis."
+   "Because of insufficient evidence, the research team cannot yet confirm the hypothesis.",
+   "Because of insufficient evidence, the research team can't yet confirm the hypothesis."
   ],
   "grammarTags": [
    "r09_u04",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because of + cụm danh từ; cannot yet giữ nghĩa chưa thể xác nhận. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because of + cụm danh từ; cannot yet giữ nghĩa chưa thể xác nhận. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2749,23 +3030,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do",
+  "targetTerm": "evidence",
+  "meaningVi": "bằng chứng"
  },
  {
   "id": "esl-v2-r09-u04-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Vì phần mềm chưa cập nhật, máy tính không mở được tệp mới.",
   "referenceAnswers": [
-   "The computer cannot open the new file because the software has not been updated."
+   "The computer cannot open the new file because the software has not been updated.",
+   "The computer can't open the new file because the software has not been updated."
   ],
   "grammarTags": [
    "r09_u04",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has not been updated bị động hiện tại hoàn thành; hậu quả còn ở hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "has not been updated bị động hiện tại hoàn thành; hậu quả còn ở hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2777,13 +3062,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Do sương mù dày đặc, chuyến bay đã bị hoãn hai giờ.",
   "referenceAnswers": [
    "The flight was delayed by two hours because of thick fog."
@@ -2793,7 +3079,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because of + cụm danh từ, by two hours nói mức độ chậm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because of + cụm danh từ, by two hours nói mức độ chậm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2805,13 +3091,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do",
+  "targetTerm": "thick fog",
+  "meaningVi": "sương mù dày đặc"
  },
  {
   "id": "esl-v2-r09-u04-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Việc không kiểm tra nguồn tin có thể dẫn đến những kết luận sai.",
   "referenceAnswers": [
    "Failing to check sources can lead to incorrect conclusions."
@@ -2821,7 +3110,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can lead to giữ nghĩa khả năng, không khẳng định kết quả chắc chắn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "can lead to giữ nghĩa khả năng, không khẳng định kết quả chắc chắn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2833,13 +3122,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Bởi vì hai nhóm dùng tiêu chí khác nhau, kết quả của họ khó so sánh.",
   "referenceAnswers": [
    "Their results are difficult to compare because the two teams use different criteria."
@@ -2849,7 +3139,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because làm rõ nguồn gốc khó khăn, không tự kết luận kết quả nhóm nào sai. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because làm rõ nguồn gốc khó khăn, không tự kết luận kết quả nhóm nào sai. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2861,13 +3151,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Do nhiều khách hủy vào phút chót, nhà hàng đã thay đổi số bàn chuẩn bị.",
   "referenceAnswers": [
    "The restaurant changed the number of tables it prepared because many guests cancelled at the last minute."
@@ -2877,7 +3168,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because nêu lý do; số bàn được chuẩn bị thay đổi, không suy đoán tăng hay giảm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because nêu lý do; số bàn được chuẩn bị thay đổi, không suy đoán tăng hay giảm. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2889,13 +3180,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Sự thiếu rõ ràng trong hướng dẫn đã khiến nhiều người nộp sai biểu mẫu.",
   "referenceAnswers": [
    "Unclear instructions caused many people to submit the wrong form."
@@ -2905,7 +3197,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: caused + object + to V diễn đạt nguyên nhân trực tiếp và hệ quả. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "caused + object + to V diễn đạt nguyên nhân trực tiếp và hệ quả. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2917,23 +3209,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do"
  },
  {
   "id": "esl-v2-r09-u04-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Mặc dù trời nóng, nhiều người vẫn đi bộ vì xe buýt đã ngừng hoạt động.",
   "referenceAnswers": [
-   "Although it was hot, many people walked because the buses had stopped running."
+   "Although it was hot, many people walked because the buses had stopped running.",
+   "Even though it was hot, many people walked because the buses had stopped running."
   ],
   "grammarTags": [
    "r09_u04",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nhượng bộ, because chỉ nguyên nhân; had stopped xảy ra trước việc đi bộ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nhượng bộ, because chỉ nguyên nhân; had stopped xảy ra trước việc đi bộ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2945,13 +3239,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u04-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Do không được thông báo kịp thời, một số phụ huynh đã đến sai giờ.",
   "referenceAnswers": [
    "Some parents arrived at the wrong time because they had not been informed promptly."
@@ -2961,7 +3258,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: had not been informed là bị động quá khứ hoàn thành, dẫn đến đến sai giờ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "had not been informed là bị động quá khứ hoàn thành, dẫn đến đến sai giờ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -2973,13 +3270,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r09-u04-017",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Câu phức lý do",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Vì nguồn nước bị ô nhiễm, chính quyền khuyên cư dân đun sôi nước trước khi dùng.",
   "referenceAnswers": [
    "Because the water supply was contaminated, the authorities advised residents to boil water before use."
@@ -2989,7 +3289,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because nêu lý do và advised + object + to V diễn tả lời khuyên. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "because nêu lý do và advised + object + to V diễn tả lời khuyên. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U04), chủ đề Câu phức lý do.",
   "commonErrors": [
    {
@@ -3001,13 +3301,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu phức lý do",
+  "targetTerm": "residents",
+  "meaningVi": "cư dân"
  },
  {
   "id": "esl-v2-r09-u05-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Trong khi anh trai tôi thích làm việc ở nhà, tôi thích đến văn phòng.",
   "referenceAnswers": [
    "While my older brother prefers working from home, I prefer going to the office."
@@ -3017,7 +3320,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: while đặt hai sở thích đối lập, không biểu thị hai hành động diễn ra đồng thời ở đây. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "while đặt hai sở thích đối lập, không biểu thị hai hành động diễn ra đồng thời ở đây. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3029,13 +3332,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện mở cửa vào cuối tuần, trong khi phòng thí nghiệm thì không.",
   "referenceAnswers": [
    "The library opens at weekends, whereas the laboratory does not."
@@ -3045,7 +3349,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: whereas nêu sự tương phản giữa hai cơ sở. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "whereas nêu sự tương phản giữa hai cơ sở. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3057,23 +3361,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r09-u05-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chiếc túi này nhẹ, nhưng nó không đủ rộng để đựng máy tính.",
   "referenceAnswers": [
-   "This bag is light, but it is not big enough for a laptop."
+   "This bag is light, but it is not big enough for a laptop.",
+   "This bag is light, but it isn't big enough for a laptop."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: but liên kết đặc điểm thuận lợi và hạn chế thực tế. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "but liên kết đặc điểm thuận lợi và hạn chế thực tế. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3085,23 +3393,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mặc dù buổi học ngắn, học sinh vẫn có đủ thời gian đặt câu hỏi.",
   "referenceAnswers": [
-   "Although the lesson was short, students still had enough time to ask questions."
+   "Although the lesson was short, students still had enough time to ask questions.",
+   "Even though the lesson was short, students still had enough time to ask questions."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nêu trái kỳ vọng, still nhấn kết quả. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nêu trái kỳ vọng, still nhấn kết quả. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3113,13 +3423,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u05-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Ứng dụng miễn phí nhưng một số tính năng nâng cao cần trả phí.",
   "referenceAnswers": [
    "The app is free, but some advanced features require payment."
@@ -3129,7 +3442,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: but đối lập giữa miễn phí chung và tính năng có phí. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "but đối lập giữa miễn phí chung và tính năng có phí. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3141,13 +3454,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Trong khi nhóm A thu thập dữ liệu bằng bảng hỏi, nhóm B dùng phỏng vấn.",
   "referenceAnswers": [
    "While Group A collected data through questionnaires, Group B used interviews."
@@ -3157,7 +3471,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: while so sánh phương pháp, không tự đánh giá phương pháp nào tốt hơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "while so sánh phương pháp, không tự đánh giá phương pháp nào tốt hơn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3169,23 +3483,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bài báo đưa ra nhiều ví dụ, tuy nhiên nó không trích dẫn nguồn nào.",
   "referenceAnswers": [
-   "The article gives several examples. However, it does not cite any sources."
+   "The article gives several examples. However, it does not cite any sources.",
+   "The article gives several examples. However, it doesn't cite any sources.",
+   "The article gives several examples. Even so, it does not cite any sources."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: However đầu câu mới cần dấu phẩy sau đó; không nối hai mệnh đề độc lập bằng một dấu phẩy. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "However đầu câu mới cần dấu phẩy sau đó; không nối hai mệnh đề độc lập bằng một dấu phẩy. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3197,23 +3514,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r09-u05-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mặc dù giá vé đã tăng, số khách vẫn ổn định.",
   "referenceAnswers": [
-   "Although ticket prices have risen, visitor numbers have remained stable."
+   "Although ticket prices have risen, visitor numbers have remained stable.",
+   "Even though ticket prices have risen, visitor numbers have remained stable."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: hai hiện tại hoàn thành nêu thay đổi và trạng thái đến hiện tại, although nêu tương phản. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "hai hiện tại hoàn thành nêu thay đổi và trạng thái đến hiện tại, although nêu tương phản. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3225,13 +3546,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u05-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Xe buýt thường rẻ hơn, trong khi tàu hỏa có thể nhanh hơn trên tuyến này.",
   "referenceAnswers": [
    "Buses are usually cheaper, whereas trains may be faster on this route."
@@ -3241,7 +3565,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: usually và may giữ mức độ khẳng định; whereas so sánh theo tiêu chí khác nhau. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "usually và may giữ mức độ khẳng định; whereas so sánh theo tiêu chí khác nhau. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3253,13 +3577,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi đã chuẩn bị kỹ; tuy nhiên, câu hỏi cuối vẫn khiến tôi lúng túng.",
   "referenceAnswers": [
    "I prepared carefully; however, the final question still confused me."
@@ -3269,7 +3594,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: dấu chấm phẩy hoặc dấu chấm trước however nối hai mệnh đề độc lập. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "dấu chấm phẩy hoặc dấu chấm trước however nối hai mệnh đề độc lập. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3281,13 +3606,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r09-u05-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Trong khi sản phẩm trông chắc chắn, phần khóa kéo lại khá yếu.",
   "referenceAnswers": [
    "While the product looks durable, its zip is rather weak."
@@ -3297,7 +3625,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: while nhượng bộ đối lập giữa vẻ ngoài và một bộ phận cụ thể. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "while nhượng bộ đối lập giữa vẻ ngoài và một bộ phận cụ thể. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3309,23 +3637,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mặc dù có nhiều lựa chọn, chúng tôi chỉ cần một giải pháp đơn giản.",
   "referenceAnswers": [
-   "Although there are many options, we only need a simple solution."
+   "Although there are many options, we only need a simple solution.",
+   "Even though there are many options, we only need a simple solution."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although + mệnh đề; only nhấn phạm vi nhu cầu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although + mệnh đề; only nhấn phạm vi nhu cầu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3337,23 +3667,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u05-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Thành phố có thêm công viên, nhưng một số khu dân cư vẫn thiếu không gian xanh.",
   "referenceAnswers": [
-   "The city has more parks, but some neighbourhoods still lack green space."
+   "The city has more parks, but some neighbourhoods still lack green space.",
+   "The city has more parks, but some neighborhoods still lack green space."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: but thể hiện thiếu công bằng trong phân bổ, không suy diễn tất cả khu dân cư. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "but thể hiện thiếu công bằng trong phân bổ, không suy diễn tất cả khu dân cư. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3365,23 +3699,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mặc dù hướng dẫn viết bằng tiếng Anh, hình minh họa vẫn giúp tôi hiểu các bước.",
   "referenceAnswers": [
-   "Although the instructions were written in English, the illustrations helped me understand the steps."
+   "Although the instructions were written in English, the illustrations helped me understand the steps.",
+   "Even though the instructions were written in English, the illustrations helped me understand the steps."
   ],
   "grammarTags": [
    "r09_u05",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nhượng bộ và helped + object + V diễn đạt tác dụng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nhượng bộ và helped + object + V diễn đạt tác dụng. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3393,13 +3729,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u05-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tỷ lệ tham gia tăng, trong khi số người hoàn thành khóa học lại giảm.",
   "referenceAnswers": [
    "Participation increased, whereas the number of people completing the course fell."
@@ -3409,7 +3748,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: whereas đặt hai chỉ số biến động trái chiều, không kết luận lý do. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "whereas đặt hai chỉ số biến động trái chiều, không kết luận lý do. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3421,13 +3760,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản"
  },
  {
   "id": "esl-v2-r09-u05-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Đối lập cơ bản",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Nhà hàng nhận đặt bàn trực tuyến; tuy nhiên, khách vẫn phải xác nhận qua điện thoại.",
   "referenceAnswers": [
    "The restaurant accepts online reservations; however, customers still have to confirm by phone."
@@ -3437,7 +3777,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: however chuyển ý trái kỳ vọng; still have to nhấn nghĩa bắt buộc còn tồn tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "however chuyển ý trái kỳ vọng; still have to nhấn nghĩa bắt buộc còn tồn tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U05), chủ đề Đối lập cơ bản.",
   "commonErrors": [
    {
@@ -3449,13 +3789,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Đối lập cơ bản",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r09-u06-001",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bạn đã nhận được tài liệu mà tôi gửi, hãy kiểm tra trang cuối.",
   "referenceAnswers": [
    "If you have received the document that I sent, please check the last page."
@@ -3465,7 +3808,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if điều kiện; have received hiện tại hoàn thành; that I sent mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "if điều kiện; have received hiện tại hoàn thành; that I sent mệnh đề quan hệ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3477,23 +3820,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-002",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Mặc dù nhóm đã hoàn thành báo cáo, họ sẽ không gửi đi trừ khi quản lý phê duyệt.",
   "referenceAnswers": [
-   "Although the team has completed the report, they will not send it unless the manager approves it."
+   "Although the team has completed the report, they will not send it unless the manager approves it.",
+   "Although the team has completed the report, they won't send it unless the manager approves it.",
+   "Even though the team has completed the report, they will not send it unless the manager approves it."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although + present perfect và unless nêu điều kiện còn thiếu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although + present perfect và unless nêu điều kiện còn thiếu. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3505,13 +3851,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u06-003",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Người hướng dẫn mà chúng tôi gặp hôm qua đã giải thích vì sao lịch thay đổi.",
   "referenceAnswers": [
    "The guide whom we met yesterday explained why the schedule had changed."
@@ -3521,7 +3870,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: whom bổ nghĩa cho người; had changed xảy ra trước hành động giải thích. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "whom bổ nghĩa cho người; had changed xảy ra trước hành động giải thích. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3533,13 +3882,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r09-u06-004",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nếu cửa hàng mà bạn giới thiệu vẫn còn mở, chúng tôi sẽ ghé qua tối nay.",
   "referenceAnswers": [
    "If the shop that you recommended is still open, we will stop by tonight."
@@ -3549,7 +3901,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that you recommended xác định cửa hàng; if mở ra dự định có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that you recommended xác định cửa hàng; if mở ra dự định có điều kiện. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3561,23 +3913,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "tonight",
+  "meaningVi": "tối nay"
  },
  {
   "id": "esl-v2-r09-u06-005",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Xã hội & Chính sách",
   "promptVi": "Mặc dù cô ấy đã học tiếng Anh nhiều năm, cô ấy vẫn ngại nói trước đám đông.",
   "referenceAnswers": [
-   "Although she has studied English for many years, she still feels nervous about speaking in public."
+   "Although she has studied English for many years, she still feels nervous about speaking in public.",
+   "Even though she has studied English for many years, she still feels nervous about speaking in public."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nhượng bộ; present perfect + for nói thời gian kéo dài đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nhượng bộ; present perfect + for nói thời gian kéo dài đến hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3589,13 +3945,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u06-006",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Người học viên đã nộp bài sớm sẽ nhận phản hồi nếu giáo viên có thời gian.",
   "referenceAnswers": [
    "The student who submitted the assignment early will receive feedback if the teacher has time."
@@ -3605,7 +3964,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who xác định học viên; if chỉ điều kiện phản hồi, không bảo đảm chắc chắn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who xác định học viên; if chỉ điều kiện phản hồi, không bảo đảm chắc chắn. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3617,13 +3976,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "feedback",
+  "meaningVi": "phản hồi / góp ý"
  },
  {
   "id": "esl-v2-r09-u06-007",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Nhờ phần mềm mà nhóm mới cài đặt, thời gian xử lý đã giảm.",
   "referenceAnswers": [
    "Thanks to the software that the team recently installed, processing time has decreased."
@@ -3633,7 +3995,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: thanks to cụm danh từ nguyên nhân tích cực; that chỉ đúng phần mềm đã cài. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "thanks to cụm danh từ nguyên nhân tích cực; that chỉ đúng phần mềm đã cài. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3645,23 +4007,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-008",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi sẽ không tham gia buổi họp nếu chưa đọc bản kế hoạch mà bạn gửi.",
   "referenceAnswers": [
-   "I will not attend the meeting unless I have read the plan that you sent."
+   "I will not attend the meeting unless I have read the plan that you sent.",
+   "I will not attend the meeting unless I've read the plan that you sent.",
+   "I'll not attend the meeting unless I have read the plan that you sent.",
+   "I won't attend the meeting unless I have read the plan that you sent."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: unless nêu điều kiện cần; have read trước thời điểm tham gia; that you sent xác định bản kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "unless nêu điều kiện cần; have read trước thời điểm tham gia; that you sent xác định bản kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3673,23 +4039,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-009",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù ứng dụng có nhiều tính năng, tôi chỉ dùng những tính năng giúp tiết kiệm thời gian.",
   "referenceAnswers": [
-   "Although the app has many features, I only use the ones that save time."
+   "Although the app has many features, I only use the ones that save time.",
+   "Even though the app has many features, I only use the ones that save time."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nêu tương phản; that save bổ nghĩa cho the ones. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although nêu tương phản; that save bổ nghĩa cho the ones. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3701,23 +4069,28 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r09-u06-010",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Nếu dữ liệu mà chúng tôi thu thập không đáng tin cậy, nhóm sẽ không công bố kết quả.",
   "referenceAnswers": [
-   "If the data that we collected are not reliable, the team will not publish the results."
+   "If the data that we collected are not reliable, the team will not publish the results.",
+   "If the data that we collected are not reliable, the team won't publish the results.",
+   "If the data that we collected aren't reliable, the team will not publish the results."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if đặt điều kiện chất lượng dữ liệu; that we collected bổ nghĩa cho data. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "if đặt điều kiện chất lượng dữ liệu; that we collected bổ nghĩa cho data. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3729,13 +4102,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "reliable",
+  "meaningVi": "đáng tin cậy"
  },
  {
   "id": "esl-v2-r09-u06-011",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những người đã đăng ký trước sẽ được vào trước, miễn là họ mang theo giấy tờ tùy thân.",
   "referenceAnswers": [
    "People who have registered in advance will be admitted first as long as they bring identification."
@@ -3745,7 +4121,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: who have registered chỉ nhóm người; as long as đặt điều kiện kiểm tra giấy tờ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "who have registered chỉ nhóm người; as long as đặt điều kiện kiểm tra giấy tờ. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3757,23 +4133,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-012",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Dù khách sạn mà chúng tôi đặt phòng khá xa, chúng tôi vẫn chọn nó vì giá hợp lý.",
   "referenceAnswers": [
-   "Although the hotel that we booked is quite far away, we still chose it because the price was reasonable."
+   "Although the hotel that we booked is quite far away, we still chose it because the price was reasonable.",
+   "Even though the hotel that we booked is quite far away, we still chose it because the price was reasonable."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that bổ nghĩa hotel; although nhượng bộ, because giải thích quyết định. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that bổ nghĩa hotel; although nhượng bộ, because giải thích quyết định. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3785,13 +4163,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "hotel",
+  "meaningVi": "khách sạn"
  },
  {
   "id": "esl-v2-r09-u06-013",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Việc sửa chữa đã kéo dài hơn dự kiến, vì vậy con đường mà học sinh thường đi vẫn bị đóng.",
   "referenceAnswers": [
    "The repairs have taken longer than expected, so the road that students usually use is still closed."
@@ -3801,7 +4182,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have taken + comparison; so hệ quả; that xác định con đường. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "have taken + comparison; so hệ quả; that xác định con đường. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3813,23 +4194,28 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r09-u06-014",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi không thể trả lời câu hỏi mà bạn vừa gửi vì tôi chưa đọc phần tài liệu liên quan.",
   "referenceAnswers": [
-   "I cannot answer the question that you have just sent because I have not read the relevant section."
+   "I cannot answer the question that you have just sent because I have not read the relevant section.",
+   "I cannot answer the question that you have just sent because I've not read the relevant section.",
+   "I can't answer the question that you have just sent because I have not read the relevant section."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: that bổ nghĩa question; hai present perfect liên kết kết quả hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "that bổ nghĩa question; hai present perfect liên kết kết quả hiện tại. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3841,13 +4227,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-015",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu người quản lý mà chúng tôi cần gặp chưa tới, chúng ta sẽ chờ ở quầy lễ tân.",
   "referenceAnswers": [
    "If the manager whom we need to meet has not arrived, we will wait at reception."
@@ -3857,7 +4244,7 @@
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: whom bổ nghĩa manager; has not arrived kết quả hiện tại, if điều kiện kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "whom bổ nghĩa manager; has not arrived kết quả hiện tại, if điều kiện kế hoạch. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3869,23 +4256,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc"
  },
  {
   "id": "esl-v2-r09-u06-016",
   "practiceLevel": "4.5",
   "type": "sentence",
-  "topic": "Luyện câu đa cấu trúc",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Dù đã nhận nhiều phản hồi tích cực, nhóm vẫn sẽ sửa những phần mà người dùng thấy khó hiểu.",
   "referenceAnswers": [
-   "Although the team has received a lot of positive feedback, it will still revise the sections that users find confusing."
+   "Although the team has received a lot of positive feedback, it will still revise the sections that users find confusing.",
+   "Even though the team has received a lot of positive feedback, it will still revise the sections that users find confusing."
   ],
   "grammarTags": [
    "r09_u06",
    "complex_sentences",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although đối lập; will revise dự kiến; that xác định sections cần sửa. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
+  "explanationVi": "although đối lập; will revise dự kiến; that xác định sections cần sửa. Tự soát: đúng chủ thể, mốc thời gian, thì, quan hệ logic, đại từ quan hệ và dấu câu chưa? Các cách dịch tự nhiên khác có thể được chấp nhận.",
   "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài bổ sung từ bộ ESL v2 (R09-U06), chủ đề Luyện câu đa cấu trúc.",
   "commonErrors": [
    {
@@ -3897,6 +4286,9 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Luyện câu đa cấu trúc",
+  "targetTerm": "feedback",
+  "meaningVi": "phản hồi / góp ý"
  }
 ]

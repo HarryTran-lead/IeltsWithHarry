@@ -48,6 +48,8 @@ function visitTitle(path: string) {
     "/app/grammar": "Luyện ngữ pháp", "/app/reading": "Luyện Reading",
     "/app/listening": "Luyện Listening", "/app/writing": "Luyện Writing",
     "/app/speaking": "Luyện Speaking", "/app/content-lab": "Thử Content Lab",
+    "/app/practice/translation": "Luyện diễn đạt",
+    "/app/vocabulary/translation": "Dịch câu theo chủ đề",
   };
   return titles[path] ?? "";
 }

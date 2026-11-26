@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -12,6 +13,10 @@ import { HarryMascot } from "@/components/illustrations/harry";
 import { communityEnabled, lockedLearnerPath } from "@/lib/runtime";
 import "./guest-portal.css";
 
+const GuestTranslationTrial = dynamic(
+  () => import("@/features/practice/translation-workspace").then((mod) => mod.TranslationWorkspace),
+);
+
 const sections = [
   { label: "Khám phá", items: [
     { slug: "dashboard", name: "Dashboard", icon: LayoutDashboard, description: "Tổng quan lộ trình, bài học tiếp theo và hoạt động trong ngày.", features: ["Lộ trình theo trình độ", "Gợi ý bài học tiếp theo", "Mục tiêu mỗi ngày"] },
@@ -20,6 +25,7 @@ const sections = [
   ] },
   { label: "Kỹ năng IELTS", items: [
     { slug: "vocabulary", name: "Vocabulary", icon: Languages, description: "Học từ theo chủ đề và ôn lại những từ đã gặp.", features: ["Học theo topic & level", "Thẻ từ vựng", "Dịch câu theo chủ đề"] },
+    { slug: "practice/translation", name: "Luyện diễn đạt", icon: PenLine, description: "Nghĩ tiếng Việt, diễn đạt sang tiếng Anh qua 17 band luyện tập.", features: ["Ghép khối cụm từ & tự viết", "Lọc theo 12 chủ đề IELTS", "Thử miễn phí 3 câu ngay trên trình duyệt"] },
     { slug: "grammar", name: "Grammar", icon: SpellCheck, description: "Xây nền ngữ pháp và luyện dùng cấu trúc trong câu.", features: ["Lộ trình ngữ pháp", "Bài luyện theo cấp độ", "Ôn tập lỗi sai"] },
     { slug: "reading", name: "Reading", icon: BookOpenText, description: "Luyện đọc theo passage và các dạng câu hỏi IELTS.", features: ["Bài đọc theo dạng", "Luyện từng passage", "Full test"] },
     { slug: "listening", name: "Listening", icon: Headphones, description: "Luyện nghe từng section hoặc một đề hoàn chỉnh.", features: ["Bài nghe theo section", "Full test", "Video luyện nghe"] },
@@ -42,10 +48,11 @@ const allItems = sections.flatMap((section) => section.items);
 export function GuestPortal() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const slug = pathname.split("/")[2] || "dashboard";
+  const slug = pathname.startsWith("/app/practice/translation") ? "practice/translation" : (pathname.split("/")[2] || "dashboard");
   const item = allItems.find((entry) => entry.slug === slug);
   const locked = lockedLearnerPath(`/app/${slug}`);
-  const isPreview = Boolean(item) && !locked && (pathname === `/app/${slug}` || pathname === "/app");
+  const isTranslationTrial = slug === "practice/translation" && !locked;
+  const isPreview = Boolean(item) && !locked && !isTranslationTrial && (pathname === `/app/${slug}` || pathname === "/app");
   const loginHref = `/login?next=${encodeURIComponent(pathname)}`;
 
   return <div className="guest-portal">
@@ -67,7 +74,7 @@ export function GuestPortal() {
     </aside>
     {menuOpen && <button className="guest-portal-backdrop" type="button" aria-label="Đóng menu" onClick={() => setMenuOpen(false)} />}
     <main className="guest-portal-main">
-      {isPreview && item ? <>
+      {isTranslationTrial ? <GuestTranslationTrial guestTrial /> : isPreview && item ? <>
         <div className="guest-portal-intro"><span>XEM TRƯỚC STUDENT PORTAL</span><h1>{item.name}</h1><p>{item.description}</p></div>
         <section className="guest-portal-banner"><div><span>KHÁM PHÁ TỰ DO</span><h2>Xem trước không gian học của bạn</h2><p>Bạn có thể xem các mục trong portal. Đăng nhập khi muốn mở bài học hoặc thực hiện hoạt động học tập.</p><Link className="button primary" href={loginHref}>Đăng nhập để bắt đầu <ArrowRight size={16} /></Link></div><HarryMascot size={120} /></section>
         {slug === "dashboard" ? <section className="guest-portal-card"><h2>Khám phá lộ trình</h2><p>Chọn một khu vực để xem bạn có thể học gì sau khi đăng nhập.</p><div className="guest-portal-quicklinks">{["learn", "vocabulary", "grammar", "reading", "listening", "writing", "speaking"].filter((key) => !lockedLearnerPath(`/app/${key}`)).map((key) => { const entry = allItems.find((value) => value.slug === key)!; return <Link key={key} href={`/app/${key}`}><entry.icon size={22} /><strong>{entry.name}</strong><ArrowRight size={16} /></Link>; })}</div></section> : <section className="guest-portal-card"><h2>Trong mục này</h2><div className="guest-portal-features">{item.features.map((feature, index) => <div key={feature}><span>0{index + 1}</span><strong>{feature}</strong><p>{index === 0 ? "Xem trước nội dung và cách học trong portal." : "Đăng nhập để mở và lưu hoạt động của bạn."}</p></div>)}</div>{slug === "learn" && <Link className="guest-portal-public-link" href="/courses">Xem khóa học công khai <ArrowRight size={16} /></Link>}</section>}

@@ -3,7 +3,7 @@
   "id": "band-5.5-028",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "prevent",
   "meaningVi": "phòng ngừa",
   "promptVi": "Tập thể dục thường xuyên có thể giúp phòng ngừa một số bệnh mãn tính.",
@@ -25,7 +25,7 @@
   "id": "band-5.5-029",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "traffic congestion",
   "meaningVi": "ùn tắc giao thông",
   "promptVi": "Ùn tắc giao thông nghiêm trọng hơn khi nhiều người lái xe một mình.",
@@ -47,7 +47,7 @@
   "id": "band-5.5-030",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "practical skills",
   "meaningVi": "kỹ năng thực tế",
   "promptVi": "Trường học nên dạy thêm kỹ năng thực tế bên cạnh kiến thức học thuật.",
@@ -58,7 +58,13 @@
    "alongside-phrase"
   ],
   "explanationVi": "Alongside nối kỹ năng thực tế với kiến thức học thuật.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Schools should to teach more practical skills alongside academic knowledge.",
+    "correction": "Schools should teach more practical skills alongside academic knowledge.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should teach)."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -69,19 +75,26 @@
   "id": "band-5.5-cal-01",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "online classes",
   "meaningVi": "lớp học trực tuyến",
   "promptVi": "Dù lớp học trực tuyến tiết kiệm thời gian đi lại, một số học sinh khó tập trung ở nhà.",
   "referenceAnswers": [
-   "Although online classes save travel time, some students find it hard to concentrate at home."
+   "Although online classes save travel time, some students find it hard to concentrate at home.",
+   "Even though online classes save travel time, some students find it hard to concentrate at home."
   ],
   "grammarTags": [
    "concession"
   ],
   "explanationVi": "Although nêu lợi ích trước khi chỉ ra hạn chế cụ thể.",
   "rationaleVi": "Cân bằng hai mặt của cùng một lựa chọn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although online classes save travel time, but some students find it hard to concentrate at home.",
+    "correction": "Although online classes save travel time, some students find it hard to concentrate at home.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -91,7 +104,7 @@
   "id": "band-5.5-cal-02",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "safe bike lanes",
   "meaningVi": "làn xe đạp an toàn",
   "promptVi": "Đạp xe đi làm tốt cho sức khỏe, nhưng sẽ kém thực tế ở thành phố thiếu làn xe đạp an toàn.",
@@ -113,19 +126,26 @@
   "id": "band-5.5-exp-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reduce carbon emissions",
   "meaningVi": "giảm lượng khí thải carbon",
   "promptVi": "Mặc dù năng lượng mặt trời giúp giảm lượng khí thải carbon, hiệu quả của nó vẫn bị hạn chế ở những khu vực có thời tiết thường xuyên âm u.",
   "referenceAnswers": [
-   "Although solar energy helps to reduce carbon emissions, its effectiveness remains limited in regions with frequently cloudy weather."
+   "Although solar energy helps to reduce carbon emissions, its effectiveness remains limited in regions with frequently cloudy weather.",
+   "Even though solar energy helps to reduce carbon emissions, its effectiveness remains limited in regions with frequently cloudy weather."
   ],
   "grammarTags": [
    "concession clause"
   ],
   "explanationVi": "Mệnh đề 'Although...' mở đầu để tạo sự nhượng bộ giữa lợi ích môi trường và giới hạn về mặt thời tiết.",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ và điều kiện thực tế (thời tiết âm u) phù hợp với tiêu chí so sánh 2 mặt có giới hạn ở mức IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although solar energy helps to reduce carbon emissions, but its effectiveness remains limited in regions with frequently cloudy weather.",
+    "correction": "Although solar energy helps to reduce carbon emissions, its effectiveness remains limited in regions with frequently cloudy weather.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -135,7 +155,7 @@
   "id": "band-5.5-exp-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "unstable income",
   "meaningVi": "thu nhập không ổn định",
   "promptVi": "Trong khi làm việc tự do mang lại thời gian linh hoạt, hình thức này có thể dẫn đến thu nhập không ổn định nếu thiếu nguồn khách hàng thường xuyên.",
@@ -147,7 +167,13 @@
   ],
   "explanationVi": "Sử dụng 'While' ở đầu câu để so sánh ưu điểm (thời gian linh hoạt) với nhược điểm có giới hạn bởi điều kiện ('without a regular client base').",
   "rationaleVi": "Sử dụng từ nối nhượng bộ 'While' cùng kết hợp từ 'unstable income' thể hiện khả năng lập luận hai mặt có điều kiện đi kèm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While freelancing offers flexible hours, it can to lead to an unstable income without a regular client base.",
+    "correction": "While freelancing offers flexible hours, it can lead to an unstable income without a regular client base.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can lead)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -157,7 +183,7 @@
   "id": "band-5.5-exp-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "inconvenient",
   "meaningVi": "bất tiện",
   "promptVi": "Các căn hộ nhỏ phù hợp với người trẻ đi làm, song chúng có thể trở nên bất tiện một khi quy mô gia đình tăng lên.",
@@ -169,7 +195,13 @@
   ],
   "explanationVi": "Dùng 'yet' nối hai mệnh đề độc lập để nêu bật sự đối lập giữa tính phù hợp ban đầu và sự bất tiện khi hoàn cảnh thay đổi.",
   "rationaleVi": "Mức 5.5 yêu cầu nêu giới hạn của nhận định ('once family size increases') bằng câu ghép tương phản tự nhiên.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Compact flats are suitable for young professionals, yet they can to become inconvenient once family size increases.",
+    "correction": "Compact flats are suitable for young professionals, yet they can become inconvenient once family size increases.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can become)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -179,19 +211,26 @@
   "id": "band-5.5-exp-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "boost the local economy",
   "meaningVi": "thúc đẩy kinh tế địa phương",
   "promptVi": "Dù du lịch đại chúng có thể thúc đẩy kinh tế địa phương, hoạt động này chỉ bền vững với điều kiện chính quyền địa phương quản lý rác thải nghiêm ngặt.",
   "referenceAnswers": [
-   "Even though mass tourism can boost the local economy, it is only sustainable provided that local authorities strictly manage waste."
+   "Even though mass tourism can boost the local economy, it is only sustainable provided that local authorities strictly manage waste.",
+   "Although mass tourism can boost the local economy, it is only sustainable provided that local authorities strictly manage waste."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Kết hợp 'Even though' để nhượng bộ và 'provided that' để đặt điều kiện cho sự bền vững của du lịch.",
   "rationaleVi": "Cấu trúc điều kiện ràng buộc kết hợp với mệnh đề nhượng bộ thể hiện chính xác tư duy phản biện ở băng điểm 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though mass tourism can to boost the local economy, it is only sustainable provided that local authorities strictly manage waste.",
+    "correction": "Even though mass tourism can boost the local economy, it is only sustainable provided that local authorities strictly manage waste.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can boost)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -201,7 +240,7 @@
   "id": "band-5.5-exp-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "job prospects",
   "meaningVi": "cơ hội việc làm",
   "promptVi": "Học đại học giúp mở rộng cơ hội việc làm; tuy nhiên, hướng đi này có thể kém hiệu quả đối với những sinh viên thiếu mục tiêu rõ ràng.",
@@ -223,7 +262,7 @@
   "id": "band-5.5-exp-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "cardiovascular diseases",
   "meaningVi": "bệnh tim mạch",
   "promptVi": "Bất chấp sự tiện lợi của đồ ăn nhanh cho người bận rộn, việc tiêu thụ quá mức làm tăng nguy cơ mắc các bệnh tim mạch.",
@@ -245,7 +284,7 @@
   "id": "band-5.5-exp-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "face-to-face interaction",
   "meaningVi": "tương tác trực tiếp",
   "promptVi": "Mạng xã hội giúp duy trì liên lạc dễ dàng hơn, ngoại trừ trường hợp nó làm giảm tương tác trực tiếp giữa bạn bè thân thiết.",
@@ -267,7 +306,7 @@
   "id": "band-5.5-exp-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "cultural understanding",
   "meaningVi": "sự hiểu biết văn hóa",
   "promptVi": "Mặc dù việc học ngoại ngữ thúc đẩy sự hiểu biết văn hóa, thành công của nó phụ thuộc phần lớn vào cơ hội thực hành thực tế.",
@@ -289,7 +328,7 @@
   "id": "band-5.5-exp-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "public transport",
   "meaningVi": "phương tiện công cộng",
   "promptVi": "Miễn phí vé xe buýt có thể khuyến khích sử dụng phương tiện công cộng, nhưng chính sách này chỉ hiệu quả nếu xe chạy đúng giờ.",
@@ -301,7 +340,13 @@
   ],
   "explanationVi": "Liên từ 'but' kết hợp với điều kiện 'only if' ở cuối câu để làm rõ giới hạn thành công của chính sách.",
   "rationaleVi": "Mệnh đề điều kiện 'only if' giúp giới hạn nhận định mang tính lý thuyết, đáp ứng tiêu chí bài tập đưa ra điều kiện ở mức 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Offering free bus fares might to encourage the use of public transport, but this policy is effective only if buses run on time.",
+    "correction": "Offering free bus fares might encourage the use of public transport, but this policy is effective only if buses run on time.",
+    "reasonVi": "Sau động từ khuyết thiếu 'might' dùng động từ nguyên mẫu không có 'to' (might encourage)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -311,7 +356,7 @@
   "id": "band-5.5-exp-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "poor-quality goods",
   "meaningVi": "hàng kém chất lượng",
   "promptVi": "Mua sắm trực tuyến tiết kiệm thời gian cho người tiêu dùng, mặc dù rủi ro mua phải hàng kém chất lượng vẫn là một mối lo ngại.",
@@ -333,19 +378,26 @@
   "id": "band-5.5-exp-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "protective equipment",
   "meaningVi": "thiết bị bảo hộ",
   "promptVi": "Mặc dù các môn thể thao mạo hiểm mang lại trải nghiệm hồi hộp, người tham gia cần có thiết bị bảo hộ phù hợp để giảm thiểu nguy cơ mất an toàn.",
   "referenceAnswers": [
-   "Although extreme sports provide thrilling experiences, participants need proper protective equipment to minimise safety hazards."
+   "Although extreme sports provide thrilling experiences, participants need proper protective equipment to minimise safety hazards.",
+   "Even though extreme sports provide thrilling experiences, participants need proper protective equipment to minimise safety hazards."
   ],
   "grammarTags": [
    "concession and requirement"
   ],
   "explanationVi": "Mệnh đề 'Although' đứng đầu câu nêu lợi ích cảm xúc, vế sau làm rõ yêu cầu trang bị để đảm bảo an toàn.",
   "rationaleVi": "Dùng kết hợp từ 'protective equipment' và chính tả Anh-Anh 'minimise' giúp thể hiện đúng định hướng phong cách British English 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although extreme sports provide thrilling experiences, but participants need proper protective equipment to minimise safety hazards.",
+    "correction": "Although extreme sports provide thrilling experiences, participants need proper protective equipment to minimise safety hazards.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -355,7 +407,7 @@
   "id": "band-5.5-exp-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "household chores",
   "meaningVi": "công việc nhà",
   "promptVi": "Sống nhiều thế hệ giúp chia sẻ công việc nhà, dù phải chấp nhận rủi ro phát sinh mâu thuẫn do quan điểm sống khác nhau.",
@@ -377,19 +429,26 @@
   "id": "band-5.5-exp-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "prove highly effective",
   "meaningVi": "mang lại hiệu quả cao",
   "promptVi": "Dù trí tuệ nhân tạo có thể tự động hóa nhiều công việc văn phòng, ứng dụng này chỉ mang lại hiệu quả cao nếu dữ liệu đầu vào được kiểm soát chặt chẽ.",
   "referenceAnswers": [
-   "Although artificial intelligence can automate many office tasks, this application will only prove highly effective if the input data is strictly controlled."
+   "Although artificial intelligence can automate many office tasks, this application will only prove highly effective if the input data is strictly controlled.",
+   "Even though artificial intelligence can automate many office tasks, this application will only prove highly effective if the input data is strictly controlled."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Dùng 'Although' đứng đầu câu để chỉ sự nhượng bộ, kết hợp với mệnh đề điều kiện 'if' ở cuối nhằm đưa ra giới hạn cho tính hiệu quả của trí tuệ nhân tạo.",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ và điều kiện để giới hạn phạm vi đúng đắn của nhận định, phù hợp với tiêu chí IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although artificial intelligence can to automate many office tasks, this application will only prove highly effective if the input data is strictly controlled.",
+    "correction": "Although artificial intelligence can automate many office tasks, this application will only prove highly effective if the input data is strictly controlled.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can automate)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -399,7 +458,7 @@
   "id": "band-5.5-exp-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "have limited impact",
   "meaningVi": "có tác động hạn chế",
   "promptVi": "Việc mở rộng các khu công viên xanh giúp cải thiện chất lượng không khí, song giải pháp này có tác động hạn chế ở những đô thị có mật độ xây dựng quá cao.",
@@ -411,7 +470,13 @@
   ],
   "explanationVi": "Sử dụng liên từ 'yet' ở giữa câu để nối hai vế đối lập và cụm kết hợp từ 'have limited impact' để giới hạn phạm vi tác động của chính sách.",
   "rationaleVi": "Mô hình so sánh hai mặt của một giải pháp đô thị cùng với điều kiện áp dụng cụ thể đáp ứng đúng mức độ phức tạp của chuẩn 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Expanding green park areas helps improve air quality, yet this measure may to have limited impact in cities with excessively high building density.",
+    "correction": "Expanding green park areas helps improve air quality, yet this measure may have limited impact in cities with excessively high building density.",
+    "reasonVi": "Sau động từ khuyết thiếu 'may' dùng động từ nguyên mẫu không có 'to' (may have)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -421,7 +486,7 @@
   "id": "band-5.5-exp-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "broaden students' horizons",
   "meaningVi": "mở rộng tầm mắt của sinh viên",
   "promptVi": "Trong khi việc du học giúp mở rộng tầm mắt của sinh viên, trải nghiệm này chỉ thực sự có lợi với điều kiện họ chủ động hòa nhập vào cộng đồng địa phương.",
@@ -443,7 +508,7 @@
   "id": "band-5.5-exp-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "cardiovascular health",
   "meaningVi": "sức khỏe tim mạch",
   "promptVi": "Chế độ ăn chay có thể mang lại nhiều lợi ích cho sức khỏe tim mạch, ngoại trừ trường hợp người thực hiện không bổ sung đầy đủ các vi chất cần thiết.",
@@ -455,7 +520,13 @@
   ],
   "explanationVi": "Vế chính nêu lợi ích sức khỏe, được nối với vế loại trừ bằng 'except where' nhằm giới hạn điều kiện áp dụng thực tế.",
   "rationaleVi": "Nêu một ngoại lệ cụ thể cho nhận định chung là cách lập luận có giới hạn đặc trưng của trình độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A vegetarian diet can to offer numerous benefits for cardiovascular health, except where individuals fail to supplement essential micronutrients adequately.",
+    "correction": "A vegetarian diet can offer numerous benefits for cardiovascular health, except where individuals fail to supplement essential micronutrients adequately.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can offer)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -465,19 +536,26 @@
   "id": "band-5.5-exp-017",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "economically viable",
   "meaningVi": "hiệu quả về mặt kinh tế",
   "promptVi": "Dù năng lượng gió là nguồn điện sạch đầy triển vọng, việc đầu tư trang trại gió chỉ hiệu quả về mặt kinh tế với điều kiện chi phí bảo trì được kiểm soát tốt.",
   "referenceAnswers": [
-   "Even though wind energy is a promising source of clean power, investing in wind farms is only economically viable on condition that maintenance costs are well controlled."
+   "Even though wind energy is a promising source of clean power, investing in wind farms is only economically viable on condition that maintenance costs are well controlled.",
+   "Although wind energy is a promising source of clean power, investing in wind farms is only economically viable on condition that maintenance costs are well controlled."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Đầu câu dùng 'Even though' thể hiện nhượng bộ, vế sau dùng cụm 'on condition that' để đưa ra ràng buộc về khía cạnh tài chính.",
   "rationaleVi": "Kết hợp nhượng bộ và điều kiện ràng buộc tài chính thể hiện cách nhìn hai chiều có mức độ kiểm soát ngôn ngữ phù hợp 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though wind energy is a promising source of clean power, but investing in wind farms is only economically viable on condition that maintenance costs are well controlled.",
+    "correction": "Even though wind energy is a promising source of clean power, investing in wind farms is only economically viable on condition that maintenance costs are well controlled.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -487,7 +565,7 @@
   "id": "band-5.5-exp-018",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "work-life balance",
   "meaningVi": "sự cân bằng cuộc sống và công việc",
   "promptVi": "Bất chấp việc làm việc tại nhà thúc đẩy sự cân bằng cuộc sống và công việc, mô hình này dễ làm giảm năng suất trừ khi công ty duy trì hệ thống đánh giá rõ ràng.",
@@ -509,7 +587,7 @@
   "id": "band-5.5-exp-019",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "cultural heritage",
   "meaningVi": "di sản văn hóa",
   "promptVi": "Mặc dù việc số hóa di sản văn hóa giúp công chúng dễ tiếp cận hơn, giải pháp này khó thay thế trải nghiệm thực tế khi thiếu sự tương tác trực tiếp.",
@@ -521,7 +599,13 @@
   ],
   "explanationVi": "Liên từ nhượng bộ 'Whilst' (Anh - Anh) đứng đầu câu, vế sau dùng cụm giới từ 'in the absence of' để chỉ điều kiện hạn chế.",
   "rationaleVi": "Cách diễn đạt chuẩn Anh - Anh kết hợp nhượng bộ và giới hạn bối cảnh rất phù hợp cho mục tiêu luyện thi IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Whilst digitalising cultural heritage makes it more accessible to the public, this solution can to hardly replace real-life experiences in the absence of direct interaction.",
+    "correction": "Whilst digitalising cultural heritage makes it more accessible to the public, this solution can hardly replace real-life experiences in the absence of direct interaction.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can hardly)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -531,7 +615,7 @@
   "id": "band-5.5-exp-020",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "foreign direct investment",
   "meaningVi": "vốn đầu tư trực tiếp nước ngoài",
   "promptVi": "Bất chấp những ưu điểm rõ rệt của việc thu hút vốn đầu tư trực tiếp nước ngoài, sự tăng trưởng này chỉ bền vững khi doanh nghiệp nội địa đủ sức cạnh tranh.",
@@ -553,7 +637,7 @@
   "id": "band-5.5-exp-021",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "alleviate traffic pressure",
   "meaningVi": "giảm áp lực giao thông",
   "promptVi": "Các hệ thống tàu điện ngầm có thể giảm áp lực giao thông, mặc dù các dự án này đòi hỏi vốn đầu tư khổng lồ và chỉ đạt hiệu quả tối đa trên các tuyến đường đông đúc.",
@@ -565,7 +649,13 @@
   ],
   "explanationVi": "Mệnh đề chính đứng trước, mệnh đề nhượng bộ chứa 'although' đứng sau kèm điều kiện giới hạn 'only... on heavily used routes', dùng 'Underground railways' chuẩn Anh - Anh.",
   "rationaleVi": "Đảo vị trí mệnh đề nhượng bộ xuống cuối câu giúp đa dạng hóa cấu trúc ngữ pháp ở cấp độ IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Underground railways can to alleviate traffic pressure, although such projects require massive capital investment and only reach maximum efficiency on heavily used routes.",
+    "correction": "Underground railways can alleviate traffic pressure, although such projects require massive capital investment and only reach maximum efficiency on heavily used routes.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can alleviate)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -575,7 +665,7 @@
   "id": "band-5.5-exp-022",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "nghiên cứu",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "clinical trials",
   "meaningVi": "thử nghiệm lâm sàng",
   "promptVi": "Các cuộc thử nghiệm lâm sàng giúp xác minh hiệu quả của thuốc mới, dẫu cho kết quả nghiên cứu vẫn có độ tin cậy hạn chế nếu quy mô mẫu thử quá nhỏ.",
@@ -587,7 +677,13 @@
   ],
   "explanationVi": "Mở đầu bằng mệnh đề khẳng định, nối với mệnh đề phản biện qua 'though' và mệnh đề điều kiện 'if' để chỉ hạn chế về mặt thực nghiệm.",
   "rationaleVi": "Sử dụng 'though' làm liên từ nối giữa câu kèm điều kiện 'if' thể hiện lập luận khoa học có giới hạn ở mức 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Clinical trials help verify the effectiveness of new drugs, though researchs findings still have limited reliability if the sample size is too small.",
+    "correction": "Clinical trials help verify the effectiveness of new drugs, though research findings still have limited reliability if the sample size is too small.",
+    "reasonVi": "'Research' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -597,7 +693,7 @@
   "id": "band-5.5-exp-023",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "organic food",
   "meaningVi": "thực phẩm hữu cơ",
   "promptVi": "Thực phẩm hữu cơ chứa ít dư lượng hóa chất hơn, nhưng người tiêu dùng chỉ thực sự được hưởng lợi nếu quy trình chứng nhận nguồn gốc giữ được tính minh bạch.",
@@ -619,7 +715,7 @@
   "id": "band-5.5-exp-024",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "prove counterproductive",
   "meaningVi": "phản tác dụng",
   "promptVi": "Việc tăng thuế hàng hóa xa xỉ có thể giúp bổ sung ngân sách quốc gia, mặc dù chính sách này có thể phản tác dụng một khi dẫn đến tình trạng buôn lậu gia tăng.",
@@ -641,19 +737,26 @@
   "id": "band-5.5-exp-025",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "double-edged sword",
   "meaningVi": "con dao hai lưỡi",
   "promptVi": "Mặc dù tự động hóa giúp tăng năng suất sản xuất, công nghệ này vẫn được coi là con dao hai lưỡi khi nó làm tăng nguy cơ thất nghiệp cho lao động phổ thông.",
   "referenceAnswers": [
-   "Although automation boosts manufacturing productivity, this technology remains a double-edged sword as it increases the risk of unemployment for low-skilled workers."
+   "Although automation boosts manufacturing productivity, this technology remains a double-edged sword as it increases the risk of unemployment for low-skilled workers.",
+   "Even though automation boosts manufacturing productivity, this technology remains a double-edged sword as it increases the risk of unemployment for low-skilled workers."
   ],
   "grammarTags": [
    "Concession with dual-nature idiom"
   ],
   "explanationVi": "Cụm từ 'double-edged sword' thể hiện tính hai mặt của việc ứng dụng công nghệ tự động hóa.",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ 'Although' với một kết hợp từ tự nhiên để phân tích hai khía cạnh trái ngược ở mức độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although automation boosts manufacturing productivity, but this technology remains a double-edged sword as it increases the risk of unemployment for low-skilled workers.",
+    "correction": "Although automation boosts manufacturing productivity, this technology remains a double-edged sword as it increases the risk of unemployment for low-skilled workers.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -663,7 +766,7 @@
   "id": "band-5.5-exp-026",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "environmental trade-off",
   "meaningVi": "sự đánh đổi về môi trường",
   "promptVi": "Dù các nhà máy thuỷ điện cung cấp nguồn điện dồi dào, dự án xây đập thường đòi hỏi sự đánh đổi về môi trường do gây tổn hại đến hệ sinh thái sông.",
@@ -675,7 +778,13 @@
   ],
   "explanationVi": "Cụm từ 'environmental trade-off' diễn tả sự đánh đổi giữa lợi ích năng lượng và tổn hại sinh thái.",
   "rationaleVi": "Sử dụng 'While' để nêu sự nhượng bộ kèm theo sự bảo lưu đánh giá phù hợp tiêu chí IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While hydroelectric plants provide abundant electricity, dam construction often involves an environmental trade-off by damag river ecosystems.",
+    "correction": "While hydroelectric plants provide abundant electricity, dam construction often involves an environmental trade-off by damaging river ecosystems.",
+    "reasonVi": "Sau giới từ 'by' động từ phải chia ở dạng V-ing (by damaging)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -685,7 +794,7 @@
   "id": "band-5.5-exp-027",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "mixed blessing",
   "meaningVi": "trải nghiệm vừa tốt vừa xấu",
   "promptVi": "Việc mở rộng các khu đô thị vệ tinh mang lại chỗ ở giá rẻ hơn, dẫu cho xu hướng này là một trải nghiệm vừa tốt vừa xấu vì làm kéo dài thời gian di chuyển hàng ngày của người dân.",
@@ -707,19 +816,26 @@
   "id": "band-5.5-exp-028",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "inherent risk",
   "meaningVi": "rủi ro vốn có",
   "promptVi": "Mặc dù việc ăn kiêng nghiêm ngặt giúp giảm cân nhanh chóng, phương pháp này chứa đựng rủi ro vốn có trừ khi có sự giám sát của chuyên gia dinh dưỡng.",
   "referenceAnswers": [
-   "Although strict dieting promotes rapid weight loss, this method carries an inherent risk unless supervised by a qualified nutritionist."
+   "Although strict dieting promotes rapid weight loss, this method carries an inherent risk unless supervised by a qualified nutritionist.",
+   "Even though strict dieting promotes rapid weight loss, this method carries an inherent risk unless supervised by a qualified nutritionist."
   ],
   "grammarTags": [
    "Concession with conditional limitation"
   ],
   "explanationVi": "'Inherent risk' chỉ rủi ro tiềm ẩn không thể tách rời của việc ăn kiêng ép cân.",
   "rationaleVi": "Đặt điều kiện giới hạn 'unless' cho một nhận định nhượng bộ là cấu trúc lập luận đặc trưng của mức 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although strict dieting promotes rapid weight loss, but this method carries an inherent risk unless supervised by a qualified nutritionist.",
+    "correction": "Although strict dieting promotes rapid weight loss, this method carries an inherent risk unless supervised by a qualified nutritionist.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -729,7 +845,7 @@
   "id": "band-5.5-exp-029",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "cultural preservation",
   "meaningVi": "việc bảo tồn văn hóa",
   "promptVi": "Dù du lịch di sản giúp gia tăng thu nhập cho người dân bản địa, việc bảo tồn văn hóa chỉ thực sự hiệu quả với điều kiện chính quyền địa phương giới hạn lượng khách tham quan mỗi ngày.",
@@ -751,7 +867,7 @@
   "id": "band-5.5-exp-030",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "financial burden",
   "meaningVi": "gánh nặng tài chính",
   "promptVi": "Bất chấp những lợi ích an sinh xã hội khi miễn phí chăm sóc y tế, chính sách này tạo ra gánh nặng tài chính lớn trừ khi được hỗ trợ đầy đủ từ doanh thu thuế thu nhập.",
@@ -773,7 +889,7 @@
   "id": "band-5.5-exp-031",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "competitive advantage",
   "meaningVi": "lợi thế cạnh tranh",
   "promptVi": "Việc đầu tư vào các trung tâm huấn luyện hiện đại tạo ra lợi thế cạnh tranh cho vận động viên, dẫu cho kết quả thi đấu vẫn phụ thuộc phần lớn vào tố chất cá nhân.",
@@ -795,7 +911,7 @@
   "id": "band-5.5-exp-032",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "nghiên cứu",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "empirical evidence",
   "meaningVi": "bằng chứng thực nghiệm",
   "promptVi": "Mặc dù các lý thuyết giáo dục mới nghe có vẻ thuyết phục, chúng đòi hỏi bằng chứng thực nghiệm rõ ràng trước khi được đưa vào giảng dạy đại trà.",
@@ -807,7 +923,13 @@
   ],
   "explanationVi": "'Empirical evidence' chỉ bằng chứng thu được từ quan sát thực tế để xác minh tính đúng đắn của lý thuyết.",
   "rationaleVi": "Phù hợp mức 5.5 nhờ việc dùng nhượng bộ để cân bằng giữa sự thuyết phục lý thuyết và yêu cầu bằng chứng thực tế.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While new educational theories sound convincing, they require clear empirical evidences before being implemented in mainstream teaching.",
+    "correction": "While new educational theories sound convincing, they require clear empirical evidence before being implemented in mainstream teaching.",
+    "reasonVi": "'Evidence' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -817,19 +939,26 @@
   "id": "band-5.5-exp-033",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "economic instability",
   "meaningVi": "sự mất ổn định kinh tế",
   "promptVi": "Mặc dù việc nới lỏng tín dụng thúc đẩy tiêu dùng ngắn hạn, chính sách này dễ gây ra sự mất ổn định kinh tế nếu các ngân hàng không kiểm soát tốt nợ xấu.",
   "referenceAnswers": [
-   "Although relaxing credit rules stimulates short-term consumption, this policy can easily cause economic instability if banks fail to control bad debts."
+   "Although relaxing credit rules stimulates short-term consumption, this policy can easily cause economic instability if banks fail to control bad debts.",
+   "Even though relaxing credit rules stimulates short-term consumption, this policy can easily cause economic instability if banks fail to control bad debts."
   ],
   "grammarTags": [
    "Concession combined with conditional cause"
   ],
   "explanationVi": "'Economic instability' diễn tả nguy cơ dài hạn đối lập với lợi ích kích cầu ngắn hạn.",
   "rationaleVi": "Thể hiện tư duy IELTS 5.5 bằng cách đối chiếu lợi ích ngắn hạn với nguy cơ dài hạn thông qua mệnh đề nhượng bộ và điều kiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although relaxing credit rules stimulates short-term consumption, this policy can to easily cause economic instability if banks fail to control bad debts.",
+    "correction": "Although relaxing credit rules stimulates short-term consumption, this policy can easily cause economic instability if banks fail to control bad debts.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -839,19 +968,26 @@
   "id": "band-5.5-exp-034",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "ecological footprint",
   "meaningVi": "dấu chân sinh thái",
   "promptVi": "Dù các khu nghỉ dưỡng sinh thái thu hút nhiều du khách yêu thiên nhiên, mô hình này vẫn để lại dấu chân sinh thái đáng kể nếu cơ sở hạ tầng phát triển quá mức.",
   "referenceAnswers": [
-   "Even though eco-resorts attract many nature lovers, this model still leaves a significant ecological footprint if infrastructure expands excessively."
+   "Even though eco-resorts attract many nature lovers, this model still leaves a significant ecological footprint if infrastructure expands excessively.",
+   "Although eco-resorts attract many nature lovers, this model still leaves a significant ecological footprint if infrastructure expands excessively."
   ],
   "grammarTags": [
    "Concession with environmental qualification"
   ],
   "explanationVi": "'Ecological footprint' ám chỉ tác động tiêu cực đến môi trường tự nhiên.",
   "rationaleVi": "Mức 5.5 yêu cầu người học biết giới hạn tính tích cực của một mô hình bằng điều kiện cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though eco-resorts attract many nature lovers, but this model still leaves a significant ecological footprint if infrastructure expands excessively.",
+    "correction": "Even though eco-resorts attract many nature lovers, this model still leaves a significant ecological footprint if infrastructure expands excessively.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -861,19 +997,26 @@
   "id": "band-5.5-exp-035",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "workplace efficiency",
   "meaningVi": "hiệu quả làm việc tại công sở",
   "promptVi": "Mặc dù cắt giảm giờ làm việc có thể cải thiện sức khỏe tinh thần của nhân viên, chính sách này chỉ nâng cao hiệu quả làm việc tại công sở với điều kiện quy trình vận hành được tối ưu hóa.",
   "referenceAnswers": [
-   "Although reducing working hours can improve employee mental health, this policy only enhances workplace efficiency on condition that operational processes are streamlined."
+   "Although reducing working hours can improve employee mental health, this policy only enhances workplace efficiency on condition that operational processes are streamlined.",
+   "Even though reducing working hours can improve employee mental health, this policy only enhances workplace efficiency on condition that operational processes are streamlined."
   ],
   "grammarTags": [
    "Concession with strict prerequisite"
   ],
   "explanationVi": "'Workplace efficiency' là chỉ số đo lường hiệu suất, đi kèm điều kiện ràng buộc 'on condition that'.",
   "rationaleVi": "Sử dụng 'on condition that' kết hợp nhượng bộ 'Although' giúp thể hiện mức độ lập luận chặt chẽ của band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although reducing working hours can to improve employee mental health, this policy only enhances workplace efficiency on condition that operational processes are streamlined.",
+    "correction": "Although reducing working hours can improve employee mental health, this policy only enhances workplace efficiency on condition that operational processes are streamlined.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can improve)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -883,7 +1026,7 @@
   "id": "band-5.5-exp-036",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "nutritional value",
   "meaningVi": "giá trị dinh dưỡng",
   "promptVi": "Trong khi thực phẩm đóng hộp mang lại sự tiện lợi cho cuộc sống hiện đại, sản phẩm này bị giảm giá trị dinh dưỡng trừ khi được xử lý bằng công nghệ bảo quản tiên tiến.",
@@ -905,19 +1048,26 @@
   "id": "band-5.5-exp-037",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "economic benefits",
   "meaningVi": "lợi ích kinh tế",
   "promptVi": "Mặc dù việc đăng cai các giải đấu thể thao lớn mang lại lợi ích kinh tế cho thành phố chủ nhà, hoạt động này dễ gây ra gánh nặng tài chính trừ khi các công trình được tái sử dụng hiệu quả.",
   "referenceAnswers": [
-   "Although hosting major sports tournaments brings economic benefits to the host city, it can easily create a financial burden unless the facilities are reused effectively."
+   "Although hosting major sports tournaments brings economic benefits to the host city, it can easily create a financial burden unless the facilities are reused effectively.",
+   "Even though hosting major sports tournaments brings economic benefits to the host city, it can easily create a financial burden unless the facilities are reused effectively."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Mệnh đề 'Although...' thể hiện sự nhượng bộ về mặt tích cực, đi kèm điều kiện 'unless...' để giới hạn tính hiệu quả thực tế của việc đăng cai thể thao.",
   "rationaleVi": "Câu đặt hai mặt của vấn đề lên bàn cân và sử dụng mệnh đề nhượng bộ cùng điều kiện giải quyết (unless), phù hợp mục tiêu Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although hosting major sports tournaments brings economic benefits to the host city, it can to easily create a financial burden unless the facilities are reused effectively.",
+    "correction": "Although hosting major sports tournaments brings economic benefits to the host city, it can easily create a financial burden unless the facilities are reused effectively.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -927,7 +1077,7 @@
   "id": "band-5.5-exp-038",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "cultural identity",
   "meaningVi": "bản sắc văn hóa",
   "promptVi": "Việc phục dựng các làng nghề truyền thống góp phần bảo tồn bản sắc văn hóa, dẫu cho xu hướng này dễ dẫn đến thương mại hóa nếu chính quyền không kiểm soát chất lượng sản phẩm.",
@@ -939,7 +1089,13 @@
   ],
   "explanationVi": "'Restoring traditional craft villages' đóng vai trò chủ ngữ; mệnh đề 'even though...' tạo lập sự nhượng bộ và 'unless' nêu điều kiện kiểm soát.",
   "rationaleVi": "Sử dụng từ nối nhượng bộ (even though) cùng cụm kết hợp từ tự nhiên (preserve cultural identity) đúng chuẩn đầu ra Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Restoring traditional craft villages helps preserve cultural identity, even though this trend can to easily lead to commercialisation unless local authorities control product quality.",
+    "correction": "Restoring traditional craft villages helps preserve cultural identity, even though this trend can easily lead to commercialisation unless local authorities control product quality.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -949,7 +1105,7 @@
   "id": "band-5.5-exp-039",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "privacy breaches",
   "meaningVi": "vi phạm quyền riêng tư",
   "promptVi": "Trong khi các thiết bị nhà thông minh mang lại sự tiện lợi đáng kể, công nghệ này vẫn ẩn chứa nguy cơ vi phạm quyền riêng tư trừ khi người dùng chủ động bảo mật dữ liệu cá nhân.",
@@ -971,7 +1127,7 @@
   "id": "band-5.5-exp-040",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "urban housing",
   "meaningVi": "nhà ở đô thị",
   "promptVi": "Các khu chung cư cao tầng là giải pháp hiệu quả cho cuộc khủng hoảng nhà ở đô thị, nhưng hình thức này chỉ tạo ra môi trường sống tốt với điều kiện không gian cộng đồng được duy trì đầy đủ.",
@@ -993,19 +1149,27 @@
   "id": "band-5.5-exp-041",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "medical consultations",
   "meaningVi": "tư vấn y tế",
   "promptVi": "Dù tư vấn y tế từ xa giúp tiết kiệm thời gian cho bệnh nhân ở vùng sâu vùng xa, phương pháp này chỉ đạt độ chính xác cao đối với các bệnh lý không đòi hỏi khám lâm sàng trực tiếp.",
   "referenceAnswers": [
-   "Even though remote medical consultations save time for patients in remote areas, this method only achieves high accuracy for conditions that do not require direct physical examination."
+   "Even though remote medical consultations save time for patients in remote areas, this method only achieves high accuracy for conditions that do not require direct physical examination.",
+   "Even though remote medical consultations save time for patients in remote areas, this method only achieves high accuracy for conditions that don't require direct physical examination.",
+   "Although remote medical consultations save time for patients in remote areas, this method only achieves high accuracy for conditions that do not require direct physical examination."
   ],
   "grammarTags": [
    "concession and limitation"
   ],
   "explanationVi": "'Even though' đứng đầu câu làm mệnh đề nhượng bộ, kết hợp vế sau mang tính giới hạn phạm vi hiệu quả ('only achieves high accuracy for...').",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ với từ ngữ giới hạn phạm vi áp dụng, đáp ứng yêu cầu Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though remote medical consultations save time for patients in remote areas, but this method only achieves high accuracy for conditions that do not require direct physical examination.",
+    "correction": "Even though remote medical consultations save time for patients in remote areas, this method only achieves high accuracy for conditions that do not require direct physical examination.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1015,7 +1179,7 @@
   "id": "band-5.5-exp-042",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "job satisfaction",
   "meaningVi": "sự hài lòng với công việc",
   "promptVi": "Giờ làm việc linh hoạt có thể làm tăng sự hài lòng với công việc của nhân viên, mặc dù hình thức này dễ làm mờ ranh giới giữa công việc và đời sống cá nhân nếu không có sự quản lý thời gian nghiêm ngặt.",
@@ -1027,7 +1191,13 @@
   ],
   "explanationVi": "Mệnh đề nhượng bộ 'although...' nằm ở vế sau để chỉ ra mặt trái của hình thức làm việc linh hoạt.",
   "rationaleVi": "Cấu trúc câu phức cân bằng lợi ích và rủi ro kèm điều kiện phòng ngừa rất thích hợp cho trình độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Flexible working hours can to increase job satisfaction among employees, although this arrangement easily blurs the line between work and personal life without strict time management.",
+    "correction": "Flexible working hours can increase job satisfaction among employees, although this arrangement easily blurs the line between work and personal life without strict time management.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can increase)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1037,19 +1207,26 @@
   "id": "band-5.5-exp-043",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "waste processing",
   "meaningVi": "xử lý rác thải",
   "promptVi": "Bất chấp đóng góp tích cực của các chương trình tái chế vào việc giảm thiểu ô nhiễm, giải pháp này gặp hạn chế về hiệu quả kinh tế trừ khi chi phí xử lý rác thải được hỗ trợ từ ngân sách nhà nước.",
   "referenceAnswers": [
-   "Despite the positive contribution of recycling programmes to reducing pollution, this solution faces economic limitations unless waste processing costs are subsidised by the state budget."
+   "Despite the positive contribution of recycling programmes to reducing pollution, this solution faces economic limitations unless waste processing costs are subsidised by the state budget.",
+   "Despite the positive contribution of recycling programs to reducing pollution, this solution faces economic limitations unless waste processing costs are subsidised by the state budget."
   ],
   "grammarTags": [
    "prepositional concession"
   ],
   "explanationVi": "Dùng cụm giới từ 'Despite + noun phrase' mở đầu câu nhượng bộ, vế sau dùng 'unless' làm điều kiện tài chính.",
   "rationaleVi": "Biến đổi cấu trúc mở đầu bằng cụm danh từ chỉ sự nhượng bộ (Despite) giúp đa dạng hóa cú pháp ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Despite the positive contribution of recycling programmes to reducing pollution, this solution faces economic limitations unless wastes processing costs are subsidised by the state budget.",
+    "correction": "Despite the positive contribution of recycling programmes to reducing pollution, this solution faces economic limitations unless waste processing costs are subsidised by the state budget.",
+    "reasonVi": "'Waste' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1059,7 +1236,7 @@
   "id": "band-5.5-exp-044",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "team spirit",
   "meaningVi": "tinh thần đồng đội",
   "promptVi": "Phương pháp học theo dự án giúp học sinh phát triển tinh thần đồng đội, dẫu cho hình thức này khó đánh giá công bằng năng lực cá nhân một khi sự phân công công việc không rõ ràng.",
@@ -1081,7 +1258,7 @@
   "id": "band-5.5-exp-045",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "dietary habits",
   "meaningVi": "thói quen ăn uống",
   "promptVi": "Việc chuyển sang thịt thực vật hỗ trợ cải thiện thói quen ăn uống xanh, song sự thay đổi này chỉ mang lại lợi ích sức khỏe lâu dài với điều kiện người tiêu dùng tránh các sản phẩm chế biến sẵn chứa quá nhiều muối.",
@@ -1103,12 +1280,13 @@
   "id": "band-5.5-exp-046",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "public transport",
   "meaningVi": "giao thông công cộng",
   "promptVi": "Thu phí ô tô vào trung tâm thành phố giúp giảm ùn tắc giao thông, mặc dù chính sách này có nguy cơ gây thiệt hại cho các hộ kinh doanh nhỏ trừ khi giao thông công cộng được nâng cấp đồng bộ.",
   "referenceAnswers": [
-   "Charging cars to enter city centres helps reduce congestion, although this policy risks harming small businesses unless public transport is upgraded comprehensively."
+   "Charging cars to enter city centres helps reduce congestion, although this policy risks harming small businesses unless public transport is upgraded comprehensively.",
+   "Charging cars to enter city centers helps reduce congestion, although this policy risks harming small businesses unless public transport is upgraded comprehensively."
   ],
   "grammarTags": [
    "concession and exception"
@@ -1125,7 +1303,7 @@
   "id": "band-5.5-exp-047",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "financial independence",
   "meaningVi": "sự tự chủ tài chính",
   "promptVi": "Các khoản tín dụng nhỏ giúp người dân nông thôn đạt được sự tự chủ tài chính, ngoại trừ trường hợp lãi suất vay quá cao khiến người vay rơi vào cái bẫy nợ nần.",
@@ -1147,7 +1325,7 @@
   "id": "band-5.5-exp-048",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "money management",
   "meaningVi": "quản lý tiền bạc",
   "promptVi": "Việc cho con tuổi teen tiền tiêu vặt hàng tuần giúp trẻ rèn luyện kỹ năng quản lý tiền bạc, nhưng biện pháp này chỉ hiệu quả với điều kiện cha mẹ thiết lập các quy tắc chi tiêu rõ ràng ngay từ đầu.",
@@ -1169,19 +1347,26 @@
   "id": "band-5.5-exp-049",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "ability grouping",
   "meaningVi": "phân loại học sinh theo năng lực",
   "promptVi": "Mặc dù việc phân loại học sinh theo năng lực giúp nâng cao điểm số trung bình, phương pháp này dễ làm giảm tự trọng của học sinh yếu hơn trừ khi giáo viên hỗ trợ kịp thời.",
   "referenceAnswers": [
-   "Although ability grouping helps raise average test scores, this practice can undermine weaker students' self-esteem unless teachers provide timely support."
+   "Although ability grouping helps raise average test scores, this practice can undermine weaker students' self-esteem unless teachers provide timely support.",
+   "Even though ability grouping helps raise average test scores, this practice can undermine weaker students' self-esteem unless teachers provide timely support."
   ],
   "grammarTags": [
    "Concession and Condition"
   ],
   "explanationVi": "Mệnh đề 'Although' biểu thị nhượng bộ giữa điểm số trung bình và lòng tự trọng, kết hợp với điều kiện 'unless' để giới hạn phạm vi hiệu quả của giải pháp.",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ và điều kiện qualification, sử dụng cụm từ tự nhiên (raise average test scores, undermine self-esteem) đúng với yêu cầu Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although ability grouping helps raise average test scores, this practice can to undermine weaker students' self-esteem unless teachers provide timely support.",
+    "correction": "Although ability grouping helps raise average test scores, this practice can undermine weaker students' self-esteem unless teachers provide timely support.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can undermine)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1191,7 +1376,7 @@
   "id": "band-5.5-exp-050",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "four-day work week",
   "meaningVi": "tuần làm việc bốn ngày",
   "promptVi": "Trong khi tuần làm việc bốn ngày giúp tiết kiệm thời gian đi lại, mô hình này có thể gây mệt mỏi thể chất vào những ngày làm việc kéo dài.",
@@ -1203,7 +1388,13 @@
   ],
   "explanationVi": "Từ nối 'While' tạo mối quan hệ đối lập giữa việc giảm bớt thời gian đi lại và rủi ro mệt mỏi thể chất do gia tăng giờ làm trong ngày.",
   "rationaleVi": "Sử dụng cấu trúc nhượng bộ chỉ hai mặt của một chính sách làm việc linh hoạt với các collocation chuẩn xác ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While a four-day work week saves commuting time, this model can to cause physical fatigue on extended working days.",
+    "correction": "While a four-day work week saves commuting time, this model can cause physical fatigue on extended working days.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can cause)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1213,19 +1404,26 @@
   "id": "band-5.5-exp-051",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "cashless payments",
   "meaningVi": "thanh toán không dùng tiền mặt",
   "promptVi": "Mặc dù thanh toán không dùng tiền mặt mang lại sự tiện lợi đáng kể, giải pháp này gây ra nhiều khó khăn cho người cao tuổi vốn ít quen thuộc với các thiết bị kỹ thuật số.",
   "referenceAnswers": [
-   "Although cashless payments offer significant convenience, this solution creates difficulties for elderly citizens who are less familiar with digital devices."
+   "Although cashless payments offer significant convenience, this solution creates difficulties for elderly citizens who are less familiar with digital devices.",
+   "Even though cashless payments offer significant convenience, this solution creates difficulties for elderly citizens who are less familiar with digital devices."
   ],
   "grammarTags": [
    "Concession with Population Qualification"
   ],
   "explanationVi": "'Although' mở đầu mệnh đề chỉ mặt tích cực của công nghệ số, đối lập với thách thức mà một nhóm đối tượng cụ thể (người cao tuổi) gặp phải.",
   "rationaleVi": "Thể hiện tư duy phản biện Band 5.5 thông qua việc giới hạn lợi ích của xu hướng công nghệ đối với nhóm yếu thế.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although cashless payments offer significant convenience, but this solution creates difficulties for elderly citizens who are less familiar with digital devices.",
+    "correction": "Although cashless payments offer significant convenience, this solution creates difficulties for elderly citizens who are less familiar with digital devices.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1235,12 +1433,13 @@
   "id": "band-5.5-exp-052",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "intermittent fasting",
   "meaningVi": "nhịn ăn gián đoạn",
   "promptVi": "Nhịn ăn gián đoạn hỗ trợ kiểm soát cân nặng hiệu quả, mặc dù phương pháp này gây nguy cơ suy giảm năng lượng nếu lượng calo nạp vào không được theo dõi chặt chẽ.",
   "referenceAnswers": [
-   "Intermittent fasting supports effective weight management, despite carrying a risk of energy depletion if calorie intake is not carefully monitored."
+   "Intermittent fasting supports effective weight management, despite carrying a risk of energy depletion if calorie intake is not carefully monitored.",
+   "Intermittent fasting supports effective weight management, despite carrying a risk of energy depletion if calorie intake isn't carefully monitored."
   ],
   "grammarTags": [
    "Post-placed Concession with Condition"
@@ -1257,19 +1456,27 @@
   "id": "band-5.5-exp-053",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "pedestrian zones",
   "meaningVi": "tuyến phố đi bộ",
   "promptVi": "Dù các tuyến phố đi bộ giúp giảm ô nhiễm tiếng ồn ở trung tâm đô thị, lợi ích kinh tế của chúng chỉ giới hạn trong khu vực xung quanh trừ khi doanh nghiệp địa phương linh hoạt thay đổi dịch vụ.",
   "referenceAnswers": [
-   "Even though pedestrian zones help reduce noise pollution in city centres, their economic benefits remain localized unless local businesses adapt their services."
+   "Even though pedestrian zones help reduce noise pollution in city centres, their economic benefits remain localized unless local businesses adapt their services.",
+   "Even though pedestrian zones help reduce noise pollution in city centers, their economic benefits remain localized unless local businesses adapt their services.",
+   "Although pedestrian zones help reduce noise pollution in city centres, their economic benefits remain localized unless local businesses adapt their services."
   ],
   "grammarTags": [
    "Concession with Scope Limitation"
   ],
   "explanationVi": "'Even though' nhấn mạnh sự đánh đổi giữa ô nhiễm tiếng ồn và hạn chế về mặt kinh tế vùng ven nếu thiếu sự thích ứng của tiểu thương.",
   "rationaleVi": "Câu thể hiện rõ tư duy phân tích hai mặt và giới hạn điều kiện tác động, linh hoạt dùng các collocation thuộc chủ đề đô thị.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though pedestrian zones help reduce noise pollution in city centres, but their economic benefits remain localized unless local businesses adapt their services.",
+    "correction": "Even though pedestrian zones help reduce noise pollution in city centres, their economic benefits remain localized unless local businesses adapt their services.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1279,7 +1486,7 @@
   "id": "band-5.5-exp-054",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "international music festivals",
   "meaningVi": "các lễ hội âm nhạc quốc tế",
   "promptVi": "Trong khi việc tổ chức các lễ hội âm nhạc quốc tế kích thích du lịch địa phương, hoạt động này dễ xáo trộn cuộc sống của cư dân nếu mức độ tiếng ồn không được kiểm soát tốt.",
@@ -1291,7 +1498,13 @@
   ],
   "explanationVi": "'Whereas' được dùng ở đầu câu để so sánh trực tiếp lợi ích kinh tế du lịch và tác động tiêu cực đến đời sống dân cư.",
   "rationaleVi": "Đạt mức độ Band 5.5 khi vừa so sánh hai khía cạnh vừa đưa ra câu điều kiện hạn chế giả định tác động tiêu cực.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Whereas hosting international music festivals stimulates local tourism, this activity can to easily disrupt residents' daily lives if noise levels are poorly regulated.",
+    "correction": "Whereas hosting international music festivals stimulates local tourism, this activity can easily disrupt residents' daily lives if noise levels are poorly regulated.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1301,7 +1514,7 @@
   "id": "band-5.5-exp-055",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "microfinance schemes",
   "meaningVi": "các chương trình tài chính vi mô",
   "promptVi": "Mặc dù các chương trình tài chính vi mô hỗ trợ các hộ kinh doanh nhỏ, tác động của chúng đối với tỷ lệ nghèo đói chung vẫn bị hạn chế nếu thiếu sự phát triển hạ tầng kèm theo.",
@@ -1313,7 +1526,13 @@
   ],
   "explanationVi": "Giới từ 'Despite' kết hợp V-ing mở đầu mệnh đề nhượng bộ, theo sau là mệnh đề chính nêu rõ sự giới hạn về tầm ảnh hưởng.",
   "rationaleVi": "Mô hình câu nêu rõ điểm mạnh và giới hạn hiệu quả của chính sách kinh tế, đáp ứng đúng trọng tâm kỹ năng diễn đạt ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Despite supporting small entrepreneurs, microfinance schemes have a limited impact on overall poverty rates without accompany infrastructure development.",
+    "correction": "Despite supporting small entrepreneurs, microfinance schemes have a limited impact on overall poverty rates without accompanying infrastructure development.",
+    "reasonVi": "Sau giới từ 'without' động từ phải chia ở dạng V-ing (without accompanying)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1323,11 +1542,13 @@
   "id": "esl-v2-r11-u01-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mặc dù thư viện mới có nhiều máy tính, không phải học sinh nào cũng biết cách tra cứu thông tin đáng tin cậy.",
   "referenceAnswers": [
    "Although the new library has plenty of computers, not every student knows how to find reliable information.",
-   "Even though the new library has many computers, some students still do not know how to identify reliable sources."
+   "Even though the new library has many computers, some students still do not know how to identify reliable sources.",
+   "Even though the new library has plenty of computers, not every student knows how to find reliable information.",
+   "Even though the new library has many computers, some students still don't know how to identify reliable sources."
   ],
   "grammarTags": [
    "concession",
@@ -1347,17 +1568,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Mặc dù chuyến tàu bị chậm gần một giờ, đa số hành khách vẫn kịp tham dự cuộc họp.",
   "referenceAnswers": [
    "Although the train was delayed by almost an hour, most passengers still arrived in time for the meeting.",
-   "Even though the train was nearly an hour late, most passengers made it to the meeting on time."
+   "Even though the train was nearly an hour late, most passengers made it to the meeting on time.",
+   "Even though the train was delayed by almost an hour, most passengers still arrived in time for the meeting.",
+   "Although the train was nearly an hour late, most passengers made it to the meeting on time."
   ],
   "grammarTags": [
    "concession",
@@ -1377,17 +1603,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Dù món ăn này dễ chuẩn bị, nó không phù hợp với người cần hạn chế muối.",
   "referenceAnswers": [
    "Although this dish is easy to prepare, it is not suitable for people who need to limit their salt intake.",
-   "Even though this meal is simple to make, it is unsuitable for people who must reduce their salt consumption."
+   "Even though this meal is simple to make, it is unsuitable for people who must reduce their salt consumption.",
+   "Although this dish is easy to prepare, it isn't suitable for people who need to limit their salt intake.",
+   "Even though this dish is easy to prepare, it is not suitable for people who need to limit their salt intake."
   ],
   "grammarTags": [
    "concession",
@@ -1407,17 +1638,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
  },
  {
   "id": "esl-v2-r11-u01-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mặc dù nghiên cứu có quy mô nhỏ, kết quả ban đầu của nó vẫn đáng được xem xét.",
   "referenceAnswers": [
    "Although the study was small, its preliminary findings are still worth considering.",
-   "Even though the research involved a small sample, its early findings deserve consideration."
+   "Even though the research involved a small sample, its early findings deserve consideration.",
+   "Even though the study was small, its preliminary findings are still worth considering.",
+   "Although the research involved a small sample, its early findings deserve consideration."
   ],
   "grammarTags": [
    "concession",
@@ -1437,17 +1671,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù công việc từ xa giảm thời gian đi lại, một số nhân viên vẫn thấy khó tách biệt công việc và cuộc sống.",
   "referenceAnswers": [
    "Although remote work reduces commuting time, some employees still struggle to separate work from their personal lives.",
-   "Even though working remotely saves travel time, some staff still find it difficult to maintain boundaries between work and personal life."
+   "Even though working remotely saves travel time, some staff still find it difficult to maintain boundaries between work and personal life.",
+   "Even though remote work reduces commuting time, some employees still struggle to separate work from their personal lives.",
+   "Although working remotely saves travel time, some staff still find it difficult to maintain boundaries between work and personal life."
   ],
   "grammarTags": [
    "concession",
@@ -1467,17 +1706,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "commuting time",
+  "meaningVi": "thời gian đi lại"
  },
  {
   "id": "esl-v2-r11-u01-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù chiếc điện thoại đã cũ, pin của nó vẫn hoạt động khá tốt.",
   "referenceAnswers": [
    "Although the phone is old, its battery still works reasonably well.",
-   "Even though the phone is not new, its battery still performs fairly well."
+   "Even though the phone is not new, its battery still performs fairly well.",
+   "Even though the phone is old, its battery still works reasonably well.",
+   "Even though the phone isn't new, its battery still performs fairly well."
   ],
   "grammarTags": [
    "concession",
@@ -1497,17 +1741,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù thị trấn thu hút nhiều khách du lịch hơn, thu nhập của một số cửa hàng nhỏ vẫn không ổn định.",
   "referenceAnswers": [
    "Although the town attracts more tourists, income remains unstable for some small shops.",
-   "Even though tourist numbers have increased in the town, some small businesses still have unpredictable earnings."
+   "Even though tourist numbers have increased in the town, some small businesses still have unpredictable earnings.",
+   "Even though the town attracts more tourists, income remains unstable for some small shops.",
+   "Although tourist numbers have increased in the town, some small businesses still have unpredictable earnings."
   ],
   "grammarTags": [
    "concession",
@@ -1527,17 +1776,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
  },
  {
   "id": "esl-v2-r11-u01-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Mặc dù một số trò chơi giúp trẻ luyện khả năng giải quyết vấn đề, chơi quá lâu có thể ảnh hưởng đến giấc ngủ.",
   "referenceAnswers": [
    "Although some games help children practise problem-solving, playing for too long may affect their sleep.",
-   "Even though certain games can develop children's problem-solving skills, excessive play may disrupt sleep."
+   "Even though certain games can develop children's problem-solving skills, excessive play may disrupt sleep.",
+   "Even though some games help children practise problem-solving, playing for too long may affect their sleep.",
+   "Although certain games can develop children's problem-solving skills, excessive play may disrupt sleep."
   ],
   "grammarTags": [
    "concession",
@@ -1557,17 +1809,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Dù bố tôi không thích nơi đông người, ông vẫn đến buổi hòa nhạc để ủng hộ em gái tôi.",
   "referenceAnswers": [
    "Although my father dislikes crowded places, he went to the concert to support my younger sister.",
-   "Even though my dad does not enjoy crowds, he attended the concert to support my little sister."
+   "Even though my dad does not enjoy crowds, he attended the concert to support my little sister.",
+   "Even though my father dislikes crowded places, he went to the concert to support my younger sister.",
+   "Even though my dad doesn't enjoy crowds, he attended the concert to support my little sister."
   ],
   "grammarTags": [
    "concession",
@@ -1587,17 +1844,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "concert",
+  "meaningVi": "buổi hòa nhạc"
  },
  {
   "id": "esl-v2-r11-u01-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù phần mềm được quảng cáo là dễ sử dụng, nhóm vẫn mất vài ngày để học những chức năng cơ bản.",
   "referenceAnswers": [
    "Although the software was advertised as easy to use, the team still took several days to learn its basic features.",
-   "Even though the software was promoted as user-friendly, the team needed several days to learn its basic functions."
+   "Even though the software was promoted as user-friendly, the team needed several days to learn its basic functions.",
+   "Even though the software was advertised as easy to use, the team still took several days to learn its basic features.",
+   "Although the software was promoted as user-friendly, the team needed several days to learn its basic functions."
   ],
   "grammarTags": [
    "concession",
@@ -1617,17 +1879,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Dù bầu trời trông quang đãng vào buổi sáng, trận đấu cuối cùng vẫn bị hủy vì mưa lớn.",
   "referenceAnswers": [
    "Although the sky looked clear in the morning, the match was eventually cancelled because of heavy rain.",
-   "Even though the sky seemed clear that morning, heavy rain eventually forced the match to be cancelled."
+   "Even though the sky seemed clear that morning, heavy rain eventually forced the match to be cancelled.",
+   "Even though the sky looked clear in the morning, the match was eventually cancelled because of heavy rain.",
+   "Although the sky seemed clear that morning, heavy rain eventually forced the match to be cancelled."
   ],
   "grammarTags": [
    "concession",
@@ -1647,17 +1914,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "because of",
+  "meaningVi": "bởi vì (cụm danh từ)"
  },
  {
   "id": "esl-v2-r11-u01-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Mặc dù giá thuê thấp hơn khu trung tâm, tổng chi phí sinh hoạt ở khu này vẫn khá cao.",
   "referenceAnswers": [
    "Although rent is lower than in the city centre, the overall cost of living in this area is still relatively high.",
-   "Even though rent is cheaper here than downtown, living expenses remain fairly high overall."
+   "Even though rent is cheaper here than downtown, living expenses remain fairly high overall.",
+   "Although rent is lower than in the city center, the overall cost of living in this area is still relatively high.",
+   "Even though rent is lower than in the city centre, the overall cost of living in this area is still relatively high."
   ],
   "grammarTags": [
    "concession",
@@ -1677,17 +1949,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "city centre",
+  "meaningVi": "trung tâm thành phố"
  },
  {
   "id": "esl-v2-r11-u01-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mặc dù cô ấy đã luyện tập rất kỹ, cô vẫn cảm thấy hồi hộp trước phần thuyết trình.",
   "referenceAnswers": [
    "Although she had prepared thoroughly, she still felt nervous before the presentation.",
-   "Even though she had practised carefully, she was still anxious before giving her presentation."
+   "Even though she had practised carefully, she was still anxious before giving her presentation.",
+   "Even though she had prepared thoroughly, she still felt nervous before the presentation.",
+   "Although she had practised carefully, she was still anxious before giving her presentation."
   ],
   "grammarTags": [
    "concession",
@@ -1707,17 +1984,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù các khóa học ngắn giúp người lao động cập nhật kỹ năng, chúng không thể thay thế mọi hình thức đào tạo chuyên sâu.",
   "referenceAnswers": [
    "Although short courses help workers update their skills, they cannot replace every form of in-depth training.",
-   "Even though short courses can refresh employees' skills, they cannot substitute for all advanced training."
+   "Even though short courses can refresh employees' skills, they cannot substitute for all advanced training.",
+   "Although short courses help workers update their skills, they can't replace every form of in-depth training.",
+   "Even though short courses help workers update their skills, they cannot replace every form of in-depth training."
   ],
   "grammarTags": [
    "concession",
@@ -1737,17 +2019,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "skills",
+  "meaningVi": "kỹ năng"
  },
  {
   "id": "esl-v2-r11-u01-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mặc dù trường đã lắp thêm đèn, một vài đoạn đường quanh trường vẫn thiếu ánh sáng vào ban đêm.",
   "referenceAnswers": [
    "Although the school has installed more lights, a few roads around it are still poorly lit at night.",
-   "Even though additional lights have been installed at the school, several nearby streets remain dim after dark."
+   "Even though additional lights have been installed at the school, several nearby streets remain dim after dark.",
+   "Even though the school has installed more lights, a few roads around it are still poorly lit at night.",
+   "Although additional lights have been installed at the school, several nearby streets remain dim after dark."
   ],
   "grammarTags": [
    "concession",
@@ -1767,17 +2054,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Mặc dù chúng tôi đã đặt bàn trước, nhà hàng vẫn yêu cầu chờ thêm mười phút.",
   "referenceAnswers": [
    "Although we had booked a table in advance, the restaurant still asked us to wait another ten minutes.",
-   "Even though we had made a reservation, the restaurant asked us to wait ten more minutes."
+   "Even though we had made a reservation, the restaurant asked us to wait ten more minutes.",
+   "Even though we had booked a table in advance, the restaurant still asked us to wait another ten minutes.",
+   "Although we had made a reservation, the restaurant asked us to wait ten more minutes."
   ],
   "grammarTags": [
    "concession",
@@ -1797,17 +2089,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u01-017",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Although / even though: nhượng bộ có mệnh đề",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Dù số người tham gia khảo sát khá lớn, kết quả chưa chắc phản ánh quan điểm của toàn bộ dân số.",
   "referenceAnswers": [
    "Although the survey included many participants, its findings may not represent the views of the entire population.",
-   "Even though the survey had a large sample, the results might not reflect the opinions of everyone in the population."
+   "Even though the survey had a large sample, the results might not reflect the opinions of everyone in the population.",
+   "Even though the survey included many participants, its findings may not represent the views of the entire population.",
+   "Although the survey had a large sample, the results might not reflect the opinions of everyone in the population."
   ],
   "grammarTags": [
    "concession",
@@ -1827,13 +2124,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
  },
  {
   "id": "esl-v2-r11-u02-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Bất chấp thời tiết lạnh, hàng trăm người vẫn tham gia buổi dọn rác ở bãi biển.",
   "referenceAnswers": [
    "Despite the cold weather, hundreds of people joined the beach clean-up.",
@@ -1857,13 +2155,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "weather",
+  "meaningVi": "thời tiết"
  },
  {
   "id": "esl-v2-r11-u02-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Mặc dù có kinh nghiệm quản lý, cô ấy vẫn cần thời gian để hiểu quy trình của công ty mới.",
   "referenceAnswers": [
    "Despite her management experience, she still needs time to understand the new company's procedures.",
@@ -1887,13 +2188,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "experience",
+  "meaningVi": "kinh nghiệm"
  },
  {
   "id": "esl-v2-r11-u02-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù chi phí ban đầu cao, hệ thống mới có thể tiết kiệm điện về lâu dài.",
   "referenceAnswers": [
    "Despite its high initial cost, the new system may save electricity in the long term.",
@@ -1917,13 +2221,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
  },
  {
   "id": "esl-v2-r11-u02-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù thiếu dữ liệu về vùng nông thôn, báo cáo vẫn nêu những xu hướng đáng quan tâm.",
   "referenceAnswers": [
    "Despite the lack of data from rural areas, the report identifies several noteworthy trends.",
@@ -1947,13 +2252,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "rural areas",
+  "meaningVi": "vùng nông thôn"
  },
  {
   "id": "esl-v2-r11-u02-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù phải làm việc cuối tuần, anh ấy vẫn tìm được thời gian chăm sóc con.",
   "referenceAnswers": [
    "Despite working at weekends, he still finds time to look after his children.",
@@ -1977,17 +2285,19 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
  },
  {
   "id": "esl-v2-r11-u02-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Thành phố đã mở thêm tuyến xe buýt. Tuy nhiên, nhiều khu ngoại ô vẫn chưa được phục vụ tốt.",
   "referenceAnswers": [
    "The city has introduced more bus routes. However, many suburban areas are still poorly served.",
-   "The city has added new bus services. Nevertheless, many suburbs still lack adequate transport links."
+   "The city has added new bus services. Nevertheless, many suburbs still lack adequate transport links.",
+   "The city has introduced more bus routes. Even so, many suburban areas are still poorly served."
   ],
   "grammarTags": [
    "despite",
@@ -2007,17 +2317,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u02-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Giá thực phẩm đã giảm nhẹ. Tuy nhiên, các hộ thu nhập thấp vẫn gặp khó khăn với chi phí sinh hoạt.",
   "referenceAnswers": [
    "Food prices have fallen slightly. However, low-income households still struggle with living costs.",
-   "Food prices have decreased a little. Nevertheless, families on low incomes continue to face financial pressure."
+   "Food prices have decreased a little. Nevertheless, families on low incomes continue to face financial pressure.",
+   "Food prices have fallen slightly. Even so, low-income households still struggle with living costs."
   ],
   "grammarTags": [
    "despite",
@@ -2037,17 +2351,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "low-income",
+  "meaningVi": "thu nhập thấp"
  },
  {
   "id": "esl-v2-r11-u02-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Phần mềm cho kết quả nhanh hơn. Tuy nhiên, người dùng vẫn phải kiểm tra dữ liệu đầu vào.",
   "referenceAnswers": [
    "The software produces results faster. However, users still need to check the input data.",
-   "The program delivers results more quickly. Nevertheless, users must still verify the data they enter."
+   "The program delivers results more quickly. Nevertheless, users must still verify the data they enter.",
+   "The software produces results faster. Even so, users still need to check the input data.",
+   "The programme delivers results more quickly. Nevertheless, users must still verify the data they enter."
   ],
   "grammarTags": [
    "despite",
@@ -2067,13 +2386,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u02-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Mặc dù bị đau chân, vận động viên vẫn hoàn thành cuộc đua.",
   "referenceAnswers": [
    "Despite a sore leg, the athlete completed the race.",
@@ -2097,13 +2419,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
  },
  {
   "id": "esl-v2-r11-u02-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Bất chấp lời khuyên của bác sĩ, anh ấy tiếp tục làm việc quá giờ trong nhiều tuần.",
   "referenceAnswers": [
    "Despite the doctor's advice, he continued working overtime for several weeks.",
@@ -2127,17 +2450,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "doctor",
+  "meaningVi": "bác sĩ"
  },
  {
   "id": "esl-v2-r11-u02-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Chính quyền công bố ngân sách mới. Tuy nhiên, thời điểm khởi công vẫn chưa được xác nhận.",
   "referenceAnswers": [
    "The authorities announced a new budget. However, the start date has not yet been confirmed.",
-   "A new budget was announced by the authorities. Nevertheless, no start date has been confirmed yet."
+   "A new budget was announced by the authorities. Nevertheless, no start date has been confirmed yet.",
+   "The authorities announced a new budget. Even so, the start date has not yet been confirmed."
   ],
   "grammarTags": [
    "despite",
@@ -2157,17 +2484,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u02-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Dù có nhiều đánh giá tích cực, sản phẩm vẫn không phù hợp với nhu cầu của tôi.",
   "referenceAnswers": [
    "Despite many positive reviews, the product does not meet my needs.",
-   "In spite of its favourable reviews, the product is not suitable for what I need."
+   "In spite of its favourable reviews, the product is not suitable for what I need.",
+   "Despite many positive reviews, the product doesn't meet my needs.",
+   "In spite of its favourable reviews, the product isn't suitable for what I need."
   ],
   "grammarTags": [
    "despite",
@@ -2187,17 +2519,19 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
  },
  {
   "id": "esl-v2-r11-u02-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Số lượng khách đăng ký đã tăng. Tuy nhiên, tỷ lệ người hoàn thành khóa học không thay đổi.",
   "referenceAnswers": [
    "Enrolment has increased. However, the course completion rate has remained unchanged.",
-   "More people have enrolled. Nevertheless, the proportion finishing the course has stayed the same."
+   "More people have enrolled. Nevertheless, the proportion finishing the course has stayed the same.",
+   "Enrolment has increased. Even so, the course completion rate has remained unchanged."
   ],
   "grammarTags": [
    "despite",
@@ -2217,13 +2551,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u02-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Dù không có phòng thí nghiệm hiện đại, nhóm nghiên cứu vẫn hoàn thành giai đoạn đầu của dự án.",
   "referenceAnswers": [
    "Despite lacking a modern laboratory, the research team completed the first phase of the project.",
@@ -2247,17 +2584,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "project",
+  "meaningVi": "dự án"
  },
  {
   "id": "esl-v2-r11-u02-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Báo cáo khá chi tiết. Tuy nhiên, báo cáo không giải thích vì sao doanh thu giảm.",
   "referenceAnswers": [
    "The report is fairly detailed. However, it does not explain why revenue fell.",
-   "The report contains considerable detail. Nevertheless, it fails to explain the decline in revenue."
+   "The report contains considerable detail. Nevertheless, it fails to explain the decline in revenue.",
+   "The report is fairly detailed. However, it doesn't explain why revenue fell.",
+   "The report is fairly detailed. Even so, it does not explain why revenue fell."
   ],
   "grammarTags": [
    "despite",
@@ -2277,13 +2619,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u02-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bất chấp sự phản đối của một số cư dân, hội đồng vẫn thông qua kế hoạch thử nghiệm.",
   "referenceAnswers": [
    "Despite objections from some residents, the council approved the pilot plan.",
@@ -2307,17 +2652,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "residents",
+  "meaningVi": "cư dân"
  },
  {
   "id": "esl-v2-r11-u02-017",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Thiết bị mới nhẹ hơn mẫu cũ. Tuy nhiên, thời lượng pin của nó ngắn hơn.",
   "referenceAnswers": [
    "The new device is lighter than the previous model. However, its battery life is shorter.",
-   "The latest device weighs less than the older model. Nevertheless, it has a shorter battery life."
+   "The latest device weighs less than the older model. Nevertheless, it has a shorter battery life.",
+   "The new device is lighter than the previous model. Even so, its battery life is shorter."
   ],
   "grammarTags": [
    "despite",
@@ -2337,13 +2686,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u03-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu có thêm một ngày nghỉ mỗi tuần, tôi sẽ dành nhiều thời gian hơn cho gia đình.",
   "referenceAnswers": [
    "If I had an extra day off each week, I would spend more time with my family.",
@@ -2367,13 +2719,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Nếu trường có ngân sách lớn hơn, họ có thể thuê thêm giáo viên hỗ trợ.",
   "referenceAnswers": [
    "If the school had a larger budget, it could hire more support teachers.",
@@ -2397,13 +2750,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "teachers",
+  "meaningVi": "giáo viên"
  },
  {
   "id": "esl-v2-r11-u03-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Giả sử tôi sống gần ga tàu, tôi sẽ không phải lái xe đi làm mỗi ngày.",
   "referenceAnswers": [
    "If I lived near the station, I would not have to drive to work every day.",
@@ -2427,17 +2783,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r11-u03-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Nếu biết sử dụng phần mềm này, bà tôi có thể gọi video cho họ hàng ở xa.",
   "referenceAnswers": [
    "If my grandmother knew how to use this software, she could make video calls to relatives who live far away.",
-   "If my grandmother could use this program, she would be able to video-call relatives living far away."
+   "If my grandmother could use this program, she would be able to video-call relatives living far away.",
+   "If my grandmother could use this programme, she would be able to video-call relatives living far away."
   ],
   "grammarTags": [
    "conditional_2",
@@ -2457,13 +2817,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "grandmother",
+  "meaningVi": "bà (nội/ngoại)"
  },
  {
   "id": "esl-v2-r11-u03-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu được chọn một môn học bổ sung, tôi sẽ chọn tài chính cá nhân.",
   "referenceAnswers": [
    "If I could choose an additional subject, I would choose personal finance.",
@@ -2487,13 +2850,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nếu công ty cho phép giờ làm linh hoạt hơn, một số nhân viên có thể giảm thời gian di chuyển.",
   "referenceAnswers": [
    "If the company offered more flexible hours, some employees might spend less time commuting.",
@@ -2517,13 +2881,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "employees",
+  "meaningVi": "nhân viên"
  },
  {
   "id": "esl-v2-r11-u03-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nếu có một khu vườn nhỏ, tôi sẽ trồng rau thay vì mua tất cả ở siêu thị.",
   "referenceAnswers": [
    "If I had a small garden, I would grow vegetables instead of buying all of them at the supermarket.",
@@ -2547,13 +2914,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "supermarket",
+  "meaningVi": "siêu thị"
  },
  {
   "id": "esl-v2-r11-u03-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Ngay cả khi trời mưa vào ngày mai, chúng tôi vẫn sẽ tổ chức buổi gặp mặt trong nhà.",
   "referenceAnswers": [
    "Even if it rains tomorrow, we will still hold the gathering indoors.",
@@ -2577,13 +2947,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "tomorrow",
+  "meaningVi": "ngày mai"
  },
  {
   "id": "esl-v2-r11-u03-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Ngay cả khi kết quả khảo sát tích cực, nhóm vẫn sẽ thử nghiệm sản phẩm với thêm người dùng.",
   "referenceAnswers": [
    "Even if the survey results are positive, the team will still test the product with more users.",
@@ -2607,13 +2980,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ngay cả khi một khóa học miễn phí, học viên vẫn cần dành thời gian để học nghiêm túc.",
   "referenceAnswers": [
    "Even if a course is free, learners still need to invest time in studying seriously.",
@@ -2637,13 +3011,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu tôi là trưởng nhóm, tôi sẽ cho mọi người phản hồi ẩn danh sau mỗi dự án.",
   "referenceAnswers": [
    "If I were the team leader, I would let everyone give anonymous feedback after each project.",
@@ -2667,13 +3042,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "feedback",
+  "meaningVi": "phản hồi / góp ý"
  },
  {
   "id": "esl-v2-r11-u03-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Nếu nhà trường giảm số học sinh mỗi lớp, giáo viên có thể dành nhiều thời gian hơn cho từng em.",
   "referenceAnswers": [
    "If the school reduced class sizes, teachers could spend more time with each student.",
@@ -2697,13 +3075,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "teachers",
+  "meaningVi": "giáo viên"
  },
  {
   "id": "esl-v2-r11-u03-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Ngay cả khi có nhiều dữ liệu hơn, mô hình vẫn có thể bỏ sót những yếu tố quan trọng.",
   "referenceAnswers": [
    "Even if more data becomes available, the model may still overlook important factors.",
@@ -2727,13 +3108,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu tôi có đủ thời gian, tôi sẽ so sánh ít nhất ba nguồn trước khi viết bài.",
   "referenceAnswers": [
    "If I had enough time, I would compare at least three sources before writing the article.",
@@ -2757,13 +3139,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Ngay cả khi ứng dụng cập nhật hàng tuần, người dùng vẫn cần được hướng dẫn khi một chức năng thay đổi lớn.",
   "referenceAnswers": [
    "Even if the app is updated every week, users will still need guidance when a feature changes significantly.",
@@ -2787,13 +3170,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Nếu giá thuê nhà thấp hơn một chút, chúng tôi có thể chuyển đến gần nơi làm việc hơn.",
   "referenceAnswers": [
    "If rent were slightly lower, we might move closer to work.",
@@ -2817,13 +3201,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if"
  },
  {
   "id": "esl-v2-r11-u03-017",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Giả định loại 2 và even if",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Ngay cả khi điều trị cho kết quả ban đầu tốt, bác sĩ vẫn cần theo dõi bệnh nhân thêm một thời gian.",
   "referenceAnswers": [
    "Even if the treatment shows promising early results, doctors will still need to monitor patients for some time.",
@@ -2847,13 +3232,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "patients",
+  "meaningVi": "bệnh nhân"
  },
  {
   "id": "esl-v2-r11-u04-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Việc làm ở nhà có thể cải thiện sự tập trung của một số người, miễn là họ có không gian yên tĩnh.",
   "referenceAnswers": [
    "Working from home may improve concentration for some people, provided that they have a quiet space.",
@@ -2877,17 +3265,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "quiet",
+  "meaningVi": "yên tĩnh"
  },
  {
   "id": "esl-v2-r11-u04-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Ở một mức độ nào đó, công nghệ có thể giảm công việc giấy tờ, nhưng nó không loại bỏ nhu cầu kiểm tra của con người.",
   "referenceAnswers": [
    "To some extent, technology can reduce paperwork, but it does not remove the need for human checks.",
-   "Technology may cut down on paperwork to some degree, but human oversight remains necessary."
+   "Technology may cut down on paperwork to some degree, but human oversight remains necessary.",
+   "To some extent, technology can reduce paperwork, but it doesn't remove the need for human checks."
   ],
   "grammarTags": [
    "hedging",
@@ -2907,17 +3299,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "paperwork",
+  "meaningVi": "thủ tục giấy tờ"
  },
  {
   "id": "esl-v2-r11-u04-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Một chuyến xe buýt nhanh hơn có thể thu hút người đi làm, với điều kiện giá vé vẫn hợp lý.",
   "referenceAnswers": [
    "A faster bus service may attract commuters, provided that fares remain affordable.",
-   "A quicker bus service could appeal to people travelling to work as long as ticket prices stay reasonable."
+   "A quicker bus service could appeal to people travelling to work as long as ticket prices stay reasonable.",
+   "A quicker bus service could appeal to people traveling to work as long as ticket prices stay reasonable."
   ],
   "grammarTags": [
    "hedging",
@@ -2937,13 +3333,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "commuters",
+  "meaningVi": "người đi lại hằng ngày"
  },
  {
   "id": "esl-v2-r11-u04-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Học theo nhóm có thể hữu ích cho người mới bắt đầu nếu các thành viên thực sự chia sẻ công việc.",
   "referenceAnswers": [
    "Group study may benefit beginners if members genuinely share the work.",
@@ -2967,13 +3366,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "beginners",
+  "meaningVi": "người mới bắt đầu"
  },
  {
   "id": "esl-v2-r11-u04-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi phần nào đồng ý với đề xuất kéo dài giờ mở cửa, nhưng cần tính thêm chi phí nhân sự.",
   "referenceAnswers": [
    "I agree with the proposal to extend opening hours to some extent, but staffing costs also need to be considered.",
@@ -2997,13 +3399,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Việc tăng học phí có thể hợp lý trong một số trường hợp, với điều kiện nhà trường giải thích rõ cách sử dụng khoản tiền bổ sung.",
   "referenceAnswers": [
    "Higher tuition fees may be justified in some cases, provided that the school clearly explains how the extra money will be used.",
@@ -3027,13 +3430,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Một ứng dụng học ngoại ngữ có thể giúp duy trì thói quen, nhưng hiệu quả còn tùy thuộc vào cách người học sử dụng nó.",
   "referenceAnswers": [
    "A language-learning app may help maintain study habits, but its effectiveness depends on how learners use it.",
@@ -3057,17 +3461,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Theo tôi, việc cấm xe ở trung tâm chỉ nên được cân nhắc nếu có phương tiện công cộng thay thế đáng tin cậy.",
   "referenceAnswers": [
    "In my view, banning cars from the city centre should only be considered if reliable public transport alternatives are available.",
-   "I believe a city-centre car ban should be considered only when dependable public transport options exist."
+   "I believe a city-centre car ban should be considered only when dependable public transport options exist.",
+   "In my view, banning cars from the city center should only be considered if reliable public transport alternatives are available.",
+   "I believe a city-center car ban should be considered only when dependable public transport options exist."
   ],
   "grammarTags": [
    "hedging",
@@ -3087,17 +3494,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "public transport",
+  "meaningVi": "phương tiện công cộng"
  },
  {
   "id": "esl-v2-r11-u04-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Các buổi tư vấn trực tuyến có thể thuận tiện cho nhiều bệnh nhân, mặc dù chúng không phù hợp với mọi loại khám.",
   "referenceAnswers": [
    "Online consultations may be convenient for many patients, although they are not suitable for every type of examination.",
-   "Virtual appointments can be convenient for numerous patients, but they cannot replace every kind of in-person assessment."
+   "Virtual appointments can be convenient for numerous patients, but they cannot replace every kind of in-person assessment.",
+   "Online consultations may be convenient for many patients, although they aren't suitable for every type of examination.",
+   "Virtual appointments can be convenient for numerous patients, but they can't replace every kind of in-person assessment."
   ],
   "grammarTags": [
    "hedging",
@@ -3117,13 +3529,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u04-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Một tuần làm việc ngắn hơn có thể cải thiện tinh thần nhân viên nếu khối lượng công việc được điều chỉnh hợp lý.",
   "referenceAnswers": [
    "A shorter working week may improve staff morale if workloads are adjusted appropriately.",
@@ -3147,17 +3562,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Ở một mức độ nhất định, quảng cáo giúp người mua biết đến sản phẩm mới; tuy nhiên, nó không cung cấp đầy đủ mọi thông tin.",
   "referenceAnswers": [
    "To some extent, advertising helps buyers discover new products; however, it does not provide all the information they need.",
-   "Advertising can introduce consumers to new products to a degree, but it cannot give them every relevant detail."
+   "Advertising can introduce consumers to new products to a degree, but it cannot give them every relevant detail.",
+   "To some extent, advertising helps buyers discover new products; however, it doesn't provide all the information they need.",
+   "Advertising can introduce consumers to new products to a degree, but it can't give them every relevant detail."
   ],
   "grammarTags": [
    "hedging",
@@ -3177,13 +3595,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r11-u04-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Xã hội & Chính sách",
   "promptVi": "Chính sách khuyến khích xe đạp có thể hiệu quả ở khu vực đông dân nếu làn đường đủ an toàn.",
   "referenceAnswers": [
    "A policy encouraging cycling may work in densely populated areas if cycle lanes are sufficiently safe.",
@@ -3207,13 +3628,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "policy",
+  "meaningVi": "chính sách"
  },
  {
   "id": "esl-v2-r11-u04-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi đồng ý rằng bài tập về nhà có ích ở một mức độ nào đó, nhưng số lượng cần phù hợp với độ tuổi.",
   "referenceAnswers": [
    "I agree that homework is useful to some extent, but the amount assigned should suit students' ages.",
@@ -3237,13 +3661,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "homework",
+  "meaningVi": "bài tập về nhà"
  },
  {
   "id": "esl-v2-r11-u04-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Việc sử dụng năng lượng tái tạo có thể giúp giảm khí thải, song hiệu quả còn phụ thuộc vào nguồn điện được thay thế.",
   "referenceAnswers": [
    "Using renewable energy may help reduce emissions, but the impact depends on which energy sources it replaces.",
@@ -3267,13 +3694,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "renewable energy",
+  "meaningVi": "năng lượng tái tạo"
  },
  {
   "id": "esl-v2-r11-u04-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Các bài giảng được ghi hình có thể hỗ trợ người đi làm, miễn là họ có đủ thời gian xem lại và thực hành.",
   "referenceAnswers": [
    "Recorded lectures may support working learners, provided that they have enough time to review and practise the material.",
@@ -3297,17 +3727,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Dữ liệu từ một thành phố có thể gợi ý xu hướng, nhưng chưa đủ để kết luận rằng xu hướng đó đúng ở mọi nơi.",
   "referenceAnswers": [
    "Data from one city may suggest a trend, but it is not enough to conclude that the trend holds everywhere.",
-   "A single city's data might indicate a pattern, but it cannot establish that the same pattern applies universally."
+   "A single city's data might indicate a pattern, but it cannot establish that the same pattern applies universally.",
+   "Data from one city may suggest a trend, but it isn't enough to conclude that the trend holds everywhere.",
+   "A single city's data might indicate a pattern, but it can't establish that the same pattern applies universally."
   ],
   "grammarTags": [
    "hedging",
@@ -3327,13 +3760,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u04-017",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Quan điểm có điều kiện và giới hạn",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Việc kiểm tra tự động có thể phát hiện một số lỗi nhanh hơn, với điều kiện các quy tắc được cập nhật thường xuyên.",
   "referenceAnswers": [
    "Automated checks may detect some errors faster, provided that the rules are updated regularly.",
@@ -3357,13 +3791,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quan điểm có điều kiện và giới hạn"
  },
  {
   "id": "esl-v2-r11-u05-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Trong khi một số sinh viên thích học qua video, những người khác hiểu bài tốt hơn khi trao đổi trực tiếp.",
   "referenceAnswers": [
    "While some students prefer video lessons, others understand the material better through face-to-face discussion.",
@@ -3387,17 +3822,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "students",
+  "meaningVi": "sinh viên"
  },
  {
   "id": "esl-v2-r11-u05-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Mặc dù đội dự án đã thử nhiều giải pháp, họ vẫn chưa tìm ra cách giảm chi phí mà không ảnh hưởng chất lượng.",
   "referenceAnswers": [
    "Although the project team has tried several solutions, it has not yet found a way to reduce costs without affecting quality.",
-   "Even though the team has tested a number of approaches, it still has not found a way to cut costs while maintaining quality."
+   "Even though the team has tested a number of approaches, it still has not found a way to cut costs while maintaining quality.",
+   "Even though the project team has tried several solutions, it has not yet found a way to reduce costs without affecting quality.",
+   "Although the team has tested a number of approaches, it still has not found a way to cut costs while maintaining quality."
   ],
   "grammarTags": [
    "subordination",
@@ -3417,13 +3857,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u05-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Vì lớp học có cả người mới và người đã có kinh nghiệm, giáo viên phải chuẩn bị bài tập ở nhiều mức.",
   "referenceAnswers": [
    "Because the class includes both beginners and experienced learners, the teacher has to prepare tasks at different levels.",
@@ -3447,17 +3890,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
  },
  {
   "id": "esl-v2-r11-u05-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Trong khi thành phố đầu tư vào tuyến đường mới, khu dân cư cũ vẫn thiếu vỉa hè an toàn.",
   "referenceAnswers": [
    "While the city is investing in new roads, older neighbourhoods still lack safe pavements.",
-   "Although the city is spending money on new roads, older residential areas still do not have safe sidewalks."
+   "Although the city is spending money on new roads, older residential areas still do not have safe sidewalks.",
+   "While the city is investing in new roads, older neighborhoods still lack safe pavements.",
+   "Although the city is spending money on new roads, older residential areas still don't have safe sidewalks."
   ],
   "grammarTags": [
    "subordination",
@@ -3477,17 +3923,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
  },
  {
   "id": "esl-v2-r11-u05-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mặc dù tôi hiểu lý do trường giới hạn số chỗ, tôi nghĩ học viên nên được thông báo sớm hơn để lên kế hoạch.",
   "referenceAnswers": [
    "Although I understand why the school limits places, I think students should be informed earlier so that they can plan ahead.",
-   "Even though I see why the school restricts enrolment, I believe learners should receive earlier notice to make plans."
+   "Even though I see why the school restricts enrolment, I believe learners should receive earlier notice to make plans.",
+   "Even though I understand why the school limits places, I think students should be informed earlier so that they can plan ahead.",
+   "Although I see why the school restricts enrolment, I believe learners should receive earlier notice to make plans."
   ],
   "grammarTags": [
    "subordination",
@@ -3507,13 +3956,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u05-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Vì ngày nộp báo cáo đã thay đổi, nhóm cần xác nhận ai sẽ phụ trách từng phần trước khi bắt đầu.",
   "referenceAnswers": [
    "Because the report deadline has changed, the team needs to confirm who will handle each section before starting.",
@@ -3537,13 +3989,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "report",
+  "meaningVi": "bản báo cáo"
  },
  {
   "id": "esl-v2-r11-u05-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Trong khi các cửa hàng lớn thường có giá thấp, các cửa hàng nhỏ có thể cung cấp dịch vụ cá nhân hơn.",
   "referenceAnswers": [
    "Whereas large shops often have lower prices, smaller shops may offer more personalised service.",
@@ -3567,17 +4022,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
  },
  {
   "id": "esl-v2-r11-u05-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù dữ liệu cho thấy mức tăng, cần kiểm tra liệu sự thay đổi đó có vượt sai số đo hay không.",
   "referenceAnswers": [
    "Although the data show an increase, we need to check whether the change exceeds the margin of error.",
-   "Even though the figures indicate growth, it is necessary to determine whether the change is larger than the measurement error."
+   "Even though the figures indicate growth, it is necessary to determine whether the change is larger than the measurement error.",
+   "Even though the data show an increase, we need to check whether the change exceeds the margin of error.",
+   "Although the figures indicate growth, it is necessary to determine whether the change is larger than the measurement error."
   ],
   "grammarTags": [
    "subordination",
@@ -3597,17 +4055,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u05-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì người tham gia không được chọn ngẫu nhiên, kết quả không thể tự động áp dụng cho mọi nhóm tuổi.",
   "referenceAnswers": [
    "Because the participants were not selected randomly, the findings cannot automatically be applied to every age group.",
-   "Since participants were not randomly sampled, the results cannot simply be generalised across all ages."
+   "Since participants were not randomly sampled, the results cannot simply be generalised across all ages.",
+   "Because the participants were not selected randomly, the findings can't automatically be applied to every age group.",
+   "Because the participants weren't selected randomly, the findings cannot automatically be applied to every age group."
   ],
   "grammarTags": [
    "subordination",
@@ -3627,17 +4090,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
  },
  {
   "id": "esl-v2-r11-u05-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Trong khi khu vực trung tâm có nhiều bệnh viện, một số vùng xa vẫn phải đi hàng giờ để khám bệnh.",
   "referenceAnswers": [
    "While the city centre has several hospitals, some remote communities still have to travel for hours to see a doctor.",
-   "Whereas central districts have many hospitals, certain distant communities must still spend hours travelling for medical care."
+   "Whereas central districts have many hospitals, certain distant communities must still spend hours travelling for medical care.",
+   "While the city center has several hospitals, some remote communities still have to travel for hours to see a doctor.",
+   "Whereas central districts have many hospitals, certain distant communities must still spend hours traveling for medical care."
   ],
   "grammarTags": [
    "subordination",
@@ -3657,17 +4123,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "city centre",
+  "meaningVi": "trung tâm thành phố"
  },
  {
   "id": "esl-v2-r11-u05-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mặc dù có thể lưu tài liệu trên mạng, người học nên tải bản sao nếu kết nối internet thường xuyên không ổn định.",
   "referenceAnswers": [
    "Although documents can be stored online, learners should download copies if their internet connection is frequently unreliable.",
-   "Even though files can be kept online, students ought to save copies when their internet access is often unstable."
+   "Even though files can be kept online, students ought to save copies when their internet access is often unstable.",
+   "Even though documents can be stored online, learners should download copies if their internet connection is frequently unreliable.",
+   "Although files can be kept online, students ought to save copies when their internet access is often unstable."
   ],
   "grammarTags": [
    "subordination",
@@ -3687,13 +4158,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u05-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Vì dịch vụ chỉ hoạt động vào ngày thường, những người làm ca đêm khó sắp xếp thời gian sử dụng.",
   "referenceAnswers": [
    "Because the service operates only on weekdays, people who work night shifts find it hard to arrange a suitable time to use it.",
@@ -3717,13 +4191,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "weekdays",
+  "meaningVi": "các ngày trong tuần"
  },
  {
   "id": "esl-v2-r11-u05-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Trong khi một số bậc phụ huynh muốn trẻ học thêm nhiều, những người khác lo rằng lịch học dày gây căng thẳng.",
   "referenceAnswers": [
    "Whereas some parents want their children to take more extra classes, others worry that a packed schedule causes stress.",
@@ -3747,17 +4224,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r11-u05-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Mặc dù chi phí vận hành giảm, công ty vẫn cần đánh giá xem mức tiết kiệm đó có bù được khoản đầu tư ban đầu hay không.",
   "referenceAnswers": [
    "Although operating costs have fallen, the company still needs to assess whether the savings can offset the initial investment.",
-   "Even though running costs have decreased, the firm must still evaluate whether those savings cover its upfront investment."
+   "Even though running costs have decreased, the firm must still evaluate whether those savings cover its upfront investment.",
+   "Even though operating costs have fallen, the company still needs to assess whether the savings can offset the initial investment.",
+   "Although running costs have decreased, the firm must still evaluate whether those savings cover its upfront investment."
   ],
   "grammarTags": [
    "subordination",
@@ -3777,13 +4259,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u05-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Vì sự thay đổi được thông báo quá muộn, nhiều tình nguyện viên không thể điều chỉnh lịch làm việc của họ.",
   "referenceAnswers": [
    "Because the change was announced too late, many volunteers could not adjust their work schedules.",
@@ -3807,13 +4292,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "volunteers",
+  "meaningVi": "tình nguyện viên"
  },
  {
   "id": "esl-v2-r11-u05-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Trong khi nhiều người dùng thích tính tiện lợi của thanh toán điện tử, một số vẫn chọn tiền mặt khi mạng không ổn định.",
   "referenceAnswers": [
    "While many users appreciate the convenience of digital payments, some still choose cash when the network is unreliable.",
@@ -3837,17 +4325,19 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
  },
  {
   "id": "esl-v2-r11-u06-001",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Mưa lớn khiến chuyến xe bị hoãn, vì vậy chúng tôi phải đổi giờ hẹn chứ không phải vì chúng tôi muốn đi muộn.",
   "referenceAnswers": [
    "Heavy rain delayed the bus, so we had to change our meeting time; it was not because we wanted to arrive late.",
-   "Because heavy rain delayed the bus, we had to reschedule our meeting, not because we wished to be late."
+   "Because heavy rain delayed the bus, we had to reschedule our meeting, not because we wished to be late.",
+   "Heavy rain delayed the bus, so we had to change our meeting time; it wasn't because we wanted to arrive late."
   ],
   "grammarTags": [
    "logic_repair",
@@ -3867,17 +4357,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "delayed",
+  "meaningVi": "bị trì hoãn"
  },
  {
   "id": "esl-v2-r11-u06-002",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi chọn đi bộ vì quãng đường ngắn, mặc dù đi xe buýt sẽ nhanh hơn một chút.",
   "referenceAnswers": [
    "I chose to walk because the distance was short, although taking the bus would have been slightly faster.",
-   "Although the bus would have been a little quicker, I walked because the journey was short."
+   "Although the bus would have been a little quicker, I walked because the journey was short.",
+   "Even though the bus would have been a little quicker, I walked because the journey was short."
   ],
   "grammarTags": [
    "logic_repair",
@@ -3897,17 +4391,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u06-003",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu số liệu chưa được xác minh, nhóm sẽ không công bố kết luận, ngay cả khi thời hạn sắp hết.",
   "referenceAnswers": [
    "If the figures have not been verified, the team will not publish its conclusion, even if the deadline is approaching.",
-   "The team will withhold its conclusion if the data remain unverified, even when the deadline is near."
+   "The team will withhold its conclusion if the data remain unverified, even when the deadline is near.",
+   "If the figures have not been verified, the team won't publish its conclusion, even if the deadline is approaching."
   ],
   "grammarTags": [
    "logic_repair",
@@ -3927,17 +4425,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-004",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Mặc dù công viên được nâng cấp, số người đến có thể chưa tăng vì khu vực này vẫn thiếu phương tiện công cộng.",
   "referenceAnswers": [
    "Although the park has been upgraded, visitor numbers may not increase because the area still lacks public transport.",
-   "Even though the park has been improved, it may not attract more visitors since public transport to the area remains limited."
+   "Even though the park has been improved, it may not attract more visitors since public transport to the area remains limited.",
+   "Even though the park has been upgraded, visitor numbers may not increase because the area still lacks public transport.",
+   "Although the park has been improved, it may not attract more visitors since public transport to the area remains limited."
   ],
   "grammarTags": [
    "logic_repair",
@@ -3957,17 +4458,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "public transport",
+  "meaningVi": "phương tiện công cộng"
  },
  {
   "id": "esl-v2-r11-u06-005",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tôi đồng ý thử ứng dụng mới với điều kiện dữ liệu cá nhân không bị chia sẻ cho bên thứ ba.",
   "referenceAnswers": [
    "I agree to try the new app provided that my personal data are not shared with third parties.",
-   "I am willing to test the new application as long as my personal information is not shared with outside parties."
+   "I am willing to test the new application as long as my personal information is not shared with outside parties.",
+   "I agree to try the new app provided that my personal data aren't shared with third parties.",
+   "I'm willing to test the new application as long as my personal information is not shared with outside parties."
   ],
   "grammarTags": [
    "logic_repair",
@@ -3987,13 +4493,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "personal data",
+  "meaningVi": "dữ liệu cá nhân"
  },
  {
   "id": "esl-v2-r11-u06-006",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Vì lượng khách tăng vào cuối tuần, cửa hàng cần thêm nhân viên, nhưng chưa chắc cần tuyển người toàn thời gian.",
   "referenceAnswers": [
    "Because customer numbers rise at weekends, the shop needs more staff, but it may not need full-time employees.",
@@ -4017,13 +4526,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "employees",
+  "meaningVi": "nhân viên"
  },
  {
   "id": "esl-v2-r11-u06-007",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Nếu không có đường đi bộ an toàn, nhiều phụ huynh sẽ tiếp tục chở con đến trường, dù khoảng cách khá ngắn.",
   "referenceAnswers": [
    "If there are no safe walking routes, many parents will continue driving their children to school, even though the distance is fairly short.",
@@ -4047,17 +4559,22 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r11-u06-008",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Mặc dù đề xuất nghe có vẻ tiết kiệm, chúng tôi chưa thể chọn nó trước khi có báo giá chi tiết.",
   "referenceAnswers": [
    "Although the proposal sounds cost-effective, we cannot choose it until we receive a detailed quotation.",
-   "Even though the proposal seems economical, we cannot select it before obtaining a detailed price estimate."
+   "Even though the proposal seems economical, we cannot select it before obtaining a detailed price estimate.",
+   "Although the proposal sounds cost-effective, we can't choose it until we receive a detailed quotation.",
+   "Even though the proposal sounds cost-effective, we cannot choose it until we receive a detailed quotation."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4077,13 +4594,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u06-009",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Nhà trường sẽ mở thêm lớp nếu đủ người đăng ký, nhưng chưa đưa ra ngày bắt đầu cụ thể.",
   "referenceAnswers": [
    "The school will open an additional class if enough students enrol, but it has not announced a specific start date.",
@@ -4107,13 +4627,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-010",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một số người xem quảng cáo vì nó giải trí, trong khi những người khác bỏ qua vì họ muốn tiết kiệm thời gian.",
   "referenceAnswers": [
    "Some people watch advertisements because they find them entertaining, while others skip them because they want to save time.",
@@ -4137,17 +4658,19 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-011",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ngay cả khi phí đăng ký được giảm, khóa học vẫn có thể không phù hợp với người không có thời gian học thường xuyên.",
   "referenceAnswers": [
    "Even if the enrolment fee is reduced, the course may still be unsuitable for people who cannot study regularly.",
-   "The course might still not suit people with little time for regular study, even if the registration fee falls."
+   "The course might still not suit people with little time for regular study, even if the registration fee falls.",
+   "Even if the enrolment fee is reduced, the course may still be unsuitable for people who can't study regularly."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4167,17 +4690,19 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-012",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Vì đơn đặt hàng đến muộn, nhóm phải hoãn buổi thử nghiệm, mặc dù phòng thí nghiệm đã sẵn sàng.",
   "referenceAnswers": [
    "Because the order arrived late, the team had to postpone the test, although the laboratory was ready.",
-   "Although the lab was prepared, the team postponed testing because the order was delivered late."
+   "Although the lab was prepared, the team postponed testing because the order was delivered late.",
+   "Even though the lab was prepared, the team postponed testing because the order was delivered late."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4197,13 +4722,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "although",
+  "meaningVi": "mặc dù"
  },
  {
   "id": "esl-v2-r11-u06-013",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu hướng dẫn rõ ràng hơn, ít người có thể mắc lỗi hơn, nhưng chúng ta vẫn cần kiểm tra điều đó bằng thử nghiệm.",
   "referenceAnswers": [
    "If the instructions were clearer, fewer people might make mistakes, but we would still need to test that assumption.",
@@ -4227,17 +4755,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-014",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Tôi thích học trực tiếp vì có thể đặt câu hỏi ngay, dù việc di chuyển đến lớp mất khá nhiều thời gian.",
   "referenceAnswers": [
    "I prefer in-person lessons because I can ask questions immediately, although travelling to class takes quite a lot of time.",
-   "Although commuting to class takes time, I favour face-to-face lessons because I can ask questions on the spot."
+   "Although commuting to class takes time, I favour face-to-face lessons because I can ask questions on the spot.",
+   "I prefer in-person lessons because I can ask questions immediately, although traveling to class takes quite a lot of time.",
+   "Even though commuting to class takes time, I favour face-to-face lessons because I can ask questions on the spot."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4257,17 +4788,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
  },
  {
   "id": "esl-v2-r11-u06-015",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Dù khách hàng đánh giá giao diện tích cực, đội phát triển vẫn sẽ sửa lỗi bảo mật trước khi phát hành.",
   "referenceAnswers": [
    "Although customers have given positive feedback on the interface, the development team will still fix security issues before release.",
-   "Even though users have praised the interface, the developers will address security problems before launching the product."
+   "Even though users have praised the interface, the developers will address security problems before launching the product.",
+   "Even though customers have given positive feedback on the interface, the development team will still fix security issues before release.",
+   "Although users have praised the interface, the developers will address security problems before launching the product."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4287,17 +4821,21 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "customers",
+  "meaningVi": "khách hàng"
  },
  {
   "id": "esl-v2-r11-u06-016",
   "practiceLevel": "5.5",
   "type": "sentence",
-  "topic": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Chính sách mới có thể giúp người lao động nếu việc đào tạo đi kèm đủ thực tế, nhưng chưa thể khẳng định lợi ích cho tất cả ngành nghề.",
   "referenceAnswers": [
    "The new policy may help workers if the accompanying training is practical enough, but we cannot claim benefits for every industry.",
-   "Provided that the training is sufficiently practical, the policy could support workers, although its benefits across all sectors remain uncertain."
+   "Provided that the training is sufficiently practical, the policy could support workers, although its benefits across all sectors remain uncertain.",
+   "The new policy may help workers if the accompanying training is practical enough, but we can't claim benefits for every industry."
   ],
   "grammarTags": [
    "logic_repair",
@@ -4317,6 +4855,9 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "policy",
+  "meaningVi": "chính sách"
  }
 ]

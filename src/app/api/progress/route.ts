@@ -49,7 +49,9 @@ export async function GET(request: Request) {
     const { data: lessons } = slugs.length ? await db.from("lessons").select("slug,skill,title").in("slug", slugs) : { data: [] };
     const lessonInfo = new Map((lessons ?? []).map((row) => [row.slug as string, { skill: asProgressSkill(row.skill), title: (row.title as string | null) ?? null }]));
     const skillOf = (slug: string) => lessonInfo.get(slug)?.skill ?? skillFromSlug(slug);
-    const titleOf = (slug: string) => lessonInfo.get(slug)?.title ?? slug.replace(/^skill-lab(?:-dictation)?:/, "").replace(/[-_]+/g, " ");
+    const titleOf = (slug: string) => slug.startsWith("translation-writing-band-")
+      ? `Luyện diễn đạt · Band ${slug.slice("translation-writing-band-".length)}`
+      : lessonInfo.get(slug)?.title ?? slug.replace(/^skill-lab(?:-dictation)?:/, "").replace(/[-_]+/g, " ");
 
     const items: ActivityItem[] = [], entries: DayEntry[] = [];
     const entry = (at: string, rest: Omit<DayEntry, "at" | "day">) => entries.push({ at, day: localDay(at, timezone), ...rest });
@@ -70,13 +72,20 @@ export async function GET(request: Request) {
     }
     // Course practice keeps only its latest result per lesson; skip it when the same lesson was already graded that day.
     for (const row of practice.data ?? []) {
-      // One row per dictation sentence: the lesson's own "skill-lab-dictation:" row already counts the session.
-      if (row.lesson_slug.startsWith("skill-lab-turn:")) continue;
+      // One row per sentence/exercise: the session summary row already counts the day's practice.
+      if (row.lesson_slug.startsWith("skill-lab-turn:") || row.lesson_slug.startsWith("translation-item:")) continue;
       const key = `${row.lesson_slug}@${localDay(row.updated_at, timezone)}`;
       if (exerciseDays.has(key)) continue;
       exerciseDays.add(key);
       items.push({ at: row.updated_at, skill: skillOf(row.lesson_slug), counted: true, minutes: 0 });
-      entry(row.updated_at, { kind: "practice", skill: skillOf(row.lesson_slug), title: titleOf(row.lesson_slug), score: null, total: null, link: null });
+      entry(row.updated_at, {
+        kind: "practice",
+        skill: skillOf(row.lesson_slug),
+        title: titleOf(row.lesson_slug),
+        score: null,
+        total: null,
+        link: row.lesson_slug.startsWith("translation-writing-band-") ? "/app/practice/translation" : null,
+      });
     }
     // VOA and Quick dictation keep one row per checked sentence; count one practice per day for each bank.
     // Their tables may be missing on an older database, so a failed read only drops these items.

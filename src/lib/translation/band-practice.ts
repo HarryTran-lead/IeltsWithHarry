@@ -6,8 +6,29 @@ export const practiceBands = Array.from({ length: 17 }, (_, position) => (1 + po
 
 export type BandExercise = PracticeExercise;
 
-/** Per band: progress keys (id, or id:vN after a revision), topic count and one example. */
-export type BandSummary = { level: string; keys: string[]; topics: number; sample: { promptVi: string; answer: string } };
+/** Per band: progress keys (id, or id:vN after a revision), topic counts and one example. */
+export type BandSummary = {
+  level: string;
+  keys: string[];
+  topics: number;
+  topicCounts?: Record<string, number>;
+  sample: { promptVi: string; answer: string };
+};
+
+export const CANONICAL_TOPICS = [
+  "Giáo dục & Trường học",
+  "Công nghệ & Khoa học",
+  "Sức khỏe & Y tế",
+  "Môi trường & Năng lượng",
+  "Đô thị & Nhà ở",
+  "Công việc & Kinh tế",
+  "Xã hội & Chính sách",
+  "Giao thông & Đi lại",
+  "Văn hóa & Du lịch",
+  "Ẩm thực & Dinh dưỡng",
+  "Thể thao & Giải trí",
+  "Gia đình & Đời sống",
+] as const;
 
 // The numbers identify practice levels. They are not official IELTS scores.
 export const bandIndex = index as BandSummary[];

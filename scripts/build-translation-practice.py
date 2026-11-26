@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from curate_translation_v3 import curate_exercise, topic_counts_for_items
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/translation-practice/starter-51.json"
@@ -310,6 +311,7 @@ if __name__ == "__main__":
     # ESL v2 additions (scripts/import-esl-v2-translation.py) are appended, never merged
     # into existing rows, so the IDs and versions behind learner progress stay as they were.
     core.extend(json.loads(ESL_V2.read_text(encoding="utf-8")))
+    core = [curate_exercise(row) for row in core]
     assert len({row["id"] for row in core}) == len(core), "duplicate exercise id"
     assert len({row["promptVi"].strip().lower() for row in core}) == len(core), "duplicate prompt"
 
@@ -323,12 +325,14 @@ if __name__ == "__main__":
         level = entry["level"]
         items = [row for row in core if row["practiceLevel"] == level]
         sample = next((row for row in items if row["type"] != "word"), items[0])
+        topic_counts = topic_counts_for_items(items)
         (BANDS_DEST / f"band-{level.replace('.', '-')}.json").write_text(
             json.dumps(items, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         index.append({
             "level": level,
             "keys": [row["id"] if row["version"] == 1 else f"{row['id']}:v{row['version']}" for row in items],
-            "topics": len({row["topic"] for row in items}),
+            "topics": len(topic_counts),
+            "topicCounts": topic_counts,
             "sample": {"promptVi": sample["promptVi"], "answer": sample["referenceAnswers"][0]},
         })
     INDEX_DEST.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

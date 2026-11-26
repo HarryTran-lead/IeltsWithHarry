@@ -3,7 +3,7 @@
   "id": "band-2.5-010",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Thói quen",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "usually",
   "meaningVi": "thường",
   "promptVi": "thường vào buổi tối",
@@ -25,7 +25,7 @@
   "id": "band-2.5-011",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "bus",
   "meaningVi": "xe buýt",
   "promptVi": "đi bằng xe buýt",
@@ -47,7 +47,7 @@
   "id": "band-2.5-012",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Sở thích",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "weekend",
   "meaningVi": "cuối tuần",
   "promptVi": "vào cuối tuần",
@@ -69,12 +69,13 @@
   "id": "band-2.5-cal-01",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Đồ dùng",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "blue bag",
   "meaningVi": "túi màu xanh",
   "promptVi": "Tôi có một chiếc túi màu xanh.",
   "referenceAnswers": [
-   "I have a blue bag."
+   "I have a blue bag.",
+   "I've a blue bag."
   ],
   "grammarTags": [
    "present-simple"
@@ -91,7 +92,7 @@
   "id": "band-2.5-cal-02",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Ăn uống",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "eats rice",
   "meaningVi": "ăn cơm",
   "promptVi": "Cậu ấy ăn cơm ở nhà.",
@@ -113,7 +114,7 @@
   "id": "band-2.5-exp-001",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "looks after",
   "meaningVi": "chăm sóc",
   "promptVi": "Mẹ tôi chăm sóc em bé mỗi sáng.",
@@ -135,7 +136,7 @@
   "id": "band-2.5-exp-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "on foot",
   "meaningVi": "đi bộ",
   "promptVi": "đi bộ đến trường",
@@ -157,7 +158,7 @@
   "id": "band-2.5-exp-003",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "fresh fruit",
   "meaningVi": "trái cây tươi",
   "promptVi": "Họ mua trái cây tươi ở chợ.",
@@ -179,7 +180,7 @@
   "id": "band-2.5-exp-004",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "drink water",
   "meaningVi": "uống nước",
   "promptVi": "Bạn nên uống nước sau khi tập thể dục.",
@@ -191,7 +192,13 @@
   ],
   "explanationVi": "Cụm 'drink water' thể hiện hành động uống nước giữ sức khỏe.",
   "rationaleVi": "Cấu trúc câu lời khuyên ngắn gọn với 'should' và từ vựng quen thuộc cho thói quen sức khỏe.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "You should to drink water after exercising.",
+    "correction": "You should drink water after exercising.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should drink)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -201,7 +208,7 @@
   "id": "band-2.5-exp-005",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "in the afternoon",
   "meaningVi": "vào buổi chiều",
   "promptVi": "chơi bóng đá vào buổi chiều",
@@ -223,7 +230,7 @@
   "id": "band-2.5-exp-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "starts work",
   "meaningVi": "bắt đầu làm việc",
   "promptVi": "Anh ấy bắt đầu làm việc lúc tám giờ.",
@@ -245,7 +252,7 @@
   "id": "band-2.5-exp-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "small flat",
   "meaningVi": "căn hộ nhỏ",
   "promptVi": "Chúng tôi sống trong một căn hộ nhỏ.",
@@ -267,7 +274,7 @@
   "id": "band-2.5-exp-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "read books",
   "meaningVi": "đọc sách",
   "promptVi": "Học sinh đọc sách trong thư viện.",
@@ -289,7 +296,7 @@
   "id": "band-2.5-exp-009",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "clean water",
   "meaningVi": "nước sạch",
   "promptVi": "nước sạch cho mọi người",
@@ -311,7 +318,7 @@
   "id": "band-2.5-exp-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "uses a mobile phone",
   "meaningVi": "dùng điện thoại di động",
   "promptVi": "Ông tôi dùng điện thoại di động để gọi điện.",
@@ -333,7 +340,7 @@
   "id": "band-2.5-exp-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "visit the museum",
   "meaningVi": "thăm bảo tàng",
   "promptVi": "Khách du lịch thăm bảo tàng vào buổi sáng.",
@@ -355,7 +362,7 @@
   "id": "band-2.5-exp-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "wait for the bus",
   "meaningVi": "đợi xe buýt",
   "promptVi": "Nhiều người đợi xe buýt ở bến.",
@@ -377,7 +384,7 @@
   "id": "band-2.5-exp-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "bake a cake",
   "meaningVi": "nướng một chiếc bánh",
   "promptVi": "Tôi muốn nướng một chiếc bánh cho chị gái tôi.",
@@ -399,7 +406,7 @@
   "id": "band-2.5-exp-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "catch a train",
   "meaningVi": "đón tàu hỏa",
   "promptVi": "Họ đến nhà ga để đón tàu hỏa đi làm.",
@@ -421,7 +428,7 @@
   "id": "band-2.5-exp-015",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "clean the local park",
   "meaningVi": "dọn dẹp công viên địa phương",
   "promptVi": "dọn dẹp công viên địa phương",
@@ -443,7 +450,7 @@
   "id": "band-2.5-exp-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "in the morning",
   "meaningVi": "vào buổi sáng",
   "promptVi": "Cha tôi thường uống trà nóng vào buổi sáng.",
@@ -465,7 +472,7 @@
   "id": "band-2.5-exp-017",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "send an email",
   "meaningVi": "gửi một thư điện tử",
   "promptVi": "Cô ấy muốn gửi một thư điện tử cho giáo viên của mình.",
@@ -487,7 +494,7 @@
   "id": "band-2.5-exp-018",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "take photos",
   "meaningVi": "chụp ảnh",
   "promptVi": "Du khách thích chụp ảnh bên bờ sông.",
@@ -509,7 +516,7 @@
   "id": "band-2.5-exp-019",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "clean the room",
   "meaningVi": "dọn dẹp phòng",
   "promptVi": "Trẻ em phải dọn dẹp phòng trước khi chơi.",
@@ -521,7 +528,13 @@
   ],
   "explanationVi": "'clean the room' là cụm hành động sinh hoạt nhà ở phổ biến.",
   "rationaleVi": "Sử dụng động từ khuyết thiếu 'must' ở mức độ cơ bản để tạo câu ngắn gọn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Children must to clean the room before playing.",
+    "correction": "Children must clean the room before playing.",
+    "reasonVi": "Sau động từ khuyết thiếu 'must' dùng động từ nguyên mẫu không có 'to' (must clean)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -531,7 +544,7 @@
   "id": "band-2.5-exp-020",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "go to sleep",
   "meaningVi": "đi ngủ",
   "promptVi": "Trẻ em nên đi ngủ sớm mỗi tối.",
@@ -553,7 +566,7 @@
   "id": "band-2.5-exp-021",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "do homework",
   "meaningVi": "làm bài tập về nhà",
   "promptVi": "làm bài tập về nhà sau giờ học",
@@ -565,7 +578,13 @@
   ],
   "explanationVi": "'do homework' là cụm từ cố định chỉ việc học sinh làm bài tập ở nhà.",
   "rationaleVi": "Cụm từ sinh hoạt trường học ngắn gọn dành cho việc luyện tập phản xạ từ vựng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "do homeworks after school",
+    "correction": "do homework after school",
+    "reasonVi": "'Homework' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -575,7 +594,7 @@
   "id": "band-2.5-exp-022",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "play badminton",
   "meaningVi": "chơi cầu lông",
   "promptVi": "Chúng tôi thích chơi cầu lông trong khu vườn.",
@@ -597,7 +616,7 @@
   "id": "band-2.5-exp-023",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "plant flowers",
   "meaningVi": "trồng hoa",
   "promptVi": "Những người thợ làm vườn trồng hoa trong công viên.",
@@ -619,7 +638,7 @@
   "id": "band-2.5-exp-024",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "buy vegetables",
   "meaningVi": "mua rau củ",
   "promptVi": "Họ mua rau củ ở siêu thị nhỏ.",
@@ -641,7 +660,7 @@
   "id": "band-2.5-exp-025",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "fresh bread",
   "meaningVi": "bánh mì tươi",
   "promptVi": "Anh ấy mua bánh mì tươi từ cửa hàng bánh vào buổi sáng.",
@@ -663,7 +682,7 @@
   "id": "band-2.5-exp-026",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "drink water",
   "meaningVi": "uống nước",
   "promptVi": "Bạn nên uống nước mỗi ngày để giữ sức khỏe.",
@@ -675,7 +694,13 @@
   ],
   "explanationVi": "Cụm 'drink water' nghĩa là 'uống nước', đi sau động từ khuyết thiếu 'should' để đưa ra lời khuyên đơn giản.",
   "rationaleVi": "Câu diễn đạt một ý rõ ràng về chăm sóc sức khỏe bản thân với cấu trúc câu ngắn gồm chủ ngữ 'You' và động từ chính 'drink'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "You should to drink water every day to stay healthy.",
+    "correction": "You should drink water every day to stay healthy.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should drink)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -685,7 +710,7 @@
   "id": "band-2.5-exp-027",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "in the early morning",
   "meaningVi": "vào sáng sớm",
   "promptVi": "vào sáng sớm",
@@ -695,7 +720,7 @@
   "grammarTags": [
    "prepositional phrase"
   ],
-  "explanationVi": "Cụm giới từ chỉ thời gian 'in the early morning' dùng để bổ nghĩa cho thời điểm xảy ra sự việc.",
+  "explanationVi": "Chú ý cách dùng 'in the early morning' (vào sáng sớm) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đây là một cụm từ thời gian ngắn và thông dụng, làm bước đệm cho người học kết hợp vào câu ngắn ở mức 2.5.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -707,7 +732,7 @@
   "id": "band-2.5-exp-028",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "learn English",
   "meaningVi": "học tiếng Anh",
   "promptVi": "Học sinh học tiếng Anh cùng thầy giáo mới.",
@@ -729,7 +754,7 @@
   "id": "band-2.5-exp-029",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "green trees",
   "meaningVi": "những cây xanh",
   "promptVi": "cây xanh trong khu vườn",
@@ -751,7 +776,7 @@
   "id": "band-2.5-exp-030",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "use a computer",
   "meaningVi": "sử dụng máy tính",
   "promptVi": "Tôi sử dụng máy tính để hoàn thành công việc.",
@@ -773,7 +798,7 @@
   "id": "band-2.5-exp-031",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "visit a new city",
   "meaningVi": "thăm một thành phố mới",
   "promptVi": "thăm một thành phố mới",
@@ -783,7 +808,7 @@
   "grammarTags": [
    "verb phrase"
   ],
-  "explanationVi": "Cụm động từ 'visit a new city' diễn tả một hành động du lịch ngắn gọn và quen thuộc.",
+  "explanationVi": "Chú ý cách dùng 'visit a new city' (thăm một thành phố mới) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Cụm động từ dễ hiểu giúp học viên thực hành các ý niệm cốt lõi trước khi nâng lên cấp độ câu phức phức tạp hơn.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -795,7 +820,7 @@
   "id": "band-2.5-exp-032",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "play tennis",
   "meaningVi": "chơi quần vợt",
   "promptVi": "Họ chơi quần vợt ở câu lạc bộ địa phương.",
@@ -817,7 +842,7 @@
   "id": "band-2.5-exp-033",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "go for a walk",
   "meaningVi": "đi bộ",
   "promptVi": "Bác sĩ khuyên chúng ta nên đi bộ hằng ngày.",
@@ -839,7 +864,7 @@
   "id": "band-2.5-exp-034",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "take the underground",
   "meaningVi": "đi tàu điện ngầm",
   "promptVi": "Họ đi tàu điện ngầm đến văn phòng làm việc.",
@@ -861,7 +886,7 @@
   "id": "band-2.5-exp-035",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "a small back garden",
   "meaningVi": "một khu vườn nhỏ phía sau nhà",
   "promptVi": "một khu vườn nhỏ phía sau nhà",
@@ -883,7 +908,7 @@
   "id": "esl-v2-r05-u01-001",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "đọc một bản đồ",
   "referenceAnswers": [
    "read a map"
@@ -910,13 +935,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "map",
+  "meaningVi": "tấm bản đồ"
  },
  {
   "id": "esl-v2-r05-u01-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "một tấm thiệp sinh nhật",
   "referenceAnswers": [
    "a birthday card"
@@ -943,13 +971,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "birthday card",
+  "meaningVi": "thiệp sinh nhật"
  },
  {
   "id": "esl-v2-r05-u01-003",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "viết một lời nhắn ngắn",
   "referenceAnswers": [
    "write a short message"
@@ -976,13 +1007,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-004",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "đặt chìa khóa lên bàn",
   "referenceAnswers": [
    "put the keys on the table"
@@ -1009,13 +1041,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-005",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "mang theo một chiếc áo khoác nhẹ",
   "referenceAnswers": [
    "carry a light jacket"
@@ -1042,13 +1075,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "jacket",
+  "meaningVi": "áo khoác"
  },
  {
   "id": "esl-v2-r05-u01-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi khóa cửa trước khi ra ngoài.",
   "referenceAnswers": [
    "I lock the door before I go out."
@@ -1075,13 +1111,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Em gái tôi vẽ những bông hoa trong sổ tay.",
   "referenceAnswers": [
    "My younger sister draws flowers in her notebook."
@@ -1108,13 +1145,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chúng tôi rửa bát sau bữa tối.",
   "referenceAnswers": [
    "We wash the dishes after dinner."
@@ -1141,13 +1179,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "dinner",
+  "meaningVi": "bữa ăn tối"
  },
  {
   "id": "esl-v2-r05-u01-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Người quản lý kiểm tra danh sách mỗi sáng.",
   "referenceAnswers": [
    "The manager checks the list every morning."
@@ -1174,13 +1215,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "every morning",
+  "meaningVi": "mỗi buổi sáng"
  },
  {
   "id": "esl-v2-r05-u01-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi để đôi giày ở cạnh cửa.",
   "referenceAnswers": [
    "I leave my shoes by the door."
@@ -1207,13 +1251,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Các bạn của Lan mang đồ ăn đến buổi dã ngoại.",
   "referenceAnswers": [
    "Lan's friends bring food to the picnic."
@@ -1240,13 +1285,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bố tôi sửa chiếc ghế gỗ vào ngày Chủ nhật.",
   "referenceAnswers": [
    "My father repairs the wooden chair on Sundays."
@@ -1273,13 +1319,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "wooden",
+  "meaningVi": "bằng gỗ"
  },
  {
   "id": "esl-v2-r05-u01-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Người bán hàng mở cửa tiệm lúc chín giờ.",
   "referenceAnswers": [
    "The shop assistant opens the shop at nine."
@@ -1306,13 +1355,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi gửi một tấm bưu thiếp cho bà.",
   "referenceAnswers": [
    "We send a postcard to our grandmother."
@@ -1339,13 +1389,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "grandmother",
+  "meaningVi": "bà (nội/ngoại)"
  },
  {
   "id": "esl-v2-r05-u01-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chú chó mang quả bóng đến cho chủ của nó.",
   "referenceAnswers": [
    "The dog brings the ball to its owner."
@@ -1372,13 +1425,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
  },
  {
   "id": "esl-v2-r05-u01-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Các công nhân dọn con đường vào buổi sáng.",
   "referenceAnswers": [
    "The workers clean the road in the morning."
@@ -1405,13 +1459,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r05-u01-017",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi cất vé xe buýt trong ví nhỏ của mình.",
   "referenceAnswers": [
    "I keep my bus ticket in my small wallet."
@@ -1438,13 +1495,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "ticket",
+  "meaningVi": "tấm vé"
  },
  {
   "id": "esl-v2-r05-u02-001",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "một chiếc vali khá nặng",
   "referenceAnswers": [
    "a rather heavy suitcase"
@@ -1471,13 +1531,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "rất mệt sau chuyến đi",
   "referenceAnswers": [
    "very tired after the trip"
@@ -1504,13 +1565,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-003",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "một người hàng xóm thân thiện",
   "referenceAnswers": [
    "a friendly neighbour"
@@ -1537,13 +1599,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-004",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "sẵn sàng cho bài kiểm tra",
   "referenceAnswers": [
    "ready for the test"
@@ -1570,16 +1633,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-005",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi đang ở thư viện ngay bây giờ.",
   "referenceAnswers": [
-   "I am at the library now."
+   "I am at the library now.",
+   "I'm at the library now."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1603,13 +1668,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r05-u02-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai chiếc cốc này sạch.",
   "referenceAnswers": [
    "These two cups are clean."
@@ -1636,13 +1704,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Cô giáo của chúng tôi rất kiên nhẫn.",
   "referenceAnswers": [
    "Our teacher is very patient."
@@ -1669,13 +1738,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc hộp dưới giường trống.",
   "referenceAnswers": [
    "The box under the bed is empty."
@@ -1702,16 +1772,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi không lo lắng về bài tập này.",
   "referenceAnswers": [
-   "I am not worried about this exercise."
+   "I am not worried about this exercise.",
+   "I'm not worried about this exercise."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1735,13 +1807,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Những học sinh mới rất hào hứng.",
   "referenceAnswers": [
    "The new students are very excited."
@@ -1768,16 +1841,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r05-u02-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Anh trai tôi không có mặt ở nhà hôm nay.",
   "referenceAnswers": [
-   "My older brother is not at home today."
+   "My older brother is not at home today.",
+   "My older brother isn't at home today."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1801,13 +1878,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Buổi họp này rất quan trọng với nhóm.",
   "referenceAnswers": [
    "This meeting is very important to the team."
@@ -1834,16 +1912,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai chiếc ghế bên cửa sổ không thoải mái.",
   "referenceAnswers": [
-   "The two chairs by the window are not comfortable."
+   "The two chairs by the window are not comfortable.",
+   "The two chairs by the window aren't comfortable."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1867,13 +1947,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "comfortable",
+  "meaningVi": "thoải mái"
  },
  {
   "id": "esl-v2-r05-u02-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Món súp quá nóng để ăn ngay.",
   "referenceAnswers": [
    "The soup is too hot to eat now."
@@ -1900,13 +1983,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Cô ấy là một tình nguyện viên ở thư viện.",
   "referenceAnswers": [
    "She is a volunteer at the library."
@@ -1933,16 +2017,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r05-u02-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Chúng tôi chưa sẵn sàng cho chuyến đi.",
   "referenceAnswers": [
-   "We are not ready for the trip yet."
+   "We are not ready for the trip yet.",
+   "We aren't ready for the trip yet."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1966,16 +2054,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
  },
  {
   "id": "esl-v2-r05-u02-017",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Thời tiết hôm nay không phù hợp để cắm trại.",
   "referenceAnswers": [
-   "The weather today is not suitable for camping."
+   "The weather today is not suitable for camping.",
+   "The weather today isn't suitable for camping."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1999,13 +2089,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "weather",
+  "meaningVi": "thời tiết"
  },
  {
   "id": "esl-v2-r05-u03-001",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "có một tấm bản đồ giấy",
   "referenceAnswers": [
    "have a paper map"
@@ -2032,13 +2125,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "map",
+  "meaningVi": "tấm bản đồ"
  },
  {
   "id": "esl-v2-r05-u03-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "có ba người anh em họ",
   "referenceAnswers": [
    "have three cousins"
@@ -2065,13 +2161,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-003",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "có một cuộc hẹn vào thứ Sáu",
   "referenceAnswers": [
    "have an appointment on Friday"
@@ -2098,13 +2195,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-004",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "có nhiều bài cần đọc",
   "referenceAnswers": [
    "have a lot of reading to do"
@@ -2131,16 +2229,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-005",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Tôi có hai chiếc vé cho buổi hòa nhạc.",
   "referenceAnswers": [
-   "I have two tickets for the concert."
+   "I have two tickets for the concert.",
+   "I've two tickets for the concert."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2164,13 +2264,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "concert",
+  "meaningVi": "buổi hòa nhạc"
  },
  {
   "id": "esl-v2-r05-u03-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cậu ấy có một chiếc đồng hồ màu bạc.",
   "referenceAnswers": [
    "He has a silver watch."
@@ -2197,13 +2300,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi có đủ ghế cho khách.",
   "referenceAnswers": [
    "We have enough chairs for the guests."
@@ -2230,13 +2334,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có một ý tưởng đơn giản.",
   "referenceAnswers": [
    "She has a simple idea."
@@ -2263,13 +2368,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai anh em tôi có phòng ngủ riêng.",
   "referenceAnswers": [
    "My two brothers have separate bedrooms."
@@ -2296,13 +2402,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc máy ảnh này có màn hình lớn.",
   "referenceAnswers": [
    "This camera has a large screen."
@@ -2329,13 +2436,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bà tôi có một khu vườn rau nhỏ.",
   "referenceAnswers": [
    "My grandmother has a small vegetable garden."
@@ -2362,16 +2470,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "grandmother",
+  "meaningVi": "bà (nội/ngoại)"
  },
  {
   "id": "esl-v2-r05-u03-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn và tôi có cùng một giáo viên.",
   "referenceAnswers": [
-   "You and I have the same teacher."
+   "You and I have the same teacher.",
+   "You and I've the same teacher."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2395,13 +2507,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Trường của họ có hai phòng máy tính.",
   "referenceAnswers": [
    "Their school has two computer rooms."
@@ -2428,13 +2541,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Em bé có đôi mắt rất sáng.",
   "referenceAnswers": [
    "The baby has very bright eyes."
@@ -2461,16 +2575,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi có một cuộc hẹn với nha sĩ vào ngày mai.",
   "referenceAnswers": [
-   "I have an appointment with the dentist tomorrow."
+   "I have an appointment with the dentist tomorrow.",
+   "I've an appointment with the dentist tomorrow."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2494,16 +2610,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "tomorrow",
+  "meaningVi": "ngày mai"
  },
  {
   "id": "esl-v2-r05-u03-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có ba cuốn sách nhưng không có túi.",
   "referenceAnswers": [
-   "She has three books but does not have a bag."
+   "She has three books but does not have a bag.",
+   "She has three books but doesn't have a bag."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2527,13 +2647,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u03-017",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Cả hai đội đều có cơ hội giành chiến thắng.",
   "referenceAnswers": [
    "Both teams have a chance to win."
@@ -2560,13 +2681,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
  },
  {
   "id": "esl-v2-r05-u04-001",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "có thể đi xe đạp",
   "referenceAnswers": [
    "can ride a bicycle"
@@ -2593,16 +2715,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "không thể nhớ mật khẩu",
   "referenceAnswers": [
-   "cannot remember the password"
+   "cannot remember the password",
+   "can't remember the password"
   ],
   "grammarTags": [
    "R05-U04",
@@ -2626,13 +2750,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-003",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "có thể nói một chút tiếng Pháp",
   "referenceAnswers": [
    "can speak a little French"
@@ -2659,16 +2784,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-004",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "không thể vào phòng lúc này",
   "referenceAnswers": [
-   "cannot enter the room now"
+   "cannot enter the room now",
+   "can't enter the room now"
   ],
   "grammarTags": [
    "R05-U04",
@@ -2692,13 +2819,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-005",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi có thể tìm đường bằng bản đồ này.",
   "referenceAnswers": [
    "I can find the way with this map."
@@ -2725,13 +2853,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "map",
+  "meaningVi": "tấm bản đồ"
  },
  {
   "id": "esl-v2-r05-u04-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Em họ tôi có thể đếm đến một trăm.",
   "referenceAnswers": [
    "My cousin can count to one hundred."
@@ -2758,13 +2889,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thể mở cửa sổ giúp tôi.",
   "referenceAnswers": [
    "You can open the window for me."
@@ -2791,16 +2923,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "window",
+  "meaningVi": "cửa sổ"
  },
  {
   "id": "esl-v2-r05-u04-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi không thể nghe thấy tiếng chuông ngoài hành lang.",
   "referenceAnswers": [
-   "We cannot hear the bell in the corridor."
+   "We cannot hear the bell in the corridor.",
+   "We can't hear the bell in the corridor."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2824,13 +2960,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có thể giải thích quy tắc bằng tiếng Anh.",
   "referenceAnswers": [
    "She can explain the rule in English."
@@ -2857,16 +2994,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chiếc điện thoại này không thể chụp ảnh dưới nước.",
   "referenceAnswers": [
-   "This phone cannot take photos underwater."
+   "This phone cannot take photos underwater.",
+   "This phone can't take photos underwater."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2890,13 +3029,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi có thể mượn chiếc ghế này được không?",
   "referenceAnswers": [
    "Can I borrow this chair?"
@@ -2923,16 +3063,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn tôi không thể tham gia buổi tập hôm nay.",
   "referenceAnswers": [
-   "My friend cannot attend practice today."
+   "My friend cannot attend practice today.",
+   "My friend can't attend practice today."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2956,13 +3098,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Chúng ta có thể sử dụng cửa phụ khi trời mưa.",
   "referenceAnswers": [
    "We can use the side entrance when it rains."
@@ -2989,13 +3132,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Các em nhỏ có thể chơi trong sân sau giờ học.",
   "referenceAnswers": [
    "The children can play in the yard after school."
@@ -3022,16 +3166,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Tôi không thể đọc chữ trên tấm biển từ xa.",
   "referenceAnswers": [
-   "I cannot read the words on the sign from here."
+   "I cannot read the words on the sign from here.",
+   "I can't read the words on the sign from here."
   ],
   "grammarTags": [
    "R05-U04",
@@ -3055,16 +3201,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Bố tôi có thể sửa chiếc đèn nhưng không thể sửa máy tính.",
   "referenceAnswers": [
-   "My father can fix the lamp but cannot fix the computer."
+   "My father can fix the lamp but cannot fix the computer.",
+   "My father can fix the lamp but can't fix the computer."
   ],
   "grammarTags": [
    "R05-U04",
@@ -3088,16 +3236,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u04-017",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng ta có thể đổi giờ họp, nhưng không thể đổi địa điểm.",
   "referenceAnswers": [
-   "We can change the meeting time, but we cannot change the location."
+   "We can change the meeting time, but we cannot change the location.",
+   "We can change the meeting time, but we can't change the location."
   ],
   "grammarTags": [
    "R05-U04",
@@ -3121,16 +3271,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
  },
  {
   "id": "esl-v2-r05-u05-001",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "không ở trên bàn",
   "referenceAnswers": [
-   "is not on the table"
+   "is not on the table",
+   "isn't on the table"
   ],
   "grammarTags": [
    "R05-U05",
@@ -3154,16 +3306,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-002",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "không thích đồ ăn cay",
   "referenceAnswers": [
-   "do not like spicy food"
+   "do not like spicy food",
+   "don't like spicy food"
   ],
   "grammarTags": [
    "R05-U05",
@@ -3187,16 +3341,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-003",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "không có đủ giấy",
   "referenceAnswers": [
-   "do not have enough paper"
+   "do not have enough paper",
+   "don't have enough paper"
   ],
   "grammarTags": [
    "R05-U05",
@@ -3220,16 +3376,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-004",
   "practiceLevel": "2.5",
   "type": "phrase",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "không thể đợi đến tối",
   "referenceAnswers": [
-   "cannot wait until tonight"
+   "cannot wait until tonight",
+   "can't wait until tonight"
   ],
   "grammarTags": [
    "R05-U05",
@@ -3253,16 +3411,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-005",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi không uống cà phê sau sáu giờ tối.",
   "referenceAnswers": [
-   "I do not drink coffee after six in the evening."
+   "I do not drink coffee after six in the evening.",
+   "I don't drink coffee after six in the evening."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3286,16 +3446,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Cô ấy không đi làm bằng xe máy.",
   "referenceAnswers": [
-   "She does not go to work by motorbike."
+   "She does not go to work by motorbike.",
+   "She doesn't go to work by motorbike."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3319,16 +3481,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những chiếc bàn này không sạch.",
   "referenceAnswers": [
-   "These tables are not clean."
+   "These tables are not clean.",
+   "These tables aren't clean."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3352,16 +3516,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Chúng tôi không có lớp học vào thứ Tư.",
   "referenceAnswers": [
-   "We do not have classes on Wednesdays."
+   "We do not have classes on Wednesdays.",
+   "We don't have classes on Wednesdays."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3385,16 +3551,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Anh ấy không thích những bộ phim dài.",
   "referenceAnswers": [
-   "He does not like long films."
+   "He does not like long films.",
+   "He doesn't like long films."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3418,16 +3586,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Con mèo không ở trong phòng ngủ.",
   "referenceAnswers": [
-   "The cat is not in the bedroom."
+   "The cat is not in the bedroom.",
+   "The cat isn't in the bedroom."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3451,16 +3621,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "bedroom",
+  "meaningVi": "phòng ngủ"
  },
  {
   "id": "esl-v2-r05-u05-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi không thể tìm thấy chìa khóa dự phòng.",
   "referenceAnswers": [
-   "I cannot find the spare key."
+   "I cannot find the spare key.",
+   "I can't find the spare key."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3484,16 +3658,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn bè tôi không ăn tối ở trường.",
   "referenceAnswers": [
-   "My friends do not have dinner at school."
+   "My friends do not have dinner at school.",
+   "My friends don't have dinner at school."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3517,16 +3693,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Cửa hàng này không mở cửa vào thứ Hai.",
   "referenceAnswers": [
-   "This shop does not open on Mondays."
+   "This shop does not open on Mondays.",
+   "This shop doesn't open on Mondays."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3550,16 +3728,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Chúng tôi không đi bộ đến công viên khi trời mưa.",
   "referenceAnswers": [
-   "We do not walk to the park when it rains."
+   "We do not walk to the park when it rains.",
+   "We don't walk to the park when it rains."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3583,16 +3763,20 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "park",
+  "meaningVi": "công viên"
  },
  {
   "id": "esl-v2-r05-u05-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Em trai tôi không có điện thoại riêng.",
   "referenceAnswers": [
-   "My younger brother does not have his own phone."
+   "My younger brother does not have his own phone.",
+   "My younger brother doesn't have his own phone."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3616,16 +3800,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can"
  },
  {
   "id": "esl-v2-r05-u05-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Phủ định đúng với be, do/does và can",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai người bạn cùng phòng của tôi không xem ti vi vào buổi sáng.",
   "referenceAnswers": [
-   "My two roommates do not watch television in the morning."
+   "My two roommates do not watch television in the morning.",
+   "My two roommates don't watch television in the morning."
   ],
   "grammarTags": [
    "R05-U05",
@@ -3649,13 +3835,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r05-u06-001",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bây giờ bạn đang ở đâu?",
   "referenceAnswers": [
    "Where are you now?"
@@ -3682,13 +3871,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-002",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thích món súp này không?",
   "referenceAnswers": [
    "Do you like this soup?"
@@ -3715,13 +3905,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-003",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cuộc họp bắt đầu khi nào?",
   "referenceAnswers": [
    "When does the meeting start?"
@@ -3748,13 +3939,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "meeting",
+  "meaningVi": "cuộc họp"
  },
  {
   "id": "esl-v2-r05-u06-004",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi có thể dùng chiếc bút này không?",
   "referenceAnswers": [
    "Can I use this pen?"
@@ -3781,13 +3975,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-005",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn có sống gần trường không?",
   "referenceAnswers": [
    "Do you live near the school?"
@@ -3814,13 +4009,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-006",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có học vào buổi tối không?",
   "referenceAnswers": [
    "Does she study in the evening?"
@@ -3847,13 +4043,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "evening",
+  "meaningVi": "buổi tối"
  },
  {
   "id": "esl-v2-r05-u06-007",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những chiếc vé này có đắt không?",
   "referenceAnswers": [
    "Are these tickets expensive?"
@@ -3880,13 +4079,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "expensive",
+  "meaningVi": "đắt đỏ"
  },
  {
   "id": "esl-v2-r05-u06-008",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Bố của bạn làm việc ở đâu?",
   "referenceAnswers": [
    "Where does your father work?"
@@ -3913,13 +4115,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-009",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bạn ăn sáng lúc mấy giờ?",
   "referenceAnswers": [
    "What time do you have breakfast?"
@@ -3946,13 +4149,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-010",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Phòng máy tính có mở cửa hôm nay không?",
   "referenceAnswers": [
    "Is the computer room open today?"
@@ -3979,13 +4183,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-011",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thể mang theo chiếc ô này không?",
   "referenceAnswers": [
    "Can you bring this umbrella?"
@@ -4012,13 +4217,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "umbrella",
+  "meaningVi": "chiếc ô / dù"
  },
  {
   "id": "esl-v2-r05-u06-012",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ai là giáo viên tiếng Anh của bạn?",
   "referenceAnswers": [
    "Who is your English teacher?"
@@ -4045,13 +4253,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-013",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những người hàng xóm của bạn có nuôi chó không?",
   "referenceAnswers": [
    "Do your neighbours have a dog?"
@@ -4078,13 +4287,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "neighbours",
+  "meaningVi": "những người hàng xóm"
  },
  {
   "id": "esl-v2-r05-u06-014",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Khi nào thư viện đóng cửa?",
   "referenceAnswers": [
    "When does the library close?"
@@ -4111,13 +4323,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r05-u06-015",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn đã sẵn sàng cho buổi học chưa?",
   "referenceAnswers": [
    "Are you ready for the lesson?"
@@ -4144,16 +4359,18 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  },
  {
   "id": "esl-v2-r05-u06-016",
   "practiceLevel": "2.5",
   "type": "sentence",
-  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tại sao em trai bạn không đi xe buýt đến trường?",
   "referenceAnswers": [
-   "Why doesn't your younger brother take the bus to school?"
+   "Why doesn't your younger brother take the bus to school?",
+   "Why does not your younger brother take the bus to school?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4177,6 +4394,7 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
  }
 ]

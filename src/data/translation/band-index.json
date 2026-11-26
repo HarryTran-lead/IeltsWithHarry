@@ -43,7 +43,20 @@
    "band-1.0-exp-034",
    "band-1.0-exp-035"
   ],
-  "topics": 18,
+  "topics": 11,
+  "topicCounts": {
+   "Gia đình & Đời sống": 8,
+   "Môi trường & Năng lượng": 5,
+   "Đô thị & Nhà ở": 5,
+   "Văn hóa & Du lịch": 4,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Công nghệ & Khoa học": 3,
+   "Giao thông & Đi lại": 3,
+   "Sức khỏe & Y tế": 3,
+   "Giáo dục & Trường học": 2,
+   "Thể thao & Giải trí": 2,
+   "Công việc & Kinh tế": 1
+  },
   "sample": {
    "promptVi": "tên",
    "answer": "name"
@@ -93,7 +106,20 @@
    "band-1.5-exp-034",
    "band-1.5-exp-035"
   ],
-  "topics": 20,
+  "topics": 11,
+  "topicCounts": {
+   "Đô thị & Nhà ở": 7,
+   "Gia đình & Đời sống": 6,
+   "Giáo dục & Trường học": 4,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Công nghệ & Khoa học": 3,
+   "Giao thông & Đi lại": 3,
+   "Sức khỏe & Y tế": 3,
+   "Thể thao & Giải trí": 3,
+   "Văn hóa & Du lịch": 3,
+   "Công việc & Kinh tế": 2,
+   "Môi trường & Năng lượng": 2
+  },
   "sample": {
    "promptVi": "rất vui",
    "answer": "very happy"
@@ -143,7 +169,21 @@
    "band-2.0-exp-034",
    "band-2.0-exp-035"
   ],
-  "topics": 19,
+  "topics": 12,
+  "topicCounts": {
+   "Gia đình & Đời sống": 8,
+   "Đô thị & Nhà ở": 5,
+   "Văn hóa & Du lịch": 4,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Công việc & Kinh tế": 3,
+   "Giao thông & Đi lại": 3,
+   "Giáo dục & Trường học": 3,
+   "Sức khỏe & Y tế": 3,
+   "Công nghệ & Khoa học": 2,
+   "Môi trường & Năng lượng": 2,
+   "Thể thao & Giải trí": 2,
+   "Xã hội & Chính sách": 1
+  },
   "sample": {
    "promptVi": "mỗi ngày",
    "answer": "every day"
@@ -293,7 +333,20 @@
    "esl-v2-r05-u06-015",
    "esl-v2-r05-u06-016"
   ],
-  "topics": 26,
+  "topics": 11,
+  "topicCounts": {
+   "Gia đình & Đời sống": 64,
+   "Giáo dục & Trường học": 15,
+   "Ẩm thực & Dinh dưỡng": 13,
+   "Công nghệ & Khoa học": 9,
+   "Văn hóa & Du lịch": 8,
+   "Giao thông & Đi lại": 7,
+   "Công việc & Kinh tế": 6,
+   "Môi trường & Năng lượng": 6,
+   "Đô thị & Nhà ở": 5,
+   "Sức khỏe & Y tế": 4,
+   "Thể thao & Giải trí": 3
+  },
   "sample": {
    "promptVi": "thường vào buổi tối",
    "answer": "usually in the evening"
@@ -453,7 +506,20 @@
    "esl-v2-r06-u06-015",
    "esl-v2-r06-u06-016"
   ],
-  "topics": 35,
+  "topics": 11,
+  "topicCounts": {
+   "Gia đình & Đời sống": 51,
+   "Ẩm thực & Dinh dưỡng": 18,
+   "Giáo dục & Trường học": 15,
+   "Công việc & Kinh tế": 11,
+   "Giao thông & Đi lại": 10,
+   "Văn hóa & Du lịch": 10,
+   "Thể thao & Giải trí": 9,
+   "Đô thị & Nhà ở": 9,
+   "Công nghệ & Khoa học": 6,
+   "Sức khỏe & Y tế": 6,
+   "Môi trường & Năng lượng": 5
+  },
   "sample": {
    "promptVi": "Hôm qua tôi đã thăm ông bà.",
    "answer": "I visited my grandparents yesterday."
@@ -613,7 +679,21 @@
    "esl-v2-r07-u06-015",
    "esl-v2-r07-u06-016"
   ],
-  "topics": 39,
+  "topics": 12,
+  "topicCounts": {
+   "Gia đình & Đời sống": 58,
+   "Ẩm thực & Dinh dưỡng": 18,
+   "Giáo dục & Trường học": 16,
+   "Giao thông & Đi lại": 10,
+   "Môi trường & Năng lượng": 9,
+   "Công việc & Kinh tế": 8,
+   "Sức khỏe & Y tế": 8,
+   "Công nghệ & Khoa học": 6,
+   "Thể thao & Giải trí": 6,
+   "Văn hóa & Du lịch": 5,
+   "Đô thị & Nhà ở": 5,
+   "Xã hội & Chính sách": 1
+  },
   "sample": {
    "promptVi": "Tháng tới tôi sẽ học bơi.",
    "answer": "I will learn to swim next month."
@@ -773,7 +853,21 @@
    "esl-v2-r08-u06-015",
    "esl-v2-r08-u06-016"
   ],
-  "topics": 36,
+  "topics": 12,
+  "topicCounts": {
+   "Gia đình & Đời sống": 48,
+   "Ẩm thực & Dinh dưỡng": 16,
+   "Môi trường & Năng lượng": 15,
+   "Giao thông & Đi lại": 14,
+   "Công nghệ & Khoa học": 13,
+   "Giáo dục & Trường học": 12,
+   "Đô thị & Nhà ở": 8,
+   "Công việc & Kinh tế": 7,
+   "Thể thao & Giải trí": 7,
+   "Văn hóa & Du lịch": 6,
+   "Sức khỏe & Y tế": 2,
+   "Xã hội & Chính sách": 2
+  },
   "sample": {
    "promptVi": "Tôi đang học tiếng Anh vì muốn cải thiện kỹ năng giao tiếp.",
    "answer": "I am studying English because I want to improve my communication skills."
@@ -933,7 +1027,21 @@
    "esl-v2-r09-u06-015",
    "esl-v2-r09-u06-016"
   ],
-  "topics": 27,
+  "topics": 12,
+  "topicCounts": {
+   "Gia đình & Đời sống": 46,
+   "Giáo dục & Trường học": 19,
+   "Công nghệ & Khoa học": 15,
+   "Ẩm thực & Dinh dưỡng": 13,
+   "Giao thông & Đi lại": 11,
+   "Đô thị & Nhà ở": 11,
+   "Công việc & Kinh tế": 10,
+   "Môi trường & Năng lượng": 9,
+   "Văn hóa & Du lịch": 7,
+   "Sức khỏe & Y tế": 6,
+   "Thể thao & Giải trí": 2,
+   "Xã hội & Chính sách": 1
+  },
   "sample": {
    "promptVi": "Giao thông công cộng thuận tiện hơn khi có nhiều tuyến xe buýt.",
    "answer": "Public transport is more convenient when there are more bus routes."
@@ -1103,7 +1211,21 @@
    "esl-v2-r10-u06-015",
    "esl-v2-r10-u06-016"
   ],
-  "topics": 27,
+  "topics": 12,
+  "topicCounts": {
+   "Giáo dục & Trường học": 35,
+   "Gia đình & Đời sống": 28,
+   "Công việc & Kinh tế": 26,
+   "Công nghệ & Khoa học": 14,
+   "Giao thông & Đi lại": 11,
+   "Đô thị & Nhà ở": 11,
+   "Môi trường & Năng lượng": 10,
+   "Ẩm thực & Dinh dưỡng": 7,
+   "Văn hóa & Du lịch": 6,
+   "Sức khỏe & Y tế": 5,
+   "Thể thao & Giải trí": 4,
+   "Xã hội & Chính sách": 3
+  },
   "sample": {
    "promptVi": "Học bổng này tạo cơ hội cho sinh viên ở vùng nông thôn theo học đại học.",
    "answer": "This scholarship gives students from rural areas the opportunity to attend university."
@@ -1273,7 +1395,21 @@
    "esl-v2-r11-u06-015",
    "esl-v2-r11-u06-016"
   ],
-  "topics": 28,
+  "topics": 12,
+  "topicCounts": {
+   "Công việc & Kinh tế": 31,
+   "Giáo dục & Trường học": 24,
+   "Công nghệ & Khoa học": 20,
+   "Gia đình & Đời sống": 16,
+   "Sức khỏe & Y tế": 12,
+   "Ẩm thực & Dinh dưỡng": 11,
+   "Đô thị & Nhà ở": 10,
+   "Giao thông & Đi lại": 9,
+   "Văn hóa & Du lịch": 9,
+   "Môi trường & Năng lượng": 8,
+   "Thể thao & Giải trí": 5,
+   "Xã hội & Chính sách": 5
+  },
   "sample": {
    "promptVi": "Tập thể dục thường xuyên có thể giúp phòng ngừa một số bệnh mãn tính.",
    "answer": "Regular exercise can help prevent some chronic diseases."
@@ -1443,7 +1579,21 @@
    "esl-v2-r12-u06-015",
    "esl-v2-r12-u06-016"
   ],
-  "topics": 38,
+  "topics": 12,
+  "topicCounts": {
+   "Gia đình & Đời sống": 28,
+   "Giáo dục & Trường học": 26,
+   "Công việc & Kinh tế": 24,
+   "Công nghệ & Khoa học": 16,
+   "Đô thị & Nhà ở": 13,
+   "Giao thông & Đi lại": 12,
+   "Môi trường & Năng lượng": 10,
+   "Sức khỏe & Y tế": 9,
+   "Xã hội & Chính sách": 8,
+   "Ẩm thực & Dinh dưỡng": 6,
+   "Văn hóa & Du lịch": 5,
+   "Thể thao & Giải trí": 3
+  },
   "sample": {
    "promptVi": "Người dùng cần hiểu cách ứng dụng thu thập dữ liệu để bảo vệ quyền riêng tư.",
    "answer": "Users need to understand how apps collect data in order to protect their privacy."
@@ -1613,7 +1763,21 @@
    "esl-v2-r13-u06-015",
    "esl-v2-r13-u06-016"
   ],
-  "topics": 35,
+  "topics": 12,
+  "topicCounts": {
+   "Công việc & Kinh tế": 30,
+   "Giáo dục & Trường học": 29,
+   "Công nghệ & Khoa học": 19,
+   "Môi trường & Năng lượng": 15,
+   "Gia đình & Đời sống": 13,
+   "Xã hội & Chính sách": 12,
+   "Đô thị & Nhà ở": 11,
+   "Giao thông & Đi lại": 9,
+   "Văn hóa & Du lịch": 9,
+   "Sức khỏe & Y tế": 6,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Thể thao & Giải trí": 3
+  },
   "sample": {
    "promptVi": "Quy hoạch đô thị tốt có thể rút ngắn thời gian đi lại và cải thiện chất lượng không khí.",
    "answer": "Effective urban planning can shorten commutes and improve air quality."
@@ -1743,7 +1907,21 @@
    "esl-v2-r14-u05-013",
    "esl-v2-r14-u05-014"
   ],
-  "topics": 40,
+  "topics": 12,
+  "topicCounts": {
+   "Công việc & Kinh tế": 19,
+   "Giáo dục & Trường học": 18,
+   "Đô thị & Nhà ở": 15,
+   "Môi trường & Năng lượng": 14,
+   "Công nghệ & Khoa học": 12,
+   "Văn hóa & Du lịch": 10,
+   "Sức khỏe & Y tế": 7,
+   "Xã hội & Chính sách": 7,
+   "Giao thông & Đi lại": 6,
+   "Gia đình & Đời sống": 5,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Thể thao & Giải trí": 3
+  },
   "sample": {
    "promptVi": "Các chính sách môi trường cần được đánh giá dựa trên tác động dài hạn thay vì lợi ích trước mắt. Một dự án có thể tạo việc làm ngay, nhưng cũng gây ô nhiễm kéo dài nhiều năm. Vì vậy, báo cáo đánh giá nên tính cả chi phí xử lý về sau.",
    "answer": "Environmental policies should be evaluated by their long-term impact rather than their immediate benefits. A project may create jobs immediately while causing pollution for years. Its assessment should therefore include the cost of future clean-up."
@@ -1873,9 +2051,23 @@
    "esl-v2-r15-u05-013",
    "esl-v2-r15-u05-014"
   ],
-  "topics": 37,
+  "topics": 12,
+  "topicCounts": {
+   "Giáo dục & Trường học": 24,
+   "Công việc & Kinh tế": 23,
+   "Đô thị & Nhà ở": 14,
+   "Môi trường & Năng lượng": 12,
+   "Giao thông & Đi lại": 10,
+   "Văn hóa & Du lịch": 9,
+   "Công nghệ & Khoa học": 7,
+   "Sức khỏe & Y tế": 7,
+   "Ẩm thực & Dinh dưỡng": 6,
+   "Thể thao & Giải trí": 4,
+   "Gia đình & Đời sống": 2,
+   "Xã hội & Chính sách": 2
+  },
   "sample": {
-   "promptVi": "Một biện pháp y tế công cộng chỉ hiệu quả bền vững khi cộng đồng tin tưởng vào bằng chứng đứng sau nó. Ngay cả một chương trình có kết quả thử nghiệm tốt cũng có thể thất bại nếu người dân không hiểu cách dữ liệu được thu thập. Công bố sự bất định và giải thích quyết định một cách dễ hiểu có thể củng cố niềm tin đó.",
+   "promptVi": "Một biện pháp y tế công cộng chỉ hiệu quả bền vững khi cộng đồng tin tưởng vào bằng chứng đứng sau nó. Ngay cả một chương trình có kết quả thử nghiệm tốt cũng có thể thất bại nếu người dân không hiểu cách dữ liệu được thu thập. Thẳng thắn nêu rõ những điểm chưa chắc chắn và giải thích quyết định dễ hiểu có thể củng cố niềm tin đó.",
    "answer": "A public health intervention is only sustainable when the community trusts the evidence behind it. Even a programme with strong trial results may fail if people do not understand how the data were collected. Disclosing uncertainty and explaining decisions clearly can help build that trust."
   }
  },
@@ -1983,7 +2175,21 @@
    "esl-v2-r16-u05-007",
    "esl-v2-r16-u05-008"
   ],
-  "topics": 29,
+  "topics": 12,
+  "topicCounts": {
+   "Môi trường & Năng lượng": 16,
+   "Giáo dục & Trường học": 15,
+   "Đô thị & Nhà ở": 11,
+   "Công việc & Kinh tế": 10,
+   "Văn hóa & Du lịch": 9,
+   "Xã hội & Chính sách": 9,
+   "Giao thông & Đi lại": 8,
+   "Sức khỏe & Y tế": 7,
+   "Công nghệ & Khoa học": 6,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Gia đình & Đời sống": 3,
+   "Thể thao & Giải trí": 2
+  },
   "sample": {
    "promptVi": "Khi thiết kế thuế carbon, nhà hoạch định chính sách phải cân nhắc sự đánh đổi giữa hiệu quả môi trường và gánh nặng cho hộ thu nhập thấp. Mức thuế đủ cao có thể thay đổi hành vi, song cũng làm tăng chi phí năng lượng của người nghèo. Hoàn trả một phần doanh thu theo thu nhập sẽ giúp duy trì tín hiệu giá mà giảm tác động bất công.",
    "answer": "When designing a carbon tax, policymakers must weigh the trade-off between environmental effectiveness and the burden on low-income households. A sufficiently high tax can change behaviour, yet it may also raise energy costs for poorer households. Returning some revenue according to income would preserve the price signal while reducing an unfair burden."
@@ -2093,7 +2299,21 @@
    "esl-v2-r17-u05-007",
    "esl-v2-r17-u05-008"
   ],
-  "topics": 27,
+  "topics": 12,
+  "topicCounts": {
+   "Giáo dục & Trường học": 14,
+   "Đô thị & Nhà ở": 12,
+   "Công nghệ & Khoa học": 11,
+   "Công việc & Kinh tế": 11,
+   "Môi trường & Năng lượng": 10,
+   "Sức khỏe & Y tế": 8,
+   "Xã hội & Chính sách": 8,
+   "Văn hóa & Du lịch": 7,
+   "Gia đình & Đời sống": 5,
+   "Giao thông & Đi lại": 5,
+   "Ẩm thực & Dinh dưỡng": 5,
+   "Thể thao & Giải trí": 4
+  },
   "sample": {
    "promptVi": "Chính sách trợ cấp thuốc có thể tạo ra hệ quả ngoài dự kiến nếu nó khuyến khích kê đơn quá mức mà không cải thiện kết quả điều trị. Số đơn thuốc tăng có thể trông giống như khả năng tiếp cận được cải thiện, nhưng tự nó không chứng minh bệnh nhân khỏe hơn. Cần đối chiếu dữ liệu kê đơn với kết quả điều trị và theo dõi liệu tác động có khác nhau giữa các nhóm bệnh nhân hay không.",
    "answer": "A medicine subsidy may have unintended consequences if it encourages overprescribing without improving patient outcomes. More prescriptions may appear to indicate better access, but they do not by themselves show that patients are healthier. Prescription data should be compared with treatment outcomes, including whether effects differ across patient groups."
@@ -2203,7 +2423,21 @@
    "esl-v2-r18-u05-007",
    "esl-v2-r18-u05-008"
   ],
-  "topics": 34,
+  "topics": 12,
+  "topicCounts": {
+   "Công việc & Kinh tế": 19,
+   "Giáo dục & Trường học": 14,
+   "Đô thị & Nhà ở": 12,
+   "Môi trường & Năng lượng": 11,
+   "Công nghệ & Khoa học": 8,
+   "Văn hóa & Du lịch": 8,
+   "Sức khỏe & Y tế": 6,
+   "Gia đình & Đời sống": 5,
+   "Giao thông & Đi lại": 5,
+   "Xã hội & Chính sách": 5,
+   "Ẩm thực & Dinh dưỡng": 4,
+   "Thể thao & Giải trí": 3
+  },
   "sample": {
    "promptVi": "Đánh giá một chính sách chỉ bằng mức tăng trưởng tổng thể có thể che khuất bất bình đẳng mang tính cấu trúc trong cách lợi ích được phân chia. Hai chương trình có cùng mức tăng GDP vẫn có thể mang lại cơ hội rất khác nhau cho các nhóm thu nhập. Muốn kết luận chương trình nào công bằng hơn, cần xem lợi ích được phân chia ra sao và liệu những thay đổi quan sát được có thực sự do chính sách tạo ra hay không.",
    "answer": "Assessing a policy solely by aggregate growth can obscure structural inequality in how its benefits are distributed. Two programmes with the same contribution to GDP may nonetheless create very different opportunities across income groups. Judging which is fairer requires examining the distribution of gains and whether the observed changes can actually be attributed to the policy."
