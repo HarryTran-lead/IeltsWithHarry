@@ -25,6 +25,7 @@ import { cardResults, type CardResult } from "@/lib/news/card-progress";
 import "./news-masthead.css";
 import "./news-home-reference.css";
 import { NewsArticleVocabulary } from "./news-article-vocabulary";
+import { NewsChipRail } from "./news-chip-rail";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; report_url: string | null; fact_source_urls: string[]; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean; origin_region?: "vietnam" | "international" };
 type ArchiveRow = NewsRow & { source_id: string; origin_region: "vietnam" | "international"; interest_topics: string[]; readable: boolean; image_url: string | null; image_alt: string | null; image_credit: string | null; illustration_source_url: string | null; illustration_license: string | null; illustration_license_url: string | null };
@@ -389,7 +390,7 @@ function NewsHome() {
       </div>
       {showDailyPicks && picks.length > 0 && <div className="news-today-strip">
         <div className="news-daily-plan"><Newspaper size={19} aria-hidden="true" /><div><strong>{picks.length} bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div></div>
-        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => { const Icon = categoryIcons[topic]; return <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}><Icon size={13} aria-hidden="true" />{newsCategoryLabel(topic)}</button>; })}</div></div>
+        <div className="news-interest-picks"><span>Bạn thích đọc về</span><NewsChipRail label="chủ đề">{NEWS_CATEGORIES.map((topic) => { const Icon = categoryIcons[topic]; return <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}><Icon size={13} aria-hidden="true" />{newsCategoryLabel(topic)}</button>; })}</NewsChipRail></div>
       </div>}
       {(category!=="All News"||region!=="all"||interest!=="all"||questionType!=="all"||readyOnly||query||source!=="all"||year!=="all")&&<button type="button" className="news-clear-filters" onClick={()=>{setCategory("All News");setRegion("all");setInterest("all");setQuestionType("all");setReadyOnly(false);setQuery("");setSource("all");setYear("all");setPage(0);}}>Xóa tất cả bộ lọc</button>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}

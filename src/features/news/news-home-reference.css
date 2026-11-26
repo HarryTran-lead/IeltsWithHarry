@@ -361,3 +361,15 @@
   .news-home .news-feed-stats { order: 3; flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; }
   .news-home .news-today-strip .news-daily-plan { flex-wrap: nowrap; }
 }
+
+/* Topic chips: one sideways row with arrow buttons at a clipped edge. */
+.news-interest-picks > .news-chip-rail, .news-home .news-interest-picks > .news-chip-rail { position: relative; display: block; flex: 1 1 auto; min-width: 0; overflow: visible; }
+.news-chip-track { display: flex; flex-wrap: nowrap; gap: 5px; min-width: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; }
+.news-chip-track::-webkit-scrollbar { display: none; }
+.news-chip-rail.can-right .news-chip-track { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+.news-chip-rail.can-left .news-chip-track { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); }
+.news-chip-rail.can-left.can-right .news-chip-track { -webkit-mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); }
+.news-interest-picks .news-chip-arrow, .news-home .news-interest-picks .news-chip-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid #cfe5e7; border-radius: 999px; background: #fff; color: #0b7f89; box-shadow: 0 4px 12px -6px rgba(16, 42, 67, .45); transform: translateY(-50%); cursor: pointer; }
+.news-interest-picks .news-chip-arrow:hover { border-color: var(--teal, #0b8d98); background: #effafa; }
+.news-chip-arrow.is-left { left: -2px; }
+.news-chip-arrow.is-right { right: -2px; }
