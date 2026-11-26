@@ -110,23 +110,25 @@ function NewsHome() {
   const feedParam = params.get("feed");
   const feed: Feed = feedParam === "hot" || feedParam === "today" || feedParam === "archive" ? feedParam : "latest";
   const feedInfo = feeds.find((item) => item.id === feed)!;
-  const [category, setCategory] = useState<string>("All News");
-  const [region, setRegion] = useState<"all" | "vietnam" | "international">("all");
-  const [interest, setInterest] = useState("all");
+  // Filters, search and page live in the URL too, so Back from an article returns to the same list.
+  const [category, setCategory] = useState<string>(() => params.get("category") ?? "All News");
+  const [region, setRegion] = useState<"all" | "vietnam" | "international">(() => { const value = params.get("region"); return value === "vietnam" || value === "international" ? value : "all"; });
+  const [interest, setInterest] = useState(() => params.get("topic") ?? "all");
   const [questionType, setQuestionType] = useState<QuestionType | "all">(()=>{const type=params.get("questionType");return questionTypes.includes(type as QuestionType)?type as QuestionType:"all";});
   const [showMoreFilters, setShowMoreFilters] = useState(false);
-  const [readyOnly, setReadyOnly] = useState(false);
+  const [readyOnly, setReadyOnly] = useState(() => params.get("ready") === "1");
   const [randomBusy, setRandomBusy] = useState(false);
   const [randomError, setRandomError] = useState("");
-  const [query, setQuery] = useState("");
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState("newest");
-  const [source, setSource] = useState("all");
-  const [year, setYear] = useState("all");
+  const [topicNotice, setTopicNotice] = useState("");
+  const [query, setQuery] = useState(() => params.get("q") ?? "");
+  const [search, setSearch] = useState(() => params.get("q") ?? "");
+  const [sort, setSort] = useState(() => params.get("sort") ?? "newest");
+  const [source, setSource] = useState(() => params.get("source") ?? "all");
+  const [year, setYear] = useState(() => params.get("year") ?? "all");
   const [sources, setSources] = useState<{id: string; name: string}[]>([]);
   const [oldestYear, setOldestYear] = useState(new Date().getFullYear());
   // Paging belongs to one feed, so switching tabs starts again from page one.
-  const [paging, setPaging] = useState<{ feed: Feed; page: number }>({ feed, page: 0 });
+  const [paging, setPaging] = useState<{ feed: Feed; page: number }>(() => ({ feed, page: Math.max(0, (Number(params.get("page")) || 1) - 1) }));
   const page = paging.feed === feed ? paging.page : 0;
   const setPage = (next: number) => setPaging({ feed, page: next });
   const [rows, setRows] = useState<ArchiveRow[]>([]);
@@ -314,6 +316,39 @@ function NewsHome() {
   }, [db, feed, category, region, interest, questionType, readyOnly, search, sort, source, year, page]);
 
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
+  // Mirror the list state into the address bar without a navigation.
+  useEffect(() => {
+    const next = new URLSearchParams();
+    if (feed !== "latest") next.set("feed", feed);
+    if (search) next.set("q", search);
+    if (category !== "All News") next.set("category", category);
+    if (region !== "all") next.set("region", region);
+    if (interest !== "all") next.set("topic", interest);
+    if (questionType !== "all") next.set("questionType", questionType);
+    if (readyOnly) next.set("ready", "1");
+    if (feed === "archive" && source !== "all") next.set("source", source);
+    if (feed === "archive" && year !== "all") next.set("year", year);
+    if (feed === "archive" && sort !== "newest") next.set("sort", sort);
+    if (page > 0) next.set("page", String(page + 1));
+    const qs = next.toString();
+    const url = `${window.location.pathname}${qs ? `?${qs}` : ""}`;
+    if (url !== `${window.location.pathname}${window.location.search}`) window.history.replaceState(window.history.state, "", url);
+  }, [feed, search, category, region, interest, questionType, readyOnly, source, year, sort, page]);
+  // Opening an article remembers the scroll position; coming back restores it once the list is drawn.
+  useEffect(() => {
+    function remember(event: MouseEvent) {
+      const link = (event.target as Element | null)?.closest?.("a[href^='/app/news/']");
+      if (link) try { sessionStorage.setItem(`news-scroll:${window.location.search}`, String(Math.round(window.scrollY))); } catch { /* storage is optional */ }
+    }
+    document.addEventListener("click", remember, true);
+    return () => document.removeEventListener("click", remember, true);
+  }, []);
+  useEffect(() => {
+    if (loading || !rows.length) return;
+    let stored: string | null = null;
+    try { stored = sessionStorage.getItem(`news-scroll:${window.location.search}`); sessionStorage.removeItem(`news-scroll:${window.location.search}`); } catch { /* storage is optional */ }
+    if (stored) requestAnimationFrame(() => window.scrollTo({ top: Number(stored) || 0 }));
+  }, [loading, rows.length]);
   useEffect(() => { void Promise.resolve().then(loadStats); }, [loadStats]);
   useEffect(() => { void Promise.resolve().then(loadList); }, [loadList]);
   // While the page stays open, offer the stories that arrive instead of moving the list under the reader.
@@ -337,18 +372,25 @@ function NewsHome() {
     const { data: auth } = await db.auth.getUser();
     if (!auth.user) { setPreferredTopics(previous); return; }
     const { error } = await db.from("user_news_preferences").upsert({ user_id: auth.user.id, stage_id: preferenceStage, topics: next, updated_at: new Date().toISOString() });
-    if (error) { setPreferredTopics(previous); setError("Chưa lưu được chủ đề yêu thích. Hãy thử lại."); }
+    if (error) { setPreferredTopics(previous); setError("Chưa lưu được chủ đề yêu thích. Hãy thử lại."); return; }
+    // The chips are a preference, not a filter: say what happened so the unchanged list does not look broken.
+    const label = newsCategoryLabel(topic as NewsCategory);
+    setTopicNotice(next.includes(topic) ? `Đã lưu sở thích “${label}”: bài chủ đề này được ưu tiên trong Gợi ý hôm nay.` : `Đã bỏ “${label}” khỏi sở thích.`);
+    window.setTimeout(() => setTopicNotice(""), 3500);
   }
   async function openRandomArticle() {
     if (randomBusy) return;
     setRandomBusy(true); setRandomError("");
     try {
       const start=new Date();start.setHours(0,0,0,0);const end=new Date(start);end.setDate(end.getDate()+1);
-      const chosen=await db.rpc("news_random_unread_article",{
+      // Prefer an article that already has questions, so "Ngẫu nhiên" leads to the full read → quiz loop.
+      const pick=(ready:boolean)=>db.rpc("news_random_unread_article",{
         p_category:category,p_region:region,p_interest:interest,p_search:search.trim(),p_feed:feed,
-        p_source:source,p_year:year==="all"?null:Number(year),p_type:questionType,p_ready:readyOnly,
+        p_source:source,p_year:year==="all"?null:Number(year),p_type:questionType,p_ready:ready,
         p_today_start:start.toISOString(),p_today_end:end.toISOString(),
       });
+      let chosen=await pick(true);
+      if(!chosen.error&&!chosen.data&&!readyOnly)chosen=await pick(false);
       if(chosen.error)throw chosen.error;
       if(!chosen.data){setRandomError("Bạn đã đọc các bài phù hợp hiện tại. Xóa bớt bộ lọc để khám phá bài chưa đọc khác.");return;}
       router.push(`/app/news/${chosen.data}`);
@@ -376,7 +418,7 @@ function NewsHome() {
           <label className="news-filter-select" data-active={region !== "all" || undefined}><Layers3 className="news-filter-icon" aria-hidden /><span>Nguồn tin</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Nguồn tin" value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Nguồn tin"], ["vietnam", "Báo Việt Nam"], ["international", "Nguồn quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
           <label className="news-filter-select" data-active={category !== "All News" || undefined}><LayoutGrid className="news-filter-icon" aria-hidden /><span>Lĩnh vực</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Lĩnh vực" value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item==="All News"?"Lĩnh vực":newsCategoryLabel(item)}</option>)}</select></label>
           <label className="news-filter-select" data-active={interest !== "all" || undefined}><Tag className="news-filter-icon" aria-hidden /><span>Mối quan tâm</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Chủ đề" value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.id === "all" ? "Chủ đề" : item.label}</option>)}</select></label>
-          <button type="button" className="news-more-filters-button" data-active={questionType !== "all" || undefined} aria-expanded={showMoreFilters} aria-controls="news-more-filters" onClick={() => setShowMoreFilters((value) => !value)}><ListChecks size={17} aria-hidden="true" />Bộ lọc</button>
+          <button type="button" className="news-more-filters-button" data-active={questionType !== "all" || undefined} aria-expanded={showMoreFilters} aria-controls="news-more-filters" onClick={() => setShowMoreFilters((value) => !value)}><ListChecks size={17} aria-hidden="true" />Dạng câu hỏi</button>
         </div>
       </div>
       {showMoreFilters && <div className="news-more-filters" id="news-more-filters"><label htmlFor="news-question-type">Dạng câu hỏi</label><select id="news-question-type" value={questionType} onChange={(event) => { setQuestionType(event.target.value as QuestionType | "all"); setPage(0); }}><option value="all">Mọi dạng câu hỏi</option>{questionTypes.map((type) => <option key={type} value={type}>{typeLabels[type]}</option>)}</select></div>}
@@ -390,7 +432,7 @@ function NewsHome() {
       </div>
       {showDailyPicks && picks.length > 0 && <div className="news-today-strip">
         <div className="news-daily-plan"><Newspaper size={19} aria-hidden="true" /><div><strong>{picks.length} bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div></div>
-        <div className="news-interest-picks"><span>Bạn thích đọc về</span><NewsChipRail label="chủ đề">{NEWS_CATEGORIES.map((topic) => { const Icon = categoryIcons[topic]; return <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}><Icon size={13} aria-hidden="true" />{newsCategoryLabel(topic)}</button>; })}</NewsChipRail></div>
+        <div className="news-interest-picks"><span>Bạn thích đọc về</span><NewsChipRail label="chủ đề">{NEWS_CATEGORIES.map((topic) => { const Icon = categoryIcons[topic]; return <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}><Icon size={13} aria-hidden="true" />{newsCategoryLabel(topic)}</button>; })}</NewsChipRail>{topicNotice && <span className="news-topic-notice" role="status">{topicNotice}</span>}</div>
       </div>}
       {(category!=="All News"||region!=="all"||interest!=="all"||questionType!=="all"||readyOnly||query||source!=="all"||year!=="all")&&<button type="button" className="news-clear-filters" onClick={()=>{setCategory("All News");setRegion("all");setInterest("all");setQuestionType("all");setReadyOnly(false);setQuery("");setSource("all");setYear("all");setPage(0);}}>Xóa tất cả bộ lọc</button>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
@@ -423,7 +465,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
       <div className="news-card-meta"><span title={row.publisher === OWN_PUBLISHER ? "Bài đọc do Harry Up viết từ dữ kiện của nguồn này" : undefined}>Nguồn: {originalNewsSource(row.report_url, row.canonical_url, row.publisher)}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
       <h3><Link href={href}>{plainText(row.title)}</Link></h3>
       {wordCount ? <p className="news-card-length">{wordCount} từ · ~{readingMinutes(wordCount)} phút đọc</p> : null}
-      <div className="news-card-progress"><span className={read ? "is-done" : resumable ? "is-reading" : ""}>{read ? "✓ Đã đọc" : resumable ? `Đoạn ${readingProgress.paragraph_index + 1}/${readingProgress.paragraph_count}` : "Chưa đọc"}</span><span className={quizResult?.total ? "is-done" : quizInfo?.total ? "is-quiz" : "is-pending"}>{quizResult?.total ? `✓ Bài đầy đủ ${quizResult.score}/${quizResult.total}` : quizInfo?.total ? <><ListChecks size={12} aria-hidden="true"/>{quizInfo.total} câu luyện</> : "Đề đang chuẩn bị"}</span>{quizResult?.practice&&<span>Ôn gần nhất {quizResult.practice.score}/{quizResult.practice.total}</span>}</div>
+      <div className="news-card-progress">{/* A finished quiz already says the article was worked through; "Chưa đọc" beside it read as a contradiction. */}{(read || !quizResult?.total) && <span className={read ? "is-done" : resumable ? "is-reading" : ""}>{read ? "✓ Đã đọc" : resumable ? `Đoạn ${readingProgress.paragraph_index + 1}/${readingProgress.paragraph_count}` : "Chưa đọc"}</span>}<span className={quizResult?.total ? "is-done" : quizInfo?.total ? "is-quiz" : "is-pending"}>{quizResult?.total ? `✓ Bài đầy đủ ${quizResult.score}/${quizResult.total}` : quizInfo?.total ? <><ListChecks size={12} aria-hidden="true"/>{quizInfo.total} câu luyện</> : "Đề đang chuẩn bị"}</span>{quizResult?.practice&&<span>Ôn gần nhất {quizResult.practice.score}/{quizResult.practice.total}</span>}</div>
       <div className="news-card-foot">
         <Link href={resumable ? `${href}?resume=1` : href} className="news-card-read">{resumable ? "Đọc tiếp" : onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link>
         <div className="news-card-icons">
@@ -529,7 +571,7 @@ function NewsDetail({ id }: { id: string }) {
     {body&&quizStatus==="pending"&&<div className="news-rights-note" role="status"><BookOpenText size={20}/><p><strong>Bộ câu hỏi đang chờ tạo.</strong> Bài này đã vào hàng đợi tự động; hãy quay lại sau để luyện đề.</p></div>}
     {body&&quizStatus==="error"&&<div className="news-rights-note" role="alert"><BookOpenText size={20}/><p>Chưa tải được câu hỏi của bài này. Hãy tải lại trang để thử lại.</p></div>}
     {qaMode&&<p className="news-qa-banner" role="status">Kiểm thử: không ghi điểm, XP, tiến độ đọc hoặc từ mới. Lượt có thời gian được lưu riêng để kiểm tra khôi phục.</p>}{examError&&<p className="form-error" role="alert">{examError}{examSession?.stale&&<button type="button" onClick={async()=>{const result=await db.rpc("news_close_stale_auto_exam",{p_session_id:examSession.id});if(!result.error){setExamSession(null);setExamError("");}}}>Đóng lượt có đề cũ</button>}</p>}
-    {body?<NewsReadingTools qaMode={qaMode} articleId={id} title={plainText(row.title)} paragraphs={paragraphs} inlineImages={inlineImages} initialTranslations={body.translation_vi} translationPairs={body.translation_pairs} readingSections={body.reading_sections} onReadEnd={markRead} onParagraphSeen={onParagraphSeen} resumeAt={readingProgressIndex} resumeRequested={params.get("resume")==="1"} examMode={examMode} examReview={examMode&&progress.correct.length>0&&progress.correct.every((item)=>item!==undefined)} examEpoch={examMode?examEpoch:undefined} onBeginExam={beginExam} onExamModeChange={(value) => { setExamMode(value); if (value) setQuizTypes([]); }} practice={{answered:progress.answered,correct:progress.correct,setup:examMode ? undefined : <QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz key={examMode ? `exam:${examSession?.id}` : "practice"} articleId={id} qaMode={qaMode} onNewExam={beginExam} types={quizTypes} examMode={examMode} examSession={examMode?examSession:null} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress}/>}}>
+    {body?<NewsReadingTools qaMode={qaMode} articleId={id} title={plainText(row.title)} paragraphs={paragraphs} inlineImages={inlineImages} initialTranslations={body.translation_vi} translationPairs={body.translation_pairs} readingSections={body.reading_sections} onReadEnd={markRead} onParagraphSeen={onParagraphSeen} resumeAt={readingProgressIndex} resumeRequested={params.get("resume")==="1"} startPractice={params.get("start")==="practice"} examMode={examMode} examReview={examMode&&progress.correct.length>0&&progress.correct.every((item)=>item!==undefined)} examQuestionCount={quizAvailable.reduce((sum,item)=>sum+item.count,0)||undefined} examEpoch={examMode?examEpoch:undefined} onBeginExam={beginExam} onExamModeChange={(value) => { setExamMode(value); if (value) setQuizTypes([]); }} practice={{answered:progress.answered,correct:progress.correct,setup:examMode ? undefined : <QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz key={examMode ? `exam:${examSession?.id}` : "practice"} articleId={id} qaMode={qaMode} onNewExam={beginExam} types={quizTypes} examMode={examMode} examSession={examMode?examSession:null} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress}/>}}>
       <div className={`news-finish ${read ? "is-done" : ""}`}><span className="news-finish-main" role="status">{read?<CheckCircle2 size={18}/>:<BookOpenText size={18}/>} {read?"Đã ghi nhận bài đọc":marking?"Đang lưu tiến độ…":"Bài đọc sẽ tự ghi nhận khi bạn đọc gần hết nội dung"}</span>{links}<span className="news-finish-note">{read?"Bài đọc đã vào lịch sử. ":"Vị trí cuộn chỉ dùng để đọc tiếp. "}Kết quả luyện đề được lưu riêng sau khi nộp bài.</span></div>
       {readError&&<p className="form-error" role="alert">Chưa lưu được tiến độ đọc: {readError} <button type="button" onClick={()=>void markRead()}>Thử lưu lại</button></p>}
     </NewsReadingTools>:<div className="news-detail-actions news-detail-actions-only"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc trên {row.publisher} <ExternalLink size={17}/></a><button className="button subtle" aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>}
@@ -612,7 +654,7 @@ function NewsHistory(){
         <h3>{newsTitles[item.article_id]??"Bài báo"}</h3>
         {types.length>0&&<p className="news-attempt-types">{types.map((type)=><em key={type.type} className={type.percent>=70?"good":type.percent<50?"low":""}>{typeLabels[type.type]} {type.correct}/{type.total}</em>)}</p>}
       </div>
-      <Link href={`/app/news/${item.article_id}`}>Luyện lại →</Link></article>;})}</div>
+      <Link href={`/app/news/${item.article_id}?start=practice${item.partial&&item.breakdown&&Object.keys(item.breakdown).length===1?`&practice=${Object.keys(item.breakdown)[0]}`:""}`}>Luyện lại →</Link></article>;})}</div>
     {!autoAttempts.length&&!loading&&<p>Chưa có bài quiz tự động nào được nộp.</p>}
     <h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{!releaseLocks&&titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&!loading&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. {!releaseLocks && <Link href="/app/news/learn">Bắt đầu đọc →</Link>}</div>}
   </section></div>;

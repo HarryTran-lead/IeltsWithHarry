@@ -1713,3 +1713,6 @@
     height: 13px;
   }
 }
+/* Cards switch to the side-by-side layout below 560px, so the grid must be a single column there too
+   (two side-by-side cards pushed the save and source buttons outside the card on tablets). */
+@container news (max-width: 560px) { .news-home .news-feed .news-grid { grid-template-columns: minmax(0, 1fr); } }

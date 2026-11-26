@@ -214,6 +214,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   // Timed sittings hide question translation until the answers are graded.
   const canTranslate = !examMode || graded;
   const answered = shown.filter((question) => isAnswered(answers[question.id])).length;
+  const [blankWarning, setBlankWarning] = useState(false);
+  useEffect(() => { setBlankWarning(false); }, [answered]);
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
   // The reader's question strip shows which questions have an answer and, once graded, which are right.
   useEffect(() => { onProgress?.(shown.map((question) => isAnswered(answers[question.id])), shown.map((question) => graded ? reviews[question.id]?.correct : undefined)); }, [answers, shown, graded, reviews, onProgress]);
@@ -421,7 +423,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
       <h2>{wrongIds.length ? `Ôn lại ${shown.length} câu sai` : `${shown.length} câu hỏi ${partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}`}</h2>
-      <p>{examMode ? `Luyện một bài đọc · 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. ${graded ? "Đã nộp bài: giờ có thể dịch bài đọc, dịch câu hỏi và tra từ để xem lại." : "Không có dịch hoặc tra từ; câu bỏ trống được tính sai."}` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      <p>{examMode ? `Luyện một bài đọc · 20 phút${graded ? "" : ` · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}`}. ${graded ? "Đã nộp bài: giờ có thể dịch bài đọc, dịch câu hỏi và tra từ để xem lại." : "Không có dịch hoặc tra từ; câu bỏ trống được tính sai."}` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
       {examMode&&<p role="status">{draftStatus||"Đáp án sẽ tự lưu khi thay đổi."}{!graded&&!examExpired&&<button type="button" onClick={()=>setDraftRetry((value)=>value+1)}>Lưu lại</button>}</p>}
       {wrongIds.length ? <button type="button" className="button subtle" onClick={() => setWrongIds([])}>Xem lại toàn bộ câu hỏi</button> : !examMode && onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
       {examExpired && !graded && <p className="form-error" role="status">Hết giờ. Bài đã khóa; nộp để xem kết quả, kể cả câu bỏ trống.</p>}
@@ -550,7 +552,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       </div>;
     })}
     {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Trả lời đủ ${shown.length-answered} câu còn lại trước khi nộp.`}</small>}</span>
-      <button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => void submit()}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
+      {blankWarning && <p className="news-submit-warning" role="alert">Còn {shown.length - answered} câu chưa trả lời; câu trống được tính sai. Bấm lần nữa để vẫn nộp.</p>}<button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => {
+        // A timed sitting with blanks asks once more, so a stray tap does not end the attempt.
+        if (examMode && !examExpired && answered < shown.length && !blankWarning) { setBlankWarning(true); return; }
+        void submit();
+      }}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : blankWarning ? "Vẫn nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
       breakdown={sumBreakdowns([Object.fromEntries(available.map(({ type }) => {
         const items = shown.filter((question) => question.question_type === type);

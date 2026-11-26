@@ -373,3 +373,18 @@
 .news-interest-picks .news-chip-arrow:hover { border-color: var(--teal, #0b8d98); background: #effafa; }
 .news-chip-arrow.is-left { left: -2px; }
 .news-chip-arrow.is-right { right: -2px; }
+
+/* Phones: the counters wrap onto their own scrolling row instead of being squeezed to nothing,
+   and "Ngẫu nhiên" becomes an icon button so nothing runs off the edge. */
+@media (max-width: 560px) {
+  .news-home .news-feed-tools { flex-wrap: wrap; row-gap: 8px; }
+  .news-home .news-feed-tools .news-feed-count { flex: 1 1 auto; }
+  .news-home .news-feed-tools .news-feed-stats { order: 3; flex: 1 1 100%; min-width: 0; }
+}
+@media (max-width: 440px) {
+  .news-home .news-random-picker .button { width: 38px; padding: 0 !important; gap: 0; }
+  .news-home .news-random-picker .button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .news-home .news-card button, .news-home .news-card a[aria-label] { min-width: 40px; min-height: 40px; }
+}
+.news-topic-notice { position: absolute; z-index: 5; top: calc(100% + 6px); right: 0; max-width: min(420px, 90vw); padding: 7px 11px; border-radius: 10px; background: #17324d; color: #fff; font-size: 12px; font-weight: 600; line-height: 1.4; box-shadow: 0 10px 24px -12px rgba(16, 42, 67, .6); }
+.news-home .news-interest-picks { position: relative; }

@@ -30,14 +30,14 @@ export async function POST(request: NextRequest) {
     if (!article || !body) return NextResponse.json({ error: "Bài luyện không còn khả dụng." }, { status: 404 });
     const ids = Object.keys(answers);
     const { data: questions, error: questionError } = await db.from("news_auto_questions")
-      .select("id,question_type,supporting_sentence").eq("article_id", payload.articleId).in("id", ids).order("sort_order");
+      .select("id,question_type,prompt,supporting_sentence").eq("article_id", payload.articleId).in("id", ids).order("sort_order");
     const { data: keyRows, error: keyError } = await db.from("news_auto_answer_keys")
       .select("question_id,correct_index,accepted_answers,explanation,option_notes").in("question_id", ids);
     if (questionError || keyError) throw questionError ?? keyError;
     const byQuestion = new Map((keyRows ?? []).map((row) => [row.question_id as string, row]));
     const keys: QuizKey[] = (questions ?? []).flatMap((question) => {
       const key = byQuestion.get(question.id);
-      return key ? [{ id: question.id, question_type: question.question_type, supporting_sentence: question.supporting_sentence,
+      return key ? [{ id: question.id, question_type: question.question_type, prompt: question.prompt, supporting_sentence: question.supporting_sentence,
         correct_index: key.correct_index, accepted_answers: key.accepted_answers, explanation: key.explanation, option_notes: key.option_notes }] : [];
     });
     const review = gradePractice(keys, answers);
