@@ -20,7 +20,6 @@ const DEFAULT_SIZE = 3;
 const SIZE_KEY = "ieltswithharry-reader-size";
 const TOOLS_KEY = "ieltswithharry-reader-tools";
 /** Screens wide enough to show the word-lookup panel beside the passage without covering it. */
-const WIDE_LOOKUP_QUERY = "(min-width: 1200px)";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
@@ -426,10 +425,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     if (lookupWord && onSelectWord) {
       const first = ranges[0];
       onSelectWord(word, sentenceAt(text[first.p], first.start));
-      // Wide screens open the lookup panel beside the text; on phones and tablets it would cover the passage,
-      // so the popover shows the meaning and opens the full panel only when tapped.
-      // In practice the panel would cover the questions, so it opens only from the popover or the bar button.
-      if (toolsMin && !practicing && window.matchMedia(WIDE_LOOKUP_QUERY).matches) setOpenTool(lookupToolId);
+      // On every screen size the popover shows the meaning first; the full lookup panel opens only from "Xem chi tiết".
     }
   }
 
