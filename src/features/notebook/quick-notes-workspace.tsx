@@ -336,7 +336,7 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
     <PageHeader
       className="qn-head"
       title="Ghi chú học tập"
-      description="Từ mới vào Sổ từ để ôn đúng lúc; lỗi sai, dàn ý và ý tưởng ở cùng một chỗ. Ghi chú tạo trong bài học có liên kết về bài đó."
+      description="Từ mới vào Sổ từ để ôn đúng lúc; lỗi sai, dàn ý, ý tưởng ở cùng một chỗ."
       sticker="notebook"
       actions={<>
         {dueWords.length > 0 && <Link className="button subtle" href="/app/vocabulary/review"><RotateCcw size={16} /> Ôn {dueWords.length} từ đến hạn</Link>}

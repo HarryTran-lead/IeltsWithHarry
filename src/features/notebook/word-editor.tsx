@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Languages, Link2, MoreHorizontal, RotateCcw, Trash2, Volume2 } from "lucide-react";
 import type { NotebookInput } from "@/lib/validation/notebook";
 import type { WordReview } from "@/lib/news/review";
-import { pronounce, lookupPronunciation } from "@/lib/vocabulary/pronounce";
+import { pronounce, lookupPronunciation, useIpa } from "@/lib/vocabulary/pronounce";
 import { wordState, wordStateLabels } from "@/lib/vocabulary/study-session";
 import type { NotebookEntry } from "./notebook-store";
 
@@ -137,6 +137,8 @@ export function WordEditor({ entry, review, sourceLabel, addEntry, updateEntry, 
     try { await removeEntry(entry.id); onBack(); } catch { setStatus({ tone: "error", text: "Chưa xoá được từ này." }); }
   }
 
+  // Older saved words may have no IPA stored: show the dictionary's for reading (not saved).
+  const shownIpa = useIpa(entry ? entry.title : "", entry?.phonetic ?? "");
   const state = wordState(review);
   return <div className="qn-word">
     <header className="qn-editor-head">
@@ -164,7 +166,7 @@ export function WordEditor({ entry, review, sourceLabel, addEntry, updateEntry, 
         </div>
         <div className="qn-word-sound">
           <button type="button" className="qn-speak" aria-label={`Nghe phát âm ${word || "từ"}`} disabled={!word.trim()} onClick={() => void pronounce(word.trim())}><Volume2 size={16} /></button>
-          {entry ? <span className="qn-ipa">{ipa || "—"}</span> : <input className="qn-ipa-input" value={ipa} maxLength={100} onChange={(event) => setIpa(event.target.value)} placeholder="/phiên âm/ · tự điền" aria-label="Phiên âm IPA" />}
+          {entry ? <span className="qn-ipa">{ipa || shownIpa || "—"}</span> : <input className="qn-ipa-input" value={ipa} maxLength={100} onChange={(event) => setIpa(event.target.value)} placeholder="/phiên âm/ · tự điền" aria-label="Phiên âm IPA" />}
           {!entry && <button type="button" className="button subtle qn-lookup" disabled={!word.trim() || lookupState.busy} onClick={() => void lookup()}><Languages size={15} /> {lookupState.busy ? "Đang tra…" : "Tra từ điển"}</button>}
         </div>
       </div>
