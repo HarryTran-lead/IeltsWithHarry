@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
   if (!allowed) return NextResponse.json({ error: "Đã dùng hết 100 lượt tra từ hôm nay. Hãy quay lại ngày mai." }, { status: 429 });
   try {
     const response = await fetch(`https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(word)}?translations=true`, {
-      headers: { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (vocabulary lookup)" },
+      headers: { Accept: "application/json", "User-Agent": "HarryUp/1.0 (vocabulary lookup)" },
       signal: AbortSignal.timeout(8000), next: { revalidate: 86400 },
     });
     if (response.status === 404) return NextResponse.json({ error: "Từ điển chưa có mục từ này." }, { status: 404 });

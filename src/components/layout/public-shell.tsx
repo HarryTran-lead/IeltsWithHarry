@@ -38,7 +38,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
           <div>
             <h3>Học</h3>
             <Link href="/courses">Lộ trình 4 chặng</Link>
-            <Link href="/about">Về IeltsWithHarry</Link>
+            <Link href="/about">Về Harry Up</Link>
           </div>
           <div>
             <h3>Tài khoản</h3>
@@ -49,7 +49,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
           <Sticker name="plane" size={84} tilt={-8} float pop={false} className="public-footer-sticker" />
         </div>
         <div className="public-footer-bottom">
-          © IeltsWithHarry · Small steps, big progress.{demoMode ? " · Bản demo" : ""}
+          © Harry Up · Small steps, big progress.{demoMode ? " · Bản demo" : ""}
         </div>
       </footer>
     </div>

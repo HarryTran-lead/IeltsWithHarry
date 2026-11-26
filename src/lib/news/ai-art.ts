@@ -83,7 +83,7 @@ export async function generateAiArt(title: string, subject: string, articleId: s
     .forEach(([name, value]) => url.searchParams.set(name, value));
   const response = await fetcher(url, {
     signal: AbortSignal.timeout(35000), cache: "no-store",
-    headers: { Accept: "image/*", "User-Agent": "IeltsWithHarry/1.0 (https://ieltswithharry.vercel.app)", ...(key ? { Authorization: `Bearer ${key}` } : {}) },
+    headers: { Accept: "image/*", "User-Agent": "HarryUp/1.0 (https://harryup.vercel.app)", ...(key ? { Authorization: `Bearer ${key}` } : {}) },
   });
   if (response.status === 402 || response.status === 429) {
     const seconds = Number(response.headers.get("retry-after"));

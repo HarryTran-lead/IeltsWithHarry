@@ -105,9 +105,9 @@ def normalize(source, teacher, number):
         "format": "Academic",
         "mode": "synthetic_mock",
         "durationMinutes": 60,
-        "sourceUrl": "https://ieltswithharry.vercel.app",
+        "sourceUrl": "https://harryup.vercel.app",
         "license": "All rights reserved",
-        "licenseUrl": "https://ieltswithharry.vercel.app",
+        "licenseUrl": "https://harryup.vercel.app",
         "attribution": "English Skill Lab · IELTS-style original practice",
         "content": {"sections": sections, "prompt": ""},
     }

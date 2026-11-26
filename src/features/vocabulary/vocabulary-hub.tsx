@@ -685,7 +685,7 @@ function BankMatchList({ matches, lookup, savedByWord, saveWord }: { matches: Ba
   if (!matches.ielts.length && !matches.cefr.length) return null;
   const open = (word: string) => matchRank(word, lookup) <= 1;
   return <section className="vocab-panel vocab-bank-matches" aria-labelledby="vocab-bank-matches-title">
-    <h2 id="vocab-bank-matches-title">Trong kho từ của IeltsWithHarry</h2>
+    <h2 id="vocab-bank-matches-title">Trong kho từ của Harry Up</h2>
     {matches.ielts.length > 0 && <><h3>Từ IELTS</h3><div className="vocab-lib-list">{matches.ielts.map((row) => <LibraryRow key={row.source_key} open={open(row.term)} word={row.term} pos={[row.pos_raw, row.pattern].filter(Boolean).join(" · ")} meaning={row.definition_en} tag={`Band ${row.band_level} · ${row.topic}`}
       saved={savedByWord.has(normalizeWord(row.term))} onSave={() => void saveWord({ id: row.source_key, word: row.term, ipa: "", pos: row.pos_raw, meaning: row.definition_en, level: `Band ${row.band_level} gợi ý`, topic: row.topic, collocations: [], synonyms: "", example: row.examples[0] ?? "", vi: "" })}>
       {row.examples.map((example, index) => <em key={`${row.source_key}-${index}`}>{example}</em>)}

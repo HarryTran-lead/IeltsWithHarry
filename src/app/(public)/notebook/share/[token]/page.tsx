@@ -8,7 +8,7 @@ import { documentSchema, IMAGE_BUCKET, PAGE_HEIGHT, PAGE_WIDTH, type PageDocumen
 import styles from "./share.module.css";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Sổ tay được chia sẻ | IeltsWithHarry", robots: { index: false, follow: false } };
+export const metadata = { title: "Sổ tay được chia sẻ | Harry Up", robots: { index: false, follow: false } };
 
 function plainText(html: string) {
   const $ = load(`<main>${html}</main>`);
@@ -45,5 +45,5 @@ export default async function SharedNotebookPage({ params }: { params: Promise<{
     if (result.data?.signedUrl) signed.set(path, result.data.signedUrl);
   }));
 
-  return <main className={styles.main}><header className={styles.header}><Link href="/" className={styles.brand}><BookOpen size={25} /> IeltsWithHarry</Link><span><LockKeyhole size={16} /> Chỉ xem</span></header><div className={styles.intro}><span>SỔ TAY ĐƯỢC CHIA SẺ</span><h1>{book.title}</h1>{book.description && <p>{book.description}</p>}<small>{pages.length} trang</small></div><div className={styles.pages}>{pages.map((page, index) => { const parsed = documentSchema.safeParse(page.document); if (!parsed.success) return null; const doc = parsed.data; return <section key={page.id} className={styles.pageBlock}><h2>Trang {index + 1}</h2><div className={`${styles.sheet} ${styles[page.paper as "blank" | "ruled" | "grid"]}`}>{doc.elements.map((item) => <div key={item.id} className={styles.element} style={{ left: item.x, top: item.y, width: item.width, height: item.height }}>{item.type === "text" ? <div className={styles.text}>{plainText(item.html)}</div> : signed.has(item.path) ? <img src={signed.get(item.path)} alt="Ảnh trong sổ tay" /> : null}</div>)}<Ink doc={doc} /></div></section>; })}</div></main>;
+  return <main className={styles.main}><header className={styles.header}><Link href="/" className={styles.brand}><BookOpen size={25} /> Harry Up</Link><span><LockKeyhole size={16} /> Chỉ xem</span></header><div className={styles.intro}><span>SỔ TAY ĐƯỢC CHIA SẺ</span><h1>{book.title}</h1>{book.description && <p>{book.description}</p>}<small>{pages.length} trang</small></div><div className={styles.pages}>{pages.map((page, index) => { const parsed = documentSchema.safeParse(page.document); if (!parsed.success) return null; const doc = parsed.data; return <section key={page.id} className={styles.pageBlock}><h2>Trang {index + 1}</h2><div className={`${styles.sheet} ${styles[page.paper as "blank" | "ruled" | "grid"]}`}>{doc.elements.map((item) => <div key={item.id} className={styles.element} style={{ left: item.x, top: item.y, width: item.width, height: item.height }}>{item.type === "text" ? <div className={styles.text}>{plainText(item.html)}</div> : signed.has(item.path) ? <img src={signed.get(item.path)} alt="Ảnh trong sổ tay" /> : null}</div>)}<Ink doc={doc} /></div></section>; })}</div></main>;
 }

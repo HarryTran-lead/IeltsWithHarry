@@ -72,9 +72,9 @@ async function draftOnce(kind: FactoryKind, topic: string, options: Options, fet
   const { value, model, usage } = await callFreeTierModel(brief, cleanTopic, options.avoid ?? [], fetcher, retryReason, options.beforeRequest, options.model);
   const id = randomUUID();
   const skill = factoryKinds[kind].skill;
-  const sourceUrl = "https://ieltswithharry.vercel.app/app/question-bank";
+  const sourceUrl = "https://harryup.vercel.app/app/question-bank";
   const meta = { externalId: `factory-${kind.replace(/_/g, "-")}-${id}`, skill, format: "Academic", mode: "practice", sourceUrl,
-    attribution: "IeltsWithHarry Content Factory (AI-assisted)", license: "Original AI-assisted practice", licenseUrl: sourceUrl,
+    attribution: "Harry Up Content Factory (AI-assisted)", license: "Original AI-assisted practice", licenseUrl: sourceUrl,
     aiGenerated: true, upstreamVersion: `${model}-${id}`, durationMinutes: 20 } as const;
   const built = buildDraft(brief, value, meta);
   // Titles name the content; a leading "IELTS Writing Task 2 –" style label adds nothing in the library.

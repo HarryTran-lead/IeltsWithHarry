@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { newsAdminClient } from "@/lib/news/sync";
 import { writeArticleFromFacts } from "@/lib/news/fact-dossier";
+import { OWN_PUBLISHER } from "@/lib/news/daily-plan";
 
 export const runtime = "nodejs";
 export const maxDuration = 180;
@@ -25,14 +26,14 @@ export async function POST(request: NextRequest) {
     const article = await db.from("news_articles").insert({
       id, source_id: source.id, provider: "manual", external_id: `fact-dossier:${id}`,
       canonical_hash: createHash("sha256").update(`fact-dossier:${id}`).digest("hex"),
-      canonical_url: sourceUrl, title: written.title, publisher: "IeltsWithHarry", category: written.dossier.category,
+      canonical_url: sourceUrl, title: written.title, publisher: OWN_PUBLISHER, category: written.dossier.category,
       published_at: new Date().toISOString(), publication_status: "review", sensitive: false,
       attribution_text: "Factual sources recorded in the editorial dossier", metadata: { fact_dossier: true },
     });
     if (article.error) throw new Error(article.error.message);
     const body = await db.from("news_article_bodies").insert({
       article_id: id, body_text: written.body, source_url: sourceUrl, ai_generated: true,
-      byline: "IeltsWithHarry editorial", rights_basis: `Original AI-assisted article drafted from verified atomic facts. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
+      byline: "Harry Up editorial", rights_basis: `Original AI-assisted article drafted from verified atomic facts. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
     });
     if (body.error) {
       await db.from("news_articles").delete().eq("id", id);

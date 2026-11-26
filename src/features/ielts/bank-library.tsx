@@ -561,7 +561,7 @@ function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatal
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {section ? <figure className="bl-art">{/* eslint-disable-next-line @next/next/no-img-element -- cover supplied in the owner's package */}<img src={section.cover_url} alt="" loading="lazy" /></figure>
-        : <figure className="bl-art bl-brand-art">{/* eslint-disable-next-line @next/next/no-img-element -- local brand asset */}<img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" /><span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span><small>IELTS LISTENING</small></figure>}
+        : <figure className="bl-art bl-brand-art">{/* eslint-disable-next-line @next/next/no-img-element -- local brand asset */}<img src="/harryup-mascot.webp" alt="" loading="lazy" /><span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span><small>IELTS LISTENING</small></figure>}
       <span className="bl-usage"><Clock3 size={13} /> {Math.max(1, Math.ceil(duration / 60000))} phút audio</span>
       <b className="bl-badge">{part ? `Section ${part}` : "Full test"}</b>
     </span>
@@ -655,7 +655,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       {readingFullCover && suppliedReadingTest ? <figure className="bl-art bl-collage">{[1, 2, 3].map((part) => <img key={part} src={`/images/ielts/reading/test-${suppliedReadingTest}-passage-${part}.${suppliedCoverExtension}`} alt="" loading="lazy" />)}</figure>
       : readingBrandCover ? <figure className="bl-art bl-brand-art">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" />
+        <img src="/harryup-mascot.webp" alt="" loading="lazy" />
         <span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span>
         <small>IELTS READING</small>
       </figure> : coverUrl ? <figure className="bl-art"><img src={coverUrl} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}

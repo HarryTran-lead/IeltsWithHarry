@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { approvedFactualSource, approvedPressFactSource, factDossierSchema } from "./fact-dossier-schema";
 import { readFactualSource, writeArticleFromFacts } from "./fact-dossier";
+import { OWN_PUBLISHER } from "./daily-plan";
 import { AiQuotaError, geminiJson, newsArticleFreeTierReady } from "./enrichment";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "./providers";
 import type { NewsAdminSettings } from "./settings";
@@ -301,7 +302,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       const { error: articleError } = await db.from("news_articles").insert({
         id, source_id: manual.id, provider: "manual", external_id: `press-discovery:${item.canonical_hash}`,
         canonical_hash: item.canonical_hash, canonical_url: sourceUrl, title: written.title,
-        publisher: "IeltsWithHarry", category: item.category, published_at: new Date().toISOString(),
+        publisher: OWN_PUBLISHER, category: item.category, published_at: new Date().toISOString(),
         origin_region: source.origin_region ?? "vietnam", interest_topics: item.interest_topics,
         publication_status: "review", sensitive: false, attribution_text: "Independent factual sources in editorial dossier",
         metadata: { discovery_url: item.canonical_url, discovery_source: source.name,
@@ -312,7 +313,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       if (articleError) throw articleError;
       const { error: bodyError } = await db.from("news_article_bodies").insert({
         article_id: id, body_text: written.body, reading_sections:written.sections, source_url: sourceUrl, ai_generated: true,
-        byline: "IeltsWithHarry editorial",
+        byline: "Harry Up editorial",
         rights_basis: `Original AI-assisted draft from verified factual notes. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
       });
       if (bodyError) { await db.from("news_articles").delete().eq("id", id); throw bodyError; }

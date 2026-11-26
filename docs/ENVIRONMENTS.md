@@ -2,8 +2,8 @@
 
 | Purpose | Git branch | Vercel | Supabase |
 | --- | --- | --- | --- |
-| Learners | `main` | Production, `ieltswithharry.vercel.app` | `vpkhriywprepuhrbarye` |
-| Development/testing | `develop` | [Preview for `develop`](https://ieltswithharry-git-develop-harrytran-leads-projects.vercel.app) | `bhactqaxcvusmpeooxwi` (`IeltsWithHarry-Development`) |
+| Learners | `main` | Production, `harryup.vercel.app` (old `ieltswithharry.vercel.app` redirects here) | `vpkhriywprepuhrbarye` |
+| Development/testing | `develop` | [Preview for `develop`](https://harryup-git-develop-harrytran-leads-projects.vercel.app) | `bhactqaxcvusmpeooxwi` (`IeltsWithHarry-Development`) |
 
 The `develop` Preview runs against its own Supabase project with demo mode off. Do not put production Supabase credentials into Preview or local development. The build checks in `next.config.ts` reject a Preview that points at the production database and reject a Production build that points elsewhere. The development project's scheduled sync jobs are disabled; development data does not update automatically until dev-only worker secrets and schedules are configured.
 

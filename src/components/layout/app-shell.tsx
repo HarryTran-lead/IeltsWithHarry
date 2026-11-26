@@ -530,7 +530,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
                     {!examSkill && <Link href={skill === "vocabulary" || skill === "grammar" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Hôm nay" : skill === "grammar" ? "Lộ trình học" : "Tất cả chế độ"}</Link>}
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
-                      const target = new URL(practice.href, "https://ieltswithharry.local");
+                      const target = new URL(practice.href, "https://harryup.local");
                       const selected = examSkill
                         ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && currentType === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
                         : pathname === target.pathname && (!target.search || searchParams.get("collection") === target.searchParams.get("collection"));

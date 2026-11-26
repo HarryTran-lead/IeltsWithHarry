@@ -104,8 +104,8 @@ export async function POST(request: Request) {
       const { data: active, error: activeError } = await client.from("ai_factory_jobs").select("id,status").eq("kind", "listening_audio").in("status", ["queued","running","awaiting_review","approved"]).contains("payload", { pilot: true }).limit(1);
       if (activeError) throw new Error(activeError.message);
       if (active?.length) throw new Error("Pilot already queued or awaiting review");
-      const sourceUrl = "https://ieltswithharry.vercel.app/app/question-bank";
-      const meta = { skill: "Listening", title: "Urban ecology project discussion — Part 3", format: "Academic", mode: "practice", topic: "Urban ecology", difficulty: "B2-C1", duration_minutes: 12, license: "Original AI-assisted practice", license_url: sourceUrl, source_url: sourceUrl, attribution: "IeltsWithHarry Content Factory (AI-assisted)", ai_generated: true };
+      const sourceUrl = "https://harryup.vercel.app/app/question-bank";
+      const meta = { skill: "Listening", title: "Urban ecology project discussion — Part 3", format: "Academic", mode: "practice", topic: "Urban ecology", difficulty: "B2-C1", duration_minutes: 12, license: "Original AI-assisted practice", license_url: sourceUrl, source_url: sourceUrl, attribution: "Harry Up Content Factory (AI-assisted)", ai_generated: true };
       const warnings = validateExam({ externalId: "pilot-listening-part-3-v1", skill: "Listening", format: "Academic", mode: "practice", title: meta.title, topic: meta.topic, difficulty: meta.difficulty, durationMinutes: 12, sourceUrl, attribution: meta.attribution, license: meta.license, licenseUrl: sourceUrl, aiGenerated: true, upstreamVersion: "pilot-v1", content: pilotContent });
       const imported = await client.rpc("ielts_upsert_import", { p_source: "ai-factory", p_external: "pilot-listening-part-3-v1", p_meta: meta, p_content: pilotContent, p_hash: contentHash(pilotContent), p_upstream: "pilot-v1", p_warnings: warnings });
       if (imported.error) throw new Error(imported.error.message);
