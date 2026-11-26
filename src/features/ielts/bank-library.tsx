@@ -12,6 +12,7 @@ import { gradedBand, speakingCardTitle, speakingFacets, speakingParts, speakingS
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 import { TaskFigure } from "./writing-figure";
+import { ReadingLaunchModal } from "./reading-launch-modal";
 
 export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null; answered?: string[] };
 
@@ -612,6 +613,8 @@ function AttemptChip({ attempt }: { attempt?: Attempt }) {
 
 /** One exam on the shelf; its shape follows the skill, like a printed practice book. */
 export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attempt?: Attempt; section?: { part: number; title: string; questionTypes: string[]; questionCount: number } }) {
+  const [launchOpen, setLaunchOpen] = useState(false);
+  const canLaunchInline = exam.skill === "Reading";
   // A finished exam opens its result and review; "Làm lại" starts a fresh attempt.
   const done = Boolean(attempt && attempt.state !== "in_progress");
   const retryHref = section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : `/app/question-bank/exam/${exam.id}`;
@@ -619,7 +622,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   const duration = section ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
   const usage = !section && exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {duration} phút</span>;
   const cta = <span className={`bl-cta ${done ? "is-shown" : ""}`}>{attempt?.state === "in_progress" ? "Làm tiếp" : done ? "Xem lại bài" : "Luyện đề"} <ArrowRight size={15} /></span>;
-  const retry = done ? <Link className="bl-retry" href={retryHref} aria-label={`Làm lại ${exam.title}`}><RotateCcw size={13} /> Làm lại</Link> : null;
+  const retry = done ? <Link className="bl-retry" href={retryHref} onNavigate={canLaunchInline ? (event) => { event.preventDefault(); setLaunchOpen(true); } : undefined} aria-label={`Làm lại ${exam.title}`}><RotateCcw size={13} /> Làm lại</Link> : null;
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading"
@@ -648,7 +651,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   if (exam.skill === "Speaking") return <SpeakingShelfCard exam={exam} facets={speakingFacets(exam)} attempt={attempt} />;
 
   const types = section ? catalogQuestionTypeIds(section.questionTypes).map((id) => ({ id, label: catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
-  const card = <Link href={href} className="bl-card bl-card-shelf">
+  const card = <Link href={href} onNavigate={canLaunchInline && !attempt ? (event) => { event.preventDefault(); setLaunchOpen(true); } : undefined} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {/* A full test shows its three supplied passage covers side by side. */}
@@ -670,7 +673,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       <span className="bl-foot"><AttemptChip attempt={attempt} /><span className="bl-source">{sourceLabel(exam)}</span>{cta}</span>
     </span>
   </Link>;
-  return retry ? <div className="bl-card-slot">{card}{retry}</div> : card;
+  return <>{retry ? <div className="bl-card-slot">{card}{retry}</div> : card}{launchOpen && <ReadingLaunchModal examId={exam.id} part={section?.part ?? 0} onClose={() => setLaunchOpen(false)} />}</>;
 }
 
 /** A small drawing of a Writing Task 1 visual: lines, bars, a pie, a table, a process or a map. */

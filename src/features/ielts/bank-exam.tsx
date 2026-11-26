@@ -81,10 +81,10 @@ function rememberDuration(key: string, minutes: number) {
   try { window.localStorage.setItem(key, String(minutes)); } catch { /* The current attempt still uses this choice. */ }
 }
 
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, resumable = [] }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number; untimed?: boolean }) => void; scheduleSlot: ReactNode; resumable?: ResumableAttempt[] }) {
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, resumable = [], initialPart, onClose }: { initialPart?: number; onClose?: () => void; exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number; untimed?: boolean }) => void; scheduleSlot: ReactNode; resumable?: ResumableAttempt[] }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
-  const partNumber = Number(searchParams.get("part"));
+  const partNumber = initialPart ?? Number(searchParams.get("part"));
   const [readingPart, setReadingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
   const [readingView, setReadingView] = useState<"practice" | "exam">("practice");
   const [readingMinutes, setReadingMinutes] = useState<number>(exam.skill === "Listening" ? 40 : 60);
@@ -143,7 +143,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
             <h1 id="br-launch-title">{chosen ? bareTitle(chosen.title) || scopeName : displayExamTitle(exam.title)}</h1>
             <p>{chosen ? scopeName : `${parts.length} ${unit}`} · {count} câu hỏi · {timeText}</p>
           </div>
-          <Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link>
+          {onClose ? <button type="button" onClick={onClose} disabled={busy} aria-label="Đóng"><X size={19} /></button> : <Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link>}
         </header>
         <div className="br-launch-scroll brl-scroll">
           {open && <div className="brl-resume" role="status">
@@ -204,7 +204,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
         <footer className="br-launch-footer brl-footer">
           <div><small>Bạn sẽ làm</small><b>{scopeName} · {count} câu · {timeText} · {examView ? "Thi thật" : "Luyện tập"}</b></div>
           <div className="brl-actions">
-            <Link href={backHref} className="brl-cancel">Huỷ</Link>
+            {onClose ? <button type="button" className="brl-cancel" onClick={onClose} disabled={busy}>Huỷ</button> : <Link href={backHref} className="brl-cancel">Huỷ</Link>}
             <button type="button" className="bx-start" disabled={busy || (!untimed && !customAttemptMinutes(minutes))} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, untimed ? { view: readingView, untimed: true } : { view: readingView, minutes })}>{busy ? "Đang mở đề…" : openParts.has(readingPart) ? "Bắt đầu lượt mới" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
           </div>
         </footer>
