@@ -192,7 +192,7 @@ body:has(.bx-reading-launch) { overflow: hidden; }
 .br-launch-dialog { display: flex; flex-direction: column; width: min(850px, 100%); max-height: calc(100dvh - 36px); overflow: hidden; border: 1px solid #e0e4e6; border-radius: 16px; background: #fff; box-shadow: 0 28px 80px #091b2a4d; }
 .br-launch-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex: none; margin: 0; padding: 18px 22px; border-bottom: 1px solid #e3e8e8; }
 .br-launch-head h1 { margin: 3px 0 0; font-size: clamp(18px, 2vw, 23px); }
-.br-launch-head > a { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border: 1px solid #d5e0e2; border-radius: 50%; color: #546b78; }
+.br-launch-head > :is(a, button) { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border: 1px solid #d5e0e2; border-radius: 50%; color: #546b78; }
 .br-launch-scroll { min-height: 0; overflow-y: auto; background: #fafafa; }
 .br-launch-card { margin: 0; padding: 16px 22px 18px; border: 0; border-bottom: 1px solid #e5eaea; border-radius: 0; box-shadow: none; }
 .br-launch-card h2 { margin-bottom: 15px; font-size: 17px; }
@@ -303,7 +303,7 @@ body:has(.bx-reading-launch) { overflow: hidden; }
 .brl-kicker b { padding: 2px 8px; border-radius: 999px; background: #e7f6ef; }
 .bx-reading-launch .brl-head h1 { margin: 0; color: #18324b; font-size: 20px; font-weight: 900; line-height: 1.25; }
 .brl-head p { margin: 0; color: #5b6675; font-size: 13px; font-weight: 600; }
-.brl-head > a { width: 36px; height: 36px; }
+.brl-head > :is(a, button) { width: 36px; height: 36px; }
 .brl-scroll { display: grid; gap: 14px; padding: 0 20px 16px; background: #fff; }
 .brl-resume { display: flex; align-items: center; gap: 10px; padding: 7px 8px 7px 10px; border: 1px solid #f2dcae; border-radius: 12px; background: #fff6e5; color: #5a3a00; font-size: 13px; }
 .brl-resume > span:nth-child(2) { flex: 1; }
