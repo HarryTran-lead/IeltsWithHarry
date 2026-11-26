@@ -273,8 +273,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   // Timed sittings hide question translation until the answers are graded.
   const canTranslate = !examMode || graded;
   const answered = shown.filter((question) => isAnswered(answers[question.id])).length;
-  const [blankWarning, setBlankWarning] = useState(false);
-  useEffect(() => { setBlankWarning(false); }, [answered]);
+  const answerKey = JSON.stringify(shown.map((question) => [question.id, answers[question.id]]));
+  const [warningFor, setWarningFor] = useState<string | null>(null);
+  const blankWarning = warningFor === answerKey;
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
   // The reader's question strip shows which questions have an answer and, once graded, which are right.
   useEffect(() => { onProgress?.(shown.map((question) => isAnswered(answers[question.id])), shown.map((question) => graded ? reviews[question.id]?.correct : undefined)); }, [answers, shown, graded, reviews, onProgress]);
@@ -709,7 +710,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Trả lời đủ ${shown.length-answered} câu còn lại trước khi nộp.`}</small>}</span>
       {blankWarning && <p className="news-submit-warning" role="alert">Còn {shown.length - answered} câu chưa trả lời; câu trống được tính sai. Bấm lần nữa để vẫn nộp.</p>}<button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => {
         // A timed sitting with blanks asks once more, so a stray tap does not end the attempt.
-        if (examMode && !examExpired && answered < shown.length && !blankWarning) { setBlankWarning(true); return; }
+        if (examMode && !examExpired && answered < shown.length && !blankWarning) { setWarningFor(answerKey); return; }
         void submit();
       }}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : blankWarning ? "Vẫn nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
