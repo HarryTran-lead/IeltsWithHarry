@@ -6,7 +6,7 @@ import { bankClient } from "@/lib/ielts-bank/server";
 import { attemptContent, contentSchema, scoreAnswers } from "@/lib/ielts-bank/schema";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Bài Reading được chia sẻ | IeltsWithHarry", robots: { index: false, follow: false } };
+export const metadata = { title: "Bài Reading được chia sẻ | Harry Up", robots: { index: false, follow: false } };
 
 export default async function SharedReadingPage({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;

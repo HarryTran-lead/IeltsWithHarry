@@ -1,7 +1,7 @@
 /** Import the owner-approved M08 Reading set. Dry-run by default.
  *
  * Usage: node --env-file=.env.production.local --import tsx scripts/import-reading-lab-m08.ts
- *   --root C:/private/ielts-reading-lab-private --origin https://ieltswithharry.vercel.app
+ *   --root C:/private/ielts-reading-lab-private --origin https://harryup.vercel.app
  * Add --write-drafts to save unpublished exam versions. Publication requires the
  * separate rights evidence review and an explicit --publish pass.
  */
@@ -60,7 +60,7 @@ for (let number = 2; number <= 37; number++) {
     ...original, externalId: `reading-lab-${id.toLowerCase().replace("_", "-")}`,
     title: original.title,
     sourceUrl: `${origin}/app/reading/lab`, licenseUrl: `${origin}/reading-lab/rights`,
-    license: "Owner-authorized", attribution: "IeltsWithHarry original AI-assisted Reading set",
+    license: "Owner-authorized", attribution: "Harry Up original AI-assisted Reading set",
     content: parsed,
   };
   const questions = parsed.sections.flatMap((section) => section.questions);
@@ -107,7 +107,7 @@ for (let number = 2; number <= 37; number++) {
       ...[...mediaUrls].map((url) => ({ asset_kind: "image" as const, asset_url: url }))].map((item) => ({
         ...item, content_kind: "ielts_exam", content_id: saved.id,
         source_package_name: packageName, source_package_sha256: packageSha,
-        author_name: "IeltsWithHarry", rights_holder: "IeltsWithHarry",
+        author_name: "Harry Up", rights_holder: "Harry Up",
         permission_document_ref: attestation, permission_scope: "Owner confirmed web publication, commercial use, and translation/modification of Reading M08 text and images.",
         web_publication_allowed: true, commercial_use_allowed: true, modification_translation_allowed: true,
         reviewed_by: reviewerId,

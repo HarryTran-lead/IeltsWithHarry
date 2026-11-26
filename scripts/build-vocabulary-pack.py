@@ -396,7 +396,7 @@ def main() -> None:
         for topic in row["topics"].split("; "):
             by_topic[topic].append(row)
     manifest = {
-        "title": "IeltsWithHarry English vocabulary source pack",
+        "title": "Harry Up English vocabulary source pack",
         "source_language": "English",
         "is_official_ielts_wordlist": False,
         "cefr_j_explanation": "CEFR-J is an English wordlist compiled in Japan; J does not mean Japanese vocabulary.",
@@ -414,7 +414,7 @@ def main() -> None:
                          for path in [CEFR_FILE, OCTANOVE_FILE, WORDNET_FILE]},
         "sources": SOURCE_URLS,
     }
-    readme = f"""# IeltsWithHarry — kho nguồn từ vựng tiếng Anh
+    readme = f"""# Harry Up — kho nguồn từ vựng tiếng Anh
 
 Tạo ngày {manifest['generated_on']}. Có **{len(rows):,} dòng từ vựng**, **{manifest['unique_headwords']:,} headword**,
 **{len(by_topic)} nhóm topic**, **{manifest['definitions_matched']:,} dòng có định nghĩa tiếng Anh**.
@@ -473,7 +473,7 @@ IPA, collocation hoặc câu đặt sẵn cho toàn bộ kho — những trườ
 3. **Open English WordNet 2025**, Open English WordNet Community,
    {SOURCE_URLS['wordnet']}. **CC BY 4.0**:
    https://creativecommons.org/licenses/by/4.0/. Định nghĩa/ví dụ là dữ liệu nguồn,
-   không phải nội dung IeltsWithHarry tự viết.
+   không phải nội dung Harry Up tự viết.
 4. **wordfreq 3.1.1**, Robyn Speer, https://github.com/rspeer/wordfreq,
    dùng riêng để chia nhóm B1 theo tần suất tiếng Anh.
 

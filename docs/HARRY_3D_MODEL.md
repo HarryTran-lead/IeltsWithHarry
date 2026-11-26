@@ -4,7 +4,7 @@ Harry góc màn hình có thể chạy bằng một mô hình 3D thật (file `.
 
 ## 1. Ảnh đầu vào
 
-Sticker gốc (`public/ieltswithharry-mascot.webp`) chỉ có nửa người, nên công cụ 3D sẽ dựng ra một bức tượng bán thân. Cần trước một **ảnh toàn thân** cùng phong cách:
+Sticker gốc (`public/harryup-mascot.webp`) chỉ có nửa người, nên công cụ 3D sẽ dựng ra một bức tượng bán thân. Cần trước một **ảnh toàn thân** cùng phong cách:
 
 - Harry đứng thẳng, nhìn thẳng, hai tay hơi dang (tư thế chữ A), thấy rõ cả giày.
 - Nền trắng trơn, không có vòng tròn, không cầm sách (sách sẽ là chuyển động riêng).

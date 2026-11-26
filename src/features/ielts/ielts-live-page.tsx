@@ -17,7 +17,7 @@ const skillNames: Record<IeltsSkill, string> = {
   listening: "Listening", writing: "Writing", speaking: "Speaking",
 };
 const skills = Object.keys(skillNames) as IeltsSkill[];
-const sourceNote = "Bài luyện theo dạng IELTS Academic do IeltsWithHarry tạo từ dữ liệu nguồn. Đây không phải đề thi IELTS chính thức hay điểm band chính thức.";
+const sourceNote = "Bài luyện theo dạng IELTS Academic do Harry Up tạo từ dữ liệu nguồn. Đây không phải đề thi IELTS chính thức hay điểm band chính thức.";
 const stopWords = new Set("about above after again against among around because before between could every first from have into other should their there these those through under until which while would your this that with were been they them than then also only more most each many such some when where very over said says will used using may can are was who what new its our out one two three four five six seven eight nine ten year years news nasa noaa government".split(" "));
 const connectors = ["although", "however", "because", "whereas", "while", "therefore", "despite", "since", "moreover", "nevertheless"];
 

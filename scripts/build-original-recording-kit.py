@@ -102,7 +102,7 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
         output.writestr("recording-plan.csv", buffer.getvalue().encode("utf-8-sig"))
-        readme = f"""# IeltsWithHarry · Human recording kit (editorial draft)
+        readme = f"""# Harry Up · Human recording kit (editorial draft)
 
 Source ZIP SHA-256: `{digest}`. Five Listening papers, 20 parts and 200 questions. **There are no MP3s in the source or this kit.**
 

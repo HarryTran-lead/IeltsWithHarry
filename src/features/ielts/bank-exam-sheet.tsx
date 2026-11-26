@@ -260,7 +260,7 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
   return <div className={`cd-sheet ${notesOpen ? "has-notes" : ""}`} style={{ "--cd-left": `${split}%` } as CSSProperties}>
     <div className="cd-col">
     <header className="cd-header">
-      <button type="button" className="cd-brand" onClick={onExit} title="Lưu và rời bài"><span>Ielts</span><b>WithHarry</b></button>
+      <button type="button" className="cd-brand" onClick={onExit} title="Lưu và rời bài"><span>Harry</span><b>Up</b></button>
       <div className="cd-title"><strong>{exam.title}</strong><div className="cd-title-row">
         {listening && <div className="cd-audio-chip"><button type="button" onClick={() => setVolumeOpen(!volumeOpen)} aria-expanded={volumeOpen} title="Âm lượng"><Volume2 size={14} /> Audio player</button>
           {volumeOpen && <label className="cd-volume"><span className="sr-only">Volume</span><input type="range" min={0} max={1} step={0.05} value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); if (audio.current) audio.current.volume = value; }} /></label>}

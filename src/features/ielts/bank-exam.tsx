@@ -200,8 +200,8 @@ export function ExamBar({ exam, answered, total, remaining, busy, saveState, onS
   return <header className={`bx-bar ${exam.skill === "Reading" && onExit ? "bx-test-bar" : ""}`}>
     <div className="bx-bar-title">{onExit && exam.skill === "Reading" ? <span className="bx-test-brand">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/ieltswithharry-mascot.webp" alt="" />
-      <span>Ielts<b>WithHarry</b></span>
+      <img src="/harryup-mascot.webp" alt="" />
+      <span>Harry<b>Up</b></span>
     </span> : <span className="bx-skill-chip">{exam.skill}</span>}<div><strong>{displayExamTitle(exam.title)}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
     <span className={`bx-timer ${tone}`} role="timer" aria-label={`Còn ${minutes} phút ${seconds} giây`}><Clock3 size={16} /> {minutes}:{String(seconds).padStart(2, "0")}</span>
     <div className="bx-bar-actions">

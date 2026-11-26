@@ -25,7 +25,7 @@ export default async function GuestHome() {
   return <div className="guest-home">
     <section className="guest-hero">
       <div className="guest-hero-copy">
-        <span className="guest-pill"><i aria-hidden="true" /> IELTSWITHHARRY · HỌC MIỄN PHÍ</span>
+        <span className="guest-pill"><i aria-hidden="true" /> HARRY UP · HỌC MIỄN PHÍ</span>
         <h1>Học tiếng Anh, ghi lại <span className="hl">từng bước tiến</span> của bạn.</h1>
         <p>Khám phá lộ trình từ nền tảng đến IELTS, luyện sáu kỹ năng bằng bài học soạn sẵn và giữ từ mới, ghi chú, lịch sử học trong một cuốn sổ tay.</p>
         <div className="guest-actions">

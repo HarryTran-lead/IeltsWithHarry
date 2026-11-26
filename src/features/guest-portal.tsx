@@ -51,7 +51,7 @@ export function GuestPortal() {
   return <div className="guest-portal">
     <header className="guest-portal-header">
       <button className="guest-portal-menu-button" type="button" aria-label="Mở menu" onClick={() => setMenuOpen(true)}><Menu size={22} /></button>
-      <Link href="/app/dashboard" className="guest-portal-brand"><HarryMascot size={38} /><span>Ielts<b>WithHarry</b></span></Link>
+      <Link href="/app/dashboard" className="guest-portal-brand"><HarryMascot size={38} /><span>Harry<b>Up</b></span></Link>
       <span className="guest-portal-badge">Chế độ khách</span>
       <div className="guest-portal-header-actions"><Link href="/login">Đăng nhập</Link><Link className="button primary" href="/register">Tạo tài khoản <ArrowRight size={16} /></Link></div>
     </header>

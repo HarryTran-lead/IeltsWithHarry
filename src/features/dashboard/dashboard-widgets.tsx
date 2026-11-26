@@ -10,6 +10,7 @@ import { AvatarFrame } from "@/components/account/avatar-frame";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
+import { publisherLabel } from "@/lib/news/daily-plan";
 
 type NewsRow = { id: string; title: string; publisher: string; category: string; published_at: string; image_url: string | null; image_alt: string | null; image_credit: string | null };
 type RoomMessage = { id: string; display_name: string; body: string };
@@ -47,7 +48,7 @@ export function LatestNews() {
           <small>{row.category}</small>
         </span>
         <strong>{row.title}</strong>
-        <span className="dash-news-meta" title={`Ảnh: ${row.image_credit}`}>{ago(row.published_at, now)} · {row.publisher}</span>
+        <span className="dash-news-meta" title={`Ảnh: ${row.image_credit}`}>{ago(row.published_at, now)} · {publisherLabel(row.publisher)}</span>
       </Link>) : [0, 1, 2].map((key) => <span key={key} className="dash-news-card skeleton" />)}
     </div>
   </section>;

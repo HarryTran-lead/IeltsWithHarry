@@ -204,7 +204,7 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
       <div className={`br-result-cards ${level}`}>
         <div className="br-mood">
           <p>{level === "is-good" ? "Xuất sắc! Giữ vững phong độ này nhé." : level === "is-mid" ? "Khá lắm! Xem lại vài câu sai là lên band." : "Hơi khó bạn nhỉ, bình tĩnh luyện tiếp cùng Harry nha!"}</p>
-          <img src="/ieltswithharry-mascot.webp" alt="" />
+          <img src="/harryup-mascot.webp" alt="" />
           <Sticker name={level === "is-good" ? "star" : level === "is-mid" ? "target" : "coffee"} size={58} tilt={-10} className="br-mood-sticker" />
         </div>
         <div className="br-score-card">

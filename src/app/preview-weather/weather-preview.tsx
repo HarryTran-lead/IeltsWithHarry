@@ -12,7 +12,7 @@ function Frame() {
   return <div className={`app-frame ${mode !== 'off' ? weatherStyles.skyFrame : ''}`} data-sky-phase={mode !== 'off' ? phase : undefined}>
     <header className={`topbar ${mode !== 'off' ? weatherStyles.headerSurface : ''}`}>
       <HeaderSkyBackdrop />
-      <span className="brand"><span>Ielts<b>WithHarry</b></span></span>
+      <span className="brand"><span>Harry<b>Up</b></span></span>
       <div className="header-search"><input aria-label="Search" placeholder="Search lessons, topics or skills..." /></div>
       <div className="header-actions"><HeaderWeatherWidget /></div>
     </header>

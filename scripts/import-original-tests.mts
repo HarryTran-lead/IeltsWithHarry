@@ -21,7 +21,7 @@ if (apply && targetRef === "vpkhriywprepuhrbarye" && !args.includes("--allow-pro
   throw new Error("Production drafts require --allow-production-drafts");
 }
 if (apply && !["bhactqaxcvusmpeooxwi", "vpkhriywprepuhrbarye"].includes(targetRef!)) {
-  throw new Error("Target is not the known IeltsWithHarry dev or production project");
+  throw new Error("Target is not the known Harry Up dev or production project");
 }
 
 const zipBytes = readFileSync(zipPath);

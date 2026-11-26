@@ -485,7 +485,7 @@ export function StudyCompanion({ streak, newsUnread = 0, name, hidden = false }:
   if (tucked) {
     return (
       <button type="button" className={`companion-peek ${badge ? "has-badge" : ""}`} onClick={() => setTuck(false)} aria-label={badge ? "Harry có lời nhắn mới. Bấm để mở" : "Mở lại Harry"} title="Mở lại Harry">
-        <Image src="/ieltswithharry-mascot.webp" alt="" width={56} height={56} />
+        <Image src="/harryup-mascot.webp" alt="" width={56} height={56} />
       </button>
     );
   }
