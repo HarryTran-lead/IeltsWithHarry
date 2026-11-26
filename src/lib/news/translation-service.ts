@@ -46,7 +46,7 @@ export async function translateWithProviders(texts: string[], options: {
     } catch (error) { lastError = error; if (error instanceof AiQuotaError || error instanceof Error && /HTTP 429/.test(error.message)) quotaError = error; options.onFailure?.(translationFailure(error, "cloud-translate")); }
   }
   for (const { name, key } of options.geminiKeys) {
-    for(const model of ["gemini-3.5-flash-lite", "gemini-2.5-flash-lite"]){
+    for(const model of ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]){
     if(Date.now()+1000>=deadline)throw new Error("Translation providers timed out");
     try {
       const result = await geminiJson<{ translations: string[] }>(
