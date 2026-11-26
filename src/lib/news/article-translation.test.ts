@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { PGlite } from "@electric-sql/pglite";
 import { describe, expect, it } from "vitest";
-import { GLOSSARY_LIMIT, MAX_TRANSLATION_BATCHES, completeTranslation, mergeGlossary, nextTranslationBatch, shouldTryNextKey, splitSentences, translateRemaining, translationPlan } from "./article-translation";
+import { GLOSSARY_LIMIT, MAX_TRANSLATION_BATCHES, applyReviewFixes, completeTranslation, mergeGlossary, nextTranslationBatch, shouldTryNextKey, splitSentences, translateRemaining, translationPlan } from "./article-translation";
 import { AiQuotaError } from "./enrichment";
 import { glossaryMeaning, selectionTranslation, sentenceFor, wordForms } from "./word-meaning";
 
@@ -64,6 +64,12 @@ describe("stored news translations", () => {
     expect(mergeGlossary([], [{ word: "a very long five word phrase", pos: "phrase", vi: "cụm" }])).toEqual([]);
   });
 
+  it("applies an editor's fixes by sentence id and ignores malformed ones", () => {
+    const { output, changed } = applyReviewFixes(["Một.", "Hai.", "Ba."], [{ id: "2", vi: "Hai (đã sửa)." }, { id: "9", vi: "x" }, { id: "1", vi: " " }, { id: "3", vi: "Ba." }, "bad"]);
+    expect(output).toEqual(["Một.", "Hai (đã sửa).", "Ba."]);
+    expect(changed).toBe(1);
+    expect(applyReviewFixes(["Một."], null).output).toEqual(["Một."]);
+  });
   it("moves to the next Free Tier key only on quota or overload failures", () => {
     expect(shouldTryNextKey(new AiQuotaError(1000, true))).toBe(true);
     expect(shouldTryNextKey(new Error("Gemini HTTP 503"))).toBe(true);

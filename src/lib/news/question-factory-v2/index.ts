@@ -159,7 +159,10 @@ export function unifyMatchingPools(items: Candidate[]): Candidate[] {
 }
 /** Single-item forms used to top up a set that is short after checks; groups need two or more items. */
 const TOP_UP_FORMS: IeltsQuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer", "ynng"];
-const MAX_TOP_UPS = 2;
+/** Rounds 3 and 4 run only when the round before them added a checked item (the article still has material). */
+const MAX_TOP_UPS = 4;
+/** Repair rounds for rejected items while the set is short of its target. */
+const MAX_REPAIR_ROUNDS = 2;
 /** Checked items to hold beyond the target before QA, so later drops do not sink the set. */
 const TOP_UP_MARGIN = 2;
 /** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
@@ -187,7 +190,8 @@ function addUsage(a: TokenUsage | null, b: TokenUsage | null): TokenUsage | null
   return { prompt: sum(a.prompt, b.prompt), candidates: sum(a.candidates, b.candidates), total: sum(a.total, b.total) };
 }
 /** Retry pauses grow from the base delay; no retry starts unless a full request still fits the run budget. */
-export const v2Timing = { outageRetryDelayMs: 1000, runBudgetMs: 120_000, requestTimeoutMs: 46_000 };
+// The enrich route may run 180 s; the factory keeps 30 s for publishing and the rest of the run.
+export const v2Timing = { outageRetryDelayMs: 1000, runBudgetMs: 150_000, requestTimeoutMs: 46_000 };
 
 /**
  * Calls one step (generation or QA). Only an outage (5xx, timeout, network error) with no reply is retried;
@@ -282,10 +286,14 @@ export async function generateNewsQuizV2(
       }
       // Top up with single-item forms while the checked set is short of the target plus a margin.
       const topUpForms = TOP_UP_FORMS.filter((type) => selected.includes(type));
+      let passingBefore = -1;
       for (let round = 0; round < MAX_TOP_UPS && topUpForms.length && timeLeft(); round++) {
         const passing = validateGeneration({ passage_map: passageMap, questions, image_query: "" }, fullArticle, selected).valid.length;
         // Keep a margin: blind QA and the cross-model check may still drop items.
         if (passing >= target + TOP_UP_MARGIN) break;
+        // A round that added nothing means the article has no more distinct material: stop asking.
+        if (round >= 2 && passing <= passingBefore) break;
+        passingBefore = passing;
         const missing = Math.min(5, target + TOP_UP_MARGIN - passing);
         await runBatch(batches.length + round, topUpForms, typeCounts(topUpForms, missing));
       }
@@ -318,32 +326,39 @@ export async function generateNewsQuizV2(
         }
       };
       let approved = qa.accepted;
-      // Repair: when fewer than six items survived, fix the rejected ones once, then QA only the fixes.
-      if (!blocked && selectPublished(approved, target).length < 6 && timeLeft()) {
+      // Repair: while the set is short of its target, fix rejected items (up to two rounds) and QA only the fixes.
+      let pending = (() => {
         const approvedIds = new Set(approved.map((item) => item.id));
-        const rejected = structural.valid.filter((item) => !approvedIds.has(item.id));
-        const verdicts = new Map<string, BlindVerdict | undefined>(rejected.map((item) => [item.id,
-          (Array.isArray(reviewed.data?.reviews) ? reviewed.data.reviews : []).find((verdict) => verdict?.id === item.id)]));
-        const repaired = rejected.length ? await optional("REPAIR", () => provider<{ questions?: Candidate[] }>(
+        return structural.valid.filter((item) => !approvedIds.has(item.id));
+      })();
+      let verdicts = new Map<string, BlindVerdict | undefined>(pending.map((item) => [item.id,
+        (Array.isArray(reviewed.data?.reviews) ? reviewed.data.reviews : []).find((verdict) => verdict?.id === item.id)]));
+      for (let round = 0; round < MAX_REPAIR_ROUNDS && !blocked && pending.length && timeLeft()
+        && selectPublished(approved, target).length < target; round++) {
+        const approvedIds = new Set(approved.map((item) => item.id));
+        const rejected = pending;
+        const repaired = await optional("REPAIR", () => provider<{ questions?: Candidate[] }>(
           repairSystem(selected, target, customPrompt), repairPayload(fullArticle, rejected, verdicts),
-          repairSchema(selected), budget, fetcher, 12000, usedModel)) : null;
-        if (repaired) {
-          qaTokens = addUsage(qaTokens, repaired.usage);
-          const rejectedIds = new Set(rejected.map((item) => item.id));
-          const fixes = (Array.isArray(repaired.data?.questions) ? repaired.data.questions : [])
-            .filter((item) => rejectedIds.has(item?.id)).map((item) => withEvidenceSpans(normalizeCandidate(item), fullArticle));
-          const recheck = validateGeneration({ passage_map: generated.data.passage_map, questions: [...approved, ...fixes], image_query: "" },
-            fullArticle, selected);
-          const fixed = recheck.valid.filter((item) => !approvedIds.has(item.id));
-          issues.push(`REPAIR:${fixed.length}/${rejected.length}`);
-          const fixReview = fixed.length && timeLeft() ? await optional("REPAIR_QA", () => provider<BlindReview>(
-            blindQaSystem, blindQaPayload(fullArticle, fixed), qaSchema, budget, fetcher, 6000, alternateV2Model(usedModel))) : null;
-          if (fixReview) {
-            qaTokens = addUsage(qaTokens, fixReview.usage);
-            const fixedIds = new Set(validateBlindReview(fixReview.data, fixed).accepted.map((item) => item.id));
-            approved = recheck.valid.filter((item) => approvedIds.has(item.id) || fixedIds.has(item.id));
-          }
-        }
+          repairSchema(selected), budget, fetcher, 12000, usedModel));
+        if (!repaired) break;
+        qaTokens = addUsage(qaTokens, repaired.usage);
+        const rejectedIds = new Set(rejected.map((item) => item.id));
+        const fixes = (Array.isArray(repaired.data?.questions) ? repaired.data.questions : [])
+          .filter((item) => rejectedIds.has(item?.id)).map((item) => withEvidenceSpans(normalizeCandidate(item), fullArticle));
+        const recheck = validateGeneration({ passage_map: generated.data.passage_map, questions: [...approved, ...fixes], image_query: "" },
+          fullArticle, selected);
+        const fixed = recheck.valid.filter((item) => !approvedIds.has(item.id));
+        issues.push(`REPAIR:${fixed.length}/${rejected.length}`);
+        const fixReview = fixed.length && timeLeft() ? await optional("REPAIR_QA", () => provider<BlindReview>(
+          blindQaSystem, blindQaPayload(fullArticle, fixed), qaSchema, budget, fetcher, 6000, alternateV2Model(usedModel))) : null;
+        if (!fixReview) break;
+        qaTokens = addUsage(qaTokens, fixReview.usage);
+        const fixedIds = new Set(validateBlindReview(fixReview.data, fixed).accepted.map((item) => item.id));
+        approved = recheck.valid.filter((item) => approvedIds.has(item.id) || fixedIds.has(item.id));
+        // The next round works on the fixes QA still rejected, with that QA's reasons.
+        pending = fixed.filter((item) => !fixedIds.has(item.id));
+        verdicts = new Map(pending.map((item) => [item.id,
+          (Array.isArray(fixReview.data?.reviews) ? fixReview.data.reviews : []).find((verdict) => verdict?.id === item.id)]));
       }
       let chosen = selectPublished(approved, target);
       // Cross QA: a second model must independently agree on every risky item that would be published.

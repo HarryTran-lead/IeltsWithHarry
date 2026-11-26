@@ -500,6 +500,26 @@ describe("two request free-tier budget", () => {
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(true);
   });
+  it("repairs a still-rejected item a second time while the set is short", async () => {
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
+    const { passage, id, questions } = sixItemCase("repair-twice");
+    const steps: string[] = [];
+    const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
+      const { step } = stepOf(init);
+      steps.push(step);
+      if (step === "repair") return gemini({ questions: questions.filter((item) => item.id === "mcq_p2") });
+      // The first QA and the first fix review reject one item; the second fix review accepts it.
+      const qaCount = steps.filter((value) => value === "qa").length;
+      return gemini(factoryData(init, questions, step === "qa" && qaCount <= 2 ? new Set(["mcq_p2"]) : new Set()));
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("Repair twice", passage, id, fake);
+    expect(steps.slice(0, 10)).toEqual(["map", "batch", "batch", "batch", "batch", "qa", "repair", "qa", "repair", "qa"]);
+    expect(output.state).toBe("READY");
+    expect(output.questions).toHaveLength(6);
+    expect(output.audit.issues.filter((issue) => issue.startsWith("REPAIR:"))).toEqual(["REPAIR:1/1", "REPAIR:1/1"]);
+  });
   it("tops up a short set with single-item forms instead of failing it", async () => {
     process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
     process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
