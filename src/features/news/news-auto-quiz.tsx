@@ -79,6 +79,22 @@ function choiceLetters(count: number) {
   return letterList(Array.from({ length: Math.max(1, count) }, (_, index) => String.fromCharCode(65 + index)));
 }
 
+/** "A–E" for five options. */
+function letterRange(count: number) {
+  return `A–${String.fromCharCode(64 + Math.max(1, count))}`;
+}
+
+/** Consecutive Choose TWO items with one prompt are one question of two marks. */
+function choosePairs<T extends { question: Question }>(items: T[]) {
+  const pairs: T[][] = [];
+  for (const item of items) {
+    const last = pairs[pairs.length - 1];
+    if (last && last.length < 2 && last[0].question.prompt === item.question.prompt) last.push(item);
+    else pairs.push([item]);
+  }
+  return pairs;
+}
+
 function wordLimitInstruction(limit = 3) {
   return limit === 1 ? "Choose **ONE WORD ONLY** from the article for each answer."
     : `Choose **NO MORE THAN ${wordLimitText(limit)}** from the article for each answer.`;
@@ -109,6 +125,9 @@ function blockInstructions(type: QuestionType, first: number, last: number, opti
     case "flow_chart_completion": return ["Complete the flow-chart below.", wordLimitInstruction(wordLimit ?? 3)];
     case "diagram_label_completion": return ["Label the diagram below.", wordLimitInstruction(wordLimit ?? 3)];
     case "short_answer": return ["Answer the questions below.", wordLimitInstruction(wordLimit ?? 3)];
+    case "summary_word_list": return [`Complete the summary using the list of words, **${letterRange(optionCount)}**, below.`,
+      "Drag a word into each gap, or choose a word and then the gap."];
+    case "mcq_multiple": return [`Choose **TWO** letters, **${letterRange(optionCount)}**, for each question.`];
     default: return [];
   }
 }
@@ -132,6 +151,8 @@ const groups: Record<QuestionType, { title: string; short: string; instruction: 
   flow_chart_completion: { title: "Flow-chart Completion", short: "Flow-chart Completion", instruction: "Complete the process step. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào lưu đồ" },
   diagram_label_completion: { title: "Diagram Label Completion", short: "Diagram Label Completion", instruction: "Complete the text diagram. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền nhãn sơ đồ" },
   short_answer: { title: "Short-answer Questions", short: "Short Answer", instruction: "Answer using NO MORE THAN THREE WORDS from the article.", hint: "Trả lời ngắn" },
+  summary_word_list: { title: "Summary Completion (word list)", short: "Summary (word list)", instruction: "Complete the summary using the list of words below.", hint: "Chọn từ trong khung điền vào tóm tắt" },
+  mcq_multiple: { title: "Multiple Choice (choose TWO)", short: "Choose TWO", instruction: "Choose TWO letters.", hint: "Chọn hai đáp án đúng" },
 };
 
 const ALL_TYPES: QuestionType[] = [];
@@ -474,7 +495,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   }
 
   function retryWrong() {
-    const ids = shown.filter((question) => !reviews[question.id]?.correct).map((question) => question.id);
+    // A Choose TWO question with one wrong letter is practised again whole.
+    const wrongPrompts = new Set(shown.filter((question) => question.question_type === "mcq_multiple" && !reviews[question.id]?.correct).map((question) => question.prompt));
+    const ids = shown.filter((question) => !reviews[question.id]?.correct
+      || (question.question_type === "mcq_multiple" && wrongPrompts.has(question.prompt))).map((question) => question.id);
     if (!ids.length) return;
     setWrongIds(ids);
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
@@ -485,6 +509,15 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
 
   const locked = graded || examExpired;
   const setAnswer = (id: string, next: number | string) => setAnswers((current) => ({ ...current, [id]: next }));
+  /** Choose TWO: up to two ticked letters, stored lowest first on the question's two items (graded as a set). */
+  const togglePair = (pair: Question[], index: number) => setAnswers((current) => {
+    const chosen = new Set(pair.map((question) => current[question.id]).filter((value): value is number => typeof value === "number"));
+    if (chosen.has(index)) chosen.delete(index); else if (chosen.size < pair.length) chosen.add(index); else return current;
+    const sorted = [...chosen].sort((a, b) => a - b);
+    const next = { ...current };
+    pair.forEach((question, position) => { if (sorted[position] === undefined) delete next[question.id]; else next[question.id] = sorted[position]; });
+    return next;
+  });
   const selectHandlers = (question: Question, paragraph = 0) => ({
     onMouseUp: (event: ReactMouseEvent<HTMLElement>) => selectQuestion(event.currentTarget, event.target, question, paragraph),
     onTouchEnd: (event: ReactTouchEvent<HTMLElement>) => { const root = event.currentTarget; const target = event.target; requestAnimationFrame(() => selectQuestion(root, target, question, paragraph)); },
@@ -532,6 +565,45 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     </div></div>;
   }
 
+  /** An answer box filled from a block's shared list by drag and drop, or by choosing an option and then the box. */
+  function matchBox(question: Question, number: number, pool: string[], block: string) {
+    const value = answers[question.id];
+    const filled = typeof value === "number" && value >= 0 && value < pool.length;
+    const review = graded ? reviews[question.id] : undefined;
+    const lettered = question.question_type === "summary_word_list";
+    const place = (index: number) => { if (locked) return; setAnswer(question.id, index); setPicked(null); };
+    const waiting = !locked && picked?.block === block;
+    return <span role="button" tabIndex={locked ? -1 : 0}
+      className={`news-match-box${filled ? " is-filled" : ""}${waiting ? " is-target" : ""}${review ? review.correct ? " is-correct" : " is-wrong" : ""}`}
+      aria-label={filled ? `Câu ${number}: ${pool[value as number]}` : `Ô trả lời câu ${number}, còn trống`}
+      onClick={() => { if (picked?.block === block) place(picked.index); }}
+      onKeyDown={(event) => { if ((event.key === "Enter" || event.key === " ") && picked?.block === block) { event.preventDefault(); place(picked.index); } }}
+      onDragOver={(event) => { if (!locked) event.preventDefault(); }}
+      onDrop={(event) => { event.preventDefault(); const index = Number(event.dataTransfer.getData("text/plain")); if (Number.isInteger(index) && index >= 0 && index < pool.length) place(index); }}>
+      {filled ? <><span className="news-match-value">{lettered ? <b className="news-word-letter">{String.fromCharCode(65 + (value as number))}</b> : null}{pool[value as number]}</span>
+        {!locked && <button type="button" className="news-match-clear" aria-label={`Bỏ đáp án câu ${number}`}
+          onClick={(event) => { event.stopPropagation(); setAnswers((current) => { const next = { ...current }; delete next[question.id]; return next; }); }}><X size={14} /></button>}</>
+        : <span className="news-q-badge">{number}</span>}
+    </span>;
+  }
+
+  /** The block's list of options to place; a used option leaves the list unless the block reuses options. */
+  function poolChips(pool: string[], block: string, items: Question[], type: QuestionType) {
+    const used = new Set(items.map((question) => answers[question.id]).filter((value): value is number => typeof value === "number"));
+    const reusable = pool.length < items.length;
+    const lettered = type === "summary_word_list";
+    return <div className={`news-match-pool${lettered ? " news-word-list" : ""}`}>
+      {type === "matching_headings" && <p className="news-match-pool-title">List of Headings</p>}
+      {!locked && <p className="news-drag-hint"><Lightbulb size={13} aria-hidden="true" /> Kéo đáp án thả vào ô trống, hoặc bấm chọn đáp án rồi bấm vào ô trống để điền.</p>}
+      <div className={`news-match-chips ${type}`}>{pool.map((option, index) => !reusable && used.has(index) ? (lettered ? <span key={index} className="news-match-chip is-used" aria-hidden="true"><b className="news-word-letter">{String.fromCharCode(65 + index)}</b>{option}</span> : null) :
+        <button type="button" key={index} className="news-match-chip" disabled={locked} draggable={!locked}
+          aria-pressed={picked?.block === block && picked.index === index}
+          onClick={() => setPicked((current) => current?.block === block && current.index === index ? null : { block, index })}
+          onDragStart={(event) => { event.dataTransfer.setData("text/plain", String(index)); event.dataTransfer.effectAllowed = "move"; setPicked({ block, index }); }}
+          onDragEnd={() => setPicked(null)}>{lettered && <b className="news-word-letter">{String.fromCharCode(65 + index)}</b>}{option}</button>)}</div>
+    </div>;
+  }
+
   if (!questions.length && !error) return null;
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
@@ -557,6 +629,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       // Matching Information is a grid of paragraph letters; the other matching forms place options into answer boxes.
       const grid = section.type === "matching_information" ? matching : null;
       const pool = matching && !grid ? matching : null;
+      // A summary completed from a list of words, A–J: the gaps take answer boxes filled from one shared list.
+      const wordList = section.type === "summary_word_list" ? sharedMatchingOptions(section.items.map((item) => item.question)) ?? section.items[0].question.options : null;
       const groupedCompletion = GROUPED_COMPLETION.has(section.type);
       // New written items carry their block's word limit as a [W1]/[W2] tag; older ones were set at three words.
       const tags = section.items.map(({ question }) => /\n\[W([123])\]$/.exec(question.prompt)?.[1]);
@@ -606,37 +680,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         </>}
 
         {pool && (() => {
-          const used = new Set(section.items.map(({ question }) => answers[question.id]).filter((value): value is number => typeof value === "number"));
-          // An option stays in the list after use only when the block needs some options more than once.
-          const reusable = pool.length < section.items.length;
-          const chips = <div className="news-match-pool">
-            {section.type === "matching_headings" && <p className="news-match-pool-title">List of Headings</p>}
-            {!locked && <p className="news-drag-hint"><Lightbulb size={13} aria-hidden="true" /> Kéo đáp án thả vào ô trống, hoặc bấm chọn đáp án rồi bấm vào ô trống để điền.</p>}
-            <div className={`news-match-chips ${section.type}`}>{pool.map((option, index) => !reusable && used.has(index) ? null :
-              <button type="button" key={index} className="news-match-chip" disabled={locked} draggable={!locked}
-                aria-pressed={picked?.block === block && picked.index === index}
-                onClick={() => setPicked((current) => current?.block === block && current.index === index ? null : { block, index })}
-                onDragStart={(event) => { event.dataTransfer.setData("text/plain", String(index)); event.dataTransfer.effectAllowed = "move"; setPicked({ block, index }); }}
-                onDragEnd={() => setPicked(null)}>{option}</button>)}</div>
-          </div>;
+          const chips = poolChips(pool, block, section.items.map(({ question }) => question), section.type);
           const rows = section.items.map(({ question, number }) => {
-            const value = answers[question.id];
-            const filled = typeof value === "number" && value >= 0 && value < pool.length;
-            const review = graded ? reviews[question.id] : undefined;
-            const place = (index: number) => { if (locked) return; setAnswer(question.id, index); setPicked(null); };
-            const waiting = !locked && picked?.block === block;
-            const box = <span role="button" tabIndex={locked ? -1 : 0}
-              className={`news-match-box${filled ? " is-filled" : ""}${waiting ? " is-target" : ""}${review ? review.correct ? " is-correct" : " is-wrong" : ""}`}
-              aria-label={filled ? `Câu ${number}: ${pool[value as number]}` : `Ô trả lời câu ${number}, còn trống`}
-              onClick={() => { if (picked?.block === block) place(picked.index); }}
-              onKeyDown={(event) => { if ((event.key === "Enter" || event.key === " ") && picked?.block === block) { event.preventDefault(); place(picked.index); } }}
-              onDragOver={(event) => { if (!locked) event.preventDefault(); }}
-              onDrop={(event) => { event.preventDefault(); const index = Number(event.dataTransfer.getData("text/plain")); if (Number.isInteger(index) && index >= 0 && index < pool.length) place(index); }}>
-              {filled ? <><span className="news-match-value">{pool[value as number]}</span>
-                {!locked && <button type="button" className="news-match-clear" aria-label={`Bỏ đáp án câu ${number}`}
-                  onClick={(event) => { event.stopPropagation(); setAnswers((current) => { const next = { ...current }; delete next[question.id]; return next; }); }}><X size={14} /></button>}</>
-                : <span className="news-q-badge">{number}</span>}
-            </span>;
+            const box = matchBox(question, number, pool, block);
             const text = <div className="news-match-text news-question-text" {...selectHandlers(question)}>{questionText(question)}</div>;
             return <div className={`news-match-row ${section.type}`} key={question.id} data-q={number}>
               <div className="news-match-line">{section.type === "matching_features" ? <>{box}{text}</> : <>{text}{box}</>}{translateButton(question, number)}</div>
@@ -646,6 +692,60 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
           });
           return section.type === "matching_headings" ? <>{chips}<div className="news-match-rows">{rows}</div></> : <><div className="news-match-rows">{rows}</div>{chips}</>;
         })()}
+
+        {wordList && <>
+          <div className="news-group-completion summary_completion news-word-list-summary" aria-label={`Câu ${first}${last > first ? ` đến ${last}` : ""}`}>
+            {section.items.map(({ question, number }) => {
+              const prompt = question.prompt;
+              const gap = /_{3,}|\.{3,}|…/.exec(prompt);
+              return <div className="news-group-gap" key={question.id} data-q={number} {...selectHandlers(question)}>
+                {questionText(question, 0, gap?.index ?? prompt.length)}{" "}{matchBox(question, number, wordList, block)}{gap && questionText(question, gap.index + gap[0].length, prompt.length)}
+                {translateButton(question, number)}
+                {canTranslate && translationVisible[question.id] && translations[question.id] && <small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
+                {highlightMenu(question, number)}
+              </div>;
+            })}
+          </div>
+          {poolChips(wordList, block, section.items.map(({ question }) => question), section.type)}
+          {explanations}
+        </>}
+
+        {section.type === "mcq_multiple" && choosePairs(section.items).map((pair) => {
+          const question = pair[0].question;
+          const numbers = pair.map((item) => item.number);
+          const items = pair.map((item) => item.question);
+          const chosen = new Set(items.map((item) => answers[item.id]).filter((value): value is number => typeof value === "number"));
+          const pairReviews = items.map((item) => graded ? reviews[item.id] : undefined);
+          const keys = new Set(pairReviews.map((review) => review?.correctIndex).filter((value): value is number => typeof value === "number"));
+          const right = pairReviews.filter((review) => review?.correct).length;
+          const letters = (indexes: Iterable<number>) => [...indexes].sort((a, b) => a - b).map((index) => String.fromCharCode(65 + index)).join(" và ");
+          const reviewed = graded && pairReviews.every(Boolean);
+          return <div className={`news-auto-question news-choose-two${reviewed ? right === items.length ? " is-correct" : " is-wrong" : ""}`} key={question.id} data-q={numbers[0]}>
+            <div className="news-q-stem"><span className="news-q-badge">{numbers.length > 1 ? `${numbers[0]}–${numbers[numbers.length - 1]}` : numbers[0]}</span>
+              <h3 className="news-question-text" {...selectHandlers(question)}>{questionText(question)}</h3>{translateButton(question, numbers[0])}</div>
+            {translationText(question)}
+            {selection?.questionId === question.id && selection.p === 0 && highlightMenu(question, numbers[0])}
+            <div className="news-auto-options">{question.options.map((option, index) => {
+              const on = chosen.has(index);
+              return <label key={index} className={`${on ? "selected" : ""} ${reviewed && keys.has(index) ? "correct" : ""} ${reviewed && on && !keys.has(index) ? "wrong" : ""}`}>
+                <span className="news-option-letter">{String.fromCharCode(65 + index)}</span>
+                <input type="checkbox" className="news-radio news-check" checked={on} disabled={locked || (!on && chosen.size >= items.length)}
+                  onChange={() => togglePair(items, index)} aria-label={`Câu ${numbers.join(" và ")}: phương án ${String.fromCharCode(65 + index)}`} />
+                <em {...selectHandlers(question, index + 1)} onClick={(event) => { if (!window.getSelection()?.isCollapsed) event.preventDefault(); }}>{questionText(question, 0, option.length, index + 1)}</em>
+                {reviewed && pairReviews[0]?.optionNotes?.[index] && <small className="news-auto-note">{keys.has(index) ? "✓ " : "✗ "}{pairReviews[0].optionNotes[index]}</small>}
+              </label>;
+            })}</div>
+            {selection?.questionId === question.id && selection.p > 0 && highlightMenu(question, numbers[0])}
+            {reviewed && <div className={`news-auto-explanation ${right === items.length ? "" : "wrong"}`}>{right === items.length ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
+              <strong>{right === items.length ? "Chính xác cả hai đáp án!" : `Đúng ${right}/${items.length}. Đáp án: ${letters(keys)}`}</strong>
+              {right < items.length && chosen.size > 0 && <p>Bạn chọn: {letters(chosen)}</p>}
+              {pairReviews.map((review, index) => review && <div key={items[index].id}>
+                <p className="news-auto-why"><b>{review.correctIndex !== null ? `${String.fromCharCode(65 + review.correctIndex)}:` : "Vì sao:"}</b> {review.explanation}</p>
+                <EvidenceLink quote={review.supportingSentence} />
+              </div>)}
+            </div></div>}
+          </div>;
+        })}
 
         {arrowTable && <>
           <p className="news-completion-instruction">{arrowTable.instruction}</p>
@@ -667,7 +767,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
           {explanations}
         </>}
 
-        {!arrowTable && !groupedCompletion && !grid && !pool && section.items.map(({ question, number }) => {
+        {!arrowTable && !groupedCompletion && !grid && !pool && !wordList && section.type !== "mcq_multiple" && section.items.map(({ question, number }) => {
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);

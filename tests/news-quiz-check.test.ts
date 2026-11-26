@@ -14,7 +14,9 @@ describe("Daily News practice by question type", () => {
     expect(parsePracticeAnswers({})).toBeNull();
     expect(parsePracticeAnswers([1])).toBeNull();
     expect(parsePracticeAnswers({ "not-an-id": 1 })).toBeNull();
-    expect(parsePracticeAnswers({ [id(1)]: 4 })).toBeNull();
+    // Letters run to J (index 9) for a summary word list.
+    expect(parsePracticeAnswers({ [id(1)]: 9 })).toEqual({ [id(1)]: 9 });
+    expect(parsePracticeAnswers({ [id(1)]: 10 })).toBeNull();
     expect(parsePracticeAnswers({ [id(1)]: "   " })).toBeNull();
     expect(parsePracticeAnswers({ [id(1)]: "x".repeat(121) })).toBeNull();
   });
@@ -56,5 +58,18 @@ describe("Daily News short-answer matching", () => {
     expect(answerMatches("plastic bag", "plastic bags", "What did the shop stop selling?")).toBe(false);
     expect(answerMatches("more than 300", "300", vehicles)).toBe(false);
     expect(answerMatches("", "44", brands)).toBe(false);
+  });
+  it("grades a Choose TWO question as a set, whatever order the letters are given in", () => {
+    const pair: QuizKey[] = [
+      { id: id(4), question_type: "mcq_multiple", prompt: "Which TWO steps come first?", supporting_sentence: "s4", correct_index: 1, accepted_answers: null, explanation: "Vì bài nói vậy.", option_notes: null },
+      { id: id(5), question_type: "mcq_multiple", prompt: "Which TWO steps come first?", supporting_sentence: "s5", correct_index: 3, accepted_answers: null, explanation: "Vì bài nói vậy.", option_notes: null },
+    ];
+    const marks = (a: number, b: number) => gradePractice(pair, { [id(4)]: a, [id(5)]: b })!.map((item) => item.correct);
+    expect(marks(1, 3)).toEqual([true, true]);
+    expect(marks(3, 1)).toEqual([true, true]);
+    expect(marks(1, 4)).toEqual([true, false]);
+    expect(marks(0, 3)).toEqual([false, true]);
+    // The same correct letter twice scores once.
+    expect(marks(3, 3)).toEqual([true, false]);
   });
 });

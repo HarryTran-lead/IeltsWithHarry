@@ -1,4 +1,4 @@
-import { choiceTypes, gapTypes, ieltsQuestionTypes, type IeltsQuestionType } from "../ielts-passage";
+import { choiceTypes, gapTypes, ieltsQuestionTypes, sharesOptionPool, type IeltsQuestionType } from "../ielts-passage";
 import { looksLikeDirectLookup } from "../adaptive-quiz";
 import { parseQuestionDiagram, sharedMatchingOptions } from "../question-presentation";
 import type { BlindReview, Candidate, Generation, PassageMap } from "./types";
@@ -11,7 +11,10 @@ const knownTypes = new Set<string>(ieltsQuestionTypes);
 const needsGroup = new Set<IeltsQuestionType>([
   "matching_headings", "matching_information", "matching_features", "matching_sentence_endings",
   "summary_completion", "note_completion", "table_completion", "flow_chart_completion",
+  "summary_word_list", "mcq_multiple",
 ]);
+/** Option counts per choice form, as the database allows them (news_auto_questions_options_check). */
+const OPTION_RANGE: Partial<Record<IeltsQuestionType, [number, number]>> = { summary_word_list: [5, 10], mcq_multiple: [5, 6] };
 const otherGap = /_{3,}|\.{3,}|…/g;
 
 const PARAGRAPH_LETTERS = "ABCDEFGHIJKL";
@@ -85,8 +88,9 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
   if (choiceTypes.has(type)) {
     const fixed = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : null;
     if (fixed ? JSON.stringify(item.options) !== JSON.stringify(fixed)
-      // The database stores three or four options per item (news_auto_questions_options_check).
-      : item.options.length < 3 || item.options.length > 4 || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
+      // The database stores three or four options per item, more for a word list or Choose TWO (news_auto_questions_options_check).
+      : item.options.length < (OPTION_RANGE[type]?.[0] ?? 3) || item.options.length > (OPTION_RANGE[type]?.[1] ?? 4)
+        || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
     if (!Number.isInteger(item.correct_index) || item.correct_index < 0 || item.correct_index >= item.options.length) errors.push("KEY");
     if (item.answer !== "") errors.push("CHOICE_ANSWER");
     // Per-option notes are optional; when present they must cover every option in Vietnamese.
@@ -97,6 +101,10 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
     if (type === "matching_headings" && !/\bparagraph\s+[A-Z]\b/i.test(item.prompt)) errors.push("HEADING_PARAGRAPH");
     if (type === "matching_information" && !item.options.every((option) => /^paragraph [A-Z]$/i.test(option))) errors.push("INFORMATION_PARAGRAPHS");
     if (type === "matching_sentence_endings" && /[.!?]\s*$/.test(item.prompt)) errors.push("SENTENCE_STEM");
+    // A word list holds single words or short phrases, and each summary sentence has exactly one gap.
+    if (type === "summary_word_list" && ((item.prompt?.match(otherGap) ?? []).length !== 1
+      || item.options.some((option) => words(option).length > 3))) errors.push("WORD_LIST");
+    if (type === "mcq_multiple" && !/\bTWO\b/.test(item.prompt ?? "")) errors.push("CHOOSE_TWO");
   } else {
     if (item.options.length || item.option_notes.length || item.correct_index !== -1) errors.push("WRITTEN_SHAPE");
     if (typeof item.answer !== "string" || !item.answer.trim() || words(item.answer).length > (type === "note_completion" ? 3 : WRITTEN_WORD_LIMIT)
@@ -126,7 +134,7 @@ export function validateGeneration(data: Generation, article: string, selected: 
   const paragraphMapReliable = !issues.some((issue) => PARAGRAPH_MAP_ISSUES.has(issue));
   const valid: Candidate[] = [];
   const ids = new Set<string>();
-  const prompts = new Set<string>();
+  const prompts = new Map<string, { group: string; count: number }>();
   const evidence = new Set<string>();
   for (const item of data.questions) {
     const errors = validateCandidate(item, article, data.passage_map);
@@ -134,12 +142,15 @@ export function validateGeneration(data: Generation, article: string, selected: 
     if (!paragraphMapReliable && (item?.type === "matching_headings" || item?.type === "matching_information"))
       errors.push("PARAGRAPH_MAP_UNRELIABLE");
     if (ids.has(item?.id)) errors.push("DUPLICATE_ID");
-    if (prompts.has(normalize(item?.prompt ?? ""))) errors.push("DUPLICATE_PROMPT");
+    // The two items of a Choose TWO question share their prompt; across questions prompts stay distinct.
+    const promptKey = normalize(item?.prompt ?? "");
+    const prior = prompts.get(promptKey);
+    if (prior && !(item?.type === "mcq_multiple" && prior.group === item.group_id && prior.count < 2)) errors.push("DUPLICATE_PROMPT");
     const testedFact = normalize(item?.supporting_sentence ?? "") + "|" + normalize(
       item?.correct_index >= 0 ? item?.options?.[item.correct_index] ?? "" : item?.answer ?? "");
     if (evidence.has(testedFact)) errors.push("DUPLICATE_FACT");
     ids.add(item?.id);
-    prompts.add(normalize(item?.prompt ?? ""));
+    prompts.set(promptKey, { group: prior?.group ?? (item?.type === "mcq_multiple" ? item.group_id : ""), count: (prior?.count ?? 0) + 1 });
     evidence.add(testedFact);
     if (errors.length) issues.push(`${item?.id ?? "?"}:${errors.join(",")}`);
     else valid.push(item);
@@ -152,7 +163,12 @@ export function validateGeneration(data: Generation, article: string, selected: 
     const type = group[0].type;
     if (group.some((item) => item.type !== type)) issues.push(`${groupId}:MIXED_GROUP`);
     if (needsGroup.has(type) && group.length < 2) issues.push(`${groupId}:GROUP_TOO_SMALL`);
-    if (type.startsWith("matching_") && group.length > 1 && !sharedMatchingOptions(group)) issues.push(`${groupId}:MATCHING_POOL`);
+    if (sharesOptionPool(type) && group.length > 1 && !sharedMatchingOptions(group)) issues.push(`${groupId}:MATCHING_POOL`);
+    if (type === "summary_word_list" && (group[0].options.length < group.length + 2
+      || new Set(group.map((item) => item.correct_index)).size !== group.length)) issues.push(`${groupId}:WORD_LIST_POOL`);
+    // One Choose TWO question: exactly two items, one prompt, two different keys.
+    if (type === "mcq_multiple" && (group.length !== 2 || group[0].prompt !== group[1].prompt
+      || group[0].correct_index === group[1].correct_index)) issues.push(`${groupId}:CHOOSE_TWO_PAIR`);
     if (type === "flow_chart_completion" && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt))) issues.push(`${groupId}:FLOW_ORDER`);
     if (type === "matching_headings" && group.length > 1 && new Set(group.map((item) => item.correct_index)).size !== group.length) issues.push(`${groupId}:HEADING_REUSE`);
     if (type === "matching_headings" && group[0].options.length <= group.length) issues.push(`${groupId}:NO_EXTRA_HEADING`);
@@ -184,7 +200,11 @@ export function validateBlindReview(review: BlindReview, candidates: Candidate[]
       || verdict.paraphrase_faithful !== true || verdict.distractors_fair !== true || verdict.form_valid !== true
       || !verdict.reason_vi?.trim()) continue;
     const expected = choiceTypes.has(item.type) ? item.options[item.correct_index] : item.answer;
-    if (normalize(expected) !== normalize(verdict.independent_answer)) {
+    // Choose TWO: the examiner names both letters of the question, in any order.
+    const pairKeys = item.type === "mcq_multiple" ? candidates.filter((other) => other.type === "mcq_multiple" && other.group_id === item.group_id)
+      .map((other) => normalize(other.options[other.correct_index] ?? "")).sort().join("|") : null;
+    const pairAnswer = pairKeys === null ? null : verdict.independent_answer.split(/\s*\|\s*/).map(normalize).sort().join("|");
+    if (pairKeys !== null ? pairKeys !== pairAnswer : normalize(expected) !== normalize(verdict.independent_answer)) {
       issues.push(`${item.id}:QA_MISMATCH`);
       continue;
     }

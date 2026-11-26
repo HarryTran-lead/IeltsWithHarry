@@ -3,12 +3,20 @@ export const ieltsQuestionTypes = [
   "matching_features", "matching_sentence_endings", "sentence_completion",
   "summary_completion", "note_completion", "table_completion",
   "flow_chart_completion", "diagram_label_completion", "short_answer",
+  "summary_word_list", "mcq_multiple",
 ] as const;
 export type IeltsQuestionType = typeof ieltsQuestionTypes[number];
 export const choiceTypes = new Set<IeltsQuestionType>([
   "mcq", "tfng", "ynng", "matching_headings", "matching_information",
-  "matching_features", "matching_sentence_endings",
+  "matching_features", "matching_sentence_endings", "summary_word_list", "mcq_multiple",
 ]);
+/**
+ * Choice forms whose items share one option list: the matching forms, a summary completed from a list of words
+ * (A–J), and Choose TWO, whose two items are one question with the same prompt and options.
+ */
+export function sharesOptionPool(type: string) {
+  return type.startsWith("matching_") || type === "summary_word_list" || type === "mcq_multiple";
+}
 export const gapTypes = new Set<IeltsQuestionType>([
   "sentence_completion", "summary_completion", "note_completion",
   "table_completion", "flow_chart_completion", "diagram_label_completion",

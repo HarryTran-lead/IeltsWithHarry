@@ -52,14 +52,24 @@ set search_path to ''
 as $function$
 declare v_question record; v_choice text;
 begin
-  for v_question in select q.id, q.question_type, q.prompt, q.supporting_sentence, k.correct_index, k.accepted_answers, k.explanation, k.option_notes
+  for v_question in select q.id, q.question_type, q.prompt, q.sort_order, q.supporting_sentence, k.correct_index, k.accepted_answers, k.explanation, k.option_notes
     from public.news_auto_questions q join public.news_auto_answer_keys k on k.question_id = q.id
     where q.article_id = p_article_id and p_answers ? q.id::text order by q.sort_order loop
     v_choice := p_answers->>v_question.id::text;
     question_id := v_question.id;
     question_type := v_question.question_type;
-    if v_question.correct_index is not null then
-      correct := case when v_choice ~ '^[0-3]$' then v_choice::integer = v_question.correct_index else false end;
+    -- Kept in step with 202611270001 (applied first in production): Choose TWO is graded as a set, letters reach J.
+    if v_question.question_type = 'mcq_multiple' then
+      correct := case when v_choice ~ '^[0-9]$' then
+        exists (select 1 from public.news_auto_questions s join public.news_auto_answer_keys sk on sk.question_id = s.id
+          where s.article_id = p_article_id and s.question_type = 'mcq_multiple' and s.prompt = v_question.prompt
+            and sk.correct_index = v_choice::integer)
+        and not exists (select 1 from public.news_auto_questions s
+          where s.article_id = p_article_id and s.question_type = 'mcq_multiple' and s.prompt = v_question.prompt
+            and s.sort_order < v_question.sort_order and p_answers->>s.id::text = v_choice)
+        else false end;
+    elsif v_question.correct_index is not null then
+      correct := case when v_choice ~ '^[0-9]$' then v_choice::integer = v_question.correct_index else false end;
     else
       correct := exists (select 1 from jsonb_array_elements_text(v_question.accepted_answers) a(value)
         where public.news_answer_matches(coalesce(v_choice, ''), a.value, v_question.prompt));

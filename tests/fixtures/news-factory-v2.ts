@@ -38,6 +38,8 @@ const paragraphs = ["Paragraph A", "Paragraph B", "Paragraph C", "Paragraph D"];
 const headings = ["Publishing useful water data", "Processing samples in stages", "Construction of the device", "Views about public information"];
 const people = ["Maya Chen", "the author", "a second technician", "residents"];
 const endings = ["before daybreak", "before online publication", "to track changes", "to reduce the purchase price"];
+const wordList = ["murky", "salty", "warm", "costly", "weekly", "private", "chilled", "faulty"];
+const beforeRelease = ["The sample is filtered", "A second technician checks the reading", "Residents vote on the method", "The bottle is heated", "Private wells are tested"];
 export const rows: Record<IeltsQuestionType, [Row, Row, Row]> = {
   mcq: [
     { prompt: "How did the price of the newer device change?", evidence: 8, options: four, key: 0 },
@@ -108,6 +110,16 @@ export const rows: Record<IeltsQuestionType, [Row, Row, Row]> = {
     { prompt: "In what year did the testing programme start?", evidence: 0, answer: "2022" },
     { prompt: "Who carries out the final verification before publication?", evidence: 5, answer: "second technician" },
     { prompt: "What material removes unpleasant smell from the water?", evidence: 7, answer: "Charcoal" },
+  ],
+  summary_word_list: [
+    { prompt: "Residents complained that their tap water looked ______.", evidence: 0, options: wordList, key: 0 },
+    { prompt: "The laboratory shared its results on a ______ basis.", evidence: 2, options: wordList, key: 4 },
+    { prompt: "Samples are stored in a ______ container before measurement.", evidence: 3, options: wordList, key: 6 },
+  ],
+  mcq_multiple: [
+    { prompt: "Which TWO steps happen before a result is published?", evidence: 4, options: beforeRelease, key: 0 },
+    { prompt: "Which TWO steps happen before a result is published?", evidence: 5, options: beforeRelease, key: 1 },
+    { prompt: "Which TWO jobs do the inner layers of the device do?", evidence: 7, options: ["Removing odour", "Trapping particles", "Storing power", "Heating water", "Measuring minerals"], key: 0 },
   ],
 };
 export const positiveFixtures: Candidate[] = (Object.entries(rows) as [IeltsQuestionType, [Row, Row, Row]][])
