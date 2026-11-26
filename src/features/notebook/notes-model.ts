@@ -2,6 +2,16 @@
 
 export type NoteTemplate = { id: string; label: string; hint: string; title: string; body: string };
 
+export function reviewDate(days = 0, from = new Date()) {
+  const date = new Date(from);
+  date.setDate(date.getDate() + days);
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+export function reviewDue(reviewAt: string | null | undefined, now = new Date()) {
+  return Boolean(reviewAt && reviewAt <= reviewDate(0, now));
+}
+
 export const noteTemplates: NoteTemplate[] = [
   {
     id: "mistake", label: "Lỗi sai cần nhớ", hint: "Câu sai → câu đúng → lý do",
@@ -14,9 +24,19 @@ export const noteTemplates: NoteTemplate[] = [
     body: "## Đề bài\n> \n\n## Quan điểm (thesis)\n- \n\n## Body 1\n- Ý chính: \n- Giải thích: \n- Ví dụ: \n\n## Body 2\n- Ý chính: \n- Giải thích: \n- Ví dụ: \n\n## Từ vựng ăn điểm\n- \n\n#writing",
   },
   {
+    id: "task1", label: "Writing Task 1", hint: "Overview, số liệu và so sánh",
+    title: "Task 1: ",
+    body: "## Đề và dạng biểu đồ\n> \n\n## Overview (2 đặc điểm nổi bật)\n- \n- \n\n## Body 1: số liệu chính\n- \n\n## Body 2: đối chiếu\n- \n\n## Cách diễn đạt cần nhớ\n- \n\n#writing #task1",
+  },
+  {
     id: "speaking", label: "Ý tưởng Speaking", hint: "Part 2 cue card",
     title: "Speaking Part 2: ",
     body: "## Cue card\n> Describe ...\n\n## Ý chính\n- What: \n- When / where: \n- Who: \n- Why it matters: \n\n## Cụm từ muốn dùng\n- \n\n#speaking",
+  },
+  {
+    id: "reading-listening", label: "Reading / Listening", hint: "Bẫy đáp án và từ đồng nghĩa",
+    title: "Phân tích bài luyện: ",
+    body: "## Bài / câu hỏi\n> \n\n## Đáp án và bằng chứng\n- \n\n## Từ đồng nghĩa hoặc paraphrase\n- \n\n## Vì sao mình sai\n- \n\n## Lần sau cần làm gì\n- [ ] Luyện lại dạng câu hỏi này\n\n#practice",
   },
   {
     id: "lesson", label: "Tóm tắt bài học", hint: "3 điều học được + việc cần làm",
@@ -27,7 +47,7 @@ export const noteTemplates: NoteTemplate[] = [
 
 /** What a notebook entry is, for the type filter and list icons: saved words, mistakes, outlines or free notes. */
 export type EntryKind = "vocab" | "mistake" | "outline" | "free";
-export const entryKindLabels: Record<EntryKind, string> = { vocab: "Từ vựng", mistake: "Lỗi sai", outline: "Dàn ý", free: "Tự do" };
+export const entryKindLabels: Record<EntryKind, string> = { vocab: "Ghi chú từ", mistake: "Lỗi sai", outline: "Dàn ý", free: "Tự do" };
 
 export function entryKind(entry: { kind: "note" | "word"; title: string; body: string }): EntryKind {
   if (entry.kind === "word") return "vocab";
