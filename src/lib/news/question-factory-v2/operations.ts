@@ -155,7 +155,7 @@ export function quizHealth(input: {
   if (breaker.open && breaker.until) {
     const until = clock(breaker.until);
     alerts.push(breaker.reason === "config"
-      ? { tone: "error", code: "breaker_config", message: `Gemini báo lỗi cấu hình (khóa, model hoặc quyền). Đã tạm dừng tạo quiz đến ${until}. Kiểm tra AI_FACTORY_GEMINI_API_KEY và NEWS_QUESTION_FACTORY_V2_MODEL.` }
+      ? { tone: "error", code: "breaker_config", message: `Gemini báo lỗi cấu hình (khóa, model hoặc quyền). Đã tạm dừng tạo quiz đến ${until}. Kiểm tra NEWS_QUIZ_GEMINI_API_KEY và NEWS_QUESTION_FACTORY_V2_MODEL.` }
       : breaker.reason === "rejected"
         ? { tone: "error", code: "breaker_rejected", message: `Gemini từ chối ${breaker.streak} request liên tiếp, có thể do prompt hoặc schema. Đã tạm dừng đến ${until}.` }
         : breaker.reason === "quota"
