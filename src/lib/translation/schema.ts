@@ -11,7 +11,8 @@ export const practiceExerciseSchema = z.object({
   practiceLevel: z.string().regex(/^[1-9]\.\d$/),
   type: z.enum(["word", "phrase", "sentence", "paragraph"]),
   topic: z.string().min(1),
-  // ESL v2 lessons have no single key word; they skip the copy step and the key-word hint.
+  skillFocus: z.string().min(1).optional(),
+  // ESL v2 lessons may omit a single key word; enriched items include a verified key term.
   targetTerm: z.string().min(1).optional(),
   meaningVi: z.string().min(1).optional(),
   promptVi: z.string().min(1),

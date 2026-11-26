@@ -3,7 +3,7 @@
   "id": "band-1.0-001",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "Bản thân",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "name",
   "meaningVi": "tên",
   "promptVi": "tên",
@@ -25,7 +25,7 @@
   "id": "band-1.0-002",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "Gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "mother",
   "meaningVi": "mẹ",
   "promptVi": "mẹ",
@@ -47,7 +47,7 @@
   "id": "band-1.0-003",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "Trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "book",
   "meaningVi": "sách",
   "promptVi": "sách",
@@ -69,7 +69,7 @@
   "id": "band-1.0-cal-01",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "Trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "school",
   "meaningVi": "trường học",
   "promptVi": "trường học",
@@ -91,7 +91,7 @@
   "id": "band-1.0-cal-02",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "Quan hệ",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "friend",
   "meaningVi": "bạn bè",
   "promptVi": "người bạn",
@@ -113,7 +113,7 @@
   "id": "band-1.0-exp-001",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "apple",
   "meaningVi": "quả táo",
   "promptVi": "quả táo",
@@ -123,7 +123,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'apple' trong tiếng Anh có nghĩa xác thực là quả táo.",
+  "explanationVi": "Chú ý cách dùng 'apple' (quả táo) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp với tiêu chí level 1.0 về việc nhận biết từ đơn lẻ, thông dụng thuộc nhóm chủ đề đồ ăn.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -135,7 +135,7 @@
   "id": "band-1.0-exp-002",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "day",
   "meaningVi": "ngày",
   "promptVi": "ngày",
@@ -145,7 +145,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'day' dùng để chỉ khái niệm ngày trong mảng thời gian.",
+  "explanationVi": "Chú ý cách dùng 'day' (ngày) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Từ đơn siêu ngắn, tần suất cao, hoàn toàn chính xác cho yêu cầu trình độ 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -157,7 +157,7 @@
   "id": "band-1.0-exp-003",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "doctor",
   "meaningVi": "bác sĩ",
   "promptVi": "bác sĩ",
@@ -167,7 +167,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'doctor' biểu đạt ngành nghề bác sĩ trong lĩnh vực chăm sóc sức khỏe.",
+  "explanationVi": "Chú ý cách dùng 'doctor' (bác sĩ) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mức 1.0 chú trọng việc gợi lại chính xác từ đơn giản thường gặp.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -179,7 +179,7 @@
   "id": "band-1.0-exp-004",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "city",
   "meaningVi": "thành phố",
   "promptVi": "thành phố",
@@ -189,7 +189,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'city' miêu tả một thành phố hoặc khu đô thị lớn.",
+  "explanationVi": "Chú ý cách dùng 'city' (thành phố) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Là từ đơn giản tiêu biểu cho chủ đề đô thị ở cấp độ sơ cấp 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -201,7 +201,7 @@
   "id": "band-1.0-exp-005",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "water",
   "meaningVi": "nước",
   "promptVi": "nước",
@@ -211,7 +211,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'water' có nghĩa duy nhất trong ngữ cảnh cơ bản này là nước.",
+  "explanationVi": "Chú ý cách dùng 'water' (nước) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đảm bảo đúng nguyên tắc chọn từ cốt lõi, rõ nghĩa cho mức nhập môn 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -223,7 +223,7 @@
   "id": "band-1.0-exp-006",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "phone",
   "meaningVi": "điện thoại",
   "promptVi": "điện thoại",
@@ -233,7 +233,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'phone' chỉ thiết bị điện thoại liên lạc.",
+  "explanationVi": "Chú ý cách dùng 'phone' (điện thoại) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Từ vựng công nghệ đời sống vô cùng thông dụng, vừa vặn với tiêu chí 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -245,7 +245,7 @@
   "id": "band-1.0-exp-007",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "hotel",
   "meaningVi": "khách sạn",
   "promptVi": "khách sạn",
@@ -255,7 +255,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'hotel' mang nghĩa chính xác là khách sạn.",
+  "explanationVi": "Chú ý cách dùng 'hotel' (khách sạn) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Danh từ riêng lẻ chủ đề du lịch phù hợp cho mục tiêu nhận diện từ level 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -267,7 +267,7 @@
   "id": "band-1.0-exp-008",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "house",
   "meaningVi": "ngôi nhà",
   "promptVi": "ngôi nhà",
@@ -277,7 +277,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'house' tượng trưng cho công trình ngôi nhà.",
+  "explanationVi": "Chú ý cách dùng 'house' (ngôi nhà) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Yêu cầu dịch đúng một từ đơn chủ đề nhà ở, đúng năng lực level 1.0.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -289,7 +289,7 @@
   "id": "band-1.0-exp-009",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "sun",
   "meaningVi": "mặt trời",
   "promptVi": "mặt trời",
@@ -299,7 +299,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ 'sun' có nghĩa duy nhất là mặt trời, nguồn năng lượng thiên nhiên.",
+  "explanationVi": "Chú ý cách dùng 'sun' (mặt trời) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đáp ứng mức độ nhận biết từ vựng đơn sơ cấp nhất thuộc chủ đề năng lượng.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -311,7 +311,7 @@
   "id": "band-1.0-exp-010",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "job",
   "meaningVi": "công việc",
   "promptVi": "công việc",
@@ -321,7 +321,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"job\" là danh từ đếm được thông dụng chỉ công việc hoặc nghề nghiệp.",
+  "explanationVi": "Chú ý cách dùng 'job' (công việc) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục này phù hợp với cấp độ 1.0 vì chỉ yêu cầu nhận biết và viết đúng một từ đơn sơ cấp về chủ đề công việc.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -333,7 +333,7 @@
   "id": "band-1.0-exp-011",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "year",
   "meaningVi": "năm",
   "promptVi": "năm",
@@ -343,7 +343,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"year\" chỉ đơn vị thời gian gồm 12 tháng.",
+  "explanationVi": "Chú ý cách dùng 'year' (năm) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục này thuộc cấp độ 1.0 do kiểm tra khả năng nhớ và viết lại một từ chỉ thời gian rất cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -355,7 +355,7 @@
   "id": "band-1.0-exp-012",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "bread",
   "meaningVi": "bánh mì",
   "promptVi": "bánh mì",
@@ -365,7 +365,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"bread\" là danh từ không đếm được chỉ bánh mì.",
+  "explanationVi": "Chú ý cách dùng 'bread' (bánh mì) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đáp ứng cấp độ 1.0 bằng việc yêu cầu dịch một từ vựng chủ đề thực phẩm hết sức quen thuộc.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -377,7 +377,7 @@
   "id": "band-1.0-exp-013",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "game",
   "meaningVi": "trò chơi",
   "promptVi": "trò chơi",
@@ -387,7 +387,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"game\" ám chỉ trò chơi, trận đấu thể thao hoặc hình thức giải trí.",
+  "explanationVi": "Chú ý cách dùng 'game' (trò chơi) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp cấp độ 1.0 vì kiểm tra từ đơn ở mức độ nhập môn thuộc lĩnh vực giải trí và thể thao.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -399,7 +399,7 @@
   "id": "band-1.0-exp-014",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "bus",
   "meaningVi": "xe buýt",
   "promptVi": "xe buýt",
@@ -409,7 +409,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"bus\" dùng để chỉ phương tiện giao thông công cộng xe buýt.",
+  "explanationVi": "Chú ý cách dùng 'bus' (xe buýt) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Thuộc cấp độ 1.0 nhờ việc sử dụng một từ đơn căn bản chỉ phương tiện đi lại hàng ngày.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -421,7 +421,7 @@
   "id": "band-1.0-exp-015",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "sick",
   "meaningVi": "ốm",
   "promptVi": "ốm",
@@ -431,7 +431,7 @@
   "grammarTags": [
    "adjective"
   ],
-  "explanationVi": "Từ \"sick\" là tính từ diễn tả tình trạng sức khỏe không tốt, bị bệnh.",
+  "explanationVi": "Chú ý cách dùng 'sick' (ốm) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp mức 1.0 khi chỉ yêu cầu chuyển đổi một tính từ miêu tả sức khỏe cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -443,7 +443,7 @@
   "id": "band-1.0-exp-016",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "flat",
   "meaningVi": "căn hộ",
   "promptVi": "căn hộ",
@@ -453,7 +453,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Trong tiếng Anh-Anh, từ \"flat\" được sử dụng phổ biến để chỉ một căn hộ.",
+  "explanationVi": "Chú ý cách dùng 'flat' (căn hộ) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp mức 1.0 với một danh từ đơn giản chỉ loại hình nhà ở theo chuẩn Anh-Anh.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -465,7 +465,7 @@
   "id": "band-1.0-exp-017",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "tree",
   "meaningVi": "cây",
   "promptVi": "cây",
@@ -475,7 +475,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"tree\" là danh từ chỉ cây cối trong thiên nhiên.",
+  "explanationVi": "Chú ý cách dùng 'tree' (cây) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục này nằm ở cấp độ 1.0 vì từ vựng rất ngắn gọn, thuộc chủ đề tự nhiên cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -487,7 +487,7 @@
   "id": "band-1.0-exp-018",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "father",
   "meaningVi": "cha",
   "promptVi": "cha",
@@ -497,7 +497,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"father\" là danh từ chỉ người cha trong mối quan hệ gia đình.",
+  "explanationVi": "Chú ý cách dùng 'father' (cha) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Cấp độ 1.0 chú trọng việc gợi nhớ và viết chính xác danh từ gia đình quen thuộc.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -509,7 +509,7 @@
   "id": "band-1.0-exp-019",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "screen",
   "meaningVi": "màn hình",
   "promptVi": "màn hình",
@@ -519,7 +519,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"screen\" dùng để chỉ màn hình hiển thị của thiết bị điện tử.",
+  "explanationVi": "Chú ý cách dùng 'screen' (màn hình) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Thuộc trình độ 1.0 vì đây là từ đơn thông dụng liên quan đến thiết bị công nghệ.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -531,7 +531,7 @@
   "id": "band-1.0-exp-020",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "park",
   "meaningVi": "công viên",
   "promptVi": "công viên",
@@ -541,7 +541,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"park\" chỉ công viên hoặc không gian xanh trong khu vực đô thị.",
+  "explanationVi": "Chú ý cách dùng 'park' (công viên) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đạt chuẩn 1.0 nhờ việc dịch chính xác một danh từ đơn chỉ địa điểm đô thị.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -553,7 +553,7 @@
   "id": "band-1.0-exp-021",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "map",
   "meaningVi": "bản đồ",
   "promptVi": "bản đồ",
@@ -563,7 +563,7 @@
   "grammarTags": [
    "noun"
   ],
-  "explanationVi": "Từ \"map\" là danh từ chỉ bản đồ dùng cho việc tìm đường và du lịch.",
+  "explanationVi": "Chú ý cách dùng 'map' (bản đồ) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Nằm ở cấp độ 1.0 vì yêu cầu tái hiện một từ đơn ngắn gọn, quen thuộc trong hành trình du lịch.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -575,7 +575,7 @@
   "id": "band-1.0-exp-022",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "ball",
   "meaningVi": "quả bóng",
   "promptVi": "quả bóng",
@@ -585,7 +585,7 @@
   "grammarTags": [
    "Noun - Elementary"
   ],
-  "explanationVi": "Từ 'ball' trong tiếng Anh có nghĩa là quả bóng, được sử dụng phổ biến trong các môn thể thao.",
+  "explanationVi": "Chú ý cách dùng 'ball' (quả bóng) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục này đáp ứng cấp độ 1.0 vì đây là từ đơn lẻ sơ cấp, yêu cầu người học nhận biết và ghi nhớ từ vựng cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -597,7 +597,7 @@
   "id": "band-1.0-exp-023",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "tea",
   "meaningVi": "trà",
   "promptVi": "trà",
@@ -607,7 +607,7 @@
   "grammarTags": [
    "Noun - Food & Drink"
   ],
-  "explanationVi": "Từ 'tea' mang nghĩa là trà hoặc nước trà, một thức uống vô cùng phổ biến trong đời sống.",
+  "explanationVi": "Chú ý cách dùng 'tea' (trà) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục này thuộc cấp độ 1.0 do yêu cầu viết đúng một từ đơn thông dụng duy nhất trong chủ đề đời sống.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -619,7 +619,7 @@
   "id": "band-1.0-exp-024",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "train",
   "meaningVi": "tàu hỏa",
   "promptVi": "tàu hỏa",
@@ -629,7 +629,7 @@
   "grammarTags": [
    "Noun - Transport"
   ],
-  "explanationVi": "Từ 'train' chỉ phương tiện giao thông đường sắt (tàu hỏa).",
+  "explanationVi": "Chú ý cách dùng 'train' (tàu hỏa) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp cấp độ 1.0 vì kiểm tra khả năng nhận biết từ vựng đơn lẻ về phương tiện giao thông sơ cấp.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -641,7 +641,7 @@
   "id": "band-1.0-exp-025",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "month",
   "meaningVi": "tháng",
   "promptVi": "tháng",
@@ -651,7 +651,7 @@
   "grammarTags": [
    "Noun - Time"
   ],
-  "explanationVi": "Từ 'month' dùng để chỉ đơn vị thời gian là tháng trong năm.",
+  "explanationVi": "Chú ý cách dùng 'month' (tháng) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đáp ứng tiêu chí cấp độ 1.0 vì là từ vựng chỉ thời gian căn bản dành cho người mới bắt đầu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -663,7 +663,7 @@
   "id": "band-1.0-exp-026",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "milk",
   "meaningVi": "sữa",
   "promptVi": "sữa",
@@ -673,7 +673,7 @@
   "grammarTags": [
    "Noun - Health & Nutrition"
   ],
-  "explanationVi": "Từ 'milk' chỉ thức uống bổ dưỡng là sữa.",
+  "explanationVi": "Chú ý cách dùng 'milk' (sữa) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Cấp độ 1.0 yêu cầu học viên nhận biết và viết đúng danh từ đơn giản về dinh dưỡng gia đình.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -685,7 +685,7 @@
   "id": "band-1.0-exp-027",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "river",
   "meaningVi": "dòng sông",
   "promptVi": "dòng sông",
@@ -695,7 +695,7 @@
   "grammarTags": [
    "Noun - Environment"
   ],
-  "explanationVi": "Từ 'river' có nghĩa là dòng sông, chỉ một dòng nước tự nhiên chảy ra biển hoặc hồ.",
+  "explanationVi": "Chú ý cách dùng 'river' (dòng sông) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp mức 1.0 do chỉ yêu cầu chuyển ngữ một từ đơn cơ bản về tự nhiên và môi trường.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -707,7 +707,7 @@
   "id": "band-1.0-exp-028",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "computer",
   "meaningVi": "máy tính",
   "promptVi": "máy tính",
@@ -717,7 +717,7 @@
   "grammarTags": [
    "Noun - Technology"
   ],
-  "explanationVi": "Từ 'computer' dùng để chỉ thiết bị công nghệ máy tính.",
+  "explanationVi": "Chú ý cách dùng 'computer' (máy tính) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Thuộc cấp độ nhập môn 1.0 vì đây là từ vựng chỉ thiết bị công nghệ thiết yếu và rất quen thuộc.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -729,7 +729,7 @@
   "id": "band-1.0-exp-029",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "sister",
   "meaningVi": "chị gái hoặc em gái",
   "promptVi": "chị gái hoặc em gái",
@@ -739,7 +739,7 @@
   "grammarTags": [
    "Noun - Family"
   ],
-  "explanationVi": "Từ 'sister' dùng để chỉ chị gái hoặc em gái trong quan hệ gia đình.",
+  "explanationVi": "Chú ý cách dùng 'sister' (chị gái hoặc em gái) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đáp ứng cấp độ 1.0 do liên quan tới nhận biết danh từ quan hệ gia đình đơn giản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -751,7 +751,7 @@
   "id": "band-1.0-exp-030",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "music",
   "meaningVi": "âm nhạc",
   "promptVi": "âm nhạc",
@@ -761,7 +761,7 @@
   "grammarTags": [
    "Noun - Culture"
   ],
-  "explanationVi": "Từ 'music' nghĩa là âm nhạc, một khái niệm văn hóa nghệ thuật căn bản.",
+  "explanationVi": "Chú ý cách dùng 'music' (âm nhạc) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đạt tiêu chuẩn 1.0 vì người học chỉ cần nhớ và viết đúng từ đơn lẻ thuộc lĩnh vực văn hóa.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -773,7 +773,7 @@
   "id": "band-1.0-exp-031",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "door",
   "meaningVi": "cửa ra vào",
   "promptVi": "cửa ra vào",
@@ -783,7 +783,7 @@
   "grammarTags": [
    "Noun - Housing"
   ],
-  "explanationVi": "Từ 'door' chỉ cánh cửa ra vào của căn nhà hoặc căn phòng.",
+  "explanationVi": "Chú ý cách dùng 'door' (cửa ra vào) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đúng mức luyện nhập môn 1.0 khi tập trung nhận biết tên gọi vật dụng nhà ở quen thuộc.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -795,7 +795,7 @@
   "id": "band-1.0-exp-032",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "beach",
   "meaningVi": "bãi biển",
   "promptVi": "bãi biển",
@@ -805,7 +805,7 @@
   "grammarTags": [
    "Noun - Travel"
   ],
-  "explanationVi": "Từ 'beach' chỉ bãi biển, một địa điểm du lịch tự nhiên phổ biến.",
+  "explanationVi": "Chú ý cách dùng 'beach' (bãi biển) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp trình độ 1.0 với mục tiêu viết đúng một từ vựng chỉ địa điểm cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -817,7 +817,7 @@
   "id": "band-1.0-exp-033",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "light",
   "meaningVi": "ánh sáng",
   "promptVi": "ánh sáng",
@@ -827,7 +827,7 @@
   "grammarTags": [
    "Noun - Energy"
   ],
-  "explanationVi": "Từ 'light' có nghĩa là ánh sáng hoặc nguồn sáng.",
+  "explanationVi": "Chú ý cách dùng 'light' (ánh sáng) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đạt mức 1.0 vì kiểm tra từ vựng danh từ đơn giản đại diện cho khái niệm năng lượng tự nhiên.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -839,7 +839,7 @@
   "id": "band-1.0-exp-034",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "rice",
   "meaningVi": "gạo",
   "promptVi": "gạo",
@@ -849,7 +849,7 @@
   "grammarTags": [
    "Vocabulary - Noun"
   ],
-  "explanationVi": "Từ 'rice' trong tiếng Anh có nghĩa là gạo hoặc cơm.",
+  "explanationVi": "Chú ý cách dùng 'rice' (gạo) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Mục tiêu mức 1.0 là nhận biết và viết đúng các danh từ đơn giản, quen thuộc trong đời sống hàng ngày như từ chỉ thực phẩm cơ bản.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
@@ -861,7 +861,7 @@
   "id": "band-1.0-exp-035",
   "practiceLevel": "1.0",
   "type": "word",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "bicycle",
   "meaningVi": "xe đạp",
   "promptVi": "xe đạp",
@@ -871,7 +871,7 @@
   "grammarTags": [
    "Vocabulary - Noun"
   ],
-  "explanationVi": "Từ 'bicycle' có nghĩa là xe đạp trong tiếng Anh.",
+  "explanationVi": "Chú ý cách dùng 'bicycle' (xe đạp) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Phù hợp mức 1.0 vì đây là từ vựng sơ cấp chỉ phương tiện di chuyển phổ biến, giúp người học luyện tập viết đúng một từ đơn.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",

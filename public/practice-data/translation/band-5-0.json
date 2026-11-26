@@ -3,7 +3,7 @@
   "id": "band-5.0-025",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "opportunity",
   "meaningVi": "cơ hội",
   "promptVi": "Học bổng này tạo cơ hội cho sinh viên ở vùng nông thôn theo học đại học.",
@@ -25,7 +25,7 @@
   "id": "band-5.0-026",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reduce waste",
   "meaningVi": "giảm rác thải",
   "promptVi": "Các cửa hàng có thể giảm rác thải bằng cách dùng ít bao bì hơn.",
@@ -36,7 +36,13 @@
    "by-gerund"
   ],
   "explanationVi": "By using less packaging nêu phương thức giảm rác thải.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Shops can to reduce waste by using less packaging.",
+    "correction": "Shops can reduce waste by using less packaging.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can reduce)."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -47,7 +53,7 @@
   "id": "band-5.0-027",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "flexible hours",
   "meaningVi": "giờ làm linh hoạt",
   "promptVi": "Giờ làm linh hoạt giúp cha mẹ cân bằng công việc và gia đình.",
@@ -69,19 +75,26 @@
   "id": "band-5.0-cal-01",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "financial skills",
   "meaningVi": "kỹ năng tài chính",
   "promptVi": "Trường học nên dạy kỹ năng tài chính cơ bản vì nhiều học sinh chưa biết lập ngân sách.",
   "referenceAnswers": [
-   "Schools should teach basic financial skills because many students do not know how to budget."
+   "Schools should teach basic financial skills because many students do not know how to budget.",
+   "Schools should teach basic financial skills because many students don't know how to budget."
   ],
   "grammarTags": [
    "supported-claim"
   ],
   "explanationVi": "Because bổ sung lý do cụ thể cho đề xuất.",
   "rationaleVi": "Quan điểm về chủ đề xã hội có lý do rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Schools should to teach basic financial skills because many students do not know how to budget.",
+    "correction": "Schools should teach basic financial skills because many students do not know how to budget.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should teach)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -91,7 +104,7 @@
   "id": "band-5.0-cal-02",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "public parks",
   "meaningVi": "công viên công cộng",
   "promptVi": "Công viên công cộng cho trẻ em một nơi an toàn để chơi, nhất là ở thành phố đông đúc.",
@@ -113,12 +126,13 @@
   "id": "band-5.0-exp-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "mental health",
   "meaningVi": "sức khỏe tinh thần",
   "promptVi": "Tôi tin rằng việc chạy bộ hằng ngày cải thiện sức khỏe tinh thần vì nó giúp mọi người nghỉ ngơi sau những giờ làm việc căng thẳng.",
   "referenceAnswers": [
-   "I believe that daily running improves mental health because it gives people a break from stressful working hours."
+   "I believe that daily running improves mental health because it gives people a break from stressful working hours.",
+   "I think that daily running improves mental health because it gives people a break from stressful working hours."
   ],
   "grammarTags": [
    "opinion and reason"
@@ -135,7 +149,7 @@
   "id": "band-5.0-exp-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "bus lanes",
   "meaningVi": "làn đường dành riêng cho xe buýt",
   "promptVi": "Theo tôi, chính quyền nên xây dựng thêm các làn đường dành riêng cho xe buýt nhằm giảm bớt thời gian di chuyển của người dân trong giờ cao điểm.",
@@ -147,7 +161,13 @@
   ],
   "explanationVi": "Cụm 'In my view' mở đầu quan điểm, đi kèm động từ khuyết thiếu 'should' và mục đích cụ thể về việc rút ngắn thời gian đi lại.",
   "rationaleVi": "Câu đưa ra giải pháp đô thị thiết thực với lý do đo lường được (rút ngắn thời gian giờ cao điểm), rất đặc trưng cho tiêu chuẩn Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In my view, the council should to construct more bus lanes to reduce commuting time for local residents during peak hours.",
+    "correction": "In my view, the council should construct more bus lanes to reduce commuting time for local residents during peak hours.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should construct)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -157,7 +177,7 @@
   "id": "band-5.0-exp-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reusable bags",
   "meaningVi": "túi tái sử dụng",
   "promptVi": "Siêu thị nên tính phí túi nhựa vì quy định này khuyến khích khách hàng mang theo túi tái sử dụng khi đi mua sắm.",
@@ -179,7 +199,7 @@
   "id": "band-5.0-exp-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "online courses",
   "meaningVi": "các khóa học trực tuyến",
   "promptVi": "Từ góc nhìn của tôi, các khóa học trực tuyến rất hữu ích cho người đi làm vì họ có thể tự học vào buổi tối mà không cần nghỉ việc.",
@@ -191,7 +211,13 @@
   ],
   "explanationVi": "Mở đầu bằng 'From my perspective' để nêu nhận định, tiếp nối bằng ví dụ thực tế về việc học buổi tối của người đi làm.",
   "rationaleVi": "Nêu ý kiến kết hợp ví dụ hoàn cảnh thực tế (học buổi tối mà không cần nghỉ việc), đáp ứng tốt tiêu chí không đưa ra nhận định chung chung ở Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "From my perspective, online courses are very helpful for working adults because they can to study independently in the evening without quitting their jobs.",
+    "correction": "From my perspective, online courses are very helpful for working adults because they can study independently in the evening without quitting their jobs.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can study)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -201,7 +227,7 @@
   "id": "band-5.0-exp-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "junk food",
   "meaningVi": "đồ ăn vặt không lành mạnh",
   "promptVi": "Chính phủ nên cấm quảng cáo đồ ăn vặt không lành mạnh vào khung giờ xem truyền hình của trẻ em nhằm ngăn ngừa tình trạng béo phì ở học sinh.",
@@ -213,7 +239,13 @@
   ],
   "explanationVi": "Cấu trúc chỉ mục đích 'to prevent obesity among school pupils' làm rõ lý do tại sao cần ban hành lệnh cấm quảng cáo.",
   "rationaleVi": "Câu thể hiện quan điểm xã hội về sức khỏe học đường với lý do phòng ngừa bệnh béo phì cụ thể, đúng định hướng Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Governments should to ban adverts for junk food during children's television hours to prevent obesity among school pupils.",
+    "correction": "Governments should ban adverts for junk food during children's television hours to prevent obesity among school pupils.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should ban)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -223,7 +255,7 @@
   "id": "band-5.0-exp-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "affordable flats",
   "meaningVi": "các căn hộ giá rẻ",
   "promptVi": "Xây dựng các căn hộ giá rẻ gần các khu công nghiệp là điều cần thiết vì việc này giúp công nhân tiết kiệm đáng kể chi phí đi lại.",
@@ -245,19 +277,26 @@
   "id": "band-5.0-exp-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "historic sites",
   "meaningVi": "các di tích lịch sử",
   "promptVi": "Mặc dù du lịch mang lại nguồn thu nhập lớn, các thành phố vẫn nên giới hạn khách tham quan tại các di tích lịch sử để tránh làm hỏng kiến trúc cổ.",
   "referenceAnswers": [
-   "Although tourism brings significant income, cities should still limit visitor numbers at historic sites to prevent damage to ancient architecture."
+   "Although tourism brings significant income, cities should still limit visitor numbers at historic sites to prevent damage to ancient architecture.",
+   "Even though tourism brings significant income, cities should still limit visitor numbers at historic sites to prevent damage to ancient architecture."
   ],
   "grammarTags": [
    "concession and recommendation"
   ],
   "explanationVi": "Mệnh đề nhượng bộ 'Although...' ghi nhận mặt tích cực trước khi đưa ra kiến nghị bảo tồn di sản cụ thể.",
   "rationaleVi": "Cấu trúc nhượng bộ đơn giản giúp câu thể hiện góc nhìn cân bằng ở level 5.0 mà không bị quá phức tạp.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although tourism brings significant income, but cities should still limit visitor numbers at historic sites to prevent damage to ancient architecture.",
+    "correction": "Although tourism brings significant income, cities should still limit visitor numbers at historic sites to prevent damage to ancient architecture.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -267,7 +306,7 @@
   "id": "band-5.0-exp-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "working remotely",
   "meaningVi": "làm việc từ xa",
   "promptVi": "Nhiều người cho rằng việc làm việc từ xa hai ngày một tuần rất có lợi vì cha mẹ có thể chuẩn bị bữa ăn tối cùng gia đình.",
@@ -279,7 +318,13 @@
   ],
   "explanationVi": "Cụm 'Many people argue that...' giới thiệu một quan điểm phổ biến, theo sau là một ví dụ gia đình rất đời thường và cụ thể.",
   "rationaleVi": "Dẫn chứng hoạt động gia đình cụ thể (chuẩn bị bữa tối) làm minh chứng cho lợi ích của việc làm từ xa, tránh khẳng định mơ hồ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many people argue that working remotely two days a week is beneficial because parents can to prepare dinner together with their family.",
+    "correction": "Many people argue that working remotely two days a week is beneficial because parents can prepare dinner together with their family.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can prepare)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -289,7 +334,7 @@
   "id": "band-5.0-exp-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "solar panels",
   "meaningVi": "các tấm pin năng lượng mặt trời",
   "promptVi": "Nếu chính phủ giảm thuế cho việc lắp đặt các tấm pin năng lượng mặt trời, nhiều hộ gia đình sẽ sẵn sàng tự sản xuất điện sạch tại nhà.",
@@ -311,7 +356,7 @@
   "id": "band-5.0-exp-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "school timetable",
   "meaningVi": "thời khóa biểu nhà trường",
   "promptVi": "Việc lùi giờ học lại ba mươi phút trong thời khóa biểu nhà trường là quyết định hợp lý vì học sinh sẽ tỉnh táo hơn trong tiết học đầu tiên.",
@@ -333,19 +378,26 @@
   "id": "band-5.0-exp-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "local businesses",
   "meaningVi": "các doanh nghiệp địa phương",
   "promptVi": "Người dân nên ưu tiên mua sắm tại các doanh nghiệp địa phương để hỗ trợ thợ thủ công giữ gìn sản phẩm truyền thống.",
   "referenceAnswers": [
-   "Residents should prioritise shopping at local businesses to support craftworkers in preserving traditional products."
+   "Residents should prioritise shopping at local businesses to support craftworkers in preserving traditional products.",
+   "Residents should prioritize shopping at local businesses to support craftworkers in preserving traditional products."
   ],
   "grammarTags": [
    "recommendation with cultural reason"
   ],
   "explanationVi": "Động từ 'prioritise' cùng cụm chỉ mục đích 'to support...' giải thích lý do kinh tế - văn hóa cụ thể.",
   "rationaleVi": "Câu khuyến nghị hành vi tiêu dùng kèm lý do văn hóa thiết thực, từ vựng và cú pháp vừa tầm Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Residents should to prioritise shopping at local businesses to support craftworkers in preserving traditional products.",
+    "correction": "Residents should prioritise shopping at local businesses to support craftworkers in preserving traditional products.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should prioritise)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -355,12 +407,13 @@
   "id": "band-5.0-exp-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "security cameras",
   "meaningVi": "các camera giám sát",
   "promptVi": "Việc lắp đặt các camera giám sát trong công viên cộng đồng là giải pháp hiệu quả vì nó ngăn chặn bớt hành vi vi phạm pháp luật vào ban đêm.",
   "referenceAnswers": [
-   "Installing security cameras in community parks is an effective solution because it deters unlawful behaviour at night."
+   "Installing security cameras in community parks is an effective solution because it deters unlawful behaviour at night.",
+   "Installing security cameras in community parks is an effective solution because it deters unlawful behavior at night."
   ],
   "grammarTags": [
    "urban solution with mechanism"
@@ -377,7 +430,7 @@
   "id": "band-5.0-exp-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "standard swimming pools",
   "meaningVi": "bể bơi đạt chuẩn",
   "promptVi": "Theo quan điểm của tôi, hội đồng thành phố nên xây dựng thêm bể bơi đạt chuẩn vì hoạt động này giúp thanh thiếu niên rèn luyện thể lực vào kỳ nghỉ hè.",
@@ -389,7 +442,13 @@
   ],
   "explanationVi": "Mẫu câu nêu quan điểm cá nhân 'In my view' kết hợp lý do cụ thể về sức khỏe thể chất của thanh thiếu niên trong dịp hè.",
   "rationaleVi": "Câu thể hiện quan điểm rõ ràng cùng lý do minh họa cụ thể, phù hợp với tiêu chí phát triển ý của IELTS Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In my view, the city council should to build more standard swimming pools because this activity helps teenagers improve their physical fitness during the summer holidays.",
+    "correction": "In my view, the city council should build more standard swimming pools because this activity helps teenagers improve their physical fitness during the summer holidays.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should build)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -399,19 +458,26 @@
   "id": "band-5.0-exp-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "food waste",
   "meaningVi": "rác thải thực phẩm",
   "promptVi": "Tôi cho rằng các nhà hàng nên tặng đồ ăn dư thừa cho các cơ sở thiện nguyện nhằm giảm bớt rác thải thực phẩm mỗi ngày.",
   "referenceAnswers": [
-   "I believe that restaurants should donate surplus food to charities in order to reduce food waste every day."
+   "I believe that restaurants should donate surplus food to charities in order to reduce food waste every day.",
+   "I think that restaurants should donate surplus food to charities in order to reduce food waste every day."
   ],
   "grammarTags": [
    "recommendation with mechanism"
   ],
   "explanationVi": "Dùng 'I believe that' để đưa ra đề xuất xã hội kèm mục đích rõ ràng 'in order to reduce...'.",
   "rationaleVi": "Cấu trúc đề xuất hành động đi kèm giải pháp giảm thiểu cụ thể giúp người học Band 5.0 tránh các khẳng định chung chung.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I believe that restaurants should to donate surplus food to charities in order to reduce food waste every day.",
+    "correction": "I believe that restaurants should donate surplus food to charities in order to reduce food waste every day.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should donate)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -421,7 +487,7 @@
   "id": "band-5.0-exp-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "blue light",
   "meaningVi": "ánh sáng xanh",
   "promptVi": "Việc hạn chế sử dụng điện thoại thông minh trước khi ngủ là điều cần thiết vì ánh sáng xanh khiến người trẻ khó ngủ sâu.",
@@ -443,7 +509,7 @@
   "id": "band-5.0-exp-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "cycling paths",
   "meaningVi": "tuyến đường dành cho xe đạp",
   "promptVi": "Nếu chính quyền mở rộng các tuyến đường dành cho xe đạp, người dân đô thị sẽ đi làm bằng xe đạp nhiều hơn để tránh kẹt xe.",
@@ -455,7 +521,13 @@
   ],
   "explanationVi": "Câu điều kiện loại 1 với 'If' diễn tả một chính sách giao thông và kết quả thực tế đi kèm.",
   "rationaleVi": "Nối kết giải pháp hạ tầng với mục tiêu tránh kẹt xe cụ thể, giúp học viên Band 5.0 diễn đạt lập luận có căn cứ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If the local authority expands cycling paths, urban residents will to cycle to work more often to avoid traffic jams.",
+    "correction": "If the local authority expands cycling paths, urban residents will cycle to work more often to avoid traffic jams.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will cycle)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -465,7 +537,7 @@
   "id": "band-5.0-exp-017",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "traditional festivals",
   "meaningVi": "các lễ hội truyền thống",
   "promptVi": "Các địa phương cần duy trì các lễ hội truyền thống vì những sự kiện này thu hút du khách và tạo thêm việc làm cho người dân bản địa.",
@@ -487,7 +559,7 @@
   "id": "band-5.0-exp-018",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "practical science experiments",
   "meaningVi": "các thí nghiệm khoa học thực hành",
   "promptVi": "Trường học nên tổ chức nhiều thí nghiệm khoa học thực hành hơn để giúp học sinh dễ nhớ kiến thức lý thuyết trên lớp.",
@@ -499,7 +571,13 @@
   ],
   "explanationVi": "Đưa ra lời khuyên cho giáo dục với động từ khuyết thiếu 'should' và chỉ rõ lợi ích ghi nhớ bài học.",
   "rationaleVi": "Đề xuất cải tiến phương pháp giảng dạy kèm ví dụ cụ thể về bài tập thực hành, thích hợp cho Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Schools should to organise more practical science experiments to help students remember theoretical knowledge taught in class easily.",
+    "correction": "Schools should organise more practical science experiments to help students remember theoretical knowledge taught in class easily.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should organise)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -509,7 +587,7 @@
   "id": "band-5.0-exp-019",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "detailed nutritional labels",
   "meaningVi": "nhãn thông tin dinh dưỡng chi tiết",
   "promptVi": "Cá nhân tôi thấy việc in nhãn thông tin dinh dưỡng chi tiết trên bao bì thực phẩm là rất quan trọng vì nó giúp người tiêu dùng lựa chọn đồ ăn ít đường.",
@@ -531,7 +609,7 @@
   "id": "band-5.0-exp-020",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "high-rise apartments",
   "meaningVi": "các căn hộ chung cư cao tầng",
   "promptVi": "Việc phát triển các căn hộ chung cư cao tầng mang lại giải pháp chỗ ở hữu hiệu cho những gia đình trẻ có thu nhập trung bình.",
@@ -553,19 +631,26 @@
   "id": "band-5.0-exp-021",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "vocational training courses",
   "meaningVi": "các khóa đào tạo nghề",
   "promptVi": "Dù chi phí ban đầu khá tốn kém, các khóa đào tạo nghề vẫn giúp người lao động thất nghiệp tìm được việc làm nhanh hơn.",
   "referenceAnswers": [
-   "Although the initial cost is quite high, vocational training courses still help unemployed workers find jobs more quickly."
+   "Although the initial cost is quite high, vocational training courses still help unemployed workers find jobs more quickly.",
+   "Even though the initial cost is quite high, vocational training courses still help unemployed workers find jobs more quickly."
   ],
   "grammarTags": [
    "concession with practical outcome"
   ],
   "explanationVi": "Cấu trúc nhượng bộ 'Although' nêu bật mặt hạn chế trước khi khẳng định giá trị thực tế của học nghề.",
   "rationaleVi": "Biết nhìn nhận hai mặt của vấn đề xã hội là một bước phát triển quan trọng ở trình độ Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although the initial cost is quite high, but vocational training courses still help unemployed workers find jobs more quickly.",
+    "correction": "Although the initial cost is quite high, vocational training courses still help unemployed workers find jobs more quickly.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -575,7 +660,7 @@
   "id": "band-5.0-exp-022",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "strict safety gear",
   "meaningVi": "đồ bảo hộ nghiêm ngặt",
   "promptVi": "Các công ty xây dựng phải trang bị đồ bảo hộ nghiêm ngặt cho công nhân để giảm nguy cơ tai nạn tại công trường.",
@@ -587,7 +672,13 @@
   ],
   "explanationVi": "Sử dụng 'must' để thể hiện yêu cầu bắt buộc trong môi trường lao động cùng lý do phòng ngừa tai nạn.",
   "rationaleVi": "Nêu nguyên nhân - mục đích thực tế trong ngành xây dựng, thể hiện lập luận mạch lạc, không chung chung.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Construction companies must to provide strict safety gear for workers to reduce the risk of accidents at building sites.",
+    "correction": "Construction companies must provide strict safety gear for workers to reduce the risk of accidents at building sites.",
+    "reasonVi": "Sau động từ khuyết thiếu 'must' dùng động từ nguyên mẫu không có 'to' (must provide)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -597,7 +688,7 @@
   "id": "band-5.0-exp-023",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "regular health check-ups",
   "meaningVi": "việc khám sức khỏe định kỳ",
   "promptVi": "Người cao tuổi được khuyên nên duy trì việc khám sức khỏe định kỳ nhằm phát hiện sớm các bệnh mãn tính như huyết áp cao.",
@@ -619,7 +710,7 @@
   "id": "band-5.0-exp-024",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "free public libraries",
   "meaningVi": "các thư viện công cộng miễn phí",
   "promptVi": "Theo quan sát của tôi, các thư viện công cộng miễn phí rất có lợi cho cộng đồng vì chúng cung cấp không gian yên tĩnh cho sinh viên ôn thi.",
@@ -641,7 +732,7 @@
   "id": "band-5.0-exp-025",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "portion sizes",
   "meaningVi": "kích cỡ khẩu phần ăn",
   "promptVi": "Tôi cho rằng các quán ăn nên thu nhỏ kích cỡ khẩu phần ăn vì việc này giúp thực khách tránh việc lãng phí thức ăn thừa.",
@@ -653,7 +744,13 @@
   ],
   "explanationVi": "Cấu trúc 'In my view, [clause] because [clause]' thể hiện quan điểm cá nhân đi kèm lý do giải thích cụ thể.",
   "rationaleVi": "Câu nêu quan điểm rõ ràng và lý do trực tiếp liên quan đến vấn đề lãng phí thực phẩm, phù hợp yêu cầu trình độ 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In my view, eateries should to reduce their portion sizes because this helps diners avoid wasting leftover food.",
+    "correction": "In my view, eateries should reduce their portion sizes because this helps diners avoid wasting leftover food.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should reduce)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -663,7 +760,7 @@
   "id": "band-5.0-exp-026",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "screen time",
   "meaningVi": "thời gian sử dụng màn hình",
   "promptVi": "Việc các bậc phụ huynh chủ động giới hạn thời gian sử dụng màn hình của con cái là rất quan trọng vì nó ngăn ngừa tình trạng suy giảm thị lực ở trẻ nhỏ.",
@@ -685,7 +782,7 @@
   "id": "band-5.0-exp-027",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "deposit-return scheme",
   "meaningVi": "hệ thống hoàn trả tiền đặt cọc",
   "promptVi": "Việc áp dụng hệ thống hoàn trả tiền đặt cọc cho vỏ chai nhựa sẽ khuyến khích người dân phân loại rác thải tái chế tại nhà.",
@@ -697,7 +794,13 @@
   ],
   "explanationVi": "Danh động từ 'Introducing...' làm chủ ngữ kết hợp với 'will encourage...' để trình bày giải pháp và kết quả dự kiến.",
   "rationaleVi": "Diễn đạt một chính sách môi trường cụ thể đi kèm kết quả tác động đến hành vi người dân, vừa sức trình độ 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Introducing a deposit-return scheme for plastic bottles will to encourage residents to sort recyclable waste at home.",
+    "correction": "Introducing a deposit-return scheme for plastic bottles will encourage residents to sort recyclable waste at home.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will encourage)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -707,7 +810,7 @@
   "id": "band-5.0-exp-028",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "extracurricular activities",
   "meaningVi": "các hoạt động ngoại khóa",
   "promptVi": "Theo tôi, các trường trung học nên tài trợ nhiều hơn cho các hoạt động ngoại khóa nhằm giúp học sinh phát triển kỹ năng làm việc nhóm.",
@@ -719,7 +822,13 @@
   ],
   "explanationVi": "Cụm 'From my perspective' mở đầu quan điểm, đi cùng 'so as to + V' để làm rõ mục đích của đề xuất.",
   "rationaleVi": "Nêu ý kiến đề xuất giải pháp giáo dục với mục đích phát triển kỹ năng rõ ràng, đáp ứng tiêu chí band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "From my perspective, secondary schools ought to provide more fundings for extracurricular activities so as to help pupils develop teamwork skills.",
+    "correction": "From my perspective, secondary schools ought to provide more funding for extracurricular activities so as to help pupils develop teamwork skills.",
+    "reasonVi": "'Funding' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -729,19 +838,27 @@
   "id": "band-5.0-exp-029",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "green spaces",
   "meaningVi": "các khoảng không gian xanh",
   "promptVi": "Các nhà quy hoạch đô thị nên ưu tiên bảo tồn các khoảng không gian xanh thay vì xây thêm trung tâm thương mại để cải thiện chất lượng không khí.",
   "referenceAnswers": [
-   "Town planners should prioritise preserving green spaces over building more shopping centres in order to improve air quality."
+   "Town planners should prioritise preserving green spaces over building more shopping centres in order to improve air quality.",
+   "Town planners should prioritise preserving green spaces over building more shopping centers in order to improve air quality.",
+   "Town planners should prioritize preserving green spaces over building more shopping centres in order to improve air quality."
   ],
   "grammarTags": [
    "preference and objective"
   ],
   "explanationVi": "Cấu trúc 'prioritise V-ing over V-ing' dùng để so sánh ưu tiên, đi kèm 'in order to' nêu mục tiêu.",
   "rationaleVi": "Thể hiện lập trường ưu tiên trong quy hoạch đô thị có kèm lý do môi trường cụ thể, đúng tầm mức 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Town planners should to prioritise preserving green spaces over building more shopping centres in order to improve air quality.",
+    "correction": "Town planners should prioritise preserving green spaces over building more shopping centres in order to improve air quality.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should prioritise)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -751,7 +868,7 @@
   "id": "band-5.0-exp-030",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "minimum wage",
   "meaningVi": "mức lương tối thiểu",
   "promptVi": "Tăng mức lương tối thiểu cho công nhân ngành bán lẻ là bước đi cần thiết vì việc này giúp họ trang trải chi phí sinh hoạt đắt đỏ.",
@@ -773,7 +890,7 @@
   "id": "band-5.0-exp-031",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "carpooling",
   "meaningVi": "việc đi chung xe",
   "promptVi": "Nhiều chuyên gia khẳng định rằng việc đi chung xe đến văn phòng làm giảm đáng kể lượng khí thải từ các phương tiện cá nhân.",
@@ -795,7 +912,7 @@
   "id": "band-5.0-exp-032",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "mental well-being",
   "meaningVi": "sức khỏe tinh thần",
   "promptVi": "Cá nhân tôi tin rằng việc duy trì thói quen đi bộ trong công viên mỗi sáng rất có lợi cho sức khỏe tinh thần của người lao động.",
@@ -817,7 +934,7 @@
   "id": "band-5.0-exp-033",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "heritage sites",
   "meaningVi": "các khu di tích văn hóa",
   "promptVi": "Chính quyền địa phương nên miễn phí vé vào cửa các khu di tích văn hóa cho học sinh nhằm nâng cao nhận thức về lịch sử dân tộc.",
@@ -839,7 +956,7 @@
   "id": "band-5.0-exp-034",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "unpaid overtime",
   "meaningVi": "làm thêm giờ không lương",
   "promptVi": "Các doanh nghiệp phải cắt giảm tình trạng làm thêm giờ không lương để nhân viên có thời gian tái tạo sức lao động sau ca làm việc.",
@@ -851,7 +968,13 @@
   ],
   "explanationVi": "Cấu trúc 'must + V' thể hiện sự bắt buộc, kết hợp nối mệnh đề 'so that' chỉ mục đích phục hồi sức khỏe.",
   "rationaleVi": "Đưa ra yêu cầu quản trị lao động có mục đích rõ ràng cho nhân viên, thể hiện tư duy câu phức cơ bản ở mức 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Businesses must to reduce unpaid overtime so that employees have time to recharge after their work shifts.",
+    "correction": "Businesses must reduce unpaid overtime so that employees have time to recharge after their work shifts.",
+    "reasonVi": "Sau động từ khuyết thiếu 'must' dùng động từ nguyên mẫu không có 'to' (must reduce)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -861,7 +984,7 @@
   "id": "band-5.0-exp-035",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "sports facilities",
   "meaningVi": "các cơ sở vật chất thể thao",
   "promptVi": "Việc đầu tư vào các cơ sở vật chất thể thao cộng đồng là quyết định đúng đắn vì nó khuyến khích thanh thiếu niên tránh xa các tệ nạn xã hội.",
@@ -883,19 +1006,26 @@
   "id": "band-5.0-exp-036",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "energy-efficient appliances",
   "meaningVi": "các thiết bị tiết kiệm năng lượng",
   "promptVi": "Chính phủ nên trợ giá cho các thiết bị tiết kiệm năng lượng nhằm hỗ trợ hộ gia đình nghèo giảm bớt tiền điện hằng tháng.",
   "referenceAnswers": [
-   "The government should subsidise energy-efficient appliances to assist low-income households in reducing their monthly electricity bills."
+   "The government should subsidise energy-efficient appliances to assist low-income households in reducing their monthly electricity bills.",
+   "The government should subsidize energy-efficient appliances to assist low-income households in reducing their monthly electricity bills."
   ],
   "grammarTags": [
    "policy suggestion and target"
   ],
   "explanationVi": "Động từ 'subsidise' (chính tả Anh - Anh) thể hiện hành động hỗ trợ, kết hợp 'to assist [sb] in V-ing' giải thích lợi ích.",
   "rationaleVi": "Đề xuất giải pháp chính sách công với lý do hỗ trợ chi tiêu cho người thu nhập thấp, đạt chuẩn mục tiêu IELTS 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The government should to subsidise energy-efficient appliances to assist low-income households in reducing their monthly electricity bills.",
+    "correction": "The government should subsidise energy-efficient appliances to assist low-income households in reducing their monthly electricity bills.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should subsidise)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -905,7 +1035,7 @@
   "id": "band-5.0-exp-037",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "digital payment systems",
   "meaningVi": "hệ thống thanh toán kỹ thuật số",
   "promptVi": "Nhiều cửa hàng nhỏ nên chấp nhận các hệ thống thanh toán kỹ thuật số vì phương thức này giúp người mua tiết kiệm thời gian chờ đợi tại quầy thu ngân.",
@@ -917,7 +1047,13 @@
   ],
   "explanationVi": "Cấu trúc đưa ra lời khuyên ('should accept') đi kèm mệnh đề chỉ lý do ('because...') giải thích rõ lợi ích thực tế tại quầy thu ngân.",
   "rationaleVi": "Câu thể hiện quan điểm cá nhân kết hợp lý do cụ thể, phù hợp với yêu cầu dựng câu Band 5.0 đưa ra lập luận rõ ràng về chủ đề đời sống.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many small shops should to accept digital payment systems because this method helps buyers save time waiting at the checkout counter.",
+    "correction": "Many small shops should accept digital payment systems because this method helps buyers save time waiting at the checkout counter.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should accept)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -927,7 +1063,7 @@
   "id": "band-5.0-exp-038",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "swimming lessons",
   "meaningVi": "các buổi học bơi",
   "promptVi": "Việc đưa các buổi học bơi vào chương trình tiểu học là rất quan trọng nhằm giúp trẻ em phòng tránh nguy cơ đuối nước khi đi chơi hè.",
@@ -949,7 +1085,7 @@
   "id": "band-5.0-exp-039",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "homestay accommodation",
   "meaningVi": "dịch vụ lưu trú nhà dân (homestay)",
   "promptVi": "Du khách nên thử chọn dịch vụ lưu trú nhà dân khi đến vùng cao bởi vì loại hình này giúp họ trải nghiệm đời sống văn hóa của người bản địa một cách chân thực.",
@@ -961,7 +1097,13 @@
   ],
   "explanationVi": "Đưa ra lời khuyên với động từ khuyết thiếu 'should', kèm mệnh đề phụ chỉ thời gian 'when' và lý do 'because'.",
   "rationaleVi": "Câu kết hợp mệnh đề thời gian và mệnh đề nguyên nhân, giúp học viên Band 5.0 mở rộng ý kiến bằng ví dụ thực tế.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tourists should to try choosing homestay accommodation when visiting highland regions because this option allows them to experience local cultural life authentically.",
+    "correction": "Tourists should try choosing homestay accommodation when visiting highland regions because this option allows them to experience local cultural life authentically.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should try)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -971,7 +1113,7 @@
   "id": "band-5.0-exp-040",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "public litter bins",
   "meaningVi": "thùng rác công cộng",
   "promptVi": "Chính quyền thành phố cần lắp đặt thêm thùng rác công cộng dọc các bãi biển để ngăn du khách vứt vỏ chai và bao bì nhựa xuống cát.",
@@ -993,7 +1135,7 @@
   "id": "band-5.0-exp-041",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "home-cooked meals",
   "meaningVi": "các bữa ăn nấu tại nhà",
   "promptVi": "Ăn các bữa ăn nấu tại nhà thường xuyên mang lại lợi ích rõ rệt vì người dân có thể kiểm soát lượng muối và dầu ăn trong từng món ăn.",
@@ -1005,7 +1147,13 @@
   ],
   "explanationVi": "Chủ ngữ là danh động từ ('Eating...'), đi kèm mệnh đề chỉ nguyên nhân với các chi tiết cụ thể ('amount of salt and cooking oil').",
   "rationaleVi": "Cấu trúc câu phức cơ bản giúp học viên Band 5.0 đưa ra nhận định có dẫn chứng minh họa cụ thể thay vì nói chung chung.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Eating home-cooked meals regularly offers clear benefits because people can to control the amount of salt and cooking oil in each dish.",
+    "correction": "Eating home-cooked meals regularly offers clear benefits because people can control the amount of salt and cooking oil in each dish.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can control)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1015,7 +1163,7 @@
   "id": "band-5.0-exp-042",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "LED light bulbs",
   "meaningVi": "bóng đèn LED",
   "promptVi": "Thay thế đèn sợi đốt bằng bóng đèn LED là một giải pháp thiết thực nhằm giúp các văn phòng giảm điện năng tiêu thụ hằng tháng.",
@@ -1037,7 +1185,7 @@
   "id": "band-5.0-exp-043",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "electric buses",
   "meaningVi": "xe buýt điện",
   "promptVi": "Triển khai xe buýt điện trong các khu đô thị là quyết định sáng suốt vì phương tiện này không xả khí thải ra môi trường.",
@@ -1059,7 +1207,7 @@
   "id": "band-5.0-exp-044",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "group projects",
   "meaningVi": "các dự án nhóm",
   "promptVi": "Giảng viên đại học nên giao nhiều dự án nhóm hơn vì hình thức này luyện cho sinh viên cách phân chia công việc và giải quyết tranh cãi.",
@@ -1071,7 +1219,13 @@
   ],
   "explanationVi": "Mệnh đề chính đưa ra đề xuất cho giảng viên, liên kết với mệnh đề chỉ lý do nêu tác dụng rèn luyện kỹ năng thực tế.",
   "rationaleVi": "Đề xuất chính sách giáo dục đi kèm lý do cụ thể là dạng bài tập lập luận nền tảng rất thích hợp cho trình độ Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "University lecturers should to assign more group projects because this format trains students to divide tasks and resolve conflicts.",
+    "correction": "University lecturers should assign more group projects because this format trains students to divide tasks and resolve conflicts.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should assign)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1081,7 +1235,7 @@
   "id": "band-5.0-exp-045",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "standing desks",
   "meaningVi": "bàn làm việc đứng",
   "promptVi": "Trang bị bàn làm việc đứng trong văn phòng giúp nhân viên hạn chế tình trạng đau lưng do ngồi liên tục nhiều giờ liền.",
@@ -1093,7 +1247,13 @@
   ],
   "explanationVi": "Chủ ngữ danh động từ 'Providing...' kết hợp với động từ 'helps', kèm phân tử quá khứ 'caused by' giải thích rõ nguyên nhân trực tiếp.",
   "rationaleVi": "Sử dụng ngữ pháp giải thích nguyên nhân - kết quả rõ ràng về vấn đề sức khỏe công sở, chuẩn mục tiêu Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Providing standing desks in offices helps employees reduce back pain caused by sitt continuously for many hours.",
+    "correction": "Providing standing desks in offices helps employees reduce back pain caused by sitting continuously for many hours.",
+    "reasonVi": "Sau giới từ 'by' động từ phải chia ở dạng V-ing (by sitting)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1103,7 +1263,7 @@
   "id": "band-5.0-exp-046",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "traditional craft villages",
   "meaningVi": "các làng nghề truyền thống",
   "promptVi": "Tổ chức các chuyến tham quan thực tế tới các làng nghề truyền thống giúp học sinh hiểu rõ hơn về quy trình làm gốm và dệt lụa thủ công.",
@@ -1125,7 +1285,7 @@
   "id": "band-5.0-exp-047",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "soundproof windows",
   "meaningVi": "cửa sổ cách âm",
   "promptVi": "Khi sống gần các tuyến đường lớn, cư dân nên lắp đặt cửa sổ cách âm nhằm giảm bớt tiếng ồn từ xe tải vào ban đêm.",
@@ -1137,7 +1297,13 @@
   ],
   "explanationVi": "Mệnh đề trạng ngữ rút gọn 'When living...' mở đầu câu, nối tiếp bằng lời khuyên và lý do giảm tiếng ồn xe tải ban đêm.",
   "rationaleVi": "Cấu trúc câu điều kiện/hoàn cảnh giúp học viên Band 5.0 linh hoạt diễn đạt lời khuyên đi kèm bối cảnh và lý do rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "When living near major roads, residents should to install soundproof windows to reduce noise from trucks at night.",
+    "correction": "When living near major roads, residents should install soundproof windows to reduce noise from trucks at night.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should install)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1147,7 +1313,7 @@
   "id": "band-5.0-exp-048",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "short afternoon naps",
   "meaningVi": "những giấc ngủ trưa ngắn",
   "promptVi": "Dành thời gian cho những giấc ngủ trưa ngắn giúp người lao động phục hồi sự tập trung và giảm bớt mệt mỏi trong ca làm việc buổi chiều.",
@@ -1169,12 +1335,13 @@
   "id": "band-5.0-exp-049",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "ride-hailing apps",
   "meaningVi": "các ứng dụng gọi xe",
   "promptVi": "Tôi tin rằng các ứng dụng gọi xe rất tiện lợi cho người dân đô thị vì chúng giúp hành khách biết trước giá cước chính xác.",
   "referenceAnswers": [
-   "I believe ride-hailing apps are very convenient for urban residents because they help passengers know the exact fare in advance."
+   "I believe ride-hailing apps are very convenient for urban residents because they help passengers know the exact fare in advance.",
+   "I think ride-hailing apps are very convenient for urban residents because they help passengers know the exact fare in advance."
   ],
   "grammarTags": [
    "opinion and reason"
@@ -1191,7 +1358,7 @@
   "id": "band-5.0-exp-050",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "sign language",
   "meaningVi": "ngôn ngữ ký hiệu",
   "promptVi": "Tôi ủng hộ việc dạy ngôn ngữ ký hiệu ở trường phổ thông vì khóa học này giúp học sinh giao tiếp dễ dàng với bạn học khiếm thính.",
@@ -1213,19 +1380,26 @@
   "id": "band-5.0-exp-051",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "flash photography",
   "meaningVi": "chụp ảnh dùng đèn flash",
   "promptVi": "Tôi cho rằng các bảo tàng nghệ thuật nên cấm chụp ảnh dùng đèn flash vì ánh sáng mạnh có thể làm hư hại các bức tranh cổ.",
   "referenceAnswers": [
-   "I believe art museums should ban flash photography because the bright light can damage antique paintings."
+   "I believe art museums should ban flash photography because the bright light can damage antique paintings.",
+   "I think art museums should ban flash photography because the bright light can damage antique paintings."
   ],
   "grammarTags": [
    "opinion and reason"
   ],
   "explanationVi": "Cụm 'flash photography' chỉ việc chụp ảnh sử dụng đèn flash. Cấu trúc 'I believe... should ban... because...' thể hiện trực tiếp quan điểm và lý do bảo vệ tác phẩm nghệ thuật.",
   "rationaleVi": "Khắc phục lỗi diễn đạt không tự nhiên, đáp ứng chuẩn Band 5.0 về việc trình bày quan điểm rõ ràng cùng lý do cụ thể về vấn đề xã hội quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I believe art museums should to ban flash photography because the bright light can damage antique paintings.",
+    "correction": "I believe art museums should ban flash photography because the bright light can damage antique paintings.",
+    "reasonVi": "Sau động từ khuyết thiếu 'should' dùng động từ nguyên mẫu không có 'to' (should ban)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1235,7 +1409,7 @@
   "id": "band-5.0-exp-052",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "return policy",
   "meaningVi": "chính sách đổi trả",
   "promptVi": "Từ góc nhìn của tôi, các cửa hàng trực tuyến nên đưa ra chính sách đổi trả linh hoạt vì điều này giúp khách hàng yên tâm khi đặt mua quần áo.",
@@ -1257,7 +1431,7 @@
   "id": "band-5.0-exp-053",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "sugary snacks",
   "meaningVi": "đồ ăn vặt chứa nhiều đường",
   "promptVi": "Cung cấp trái cây tươi tại nơi làm việc là một chính sách hay vì nó giúp nhân viên giảm bớt tiêu thụ đồ ăn vặt chứa nhiều đường.",
@@ -1279,19 +1453,26 @@
   "id": "band-5.0-exp-054",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "offshore wind farms",
   "meaningVi": "các trang trại điện gió ngoài khơi",
   "promptVi": "Mặc dù chi phí lắp đặt khá cao, các trang trại điện gió ngoài khơi vẫn là giải pháp tuyệt vời vì chúng tạo ra nguồn điện sạch cho hàng ngàn hộ gia đình.",
   "referenceAnswers": [
-   "Although installation costs are quite high, offshore wind farms remain a great solution because they generate clean electricity for thousands of households."
+   "Although installation costs are quite high, offshore wind farms remain a great solution because they generate clean electricity for thousands of households.",
+   "Even though installation costs are quite high, offshore wind farms remain a great solution because they generate clean electricity for thousands of households."
   ],
   "grammarTags": [
    "concession and reason"
   ],
   "explanationVi": "'Offshore wind farms' là thuật ngữ chỉ các cánh đồng điện gió trên biển. Cấu trúc nhượng bộ 'Although...' kết hợp mệnh đề chỉ lý do tạo sự mạch lạc.",
   "rationaleVi": "Tiêu chuẩn 5.0 thể hiện qua việc sử dụng câu có mệnh đề nhượng bộ ngắn gọn để bảo vệ quan điểm về nguồn năng lượng tái tạo.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although installation costs are quite high, but offshore wind farms remain a great solution because they generate clean electricity for thousands of households.",
+    "correction": "Although installation costs are quite high, offshore wind farms remain a great solution because they generate clean electricity for thousands of households.",
+    "reasonVi": "Tiếng Việt nói 'Mặc dù... nhưng...', còn tiếng Anh đã dùng 'Although / Even though' thì không thêm 'but' ở mệnh đề sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1301,7 +1482,7 @@
   "id": "band-5.0-exp-055",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "casual clothes",
   "meaningVi": "trang phục tự do",
   "promptVi": "Nếu các công ty cho phép nhân viên mặc trang phục tự do vào thứ Sáu, bầu không khí làm việc sẽ trở nên thoải mái và bớt căng thẳng hơn.",
@@ -1313,7 +1494,13 @@
   ],
   "explanationVi": "'Casual clothes' dùng để chỉ quần áo thoải mái, không quá trang trọng. Câu điều kiện 'If...' diễn tả kết quả thực tế của một quy định nhân sự.",
   "rationaleVi": "Phù hợp mức 5.0 do áp dụng câu điều kiện loại 1 để nêu một giải pháp môi trường làm việc kèm hiệu quả cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If companies allow staff to wear casual clothes on Fridays, the working atmosphere will to become more relaxed and less stressful.",
+    "correction": "If companies allow staff to wear casual clothes on Fridays, the working atmosphere will become more relaxed and less stressful.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will become)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1323,7 +1510,7 @@
   "id": "esl-v2-r10-u01-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi cho rằng thư viện công cộng nên mở cửa muộn hơn để phục vụ người đi làm.",
   "referenceAnswers": [
    "I believe public libraries should stay open later to serve working adults.",
@@ -1334,7 +1521,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: I believe nêu lập trường; should thể hiện kiến nghị, không phải quy định bắt buộc. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "I believe nêu lập trường; should thể hiện kiến nghị, không phải quy định bắt buộc.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1346,13 +1533,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "public libraries",
+  "meaningVi": "thư viện công cộng"
  },
  {
   "id": "esl-v2-r10-u01-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Theo tôi, học sinh nên có cơ hội chọn một số môn tự chọn.",
   "referenceAnswers": [
    "In my view, students should have the opportunity to choose some elective subjects."
@@ -1362,7 +1552,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: In my view nêu ý kiến cá nhân; have the opportunity to diễn đạt cơ hội. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "In my view nêu ý kiến cá nhân; have the opportunity to diễn đạt cơ hội.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1374,23 +1564,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "opportunity",
+  "meaningVi": "cơ hội"
  },
  {
   "id": "esl-v2-r10-u01-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi không nghĩ việc cấm hoàn toàn điện thoại trong trường là giải pháp tốt nhất.",
   "referenceAnswers": [
-   "I do not think banning phones entirely at school is the best solution."
+   "I do not think banning phones entirely at school is the best solution.",
+   "I don't think banning phones entirely at school is the best solution."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: I do not think + mệnh đề; banning là danh động từ làm chủ ngữ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "I do not think + mệnh đề; banning là danh động từ làm chủ ngữ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1402,13 +1596,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "solution",
+  "meaningVi": "giải pháp"
  },
  {
   "id": "esl-v2-r10-u01-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi tin rằng làm việc từ xa có thể phù hợp với một số nghề, nhưng không phải tất cả.",
   "referenceAnswers": [
    "I believe remote work can suit some occupations, but not all of them.",
@@ -1419,7 +1616,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can suit giữ nghĩa có thể; but not all tránh khái quát hóa. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "can suit giữ nghĩa có thể; but not all tránh khái quát hóa.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1431,13 +1628,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "remote work",
+  "meaningVi": "làm việc từ xa"
  },
  {
   "id": "esl-v2-r10-u01-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Theo quan điểm của tôi, đi bộ là một cách đơn giản để tăng hoạt động thể chất hằng ngày.",
   "referenceAnswers": [
    "From my perspective, walking is a simple way to increase daily physical activity."
@@ -1447,30 +1647,33 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: From my perspective đi với đánh giá cá nhân; walking là danh động từ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "From my perspective đi với đánh giá cá nhân; walking là danh động từ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi cho rằng ưu tiên xe buýt có thể giảm áp lực giao thông ở trung tâm thành phố.",
   "referenceAnswers": [
    "I think prioritising buses may reduce traffic pressure in city centres.",
-   "I believe prioritising buses may reduce traffic pressure in city centres."
+   "I believe prioritising buses may reduce traffic pressure in city centres.",
+   "I think prioritising buses may reduce traffic pressure in city centers.",
+   "I believe prioritising buses may reduce traffic pressure in city centers."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may reduce biểu thị khả năng, không khẳng định kết quả chắc chắn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "may reduce biểu thị khả năng, không khẳng định kết quả chắc chắn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1482,13 +1685,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi phản đối ý kiến rằng điểm thi là thước đo duy nhất của năng lực.",
   "referenceAnswers": [
    "I disagree with the idea that exam scores are the only measure of ability."
@@ -1498,19 +1702,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: disagree with the idea that nêu rõ quan điểm phản đối. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "disagree with the idea that nêu rõ quan điểm phản đối.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Theo tôi, trẻ em cần thời gian vui chơi không có màn hình.",
   "referenceAnswers": [
    "In my opinion, children need time for screen-free play."
@@ -1520,30 +1725,35 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: need time for + cụm danh từ; screen-free bổ nghĩa cho play. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "need time for + cụm danh từ; screen-free bổ nghĩa cho play.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "children",
+  "meaningVi": "trẻ em"
  },
  {
   "id": "esl-v2-r10-u01-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Tôi nghĩ mỗi khu dân cư nên có ít nhất một không gian xanh dễ tiếp cận.",
   "referenceAnswers": [
    "I think every neighbourhood should have at least one accessible green space.",
-   "I believe every neighbourhood should have at least one accessible green space."
+   "I believe every neighbourhood should have at least one accessible green space.",
+   "I think every neighborhood should have at least one accessible green space.",
+   "I believe every neighborhood should have at least one accessible green space."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: should + V đưa kiến nghị; at least giới hạn tối thiểu. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "should + V đưa kiến nghị; at least giới hạn tối thiểu.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1555,23 +1765,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi không cho rằng mọi người đều cần học lập trình để làm việc hiệu quả.",
   "referenceAnswers": [
-   "I do not believe everyone needs to learn programming to work effectively."
+   "I do not believe everyone needs to learn programming to work effectively.",
+   "I don't believe everyone needs to learn programming to work effectively."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: do not believe everyone không có nghĩa là không ai cần học. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "do not believe everyone không có nghĩa là không ai cần học.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1583,13 +1795,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "programming",
+  "meaningVi": "lập trình"
  },
  {
   "id": "esl-v2-r10-u01-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Theo tôi, học trực tuyến nên bổ sung chứ không hoàn toàn thay thế lớp học trực tiếp.",
   "referenceAnswers": [
    "In my view, online learning should complement rather than completely replace face-to-face classes."
@@ -1599,7 +1814,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: complement rather than replace diễn đạt bổ sung thay vì thay thế. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "complement rather than replace diễn đạt bổ sung thay vì thay thế.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1611,13 +1826,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "online learning",
+  "meaningVi": "học trực tuyến"
  },
  {
   "id": "esl-v2-r10-u01-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Tôi tin rằng những quyết định liên quan đến sức khỏe nên dựa trên thông tin đáng tin cậy.",
   "referenceAnswers": [
    "I believe health-related decisions should be based on reliable information.",
@@ -1628,7 +1846,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: should be based on dùng bị động để nói cơ sở ra quyết định. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "should be based on dùng bị động để nói cơ sở ra quyết định.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1640,13 +1858,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "reliable",
+  "meaningVi": "đáng tin cậy"
  },
  {
   "id": "esl-v2-r10-u01-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi nghĩ giá vé thấp hơn sẽ khiến phương tiện công cộng hấp dẫn hơn với sinh viên.",
   "referenceAnswers": [
    "I think lower fares would make public transport more attractive to students.",
@@ -1657,7 +1878,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: would make nêu tác động dự kiến; lower fares là mức giá thấp hơn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "would make nêu tác động dự kiến; lower fares là mức giá thấp hơn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1669,13 +1890,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "public transport",
+  "meaningVi": "phương tiện công cộng"
  },
  {
   "id": "esl-v2-r10-u01-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi cho rằng các cửa hàng nhỏ vẫn có vai trò quan trọng trong cộng đồng.",
   "referenceAnswers": [
    "I would argue that small shops still play an important role in communities."
@@ -1685,41 +1909,50 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: I would argue that là cách nêu lập trường tương đối thận trọng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "I would argue that là cách nêu lập trường tương đối thận trọng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I would to argue that small shops still play an important role in communities.",
+    "correction": "I would argue that small shops still play an important role in communities.",
+    "reasonVi": "Sau động từ khuyết thiếu 'would' dùng động từ nguyên mẫu không có 'to' (would argue)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Dù ứng dụng học tập hữu ích, tôi vẫn thích học từ sách in khi cần tập trung lâu.",
   "referenceAnswers": [
-   "Although learning apps are useful, I still prefer printed books when I need to concentrate for a long time."
+   "Although learning apps are useful, I still prefer printed books when I need to concentrate for a long time.",
+   "Even though learning apps are useful, I still prefer printed books when I need to concentrate for a long time."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: although nêu nhượng bộ; still giữ ý sở thích không thay đổi. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "although nêu nhượng bộ; still giữ ý sở thích không thay đổi.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm"
  },
  {
   "id": "esl-v2-r10-u01-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi nghĩ trường học nên dạy cách kiểm chứng thông tin trên mạng, không chỉ cách tìm kiếm.",
   "referenceAnswers": [
    "I believe schools should teach students how to verify online information, not just how to search for it.",
@@ -1730,7 +1963,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: not just giới hạn phạm vi; verify khác search for. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "not just giới hạn phạm vi; verify khác search for.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1742,23 +1975,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "schools",
+  "meaningVi": "các trường học"
  },
  {
   "id": "esl-v2-r10-u01-017",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Thể hiện quan điểm",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi cho rằng việc kéo dài giờ làm không nhất thiết làm năng suất tăng.",
   "referenceAnswers": [
-   "I do not believe longer working hours necessarily lead to higher productivity."
+   "I do not believe longer working hours necessarily lead to higher productivity.",
+   "I don't believe longer working hours necessarily lead to higher productivity."
   ],
   "grammarTags": [
    "r10_u01",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: necessarily giữ sắc thái không phải lúc nào cũng đúng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "necessarily giữ sắc thái không phải lúc nào cũng đúng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
   "commonErrors": [
    {
@@ -1770,13 +2007,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "productivity",
+  "meaningVi": "năng suất làm việc"
  },
  {
   "id": "esl-v2-r10-u02-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi ủng hộ xe buýt công cộng vì chúng giúp người không có ô tô đi lại dễ dàng hơn.",
   "referenceAnswers": [
    "I support public buses because they make travel easier for people without cars.",
@@ -1787,29 +2027,31 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because đưa lý do trực tiếp cho lập trường. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "because đưa lý do trực tiếp cho lập trường.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một lý do tôi thích học theo nhóm là tôi có thể hỏi khi không hiểu bài.",
   "referenceAnswers": [
-   "One reason I prefer group study is that I can ask questions when I do not understand something."
+   "One reason I prefer group study is that I can ask questions when I do not understand something.",
+   "One reason I prefer group study is that I can ask questions when I don't understand something."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: One reason ... is that liên kết sở thích với lý do cụ thể. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "One reason ... is that liên kết sở thích với lý do cụ thể.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1821,13 +2063,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện cần được đầu tư vì không phải gia đình nào cũng mua được nhiều sách.",
   "referenceAnswers": [
    "Libraries deserve investment because not every family can afford a large collection of books."
@@ -1837,7 +2080,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: not every không đồng nghĩa no family; because là lý do. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "not every không đồng nghĩa no family; because là lý do.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1849,13 +2092,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "investment",
+  "meaningVi": "khoản đầu tư"
  },
  {
   "id": "esl-v2-r10-u02-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi thích đi bộ đến trường vì việc đó giúp tôi bắt đầu ngày mới năng động hơn.",
   "referenceAnswers": [
    "I prefer walking to school because it helps me start the day more actively."
@@ -1865,19 +2111,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: prefer + V-ing và because + mệnh đề giải thích. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "prefer + V-ing và because + mệnh đề giải thích.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Công ty nên hướng dẫn nhân viên mới kỹ hơn vì sai sót ban đầu có thể gây chậm trễ.",
   "referenceAnswers": [
    "Companies should train new employees more thoroughly because early mistakes may cause delays."
@@ -1887,7 +2134,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may cause không khẳng định chắc chắn; thoroughly bổ nghĩa cho train. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "may cause không khẳng định chắc chắn; thoroughly bổ nghĩa cho train.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1899,23 +2146,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "employees",
+  "meaningVi": "nhân viên"
  },
  {
   "id": "esl-v2-r10-u02-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi cho rằng khu vui chơi cần bóng mát vì trẻ nhỏ dễ bị nóng khi chơi ngoài trời.",
   "referenceAnswers": [
-   "I think playgrounds need shade because young children can become overheated when playing outdoors."
+   "I think playgrounds need shade because young children can become overheated when playing outdoors.",
+   "I believe playgrounds need shade because young children can become overheated when playing outdoors."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Lý do liên quan trực tiếp đến an toàn khi sử dụng khu vui chơi. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Lý do liên quan trực tiếp đến an toàn khi sử dụng khu vui chơi.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1927,23 +2178,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Các lớp học nên cho phép đặt câu hỏi bởi vì việc đó giúp học sinh nhận ra điều chưa hiểu.",
   "referenceAnswers": [
-   "Classes should encourage questions because asking them helps students identify what they do not understand."
+   "Classes should encourage questions because asking them helps students identify what they do not understand.",
+   "Classes should encourage questions because asking them helps students identify what they don't understand."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: asking them quy chiếu questions; không lặp ý chung chung. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "asking them quy chiếu questions; không lặp ý chung chung.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1955,23 +2208,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r10-u02-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Giáo viên nên cung cấp phản hồi cụ thể vì lời khen chung chung khó chỉ ra điều cần sửa.",
   "referenceAnswers": [
-   "Teachers should provide specific feedback because general praise does not show students what to improve."
+   "Teachers should provide specific feedback because general praise does not show students what to improve.",
+   "Teachers should provide specific feedback because general praise doesn't show students what to improve."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because đối chiếu phản hồi cụ thể với lời khen chung chung. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "because đối chiếu phản hồi cụ thể với lời khen chung chung.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -1983,13 +2240,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "feedback",
+  "meaningVi": "phản hồi / góp ý"
  },
  {
   "id": "esl-v2-r10-u02-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Tôi muốn thành phố có thêm đường dành cho xe đạp vì tôi thấy đường hiện tại quá nguy hiểm.",
   "referenceAnswers": [
    "I want the city to add more cycle lanes because I find the current roads too dangerous."
@@ -1999,19 +2259,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: want + object + to V; because cho lý do cá nhân. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "want + object + to V; because cho lý do cá nhân.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một lợi ích của lịch học linh hoạt là học viên có thể học vào lúc họ tập trung nhất.",
   "referenceAnswers": [
    "One benefit of flexible study schedules is that learners can study when they concentrate best."
@@ -2021,7 +2282,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: One benefit ... is that giải thích lợi ích có cơ chế rõ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "One benefit ... is that giải thích lợi ích có cơ chế rõ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -2033,13 +2294,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "flexible",
+  "meaningVi": "linh hoạt"
  },
  {
   "id": "esl-v2-r10-u02-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi không thích tin nhắn công việc vào buổi tối vì chúng khiến tôi khó nghỉ ngơi.",
   "referenceAnswers": [
    "I dislike work messages in the evening because they make it harder for me to relax."
@@ -2049,19 +2313,22 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: make it harder for + người + to V nêu tác động. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "make it harder for + người + to V nêu tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "evening",
+  "meaningVi": "buổi tối"
  },
  {
   "id": "esl-v2-r10-u02-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Chúng ta nên bảo dưỡng xe buýt thường xuyên vì xe hỏng sẽ làm hành khách đến muộn.",
   "referenceAnswers": [
    "We should maintain buses regularly because breakdowns can make passengers late."
@@ -2071,7 +2338,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because đưa lý do thực tế; can giữ độ chắc chắn phù hợp. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "because đưa lý do thực tế; can giữ độ chắc chắn phù hợp.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -2083,13 +2350,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "passengers",
+  "meaningVi": "hành khách"
  },
  {
   "id": "esl-v2-r10-u02-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một nguyên nhân khiến nhiều người bỏ cuộc là họ đặt mục tiêu quá lớn ngay từ đầu.",
   "referenceAnswers": [
    "One reason some people give up is that they set goals that are too ambitious at the start."
@@ -2099,29 +2369,31 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: some giới hạn phạm vi; is that nêu nguyên nhân. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "some giới hạn phạm vi; is that nêu nguyên nhân.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi cho rằng thực phẩm tại trường nên có nhãn rõ ràng vì học sinh cần biết mình đang ăn gì.",
   "referenceAnswers": [
-   "I believe school food should be clearly labelled because students need to know what they are eating."
+   "I believe school food should be clearly labelled because students need to know what they are eating.",
+   "I think school food should be clearly labelled because students need to know what they are eating."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because hỗ trợ trực tiếp cho đề xuất dán nhãn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "because hỗ trợ trực tiếp cho đề xuất dán nhãn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -2133,13 +2405,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r10-u02-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu không có hướng dẫn rõ ràng, học viên dễ mắc lỗi vì họ phải tự đoán cách làm.",
   "referenceAnswers": [
    "Without clear instructions, learners may make mistakes because they have to guess what to do."
@@ -2149,7 +2424,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: without đặt điều kiện thiếu hướng dẫn; may giữ khả năng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "without đặt điều kiện thiếu hướng dẫn; may giữ khả năng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -2161,13 +2436,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tôi ủng hộ việc cho mượn máy tính vì nó tạo cơ hội học tập cho những người không có thiết bị riêng.",
   "referenceAnswers": [
    "I support laptop-lending schemes because they give learning opportunities to people without their own devices.",
@@ -2178,29 +2454,31 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because chỉ ra nhóm người được hưởng lợi cụ thể. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "because chỉ ra nhóm người được hưởng lợi cụ thể.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u02-017",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Lập luận và lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi nghĩ giờ nghỉ ngắn giữa các buổi học quan trọng vì chúng cho học viên thời gian phục hồi sự tập trung.",
   "referenceAnswers": [
-   "I think short breaks between lessons matter because they give learners time to regain their concentration."
+   "I think short breaks between lessons matter because they give learners time to regain their concentration.",
+   "I believe short breaks between lessons matter because they give learners time to regain their concentration."
   ],
   "grammarTags": [
    "r10_u02",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: matter là quan trọng; because nêu cơ chế chứ không chỉ lặp nhận định. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "matter là quan trọng; because nêu cơ chế chứ không chỉ lặp nhận định.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
   "commonErrors": [
    {
@@ -2212,13 +2490,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Lập luận và lý do"
  },
  {
   "id": "esl-v2-r10-u03-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, một học sinh không có máy tính ở nhà có thể dùng thiết bị của thư viện để làm bài tập.",
   "referenceAnswers": [
    "For example, a student without a computer at home could use a library device to complete assignments."
@@ -2228,7 +2507,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: could dùng cho tình huống minh họa có thể xảy ra, không phải số liệu nghiên cứu. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "could dùng cho tình huống minh họa có thể xảy ra, không phải số liệu nghiên cứu.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2240,23 +2519,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r10-u03-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Chẳng hạn, một khu phố có đường rộng dành cho người đi bộ có thể khuyến khích cư dân đi bộ nhiều hơn.",
   "referenceAnswers": [
-   "For instance, a neighbourhood with wide pavements may encourage residents to walk more often."
+   "For instance, a neighbourhood with wide pavements may encourage residents to walk more often.",
+   "For instance, a neighborhood with wide pavements may encourage residents to walk more often."
   ],
   "grammarTags": [
    "r10_u03",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: For instance giới thiệu ví dụ; may tránh khẳng định tác động chắc chắn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "For instance giới thiệu ví dụ; may tránh khẳng định tác động chắc chắn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2268,13 +2551,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "residents",
+  "meaningVi": "cư dân"
  },
  {
   "id": "esl-v2-r10-u03-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Một ví dụ đơn giản là cửa hàng cho khách mang bình cá nhân khi mua nước.",
   "referenceAnswers": [
    "A simple example is a shop allowing customers to bring their own bottles when buying drinks."
@@ -2284,19 +2570,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: A simple example is + cụm danh từ; tình huống minh họa không gán địa điểm thật. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "A simple example is + cụm danh từ; tình huống minh họa không gán địa điểm thật.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, nếu một lớp học ghi lại lỗi phổ biến, học viên có thể ôn đúng điểm yếu của mình.",
   "referenceAnswers": [
    "For example, if a class records common mistakes, learners can review their specific weaknesses."
@@ -2306,7 +2593,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if nêu giả định; ví dụ gắn trực tiếp với lợi ích của việc lưu lỗi. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "if nêu giả định; ví dụ gắn trực tiếp với lợi ích của việc lưu lỗi.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2318,13 +2605,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Chẳng hạn, người làm ca tối có thể học qua bản ghi thay vì tham gia buổi học trực tiếp.",
   "referenceAnswers": [
    "For example, people working evening shifts could study from recordings instead of attending live classes."
@@ -2334,7 +2622,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: could chỉ khả năng; instead of + V-ing. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "could chỉ khả năng; instead of + V-ing.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2346,13 +2634,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Một trường hợp có thể xảy ra là khách du lịch chọn xe buýt khi ứng dụng chỉ rõ tuyến đường và giờ chạy.",
   "referenceAnswers": [
    "One possible scenario is that tourists choose buses when an app clearly shows routes and timetables."
@@ -2362,19 +2651,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: One possible scenario tránh trình bày như dữ kiện đã được kiểm chứng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "One possible scenario tránh trình bày như dữ kiện đã được kiểm chứng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Ví dụ, một nhân viên mới có thể làm sai mẫu đơn nếu hướng dẫn chỉ dùng thuật ngữ chuyên môn.",
   "referenceAnswers": [
    "For instance, a new employee may fill in a form incorrectly if the instructions use only technical terms."
@@ -2384,7 +2674,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may nêu nguy cơ; if nêu điều kiện dẫn đến lỗi. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "may nêu nguy cơ; if nêu điều kiện dẫn đến lỗi.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2396,13 +2686,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Một ví dụ gần gũi là người mua so sánh hai sản phẩm trước khi chọn món bền hơn.",
   "referenceAnswers": [
    "An everyday example is a shopper comparing two products before choosing the more durable one."
@@ -2412,19 +2703,26 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: before + V-ing diễn tả bước xảy ra trước quyết định. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "before + V-ing diễn tả bước xảy ra trước quyết định.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "An everyday example is a shopper comparing two products before choos the more durable one.",
+    "correction": "An everyday example is a shopper comparing two products before choosing the more durable one.",
+    "reasonVi": "Sau giới từ 'before' động từ phải chia ở dạng V-ing (before choosing)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, khi phòng học quá nóng, học sinh có thể khó tập trung vào bài giảng.",
   "referenceAnswers": [
    "For example, students may struggle to focus on a lesson when a classroom is too hot."
@@ -2434,7 +2732,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may struggle giữ nghĩa có thể gặp khó khăn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "may struggle giữ nghĩa có thể gặp khó khăn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2446,13 +2744,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r10-u03-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Chẳng hạn, một gia đình có thể giảm rác thải bằng cách sửa đồ dùng thay vì vứt bỏ chúng.",
   "referenceAnswers": [
    "For instance, a family could reduce waste by repairing items instead of throwing them away."
@@ -2462,7 +2763,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: by + V-ing chỉ phương pháp, instead of + V-ing đối chiếu hành động. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "by + V-ing chỉ phương pháp, instead of + V-ing đối chiếu hành động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2474,13 +2775,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "reduce waste",
+  "meaningVi": "giảm rác thải"
  },
  {
   "id": "esl-v2-r10-u03-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, nếu vé tháng rẻ hơn mua vé lẻ, một số người có thể đi tàu thường xuyên hơn.",
   "referenceAnswers": [
    "For example, if a monthly pass costs less than individual tickets, some people may take the train more often."
@@ -2490,7 +2794,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: if là điều kiện giả định; some people và may tránh tổng quát hóa. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "if là điều kiện giả định; some people và may tránh tổng quát hóa.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2502,13 +2806,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "monthly pass",
+  "meaningVi": "vé tháng"
  },
  {
   "id": "esl-v2-r10-u03-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Một trường hợp minh họa là học viên thu âm câu trả lời để tự nghe lại cách phát âm.",
   "referenceAnswers": [
    "One illustrative case is a learner recording an answer to check their pronunciation afterwards."
@@ -2518,19 +2825,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: illustrative case là ví dụ, không phải bằng chứng nghiên cứu. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "illustrative case là ví dụ, không phải bằng chứng nghiên cứu.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Chẳng hạn, một công ty nhỏ có thể họp trực tuyến để bớt thời gian di chuyển.",
   "referenceAnswers": [
    "For example, a small company could hold online meetings to reduce travel time."
@@ -2540,7 +2848,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to reduce chỉ mục đích; could giữ tính giả định. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "to reduce chỉ mục đích; could giữ tính giả định.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2552,13 +2860,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, sinh viên có thể dùng danh sách việc cần làm để chia dự án lớn thành các bước nhỏ.",
   "referenceAnswers": [
    "For instance, a student could use a checklist to divide a large project into smaller steps."
@@ -2568,7 +2877,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: divide ... into thể hiện cách thực hiện, không đưa thêm số liệu. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "divide ... into thể hiện cách thực hiện, không đưa thêm số liệu.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2580,13 +2889,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "project",
+  "meaningVi": "dự án"
  },
  {
   "id": "esl-v2-r10-u03-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Một ví dụ giả định là công viên có thêm ghế để người lớn tuổi nghỉ chân trên đường đi bộ.",
   "referenceAnswers": [
    "A hypothetical example would be a park adding more benches so older visitors can rest during a walk."
@@ -2596,7 +2908,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: hypothetical example gắn nhãn giả định rõ, không viện dẫn công viên có thật. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "hypothetical example gắn nhãn giả định rõ, không viện dẫn công viên có thật.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2608,13 +2920,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "park",
+  "meaningVi": "công viên"
  },
  {
   "id": "esl-v2-r10-u03-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Ví dụ, một quán ăn có thể ghi thành phần món để khách dị ứng thực phẩm lựa chọn an toàn hơn.",
   "referenceAnswers": [
    "For example, a café could list ingredients so customers with food allergies can make safer choices."
@@ -2624,7 +2939,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so + mệnh đề chỉ mục đích/kết quả dự kiến, không khẳng định mọi rủi ro biến mất. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "so + mệnh đề chỉ mục đích/kết quả dự kiến, không khẳng định mọi rủi ro biến mất.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2636,13 +2951,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa"
  },
  {
   "id": "esl-v2-r10-u03-017",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Ví dụ minh họa",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chẳng hạn, một nhóm dự án có thể kiểm tra tiến độ mỗi tuần để nhận ra vấn đề trước hạn chót.",
   "referenceAnswers": [
    "For instance, a project team could review progress weekly to spot problems before the deadline."
@@ -2652,7 +2968,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to spot chỉ mục đích, before the deadline chỉ thời điểm. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "to spot chỉ mục đích, before the deadline chỉ thời điểm.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
   "commonErrors": [
    {
@@ -2664,13 +2980,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "deadline",
+  "meaningVi": "thời hạn cuối"
  },
  {
   "id": "esl-v2-r10-u04-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Các cuốn sách cũ được phân loại trước khi đưa lên kệ.",
   "referenceAnswers": [
    "Old books are sorted before they are put on the shelves."
@@ -2680,19 +2999,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: are sorted và are put là bị động hiện tại, nhấn đối tượng chịu tác động. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "are sorted và are put là bị động hiện tại, nhấn đối tượng chịu tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Kết quả cuộc khảo sát sẽ được công bố vào tuần tới.",
   "referenceAnswers": [
    "The survey results will be published next week."
@@ -2702,7 +3022,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: will be + V3 là bị động tương lai; chưa khẳng định kết quả nội dung. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "will be + V3 là bị động tương lai; chưa khẳng định kết quả nội dung.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -2714,13 +3034,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động",
+  "targetTerm": "next week",
+  "meaningVi": "tuần tới"
  },
  {
   "id": "esl-v2-r10-u04-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc cầu này được sửa chữa vào năm ngoái.",
   "referenceAnswers": [
    "This bridge was repaired last year."
@@ -2730,19 +3053,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: was repaired là bị động quá khứ với mốc năm ngoái. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "was repaired là bị động quá khứ với mốc năm ngoái.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Các yêu cầu hỗ trợ được trả lời theo thứ tự nhận được.",
   "referenceAnswers": [
    "Support requests are answered in the order they are received."
@@ -2752,29 +3076,31 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: are answered nêu quy trình; they are received là mệnh đề bị động bổ nghĩa. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "are answered nêu quy trình; they are received là mệnh đề bị động bổ nghĩa.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Đèn trong phòng họp nên được tắt khi không có ai sử dụng.",
   "referenceAnswers": [
-   "The lights in meeting rooms should be turned off when they are not in use."
+   "The lights in meeting rooms should be turned off when they are not in use.",
+   "The lights in meeting rooms should be turned off when they aren't in use."
   ],
   "grammarTags": [
    "r10_u04",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: should be turned off là bị động với modal; in use là đang được sử dụng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "should be turned off là bị động với modal; in use là đang được sử dụng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -2786,13 +3112,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bài kiểm tra đã được chấm nhưng chưa được trả lại cho học viên.",
   "referenceAnswers": [
    "The tests have been marked but have not yet been returned to the learners."
@@ -2802,19 +3129,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: have been marked/returned dùng hiện tại hoàn thành bị động. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "have been marked/returned dùng hiện tại hoàn thành bị động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Một lối đi mới đang được xây gần nhà ga.",
   "referenceAnswers": [
    "A new walkway is being built near the station."
@@ -2824,19 +3152,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: is being built là tiếp diễn bị động, nêu công việc đang diễn ra. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "is being built là tiếp diễn bị động, nêu công việc đang diễn ra.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Quy định này được giải thích cho nhân viên mới vào ngày đầu tiên.",
   "referenceAnswers": [
    "This rule is explained to new employees on their first day."
@@ -2846,19 +3175,22 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: is explained là bị động hiện tại; to new employees chỉ người nhận giải thích. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "is explained là bị động hiện tại; to new employees chỉ người nhận giải thích.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động",
+  "targetTerm": "employees",
+  "meaningVi": "nhân viên"
  },
  {
   "id": "esl-v2-r10-u04-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Các máy tính bị hỏng đã được thay thế trước khi học kỳ bắt đầu.",
   "referenceAnswers": [
    "The broken computers were replaced before the term began."
@@ -2868,19 +3200,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: were replaced thể hiện hành động hoàn tất trong quá khứ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "were replaced thể hiện hành động hoàn tất trong quá khứ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vé chỉ được hoàn tiền nếu sự kiện bị hủy.",
   "referenceAnswers": [
    "Tickets are refunded only if the event is cancelled."
@@ -2890,19 +3223,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: are refunded và is cancelled là bị động; only if giữ điều kiện hạn chế. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "are refunded và is cancelled là bị động; only if giữ điều kiện hạn chế.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Những ý kiến của học viên cần được xem xét khi cập nhật giáo trình.",
   "referenceAnswers": [
    "Learners' feedback should be considered when the curriculum is updated."
@@ -2912,7 +3246,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: should be considered đưa kiến nghị; when + bị động hoàn cảnh. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "should be considered đưa kiến nghị; when + bị động hoàn cảnh.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -2924,13 +3258,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Hầu hết các đơn đặt hàng được xử lý trong vòng hai ngày làm việc.",
   "referenceAnswers": [
    "Most orders are processed within two working days."
@@ -2940,29 +3275,31 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Most chứ không phải all; are processed thể hiện quy trình. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Most chứ không phải all; are processed thể hiện quy trình.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Xã hội & Chính sách",
   "promptVi": "Nhà hát cũ đã được chuyển thành trung tâm sinh hoạt cộng đồng.",
   "referenceAnswers": [
-   "The old theatre has been converted into a community centre."
+   "The old theatre has been converted into a community centre.",
+   "The old theatre has been converted into a community center."
   ],
   "grammarTags": [
    "r10_u04",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has been converted nhấn kết quả vẫn còn ở hiện tại. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "has been converted nhấn kết quả vẫn còn ở hiện tại.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -2974,13 +3311,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Một số lớp buổi tối sẽ được tổ chức trực tuyến trong tháng tới.",
   "referenceAnswers": [
    "Some evening classes will be held online next month."
@@ -2990,7 +3328,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Some giới hạn số lượng; will be held là bị động tương lai. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Some giới hạn số lượng; will be held là bị động tương lai.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -3002,13 +3340,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động",
+  "targetTerm": "next month",
+  "meaningVi": "tháng tới"
  },
  {
   "id": "esl-v2-r10-u04-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Các tài liệu quan trọng phải được lưu ở vị trí mà nhân viên có thể tìm thấy nhanh.",
   "referenceAnswers": [
    "Important documents must be stored where staff can find them quickly."
@@ -3018,7 +3359,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: must be stored là yêu cầu mạnh; where nêu vị trí. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "must be stored là yêu cầu mạnh; where nêu vị trí.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -3030,13 +3371,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Những câu hỏi chưa rõ sẽ được giáo viên giải thích sau phần thảo luận.",
   "referenceAnswers": [
    "Unclear questions will be explained by the teacher after the discussion."
@@ -3046,7 +3388,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: will be explained cho biết hành động dự kiến và người thực hiện. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "will be explained cho biết hành động dự kiến và người thực hiện.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -3058,23 +3400,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động"
  },
  {
   "id": "esl-v2-r10-u04-017",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Câu bị động",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Lịch trình cuối cùng chưa được xác nhận, vì vậy các tình nguyện viên chưa thể được phân ca.",
   "referenceAnswers": [
-   "The final schedule has not been confirmed, so volunteers cannot be assigned shifts yet."
+   "The final schedule has not been confirmed, so volunteers cannot be assigned shifts yet.",
+   "The final schedule has not been confirmed, so volunteers can't be assigned shifts yet."
   ],
   "grammarTags": [
    "r10_u04",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: has not been confirmed và be assigned là bị động; so giữ quan hệ hệ quả. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "has not been confirmed và be assigned là bị động; so giữ quan hệ hệ quả.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
   "commonErrors": [
    {
@@ -3086,35 +3430,43 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Câu bị động",
+  "targetTerm": "schedule",
+  "meaningVi": "lịch trình"
  },
  {
   "id": "esl-v2-r10-u05-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Ứng dụng này dễ sử dụng. Tuy nhiên, nó chưa hỗ trợ người dùng khi không có mạng.",
   "referenceAnswers": [
-   "This app is easy to use. However, it does not yet support offline use."
+   "This app is easy to use. However, it does not yet support offline use.",
+   "This app is easy to use. However, it doesn't yet support offline use.",
+   "This app is easy to use. Even so, it does not yet support offline use."
   ],
   "grammarTags": [
    "r10_u05",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: However nối ý tương phản; it quy chiếu ứng dụng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "However nối ý tương phản; it quy chiếu ứng dụng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r10-u05-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện mở cửa miễn phí. Ngoài ra, nơi này còn tổ chức các buổi đọc sách cho trẻ em.",
   "referenceAnswers": [
    "The library is free to enter. In addition, it organises reading sessions for children."
@@ -3124,19 +3476,22 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: In addition bổ sung lợi ích, it thay cho library. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "In addition bổ sung lợi ích, it thay cho library.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r10-u05-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nhiều người thích học vào buổi sáng. Ngược lại, một số người làm việc tốt hơn vào buổi tối.",
   "referenceAnswers": [
    "Many people prefer studying in the morning. By contrast, some work better in the evening."
@@ -3146,19 +3501,22 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: By contrast đối chiếu hai nhóm, some thay một số người. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "By contrast đối chiếu hai nhóm, some thay một số người.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r10-u05-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Thành phố đã tăng số chuyến xe buýt. Biện pháp này có thể giúp hành khách bớt chờ đợi.",
   "referenceAnswers": [
    "The city has increased bus services. This change may reduce waiting times for passengers."
@@ -3168,7 +3526,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: This change quy chiếu biện pháp cụ thể, may giữ tính dự kiến. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "This change quy chiếu biện pháp cụ thể, may giữ tính dự kiến.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3180,23 +3538,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "passengers",
+  "meaningVi": "hành khách"
  },
  {
   "id": "esl-v2-r10-u05-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bài hướng dẫn rất ngắn. Vì vậy, một số người mới học có thể cần thêm ví dụ.",
   "referenceAnswers": [
-   "The instructions are very short. Therefore, some beginners may need more examples."
+   "The instructions are very short. Therefore, some beginners may need more examples.",
+   "The instructions are very short. As a result, some beginners may need more examples."
   ],
   "grammarTags": [
    "r10_u05",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Therefore nêu hệ quả có lý do rõ; some/may giới hạn nhận định. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Therefore nêu hệ quả có lý do rõ; some/may giới hạn nhận định.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3208,13 +3570,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "therefore",
+  "meaningVi": "vì vậy / do đó"
  },
  {
   "id": "esl-v2-r10-u05-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Công viên có đường đi bộ rộng. Nó cũng có nhiều ghế dành cho người cần nghỉ chân.",
   "referenceAnswers": [
    "The park has wide walking paths. It also provides plenty of benches for people who need a rest."
@@ -3224,7 +3589,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: It tránh lặp park; also bổ sung đặc điểm. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "It tránh lặp park; also bổ sung đặc điểm.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3236,23 +3601,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "park",
+  "meaningVi": "công viên"
  },
  {
   "id": "esl-v2-r10-u05-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Khóa học có thể học bằng điện thoại. Tuy nhiên, một số bài viết dài dễ làm hơn trên máy tính.",
   "referenceAnswers": [
-   "The course can be taken on a phone. However, some longer writing tasks are easier on a computer."
+   "The course can be taken on a phone. However, some longer writing tasks are easier on a computer.",
+   "The course can be taken on a phone. Even so, some longer writing tasks are easier on a computer."
   ],
   "grammarTags": [
    "r10_u05",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: However đối chiếu ưu điểm và hạn chế thực tế. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "However đối chiếu ưu điểm và hạn chế thực tế.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3264,13 +3633,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "however",
+  "meaningVi": "tuy nhiên"
  },
  {
   "id": "esl-v2-r10-u05-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhóm đã phỏng vấn một số người dùng. Bước tiếp theo là tổng hợp ý kiến để cải thiện sản phẩm.",
   "referenceAnswers": [
    "The team has interviewed several users. The next step is to summarise their feedback to improve the product."
@@ -3280,7 +3652,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: The next step nối các bước nghiên cứu người dùng; their feedback quy chiếu ý kiến vừa thu thập. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "The next step nối các bước nghiên cứu người dùng; their feedback quy chiếu ý kiến vừa thu thập.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3292,13 +3664,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u05-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Giá thực phẩm đã tăng. Điều này khiến một số gia đình phải lập ngân sách cẩn thận hơn.",
   "referenceAnswers": [
    "Food prices have risen. This has made some families budget more carefully."
@@ -3308,7 +3681,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: This quy chiếu việc tăng giá; some giới hạn nhóm bị ảnh hưởng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "This quy chiếu việc tăng giá; some giới hạn nhóm bị ảnh hưởng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3320,13 +3693,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "budget",
+  "meaningVi": "ngân sách"
  },
  {
   "id": "esl-v2-r10-u05-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Trường học cung cấp tài liệu trực tuyến. Đồng thời, học sinh vẫn có thể mượn sách giấy.",
   "referenceAnswers": [
    "The school provides online materials. At the same time, students can still borrow printed books."
@@ -3336,7 +3712,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: At the same time cho thấy hai lựa chọn cùng tồn tại. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "At the same time cho thấy hai lựa chọn cùng tồn tại.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3348,13 +3724,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r10-u05-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Bến xe nằm gần khu dân cư. Nhờ đó, người dân có thể đi bộ ra đó thay vì lái xe.",
   "referenceAnswers": [
    "The bus station is near the residential area. As a result, residents can walk there instead of driving."
@@ -3364,7 +3743,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: As a result nối hệ quả; there quy chiếu bến xe. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "As a result nối hệ quả; there quy chiếu bến xe.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3376,13 +3755,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u05-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Một số người thích làm việc theo nhóm. Trong khi đó, những người khác tập trung tốt hơn khi ở một mình.",
   "referenceAnswers": [
    "Some people prefer teamwork. Meanwhile, others concentrate better when working alone."
@@ -3392,19 +3772,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Meanwhile đặt hai nhóm cạnh nhau mà không khẳng định nhóm nào tốt hơn. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Meanwhile đặt hai nhóm cạnh nhau mà không khẳng định nhóm nào tốt hơn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u05-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Lớp học có ít học viên. Do đó, giáo viên có thể dành nhiều thời gian hơn cho từng người.",
   "referenceAnswers": [
    "The class has few students. Consequently, the teacher can spend more time with each one."
@@ -3414,7 +3795,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Consequently nêu hệ quả khả dĩ; each one thay students. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Consequently nêu hệ quả khả dĩ; each one thay students.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3426,13 +3807,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u05-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Nhiều sản phẩm dùng bao bì nhựa. Một lựa chọn khác là sử dụng hộp có thể tái sử dụng.",
   "referenceAnswers": [
    "Many products come in plastic packaging. An alternative is to use reusable containers."
@@ -3442,19 +3824,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: An alternative mở lựa chọn thay thế, không nói bao bì nào hoàn toàn không có tác động. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "An alternative mở lựa chọn thay thế, không nói bao bì nào hoàn toàn không có tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u05-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Tập thể dục thường xuyên mang lại lợi ích. Tuy vậy, người mới bắt đầu vẫn nên tăng cường độ từ từ.",
   "referenceAnswers": [
    "Regular exercise has benefits. Nevertheless, beginners should still increase the intensity gradually."
@@ -3464,7 +3847,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Nevertheless chuyển sang lưu ý hạn chế, still giữ tính nhượng bộ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Nevertheless chuyển sang lưu ý hạn chế, still giữ tính nhượng bộ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3476,13 +3859,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "regular exercise",
+  "meaningVi": "tập thể dục đều đặn"
  },
  {
   "id": "esl-v2-r10-u05-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Liên kết câu",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Trang web cung cấp hướng dẫn từng bước. Nhờ những hướng dẫn này, người mới có thể tự hoàn thành quy trình.",
   "referenceAnswers": [
    "The website provides step-by-step instructions. With this guidance, beginners can complete the process independently."
@@ -3492,7 +3878,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: With this guidance nối lại thông tin đã nêu, tránh đại từ mơ hồ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "With this guidance nối lại thông tin đã nêu, tránh đại từ mơ hồ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
   "commonErrors": [
    {
@@ -3504,13 +3890,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Liên kết câu"
  },
  {
   "id": "esl-v2-r10-u06-001",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thấy việc học 15 phút mỗi ngày dễ duy trì hơn học ba giờ một lần mỗi tuần.",
   "referenceAnswers": [
    "I find it easier to study for 15 minutes every day than for three hours once a week."
@@ -3520,19 +3907,22 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: find it easier to ... than ... diễn đạt so sánh thói quen học. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "find it easier to ... than ... diễn đạt so sánh thói quen học.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r10-u06-002",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Không phải ai cũng có điều kiện mua một chiếc máy tính mới.",
   "referenceAnswers": [
    "Not everyone can afford to buy a new computer.",
@@ -3543,7 +3933,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Not everyone không phải nobody; can afford to giữ nghĩa khả năng chi trả. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Not everyone không phải nobody; can afford to giữ nghĩa khả năng chi trả.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3555,13 +3945,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-003",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu thời gian cho phép, chúng tôi sẽ kiểm tra lại bản dịch trước khi nộp.",
   "referenceAnswers": [
    "If time allows, we will review the translation before submitting it."
@@ -3571,7 +3962,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If time allows là điều kiện tự nhiên; before + V-ing. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "If time allows là điều kiện tự nhiên; before + V-ing.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3583,23 +3974,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-004",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi không muốn bỏ qua các ý kiến khác chỉ vì chúng trái với quan điểm của mình.",
   "referenceAnswers": [
-   "I do not want to ignore other opinions simply because they differ from my own."
+   "I do not want to ignore other opinions simply because they differ from my own.",
+   "I don't want to ignore other opinions simply because they differ from my own."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: differ from giữ nghĩa khác quan điểm, không thêm cảm xúc tiêu cực. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "differ from giữ nghĩa khác quan điểm, không thêm cảm xúc tiêu cực.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3611,13 +4004,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-005",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bài tập này giúp tôi nhận ra mình vẫn thường nhầm các thì.",
   "referenceAnswers": [
    "This exercise helps me realise that I still often confuse tenses."
@@ -3627,19 +4021,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: realise that diễn đạt nhận thức; still often duy trì tính lặp. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "realise that diễn đạt nhận thức; still often duy trì tính lặp.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-006",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Bên cạnh chi phí, chúng ta cũng nên cân nhắc thời gian di chuyển.",
   "referenceAnswers": [
    "Besides the cost, we should also consider travel time."
@@ -3649,7 +4044,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Besides + noun phrase; consider + noun. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Besides + noun phrase; consider + noun.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3661,79 +4056,88 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-007",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mục tiêu của dự án không chỉ là thu hút nhiều người dùng mà còn giữ chân họ lâu dài.",
   "referenceAnswers": [
-   "The project's goal is not only to attract more users but also to retain them over time."
+   "The project's goal is not only to attract more users but also to retain them over time.",
+   "The project's goal isn't only to attract more users but also to retain them over time."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: not only ... but also cân đối hai mục tiêu; retain không đồng nghĩa attract. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "not only ... but also cân đối hai mục tiêu; retain không đồng nghĩa attract.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "project",
+  "meaningVi": "dự án"
  },
  {
   "id": "esl-v2-r10-u06-008",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chỉ vì một ứng dụng phổ biến không có nghĩa là nó phù hợp với tất cả học viên.",
   "referenceAnswers": [
-   "Just because an app is popular does not mean it suits every learner."
+   "Just because an app is popular does not mean it suits every learner.",
+   "Just because an app is popular doesn't mean it suits every learner."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Just because ... does not mean ... tránh suy luận quá mức. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Just because ... does not mean ... tránh suy luận quá mức.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-009",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi muốn góp ý cụ thể thay vì chỉ nói rằng bài viết chưa hay.",
   "referenceAnswers": [
-   "I want to give specific feedback rather than simply say that the essay is not good."
+   "I want to give specific feedback rather than simply say that the essay is not good.",
+   "I want to give specific feedback rather than simply say that the essay isn't good."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: rather than + base verb sau want to; specific feedback là góp ý cụ thể. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "rather than + base verb sau want to; specific feedback là góp ý cụ thể.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-010",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Dù công việc có vẻ đơn giản, tôi vẫn cần kiểm tra chi tiết trước khi hoàn thành.",
   "referenceAnswers": [
    "Even if the task seems simple, I still need to check the details before finishing it."
@@ -3743,29 +4147,37 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Even if = ngay cả nếu; không tự đổi thành although nếu chưa khẳng định thực tế. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Even if = ngay cả nếu; không tự đổi thành although nếu chưa khẳng định thực tế.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even if the task seems simple, I still need to check the details before finish it.",
+    "correction": "Even if the task seems simple, I still need to check the details before finishing it.",
+    "reasonVi": "Sau giới từ 'before' động từ phải chia ở dạng V-ing (before finishing)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-011",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Số lượng người đăng ký tăng không nhất thiết có nghĩa là tất cả đều tham gia.",
   "referenceAnswers": [
-   "An increase in registrations does not necessarily mean that everyone will attend."
+   "An increase in registrations does not necessarily mean that everyone will attend.",
+   "An increase in registrations doesn't necessarily mean that everyone will attend."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: does not necessarily mean phân biệt đăng ký và tham dự. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "does not necessarily mean phân biệt đăng ký và tham dự.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3777,13 +4189,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-012",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tốt hơn là sửa một lỗi đúng nguyên nhân thay vì làm đi làm lại bài dễ.",
   "referenceAnswers": [
    "It is better to address the cause of a mistake than to repeat easy exercises."
@@ -3793,19 +4206,20 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: address the cause khác chỉ sửa biểu hiện; than nối so sánh. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "address the cause khác chỉ sửa biểu hiện; than nối so sánh.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-013",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Học viên có thể biết công thức nhưng vẫn không dùng được trong tình huống mới.",
   "referenceAnswers": [
    "Learners may know a grammar rule but still be unable to use it in a new situation."
@@ -3815,7 +4229,7 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may know / still be unable to nêu khoảng cách giữa biết và vận dụng. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "may know / still be unable to nêu khoảng cách giữa biết và vận dụng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [
    {
@@ -3827,13 +4241,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-014",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi đánh giá cao một lời giải chỉ rõ vì sao các lựa chọn khác không phù hợp.",
   "referenceAnswers": [
    "I value an explanation that shows why other options are unsuitable."
@@ -3843,41 +4258,44 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: value là đánh giá cao; that bổ nghĩa explanation. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "value là đánh giá cao; that bổ nghĩa explanation.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-015",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tăng số bài không tự động khiến người học nhớ kiến thức lâu hơn.",
   "referenceAnswers": [
-   "Adding more exercises does not automatically help learners remember material for longer."
+   "Adding more exercises does not automatically help learners remember material for longer.",
+   "Adding more exercises doesn't automatically help learners remember material for longer."
   ],
   "grammarTags": [
    "r10_u06",
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: does not automatically tránh đồng nhất số lượng và ghi nhớ. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "does not automatically tránh đồng nhất số lượng và ghi nhớ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  },
  {
   "id": "esl-v2-r10-u06-016",
   "practiceLevel": "5.0",
   "type": "sentence",
-  "topic": "Dịch câu theo ý",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Dù đồng ý với mục tiêu chung, tôi vẫn muốn kiểm tra xem kế hoạch có khả thi hay không.",
   "referenceAnswers": [
    "Although I agree with the overall goal, I still want to check whether the plan is realistic.",
@@ -3888,12 +4306,13 @@
    "argument_development",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Although giữ nhượng bộ; whether mở câu hỏi gián tiếp. Tự kiểm tra: giữ đúng chủ thể, sắc thái, quan hệ logic, thời gian và điểm ngữ pháp của bài.",
+  "explanationVi": "Although giữ nhượng bộ; whether mở câu hỏi gián tiếp.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
   "commonErrors": [],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch câu theo ý"
  }
 ]

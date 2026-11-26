@@ -3,12 +3,13 @@
   "id": "band-4.0-019",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Giáo dục",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "improve",
   "meaningVi": "cải thiện",
   "promptVi": "Tôi đang học tiếng Anh vì muốn cải thiện kỹ năng giao tiếp.",
   "referenceAnswers": [
-   "I am studying English because I want to improve my communication skills."
+   "I am studying English because I want to improve my communication skills.",
+   "I'm studying English because I want to improve my communication skills."
   ],
   "grammarTags": [
    "because-clause"
@@ -25,7 +26,7 @@
   "id": "band-4.0-020",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "recycle",
   "meaningVi": "tái chế",
   "promptVi": "Gia đình tôi tái chế giấy và chai nhựa mỗi tuần.",
@@ -47,7 +48,7 @@
   "id": "band-4.0-021",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "experience",
   "meaningVi": "kinh nghiệm",
   "promptVi": "Công việc bán thời gian giúp cô ấy có thêm kinh nghiệm.",
@@ -69,7 +70,7 @@
   "id": "band-4.0-cal-01",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "missed the first lesson",
   "meaningVi": "lỡ tiết học đầu",
   "promptVi": "Vì xe buýt đến muộn, tôi đã lỡ tiết học đầu.",
@@ -91,7 +92,7 @@
   "id": "band-4.0-cal-02",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reusable bottles",
   "meaningVi": "chai có thể tái sử dụng",
   "promptVi": "Chúng tôi dùng chai có thể tái sử dụng để tạo ra ít rác nhựa hơn.",
@@ -103,7 +104,13 @@
   ],
   "explanationVi": "To produce nêu mục đích; less dùng với waste không đếm được.",
   "rationaleVi": "Câu trực tiếp về mục đích trong chủ đề quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "We use reusable bottles to produce less plastic wastes.",
+    "correction": "We use reusable bottles to produce less plastic waste.",
+    "reasonVi": "'Waste' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -113,7 +120,7 @@
   "id": "band-4.0-exp-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "skip breakfast",
   "meaningVi": "bỏ bữa sáng",
   "promptVi": "Nhiều học sinh cảm thấy mệt mỏi vào buổi sáng vì họ bỏ bữa sáng.",
@@ -135,7 +142,7 @@
   "id": "band-4.0-exp-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "traffic jams",
   "meaningVi": "ùn tắc giao thông",
   "promptVi": "Ùn tắc giao thông xảy ra thường xuyên hơn vì số lượng ô tô cá nhân tăng nhanh.",
@@ -157,7 +164,7 @@
   "id": "band-4.0-exp-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "screen time",
   "meaningVi": "thời gian sử dụng màn hình",
   "promptVi": "Thời gian sử dụng màn hình quá nhiều vào ban đêm dẫn đến các vấn đề về giấc ngủ ở người trẻ.",
@@ -179,19 +186,26 @@
   "id": "band-4.0-exp-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "fail the exam",
   "meaningVi": "trượt kỳ thi",
   "promptVi": "Nam đã không chuẩn bị kỹ cho bài kiểm tra, cho nên anh ấy sợ mình sẽ trượt kỳ thi.",
   "referenceAnswers": [
-   "Nam did not prepare well for the test, so he is afraid he will fail the exam."
+   "Nam did not prepare well for the test, so he is afraid he will fail the exam.",
+   "Nam didn't prepare well for the test, so he is afraid he will fail the exam."
   ],
   "grammarTags": [
    "Result clause with so"
   ],
   "explanationVi": "Từ 'so' nối hai mệnh đề để chỉ hệ quả của việc không chuẩn bị bài đầy đủ.",
   "rationaleVi": "Liên từ 'so' biểu thị kết quả trực tiếp, giúp người học ở cấp độ 4.0 dễ dàng nối kết hai ý trong câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Nam did not prepare well for the test, so he is afraid he will to fail the exam.",
+    "correction": "Nam did not prepare well for the test, so he is afraid he will fail the exam.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will fail)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -201,7 +215,7 @@
   "id": "band-4.0-exp-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "save electricity",
   "meaningVi": "tiết kiệm điện",
   "promptVi": "Tắt các thiết bị điện khi không sử dụng giúp gia đình tiết kiệm điện và giảm chi phí.",
@@ -223,7 +237,7 @@
   "id": "band-4.0-exp-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "online shopping",
   "meaningVi": "mua sắm trực tuyến",
   "promptVi": "Mua sắm trực tuyến ngày càng phổ biến vì nó giúp tiết kiệm thời gian cho người đi làm bận rộn.",
@@ -245,7 +259,7 @@
   "id": "band-4.0-exp-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "tourist attractions",
   "meaningVi": "điểm tham quan du lịch",
   "promptVi": "Thành phố thu hút nhiều du khách hằng năm nhờ có các điểm tham quan du lịch nổi tiếng.",
@@ -267,7 +281,7 @@
   "id": "band-4.0-exp-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "stay fit",
   "meaningVi": "giữ vóc dáng cân đối",
   "promptVi": "Tập thể dục thường xuyên giúp mọi người giữ vóc dáng cân đối và cải thiện tâm trạng.",
@@ -289,12 +303,13 @@
   "id": "band-4.0-exp-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "monthly rent",
   "meaningVi": "tiền thuê nhà hằng tháng",
   "promptVi": "Tiền thuê nhà hằng tháng cao buộc nhiều người lao động phải chuyển ra xa trung tâm thành phố.",
   "referenceAnswers": [
-   "High monthly rent forces many workers to move away from the city centre."
+   "High monthly rent forces many workers to move away from the city centre.",
+   "High monthly rent forces many workers to move away from the city center."
   ],
   "grammarTags": [
    "Verb pattern indicating cause-effect (force to)"
@@ -311,7 +326,7 @@
   "id": "band-4.0-exp-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "manage time",
   "meaningVi": "quản lý thời gian",
   "promptVi": "Nếu bạn biết cách quản lý thời gian hiệu quả, bạn sẽ hoàn thành công việc mà không bị áp lực.",
@@ -323,7 +338,13 @@
   ],
   "explanationVi": "Mệnh đề điều kiện 'If...' diễn tả nguyên nhân/điều kiện dẫn đến kết quả hoàn thành công việc tốt.",
   "rationaleVi": "Câu điều kiện loại 1 là cấu trúc trực tiếp, dễ theo dõi để diễn tả mối quan hệ điều kiện - kết quả ở level 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If you know how to manage time effectively, you will to complete tasks without feeling stressed.",
+    "correction": "If you know how to manage time effectively, you will complete tasks without feeling stressed.",
+    "reasonVi": "Sau động từ khuyết thiếu 'will' dùng động từ nguyên mẫu không có 'to' (will complete)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -333,7 +354,7 @@
   "id": "band-4.0-exp-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "noise pollution",
   "meaningVi": "ô nhiễm tiếng ồn",
   "promptVi": "Việc sống gần các công trường xây dựng gây ra ô nhiễm tiếng ồn, làm ảnh hưởng giấc ngủ của cư dân địa phương.",
@@ -355,7 +376,7 @@
   "id": "band-4.0-exp-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "family bond",
   "meaningVi": "gắn kết gia đình",
   "promptVi": "Dành thời gian ăn tối cùng nhau giúp củng cố gắn kết gia đình sau một ngày làm việc bận rộn.",
@@ -377,7 +398,7 @@
   "id": "band-4.0-exp-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "weight gain",
   "meaningVi": "sự tăng cân",
   "promptVi": "Ăn thức ăn nhanh thường xuyên dẫn đến sự tăng cân vì loại đồ ăn này chứa nhiều chất béo.",
@@ -399,7 +420,7 @@
   "id": "band-4.0-exp-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "lung capacity",
   "meaningVi": "dung tích phổi",
   "promptVi": "Khi người lớn tuổi bơi lội thường xuyên, dung tích phổi của họ cải thiện, vì vậy họ có thể hít thở dễ dàng hơn.",
@@ -411,7 +432,13 @@
   ],
   "explanationVi": "Mệnh đề 'When' mở đầu nguyên nhân/thói quen, kéo theo kết quả ở mệnh đề sau nối bằng 'so'.",
   "rationaleVi": "Câu diễn đạt mối quan hệ nguyên nhân - kết quả đơn giản trong chủ đề rèn luyện sức khỏe, phù hợp trình độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "When older adults swim regularly, their lung capacity improves, so they can to breathe much more easily.",
+    "correction": "When older adults swim regularly, their lung capacity improves, so they can breathe much more easily.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can breathe)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -421,7 +448,7 @@
   "id": "band-4.0-exp-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "pollutes the water source",
   "meaningVi": "làm ô nhiễm nguồn nước",
   "promptVi": "Khi người dân vứt rác xuống sông, hành động đó làm ô nhiễm nguồn nước và gây hại cho cá địa phương.",
@@ -443,7 +470,7 @@
   "id": "band-4.0-exp-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "personal information",
   "meaningVi": "thông tin cá nhân",
   "promptVi": "Vì Wi-Fi công cộng thường không an toàn, hacker có thể dễ dàng truy cập thông tin cá nhân trên điện thoại di động.",
@@ -455,7 +482,13 @@
   ],
   "explanationVi": "Mệnh đề nguyên nhân 'Because' đặt ở đầu câu để nhấn mạnh lý do trước khi đưa ra hệ quả.",
   "rationaleVi": "Câu giải thích nguyên nhân - hệ quả ngắn gọn, từ vựng công nghệ công cộng đơn giản, thích hợp với cấp độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Because public Wi-Fi is often unsecured, hackers can to easily access personal information on mobile phones.",
+    "correction": "Because public Wi-Fi is often unsecured, hackers can easily access personal information on mobile phones.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -465,7 +498,7 @@
   "id": "band-4.0-exp-017",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "bad impression",
   "meaningVi": "ấn tượng xấu",
   "promptVi": "Nếu học sinh đến lớp muộn, việc đó tạo ra ấn tượng xấu với giáo viên và gây ra sự lo lắng.",
@@ -487,7 +520,7 @@
   "id": "band-4.0-exp-018",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "lower work performance",
   "meaningVi": "hiệu suất làm việc thấp hơn",
   "promptVi": "Việc làm thêm giờ thường xuyên khiến nhân viên kiệt sức, dẫn đến hiệu suất làm việc thấp hơn.",
@@ -509,7 +542,7 @@
   "id": "band-4.0-exp-019",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "budget travellers",
   "meaningVi": "du khách tiết kiệm",
   "promptVi": "Giá phòng khách sạn cao cản trở du khách tiết kiệm ở lại lâu hơn tại thị trấn ven biển.",
@@ -531,7 +564,7 @@
   "id": "band-4.0-exp-020",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "mould growth",
   "meaningVi": "sự phát triển của nấm mốc",
   "promptVi": "Do sự thông gió kém trong các căn hộ nhỏ, sự phát triển của nấm mốc thường xảy ra vào mùa thời tiết ẩm ướt.",
@@ -553,7 +586,7 @@
   "id": "band-4.0-exp-021",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "transport costs",
   "meaningVi": "chi phí đi lại",
   "promptVi": "Nhiều người đi làm đi xe đạp đến văn phòng nhằm giảm chi phí đi lại và duy trì sự năng động.",
@@ -575,7 +608,7 @@
   "id": "band-4.0-exp-022",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "traditional festivals",
   "meaningVi": "lễ hội truyền thống",
   "promptVi": "Lối sống hiện đại khiến giới trẻ dành ít thời gian hơn để tìm hiểu về các lễ hội truyền thống.",
@@ -597,7 +630,7 @@
   "id": "band-4.0-exp-023",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "kinh tế",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "product prices",
   "meaningVi": "giá sản phẩm",
   "promptVi": "Vì hoá đơn tiền điện đang tăng, các cửa hàng nhỏ phải tăng giá sản phẩm của họ.",
@@ -619,7 +652,7 @@
   "id": "band-4.0-exp-024",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "prevent dehydration",
   "meaningVi": "ngăn ngừa sự mất nước",
   "promptVi": "Bằng cách uống đủ nước mỗi ngày, mọi người có thể ngăn ngừa sự mất nước và giữ cho làn da khoẻ mạnh.",
@@ -631,7 +664,13 @@
   ],
   "explanationVi": "Cụm giới từ 'By + V-ing' giải thích phương thức thực hiện để đạt được hệ quả tích cực cho sức khỏe.",
   "rationaleVi": "Câu hướng dẫn chăm sóc sức khỏe thường ngày với cấu trúc phương thức - kết quả rõ ràng, đáp ứng đúng trình độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "By drinking enough water every day, people can to prevent dehydration and keep their skin healthy.",
+    "correction": "By drinking enough water every day, people can prevent dehydration and keep their skin healthy.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can prevent)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -641,7 +680,7 @@
   "id": "band-4.0-exp-025",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "standard equipment",
   "meaningVi": "thiết bị tiêu chuẩn",
   "promptVi": "Vì các vận động viên thiếu thiết bị tiêu chuẩn, họ có thể dễ gặp chấn thương trong lúc luyện tập.",
@@ -653,7 +692,13 @@
   ],
   "explanationVi": "Mệnh đề chỉ nguyên nhân bắt đầu bằng 'Because' đứng đầu câu để giải thích lý do dẫn đến khả năng gặp chấn thương thể thao.",
   "rationaleVi": "Cấu trúc nguyên nhân - hệ quả trực tiếp với từ vựng quen thuộc thích hợp cho trình độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Because athletes lack standard equipment, they can to easily suffer injuries during practice.",
+    "correction": "Because athletes lack standard equipment, they can easily suffer injuries during practice.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can easily)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -663,7 +708,7 @@
   "id": "band-4.0-exp-026",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "digestive problems",
   "meaningVi": "các vấn đề tiêu hóa",
   "promptVi": "Ăn nhiều thực phẩm chế biến sẵn có thể dẫn đến các vấn đề tiêu hóa đối với trẻ em.",
@@ -675,7 +720,13 @@
   ],
   "explanationVi": "Cụm danh động từ 'Eating...' làm chủ ngữ kết hợp với động từ 'lead to' để chỉ ra hậu quả sức khỏe.",
   "rationaleVi": "Chủ đề ăn uống gần gũi, sử dụng động từ chỉ nguyên nhân - kết quả cơ bản phù hợp với mục tiêu 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Eating a lot of processed food can to lead to digestive problems for children.",
+    "correction": "Eating a lot of processed food can lead to digestive problems for children.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can lead)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -685,7 +736,7 @@
   "id": "band-4.0-exp-027",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "strict timetable",
   "meaningVi": "thời gian biểu nghiêm ngặt",
   "promptVi": "Một thời gian biểu nghiêm ngặt giúp nhân viên hoàn thành dự án đúng hạn mà không cần làm ca đêm.",
@@ -697,7 +748,13 @@
   ],
   "explanationVi": "Sử dụng cấu trúc 'help somebody do something' để giải thích cơ chế giải quyết vấn đề quản lý thời gian.",
   "rationaleVi": "Câu biểu đạt mối quan hệ giải pháp - kết quả một cách rõ ràng và trực diện ở trình độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A strict timetable helps staff complete projects on time without work night shifts.",
+    "correction": "A strict timetable helps staff complete projects on time without working night shifts.",
+    "reasonVi": "Sau giới từ 'without' động từ phải chia ở dạng V-ing (without working)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -707,7 +764,7 @@
   "id": "band-4.0-exp-028",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "green parks",
   "meaningVi": "những công viên cây xanh",
   "promptVi": "Việc xây dựng những công viên cây xanh mang lại không khí sạch hơn cho cư dân thành phố.",
@@ -729,7 +786,7 @@
   "id": "band-4.0-exp-029",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "train tickets",
   "meaningVi": "vé tàu",
   "promptVi": "Giá vé tàu cao khiến nhiều người chọn di chuyển bằng xe đạp thay vì đi tàu hỏa.",
@@ -751,7 +808,7 @@
   "id": "band-4.0-exp-030",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "solar panels",
   "meaningVi": "các tấm pin mặt trời",
   "promptVi": "Nhiều trường học lắp đặt các tấm pin mặt trời để giảm thiểu tiền điện hằng tháng.",
@@ -773,7 +830,7 @@
   "id": "band-4.0-exp-031",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "traditional crafts",
   "meaningVi": "những nghề thủ công truyền thống",
   "promptVi": "Do người trẻ chuyển ra thành phố lớn, những nghề thủ công truyền thống dần suy yếu ở các làng quê.",
@@ -795,7 +852,7 @@
   "id": "band-4.0-exp-032",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "online libraries",
   "meaningVi": "các thư viện trực tuyến",
   "promptVi": "Sinh viên tìm kiếm tài liệu nghiên cứu nhanh hơn nhờ có các thư viện trực tuyến.",
@@ -807,7 +864,13 @@
   ],
   "explanationVi": "Cụm 'thanks to' đóng vai trò chỉ nguyên nhân tích cực dẫn đến kết quả học tập tốt hơn.",
   "rationaleVi": "Cấu trúc 'thanks to' ngắn gọn, minh họa rõ mối quan hệ nguyên nhân - kết quả ở mức 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Students find researchs materials faster thanks to online libraries.",
+    "correction": "Students find research materials faster thanks to online libraries.",
+    "reasonVi": "'Research' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -817,7 +880,7 @@
   "id": "band-4.0-exp-033",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "noisy classrooms",
   "meaningVi": "những lớp học ồn ào",
   "promptVi": "Học sinh khó tập trung lắng nghe bài giảng trong những lớp học ồn ào.",
@@ -839,7 +902,7 @@
   "id": "band-4.0-exp-034",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "small balcony",
   "meaningVi": "một ban công nhỏ",
   "promptVi": "Sở hữu một ban công nhỏ cho phép người dân thành thị trồng rau sạch tại nhà.",
@@ -861,7 +924,7 @@
   "id": "band-4.0-exp-035",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "local guide",
   "meaningVi": "hướng dẫn viên địa phương",
   "promptVi": "Thuê một hướng dẫn viên địa phương giúp du khách tránh bị lạc và hiểu hơn về di tích.",
@@ -883,7 +946,7 @@
   "id": "band-4.0-exp-036",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "chính sách công",
+  "topic": "Xã hội & Chính sách",
   "targetTerm": "free water fountains",
   "meaningVi": "các vòi nước uống miễn phí",
   "promptVi": "Chính quyền lắp đặt các vòi nước uống miễn phí để cắt giảm lượng rác thải từ chai nhựa.",
@@ -895,7 +958,13 @@
   ],
   "explanationVi": "Chủ ngữ chỉ cơ quan công quyền hành động đi kèm mệnh đề chỉ mục đích bảo vệ môi trường.",
   "rationaleVi": "Nội dung chính sách công đơn giản, cấu trúc chỉ mục đích nguyên nhân - kết quả rõ ràng ở level 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The government installs free water fountains to reduce plastic bottle wastes.",
+    "correction": "The government installs free water fountains to reduce plastic bottle waste.",
+    "reasonVi": "'Waste' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -905,7 +974,7 @@
   "id": "band-4.0-exp-037",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "lead to",
   "meaningVi": "dẫn đến",
   "promptVi": "Việc bỏ bữa trưa có thể dẫn đến sự mệt mỏi vào chiều muộn.",
@@ -917,7 +986,13 @@
   ],
   "explanationVi": "Cụm động từ 'lead to' diễn tả mối quan hệ nguyên nhân - hệ quả trực tiếp giữa việc bỏ bữa trưa và cảm giác mệt mỏi.",
   "rationaleVi": "Mệnh đề đơn giản diễn tả nguyên nhân - kết quả trong chủ đề thói quen hằng ngày rất phù hợp với trình độ IELTS 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Skipping lunch can to lead to tiredness in the late afternoon.",
+    "correction": "Skipping lunch can lead to tiredness in the late afternoon.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can lead)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -927,7 +1002,7 @@
   "id": "band-4.0-exp-038",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "causes",
   "meaningVi": "gây ra",
   "promptVi": "Thời tiết sương mù dày đặc gây ra nhiều sự trì hoãn tại sân bay địa phương.",
@@ -949,7 +1024,7 @@
   "id": "band-4.0-exp-039",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "result in",
   "meaningVi": "dẫn đến / gây ra kết quả",
   "promptVi": "Việc trì hoãn các nhiệm vụ nhỏ có thể dẫn đến sự vội vã vào cuối tuần.",
@@ -961,7 +1036,13 @@
   ],
   "explanationVi": "Cụm 'result in' chỉ ra rằng hành động hoãn công việc sẽ đem lại kết quả là sự dồn dập vào cuối tuần.",
   "rationaleVi": "Câu ngắn gọn, rõ ý, sử dụng cấu trúc nguyên nhân - hệ quả căn bản thích hợp cho trình độ 4.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Delaying small tasks can to result in a rush at the weekend.",
+    "correction": "Delaying small tasks can result in a rush at the weekend.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can' dùng động từ nguyên mẫu không có 'to' (can result)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -971,7 +1052,7 @@
   "id": "band-4.0-exp-040",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "năng lượng",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "because of",
   "meaningVi": "do / vì",
   "promptVi": "Nhà máy đóng cửa sớm vì sự thiếu hụt nhiên liệu.",
@@ -993,7 +1074,7 @@
   "id": "band-4.0-exp-041",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "allow",
   "meaningVi": "cho phép / giúp",
   "promptVi": "Các ứng dụng bản đồ cho phép người lái xe tránh những con đường đang tắc nghẽn.",
@@ -1015,7 +1096,7 @@
   "id": "band-4.0-exp-042",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "due to",
   "meaningVi": "do / vì",
   "promptVi": "Lễ hội thu hút nhiều cư dân do âm nhạc truyền thống sôi động.",
@@ -1037,7 +1118,7 @@
   "id": "band-4.0-exp-043",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "makes",
   "meaningVi": "làm cho / khiến",
   "promptVi": "Thời tiết nóng làm cho các vận động viên cảm thấy kiệt sức nhanh chóng trên sân.",
@@ -1059,7 +1140,7 @@
   "id": "band-4.0-exp-044",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "create",
   "meaningVi": "tạo ra",
   "promptVi": "Những chiếc cửa sổ lớn tạo ra không khí sáng sủa cho phòng khách.",
@@ -1081,7 +1162,7 @@
   "id": "band-4.0-exp-045",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "so",
   "meaningVi": "cho nên / vì vậy",
   "promptVi": "Công viên thiếu thùng rác, cho nên khách tham quan để lại rác trên cỏ.",
@@ -1103,7 +1184,7 @@
   "id": "esl-v2-r08-u01-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì máy in hết giấy, chúng tôi gửi tài liệu qua email.",
   "referenceAnswers": [
    "We emailed the document because the printer ran out of paper."
@@ -1113,7 +1194,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because + mệnh đề giải thích nguyên nhân cụ thể; ran out of paper = hết giấy. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "because + mệnh đề giải thích nguyên nhân cụ thể; ran out of paper = hết giấy. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1130,13 +1211,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Trời mưa lớn, vì vậy buổi chiếu phim ngoài trời bị hoãn.",
   "referenceAnswers": [
    "It rained heavily, so the outdoor film screening was postponed."
@@ -1146,7 +1228,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so nối nguyên nhân đã xảy ra với kết quả; was postponed là bị hoãn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so nối nguyên nhân đã xảy ra với kết quả; was postponed là bị hoãn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1163,13 +1245,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Quán cà phê đóng cửa sớm vì nhân viên phải tham gia một buổi tập huấn.",
   "referenceAnswers": [
    "The café closed early because the staff had to attend a training session."
@@ -1179,7 +1262,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because đi với cả mệnh đề the staff had to attend, không dùng because of trước mệnh đề. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "because đi với cả mệnh đề the staff had to attend, không dùng because of trước mệnh đề. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1196,23 +1279,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tôi để điện thoại ở chế độ im lặng nên không nghe thấy cuộc gọi của chị.",
   "referenceAnswers": [
-   "I put my phone on silent, so I didn't hear my sister's call."
+   "I put my phone on silent, so I didn't hear my sister's call.",
+   "I put my phone on silent, so I did not hear my sister's call."
   ],
   "grammarTags": [
    "r08_u01",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so nêu kết quả; didn't hear là quá khứ phủ định. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so nêu kết quả; didn't hear là quá khứ phủ định. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1229,13 +1314,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì bảng chỉ dẫn không rõ ràng, một số khách đã đi nhầm lối vào.",
   "referenceAnswers": [
    "Some visitors used the wrong entrance because the signs were unclear."
@@ -1245,7 +1331,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Đáp án đưa kết quả trước nguyên nhân; chú ý signs were unclear. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Đáp án đưa kết quả trước nguyên nhân; chú ý signs were unclear. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1262,13 +1348,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Cửa hàng giảm giá rau quả vào cuối ngày vì muốn hạn chế thức ăn bị bỏ đi.",
   "referenceAnswers": [
    "The shop discounts fruit and vegetables at the end of the day because it wants to reduce food waste."
@@ -1278,7 +1365,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Động từ discounts là thói quen hiện tại; because + it wants. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Động từ discounts là thói quen hiện tại; because + it wants. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1295,13 +1382,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Đèn hành lang bị hỏng, vì vậy người quản lý đặt một biển cảnh báo.",
   "referenceAnswers": [
    "The corridor light was broken, so the manager put up a warning sign."
@@ -1311,7 +1399,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: put up a sign = đặt/treo biển; so chỉ kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "put up a sign = đặt/treo biển; so chỉ kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1328,13 +1416,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Chúng tôi chọn đi tàu vì đường cao tốc đang sửa chữa.",
   "referenceAnswers": [
    "We chose to take the train because the motorway was under repair."
@@ -1344,7 +1433,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: chose to take và was under repair thể hiện nguyên nhân của lựa chọn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "chose to take và was under repair thể hiện nguyên nhân của lựa chọn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1361,13 +1450,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Cậu ấy đến muộn do xe đạp bị xẹp lốp.",
   "referenceAnswers": [
    "He arrived late because his bicycle had a flat tyre."
@@ -1377,7 +1467,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because + his bicycle had a flat tyre là mệnh đề nguyên nhân. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "because + his bicycle had a flat tyre là mệnh đề nguyên nhân. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1394,13 +1484,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Thực đơn mới có thêm các lựa chọn chay, vì vậy nhiều khách có thể tìm được món phù hợp hơn.",
   "referenceAnswers": [
    "The new menu includes more vegetarian options, so more customers can find a suitable dish."
@@ -1410,7 +1501,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so diễn tả hệ quả của thay đổi thực đơn; can là khả năng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so diễn tả hệ quả của thay đổi thực đơn; can là khả năng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1427,13 +1518,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì phòng họp quá nóng, chúng tôi mở cửa sổ trước khi bắt đầu.",
   "referenceAnswers": [
    "We opened the windows before starting because the meeting room was too hot."
@@ -1443,7 +1535,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because chỉ nguyên nhân; before starting chỉ thứ tự thời gian. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "because chỉ nguyên nhân; before starting chỉ thứ tự thời gian. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1460,23 +1552,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Cô giáo nói chậm hơn vì nhiều học sinh chưa hiểu hướng dẫn.",
   "referenceAnswers": [
-   "The teacher spoke more slowly because many students did not understand the instructions."
+   "The teacher spoke more slowly because many students did not understand the instructions.",
+   "The teacher spoke more slowly because many students didn't understand the instructions."
   ],
   "grammarTags": [
    "r08_u01",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more slowly bổ nghĩa cho spoke; because chỉ lý do. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more slowly bổ nghĩa cho spoke; because chỉ lý do. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1493,13 +1587,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r08-u01-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Xã hội & Chính sách",
   "promptVi": "Chiếc cầu tạm bị đóng, vì vậy người dân phải đi đường vòng.",
   "referenceAnswers": [
    "The temporary bridge was closed, so residents had to take a detour."
@@ -1509,7 +1606,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: had to take a detour = phải đi vòng; so liên kết nguyên nhân và kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "had to take a detour = phải đi vòng; so liên kết nguyên nhân và kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1526,13 +1623,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Vì nhóm nhận được phản hồi muộn, họ cần thêm một ngày để sửa bản thiết kế.",
   "referenceAnswers": [
    "The team needed another day to revise the design because the feedback arrived late."
@@ -1542,7 +1640,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: needed another day là hệ quả; feedback arrived late là nguyên nhân. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "needed another day là hệ quả; feedback arrived late là nguyên nhân. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1559,13 +1657,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so",
+  "targetTerm": "feedback",
+  "meaningVi": "phản hồi / góp ý"
  },
  {
   "id": "esl-v2-r08-u01-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tài khoản của tôi bị khóa vì tôi nhập sai mật khẩu quá nhiều lần.",
   "referenceAnswers": [
    "My account was locked because I entered the wrong password too many times."
@@ -1575,7 +1676,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: was locked là bị động quá khứ; because nêu nguyên nhân. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "was locked là bị động quá khứ; because nêu nguyên nhân. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1592,13 +1693,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hệ thống đặt vé gặp lỗi, vì vậy ban tổ chức mở thêm một quầy hỗ trợ.",
   "referenceAnswers": [
    "The booking system failed, so the organisers opened an additional help desk."
@@ -1608,7 +1710,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: failed là sự cố; opened an additional help desk là phản ứng/kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "failed là sự cố; opened an additional help desk là phản ứng/kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1625,13 +1727,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so"
  },
  {
   "id": "esl-v2-r08-u01-017",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Because / so",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì các tình nguyện viên đến sớm, buổi chuẩn bị đã hoàn thành trước giờ mở cửa.",
   "referenceAnswers": [
    "The preparations were finished before opening time because the volunteers arrived early."
@@ -1641,7 +1744,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: were finished là bị động; because + volunteers arrived early. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "were finished là bị động; because + volunteers arrived early. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U01), chủ đề Because / so.",
   "commonErrors": [
    {
@@ -1658,13 +1761,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Because / so",
+  "targetTerm": "volunteers",
+  "meaningVi": "tình nguyện viên"
  },
  {
   "id": "esl-v2-r08-u02-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Đi bộ một đoạn ngắn sau bữa tối có thể giúp một số người thư giãn.",
   "referenceAnswers": [
    "A short walk after dinner may help some people relax."
@@ -1674,7 +1780,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may help chỉ khả năng, không khẳng định ai cũng thư giãn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may help chỉ khả năng, không khẳng định ai cũng thư giãn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1691,13 +1797,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "dinner",
+  "meaningVi": "bữa ăn tối"
  },
  {
   "id": "esl-v2-r08-u02-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Khi đường quá trơn, xe đạp có thể khó dừng lại.",
   "referenceAnswers": [
    "When the road is very slippery, bicycles can be difficult to stop."
@@ -1707,7 +1816,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can be nêu khả năng chung trong điều kiện đường trơn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "can be nêu khả năng chung trong điều kiện đường trơn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1724,13 +1833,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Việc đọc hướng dẫn trước khi lắp ráp thường giúp người mua tránh sai sót.",
   "referenceAnswers": [
    "Reading the instructions before assembly often helps customers avoid mistakes."
@@ -1740,7 +1850,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: often giúp nêu xu hướng thay vì kết quả luôn đúng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "often giúp nêu xu hướng thay vì kết quả luôn đúng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1757,13 +1867,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Một thay đổi nhỏ trong lịch học có thể ảnh hưởng đến giờ đón con của phụ huynh.",
   "referenceAnswers": [
    "A small change to the school timetable may affect parents' pick-up times."
@@ -1773,7 +1884,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may affect diễn tả hệ quả có thể xảy ra. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may affect diễn tả hệ quả có thể xảy ra. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1790,13 +1901,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r08-u02-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tắt thông báo khi học có thể giúp bạn tập trung tốt hơn.",
   "referenceAnswers": [
    "Turning off notifications while studying can help you concentrate better."
@@ -1806,7 +1920,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can help không hứa hẹn kết quả chắc chắn cho mọi người. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "can help không hứa hẹn kết quả chắc chắn cho mọi người. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1823,13 +1937,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Giá vé tăng đôi khi khiến các gia đình cân nhắc một hoạt động khác.",
   "referenceAnswers": [
    "Higher ticket prices sometimes make families consider a different activity."
@@ -1839,7 +1954,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: sometimes làm rõ mức độ xảy ra; make + object + base verb. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "sometimes làm rõ mức độ xảy ra; make + object + base verb. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1856,13 +1971,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "ticket",
+  "meaningVi": "tấm vé"
  },
  {
   "id": "esl-v2-r08-u02-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Trồng cây gần sân trường có thể tạo thêm bóng mát vào buổi trưa.",
   "referenceAnswers": [
    "Planting trees near the school playground may provide more shade at midday."
@@ -1872,7 +1990,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may provide là lợi ích tiềm năng, không phải chắc chắn ngay lập tức. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may provide là lợi ích tiềm năng, không phải chắc chắn ngay lập tức. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1889,13 +2007,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Nếu thiếu biển chỉ dẫn, khách lần đầu đến có thể mất thời gian tìm phòng.",
   "referenceAnswers": [
    "Without clear signs, first-time visitors may spend longer looking for the room."
@@ -1905,7 +2024,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: without + noun phrase; may spend longer là hệ quả khả dĩ. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "without + noun phrase; may spend longer là hệ quả khả dĩ. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1922,13 +2041,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Thêm giờ mở cửa thường giúp những người làm ca tối dễ đến thư viện hơn.",
   "referenceAnswers": [
    "Longer opening hours often make it easier for night-shift workers to visit the library."
@@ -1938,7 +2058,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: often make it easier: xu hướng, không tuyệt đối. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "often make it easier: xu hướng, không tuyệt đối. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1955,13 +2075,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "night-shift workers",
+  "meaningVi": "người làm ca tối"
  },
  {
   "id": "esl-v2-r08-u02-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Những câu hỏi quá dài có thể làm học sinh hiểu sai yêu cầu.",
   "referenceAnswers": [
    "Very long questions can cause students to misunderstand the task."
@@ -1971,7 +2094,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can cause + object + to V chỉ hệ quả có khả năng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "can cause + object + to V chỉ hệ quả có khả năng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -1988,13 +2111,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r08-u02-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Lưu một bản sao trực tuyến đôi khi giúp bạn khôi phục tệp bị xóa.",
   "referenceAnswers": [
    "Saving an online backup can sometimes help you recover a deleted file."
@@ -2004,7 +2130,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: can sometimes help tránh khẳng định mọi dữ liệu sẽ lấy lại được. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "can sometimes help tránh khẳng định mọi dữ liệu sẽ lấy lại được. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2021,13 +2147,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Khi phòng đông người, chất lượng âm thanh có thể giảm.",
   "referenceAnswers": [
    "Sound quality may decline when the room is crowded."
@@ -2037,7 +2164,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may decline chỉ khả năng; when chỉ điều kiện bối cảnh. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may decline chỉ khả năng; when chỉ điều kiện bối cảnh. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2054,13 +2181,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "quality",
+  "meaningVi": "chất lượng"
  },
  {
   "id": "esl-v2-r08-u02-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một lời nhắc lịch sự thường giúp mọi người xếp hàng đúng thứ tự.",
   "referenceAnswers": [
    "A polite reminder often helps people queue in the correct order."
@@ -2070,7 +2200,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: often chỉ xu hướng, không chắc chắn 100%. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "often chỉ xu hướng, không chắc chắn 100%. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2087,13 +2217,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "polite reminder",
+  "meaningVi": "lời nhắc lịch sự"
  },
  {
   "id": "esl-v2-r08-u02-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Tăng số thùng phân loại rác có thể khuyến khích cư dân tái chế nhiều hơn.",
   "referenceAnswers": [
    "Adding more sorting bins may encourage residents to recycle more."
@@ -2103,7 +2236,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may encourage không thay bằng will vì kết quả chưa chắc xảy ra. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may encourage không thay bằng will vì kết quả chưa chắc xảy ra. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2120,13 +2253,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "residents",
+  "meaningVi": "cư dân"
  },
  {
   "id": "esl-v2-r08-u02-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Khi thông tin trên nhãn quá nhỏ, một số khách có thể bỏ sót cảnh báo.",
   "referenceAnswers": [
    "When the print on a label is too small, some customers may miss the warning."
@@ -2136,7 +2272,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: some customers may miss: giới hạn đối tượng và mức chắc chắn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "some customers may miss: giới hạn đối tượng và mức chắc chắn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2153,13 +2289,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u02-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Ăn trưa quá muộn đôi khi khiến tôi khó tập trung vào buổi chiều.",
   "referenceAnswers": [
    "Having lunch very late sometimes makes it hard for me to focus in the afternoon."
@@ -2169,7 +2306,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: sometimes makes it hard for me mô tả trải nghiệm cá nhân có điều kiện. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "sometimes makes it hard for me mô tả trải nghiệm cá nhân có điều kiện. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2186,13 +2323,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể",
+  "targetTerm": "afternoon",
+  "meaningVi": "buổi chiều"
  },
  {
   "id": "esl-v2-r08-u02-017",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Hệ quả cụ thể",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Một ứng dụng cập nhật thường xuyên có thể trở nên dễ dùng hơn theo thời gian.",
   "referenceAnswers": [
    "An app that is updated regularly may become easier to use over time."
@@ -2202,7 +2342,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may become không coi cải tiến là hệ quả chắc chắn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may become không coi cải tiến là hệ quả chắc chắn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U02), chủ đề Hệ quả cụ thể.",
   "commonErrors": [
    {
@@ -2219,13 +2359,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hệ quả cụ thể"
  },
  {
   "id": "esl-v2-r08-u03-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bạn đun nước đến 100 độ C ở áp suất khí quyển tiêu chuẩn, nước sẽ sôi.",
   "referenceAnswers": [
    "If you heat water to 100°C at standard atmospheric pressure, it boils."
@@ -2235,7 +2376,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Điều kiện loại 0 dùng hiện tại đơn ở cả hai vế cho quy luật có điều kiện. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Điều kiện loại 0 dùng hiện tại đơn ở cả hai vế cho quy luật có điều kiện. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2252,13 +2393,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Nếu ngày mai trời mưa, chúng tôi sẽ chuyển buổi tập vào trong nhà.",
   "referenceAnswers": [
    "If it rains tomorrow, we will move the practice session indoors."
@@ -2268,7 +2410,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + hiện tại đơn; mệnh đề chính will + V cho tương lai có điều kiện. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + hiện tại đơn; mệnh đề chính will + V cho tương lai có điều kiện. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2285,13 +2427,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if",
+  "targetTerm": "tomorrow",
+  "meaningVi": "ngày mai"
  },
  {
   "id": "esl-v2-r08-u03-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Nếu bạn quên mật khẩu, hệ thống sẽ gửi một liên kết đặt lại qua email.",
   "referenceAnswers": [
    "If you forget your password, the system will email you a reset link."
@@ -2301,7 +2446,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + present, will + base verb; reset link là liên kết đặt lại. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + present, will + base verb; reset link là liên kết đặt lại. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2318,13 +2463,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bấm nút màu xanh, bạn sẽ thấy lịch làm việc của tuần này.",
   "referenceAnswers": [
    "If you press the blue button, you will see this week's schedule."
@@ -2334,7 +2480,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: press dùng hiện tại đơn dù ý nói tương lai; will see là kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "press dùng hiện tại đơn dù ý nói tương lai; will see là kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2351,13 +2497,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu chúng tôi đặt chỗ trước thứ Sáu, giá vé sẽ rẻ hơn.",
   "referenceAnswers": [
    "If we book before Friday, the tickets will be cheaper."
@@ -2367,7 +2514,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Điều kiện loại 1; cheaper là tính từ so sánh hơn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Điều kiện loại 1; cheaper là tính từ so sánh hơn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2384,13 +2531,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bạn trộn màu vẽ xanh lam với màu vẽ vàng, bạn sẽ được màu xanh lá.",
   "referenceAnswers": [
    "If you mix blue and yellow paint, you get green."
@@ -2400,7 +2548,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Điều kiện loại 0, kết quả thường đúng trong ngữ cảnh màu vẽ. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Điều kiện loại 0, kết quả thường đúng trong ngữ cảnh màu vẽ. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2417,23 +2565,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu buổi họp kết thúc sớm, tôi sẽ ghé hiệu sách trên đường về.",
   "referenceAnswers": [
-   "If the meeting finishes early, I will stop at the bookshop on my way home."
+   "If the meeting finishes early, I will stop at the bookshop on my way home.",
+   "If the meeting finishes early, I'll stop at the bookshop on my way home."
   ],
   "grammarTags": [
    "r08_u03",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Không dùng will finishes trong mệnh đề if. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Không dùng will finishes trong mệnh đề if. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2450,13 +2600,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Nếu có đủ người đăng ký, câu lạc bộ sẽ mở thêm một lớp buổi tối.",
   "referenceAnswers": [
    "If enough people sign up, the club will open another evening class."
@@ -2466,7 +2617,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: sign up = đăng ký; kết quả phụ thuộc số người đăng ký. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "sign up = đăng ký; kết quả phụ thuộc số người đăng ký. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2483,13 +2634,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if",
+  "targetTerm": "evening",
+  "meaningVi": "buổi tối"
  },
  {
   "id": "esl-v2-r08-u03-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu bạn để bánh mì ngoài không khí quá lâu, nó sẽ bị khô.",
   "referenceAnswers": [
    "If you leave bread exposed to the air for too long, it dries out."
@@ -2499,7 +2653,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Điều kiện loại 0 mô tả khuynh hướng chung; dries out = bị khô. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Điều kiện loại 0 mô tả khuynh hướng chung; dries out = bị khô. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2516,23 +2670,26 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu chúng ta không gửi bản nháp hôm nay, người biên tập sẽ không kịp xem nó.",
   "referenceAnswers": [
-   "If we don't send the draft today, the editor won't have time to review it."
+   "If we don't send the draft today, the editor won't have time to review it.",
+   "If we do not send the draft today, the editor won't have time to review it.",
+   "If we don't send the draft today, the editor will not have time to review it."
   ],
   "grammarTags": [
    "r08_u03",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Điều kiện phủ định: don't send, kết quả phủ định won't have time. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Điều kiện phủ định: don't send, kết quả phủ định won't have time. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2549,13 +2706,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Nếu tàu đến đúng giờ, chúng tôi sẽ có mười phút để đổi tuyến.",
   "referenceAnswers": [
    "If the train arrives on time, we will have ten minutes to change lines."
@@ -2565,7 +2723,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: arrives hiện tại đơn sau if; will have là kết quả tương lai. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "arrives hiện tại đơn sau if; will have là kết quả tương lai. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2582,13 +2740,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu đóng kín cửa sổ, căn phòng thường ấm hơn vào ban đêm.",
   "referenceAnswers": [
    "If you keep the windows closed, the room is usually warmer at night."
@@ -2598,7 +2757,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: Zero conditional cho thói quen/quan sát; usually không khẳng định tuyệt đối. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "Zero conditional cho thói quen/quan sát; usually không khẳng định tuyệt đối. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2615,23 +2774,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Nếu cô ấy đồng ý đổi ca, tôi sẽ có thể tham dự buổi họp phụ huynh.",
   "referenceAnswers": [
-   "If she agrees to swap shifts, I will be able to attend the parents' meeting."
+   "If she agrees to swap shifts, I will be able to attend the parents' meeting.",
+   "If she agrees to swap shifts, I'll be able to attend the parents' meeting."
   ],
   "grammarTags": [
    "r08_u03",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + agrees, will be able to diễn tả khả năng khi điều kiện thỏa mãn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + agrees, will be able to diễn tả khả năng khi điều kiện thỏa mãn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2648,13 +2809,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r08-u03-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu không có ai nhận chiếc áo khoác, lễ tân sẽ giữ nó đến cuối tuần.",
   "referenceAnswers": [
    "If no one claims the coat, reception will keep it until the weekend."
@@ -2664,7 +2828,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: no one claims là điều kiện; will keep là hành động dự kiến. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "no one claims là điều kiện; will keep là hành động dự kiến. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2681,13 +2845,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if",
+  "targetTerm": "weekend",
+  "meaningVi": "dịp cuối tuần"
  },
  {
   "id": "esl-v2-r08-u03-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bạn nhấn lưu trước khi đóng trang, những thay đổi sẽ được giữ lại.",
   "referenceAnswers": [
    "If you click Save before closing the page, your changes will be kept."
@@ -2697,7 +2864,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: will be kept là bị động tương lai; before + V-ing. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "will be kept là bị động tương lai; before + V-ing. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2714,13 +2881,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu bạn mở nắp khi nước đang sôi, hơi nước có thể làm bỏng tay.",
   "referenceAnswers": [
    "If you lift the lid while the water is boiling, the steam can burn your hand."
@@ -2730,7 +2898,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + present, can + V chỉ rủi ro có khả năng, không phải chắc chắn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + present, can + V chỉ rủi ro có khả năng, không phải chắc chắn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2747,13 +2915,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if"
  },
  {
   "id": "esl-v2-r08-u03-017",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Điều kiện if",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nếu nhóm đạt được thỏa thuận vào sáng mai, họ sẽ công bố lịch mới.",
   "referenceAnswers": [
    "If the team reaches an agreement tomorrow morning, they will announce the new timetable."
@@ -2763,7 +2932,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: reaches hiện tại đơn; announce kết quả có điều kiện. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "reaches hiện tại đơn; announce kết quả có điều kiện. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U03), chủ đề Điều kiện if.",
   "commonErrors": [
    {
@@ -2780,13 +2949,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Điều kiện if",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r08-u04-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc bàn này rộng hơn chiếc bàn cũ vì nó có thêm một ngăn kéo bên.",
   "referenceAnswers": [
    "This desk is wider than the old one because it has an extra side drawer."
@@ -2796,7 +2968,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: wider than là so sánh hơn; because nêu tiêu chí cụ thể. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "wider than là so sánh hơn; because nêu tiêu chí cụ thể. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2813,13 +2985,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Tuyến đường ven sông ngắn hơn nhưng đông hơn vì có nhiều xe máy.",
   "referenceAnswers": [
    "The riverside route is shorter but busier because there are more motorbikes."
@@ -2829,7 +3002,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: shorter/busier là hai so sánh khác nhau; because chỉ lý do đông hơn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "shorter/busier là hai so sánh khác nhau; because chỉ lý do đông hơn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2846,13 +3019,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc cốc bằng thép bền hơn cốc thủy tinh vì nó ít dễ vỡ hơn.",
   "referenceAnswers": [
    "The steel cup is more durable than the glass cup because it is less likely to break."
@@ -2862,7 +3036,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more durable than, less likely to break là các so sánh có lý do. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more durable than, less likely to break là các so sánh có lý do. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2879,13 +3053,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bài hướng dẫn bằng hình dễ hiểu hơn bản chỉ có chữ vì các bước được minh họa rõ.",
   "referenceAnswers": [
    "The illustrated guide is easier to follow than the text-only version because each step is shown clearly."
@@ -2895,7 +3070,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: easier to follow than: tiêu chí khả năng theo dõi hướng dẫn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "easier to follow than: tiêu chí khả năng theo dõi hướng dẫn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2912,23 +3087,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Đi xe đạp rẻ hơn đi taxi vì bạn không phải trả tiền cho mỗi chuyến.",
   "referenceAnswers": [
-   "Cycling is cheaper than taking a taxi because you do not pay for each trip."
+   "Cycling is cheaper than taking a taxi because you do not pay for each trip.",
+   "Cycling is cheaper than taking a taxi because you don't pay for each trip."
   ],
   "grammarTags": [
    "r08_u04",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: cheaper than + V-ing; because giải thích chi phí. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "cheaper than + V-ing; because giải thích chi phí. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2945,13 +3122,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc hộp nhỏ nhẹ hơn chiếc hộp lớn vì nó làm bằng bìa mỏng.",
   "referenceAnswers": [
    "The small box is lighter than the large one because it is made of thin cardboard."
@@ -2961,7 +3139,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: lighter than; is made of nêu vật liệu. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "lighter than; is made of nêu vật liệu. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -2978,13 +3156,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Lớp buổi sáng yên tĩnh hơn lớp buổi chiều vì có ít học viên hơn.",
   "referenceAnswers": [
    "The morning class is quieter than the afternoon class because it has fewer students."
@@ -2994,7 +3173,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: quieter than; fewer + danh từ đếm được số nhiều. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "quieter than; fewer + danh từ đếm được số nhiều. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3011,13 +3190,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r08-u04-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bản đồ mới hữu ích hơn bản cũ vì có ghi rõ các lối vào.",
   "referenceAnswers": [
    "The new map is more useful than the old one because the entrances are clearly marked."
@@ -3027,7 +3209,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more useful than; are marked là bị động. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more useful than; are marked là bị động. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3044,23 +3226,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "map",
+  "meaningVi": "tấm bản đồ"
  },
  {
   "id": "esl-v2-r08-u04-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Mẫu đơn trực tuyến nhanh hơn mẫu giấy vì người dùng không cần viết tay.",
   "referenceAnswers": [
-   "The online form is quicker to complete than the paper form because users do not need to write by hand."
+   "The online form is quicker to complete than the paper form because users do not need to write by hand.",
+   "The online form is quicker to complete than the paper form because users don't need to write by hand."
   ],
   "grammarTags": [
    "r08_u04",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: quicker to complete than chỉ việc hoàn thành biểu mẫu. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "quicker to complete than chỉ việc hoàn thành biểu mẫu. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3077,13 +3263,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc áo khoác này ấm hơn chiếc áo kia vì có lớp lót dày hơn.",
   "referenceAnswers": [
    "This jacket is warmer than the other one because it has a thicker lining."
@@ -3093,7 +3280,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: warmer than; thicker so sánh lớp lót. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "warmer than; thicker so sánh lớp lót. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3110,13 +3297,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "jacket",
+  "meaningVi": "áo khoác"
  },
  {
   "id": "esl-v2-r08-u04-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Khu vườn phía sau mát hơn sân trước vì có nhiều cây che bóng.",
   "referenceAnswers": [
    "The back garden is cooler than the front yard because more trees provide shade."
@@ -3126,7 +3316,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: cooler than; because giải thích cơ chế tạo bóng mát. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "cooler than; because giải thích cơ chế tạo bóng mát. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3143,13 +3333,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "garden",
+  "meaningVi": "khu vườn"
  },
  {
   "id": "esl-v2-r08-u04-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bản ghi âm chậm dễ nghe hơn bản nhanh vì các từ được phát âm rõ hơn.",
   "referenceAnswers": [
    "The slower recording is easier to understand than the fast one because the words are pronounced more clearly."
@@ -3159,7 +3352,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: slower; more clearly bổ nghĩa cho are pronounced. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "slower; more clearly bổ nghĩa cho are pronounced. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3176,13 +3369,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hộp đựng tái sử dụng tiết kiệm hơn túi dùng một lần nếu bạn dùng nó nhiều lần.",
   "referenceAnswers": [
    "A reusable container is more economical than disposable bags if you use it many times."
@@ -3192,7 +3386,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more economical than; if thêm điều kiện cho đánh giá. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more economical than; if thêm điều kiện cho đánh giá. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3209,13 +3403,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Mua thực phẩm theo mùa đôi khi rẻ hơn mua trái mùa vì nguồn cung dồi dào hơn.",
   "referenceAnswers": [
    "Buying seasonal produce is sometimes cheaper than buying out-of-season produce because supplies are more plentiful."
@@ -3225,7 +3420,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: sometimes giới hạn kết luận; cheaper than so sánh chi phí. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "sometimes giới hạn kết luận; cheaper than so sánh chi phí. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3242,13 +3437,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chỗ ngồi gần cửa sổ sáng hơn chỗ ở góc vì nhận được nhiều ánh sáng tự nhiên hơn.",
   "referenceAnswers": [
    "The seat near the window is brighter than the one in the corner because it gets more natural light."
@@ -3258,7 +3454,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: brighter than so sánh độ sáng, natural light là ánh sáng tự nhiên. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "brighter than so sánh độ sáng, natural light là ánh sáng tự nhiên. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3275,13 +3471,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "window",
+  "meaningVi": "cửa sổ"
  },
  {
   "id": "esl-v2-r08-u04-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Thư điện tử phù hợp hơn tin nhắn ngắn cho thông báo này vì có nhiều chi tiết cần giải thích.",
   "referenceAnswers": [
    "An email is more suitable than a short text message for this notice because several details need explaining."
@@ -3291,7 +3490,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more suitable than thể hiện phù hợp cho mục đích cụ thể. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more suitable than thể hiện phù hợp cho mục đích cụ thể. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3308,13 +3507,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do"
  },
  {
   "id": "esl-v2-r08-u04-017",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "So sánh có lý do",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Chuyến tàu sớm thuận tiện hơn cho chúng tôi vì nó đến trước giờ làm.",
   "referenceAnswers": [
    "The early train is more convenient for us than the later one because it arrives before work starts."
@@ -3324,7 +3524,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: more convenient than kết hợp lý do liên quan thời gian đến. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "more convenient than kết hợp lý do liên quan thời gian đến. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U04), chủ đề So sánh có lý do.",
   "commonErrors": [
    {
@@ -3341,13 +3541,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "So sánh có lý do",
+  "targetTerm": "convenient",
+  "meaningVi": "thuận tiện"
  },
  {
   "id": "esl-v2-r08-u05-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi đặt một chiếc hộp ở cửa để khách có thể trả lại thẻ ra vào.",
   "referenceAnswers": [
    "We placed a box by the door so that visitors could return their access cards."
@@ -3357,7 +3560,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that + subject + could nêu mục đích; không có thông tin khách đã trả thẻ. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that + subject + could nêu mục đích; không có thông tin khách đã trả thẻ. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3374,13 +3577,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Cửa hàng kéo dài giờ mở cửa để phục vụ người làm ca tối, và lượng khách buổi tối đã tăng.",
   "referenceAnswers": [
    "The shop extended its opening hours to serve night-shift workers, and evening visits increased."
@@ -3390,7 +3594,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to serve là mục đích; visits increased là kết quả đã quan sát. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to serve là mục đích; visits increased là kết quả đã quan sát. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3407,13 +3611,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả",
+  "targetTerm": "night-shift workers",
+  "meaningVi": "người làm ca tối"
  },
  {
   "id": "esl-v2-r08-u05-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Cô ấy đặt báo thức sớm hơn để không bị lỡ chuyến tàu.",
   "referenceAnswers": [
    "She set an earlier alarm so that she would not miss the train."
@@ -3423,7 +3630,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that she would not là mục đích tránh điều không mong muốn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that she would not là mục đích tránh điều không mong muốn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3440,13 +3647,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Chúng tôi đổi sang giấy tái chế để giảm rác, nhưng tổng lượng giấy sử dụng chưa giảm.",
   "referenceAnswers": [
    "We switched to recycled paper to reduce waste, but our total paper use has not fallen."
@@ -3456,7 +3664,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to reduce waste nêu ý định; but phản ánh kết quả chưa đạt. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to reduce waste nêu ý định; but phản ánh kết quả chưa đạt. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3473,13 +3681,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện mở phòng học nhóm để học sinh có nơi thảo luận, và phòng nhanh chóng kín chỗ.",
   "referenceAnswers": [
    "The library opened a group-study room so that students could discuss their work, and the room quickly filled up."
@@ -3489,7 +3698,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that nêu mục đích; filled up nêu kết quả xảy ra. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that nêu mục đích; filled up nêu kết quả xảy ra. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3506,13 +3715,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r08-u05-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Đội bảo trì sơn vạch vàng để người đi bộ nhìn rõ mép bậc thềm.",
   "referenceAnswers": [
    "The maintenance team painted a yellow line to make the edge of the step easier to see."
@@ -3522,7 +3734,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to make diễn tả mục đích; không suy ra tai nạn đã giảm. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to make diễn tả mục đích; không suy ra tai nạn đã giảm. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3539,13 +3751,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhà hàng bổ sung hình ảnh vào thực đơn để khách dễ chọn món, và thời gian gọi món đã ngắn hơn.",
   "referenceAnswers": [
    "The restaurant added photos to its menu to help customers choose, and ordering took less time."
@@ -3555,7 +3768,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to help là mục đích; took less time là kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to help là mục đích; took less time là kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3572,13 +3785,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Tôi tắt máy tính sớm để ngủ đúng giờ, nhưng rồi vẫn thức khuya đọc sách.",
   "referenceAnswers": [
    "I turned off my computer early to go to bed on time, but I stayed up reading."
@@ -3588,7 +3802,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to go to bed là mục đích; but cho biết kết quả trái mong đợi. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to go to bed là mục đích; but cho biết kết quả trái mong đợi. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3605,13 +3819,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Nhà trường gửi thông báo bằng hai ngôn ngữ để mọi phụ huynh đều có thể hiểu.",
   "referenceAnswers": [
    "The school sent the notice in two languages so that all parents could understand it."
@@ -3621,7 +3836,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that all parents could chỉ mục đích hướng tới, không chứng minh ai cũng đã hiểu. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that all parents could chỉ mục đích hướng tới, không chứng minh ai cũng đã hiểu. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3638,13 +3853,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả",
+  "targetTerm": "parents",
+  "meaningVi": "cha mẹ / phụ huynh"
  },
  {
   "id": "esl-v2-r08-u05-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Câu lạc bộ giảm phí tham gia để thu hút thêm thành viên, và số người đăng ký đã tăng.",
   "referenceAnswers": [
    "The club lowered its membership fee to attract more members, and registrations increased."
@@ -3654,7 +3872,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to attract là mục đích; registrations increased là kết quả thực. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to attract là mục đích; registrations increased là kết quả thực. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3671,13 +3889,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chúng tôi cài đặt chương trình sao lưu để tránh mất dữ liệu, nhưng một vài tệp cũ vẫn không thể khôi phục.",
   "referenceAnswers": [
    "We installed backup software to prevent data loss, but some old files still could not be recovered."
@@ -3687,7 +3906,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to prevent chỉ mục đích, but chỉ giới hạn hiệu quả thực tế. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to prevent chỉ mục đích, but chỉ giới hạn hiệu quả thực tế. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3704,13 +3923,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cậu ấy chuyển bàn học đến gần cửa sổ để có ánh sáng tự nhiên hơn.",
   "referenceAnswers": [
    "He moved his desk closer to the window to get more natural light."
@@ -3720,7 +3940,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to get + noun phrase biểu thị mục đích, không cần suy diễn tác động. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to get + noun phrase biểu thị mục đích, không cần suy diễn tác động. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3737,13 +3957,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả",
+  "targetTerm": "window",
+  "meaningVi": "cửa sổ"
  },
  {
   "id": "esl-v2-r08-u05-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nhân viên đặt thùng riêng cho pin cũ để khách không bỏ pin vào rác thường.",
   "referenceAnswers": [
    "Staff provided a separate bin for used batteries so that customers would not put them in ordinary rubbish."
@@ -3753,7 +3976,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that + would not giải thích mục đích phòng tránh. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that + would not giải thích mục đích phòng tránh. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3770,13 +3993,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Ban tổ chức gửi sơ đồ trước để người tham dự dễ tìm phòng, và rất ít người đi nhầm.",
   "referenceAnswers": [
    "The organisers sent the floor plan in advance to help attendees find the room, and very few people got lost."
@@ -3786,7 +4010,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to help là mục đích; few people got lost là kết quả. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to help là mục đích; few people got lost là kết quả. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3803,13 +4027,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u05-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Chúng tôi treo rèm dày để giảm tiếng ồn từ đường phố, nhưng phòng vẫn khá ồn.",
   "referenceAnswers": [
    "We hung thick curtains to reduce street noise, but the room remained quite noisy."
@@ -3819,7 +4044,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to reduce là ý định; remained noisy là kết quả không như mong đợi. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to reduce là ý định; remained noisy là kết quả không như mong đợi. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3836,13 +4061,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả",
+  "targetTerm": "street",
+  "meaningVi": "con phố / đường phố"
  },
  {
   "id": "esl-v2-r08-u05-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Mục đích–kết quả",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bác bảo vệ ghi số xe để xác định xe bị bỏ quên, và đã tìm được chủ của hai chiếc.",
   "referenceAnswers": [
    "The security guard recorded licence plates to identify abandoned vehicles, and found the owners of two of them."
@@ -3852,7 +4080,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to identify là mục đích; found the owners là kết quả có thực. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to identify là mục đích; found the owners là kết quả có thực. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U05), chủ đề Mục đích–kết quả.",
   "commonErrors": [
    {
@@ -3869,13 +4097,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Mục đích–kết quả"
  },
  {
   "id": "esl-v2-r08-u06-001",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Nếu đợt giao hàng đến muộn, cửa hàng có thể hết loại sữa này.",
   "referenceAnswers": [
    "If the delivery arrives late, the shop may run out of this type of milk."
@@ -3885,7 +4114,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + present; may run out chỉ hậu quả có khả năng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + present; may run out chỉ hậu quả có khả năng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -3902,13 +4131,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-002",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc ghế bên cửa vững hơn chiếc ghế bên cạnh vì chân ghế của nó được gia cố bằng kim loại.",
   "referenceAnswers": [
    "The chair by the door is sturdier than the one beside it because its legs are reinforced with metal."
@@ -3918,7 +4148,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: sturdier là so sánh ngầm với ghế khác; because giải thích. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "sturdier là so sánh ngầm với ghế khác; because giải thích. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -3935,13 +4165,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-003",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi chuyển thông báo lên đầu trang để người đọc dễ nhìn thấy, nhưng số lượt nhấp chưa tăng.",
   "referenceAnswers": [
    "We moved the notice to the top of the page to make it easier to see, but clicks have not increased."
@@ -3951,7 +4182,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to make là mục đích; have not increased là kết quả không như dự kiến. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to make là mục đích; have not increased là kết quả không như dự kiến. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -3968,13 +4199,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-004",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu người tham dự đến trước tám giờ, họ sẽ có thời gian nhận tài liệu.",
   "referenceAnswers": [
    "If participants arrive before eight, they will have time to collect the materials."
@@ -3984,7 +4216,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + present, will have; tránh will arrive trong if. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + present, will have; tránh will arrive trong if. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4001,13 +4233,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-005",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tấm thảm mới mềm hơn nhưng có thể khó vệ sinh hơn vì nó dày hơn.",
   "referenceAnswers": [
    "The new rug is softer but may be harder to clean because it is thicker."
@@ -4017,7 +4250,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: softer và harder so sánh, may giới hạn kết luận. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "softer và harder so sánh, may giới hạn kết luận. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4034,13 +4267,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-006",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chúng tôi đặt nước uống ở cuối hành lang để tránh làm ướt khu vực máy tính.",
   "referenceAnswers": [
    "We placed the drinks at the end of the corridor to avoid spills near the computers."
@@ -4050,7 +4284,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to avoid chỉ mục đích; không khẳng định sự cố đã được loại bỏ. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to avoid chỉ mục đích; không khẳng định sự cố đã được loại bỏ. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4067,23 +4301,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-007",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Vì hóa đơn thiếu địa chỉ, nhân viên đã yêu cầu khách gửi lại thông tin.",
   "referenceAnswers": [
-   "The employee asked the customer to resend the details because the invoice did not include an address."
+   "The employee asked the customer to resend the details because the invoice did not include an address.",
+   "The employee asked the customer to resend the details because the invoice didn't include an address."
   ],
   "grammarTags": [
    "r08_u06",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: because giải thích nguyên nhân cụ thể; did not include là phủ định quá khứ. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "because giải thích nguyên nhân cụ thể; did not include là phủ định quá khứ. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4100,13 +4336,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-008",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Một tấm biển lớn hơn có thể giúp tài xế nhận ra lối rẽ sớm hơn.",
   "referenceAnswers": [
    "A larger sign may help drivers notice the turn earlier."
@@ -4116,7 +4353,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: larger là so sánh hơn; may chỉ khả năng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "larger là so sánh hơn; may chỉ khả năng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4133,13 +4370,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới",
+  "targetTerm": "drivers",
+  "meaningVi": "người lái xe"
  },
  {
   "id": "esl-v2-r08-u06-009",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu nhiệt độ trong kho tăng quá cao, hệ thống sẽ gửi cảnh báo.",
   "referenceAnswers": [
    "If the storage-room temperature gets too high, the system will send an alert."
@@ -4149,7 +4389,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: If + present, will + V; gets too high diễn tả vượt ngưỡng. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "If + present, will + V; gets too high diễn tả vượt ngưỡng. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4166,13 +4406,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-010",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Nhà ga bổ sung ghế ngồi để hành khách chờ thoải mái hơn, và nhiều người đã sử dụng khu vực mới.",
   "referenceAnswers": [
    "The station added seating to make waiting more comfortable, and many passengers used the new area."
@@ -4182,7 +4423,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: to make là mục đích, used là kết quả quan sát. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "to make là mục đích, used là kết quả quan sát. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4199,23 +4440,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới",
+  "targetTerm": "passengers",
+  "meaningVi": "hành khách"
  },
  {
   "id": "esl-v2-r08-u06-011",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bộ sạc này nhẹ hơn vì nó không có cục nguồn rời.",
   "referenceAnswers": [
-   "This charger is lighter because it does not have a separate power brick."
+   "This charger is lighter because it does not have a separate power brick.",
+   "This charger is lighter because it doesn't have a separate power brick."
   ],
   "grammarTags": [
    "r08_u06",
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: lighter là so sánh hơn; because nêu nguyên nhân. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "lighter là so sánh hơn; because nêu nguyên nhân. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4232,13 +4477,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-012",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu bạn để chế độ tự động, màn hình thường giảm độ sáng khi phòng tối.",
   "referenceAnswers": [
    "If you leave the automatic setting on, the screen usually dims when the room is dark."
@@ -4248,7 +4494,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: zero conditional với usually cho hành vi máy thường xảy ra. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "zero conditional với usually cho hành vi máy thường xảy ra. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4265,13 +4511,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-013",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Vì khóa cửa bị kẹt, chúng tôi phải dùng lối ra phía sau.",
   "referenceAnswers": [
    "We had to use the rear exit because the door lock was stuck."
@@ -4281,7 +4528,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: had to use là hệ quả; because chỉ lý do. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "had to use là hệ quả; because chỉ lý do. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4298,13 +4545,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-014",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Các dòng chữ lớn hơn có thể giúp người đọc tìm tiêu đề nhanh hơn.",
   "referenceAnswers": [
    "Larger text may help readers find the heading more quickly."
@@ -4314,7 +4562,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: may help không tuyệt đối; more quickly là trạng từ so sánh. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "may help không tuyệt đối; more quickly là trạng từ so sánh. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4331,13 +4579,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-015",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Họ chuyển lịch tập sang thứ Bảy để mọi người có thể tham gia, nhưng vẫn có hai người bận.",
   "referenceAnswers": [
    "They moved the practice session to Saturday so that more people could attend, but two were still unavailable."
@@ -4347,7 +4596,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: so that chỉ mục đích, but cho biết kết quả bị giới hạn. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "so that chỉ mục đích, but cho biết kết quả bị giới hạn. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4364,13 +4613,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  },
  {
   "id": "esl-v2-r08-u06-016",
   "practiceLevel": "4.0",
   "type": "sentence",
-  "topic": "Dịch tình huống mới",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu chúng tôi đặt thêm hai thùng rác, khu vực chờ có thể sạch hơn.",
   "referenceAnswers": [
    "If we add two more bins, the waiting area may become cleaner."
@@ -4380,7 +4630,7 @@
    "cause_condition_purpose_comparison",
    "sentence"
   ],
-  "explanationVi": "Phân tích: first conditional với may, cleaner là so sánh kết quả có thể xảy ra. Tự kiểm tra: đã giữ đúng ai làm gì, quan hệ nhân–quả/điều kiện/mục đích, mức chắc chắn và thời gian chưa? Các cách dịch tự nhiên khác vẫn có thể đúng.",
+  "explanationVi": "first conditional với may, cleaner là so sánh kết quả có thể xảy ra. Các cách dịch tự nhiên khác vẫn có thể đúng.",
   "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài bổ sung từ bộ ESL v2 (R08-U06), chủ đề Dịch tình huống mới.",
   "commonErrors": [
    {
@@ -4397,6 +4647,7 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Dịch tình huống mới"
  }
 ]

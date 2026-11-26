@@ -3,7 +3,7 @@
   "id": "band-3.0-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "yesterday",
   "meaningVi": "hôm qua",
   "promptVi": "Hôm qua tôi đã thăm ông bà.",
@@ -25,7 +25,7 @@
   "id": "band-3.0-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "ticket",
   "meaningVi": "vé",
   "promptVi": "Tôi đã mua hai vé tàu sáng nay.",
@@ -47,7 +47,7 @@
   "id": "band-3.0-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Thời tiết",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "rain",
   "meaningVi": "mưa",
   "promptVi": "Trời mưa nên chúng tôi ở nhà.",
@@ -69,7 +69,7 @@
   "id": "band-3.0-cal-01",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Đời sống",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "lost my key",
   "meaningVi": "đánh mất chìa khóa",
   "promptVi": "Hôm qua tôi làm mất chìa khóa.",
@@ -91,7 +91,7 @@
   "id": "band-3.0-cal-02",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "visits her grandmother",
   "meaningVi": "thăm bà",
   "promptVi": "Cô ấy thăm bà vào mỗi Chủ nhật.",
@@ -113,7 +113,7 @@
   "id": "band-3.0-exp-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "chicken noodle soup",
   "meaningVi": "phở gà",
   "promptVi": "Sáng nay tôi đã ăn một bát phở gà nóng ở gần nhà.",
@@ -135,7 +135,7 @@
   "id": "band-3.0-exp-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "double-decker bus",
   "meaningVi": "xe buýt hai tầng",
   "promptVi": "Tôi thường đi làm bằng xe buýt hai tầng vào mỗi buổi sáng.",
@@ -157,7 +157,7 @@
   "id": "band-3.0-exp-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "football match",
   "meaningVi": "trận bóng đá",
   "promptVi": "Anh trai tôi đã chơi một trận bóng đá với bạn bè tuần trước.",
@@ -179,7 +179,7 @@
   "id": "band-3.0-exp-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "felt tired",
   "meaningVi": "cảm thấy mệt mỏi",
   "promptVi": "Cậu ấy cảm thấy mệt mỏi sau giờ làm việc hôm qua.",
@@ -201,12 +201,13 @@
   "id": "band-3.0-exp-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "flat",
   "meaningVi": "căn hộ",
   "promptVi": "Gia đình tôi sống trong một căn hộ nhỏ ở trung tâm thành phố.",
   "referenceAnswers": [
-   "My family lives in a small flat in the city centre."
+   "My family lives in a small flat in the city centre.",
+   "My family lives in a small flat in the city center."
   ],
   "grammarTags": [
    "Present Simple - Fact"
@@ -223,7 +224,7 @@
   "id": "band-3.0-exp-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "on holiday",
   "meaningVi": "đi nghỉ mát",
   "promptVi": "Chúng tôi đã đi nghỉ mát ở vùng biển vào mùa hè năm ngoái.",
@@ -245,7 +246,7 @@
   "id": "band-3.0-exp-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "library",
   "meaningVi": "thư viện",
   "promptVi": "Chị gái tôi học môn tiếng Anh ở thư viện mỗi chiều.",
@@ -267,7 +268,7 @@
   "id": "band-3.0-exp-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "laptop",
   "meaningVi": "máy tính xách tay",
   "promptVi": "Tôi đã mua một chiếc máy tính xách tay mới vào tháng trước.",
@@ -289,7 +290,7 @@
   "id": "band-3.0-exp-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "bakery",
   "meaningVi": "cửa hàng bánh mì",
   "promptVi": "Mẹ tôi làm việc tại một cửa hàng bánh mì địa phương.",
@@ -311,7 +312,7 @@
   "id": "band-3.0-exp-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "animated film",
   "meaningVi": "bộ phim hoạt hình",
   "promptVi": "Tối qua tôi đã xem một bộ phim hoạt hình rất thú vị.",
@@ -333,7 +334,7 @@
   "id": "band-3.0-exp-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "stone benches",
   "meaningVi": "ghế đá",
   "promptVi": "Công viên gần nhà tôi có nhiều cây xanh và ghế đá.",
@@ -355,7 +356,7 @@
   "id": "band-3.0-exp-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "back garden",
   "meaningVi": "vườn sau nhà",
   "promptVi": "Bố tôi thích trồng rau tươi trong vườn sau nhà.",
@@ -377,7 +378,7 @@
   "id": "band-3.0-exp-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "tram",
   "meaningVi": "xe điện",
   "promptVi": "Tôi đã lỡ chuyến xe điện muộn tối qua.",
@@ -399,7 +400,7 @@
   "id": "band-3.0-exp-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "toothache",
   "meaningVi": "đau răng",
   "promptVi": "Anh ấy bị đau răng nặng vào tuần trước.",
@@ -421,7 +422,7 @@
   "id": "band-3.0-exp-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "headphones",
   "meaningVi": "tai nghe",
   "promptVi": "Em trai tôi nhận được một chiếc tai nghe mới vào sinh nhật.",
@@ -443,7 +444,7 @@
   "id": "band-3.0-exp-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "delicious",
   "meaningVi": "ngon",
   "promptVi": "Bạn tôi đã nấu món súp cà chua ngon cho bữa tối.",
@@ -465,7 +466,7 @@
   "id": "band-3.0-exp-017",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "lab",
   "meaningVi": "phòng thí nghiệm",
   "promptVi": "Chúng tôi đã học bài trong phòng thí nghiệm hóa học sáng nay.",
@@ -487,7 +488,7 @@
   "id": "band-3.0-exp-018",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "kilometres",
   "meaningVi": "kilômét",
   "promptVi": "Cô ấy chạy năm kilômét ở công viên mỗi sáng.",
@@ -509,7 +510,7 @@
   "id": "band-3.0-exp-019",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đô thị",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "square",
   "meaningVi": "quảng trường",
   "promptVi": "Quảng trường trung tâm rất đông đúc vào các ngày thứ Bảy.",
@@ -531,7 +532,7 @@
   "id": "band-3.0-exp-020",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "grey",
   "meaningVi": "màu xám",
   "promptVi": "Phòng khách của chúng tôi có một chiếc ghế sofa màu xám to.",
@@ -553,7 +554,7 @@
   "id": "band-3.0-exp-021",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "castle",
   "meaningVi": "lâu đài",
   "promptVi": "Họ đã chụp nhiều ảnh tại lâu đài cổ đó.",
@@ -575,7 +576,7 @@
   "id": "band-3.0-exp-022",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "electrician",
   "meaningVi": "thợ điện",
   "promptVi": "Người thợ điện đã sửa đèn vào sáng qua.",
@@ -597,7 +598,7 @@
   "id": "band-3.0-exp-023",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "bookshop",
   "meaningVi": "hiệu sách",
   "promptVi": "Tôi đã mua một cuốn tiểu thuyết trinh thám ở hiệu sách cũ.",
@@ -619,7 +620,7 @@
   "id": "band-3.0-exp-024",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "farm",
   "meaningVi": "trang trại",
   "promptVi": "Chú tôi nuôi hai con chó nhỏ trong trang trại.",
@@ -641,7 +642,7 @@
   "id": "band-3.0-exp-025",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "herbal tea",
   "meaningVi": "trà thảo mộc",
   "promptVi": "Mỗi tối, tôi uống một tách trà thảo mộc nóng trước khi đi ngủ.",
@@ -663,7 +664,7 @@
   "id": "band-3.0-exp-026",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "plaster",
   "meaningVi": "băng cá nhân",
   "promptVi": "Y tá dán một miếng băng cá nhân lên ngón tay của tôi.",
@@ -685,12 +686,13 @@
   "id": "band-3.0-exp-027",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "table tennis",
   "meaningVi": "bóng bàn",
   "promptVi": "Hôm qua, tôi thắng một trận bóng bàn ở trung tâm thể thao.",
   "referenceAnswers": [
-   "Yesterday, I won a table tennis match at the sports centre."
+   "Yesterday, I won a table tennis match at the sports centre.",
+   "Yesterday, I won a table tennis match at the sports center."
   ],
   "grammarTags": [
    "Past Simple Tense"
@@ -707,7 +709,7 @@
   "id": "band-3.0-exp-028",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "guesthouse",
   "meaningVi": "nhà khách",
   "promptVi": "Chồng tôi đã đặt một phòng nhỏ tại nhà khách ven biển này.",
@@ -729,7 +731,7 @@
   "id": "band-3.0-exp-029",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "wireless mouse",
   "meaningVi": "chuột không dây",
   "promptVi": "Tôi sử dụng một chiếc chuột không dây cho công việc hằng ngày.",
@@ -751,7 +753,7 @@
   "id": "band-3.0-exp-030",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "reusable bottle",
   "meaningVi": "bình nước dùng nhiều lần",
   "promptVi": "Bạn tôi luôn mang theo một bình nước dùng nhiều lần đến văn phòng.",
@@ -773,7 +775,7 @@
   "id": "band-3.0-exp-031",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "balcony",
   "meaningVi": "ban công",
   "promptVi": "Chị gái tôi trồng vài chậu hoa trên ban công.",
@@ -795,7 +797,7 @@
   "id": "band-3.0-exp-032",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Công việc",
+  "topic": "Công việc & Kinh tế",
   "targetTerm": "receptionist",
   "meaningVi": "nhân viên lễ tân",
   "promptVi": "Anh ấy làm nhân viên lễ tân tại khách sạn này.",
@@ -817,7 +819,7 @@
   "id": "band-3.0-exp-033",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "tram",
   "meaningVi": "xe điện",
   "promptVi": "Sáng nay, tôi bắt chuyến xe điện đến nơi làm việc.",
@@ -839,7 +841,7 @@
   "id": "band-3.0-exp-034",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Văn hóa",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "art gallery",
   "meaningVi": "phòng triển lãm nghệ thuật",
   "promptVi": "Chúng tôi đã ghé thăm một phòng triển lãm nghệ thuật vào tuần trước.",
@@ -861,7 +863,7 @@
   "id": "band-3.0-exp-035",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Trường học",
+  "topic": "Giáo dục & Trường học",
   "targetTerm": "textbook",
   "meaningVi": "sách giáo khoa",
   "promptVi": "Em trai tôi để quên quyển sách giáo khoa toán trên bàn.",
@@ -883,7 +885,7 @@
   "id": "band-3.0-exp-036",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Gia đình",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "album",
   "meaningVi": "cuốn album",
   "promptVi": "Bố tôi xem lại cuốn album ảnh gia đình cũ tối qua.",
@@ -905,7 +907,7 @@
   "id": "band-3.0-exp-037",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "thể thao",
+  "topic": "Thể thao & Giải trí",
   "targetTerm": "badminton racket",
   "meaningVi": "vợt cầu lông",
   "promptVi": "Tôi đã mượn một chiếc vợt cầu lông từ người bạn thân vào hôm qua.",
@@ -927,7 +929,7 @@
   "id": "band-3.0-exp-038",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "công nghệ",
+  "topic": "Công nghệ & Khoa học",
   "targetTerm": "USB flash drive",
   "meaningVi": "ổ đĩa USB",
   "promptVi": "Anh ấy luôn lưu các tệp tin quan trọng vào một ổ đĩa USB nhỏ.",
@@ -949,7 +951,7 @@
   "id": "band-3.0-exp-039",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đồ ăn",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "mushroom soup",
   "meaningVi": "súp nấm",
   "promptVi": "Mẹ tôi đã nấu một nồi súp nấm thơm ngon vào chiều nay.",
@@ -971,7 +973,7 @@
   "id": "band-3.0-exp-040",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "đi lại",
+  "topic": "Giao thông & Đi lại",
   "targetTerm": "zebra crossing",
   "meaningVi": "vạch kẻ đường cho người đi bộ",
   "promptVi": "Tôi đã đi qua đường tại vạch kẻ đường cho người đi bộ gần cổng trường.",
@@ -993,7 +995,7 @@
   "id": "band-3.0-exp-041",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "sức khỏe",
+  "topic": "Sức khỏe & Y tế",
   "targetTerm": "sore throat",
   "meaningVi": "đau họng",
   "promptVi": "Con gái tôi bị đau họng sau giờ học bơi tối qua.",
@@ -1015,7 +1017,7 @@
   "id": "band-3.0-exp-042",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "môi trường",
+  "topic": "Môi trường & Năng lượng",
   "targetTerm": "compost bin",
   "meaningVi": "thùng ủ phân hữu cơ",
   "promptVi": "Gia đình tôi đặt một thùng ủ phân hữu cơ ở góc vườn.",
@@ -1037,7 +1039,7 @@
   "id": "band-3.0-exp-043",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "nhà ở",
+  "topic": "Đô thị & Nhà ở",
   "targetTerm": "wooden bookcase",
   "meaningVi": "tủ sách gỗ",
   "promptVi": "Bố tôi đã lắp ráp một chiếc tủ sách gỗ mới cho phòng làm việc.",
@@ -1059,7 +1061,7 @@
   "id": "band-3.0-exp-044",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "du lịch",
+  "topic": "Văn hóa & Du lịch",
   "targetTerm": "travel brochure",
   "meaningVi": "tờ rơi du lịch",
   "promptVi": "Tôi đã lấy một tờ rơi du lịch tại quầy thông tin ở sân bay.",
@@ -1071,7 +1073,13 @@
   ],
   "explanationVi": "Hành động ngắn trong chuyến đi được thể hiện qua thì quá khứ đơn với thuật ngữ 'travel brochure'.",
   "rationaleVi": "Trải nghiệm cá nhân khi đi lại/du lịch, câu đơn chứa một động từ chính duy nhất, thích hợp cho mức 3.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I picked up a travel brochure at the airport informations desk.",
+    "correction": "I picked up a travel brochure at the airport information desk.",
+    "reasonVi": "'Information' là danh từ không đếm được trong tiếng Anh nên không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1081,7 +1089,7 @@
   "id": "band-3.0-exp-045",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "thời gian",
+  "topic": "Gia đình & Đời sống",
   "targetTerm": "digital alarm clock",
   "meaningVi": "đồng hồ báo thức kỹ thuật số",
   "promptVi": "Chiếc đồng hồ báo thức kỹ thuật số của tôi kêu rất to lúc sáu giờ sáng mỗi ngày.",
@@ -1103,7 +1111,7 @@
   "id": "esl-v2-r06-u01-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Mỗi sáng, cô Mai pha trà cho bà của mình.",
   "referenceAnswers": [
    "Ms Mai makes tea for her grandmother every morning."
@@ -1113,7 +1121,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ Ms Mai là ngôi thứ ba số ít nên make đổi thành makes; every morning báo hiệu thói quen. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ Ms Mai là ngôi thứ ba số ít nên make đổi thành makes; every morning báo hiệu thói quen.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1130,13 +1138,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "every morning",
+  "meaningVi": "mỗi buổi sáng"
  },
  {
   "id": "esl-v2-r06-u01-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Anh Quân kiểm tra email trước giờ ăn trưa.",
   "referenceAnswers": [
    "Quan checks his email before lunch."
@@ -1146,7 +1157,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Quan là một người nên check thêm -s; before lunch chỉ thời điểm trong thói quen. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Quan là một người nên check thêm -s; before lunch chỉ thời điểm trong thói quen.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1163,13 +1174,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những người hàng xóm của tôi trồng hoa trước nhà.",
   "referenceAnswers": [
    "My neighbours grow flowers in front of their houses."
@@ -1179,7 +1191,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Neighbours ở số nhiều nên grow không thêm -s; cụm in front of chỉ vị trí. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Neighbours ở số nhiều nên grow không thêm -s; cụm in front of chỉ vị trí.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1196,13 +1208,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "in front of",
+  "meaningVi": "ở phía trước"
  },
  {
   "id": "esl-v2-r06-u01-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Con mèo của Linh thường ngủ trên ghế sofa.",
   "referenceAnswers": [
    "Linh's cat usually sleeps on the sofa."
@@ -1212,7 +1227,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ chính là cat số ít; usually đứng trước động từ thường sleeps. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ chính là cat số ít; usually đứng trước động từ thường sleeps.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1229,13 +1244,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi chơi cầu lông vào tối thứ Sáu.",
   "referenceAnswers": [
    "We play badminton on Friday evenings."
@@ -1245,7 +1261,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: We đi với play nguyên mẫu; on Friday evenings diễn tả thói quen lặp lại. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "We đi với play nguyên mẫu; on Friday evenings diễn tả thói quen lặp lại.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1262,13 +1278,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bảo mang một chai nước đến lớp mỗi ngày.",
   "referenceAnswers": [
    "Bao brings a bottle of water to class every day."
@@ -1278,7 +1295,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Bao là một người nên bring đổi thành brings; to class chỉ hướng đến lớp. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Bao là một người nên bring đổi thành brings; to class chỉ hướng đến lớp.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1295,13 +1312,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u01-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi hiếm khi ăn đồ ngọt sau bữa tối.",
   "referenceAnswers": [
    "I rarely eat sweets after dinner."
@@ -1311,7 +1331,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: I dùng eat; rarely là trạng từ tần suất đứng trước động từ thường. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "I dùng eat; rarely là trạng từ tần suất đứng trước động từ thường.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1328,13 +1348,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "dinner",
+  "meaningVi": "bữa ăn tối"
  },
  {
   "id": "esl-v2-r06-u01-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Quán cà phê này mở cửa lúc sáu giờ sáng.",
   "referenceAnswers": [
    "This café opens at six in the morning."
@@ -1344,7 +1367,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ this café số ít nên opens; at six dùng cho giờ cụ thể. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ this café số ít nên opens; at six dùng cho giờ cụ thể.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1361,13 +1384,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r06-u01-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Bố mẹ tôi nghe tin tức trên radio khi ăn sáng.",
   "referenceAnswers": [
    "My parents listen to the news on the radio at breakfast."
@@ -1377,7 +1403,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Parents số nhiều nên listen; listen to đi với tân ngữ the news. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Parents số nhiều nên listen; listen to đi với tân ngữ the news.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1394,13 +1420,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "parents",
+  "meaningVi": "bố mẹ"
  },
  {
   "id": "esl-v2-r06-u01-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Em gái tôi đọc sách tranh trước khi ngủ.",
   "referenceAnswers": [
    "My younger sister reads picture books before bed."
@@ -1410,7 +1439,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Sister số ít nên read thêm -s thành reads, trước khi ngủ diễn đạt before bed. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Sister số ít nên read thêm -s thành reads, trước khi ngủ diễn đạt before bed.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1427,13 +1456,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Giáo viên của chúng tôi giao bài tập vào mỗi thứ Hai.",
   "referenceAnswers": [
    "Our teacher gives us homework every Monday."
@@ -1443,7 +1473,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Teacher số ít đi với gives; homework là danh từ không đếm được trong ngữ cảnh này. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Teacher số ít đi với gives; homework là danh từ không đếm được trong ngữ cảnh này.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1460,13 +1490,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Những chuyến tàu rời ga lúc chín giờ.",
   "referenceAnswers": [
    "The trains leave the station at nine o'clock."
@@ -1476,7 +1507,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Trains số nhiều dùng leave; at nine o'clock là giờ cụ thể của lịch trình. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Trains số nhiều dùng leave; at nine o'clock là giờ cụ thể của lịch trình.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1493,13 +1524,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Cửa hàng này bán bánh mì tươi mỗi buổi sáng.",
   "referenceAnswers": [
    "This shop sells fresh bread every morning."
@@ -1509,7 +1541,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Shop số ít dùng sells; bread trong câu này là không đếm được. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Shop số ít dùng sells; bread trong câu này là không đếm được.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1526,13 +1558,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "fresh",
+  "meaningVi": "tươi mới"
  },
  {
   "id": "esl-v2-r06-u01-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thường ghi những từ mới vào sổ.",
   "referenceAnswers": [
    "I usually write new words in a notebook."
@@ -1542,7 +1577,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: I đi với write; usually đứng trước động từ thường. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "I đi với write; usually đứng trước động từ thường.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1559,13 +1594,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình"
  },
  {
   "id": "esl-v2-r06-u01-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Hoa rửa bát sau bữa tối.",
   "referenceAnswers": [
    "Hoa washes the dishes after dinner."
@@ -1575,7 +1611,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Wash tận cùng -sh nên thêm -es thành washes với Hoa số ít. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Wash tận cùng -sh nên thêm -es thành washes với Hoa số ít.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1592,13 +1628,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "dinner",
+  "meaningVi": "bữa ăn tối"
  },
  {
   "id": "esl-v2-r06-u01-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Người đưa thư đi qua con phố này mỗi ngày.",
   "referenceAnswers": [
    "The postal worker walks along this street every day."
@@ -1608,7 +1647,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Postal worker là một người nên walks; along chỉ dọc theo đường. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Postal worker là một người nên walks; along chỉ dọc theo đường.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1625,13 +1664,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u01-017",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hiện tại đơn: thói quen và lịch trình",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Bọn trẻ đôi khi chơi cờ trong thư viện.",
   "referenceAnswers": [
    "The children sometimes play chess in the library."
@@ -1641,7 +1683,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Children là số nhiều nên play; sometimes đứng trước động từ thường. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Children là số nhiều nên play; sometimes đứng trước động từ thường.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U01), chủ đề Hiện tại đơn: thói quen và lịch trình.",
   "commonErrors": [
    {
@@ -1658,13 +1700,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hiện tại đơn: thói quen và lịch trình",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r06-u02-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Thứ Bảy vừa rồi, Nam sửa chiếc xe đạp của mình.",
   "referenceAnswers": [
    "Last Saturday, Nam repaired his bicycle."
@@ -1674,7 +1719,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Last Saturday cho biết hành động đã kết thúc; repair là động từ có quy tắc, thêm -ed. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Last Saturday cho biết hành động đã kết thúc; repair là động từ có quy tắc, thêm -ed.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1691,13 +1736,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc"
  },
  {
   "id": "esl-v2-r06-u02-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tuần trước, tôi tìm thấy ví dưới bàn.",
   "referenceAnswers": [
    "Last week, I found my wallet under the table."
@@ -1707,7 +1753,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Quá khứ của find là found, không phải founded; last week đánh dấu thời điểm đã qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Quá khứ của find là found, không phải founded; last week đánh dấu thời điểm đã qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1724,13 +1770,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "last week",
+  "meaningVi": "tuần trước"
  },
  {
   "id": "esl-v2-r06-u02-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy gửi một bức thư cho bạn hôm qua.",
   "referenceAnswers": [
    "She sent a letter to her friend yesterday."
@@ -1740,7 +1789,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Send có quá khứ bất quy tắc sent; yesterday báo hiệu quá khứ đơn. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Send có quá khứ bất quy tắc sent; yesterday báo hiệu quá khứ đơn.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1757,13 +1806,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tối qua, chúng tôi nấu súp bí đỏ.",
   "referenceAnswers": [
    "We cooked pumpkin soup last night."
@@ -1773,7 +1825,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Cook ở quá khứ là cooked; không thêm were trước động từ nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Cook ở quá khứ là cooked; không thêm were trước động từ nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1790,13 +1842,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "last night",
+  "meaningVi": "tối hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Em tôi đánh rơi điện thoại xuống sàn sáng nay.",
   "referenceAnswers": [
    "My younger sibling dropped their phone on the floor this morning."
@@ -1806,7 +1861,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Drop gấp đôi p rồi thêm -ed thành dropped; this morning được hiểu là buổi sáng đã qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Drop gấp đôi p rồi thêm -ed thành dropped; this morning được hiểu là buổi sáng đã qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1823,13 +1878,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "morning",
+  "meaningVi": "buổi sáng"
  },
  {
   "id": "esl-v2-r06-u02-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Hôm qua, thầy giáo giải thích bài tập rất rõ.",
   "referenceAnswers": [
    "The teacher explained the exercise clearly yesterday."
@@ -1839,7 +1897,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Explain thêm -ed thành explained; clearly là trạng từ bổ nghĩa cho explained. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Explain thêm -ed thành explained; clearly là trạng từ bổ nghĩa cho explained.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1856,13 +1914,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tối thứ Sáu vừa rồi, tôi gặp một người bạn cũ ở siêu thị.",
   "referenceAnswers": [
    "Last Friday evening, I met an old friend at the supermarket."
@@ -1872,7 +1933,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Quá khứ của meet là met; last Friday evening cho biết thời gian đã qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Quá khứ của meet là met; last Friday evening cho biết thời gian đã qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1889,13 +1950,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "supermarket",
+  "meaningVi": "siêu thị"
  },
  {
   "id": "esl-v2-r06-u02-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Họ đến thư viện trước giờ đóng cửa hôm qua.",
   "referenceAnswers": [
    "They arrived at the library before closing time yesterday."
@@ -1905,7 +1969,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Arrive thêm -d thành arrived; với địa điểm cụ thể là arrive at the library. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Arrive thêm -d thành arrived; với địa điểm cụ thể là arrive at the library.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1922,13 +1986,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi chọn một món quà cho mẹ vào hôm kia.",
   "referenceAnswers": [
    "I chose a gift for my mother the day before yesterday."
@@ -1938,7 +2005,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Quá khứ của choose là chose; the day before yesterday nghĩa là hôm kia. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Quá khứ của choose là chose; the day before yesterday nghĩa là hôm kia.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1955,13 +2022,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc"
  },
  {
   "id": "esl-v2-r06-u02-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi chuyển nhà vào tháng Chín năm ngoái.",
   "referenceAnswers": [
    "We moved house last September."
@@ -1971,7 +2039,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Move thành moved; last September nói tháng Chín của năm trước. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Move thành moved; last September nói tháng Chín của năm trước.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -1988,13 +2056,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc"
  },
  {
   "id": "esl-v2-r06-u02-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bà tôi trồng một cây chanh vào mùa xuân năm ngoái.",
   "referenceAnswers": [
    "My grandmother planted a lemon tree last spring."
@@ -2004,7 +2073,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Planted cho hành động hoàn tất; a lemon tree là danh từ số ít. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Planted cho hành động hoàn tất; a lemon tree là danh từ số ít.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2021,13 +2090,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "grandmother",
+  "meaningVi": "bà (nội/ngoại)"
  },
  {
   "id": "esl-v2-r06-u02-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua, bọn trẻ xây một lâu đài cát.",
   "referenceAnswers": [
    "The children built a sandcastle yesterday."
@@ -2037,7 +2109,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Build có dạng quá khứ bất quy tắc built, không thêm -ed. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Build có dạng quá khứ bất quy tắc built, không thêm -ed.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2054,13 +2126,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi quên mang ô đến văn phòng sáng qua.",
   "referenceAnswers": [
    "I forgot to bring an umbrella to the office yesterday morning."
@@ -2070,7 +2145,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Forget đổi thành forgot; sau forget thường dùng to + V để nói quên làm việc gì. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Forget đổi thành forgot; sau forget thường dùng to + V để nói quên làm việc gì.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2087,13 +2162,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "umbrella",
+  "meaningVi": "chiếc ô / dù"
  },
  {
   "id": "esl-v2-r06-u02-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Thứ Hai tuần trước, bố tôi thay bóng đèn trong bếp.",
   "referenceAnswers": [
    "Last Monday, my father replaced the light bulb in the kitchen."
@@ -2103,7 +2181,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Replace thêm -d thành replaced; last Monday chỉ thứ Hai đã qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Replace thêm -d thành replaced; last Monday chỉ thứ Hai đã qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2120,13 +2198,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "kitchen",
+  "meaningVi": "nhà bếp"
  },
  {
   "id": "esl-v2-r06-u02-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Đội bóng của trường thắng trận đấu cuối tuần trước.",
   "referenceAnswers": [
    "Our school team won the match last weekend."
@@ -2136,7 +2217,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Win có quá khứ là won; last weekend yêu cầu quá khứ đơn. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Win có quá khứ là won; last weekend yêu cầu quá khứ đơn.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2153,13 +2234,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "weekend",
+  "meaningVi": "dịp cuối tuần"
  },
  {
   "id": "esl-v2-r06-u02-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi viết tên mình lên danh sách hôm qua.",
   "referenceAnswers": [
    "I wrote my name on the list yesterday."
@@ -2169,7 +2253,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Write đổi thành wrote, không phải writed; on the list dùng cho vị trí trên danh sách. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Write đổi thành wrote, không phải writed; on the list dùng cho vị trí trên danh sách.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2186,13 +2270,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u02-017",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Quá khứ đơn: hành động đã kết thúc",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua, sau buổi học, Mai cho bạn mượn một quyển sách.",
   "referenceAnswers": [
    "Yesterday, after class, Mai lent her friend a book."
@@ -2202,7 +2289,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Lend có quá khứ lent; yesterday xác định hành động đã qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Lend có quá khứ lent; yesterday xác định hành động đã qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U02), chủ đề Quá khứ đơn: hành động đã kết thúc.",
   "commonErrors": [
    {
@@ -2219,13 +2306,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Quá khứ đơn: hành động đã kết thúc",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Tôi thường đạp xe đến công viên, nhưng hôm qua tôi đi bộ.",
   "referenceAnswers": [
    "I usually cycle to the park, but yesterday I walked."
@@ -2235,7 +2325,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Usually nói thói quen hiện tại; yesterday nói một sự việc đã xong, nên cycle và walked khác thì. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Usually nói thói quen hiện tại; yesterday nói một sự việc đã xong, nên cycle và walked khác thì.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2252,13 +2342,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bình thường Lan uống trà, nhưng sáng hôm qua cô ấy uống cà phê.",
   "referenceAnswers": [
    "Lan usually drinks tea, but yesterday morning she drank coffee."
@@ -2268,7 +2361,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Lan drinks ở hiện tại thói quen; drink có quá khứ bất quy tắc drank. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Lan drinks ở hiện tại thói quen; drink có quá khứ bất quy tắc drank.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2285,13 +2378,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Họ tập đàn mỗi tối, nhưng tối qua họ nghỉ.",
   "referenceAnswers": [
    "They practise the piano every evening, but they rested last night."
@@ -2301,7 +2397,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Every evening dùng hiện tại đơn; last night dùng quá khứ đơn. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Every evening dùng hiện tại đơn; last night dùng quá khứ đơn.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2318,13 +2414,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "last night",
+  "meaningVi": "tối hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi làm việc tại nhà vào thứ Tư, nhưng thứ Tư tuần trước tôi đến văn phòng.",
   "referenceAnswers": [
    "I work from home on Wednesdays, but last Wednesday I went to the office."
@@ -2334,7 +2433,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: On Wednesdays là thói quen; last Wednesday là một ngày đã qua; go đổi thành went. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "On Wednesdays là thói quen; last Wednesday là một ngày đã qua; go đổi thành went.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2351,13 +2450,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "work from home",
+  "meaningVi": "làm việc tại nhà"
  },
  {
   "id": "esl-v2-r06-u03-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Mỗi ngày Minh đi xe buýt, nhưng hôm kia cậu ấy đi tàu.",
   "referenceAnswers": [
    "Minh takes the bus every day, but the day before yesterday he took the train."
@@ -2367,7 +2469,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Every day dùng takes với Minh; quá khứ của take là took. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Every day dùng takes với Minh; quá khứ của take là took.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2384,13 +2486,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u03-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bây giờ tôi sống ở Huế; năm ngoái tôi sống ở Đà Nẵng.",
   "referenceAnswers": [
    "I live in Hue now; last year I lived in Da Nang."
@@ -2400,7 +2505,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Now chỉ nơi đang sống; last year chỉ nơi từng sống, nên live và lived. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Now chỉ nơi đang sống; last year chỉ nơi từng sống, nên live và lived.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2417,13 +2522,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua"
  },
  {
   "id": "esl-v2-r06-u03-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Chị tôi thường đi chợ vào Chủ nhật; Chủ nhật trước chị ở nhà.",
   "referenceAnswers": [
    "My sister usually goes to the market on Sundays; last Sunday she stayed home."
@@ -2433,7 +2539,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Goes diễn tả thói quen của sister; stayed chỉ sự kiện Chủ nhật vừa rồi. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Goes diễn tả thói quen của sister; stayed chỉ sự kiện Chủ nhật vừa rồi.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2450,13 +2556,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "market",
+  "meaningVi": "khu chợ"
  },
  {
   "id": "esl-v2-r06-u03-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Trường tôi mở cửa lúc bảy giờ mỗi ngày; hôm qua trường mở muộn.",
   "referenceAnswers": [
    "My school opens at seven every day; yesterday it opened late."
@@ -2466,7 +2575,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Opens diễn tả giờ mở thường lệ; opened late là ngoại lệ hôm qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Opens diễn tả giờ mở thường lệ; opened late là ngoại lệ hôm qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2483,13 +2592,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u03-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi ăn trưa ở căng tin mỗi ngày, nhưng hôm qua tôi mang cơm từ nhà.",
   "referenceAnswers": [
    "I eat lunch in the canteen every day, but yesterday I brought food from home."
@@ -2499,7 +2611,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Eat theo chủ ngữ I ở hiện tại; bring đổi thành brought ở quá khứ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Eat theo chủ ngữ I ở hiện tại; bring đổi thành brought ở quá khứ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2516,13 +2628,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u03-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bố tôi thường đọc báo buổi sáng, nhưng sáng hôm qua ông nghe radio.",
   "referenceAnswers": [
    "My father usually reads the newspaper in the morning, but yesterday morning he listened to the radio."
@@ -2532,7 +2647,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Reads là thói quen; yesterday morning diễn tả sáng hôm qua nên dùng listened. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Reads là thói quen; yesterday morning diễn tả sáng hôm qua nên dùng listened.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2549,13 +2664,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hằng tuần họ họp vào thứ Ba; tuần trước họ họp vào thứ Năm.",
   "referenceAnswers": [
    "They meet every Tuesday; last week they met on Thursday."
@@ -2565,7 +2683,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Meet nói lịch thường lệ; met là quá khứ của meet để nói lần họp tuần trước. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Meet nói lịch thường lệ; met là quá khứ của meet để nói lần họp tuần trước.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2582,13 +2700,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "last week",
+  "meaningVi": "tuần trước"
  },
  {
   "id": "esl-v2-r06-u03-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhà hàng này phục vụ bữa sáng mỗi ngày; hôm qua họ chỉ phục vụ bữa trưa.",
   "referenceAnswers": [
    "This restaurant serves breakfast every day; yesterday it served only lunch."
@@ -2598,7 +2719,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Serves là hoạt động thường ngày; served là hành động được giới hạn bởi yesterday. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Serves là hoạt động thường ngày; served là hành động được giới hạn bởi yesterday.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2615,13 +2736,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u03-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thường về nhà lúc sáu giờ; hôm qua tôi về lúc tám giờ.",
   "referenceAnswers": [
    "I usually get home at six; yesterday I got home at eight."
@@ -2631,7 +2755,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Get là hiện tại; got là quá khứ; at six và at eight là các mốc giờ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Get là hiện tại; got là quá khứ; at six và at eight là các mốc giờ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2648,13 +2772,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Các bạn tôi học cùng nhau mỗi chiều, nhưng hôm qua họ học riêng.",
   "referenceAnswers": [
    "My friends study together every afternoon, but yesterday they studied separately."
@@ -2664,7 +2791,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Friends số nhiều đi với study; studied diễn đạt điều đã xảy ra hôm qua. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Friends số nhiều đi với study; studied diễn đạt điều đã xảy ra hôm qua.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2681,13 +2808,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u03-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Ngày thường bà tôi chăm vườn, nhưng thứ Hai vừa rồi bà nghỉ ngơi.",
   "referenceAnswers": [
    "My grandmother looks after her garden on weekdays, but last Monday she rested."
@@ -2697,7 +2827,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Looks after đi với grandmother số ít; rested là sự kiện vào last Monday. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Looks after đi với grandmother số ít; rested là sự kiện vào last Monday.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2714,13 +2844,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "targetTerm": "grandmother",
+  "meaningVi": "bà (nội/ngoại)"
  },
  {
   "id": "esl-v2-r06-u03-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Cô ấy hiện dạy toán; hai năm trước cô ấy dạy khoa học.",
   "referenceAnswers": [
    "She teaches maths now; two years ago she taught science."
@@ -2730,7 +2863,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Teaches ở hiện tại đơn; teach có quá khứ taught, không phải teached. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Teaches ở hiện tại đơn; teach có quá khứ taught, không phải teached.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2747,13 +2880,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua"
  },
  {
   "id": "esl-v2-r06-u03-017",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi thường đi dã ngoại vào mùa hè, nhưng mùa hè năm ngoái chúng tôi ở nhà.",
   "referenceAnswers": [
    "We usually go on picnics in summer, but last summer we stayed home."
@@ -2763,7 +2897,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Usually + go chỉ thói quen; last summer + stayed chỉ mùa hè năm trước. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Usually + go chỉ thói quen; last summer + stayed chỉ mùa hè năm trước.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U03), chủ đề Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua.",
   "commonErrors": [
    {
@@ -2780,13 +2914,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Từ chỉ thời gian: phân biệt thói quen và sự kiện đã qua"
  },
  {
   "id": "esl-v2-r06-u04-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bạn có thường nấu ăn vào cuối tuần không?",
   "referenceAnswers": [
    "Do you usually cook at weekends?"
@@ -2796,7 +2931,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Với you dùng Do; sau trợ động từ do dùng động từ nguyên mẫu cook. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Với you dùng Do; sau trợ động từ do dùng động từ nguyên mẫu cook.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2813,13 +2948,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Chị gái bạn có đi xe buýt đến trường không?",
   "referenceAnswers": [
    "Does your sister take the bus to school?"
@@ -2829,7 +2965,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Sister số ít dùng Does; động từ chính take giữ nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Sister số ít dùng Does; động từ chính take giữ nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2846,13 +2982,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua, họ có tìm thấy chìa khóa không?",
   "referenceAnswers": [
    "Did they find the keys yesterday?"
@@ -2862,7 +2999,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Yesterday dùng Did; sau did dùng find chứ không phải found. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Yesterday dùng Did; sau did dùng find chứ không phải found.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2879,23 +3016,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u04-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi không uống nước ngọt vào buổi tối.",
   "referenceAnswers": [
-   "I do not drink soft drinks in the evening."
+   "I do not drink soft drinks in the evening.",
+   "I don't drink soft drinks in the evening."
   ],
   "grammarTags": [
    "auxiliary_questions",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ I dùng do not; sau not là drink nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ I dùng do not; sau not là drink nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2912,23 +3053,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "evening",
+  "meaningVi": "buổi tối"
  },
  {
   "id": "esl-v2-r06-u04-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Hùng không chơi trò chơi điện tử vào các ngày trong tuần.",
   "referenceAnswers": [
-   "Hung does not play video games on weekdays."
+   "Hung does not play video games on weekdays.",
+   "Hung doesn't play video games on weekdays."
   ],
   "grammarTags": [
    "auxiliary_questions",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Hung là số ít nên does not; động từ play không thêm -s. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Hung là số ít nên does not; động từ play không thêm -s.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2945,23 +3090,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Chúng tôi đã không xem trận đấu tối qua.",
   "referenceAnswers": [
-   "We did not watch the match last night."
+   "We did not watch the match last night.",
+   "We didn't watch the match last night."
   ],
   "grammarTags": [
    "auxiliary_questions",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Last night dùng did not + watch nguyên mẫu, không dùng watched sau did. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Last night dùng did not + watch nguyên mẫu, không dùng watched sau did.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -2978,13 +3125,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "last night",
+  "meaningVi": "tối hôm qua"
  },
  {
   "id": "esl-v2-r06-u04-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tại sao Mai đi bộ đến trường mỗi ngày?",
   "referenceAnswers": [
    "Why does Mai walk to school every day?"
@@ -2994,7 +3144,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Với Mai dùng does; trong câu hỏi từ để hỏi Why đứng trước does. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Với Mai dùng does; trong câu hỏi từ để hỏi Why đứng trước does.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3011,13 +3161,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày"
  },
  {
   "id": "esl-v2-r06-u04-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn đã mua chiếc áo khoác ở đâu?",
   "referenceAnswers": [
    "Where did you buy the jacket?"
@@ -3027,7 +3180,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Where + did + you + buy; sau did động từ không ở quá khứ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Where + did + you + buy; sau did động từ không ở quá khứ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3044,13 +3197,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "jacket",
+  "meaningVi": "áo khoác"
  },
  {
   "id": "esl-v2-r06-u04-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Cửa hàng này có bán sữa không?",
   "referenceAnswers": [
    "Does this shop sell milk?"
@@ -3060,7 +3216,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: This shop số ít nên dùng Does; sell là động từ nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "This shop số ít nên dùng Does; sell là động từ nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3077,23 +3233,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Anh ấy không gọi cho tôi hôm qua.",
   "referenceAnswers": [
-   "He did not call me yesterday."
+   "He did not call me yesterday.",
+   "He didn't call me yesterday."
   ],
   "grammarTags": [
    "auxiliary_questions",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Yesterday xác định quá khứ; did not + call nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Yesterday xác định quá khứ; did not + call nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3110,13 +3268,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u04-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Người quản lý thường nhận hàng lúc mấy giờ?",
   "referenceAnswers": [
    "What time does the manager usually receive deliveries?"
@@ -3126,7 +3287,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: What time đứng đầu câu hỏi; manager số ít dùng does và receive nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "What time đứng đầu câu hỏi; manager số ít dùng does và receive nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3143,13 +3304,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua ai đã mở cửa sổ?",
   "referenceAnswers": [
    "Who opened the window yesterday?"
@@ -3159,7 +3321,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Who là chủ ngữ của câu hỏi nên thường không cần did; opened là quá khứ của open. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Who là chủ ngữ của câu hỏi nên thường không cần did; opened là quá khứ của open.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3176,23 +3338,27 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u04-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bạn cùng phòng của tôi không thích đồ ăn cay.",
   "referenceAnswers": [
-   "My roommate does not like spicy food."
+   "My roommate does not like spicy food.",
+   "My roommate doesn't like spicy food."
   ],
   "grammarTags": [
    "auxiliary_questions",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Roommate số ít dùng does not; sau đó là like nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Roommate số ít dùng does not; sau đó là like nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3209,13 +3375,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm thứ Tư, bạn có gửi báo cáo không?",
   "referenceAnswers": [
    "Did you send the report on Wednesday?"
@@ -3225,7 +3392,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Dùng Did hỏi sự kiện đã qua; send không biến thành sent sau did. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Dùng Did hỏi sự kiện đã qua; send không biến thành sent sau did.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3242,13 +3409,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "report",
+  "meaningVi": "bản báo cáo"
  },
  {
   "id": "esl-v2-r06-u04-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Những học sinh này có học tiếng Pháp không?",
   "referenceAnswers": [
    "Do these students study French?"
@@ -3258,7 +3428,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Students số nhiều dùng Do; study ở dạng nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Students số nhiều dùng Do; study ở dạng nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3275,13 +3445,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "students",
+  "meaningVi": "học sinh / sinh viên"
  },
  {
   "id": "esl-v2-r06-u04-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Sức khỏe & Y tế",
   "promptVi": "Chú chó này ngủ ở đâu vào ban ngày?",
   "referenceAnswers": [
    "Where does this dog sleep during the day?"
@@ -3291,7 +3464,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Dog số ít đi với does; sleep ở dạng nguyên mẫu sau chủ ngữ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Dog số ít đi với does; sleep ở dạng nguyên mẫu sau chủ ngữ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3308,13 +3481,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định"
  },
  {
   "id": "esl-v2-r06-u04-017",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Do/does/did: câu hỏi và câu phủ định",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tại sao bạn không tham dự buổi họp tuần trước?",
   "referenceAnswers": [
    "Why did you not attend the meeting last week?"
@@ -3324,7 +3498,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Với câu hỏi Wh- ở quá khứ dùng Why + did + S + not + attend; Why didn't you attend... cũng đúng. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Với câu hỏi Wh- ở quá khứ dùng Why + did + S + not + attend; Why didn't you attend... cũng đúng.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U04), chủ đề Do/does/did: câu hỏi và câu phủ định.",
   "commonErrors": [
    {
@@ -3341,13 +3515,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Do/does/did: câu hỏi và câu phủ định",
+  "targetTerm": "last week",
+  "meaningVi": "tuần trước"
  },
  {
   "id": "esl-v2-r06-u05-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một trong những chiếc đèn này bị hỏng.",
   "referenceAnswers": [
    "One of these lamps is broken."
@@ -3357,7 +3534,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ chính One là số ít nên dùng is; sau of these dùng danh từ số nhiều lamps. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ chính One là số ít nên dùng is; sau of these dùng danh từ số nhiều lamps.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3374,13 +3551,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Cả hai anh em đều nói tiếng Nhật.",
   "referenceAnswers": [
    "Both brothers speak Japanese."
@@ -3390,7 +3568,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Both đi với brothers số nhiều, nên speak không thêm -s. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Both đi với brothers số nhiều, nên speak không thêm -s.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3407,13 +3585,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Mỗi học sinh đều có một thẻ thư viện.",
   "referenceAnswers": [
    "Each student has a library card."
@@ -3423,7 +3602,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Each + danh từ số ít student + has; không dùng students ngay sau each trong mẫu này. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Each + danh từ số ít student + has; không dùng students ngay sau each trong mẫu này.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3440,13 +3619,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ",
+  "targetTerm": "library",
+  "meaningVi": "thư viện"
  },
  {
   "id": "esl-v2-r06-u05-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những hộp sữa ở trong tủ lạnh.",
   "referenceAnswers": [
    "The cartons of milk are in the fridge."
@@ -3456,7 +3638,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ là cartons số nhiều nên are; of milk là cụm bổ nghĩa, không quyết định sự hòa hợp. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ là cartons số nhiều nên are; of milk là cụm bổ nghĩa, không quyết định sự hòa hợp.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3473,13 +3655,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ",
+  "targetTerm": "fridge",
+  "meaningVi": "tủ lạnh"
  },
  {
   "id": "esl-v2-r06-u05-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Công việc & Kinh tế",
   "promptVi": "Người quản lý cửa hàng kiểm tra hóa đơn mỗi tối.",
   "referenceAnswers": [
    "The shop manager checks the receipts every evening."
@@ -3489,7 +3674,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Manager số ít cần checks ở hiện tại đơn; every evening chỉ hoạt động thường lệ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Manager số ít cần checks ở hiện tại đơn; every evening chỉ hoạt động thường lệ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3506,13 +3691,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Những bức ảnh trên tường trông rất đẹp.",
   "referenceAnswers": [
    "The photos on the wall look beautiful."
@@ -3522,7 +3708,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Photos là chủ ngữ số nhiều nên dùng look; cụm on the wall không làm đổi số của chủ ngữ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Photos là chủ ngữ số nhiều nên dùng look; cụm on the wall không làm đổi số của chủ ngữ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3539,13 +3725,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn thân của mẹ tôi sống ở gần đây.",
   "referenceAnswers": [
    "My mother's best friend lives nearby."
@@ -3555,7 +3742,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ chính friend số ít dùng lives; sở hữu mother's không đổi số của friend. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ chính friend số ít dùng lives; sở hữu mother's không đổi số của friend.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3572,13 +3759,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai chiếc ghế ở góc phòng đều màu xanh.",
   "referenceAnswers": [
    "The two chairs in the corner are blue."
@@ -3588,7 +3776,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Two chairs là số nhiều nên are; blue là tính từ không biến đổi theo số. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Two chairs là số nhiều nên are; blue là tính từ không biến đổi theo số.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3605,13 +3793,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Một hộp bút chì nằm trên bàn.",
   "referenceAnswers": [
    "A box of pencils is on the desk."
@@ -3621,7 +3810,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ chính là a box số ít nên dùng is; pencils số nhiều sau of. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ chính là a box số ít nên dùng is; pencils số nhiều sau of.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3638,13 +3827,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Thể thao & Giải trí",
   "promptVi": "Những đứa trẻ của bác tôi thường đi bơi.",
   "referenceAnswers": [
    "My uncle's children often go swimming."
@@ -3654,7 +3844,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Children là dạng số nhiều bất quy tắc của child, đi với go. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Children là dạng số nhiều bất quy tắc của child, đi với go.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3671,13 +3861,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Tất cả cửa sổ của lớp đều sạch.",
   "referenceAnswers": [
    "All the classroom windows are clean."
@@ -3687,7 +3878,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Windows số nhiều dùng are; clean là tính từ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Windows số nhiều dùng are; clean là tính từ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3704,13 +3895,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Đô thị & Nhà ở",
   "promptVi": "Mỗi chiếc vé có một mã khác nhau.",
   "referenceAnswers": [
    "Each ticket has a different code."
@@ -3720,7 +3912,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Each + danh từ số ít ticket + has. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Each + danh từ số ít ticket + has.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3737,13 +3929,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ",
+  "targetTerm": "ticket",
+  "meaningVi": "tấm vé"
  },
  {
   "id": "esl-v2-r06-u05-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Các giáo viên trong trường này làm việc cùng nhau.",
   "referenceAnswers": [
    "The teachers at this school work together."
@@ -3753,7 +3948,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Teachers số nhiều dùng work; at this school bổ nghĩa cho teachers. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Teachers số nhiều dùng work; at this school bổ nghĩa cho teachers.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3770,13 +3965,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ",
+  "targetTerm": "teachers",
+  "meaningVi": "giáo viên"
  },
  {
   "id": "esl-v2-r06-u05-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Công nghệ & Khoa học",
   "promptVi": "Chiếc máy tính trên bàn chạy rất chậm.",
   "referenceAnswers": [
    "The computer on the desk runs very slowly."
@@ -3786,7 +3984,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Computer số ít dùng runs; slowly là trạng từ bổ nghĩa cho runs. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Computer số ít dùng runs; slowly là trạng từ bổ nghĩa cho runs.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3803,13 +4001,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Những người bạn của chị tôi yêu âm nhạc cổ điển.",
   "referenceAnswers": [
    "My sister's friends love classical music."
@@ -3819,7 +4018,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Chủ ngữ friends số nhiều đi với love; sister's là sở hữu, không phải chủ ngữ. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Chủ ngữ friends số nhiều đi với love; sister's là sở hữu, không phải chủ ngữ.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3836,13 +4035,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u05-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Hòa hợp chủ ngữ và động từ",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hai chiếc đồng hồ trong phòng đều chỉ đúng giờ.",
   "referenceAnswers": [
    "Both clocks in the room show the correct time."
@@ -3852,7 +4052,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Both + clocks số nhiều nên show nguyên mẫu; không dùng clock số ít ngay sau both. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Both + clocks số nhiều nên show nguyên mẫu; không dùng clock số ít ngay sau both.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U05), chủ đề Hòa hợp chủ ngữ và động từ.",
   "commonErrors": [
    {
@@ -3869,13 +4069,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Hòa hợp chủ ngữ và động từ"
  },
  {
   "id": "esl-v2-r06-u06-001",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Đầu tiên, tôi rửa rau, rồi tôi nấu bữa tối.",
   "referenceAnswers": [
    "First, I washed the vegetables, and then I cooked dinner."
@@ -3885,7 +4086,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Hai hành động đã xảy ra lần lượt; dùng washed và cooked ở quá khứ đơn. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Hai hành động đã xảy ra lần lượt; dùng washed và cooked ở quá khứ đơn.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -3902,13 +4103,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự",
+  "targetTerm": "dinner",
+  "meaningVi": "bữa ăn tối"
  },
  {
   "id": "esl-v2-r06-u06-002",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua, Linh mở cặp rồi lấy sách ra.",
   "referenceAnswers": [
    "Yesterday, Linh opened her bag and took out her book."
@@ -3918,7 +4122,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Opened là quá khứ có quy tắc; take có quá khứ took. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Opened là quá khứ có quy tắc; take có quá khứ took.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -3935,13 +4139,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u06-003",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi đến bến xe sớm, nhưng xe buýt đến muộn.",
   "referenceAnswers": [
    "I arrived at the bus stop early, but the bus came late."
@@ -3951,7 +4158,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Arrived và came đều là hành động hoàn tất; but nối hai ý tương phản. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Arrived và came đều là hành động hoàn tất; but nối hai ý tương phản.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -3968,13 +4175,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-004",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mẹ tôi tìm chìa khóa và đặt chúng lên bàn.",
   "referenceAnswers": [
    "My mother found the keys and put them on the table."
@@ -3984,7 +4192,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Find → found; put có dạng quá khứ vẫn là put, không phải putted. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Find → found; put có dạng quá khứ vẫn là put, không phải putted.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4001,13 +4209,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-005",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Sau giờ học, chúng tôi ghé hiệu sách rồi về nhà.",
   "referenceAnswers": [
    "After class, we visited a bookshop and then went home."
@@ -4017,7 +4226,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Visited là quá khứ; go → went, then nối thứ tự thời gian. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Visited là quá khứ; go → went, then nối thứ tự thời gian.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4034,13 +4243,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-006",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Trời bắt đầu mưa, vì vậy chúng tôi đóng cửa sổ.",
   "referenceAnswers": [
    "It started to rain, so we closed the windows."
@@ -4050,7 +4260,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Started và closed là hai việc đã qua; so diễn tả kết quả. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Started và closed là hai việc đã qua; so diễn tả kết quả.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4067,13 +4277,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-007",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Hôm qua, Nam làm xong bài tập rồi gọi cho bạn.",
   "referenceAnswers": [
    "Yesterday, Nam finished his homework and then called his friend."
@@ -4083,7 +4294,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Yesterday đòi hỏi quá khứ cho cả finished và called. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Yesterday đòi hỏi quá khứ cho cả finished và called.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4100,13 +4311,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự",
+  "targetTerm": "yesterday",
+  "meaningVi": "hôm qua"
  },
  {
   "id": "esl-v2-r06-u06-008",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi bước vào phòng và thấy một chiếc hộp trên sàn.",
   "referenceAnswers": [
    "We entered the room and saw a box on the floor."
@@ -4116,7 +4330,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Enter → entered; see → saw là động từ bất quy tắc. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Enter → entered; see → saw là động từ bất quy tắc.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4133,13 +4347,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-009",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Môi trường & Năng lượng",
   "promptVi": "Bình quên mang áo mưa nên bị ướt.",
   "referenceAnswers": [
    "Binh forgot his raincoat, so he got wet."
@@ -4149,7 +4364,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Forgot và got là dạng quá khứ của forget và get; so giải thích hậu quả. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Forgot và got là dạng quá khứ của forget và get; so giải thích hậu quả.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4166,13 +4381,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-010",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Văn hóa & Du lịch",
   "promptVi": "Đầu tiên, chúng tôi mua vé, sau đó chúng tôi vào bảo tàng.",
   "referenceAnswers": [
    "First, we bought tickets, and then we entered the museum."
@@ -4182,7 +4398,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Buy → bought; entered là quá khứ; first/then thể hiện thứ tự. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Buy → bought; entered là quá khứ; first/then thể hiện thứ tự.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4199,13 +4415,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự",
+  "targetTerm": "museum",
+  "meaningVi": "bảo tàng"
  },
  {
   "id": "esl-v2-r06-u06-011",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Mai đọc tin nhắn, mỉm cười rồi trả lời.",
   "referenceAnswers": [
    "Mai read the message, smiled and replied."
@@ -4215,7 +4434,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Read ở quá khứ có cách viết như hiện tại nhưng phát âm /red/; reply đổi y thành i rồi thêm -ed. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Read ở quá khứ có cách viết như hiện tại nhưng phát âm /red/; reply đổi y thành i rồi thêm -ed.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4232,13 +4451,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-012",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Giao thông & Đi lại",
   "promptVi": "Xe đạp bị xẹp lốp nên tôi đi bộ về.",
   "referenceAnswers": [
    "My bicycle had a flat tyre, so I walked home."
@@ -4248,7 +4468,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Had là quá khứ của have; walked diễn tả hành động đi bộ đã kết thúc. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Had là quá khứ của have; walked diễn tả hành động đi bộ đã kết thúc.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4265,13 +4485,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-013",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Anh trai tôi tắt đèn rồi rời khỏi phòng.",
   "referenceAnswers": [
    "My older brother turned off the light and left the room."
@@ -4281,7 +4502,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Turn off → turned off; leave → left là dạng quá khứ bất quy tắc. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Turn off → turned off; leave → left là dạng quá khứ bất quy tắc.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4298,23 +4519,25 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-014",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Gia đình & Đời sống",
   "promptVi": "Tối qua tôi nghe một tiếng động, nhưng không thấy ai.",
   "referenceAnswers": [
-   "Last night, I heard a noise, but I did not see anyone."
+   "Last night, I heard a noise, but I did not see anyone.",
+   "Last night, I heard a noise, but I didn't see anyone."
   ],
   "grammarTags": [
    "past_sequence",
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Hear → heard; sau did not phải dùng see nguyên mẫu. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Hear → heard; sau did not phải dùng see nguyên mẫu.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4331,13 +4554,16 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự",
+  "targetTerm": "last night",
+  "meaningVi": "tối hôm qua"
  },
  {
   "id": "esl-v2-r06-u06-015",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Sau khi ăn sáng, Hoa rửa những chiếc cốc và lau bàn.",
   "referenceAnswers": [
    "After breakfast, Hoa washed the cups and wiped the table."
@@ -4347,7 +4573,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Washed và wiped đều là quá khứ; after breakfast cho biết thứ tự. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Washed và wiped đều là quá khứ; after breakfast cho biết thứ tự.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4364,13 +4590,14 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  },
  {
   "id": "esl-v2-r06-u06-016",
   "practiceLevel": "3.0",
   "type": "sentence",
-  "topic": "Kể sự việc theo trình tự",
+  "topic": "Giáo dục & Trường học",
   "promptVi": "Cả lớp đứng dậy khi giáo viên bước vào.",
   "referenceAnswers": [
    "The whole class stood up when the teacher entered."
@@ -4380,7 +4607,7 @@
    "sentence",
    "R06"
   ],
-  "explanationVi": "Phân tích cấu trúc: Stand → stood; entered diễn tả hành động đã diễn ra; when nối hai sự việc. Hãy đối chiếu chủ ngữ, dấu hiệu thời gian, dạng động từ và trật tự câu; đáp án mẫu không phải cách diễn đạt đúng duy nhất.",
+  "explanationVi": "Stand → stood; entered diễn tả hành động đã diễn ra; when nối hai sự việc.",
   "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài bổ sung từ bộ ESL v2 (R06-U06), chủ đề Kể sự việc theo trình tự.",
   "commonErrors": [
    {
@@ -4397,6 +4624,7 @@
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
-  "version": 1
+  "version": 1,
+  "skillFocus": "Kể sự việc theo trình tự"
  }
 ]

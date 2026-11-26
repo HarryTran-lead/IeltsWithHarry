@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { bandFile, bandIndex, levelRubric, practiceBands, reviewKey, type BandExercise } from "./band-practice";
-import { closestAnswer } from "./compare-words";
+import { bandFile, bandIndex, CANONICAL_TOPICS, levelRubric, practiceBands, reviewKey, type BandExercise } from "./band-practice";
+import { buildChunkPuzzle, splitParagraphSteps } from "./chunk-builder";
+import { closestAnswer, evaluateExpression } from "./compare-words";
 import { hintLadder } from "./hint-ladder";
 import { practiceExerciseSchema } from "./schema";
 
@@ -58,10 +59,24 @@ describe("band translation practice data", () => {
     }
   });
 
-  it("adds ESL v2 lessons without giving the answer away before the review", async () => {
-    const esl = [...(await allExercises()).values()].flat().filter((item) => item.source === "esl-v2");
+  it("adds ESL v2 lessons and curates topics, variants and clean notes without giving the answer away", async () => {
+    const all = [...(await allExercises()).values()].flat();
+    const esl = all.filter((item) => item.source === "esl-v2");
     expect(esl).toHaveLength(1090);
-    expect(esl.filter((item) => item.referenceAnswers.length > 1)).toHaveLength(311);
+    expect(esl.filter((item) => item.referenceAnswers.length > 1).length).toBeGreaterThanOrEqual(311);
+
+    const canonicalSet = new Set<string>(CANONICAL_TOPICS);
+    for (const item of all) {
+      expect(canonicalSet.has(item.topic)).toBe(true);
+      expect(item.explanationVi).not.toContain("Ví dụ dịch chưa đạt:");
+      expect(item.explanationVi).not.toContain("nghĩa xác thực");
+    }
+
+    for (const summary of bandIndex) {
+      const sumTopics = Object.values(summary.topicCounts ?? {}).reduce((a, b) => a + b, 0);
+      expect(sumTopics).toBe(summary.keys.length);
+    }
+
     for (const item of esl) {
       expect(item.editorialStatus).toBe("pilot");
       expect(Number(item.practiceLevel)).toBeGreaterThanOrEqual(2.5);
@@ -102,5 +117,56 @@ describe("closestAnswer", () => {
   it("keeps the main model when nothing matches better", () => {
     expect(closestAnswer("", answers)).toBe(0);
     expect(closestAnswer("Libraries should open later.", answers)).toBe(0);
+  });
+});
+
+describe("evaluateExpression & interactive builders", () => {
+  it("recognises IELTS synonyms without marking valid paraphrases as traps", () => {
+    const model = ["This scholarship gives students from rural areas the opportunity to attend university."];
+    const paraphrase = "This grant enables learners from countryside areas to pursue university.";
+    const result = evaluateExpression(paraphrase, model, []);
+    expect(result.conceptScore).toBeGreaterThanOrEqual(70);
+    expect(result.detectedTrap).toBeNull();
+    expect(result.learnerTokens.some((tok) => tok.role === "synonym")).toBe(true);
+    // Function words in model are not dictionary-lookup buttons.
+    const theToken = result.modelTokens.find((tok) => tok.text === "the");
+    const scholToken = result.modelTokens.find((tok) => tok.text === "scholarship");
+    expect(theToken?.lookupable).toBe(false);
+    expect(scholToken?.lookupable).toBe(true);
+  });
+
+  it("flags common Vietnamese->English grammar traps accurately", () => {
+    const model = ["I believe public libraries should stay open later."];
+    const errors = [{
+      incorrect: "I believe public libraries should to stay open later.",
+      correction: "I believe public libraries should stay open later.",
+      reasonVi: "Modal should đi với động từ nguyên mẫu không có to.",
+    }];
+    const result = evaluateExpression("I think public libraries should to stay open later.", model, errors);
+    expect(result.detectedTrap).not.toBeNull();
+    expect(result.learnerTokens.some((tok) => tok.role === "trap")).toBe(true);
+  });
+
+  it("builds chunk puzzles and splits aligned paragraphs into steps", () => {
+    const puzzle = buildChunkPuzzle({
+      id: "band-5.0-test",
+      type: "sentence",
+      referenceAnswers: ["Shops can reduce waste by using less packaging."],
+      commonErrors: [{
+        incorrect: "Shops can reduce waste by use less packaging.",
+        correction: "Shops can reduce waste by using less packaging.",
+        reasonVi: "Sau giới từ by dùng V-ing.",
+      }],
+    });
+    expect(puzzle.solution.map((c) => c.text).join(" ")).toBe("Shops can reduce waste by using less packaging.");
+    expect(puzzle.bank.some((c) => c.isDistractor)).toBe(true);
+
+    const steps = splitParagraphSteps({
+      type: "paragraph",
+      promptVi: "Câu một nêu luận điểm. Câu hai đưa phản biện. Câu ba chốt điều kiện.",
+      referenceAnswers: ["Sentence one states the claim. Sentence two gives a counterpoint. Sentence three sets the condition."],
+    });
+    expect(steps).toHaveLength(3);
+    expect(steps?.[1]?.promptVi).toBe("Câu hai đưa phản biện.");
   });
 });
