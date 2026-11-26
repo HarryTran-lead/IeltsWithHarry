@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, Lightbulb, ListChecks, Maximize2, Mic, Minimize2, Minus, Plus, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, Minus, Plus, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import type { ExamContent, ExamQuestion, FiveStep } from "@/lib/ielts-bank/schema";
 import { estimateBand } from "@/lib/ielts-bank/band";
@@ -85,11 +85,11 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const partNumber = initialPart ?? Number(searchParams.get("part"));
-  const [readingPart, setReadingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
+  const [readingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
   const [readingView, setReadingView] = useState<"practice" | "exam">("practice");
   const [readingMinutes, setReadingMinutes] = useState<number>(exam.skill === "Listening" ? 40 : 60);
   const [passageMinutes, setPassageMinutes] = useState<number>(exam.skill === "Listening" ? 10 : 20);
-  const [passageUntimed, setPassageUntimed] = useState(false);
+  const [practiceUntimed, setPracticeUntimed] = useState(false);
   useEffect(() => {
     if (exam.skill !== "Reading" && exam.skill !== "Listening") return;
     const full = savedDuration(`ielts-${exam.skill}-full-minutes`);
@@ -120,14 +120,14 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
     const standard = chosen ? (listening ? 10 : 20) : (listening ? 40 : 60);
     const picked = chosen ? passageMinutes : readingMinutes;
     const examView = readingView === "exam";
-    // No countdown: a single passage/part, practice view only.
-    const untimed = Boolean(chosen) && !examView && passageUntimed;
+    // Both full tests and individual parts can run without a countdown in practice view.
+    const untimed = !examView && practiceUntimed;
     const minutes = examView ? standard : picked;
     const custom = !examView && !untimed && picked !== standard;
     const timeText = untimed ? "Tự do thời gian" : `${minutes} phút`;
     const setMinutes = (value: number) => {
       const next = Math.min(180, Math.max(5, value));
-      setPassageUntimed(false);
+      setPracticeUntimed(false);
       if (chosen) setPassageMinutes(next); else setReadingMinutes(next);
       rememberDuration(`ielts-${exam.skill}-${chosen ? "part" : "full"}-minutes`, next);
     };
@@ -151,27 +151,6 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
             <span>Bạn đang làm dở <b>{open.part ? partName(open.part - 1) : "Full test"}</b> · {open.untimed ? "tự do thời gian" : open.minutesLeft > 0 ? `còn ${open.minutesLeft} phút` : "đã hết giờ, mở để nộp"}</span>
             <Link href={`/app/question-bank/attempt/${open.id}`}>Làm tiếp <ArrowRight size={15} /></Link>
           </div>}
-          {chosen ? <section className="brl-pick" aria-label="Bài bạn sẽ làm">
-            <span className="brl-badge" aria-hidden="true">P{readingPart}</span>
-            <div className="brl-pick-body">
-              <small>Bài bạn sẽ làm</small>
-              <div className="brl-chips"><span><ListChecks size={15} /> {count} câu hỏi</span><span><Clock3 size={15} /> {timeText}</span>{openParts.has(readingPart) && <em className="brl-tag is-open">Đang làm dở</em>}</div>
-              {parts.length > 1 && <div className="brl-switch"><small>Đổi sang:</small>{parts.map((part, index) => index + 1 === readingPart ? null : <button type="button" key={part.id} onClick={() => setReadingPart(index + 1)}>{partName(index)}</button>)}</div>}
-            </div>
-            <button type="button" className="brl-link" onClick={() => setReadingPart(0)}>Làm cả đề ({total} câu)</button>
-          </section>
-            : <section className="brl-structure" aria-label="Cấu trúc đề">
-              <div className="brl-structure-head"><small>Cấu trúc đề · làm liên tục</small><b>{parts.length} {unit} · {total} câu</b></div>
-              <div className="brl-bar" aria-hidden="true">{parts.map((part, index) => <i key={part.id} className={openParts.has(index + 1) ? "is-open" : ""} style={{ flexGrow: part.questions.length }} />)}</div>
-              <div className="brl-parts" style={{ "--brl-cols": Math.min(parts.length, 4) || 1 } as CSSProperties}>
-                {parts.map((part, index) => <div key={part.id} className="brl-part">
-                  <small>{partName(index)} · {part.questions.length} câu</small>
-                  <strong>{bareTitle(part.title) || partName(index)}</strong>
-                  <div>{openParts.has(index + 1) && <em className="brl-tag is-open">Đang làm dở</em>}<button type="button" onClick={() => setReadingPart(index + 1)}>Chỉ luyện phần này</button></div>
-                </div>)}
-              </div>
-              {!listening && parts.length > 1 && <p className="brl-note"><Lightbulb size={15} aria-hidden="true" /> Độ khó tăng dần qua từng passage, nên dành nhiều thời gian hơn cho passage cuối.</p>}
-            </section>}
           <section className="brl-section">
             <h2>Chọn giao diện làm bài</h2>
             <div className="brl-views">
@@ -192,7 +171,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
             <div className="brl-times">
               <button type="button" aria-pressed={!custom && !untimed} className={custom || untimed ? "" : "is-on"} onClick={() => setMinutes(standard)}>{standard} phút · chuẩn</button>
               <button type="button" aria-pressed={custom} className={custom ? "is-on" : ""} disabled={examView} onClick={() => setMinutes(picked === standard ? standard + 5 : picked)}>Tự chọn</button>
-              {chosen && <button type="button" aria-pressed={untimed} className={untimed ? "is-on" : ""} disabled={examView} onClick={() => setPassageUntimed(true)}>Tự do thời gian</button>}
+              <button type="button" aria-pressed={untimed} className={untimed ? "is-on" : ""} disabled={examView} onClick={() => setPracticeUntimed(true)}>Tự do thời gian</button>
               {custom && <div className="brl-stepper">
                 <button type="button" aria-label="Giảm 5 phút" disabled={picked <= 5} onClick={() => setMinutes(picked - 5)}><Minus size={16} /></button>
                 <span aria-live="polite">{picked} phút</span>
@@ -202,7 +181,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
           </section>
         </div>
         <footer className="br-launch-footer brl-footer">
-          <div><small>Bạn sẽ làm</small><b>{scopeName} · {count} câu · {timeText} · {examView ? "Thi thật" : "Luyện tập"}</b></div>
+          <div><b>{scopeName} · {count} câu · {timeText} · {examView ? "Thi thật" : "Luyện tập"}</b></div>
           <div className="brl-actions">
             {onClose ? <button type="button" className="brl-cancel" onClick={onClose} disabled={busy}>Huỷ</button> : <Link href={backHref} className="brl-cancel">Huỷ</Link>}
             <button type="button" className="bx-start" disabled={busy || (!untimed && !customAttemptMinutes(minutes))} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, untimed ? { view: readingView, untimed: true } : { view: readingView, minutes })}>{busy ? "Đang mở đề…" : openParts.has(readingPart) ? "Bắt đầu lượt mới" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>

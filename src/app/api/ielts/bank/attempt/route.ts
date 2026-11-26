@@ -28,9 +28,9 @@ export async function POST(request: Request) {
       if (body.minutes !== undefined && (!(exam.skill === "Reading" || exam.skill === "Listening") || !customAttemptMinutes(body.minutes))) {
         return Response.json({ error: "Thời gian làm bài không hợp lệ." }, { status: 400 });
       }
-      // Untimed practice is for one passage/part in the practice view only.
-      if (body.untimed && (!body.sectionId || body.view === "exam" || body.minutes !== undefined || !(exam.skill === "Reading" || exam.skill === "Listening"))) {
-        return Response.json({ error: "Chế độ tự do thời gian chỉ dùng khi luyện từng phần." }, { status: 400 });
+      // Full tests and individual parts support untimed practice, but not exam view.
+      if (body.untimed && (body.view === "exam" || body.minutes !== undefined || !(exam.skill === "Reading" || exam.skill === "Listening"))) {
+        return Response.json({ error: "Tự do thời gian chỉ dùng trong giao diện luyện tập Reading/Listening và không kèm thời lượng đếm ngược." }, { status: 400 });
       }
       let notes: Record<string, string> = {};
       if (body.sectionId) {
