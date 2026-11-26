@@ -109,7 +109,8 @@ describe("Question Factory V2 editorial corpus", () => {
   it("asks for spare candidates beyond the published target", async () => {
     const { spareItems } = await import("../src/lib/news/question-factory-v2");
     expect(spareItems(6)).toBe(3);
-    expect(spareItems(13)).toBe(4);
+    expect(spareItems(9)).toBe(5);
+    expect(spareItems(13)).toBe(7);
   });
   it("rejects incorrect matching pools and repeated facts", () => {
     const matching = positiveFixtures.filter((item) => item.type === "matching_features").map((item) => ({ ...item }));

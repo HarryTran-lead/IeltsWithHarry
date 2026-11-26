@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { passageForScore, passageScore } from "../passage-difficulty";
 import { quizExcerpt } from "../enrichment";
 import { MIN_BLOCK, selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, PassageStyle, QuizFailureReason, TokenUsage } from "./types";
@@ -143,9 +144,9 @@ export function withEvidenceSpans(item: Candidate, article: string): Candidate {
 }
 const GAP = "______";
 /** Most candidates one article may request across all batches. */
-const MAX_CANDIDATES = 16;
+const MAX_CANDIDATES = 20;
 /** Spare candidates beyond the published target, so checks can drop items without failing the set. */
-export function spareItems(target: number) { return Math.max(3, Math.ceil(target * 0.3)); }
+export function spareItems(target: number) { return Math.max(3, Math.ceil(target * 0.5)); }
 const GAP_VARIANTS = /\[\s*(?:gap|blank)\s*\]|\(\s*(?:gap|blank)?\s*\)|\[\s*\]|\{\s*gap\s*\}|(?:_\s){2,}_|—{2,}|–{2,}/gi;
 const UNDERSCORE_GAP = /_{3,}/g;
 /**
@@ -212,7 +213,30 @@ export function unifyMatchingPools(items: Candidate[]): Candidate[] {
   });
 }
 /** Single-item forms used to top up a set that is short after checks; groups need two or more items. */
-const TOP_UP_FORMS: IeltsQuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer", "ynng"];
+const TOP_UP_FORMS: IeltsQuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer", "ynng", "mcq_multiple"];
+/**
+ * How many items each top-up form asks for: forms still short of a full block (MIN_BLOCK plus one spare for QA)
+ * come first, so the set keeps two or three real blocks instead of one large one; the rest is shared evenly.
+ * Choose TWO is asked for in whole questions of two items.
+ */
+export function topUpCounts(forms: IeltsQuestionType[], passing: Map<IeltsQuestionType, number>, missing: number) {
+  const counts = forms.map(() => 0);
+  const order = forms.map((type, index) => ({ type, index })).sort((a, b) => (passing.get(a.type) ?? 0) - (passing.get(b.type) ?? 0) || a.index - b.index);
+  const step = (type: IeltsQuestionType) => type === "mcq_multiple" ? 2 : 1;
+  let left = missing;
+  for (const { type, index } of order) {
+    let need = Math.max(0, MIN_BLOCK + 1 - (passing.get(type) ?? 0));
+    while (need > 0 && left >= step(type)) { counts[index] += step(type); left -= step(type); need -= step(type); }
+  }
+  for (let guard = 0; left > 0 && guard < 20; guard++) {
+    const next = order.find(({ type }) => step(type) <= left);
+    if (!next) break;
+    counts[next.index] += step(next.type);
+    left -= step(next.type);
+    order.push(order.shift()!);
+  }
+  return counts;
+}
 /** Rounds 3 and 4 run only when the round before them added a checked item (the article still has material). */
 const MAX_TOP_UPS = 4;
 /** Repair rounds for rejected items while the set is short of its target. */
@@ -290,6 +314,7 @@ export async function generateNewsQuizV2(
   if (pending) return pending;
   // The IELTS passage the article reads like, from the passage map; reported with the result.
   let passageLevel: 1 | 2 | 3 | undefined;
+  let difficultyScore: number | undefined;
   const runInner = async () => {
     const budget = new ArticleRequestBudget(MAX_ARTICLE_REQUESTS);
     const deadline = Date.now() + v2Timing.runBudgetMs;
@@ -312,7 +337,10 @@ export async function generateNewsQuizV2(
       generationTokens = mapped.usage;
       const passageMap = mapped.data?.passage_map as PassageMap;
       // The passage map says which IELTS passage the article reads like; the forms follow that passage's templates.
-      passageLevel = passageLevelOf(passageMap?.passage_style);
+      // The 0–100 difficulty score decides; the map's style alone is the fallback when it gave no rating.
+      const score = passageScore(passageMap?.difficulty, passageMap?.passage_style, fullArticle);
+      difficultyScore = score ?? undefined;
+      passageLevel = score !== null ? passageForScore(score) : passageLevelOf(passageMap?.passage_style);
       if (passageLevel) selected = selectQuestionTypes(excerpt, excerptWords, articleId, passageLevel, Boolean(passageMap?.writer_view?.trim()));
       const paragraphMapUsable = !validatePassageMap(passageMap, fullArticle)
         .some((issue) => issue === "PASSAGE_MAP_SCHEMA" || PARAGRAPH_MAP_ISSUES.has(issue));
@@ -344,18 +372,24 @@ export async function generateNewsQuizV2(
         if (!timeLeft()) break;
         await runBatch(index, batch.types, batch.counts);
       }
-      // Top up with single-item forms while the checked set is short of the target plus a margin.
+      // Top up within the set's own single-item forms while the checked set is short of the target plus a margin.
       const topUpForms = TOP_UP_FORMS.filter((type) => selected.includes(type));
       let passingBefore = -1;
       for (let round = 0; round < MAX_TOP_UPS && topUpForms.length && timeLeft(); round++) {
-        const passing = validateGeneration({ passage_map: passageMap, questions, image_query: "" }, fullArticle, selected).valid.length;
+        const checked = validateGeneration({ passage_map: passageMap, questions, image_query: "" }, fullArticle, selected).valid;
+        const passing = checked.length;
         // Keep a margin: blind QA and the cross-model check may still drop items.
         if (passing >= target + TOP_UP_MARGIN) break;
         // A round that added nothing means the article has no more distinct material: stop asking.
         if (round >= 2 && passing <= passingBefore) break;
         passingBefore = passing;
         const missing = Math.min(5, target + TOP_UP_MARGIN - passing);
-        await runBatch(batches.length + round, topUpForms, typeCounts(topUpForms, missing));
+        const passingByForm = new Map<IeltsQuestionType, number>();
+        for (const item of checked) passingByForm.set(item.type, (passingByForm.get(item.type) ?? 0) + 1);
+        const counts = topUpCounts(topUpForms, passingByForm, missing);
+        const asked = topUpForms.filter((_, index) => counts[index] > 0);
+        if (!asked.length) break;
+        await runBatch(batches.length + round, asked, counts.filter((count) => count > 0));
       }
       const generated = { data: { passage_map: passageMap, questions, image_query: mapped.data?.image_query ?? "" } as Generation };
       candidateCount = questions.length;
@@ -445,6 +479,10 @@ export async function generateNewsQuizV2(
       const gates: string[] = [];
       if (blocked) gates.push("QA_BLOCKED");
       if (chosen.length < 6) gates.push("TOO_FEW_APPROVED");
+      // Like an IELTS passage, a set has two or three forms, each a full block.
+      const blockSizes = [...new Set(chosen.map((item) => item.type))].map((type) => chosen.filter((item) => item.type === type).length);
+      if (blockSizes.length < 2) gates.push("ONE_FORM");
+      if (blockSizes.some((size) => size < MIN_BLOCK)) gates.push("SHORT_BLOCK");
       if (direct > directLimit(chosen.length)) gates.push("TOO_MANY_DIRECT");
       if (skills.size < 2 || areas.size < 2) gates.push("LOW_DIVERSITY");
       issues.push(...gates);
@@ -466,7 +504,7 @@ export async function generateNewsQuizV2(
   };
   const run = async (): Promise<FactoryResult> => {
     const output = await runInner();
-    return passageLevel ? { ...output, passageLevel } : output;
+    return passageLevel ? { ...output, passageLevel, ...(difficultyScore !== undefined ? { passageScore: difficultyScore } : {}) } : output;
   };
   const promise = run();
   inFlight.set(key, promise);

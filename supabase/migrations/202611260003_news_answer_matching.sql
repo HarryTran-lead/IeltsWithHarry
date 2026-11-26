@@ -58,7 +58,7 @@ begin
     v_choice := p_answers->>v_question.id::text;
     question_id := v_question.id;
     question_type := v_question.question_type;
-    -- Kept in step with 202611270001 (applied first in production): Choose TWO is graded as a set, letters reach J.
+    -- Same as 202611270001 (applied before this file in production): Choose TWO is graded as a set, letters reach J.
     if v_question.question_type = 'mcq_multiple' then
       correct := case when v_choice ~ '^[0-9]$' then
         exists (select 1 from public.news_auto_questions s join public.news_auto_answer_keys sk on sk.question_id = s.id

@@ -27,6 +27,8 @@ export type PassageStyle = "factual" | "sections" | "argument";
 export type PassageMap = {
   paragraphs: { id: string; main_idea: string; key_facts: string[] }[];
   passage_style?: PassageStyle;
+  /** 1–5 ratings behind the passage difficulty score (passage-difficulty.ts). */
+  difficulty?: { abstraction: number; argument: number; inference: number; vocabulary: number };
   writer_view: string;
   comparisons: string[];
   qualifications: string[];
@@ -52,6 +54,8 @@ export type FactoryResult = {
   model: string;
   /** The IELTS passage (1–3) the article was judged to read like, when the passage map said. */
   passageLevel?: 1 | 2 | 3;
+  /** The 0–100 difficulty score behind passageLevel, when the passage map rated the text. */
+  passageScore?: number;
   questions: AdaptiveQuestion[];
   imageQuery: string;
   audit: {
