@@ -85,7 +85,7 @@ function wordLimitInstruction(limit = 3) {
 }
 
 /** The instruction lines of an IELTS Academic Reading block for each form. */
-function blockInstructions(type: QuestionType, first: number, last: number, optionCount: number, pool: string[] | null, noteLimit: number | null) {
+function blockInstructions(type: QuestionType, first: number, last: number, optionCount: number, pool: string[] | null, wordLimit: number | null) {
   const span = last > first ? `${first}–${last}` : `${first}`;
   switch (type) {
     case "mcq": return [`Choose the correct letter, **${choiceLetters(optionCount)}**.`];
@@ -102,13 +102,13 @@ function blockInstructions(type: QuestionType, first: number, last: number, opti
     case "matching_features": return [`Look at the following statements (Questions ${span}) and the list below.`,
       "Match each statement with the correct person, organisation or place."];
     case "matching_sentence_endings": return ["Complete each sentence with the correct ending below."];
-    case "sentence_completion": return ["Complete the sentences below.", wordLimitInstruction()];
-    case "summary_completion": return ["Complete the summary below.", wordLimitInstruction()];
-    case "note_completion": return ["Complete the notes below.", noteLimit ? wordLimitInstruction(noteLimit) : "Follow the word limit shown with each answer."];
-    case "table_completion": return ["Complete the table below."];
-    case "flow_chart_completion": return ["Complete the flow-chart below.", wordLimitInstruction()];
-    case "diagram_label_completion": return ["Label the diagram below.", wordLimitInstruction()];
-    case "short_answer": return ["Answer the questions below.", wordLimitInstruction()];
+    case "sentence_completion": return ["Complete the sentences below.", wordLimitInstruction(wordLimit ?? 3)];
+    case "summary_completion": return ["Complete the summary below.", wordLimitInstruction(wordLimit ?? 3)];
+    case "note_completion": return ["Complete the notes below.", wordLimit ? wordLimitInstruction(wordLimit) : "Follow the word limit shown with each answer."];
+    case "table_completion": return ["Complete the table below.", ...(wordLimit ? [wordLimitInstruction(wordLimit)] : [])];
+    case "flow_chart_completion": return ["Complete the flow-chart below.", wordLimitInstruction(wordLimit ?? 3)];
+    case "diagram_label_completion": return ["Label the diagram below.", wordLimitInstruction(wordLimit ?? 3)];
+    case "short_answer": return ["Answer the questions below.", wordLimitInstruction(wordLimit ?? 3)];
     default: return [];
   }
 }
@@ -558,7 +558,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       const grid = section.type === "matching_information" ? matching : null;
       const pool = matching && !grid ? matching : null;
       const groupedCompletion = GROUPED_COMPLETION.has(section.type);
-      const instructions = blockInstructions(section.type, first, last, section.items[0].question.options.length, matching, sharedNoteWordLimit);
+      // New written items carry their block's word limit as a [W1]/[W2] tag; older ones were set at three words.
+      const tags = section.items.map(({ question }) => /\n\[W([123])\]$/.exec(question.prompt)?.[1]);
+      const blockWordLimit = section.type === "note_completion" ? sharedNoteWordLimit
+        : tags.every(Boolean) ? Math.max(...tags.map(Number)) : null;
+      const instructions = blockInstructions(section.type, first, last, section.items[0].question.options.length, matching, blockWordLimit);
       const explanations = graded && <div className="news-auto-explanations">{section.items.map(({ question, number }) => explanation(question, number))}</div>;
       return <div className={`news-auto-group news-block-${section.type}${section.type === "flow_chart_completion" ? " news-auto-flow-group" : ""}`} key={block}>
         <div className="news-auto-group-head"><h3>Questions {first}{last > first ? `–${last}` : ""}</h3>
@@ -668,7 +672,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);
           const truth = question.question_type === "tfng" || question.question_type === "ynng";
-          const table = question.question_type === "table_completion" ? parseTableCompletion(question.prompt) : null;
+          const table = question.question_type === "table_completion" ? parseTableCompletion(promptWithoutWordLimit(question.prompt)) : null;
           const cleanPrompt = promptWithoutWordLimit(question.prompt);
           const diagram = question.question_type === "diagram_label_completion" ? parseQuestionDiagram(cleanPrompt) : null;
           const noteWordLimit = noteWordLimitForPrompt(question.prompt);

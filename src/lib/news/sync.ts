@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { fetchGovUkBody, fetchOceanServiceBody, providers, type FetchResult, type NewsBodyCandidate, type NewsSource } from "./providers";
 import { loadNewsSettings } from "./settings";
 import { pauseLegacyPressRewrites } from "./rights-pause";
+import { mergeShortParagraphs } from "./passage-paragraphs";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
 /** Teaser-only feeds and how their article text is read. */
@@ -59,7 +60,13 @@ async function ingest(db: AdminClient, response: FetchResult, requireBody: boole
     const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", group.map((body) => body.canonical_hash));
     if (articleError) throw articleError;
     const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
-    const eligible = group.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis, byline: body.byline ?? null }] : []);
+    // Passage-sized paragraphs only for articles stored from now on: an article that already has a body keeps
+    // its paragraphs, so its translation pairs and paragraph-matching questions still line up.
+    const { data: stored, error: storedError } = await db.from("news_article_bodies").select("article_id").in("article_id", [...ids.values()]);
+    if (storedError) throw storedError;
+    const hasBody = new Set((stored ?? []).map((row) => row.article_id));
+    const eligible = group.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash),
+      body_text: hasBody.has(ids.get(body.canonical_hash)) ? body.body_text : mergeShortParagraphs(body.body_text), rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis, byline: body.byline ?? null }] : []);
     if (eligible.length) {
       const { error } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id" });
       if (error) throw error;
@@ -92,7 +99,8 @@ async function fetchPageBodies(db: AdminClient, source: NewsSource, read: (url: 
     try {
       const body = await read(claim.canonical_url);
       if (body) {
-        const { error: bodyError } = await db.from("news_article_bodies").upsert({ article_id: claim.article_id, body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, byline: body.byline ?? null }, { onConflict: "article_id" });
+        // A claimed teaser-only article has no body yet, so it gets passage-sized paragraphs.
+        const { error: bodyError } = await db.from("news_article_bodies").upsert({ article_id: claim.article_id, body_text: mergeShortParagraphs(body.body_text), rights_basis: body.rights_basis, source_url: body.source_url, byline: body.byline ?? null }, { onConflict: "article_id" });
         if (bodyError) throw bodyError;
         status = "success"; added++;
       }

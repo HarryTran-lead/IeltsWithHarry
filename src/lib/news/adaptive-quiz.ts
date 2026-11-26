@@ -306,33 +306,60 @@ export const MIN_BLOCK = 3;
 
 /**
  * IELTS Academic Reading gives each passage two or three question forms, each as one block, in a recognisable
- * order. A set follows one of these templates; each slot lists interchangeable forms for that block.
+ * order. Templates are grouped by the passage they model, from Cambridge 15–18 (39 passages): each slot lists
+ * interchangeable forms for that block.
  */
-export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = [
-  // Passage 1: statements, then a completion task.
-  [["tfng"], ["note_completion", "table_completion", "sentence_completion", "short_answer"]],
-  // Passage 1, second pattern: choice, short written answers, then statements.
-  [["mcq"], ["short_answer", "sentence_completion", "note_completion"], ["tfng"]],
-  // Passage 2: matching paragraphs, then choice or features, then a completion task.
-  [["matching_headings", "matching_information"], ["mcq", "matching_features"], ["summary_completion", "sentence_completion"]],
-  // Passage 3: choice, then summary or sentence endings, then the writer's views.
-  [["mcq"], ["summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
-];
+export const PASSAGE_TEMPLATES_BY_LEVEL: Record<1 | 2 | 3, IeltsQuestionType[][][]> = {
+  1: [
+    // 10 of 12: statements, then notes, a table, a summary or sentences.
+    [["tfng"], ["note_completion", "table_completion", "summary_completion", "sentence_completion"]],
+    // Which paragraph contains…, then a summary or notes.
+    [["matching_information"], ["summary_completion", "note_completion", "sentence_completion"]],
+    // Rarer: choice, short written answers, then statements.
+    [["mcq"], ["short_answer", "sentence_completion", "note_completion"], ["tfng"]],
+  ],
+  2: [
+    // Matching paragraphs, then a summary, then features or choice.
+    [["matching_information", "matching_headings"], ["summary_completion", "sentence_completion", "note_completion"], ["matching_features", "mcq"]],
+    // Choice, the writer's claims or the facts, then a summary or notes.
+    [["mcq"], ["ynng", "tfng"], ["summary_completion", "note_completion"]],
+  ],
+  3: [
+    // 10 of 14 open with choice; then a summary or sentence endings; then the writer's views.
+    [["mcq"], ["summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
+    [["matching_information"], ["ynng", "tfng"], ["summary_completion", "sentence_completion"]],
+    [["mcq"], ["matching_features"], ["summary_completion", "sentence_completion"]],
+  ],
+};
+export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = Object.values(PASSAGE_TEMPLATES_BY_LEVEL).flat();
+/** How often each template of a level is used, after its share of the Cambridge passages. */
+const TEMPLATE_WEIGHTS: Record<1 | 2 | 3, number[]> = { 1: [7, 2, 1], 2: [7, 3], 3: [6, 2, 2] };
 
 /**
  * Picks the question forms for one article as IELTS blocks: two forms for a six-question set, at most three
- * otherwise, chosen from one passage template and returned in the order the blocks appear.
+ * otherwise, from one passage template, in the order the blocks appear. With a passage level (from the passage
+ * map) only that passage's templates are used; Yes/No/Not Given needs a writer's view.
  */
-export function selectQuestionTypes(text: string, wordCount: number, key: string) {
+export function selectQuestionTypes(text: string, wordCount: number, key: string, level?: 1 | 2 | 3, writerView = true) {
   const weights = new Map(eligibleQuestionTypes(text, wordCount));
+  if (!writerView) weights.delete("ynng");
+  // The passage map found a writer's view: Yes/No/Not Given is then the IELTS choice over True/False/Not Given.
+  else if (level) weights.set("ynng", Math.max(weights.get("ynng") ?? 0, 8));
   const blocks = targetQuestionCount(text, wordCount) >= MIN_BLOCK * 3 ? 3 : 2;
   const pick = (slot: IeltsQuestionType[], position: number) => slot.filter((type) => weights.has(type))
     .map((type) => ({ type, score: -Math.log((stableHash(`${key}:${position}:${type}`) + 1) / 4294967297) / weights.get(type)! }))
     .sort((a, b) => a.score - b.score)[0]?.type;
-  const viable = PASSAGE_TEMPLATES.map((template) => template.slice(0, blocks).map(pick))
-    .filter((types): types is IeltsQuestionType[] => types.every(Boolean) && new Set(types).size === types.length);
-  // The core forms are always eligible, so the two Passage 1 templates are always viable.
-  return viable[stableHash(`${key}:template`) % viable.length] ?? (["tfng", "sentence_completion"] as IeltsQuestionType[]);
+  const viableIn = (templates: IeltsQuestionType[][][], weightsOf: number[]) => templates
+    .map((template, index) => ({ types: template.slice(0, blocks).map(pick), weight: weightsOf[index] ?? 1 }))
+    .filter((entry): entry is { types: IeltsQuestionType[]; weight: number } =>
+      entry.types.every(Boolean) && new Set(entry.types).size === entry.types.length);
+  // A level whose templates the article cannot support (too few paragraphs for matching) falls back to all.
+  const leveled = level ? viableIn(PASSAGE_TEMPLATES_BY_LEVEL[level], TEMPLATE_WEIGHTS[level]) : [];
+  const viable = leveled.length ? leveled : viableIn(PASSAGE_TEMPLATES, []);
+  // Weighted, stable choice per article; the core forms are always eligible, so the first template is always viable.
+  let ticket = (stableHash(`${key}:template`) / 4294967296) * viable.reduce((sum, entry) => sum + entry.weight, 0);
+  for (const entry of viable) { ticket -= entry.weight; if (ticket < 0) return entry.types; }
+  return viable[viable.length - 1]?.types ?? (["tfng", "sentence_completion"] as IeltsQuestionType[]);
 }
 
 function noteWordLimitForKey(key: string) {

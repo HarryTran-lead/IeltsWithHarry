@@ -22,8 +22,11 @@ export type Candidate = {
   explanation: string;
   option_notes: string[];
 };
+/** Which IELTS passage an article reads like: a factual account (1), distinct sections (2) or an argument (3). */
+export type PassageStyle = "factual" | "sections" | "argument";
 export type PassageMap = {
   paragraphs: { id: string; main_idea: string; key_facts: string[] }[];
+  passage_style?: PassageStyle;
   writer_view: string;
   comparisons: string[];
   qualifications: string[];
@@ -47,6 +50,8 @@ export type BlindReview = { reviews: BlindVerdict[] };
 export type FactoryResult = {
   state: "READY" | "PENDING_QUALITY" | "PENDING_QUOTA" | "PENDING_PROVIDER";
   model: string;
+  /** The IELTS passage (1–3) the article was judged to read like, when the passage map said. */
+  passageLevel?: 1 | 2 | 3;
   questions: AdaptiveQuestion[];
   imageQuery: string;
   audit: {
