@@ -335,6 +335,11 @@ body:has(.bx-reading-launch) { overflow: hidden; }
 .brl-times > button { min-height: 36px; padding: 0 11px; border: 1.5px solid #e3e8ee; border-radius: 9px; background: #fff; color: #3f4a59; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
 .brl-times > button.is-on { border-color: #0b9b90; background: #e7f6ef; color: #0b6b50; }
 .brl-times > button:disabled { border-style: dashed; background: #f6f8fa; color: #8a94a3; cursor: not-allowed; }
+.brl-stepper-slot { display: grid; grid-template-columns: 0fr; margin-left: -6px; opacity: 0; transform: scale(.92); transition: grid-template-columns .22s ease, margin-left .22s ease, opacity .18s ease, transform .22s ease; }
+.brl-stepper-slot.is-open { grid-template-columns: 1fr; margin-left: 0; opacity: 1; transform: none; }
+.brl-stepper-slot > .brl-stepper { min-width: 0; overflow: hidden; }
+.brl-stepper-slot:not(.is-open) > .brl-stepper { border-color: transparent; padding: 0; }
+@media (prefers-reduced-motion: reduce) { .brl-stepper-slot { transition: none; } }
 .brl-stepper { display: flex; align-items: center; gap: 3px; padding: 2px; border: 1.5px solid #0b9b90; border-radius: 10px; background: #fff; }
 .brl-stepper button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; border-radius: 7px; background: #f1f4f7; color: #18324b; cursor: pointer; }
 .brl-stepper button:disabled { opacity: .4; cursor: not-allowed; }
