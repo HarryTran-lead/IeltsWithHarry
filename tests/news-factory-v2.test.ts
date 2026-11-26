@@ -79,6 +79,30 @@ describe("Question Factory V2 editorial corpus", () => {
     // Published in the article's reading order.
     expect(chosen.map((entry) => entry.id)).toEqual(["d1", "d2", "h1", "h2", "h3", "h4"]);
   });
+  it("publishes each form as one block of at least three items, in template order", async () => {
+    const { selectPublished } = await import("../src/lib/news/question-factory-v2");
+    const item = (id: string, type: string) => ({ id, group_id: id, type, difficulty: "P2", options: [], prompt: id }) as never;
+    // Reading order interleaves the forms; short answer has only two usable items.
+    const pool = [...Array.from({ length: 7 }, (_, i) => [item(`t${i}`, "tfng"), item(`m${i}`, "mcq")]).flat(),
+      item("s1", "short_answer"), item("s2", "short_answer")];
+    const chosen = selectPublished(pool, 13, ["mcq", "short_answer", "tfng"]) as { id: string; type: string }[];
+    expect(chosen).toHaveLength(13);
+    expect(chosen.some((entry) => entry.type === "short_answer")).toBe(false);
+    // One contiguous block per form, in the template's order.
+    expect(chosen.map((entry) => entry.type).filter((type, index, all) => type !== all[index - 1])).toEqual(["mcq", "tfng"]);
+  });
+  it("picks two or three forms from one IELTS passage template", async () => {
+    const { PASSAGE_TEMPLATES } = await import("../src/lib/news/adaptive-quiz");
+    const long = Array.from({ length: 24 }, (_, i) => `Paragraph ${i} explains how Seabrook Water Board staff measured ${i + 10} samples in 2022 because residents asked, while the Harbor Office compared results.`)
+      .reduce((text, sentence, i) => text + (i % 4 === 0 ? "\n\n" : " ") + sentence, "").trim();
+    const words = long.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
+    for (let n = 0; n < 50; n++) {
+      const selected = selectQuestionTypes(long, words, `template-${n}`);
+      expect(selected.length).toBeGreaterThanOrEqual(2);
+      expect(selected.length).toBeLessThanOrEqual(3);
+      expect(PASSAGE_TEMPLATES.some((template) => selected.every((type, slot) => template[slot]?.includes(type)))).toBe(true);
+    }
+  });
   it("asks for spare candidates beyond the published target", async () => {
     const { spareItems } = await import("../src/lib/news/question-factory-v2");
     expect(spareItems(6)).toBe(3);

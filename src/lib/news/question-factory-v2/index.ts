@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { quizExcerpt } from "../enrichment";
-import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
+import { MIN_BLOCK, selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
 import { choiceTypes, gapTypes, type IeltsQuestionType } from "../ielts-passage";
@@ -34,10 +34,15 @@ const MIN_SET = 6;
 /** Largest share of a set that may be direct-lookup (P1) items: two in six, three in nine. */
 export const DIRECT_SHARE = 1 / 3;
 const directLimit = (size: number) => Math.floor(size * DIRECT_SHARE + 1e-9);
-export function selectPublished(items: Candidate[], target: number) {
+/**
+ * Chooses the published set. Groups are atomic; harder groups come first and direct-lookup (P1) items stay
+ * within DIRECT_SHARE. Like an IELTS passage, each form becomes one block of at least MIN_BLOCK items, and the
+ * blocks follow `order` (the template's form order), with reading order inside a block.
+ */
+export function selectPublished(items: Candidate[], target: number, order: IeltsQuestionType[] = []) {
   const groups = new Map<string, Candidate[]>();
   for (const item of items) groups.set(item.group_id, [...(groups.get(item.group_id) ?? []), item]);
-  const selected: Candidate[] = [];
+  let selected: Candidate[] = [];
   const usable = [...groups.values()].filter((group) => {
     const type = group[0].type;
     // Whole groups are atomic; never publish a broken matching, note or flow set.
@@ -47,17 +52,42 @@ export function selectPublished(items: Candidate[], target: number) {
     return !(type === "flow_chart_completion" && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt)));
   });
   const directIn = (group: Candidate[]) => group.filter((item) => item.difficulty === "P1").length;
+  const countOf = (type: IeltsQuestionType) => selected.filter((item) => item.type === type).length;
   // Harder groups first; direct-lookup (P1) items only while they stay within DIRECT_SHARE of the set.
-  let direct = 0;
-  for (const group of [...usable.filter((group) => !directIn(group)), ...usable.filter(directIn)]) {
-    if (selected.length + group.length > target) continue;
-    if (directIn(group) && direct + directIn(group) > directLimit(Math.max(selected.length + group.length, MIN_SET))) continue;
-    selected.push(...group);
-    direct += directIn(group);
+  const ranked = [...usable.filter((group) => !directIn(group)), ...usable.filter(directIn)];
+  const taken = new Set<Candidate[]>();
+  const take = (allowed: (group: Candidate[]) => boolean) => {
+    for (const group of ranked) {
+      if (taken.has(group) || !allowed(group) || selected.length + group.length > target) continue;
+      const direct = selected.filter((item) => item.difficulty === "P1").length;
+      if (directIn(group) && direct + directIn(group) > directLimit(Math.max(selected.length + group.length, MIN_SET))) continue;
+      selected.push(...group);
+      taken.add(group);
+    }
+  };
+  // First an equal share per form, so one form cannot crowd another below a full block; then fill the target.
+  const share = Math.ceil(target / Math.max(1, new Set(usable.map((group) => group[0].type)).size));
+  take((group) => countOf(group[0].type) + group.length <= share);
+  take(() => true);
+  // A form left with one or two items is a stray block: drop it while the rest still makes a set, then refill.
+  const dropped = new Set<IeltsQuestionType>();
+  for (const type of new Set(selected.map((item) => item.type))) {
+    const count = countOf(type);
+    if (count >= MIN_BLOCK || selected.length - count < MIN_SET) continue;
+    dropped.add(type);
+    selected = selected.filter((item) => item.type !== type);
   }
-  // Keep the article's reading order for learners.
-  const order = new Map(items.map((item, index) => [item.id, index]));
-  return selected.sort((a, b) => (order.get(a.id) ?? 0) - (order.get(b.id) ?? 0));
+  if (dropped.size) {
+    for (const group of ranked) if (dropped.has(group[0].type)) taken.add(group);
+    // Refill only blocks already in the set, so the refill cannot start a new stray block.
+    const kept = new Set(selected.map((item) => item.type));
+    take((group) => kept.has(group[0].type));
+  }
+  // Blocks in template order, then the article's reading order inside each block.
+  const position = new Map(items.map((item, index) => [item.id, index]));
+  const firstSeen = [...new Set(selected.sort((a, b) => (position.get(a.id) ?? 0) - (position.get(b.id) ?? 0)).map((item) => item.type))];
+  const rank = (type: IeltsQuestionType) => order.includes(type) ? order.indexOf(type) : order.length + firstSeen.indexOf(type);
+  return selected.sort((a, b) => rank(a.type) - rank(b.type) || (position.get(a.id) ?? 0) - (position.get(b.id) ?? 0));
 }
 function result(state: FactoryResult["state"], model: string, fingerprintValue: string,
   budget: ArticleRequestBudget, generationTokens: TokenUsage | null, qaTokens: TokenUsage | null,
@@ -334,7 +364,7 @@ export async function generateNewsQuizV2(
       let verdicts = new Map<string, BlindVerdict | undefined>(pending.map((item) => [item.id,
         (Array.isArray(reviewed.data?.reviews) ? reviewed.data.reviews : []).find((verdict) => verdict?.id === item.id)]));
       for (let round = 0; round < MAX_REPAIR_ROUNDS && !blocked && pending.length && timeLeft()
-        && selectPublished(approved, target).length < target; round++) {
+        && selectPublished(approved, target, selected).length < target; round++) {
         const approvedIds = new Set(approved.map((item) => item.id));
         const rejected = pending;
         const repaired = await optional("REPAIR", () => provider<{ questions?: Candidate[] }>(
@@ -360,7 +390,7 @@ export async function generateNewsQuizV2(
         verdicts = new Map(pending.map((item) => [item.id,
           (Array.isArray(fixReview.data?.reviews) ? fixReview.data.reviews : []).find((verdict) => verdict?.id === item.id)]));
       }
-      let chosen = selectPublished(approved, target);
+      let chosen = selectPublished(approved, target, selected);
       // Cross QA: a second model must independently agree on every risky item that would be published.
       const risky = chosen.filter(riskyItem);
       if (!blocked && risky.length && timeLeft()) {
@@ -372,7 +402,7 @@ export async function generateNewsQuizV2(
           const dropped = new Set(risky.filter((item) => !agreed.has(item.id)).map((item) => item.id));
           if (dropped.size) {
             issues.push(`CROSS_QA_DROPPED:${dropped.size}`);
-            chosen = selectPublished(approved.filter((item) => !dropped.has(item.id)), target);
+            chosen = selectPublished(approved.filter((item) => !dropped.has(item.id)), target, selected);
           }
         }
       }
