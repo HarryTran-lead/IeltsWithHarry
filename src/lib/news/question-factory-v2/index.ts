@@ -3,7 +3,7 @@ import { quizExcerpt } from "../enrichment";
 import { MIN_BLOCK, selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, PassageStyle, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
-import { choiceTypes, gapTypes, type IeltsQuestionType } from "../ielts-passage";
+import { choiceTypes, gapTypes, sharesOptionPool, type IeltsQuestionType } from "../ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
 import { MAP_SYSTEM, batchSchema, batchSystem, blindQaPayload, blindQaSystem, mapSchema, planBatches, qaSchema, repairPayload, repairSchema, repairSystem, typeCounts } from "./prompts";
 import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, isVietnameseNote, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
@@ -64,8 +64,10 @@ export function selectPublished(items: Candidate[], target: number, order: Ielts
   const usable = [...groups.values()].filter((group) => {
     const type = group[0].type;
     // Whole groups are atomic; never publish a broken matching, note or flow set.
-    if ((type.startsWith("matching_") || ["summary_completion", "note_completion", "table_completion", "flow_chart_completion"].includes(type))
+    if ((type.startsWith("matching_") || ["summary_completion", "note_completion", "table_completion", "flow_chart_completion", "summary_word_list"].includes(type))
       && group.length < 2) return false;
+    // A Choose TWO question is published whole or not at all.
+    if (type === "mcq_multiple" && group.length !== 2) return false;
     if (type === "matching_headings" && group[0].options.length <= group.length) return false;
     return !(type === "flow_chart_completion" && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt)));
   });
@@ -77,6 +79,8 @@ export function selectPublished(items: Candidate[], target: number, order: Ielts
   const take = (allowed: (group: Candidate[]) => boolean) => {
     for (const group of ranked) {
       if (taken.has(group) || !allowed(group) || selected.length + group.length > target) continue;
+      // Like Cambridge papers, a block holds at most two Choose TWO questions.
+      if (group[0].type === "mcq_multiple" && countOf("mcq_multiple") >= 4) continue;
       const direct = selected.filter((item) => item.difficulty === "P1").length;
       if (directIn(group) && direct + directIn(group) > directLimit(Math.max(selected.length + group.length, MIN_SET))) continue;
       selected.push(...group);
@@ -156,7 +160,9 @@ export function normalizeCandidate(item: Candidate): Candidate {
     // that do not line up with the options or are not Vietnamese are dropped and the item is kept.
     const notesMismatch = !Array.isArray(item.option_notes) || !Array.isArray(item.options) || item.option_notes.length !== item.options.length
       || !item.option_notes.every(isVietnameseNote);
-    return { ...item, answer: "", ...(notesMismatch ? { option_notes: [] } : {}) };
+    // Choose TWO prints its key word in capitals, as Cambridge papers do.
+    const prompt = item.type === "mcq_multiple" && typeof item.prompt === "string" ? item.prompt.replace(/\b(which|choose)\s+two\b/i, (_, word: string) => `${word} TWO`) : item.prompt;
+    return { ...item, prompt, answer: "", ...(notesMismatch ? { option_notes: [] } : {}) };
   }
   let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
   if (gapTypes.has(item.type) && typeof prompt === "string" && item.type !== "diagram_label_completion") {
@@ -193,7 +199,7 @@ function sampleRejected(articleId: string, items: Candidate[], issues: string[])
 export function unifyMatchingPools(items: Candidate[]): Candidate[] {
   const pools = new Map<string, string[]>();
   return items.map((item) => {
-    if (!item?.type?.startsWith?.("matching_") || !Array.isArray(item.options)) return item;
+    if (typeof item?.type !== "string" || !sharesOptionPool(item.type) || !Array.isArray(item.options)) return item;
     const pool = pools.get(item.group_id);
     if (!pool) { pools.set(item.group_id, item.options); return item; }
     const answer = item.options[item.correct_index];
@@ -416,7 +422,9 @@ export async function generateNewsQuizV2(
       }
       let chosen = selectPublished(approved, target, selected);
       // Cross QA: a second model must independently agree on every risky item that would be published.
-      const risky = chosen.filter(riskyItem);
+      // A Choose TWO question is checked whole: the examiner needs both of its items.
+      const riskyGroups = new Set(chosen.filter(riskyItem).map((item) => item.group_id));
+      const risky = chosen.filter((item) => riskyItem(item) || (item.type === "mcq_multiple" && riskyGroups.has(item.group_id)));
       if (!blocked && risky.length && timeLeft()) {
         const cross = await optional("CROSS_QA", () => provider<BlindReview>(
           blindQaSystem, blindQaPayload(fullArticle, risky), qaSchema, budget, fetcher, 6000, alternateV2Model(usedModel)));

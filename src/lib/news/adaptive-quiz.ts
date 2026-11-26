@@ -320,15 +320,15 @@ export const PASSAGE_TEMPLATES_BY_LEVEL: Record<1 | 2 | 3, IeltsQuestionType[][]
   ],
   2: [
     // Matching paragraphs, then a summary, then features or choice.
-    [["matching_information", "matching_headings"], ["summary_completion", "sentence_completion", "note_completion"], ["matching_features", "mcq"]],
-    // Choice, the writer's claims or the facts, then a summary or notes.
-    [["mcq"], ["ynng", "tfng"], ["summary_completion", "note_completion"]],
+    [["matching_information", "matching_headings"], ["summary_completion", "summary_word_list", "sentence_completion", "note_completion"], ["matching_features", "mcq", "mcq_multiple"]],
+    // Choice (single or Choose TWO), the writer's claims or the facts, then a summary or notes.
+    [["mcq", "mcq_multiple"], ["ynng", "tfng"], ["summary_completion", "summary_word_list", "note_completion"]],
   ],
   3: [
-    // 10 of 14 open with choice; then a summary or sentence endings; then the writer's views.
-    [["mcq"], ["summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
-    [["matching_information"], ["ynng", "tfng"], ["summary_completion", "sentence_completion"]],
-    [["mcq"], ["matching_features"], ["summary_completion", "sentence_completion"]],
+    // 10 of 14 open with choice; then a summary (9 of 14 from a word list) or sentence endings; then the writer's views.
+    [["mcq"], ["summary_word_list", "summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
+    [["matching_information"], ["ynng", "tfng"], ["summary_word_list", "summary_completion", "sentence_completion"]],
+    [["mcq"], ["matching_features"], ["summary_word_list", "summary_completion", "sentence_completion"]],
   ],
 };
 export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = Object.values(PASSAGE_TEMPLATES_BY_LEVEL).flat();
@@ -345,6 +345,9 @@ export function selectQuestionTypes(text: string, wordCount: number, key: string
   if (!writerView) weights.delete("ynng");
   // The passage map found a writer's view: Yes/No/Not Given is then the IELTS choice over True/False/Not Given.
   else if (level) weights.set("ynng", Math.max(weights.get("ynng") ?? 0, 8));
+  // Forms the question factory alone writes, so only a set with a passage level (from its passage map) uses them.
+  if (level && weights.has("summary_completion")) weights.set("summary_word_list", level === 3 ? 4 : 1.6);
+  if (level && level > 1 && wordCount >= 400) weights.set("mcq_multiple", level === 2 ? 1.6 : 1);
   const blocks = targetQuestionCount(text, wordCount) >= MIN_BLOCK * 3 ? 3 : 2;
   const pick = (slot: IeltsQuestionType[], position: number) => slot.filter((type) => weights.has(type))
     .map((type) => ({ type, score: -Math.log((stableHash(`${key}:${position}:${type}`) + 1) / 4294967297) / weights.get(type)! }))

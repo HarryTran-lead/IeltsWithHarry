@@ -48,7 +48,7 @@ export function parsePracticeAnswers(value: unknown): Record<string, number | st
   const answers: Record<string, number | string> = {};
   for (const [id, answer] of entries) {
     if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
-    if (typeof answer === "number" && Number.isInteger(answer) && answer >= 0 && answer <= 3) answers[id] = answer;
+    if (typeof answer === "number" && Number.isInteger(answer) && answer >= 0 && answer <= 9) answers[id] = answer;
     else if (typeof answer === "string" && answer.trim() && answer.length <= 120) answers[id] = answer.trim();
     else return null;
   }
@@ -58,7 +58,22 @@ export function parsePracticeAnswers(value: unknown): Record<string, number | st
 /** Grades the answered questions only, in the quiz's own order. Returns null if an answer is the wrong kind for its question. */
 export function gradePractice(keys: QuizKey[], answers: Record<string, number | string>): QuizReview[] | null {
   const review: QuizReview[] = [];
+  // Choose TWO: the rows sharing a prompt are one question, graded as a set like SQL news_grade_auto_answers.
+  const pairOf = (key: QuizKey) => keys.filter((other) => other.question_type === "mcq_multiple" && other.prompt === key.prompt);
+  const given = new Map<string, Set<number>>();
   for (const key of keys) {
+    if (key.question_type === "mcq_multiple") {
+      const answer = answers[key.id];
+      if (answer === undefined) continue;
+      if (typeof answer !== "number") return null;
+      const seen = given.get(key.prompt ?? "") ?? new Set<number>();
+      const correct = !seen.has(answer) && pairOf(key).some((other) => other.correct_index === answer);
+      seen.add(answer);
+      given.set(key.prompt ?? "", seen);
+      review.push({ id: key.id, type: key.question_type, correct, correctIndex: key.correct_index, acceptedAnswers: key.accepted_answers,
+        explanation: key.explanation, optionNotes: key.option_notes, supportingSentence: key.supporting_sentence });
+      continue;
+    }
     const answer = answers[key.id];
     if (answer === undefined) continue;
     let correct: boolean;

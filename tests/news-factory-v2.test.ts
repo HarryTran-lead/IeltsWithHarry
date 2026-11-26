@@ -8,8 +8,8 @@ import { paragraphLabel, validateBlindReview, validateCandidate, validateGenerat
 import { article, map, positiveFixtures } from "./fixtures/news-factory-v2";
 
 describe("Question Factory V2 editorial corpus", () => {
-  it("contains 14 forms at P1, P2 and P3", () => {
-    expect(positiveFixtures).toHaveLength(42);
+  it("contains 16 forms at P1, P2 and P3", () => {
+    expect(positiveFixtures).toHaveLength(48);
     for (const type of ieltsQuestionTypes) {
       expect(positiveFixtures.filter((item) => item.type === type).map((item) => item.difficulty)).toEqual(["P1", "P2", "P3"]);
     }
@@ -41,6 +41,9 @@ describe("Question Factory V2 editorial corpus", () => {
     { type: "flow_chart_completion", change: (item) => ({ ...item, prompt: item.prompt.replace("Step 1:", "Event:") }), code: "FLOW_PROCESS" },
     { type: "diagram_label_completion", change: (item) => ({ ...item, prompt: item.prompt.replace("middle charcoal layer", "invented silver layer") }), code: "DIAGRAM" },
     { type: "short_answer", change: (item) => ({ ...item, prompt: item.prompt.replace("?", ".") }), code: "SHORT_QUESTION" },
+    { type: "summary_word_list", change: (item) => ({ ...item, options: item.options.slice(0, 4), option_notes: item.option_notes.slice(0, 4) }), code: "CHOICE_POOL" },
+    { type: "summary_word_list", change: (item) => ({ ...item, prompt: item.prompt.replace("______", "dark") }), code: "WORD_LIST" },
+    { type: "mcq_multiple", change: (item) => ({ ...item, prompt: "Which step happens before a result is published?" }), code: "CHOOSE_TWO" },
   ];
   it.each(formNegatives)("$type rejects a form-specific defect", ({ type, change, code }) => {
     const item = positiveFixtures.find((candidate) => candidate.type === type)!;
@@ -620,5 +623,42 @@ describe("candidate normalization", () => {
     expect(note.prompt).toBe("Launch year: ______ [W1]");
     const two = normalizeCandidate({ type: "sentence_completion", prompt: "A ______ and a ______.", answer: "x", options: [], option_notes: [], correct_index: -1 } as never);
     expect(two.prompt).toBe("A ______ and a ______.");
+  });
+});
+
+describe("summary from a word list and Choose TWO", () => {
+  const of = (type: string) => positiveFixtures.filter((item) => item.type === type);
+  it("keeps a word-list summary that shares one list with spare words", () => {
+    const result = validateGeneration({ passage_map: map, questions: of("summary_word_list"), image_query: "" }, article, ["summary_word_list"]);
+    expect(result.valid).toHaveLength(3);
+    const short = of("summary_word_list").map((item) => ({ ...item, options: item.options.slice(0, 5), option_notes: [], correct_index: Math.min(item.correct_index, 4) }));
+    expect(validateGeneration({ passage_map: map, questions: short, image_query: "" }, article, ["summary_word_list"]).issues.join(" ")).toMatch(/WORD_LIST_POOL/);
+  });
+  it("needs each Choose TWO question to be one pair with one prompt and two different keys", () => {
+    const [first, second] = of("mcq_multiple");
+    expect(validateGeneration({ passage_map: map, questions: [first, second], image_query: "" }, article, ["mcq_multiple"]).valid).toHaveLength(2);
+    const same = validateGeneration({ passage_map: map, questions: [first, { ...second, correct_index: 0 }], image_query: "" }, article, ["mcq_multiple"]);
+    expect(same.valid).toHaveLength(0);
+    const triple = of("mcq_multiple").map((item) => ({ ...item, prompt: first.prompt, options: first.options }));
+    expect(validateGeneration({ passage_map: map, questions: triple, image_query: "" }, article, ["mcq_multiple"]).issues.join(" ")).toMatch(/CHOOSE_TWO_PAIR|DUPLICATE_PROMPT/);
+  });
+  it("accepts the examiner's two letters in either order", () => {
+    const pair = of("mcq_multiple").slice(0, 2);
+    const verdict = (id: string, answer: string) => ({ id, status: "answerable", independent_answer: answer, competing_answers: [],
+      paraphrase_faithful: true, distractors_fair: true, form_valid: true, reason_vi: "Đủ căn cứ." });
+    const both = `${pair[1].options[1]} | ${pair[0].options[0]}`;
+    expect(validateBlindReview({ reviews: pair.map((item) => verdict(item.id, both)) } as never, pair).accepted).toHaveLength(2);
+    expect(validateBlindReview({ reviews: pair.map((item) => verdict(item.id, pair[0].options[0])) } as never, pair).accepted).toHaveLength(0);
+  });
+  it("publishes a Choose TWO question whole or not at all", async () => {
+    const { selectPublished } = await import("../src/lib/news/question-factory-v2");
+    // Two questions (four items), as a Cambridge block of Choose TWO; one question alone would be a stray block.
+    const first = of("mcq_multiple").slice(0, 2).map((item) => ({ ...item, difficulty: "P2" as const }));
+    const pair = [...first, ...first.map((item) => ({ ...item, id: `${item.id}-q2`, group_id: "mcq_multiple_q2", prompt: "Which TWO checks are made?" }))];
+    const tfng = of("tfng").concat(of("tfng").map((item) => ({ ...item, id: `${item.id}-2`, group_id: `${item.group_id}-2` })))
+      .map((item, index) => ({ ...item, id: `${item.id}-${index}`, group_id: `t${index}`, difficulty: "P2" as const }));
+    expect(selectPublished([...pair, ...tfng], 10).filter((item) => item.type === "mcq_multiple")).toHaveLength(4);
+    // A question that lost one of its items is not published, and its partner question alone is a stray block.
+    expect(selectPublished([...pair.slice(1), ...tfng], 10).filter((item) => item.type === "mcq_multiple")).toHaveLength(0);
   });
 });

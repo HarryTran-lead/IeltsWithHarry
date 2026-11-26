@@ -17,6 +17,7 @@ export const typeLabels: Record<QuestionType, string> = {
   note_completion: "Note Completion", table_completion: "Table Completion",
   flow_chart_completion: "Flow-chart Completion", diagram_label_completion: "Diagram Label Completion",
   short_answer: "Short-answer Questions",
+  summary_word_list: "Summary Completion (word list)", mcq_multiple: "Multiple Choice (choose TWO)",
 };
 
 export function percent(correct: number, total: number) { return total ? Math.round(correct / total * 100) : 0; }
