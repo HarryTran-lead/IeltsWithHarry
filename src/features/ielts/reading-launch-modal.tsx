@@ -5,7 +5,8 @@ import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { ExamIntro, type BankExam } from "./bank-exam";
 
-export function ReadingLaunchModal({ examId, part, onClose }: { examId: string; part: number; onClose: () => void }) {
+/** The setup dialog opened from a catalog card (Reading passages and Writing tasks), so the learner never leaves the list. */
+export function ReadingLaunchModal({ examId, part, onClose, skill = "Reading" }: { examId: string; part: number; onClose: () => void; skill?: "Reading" | "Writing" }) {
   const router = useRouter();
   const [exam, setExam] = useState<BankExam | null>(null);
   const [error, setError] = useState("");
@@ -62,8 +63,8 @@ export function ReadingLaunchModal({ examId, part, onClose }: { examId: string; 
       else if (!event.shiftKey && (document.activeElement === last || document.activeElement === container.current)) { event.preventDefault(); first.focus(); }
     }
   }}>
-    {exam ? <ExamIntro exam={exam} initialPart={part} backHref="/app/reading" busy={busy} error={error} onStart={start} scheduleSlot={null} onClose={onClose} />
-      : <div className="bx-reading-launch"><section className="br-launch-dialog" role="dialog" aria-modal="true" aria-label="Mở bài Reading"><header className="br-launch-head"><p role={error ? "alert" : "status"}>{error || "Đang tải bài đọc…"}</p><button type="button" onClick={onClose} aria-label="Đóng">×</button></header></section></div>}
+    {exam ? <ExamIntro exam={exam} initialPart={part} backHref={skill === "Writing" ? "/app/writing" : "/app/reading"} busy={busy} error={error} onStart={start} scheduleSlot={null} onClose={onClose} />
+      : <div className="bx-reading-launch"><section className="br-launch-dialog" role="dialog" aria-modal="true" aria-label={`Mở bài ${skill}`}><header className="br-launch-head"><p role={error ? "alert" : "status"}>{error || (skill === "Writing" ? "Đang tải đề viết…" : "Đang tải bài đọc…")}</p><button type="button" onClick={onClose} aria-label="Đóng">×</button></header></section></div>}
   </div>, document.body);
 }
 

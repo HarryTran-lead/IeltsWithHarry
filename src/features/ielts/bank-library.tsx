@@ -423,7 +423,10 @@ function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets
   const sticker = writingSticker(facets.topic);
   const figure = task1 ? exam.figure_url || (exam.image_url && !exam.image_url.includes("/ielts-images/covers/") ? exam.image_url : "") : "";
   const prompt = exam.prompt_preview?.replace(/\s+/g, " ").trim() || "Mở đề để xem yêu cầu đầy đủ.";
-  const card = <Link href={href} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
+  const [launchOpen, setLaunchOpen] = useState(false);
+  // A fresh task opens its setup dialog over the catalog; in-progress and finished ones keep their own pages.
+  const openLaunch = (event: { preventDefault: () => void }) => { event.preventDefault(); setLaunchOpen(true); };
+  const card = <Link href={href} onNavigate={attempt ? undefined : openLaunch} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
     <span className={`wl-cover ${task1 ? "is-figure" : "is-sticker"}`} style={task1 ? undefined : { background: sticker.tone }}>
       {/* Task figures come from many hosts, so a plain lazy image is used rather than next/image. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -439,7 +442,8 @@ function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets
       <span className="wl-foot"><span><Clock3 size={13} /> {exam.duration_minutes} phút</span><span>Tối thiểu {task.minimum} từ</span><span className="bl-source">{sourceLabel(exam)}</span><span className={`bl-cta ${done ? "is-shown" : ""}`}>{attempt?.state === "in_progress" ? "Viết tiếp" : done ? band !== null ? "Xem bài chấm" : "Xem bài làm" : "Viết bài"} <ArrowRight size={15} /></span></span>
     </span>
   </Link>;
-  return done ? <div className="bl-card-slot is-writing">{card}<Link className="bl-retry" href={retryHref} aria-label={`Viết lại ${exam.title}`}><RotateCcw size={13} /> Viết lại</Link></div> : card;
+  const launch = launchOpen && <ReadingLaunchModal skill="Writing" examId={exam.id} part={0} onClose={() => setLaunchOpen(false)} />;
+  return <>{done ? <div className="bl-card-slot is-writing">{card}<Link className="bl-retry" href={retryHref} onNavigate={openLaunch} aria-label={`Viết lại ${exam.title}`}><RotateCcw size={13} /> Viết lại</Link></div> : card}{launch}</>;
 }
 
 /**

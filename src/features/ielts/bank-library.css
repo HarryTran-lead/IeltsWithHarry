@@ -14,6 +14,9 @@
 
 /* Skill pages that lead with the library sit closer to the app chrome. */
 .ielts-dashboard.has-library { padding: 0 2px 40px; }
+/* Catalog pages (Reading/Writing/… shelves) run closer to the screen edges than other pages. */
+.main-area:has(.ielts-dashboard.has-library) { padding-left: 12px; padding-right: 12px; }
+.ielts-dashboard.has-library { padding-left: 0; padding-right: 0; }
 .ielts-dashboard.has-library .ielts-dashboard-titlebar { margin-bottom: 8px; min-height: 40px; }
 .ielts-dashboard.has-library > .bl-sectioned:first-of-type { margin-top: 2px; }
 

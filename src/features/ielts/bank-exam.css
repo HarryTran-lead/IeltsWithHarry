@@ -344,6 +344,16 @@ body:has(.bx-reading-launch) { overflow: hidden; }
 .brl-stepper button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; border-radius: 7px; background: #f1f4f7; color: #18324b; cursor: pointer; }
 .brl-stepper button:disabled { opacity: .4; cursor: not-allowed; }
 .brl-stepper span { min-width: 60px; text-align: center; font-size: 13px; font-weight: 900; }
+/* Writing setup dialog: the task figure beside the prompt, recoloured to Writing's amber. */
+.brl-writing .brl-kicker { color: #8a5a00; }
+.brl-writing .brl-kicker b { background: #fff2d5; }
+.brl-writing-task { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; align-items: start; }
+.brl-writing-task .bx-hero-art { border-radius: 12px; box-shadow: none; border: 1px solid #eef1f4; }
+.brl-writing-task .bx-prompt-preview { max-height: 300px; overflow-y: auto; margin: 0; background: #fffaf0; font-size: 14px; }
+.brl-tips { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.brl-tips li { position: relative; padding-left: 20px; color: #3f4a59; font-size: 13.5px; line-height: 1.5; }
+.brl-tips li::before { content: ""; position: absolute; left: 4px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--bl-accent, #cd8d22); }
+@media (max-width: 640px) { .brl-writing-task { grid-template-columns: 1fr; } }
 .brl-footer { gap: 12px; padding: 16px 24px; background: #fafbfc; }
 .brl-footer > div:first-child { display: grid; gap: 1px; min-width: 0; }
 .brl-footer small { color: #5b6675; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
