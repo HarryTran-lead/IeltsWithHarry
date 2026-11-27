@@ -33,7 +33,9 @@ async function setup() {
     create table public.community_blocks(blocker_id uuid, blocked_id uuid);
     grant select on public.profiles to authenticated;
   `);
+  await db.exec(readFileSync(resolve("supabase/migrations/202610270005_package_practice_results.sql"), "utf8"));
   await db.exec(readFileSync(resolve("supabase/migrations/202611060002_learner_levels_frames.sql"), "utf8"));
+  await db.exec(readFileSync(resolve("supabase/migrations/202611270003_translation_band_xp.sql"), "utf8"));
   await db.query("insert into auth.users(id) values ($1), ($2)", [alice, bob]);
   await db.query("insert into public.profiles(id) values ($1), ($2)", [alice, bob]);
   return db;
@@ -97,6 +99,27 @@ describe("learner levels and avatar frames", { timeout: 60_000 }, () => {
       await db.exec(`set role authenticated; set request.jwt.claim.sub = '${alice}';`);
       const hidden = await db.query<{ cards: Record<string, unknown> }>("select public.community_author_cards(array[$1::uuid]) as cards", [bob]);
       expect(hidden.rows[0].cards).toEqual({});
+    } finally { await db.close(); }
+  });
+
+  it("awards 3 XP for attempted and 5 XP for mastered Band Translation items without double counting", async () => {
+    const db = await setup();
+    try {
+      await db.exec(`set role authenticated; set request.jwt.claim.sub = '${bob}';`);
+      await db.query(
+        "insert into public.package_practice_results(user_id, lesson_slug, correct, checked, total) values ($1, 'translation-item:band-5.0-001', 0, 1, 1), ($1, 'translation-item:band-5.0-002', 1, 1, 1), ($1, 'translation-writing-band-5.0', 1, 2, 160)",
+        [bob],
+      );
+      const first = await db.query<{ result: { xp: number; level: number } }>("select public.learner_xp_summary() as result");
+      expect(first.rows[0].result).toMatchObject({ xp: 8, level: 1 });
+
+      // Mastering the hard item upgrades its reward from 3 XP to 5 XP (total 10 XP, not 13 XP).
+      await db.query(
+        "update public.package_practice_results set correct = 1 where user_id = $1 and lesson_slug = 'translation-item:band-5.0-001'",
+        [bob],
+      );
+      const upgraded = await db.query<{ result: { xp: number; level: number } }>("select public.learner_xp_summary() as result");
+      expect(upgraded.rows[0].result).toMatchObject({ xp: 10, level: 1 });
     } finally { await db.close(); }
   });
 });
