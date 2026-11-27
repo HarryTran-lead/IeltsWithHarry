@@ -275,3 +275,28 @@ body > .rw-popover { z-index: 1100; }
 .rw.is-practice .news-auto-submit .button.primary { border: 0; background: linear-gradient(135deg, #14b8a6, #3b82f6 60%, #6366f1); color: #fff; box-shadow: 0 12px 24px -14px rgba(59, 130, 246, .95); }
 .rw.is-practice .news-auto-submit .button.primary:not(:disabled):hover { filter: brightness(1.06); transform: translateY(-1px); }
 .rw.is-practice .news-auto-submit span { color: #3730a3; }
+/* Reviewing answers in colour: right is clearly green, wrong clearly red, as in the YouPass review. */
+.rw.is-practice .news-auto-explanation { border-left: 5px solid #22c55e; background: linear-gradient(90deg, #dcfce7, #f0fdf4 70%); color: #14532d; box-shadow: 0 10px 22px -20px rgba(22, 163, 74, .9); }
+.rw.is-practice .news-auto-explanation > svg { color: #16a34a; }
+.rw.is-practice .news-auto-explanation.wrong { border-left-color: #ef4444; background: linear-gradient(90deg, #fee2e2, #fff5f5 70%); color: #7f1d1d; box-shadow: 0 10px 22px -20px rgba(220, 38, 38, .9); }
+.rw.is-practice .news-auto-explanation.wrong > svg { color: #dc2626; }
+.rw.is-practice .news-auto-explanation strong { color: #15803d; }
+.rw.is-practice .news-auto-explanation.wrong strong { color: #dc2626; }
+.rw.is-practice .news-auto-explanation .news-auto-why b { color: inherit; }
+.rw.is-practice .news-match-box.is-correct { border: 2px solid #22c55e; background: #dcfce7; color: #14532d; }
+.rw.is-practice .news-match-box.is-wrong { border: 2px solid #ef4444; background: #fee2e2; color: #7f1d1d; }
+.rw.is-practice .news-auto-options label.correct { border: 2px solid #22c55e; background: #dcfce7; }
+.rw.is-practice .news-auto-options label.wrong { border: 2px solid #ef4444; background: #fee2e2; }
+.rw.is-practice .news-auto-options label.correct > .news-option-letter { background: #16a34a; color: #fff; }
+.rw.is-practice .news-auto-options label.wrong > .news-option-letter { background: #dc2626; color: #fff; }
+.rw.is-practice .news-auto-quiz .news-gap.is-correct input.news-gap-input { border-bottom-color: #16a34a; background: #dcfce7; color: #15803d; -webkit-text-fill-color: #15803d; }
+.rw.is-practice .news-auto-quiz .news-gap.is-wrong input.news-gap-input { border-bottom-color: #dc2626; background: #fee2e2; color: #b91c1c; -webkit-text-fill-color: #b91c1c; }
+.rw.is-practice .news-auto-question.is-correct .news-auto-written, .rw.is-practice .news-completion-table .is-correct input { border-color: #22c55e; background: #dcfce7; }
+.rw.is-practice .news-auto-question.is-wrong .news-auto-written, .rw.is-practice .news-completion-table .is-wrong input { border-color: #ef4444; background: #fee2e2; }
+.rw.is-practice .news-mi-grid td.correct { background: #bbf7d0; }
+.rw.is-practice .news-mi-grid td.wrong { background: #fecaca; }
+.rw.is-practice .rw-nav-score { padding: 5px 12px; border-radius: 999px; background: linear-gradient(135deg, #dcfce7, #dbeafe); color: #14532d; }
+.rw.is-practice .rw-nav div button.is-right { box-shadow: 0 6px 14px -8px rgba(22, 163, 74, .9); }
+.rw.is-practice .rw-nav div button.is-wrong { box-shadow: 0 6px 14px -8px rgba(225, 29, 72, .9); }
+.rw.is-practice .news-quiz-result { border: 1px solid #e0e7ff; border-radius: 18px; background: linear-gradient(135deg, #ecfeff 0%, #eef2ff 50%, #fdf4ff 100%); box-shadow: 0 14px 30px -24px rgba(67, 56, 202, .6); }
+.rw.is-practice .news-quiz-result .is-main strong { background: linear-gradient(90deg, #0d9488, #2563eb); -webkit-background-clip: text; background-clip: text; color: transparent; }
