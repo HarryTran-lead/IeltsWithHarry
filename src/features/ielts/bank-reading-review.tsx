@@ -63,6 +63,9 @@ function ScoreDonut({ right, wrong, skipped }: { right: number; wrong: number; s
 
 export function ReadingReview({ title, skill = "Reading", content, review, format, attribution, savedHighlights, attemptId, partNumber, startedAt, submittedAt, backHref, retryHref, onRetry, examId, suggestionSource }: Props) {
   const [summary, setSummary] = useState(true);
+  useEffect(() => {
+    if (summary) window.scrollTo({ top: 0, behavior: "instant" });
+  }, [summary]);
   const [library, setLibrary] = useState<{ exams: CatalogExam[]; attempts: SuggestionAttempt[] } | null>(suggestionSource ?? null);
   useEffect(() => {
     if (suggestionSource || !summary) return;

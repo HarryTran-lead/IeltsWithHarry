@@ -1,5 +1,5 @@
 body:has(.br-review) { overflow: hidden; }
-.br-summary { max-width: 940px; }
+.bx-page.br-summary { width: 100%; max-width: none; padding: 0 2px 40px; }
 .br-summary-card { padding: clamp(24px, 4vw, 42px); border: 1px solid #dfe8e9; border-radius: 22px; background: #fff; box-shadow: 0 18px 55px -45px #1d4454; }
 .br-summary-card h1 { margin: 8px 0 6px; color: #173349; font: 800 clamp(25px, 3vw, 38px)/1.2 var(--font-display), sans-serif; }
 .br-summary-card > p { margin: 0 0 24px; color: #607487; }
