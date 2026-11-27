@@ -478,7 +478,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         const answeredReview = (retry.data as { review: Review[] }).review;
         const blanks = shown.filter((question) => !(question.id in answeredOnly)).map((question): Review => ({ id: question.id, correct: false, correctIndex: null, acceptedAnswers: null, explanation: "", optionNotes: null, supportingSentence: "" }));
         review = [...answeredReview, ...blanks];
-        setHistory((current) => [{ id: crypto.randomUUID(), article_id: articleId, score: answeredReview.filter((item) => item.correct).length, total: review!.length, submitted_at: new Date().toISOString(), partial: true, mode: "practice", breakdown: (retry.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds }, ...current].slice(0, 10));
+        setHistory((current) => [{ id: crypto.randomUUID(), article_id: articleId, score: answeredReview.filter((item) => item.correct).length, total: review!.length, submitted_at: new Date().toISOString(), partial: true, mode: "practice" as const, breakdown: (retry.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds }, ...current].slice(0, 10));
       }
     } else if (examMode || practice.error.code !== "PGRST202") setError(practice.error.message);
     // Until the practice-history migration is applied, fall back to the older endpoints.
