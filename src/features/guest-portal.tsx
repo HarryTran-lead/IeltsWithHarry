@@ -10,6 +10,7 @@ import {
   Mic, NotebookPen, PenLine, Newspaper, SpellCheck, UsersRound, X, Languages,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
+import { HarryWordmark } from "@/components/layout/harry-wordmark";
 import { communityEnabled, lockedLearnerPath } from "@/lib/runtime";
 import "./guest-portal.css";
 
@@ -58,7 +59,7 @@ export function GuestPortal() {
   return <div className="guest-portal">
     <header className="guest-portal-header">
       <button className="guest-portal-menu-button" type="button" aria-label="Mở menu" onClick={() => setMenuOpen(true)}><Menu size={22} /></button>
-      <Link href="/app/dashboard" className="guest-portal-brand"><HarryMascot size={38} /><span>Harry<b>Up</b></span></Link>
+      <Link href="/app/dashboard" className="guest-portal-brand" aria-label="HarryUp — Level Up Your English."><HarryMascot size={38} /><HarryWordmark /></Link>
       <span className="guest-portal-badge">Chế độ khách</span>
       <div className="guest-portal-header-actions"><Link href="/login">Đăng nhập</Link><Link className="button primary" href="/register">Tạo tài khoản <ArrowRight size={16} /></Link></div>
     </header>

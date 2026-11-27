@@ -1,0 +1,43 @@
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #142b45;
+  white-space: nowrap;
+}
+
+.name {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.up {
+  color: #008b96;
+}
+
+.tagline {
+  margin-top: 4px;
+  color: #557080;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.dark {
+  color: #fff;
+}
+
+.dark .tagline {
+  color: #b5d8dd;
+}
+
+@media (max-width: 700px) {
+  .name { font-size: 20px; }
+  .tagline { font-size: 9px; }
+}

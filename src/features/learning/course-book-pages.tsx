@@ -581,7 +581,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const arts = course.units.slice(0, 4);
     return <div className={`bk-page bk-cover-page is-${side} ${page.kind === "back" ? "is-back" : ""}`}>
       {page.kind === "cover" ? <div className="bk-cover">
-        <div className="bk-cover-top"><span>Harry Up · Coursebook</span><span className="bk-cover-band">{stage.range}</span></div>
+        <div className="bk-cover-top"><span>HarryUp · Coursebook</span><span className="bk-cover-band">{stage.range}</span></div>
         <h2><small>Chặng {stage.number}</small>{stage.name}</h2>
         <p className="bk-cover-sub">{course.title}</p>
         <div className="bk-cover-collage">{arts.map((unit, artIndex) => <TopicArt key={unit.id} topic={unit.title} unitSlug={unit.slug} variant="unit" badge={false} className={`bk-polaroid p${artIndex}`} />)}</div>
@@ -592,10 +592,10 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <Sticker name="harry" size={84} tilt={-8} className="bk-cover-harry" />
       </div> : <div className="bk-cover bk-backcover">
         <Sticker name="harry" size={96} tilt={6} />
-        <h3>Small steps,<br />big progress.</h3>
+        <h3>Level Up<br />Your English.</h3>
         <p>Mỗi trang là một bước nhỏ. Quay lại bất cứ lúc nào — cuốn sách luôn mở đúng trang bạn đang học.</p>
         <button type="button" className="bk-open" onClick={() => goTo(0)}>Về bìa trước</button>
-        <div className="bk-barcode" aria-hidden="true"><i /><span>HARRY UP · {stage.range}</span></div>
+        <div className="bk-barcode" aria-hidden="true"><i /><span>HARRYUP · {stage.range}</span></div>
       </div>}
     </div>;
   }
