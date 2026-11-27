@@ -593,3 +593,22 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-reading-mode.bx-practice-mode .bq-gap-group .bq-sheet > p { margin-block: 6px; }
 .bx-reading-mode.bx-practice-mode .bq-gap-group .bq-sheet > p:first-child:has(> strong:only-child) { margin-bottom: 12px; text-align: center; }
 .bx-reading-mode.bx-practice-mode .bq-gap-group .bq-bullets { padding-left: 24px; line-height: 1.9; }
+
+.bt-heading-target { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; min-height: 30px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.bt-heading-target > span:last-child { min-width: 0; }
+.bt-heading-target:focus-visible { outline: 2px solid #159447; outline-offset: 3px; }
+
+/* Matching headings in Reading practice: loose heading cards and full-width paragraph slots. */
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings { gap: 10px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings > div { justify-items: start; gap: 14px; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip { width: auto; max-width: 100%; padding: 7px 10px; border: 1px solid #cfd5dc; border-radius: 8px; font-size: 1em; line-height: 1.45; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip b { min-width: 0; color: #617568; font-size: .85em; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip:hover,
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip.is-held { border-color: #159447; background: #e4f5e9; color: var(--bl-ink); }
+.bx-reading-mode.bx-practice-mode .bt-heading-drop { min-height: 40px; margin: 20px 0 10px; padding: 3px 8px; border: 1px solid #cfd5dc; border-top: 5px solid #b4b7bc; border-radius: 9px; background: #f2f2f7; font-size: .95em; }
+.bx-reading-mode.bx-practice-mode .bt-heading-target { justify-content: center; min-height: 32px; }
+.bx-reading-mode.bx-practice-mode .bt-heading-no { min-width: 28px; height: 28px; background: #e4f5e9; color: #159447; font-size: .9em; }
+.bx-reading-mode.bx-practice-mode .bt-heading-drop:not(.is-filled):not(.is-over) i { display: none; }
+.bx-reading-mode.bx-practice-mode .bt-heading-drop.is-over,
+.bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled { border-color: #159447; background: #edf8f0; color: var(--bl-ink); }
+.bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled .bt-heading-target { justify-content: flex-start; }

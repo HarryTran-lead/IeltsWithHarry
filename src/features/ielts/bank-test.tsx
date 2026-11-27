@@ -67,8 +67,10 @@ export function HeadingDrop({ question, number, value, held, onPlace, onClear, o
     onDragOver={(event) => { event.preventDefault(); setOver(true); }}
     onDragLeave={() => setOver(false)}
     onDrop={(event) => { event.preventDefault(); setOver(false); const key = event.dataTransfer.getData("text/plain"); if (question.options.some((option) => optionKey(option) === key)) onPlace(key); }}>
-    <button type="button" className="bt-heading-no" onClick={onLocate} title={`Đến câu ${number}`} aria-label={`Đến câu ${number}`}>{number}</button>
-    {chosen ? <span><b>{optionKey(chosen)}</b> {optionLabel(chosen)}</span> : <i>{held ? "Bấm để đặt heading vào đây" : "Kéo heading vào đây"}</i>}
+    <button type="button" className="bt-heading-target" onClick={() => { if (held) onPlace(held); else onLocate(); }} aria-label={held ? `Đặt heading đã chọn vào câu ${number}` : `Câu ${number}${chosen ? `: ${optionLabel(chosen)}` : ": chọn hoặc kéo heading vào đây"}`}>
+      <span className="bt-heading-no">{number}</span>
+      {chosen ? <span><b>{optionKey(chosen)}</b> {optionLabel(chosen)}</span> : <i>{held ? "Bấm để đặt heading vào đây" : "Kéo heading vào đây"}</i>}
+    </button>
     {chosen && <button type="button" className="bt-heading-clear" onClick={onClear} aria-label={`Bỏ heading câu ${number}`}><X size={14} /></button>}
   </div>;
 }
@@ -235,7 +237,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const headingSlots = useMemo(() => {
     const slots = new Map<string, ExamQuestion>();
     for (const question of section?.questions ?? []) {
-      const letter = /matching[_-]headings/.test(question.type) ? /^\s*paragraph\s+([A-Z])\s*$/i.exec(question.prompt)?.[1] : undefined;
+      const letter = /matching[_-]headings/.test(question.type) ? /^\s*(?:\d+[.)]?\s+)?(?:paragraph|section)\s+([A-Z])[.:]?\s*$/i.exec(question.prompt.replace(/\*\*/g, ""))?.[1] : undefined;
       if (letter && question.options.length) slots.set(letter.toUpperCase(), question);
     }
     return slots;
@@ -534,8 +536,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       {!listening && <article className={`bt-passage ${tool ? `uses-${tool}` : ""}`} ref={passage} tabIndex={-1} onMouseUp={onPaneMouseUp}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
-          const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
-          const slot = letter ? headingSlots.get(letter) : undefined;
+          const letter = /^\s*(?:\*\*([A-Z])[.:]?\*\*[.:]?|([A-Z])[.:]?)\s+/.exec(paragraph);
+          const slot = letter ? headingSlots.get(letter[1] || letter[2]) : undefined;
           return <Fragment key={index}>
             {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
             <p data-paragraph={index}><RichText text={paragraph} /></p>
