@@ -237,3 +237,5 @@ body:has(.rw.is-practice, .rw-setup-backdrop, .rw-flyout, .rw-popover) .notebook
 
 /* Laptop reading: the sticky bar no longer shows text through its top edge. */
 .rw.is-news.is-read .rw-bar { box-shadow: 0 -12px 0 #fff, 0 8px 20px -14px rgba(16, 42, 67, 0.4); }
+/* The question-pane popover is rendered on <body>, so it must sit above the full-screen practice layer. */
+body > .rw-popover { z-index: 1100; }
