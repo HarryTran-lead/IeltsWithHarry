@@ -337,7 +337,20 @@ export const PASSAGE_TEMPLATES_BY_LEVEL: Record<1 | 2 | 3, IeltsQuestionType[][]
     [["matching_features"], ["ynng", "tfng"], ["summary_completion", "summary_word_list"]],
   ],
 };
-export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = Object.values(PASSAGE_TEMPLATES_BY_LEVEL).flat();
+/**
+ * Templates for a set without a measured passage level (the legacy generator, or a passage map without a
+ * rating): the earlier mix, which keeps at least two of the core forms the legacy generator writes.
+ */
+export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = [
+  [["tfng"], ["note_completion", "table_completion", "summary_completion", "sentence_completion"]],
+  [["matching_information"], ["summary_completion", "note_completion", "sentence_completion"]],
+  [["mcq"], ["short_answer", "sentence_completion", "note_completion"], ["tfng"]],
+  [["matching_information", "matching_headings"], ["summary_completion", "summary_word_list", "sentence_completion", "note_completion"], ["matching_features", "mcq", "mcq_multiple"]],
+  [["mcq", "mcq_multiple"], ["ynng", "tfng"], ["summary_completion", "summary_word_list", "note_completion"]],
+  [["mcq"], ["summary_word_list", "summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
+  [["matching_information"], ["ynng", "tfng"], ["summary_word_list", "summary_completion", "sentence_completion"]],
+  [["mcq"], ["matching_features"], ["summary_word_list", "summary_completion", "sentence_completion"]],
+];
 /** How often each template of a level is used, after its share of the Cambridge passages. */
 const TEMPLATE_WEIGHTS: Record<1 | 2 | 3, number[]> = { 1: [14, 10, 5], 2: [29, 5], 3: [16, 9, 5, 3] };
 

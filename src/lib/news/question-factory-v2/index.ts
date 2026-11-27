@@ -304,6 +304,8 @@ async function withOutageRetry<T>(call: (model: string) => Promise<T>, models: s
       }
       try { return { reply: await call(model), model }; }
       catch (cause) {
+        // Each Free Tier model has its own daily quota: a used-up model moves straight to the next one.
+        if (cause instanceof FactoryProviderError && cause.kind === "quota" && index < models.length - 1) { last = cause; break; }
         if (!(cause instanceof FactoryProviderError && cause.kind === "unavailable")) throw cause;
         last = cause;
       }
