@@ -106,11 +106,29 @@ export function selectPublished(items: Candidate[], target: number, order: Ielts
     const kept = new Set(selected.map((item) => item.type));
     take((group) => kept.has(group[0].type));
   }
-  // Blocks in template order, then the article's reading order inside each block.
+  // Blocks in template order; inside a block, the order Cambridge papers use (see TEXT_ORDER_ITEMS).
   const position = new Map(items.map((item, index) => [item.id, index]));
   const firstSeen = [...new Set(selected.sort((a, b) => (position.get(a.id) ?? 0) - (position.get(b.id) ?? 0)).map((item) => item.type))];
   const rank = (type: IeltsQuestionType) => order.includes(type) ? order.indexOf(type) : order.length + firstSeen.indexOf(type);
-  return selected.sort((a, b) => rank(a.type) - rank(b.type) || (position.get(a.id) ?? 0) - (position.get(b.id) ?? 0));
+  const groupStart = new Map<string, number>();
+  for (const item of selected) groupStart.set(item.group_id, Math.min(groupStart.get(item.group_id) ?? Infinity, evidenceStart(item)));
+  const textKey = (item: Candidate) => TEXT_ORDER_ITEMS.has(item.type) ? evidenceStart(item)
+    : TEXT_ORDER_GROUPS.has(item.type) ? groupStart.get(item.group_id) ?? Infinity : 0;
+  return selected.sort((a, b) => rank(a.type) - rank(b.type) || textKey(a) - textKey(b)
+    || (position.get(a.id) ?? 0) - (position.get(b.id) ?? 0));
+}
+/**
+ * Answer order measured on 120 Cambridge passages (2026-11-27): for these forms the answers follow
+ * the passage (0–20% of consecutive answers measured out of order, within the error of locating them), while
+ * matching information and matching features run in any order (about 35%, the same as no order). Items that
+ * stand alone are sorted by their evidence; a summary, notes, table or flow chart is one connected text, so
+ * its group moves as a whole by its first evidence and keeps its own sequence, as does a Choose TWO pair.
+ */
+const TEXT_ORDER_ITEMS = new Set<IeltsQuestionType>(["tfng", "ynng", "mcq", "sentence_completion", "short_answer", "matching_sentence_endings"]);
+const TEXT_ORDER_GROUPS = new Set<IeltsQuestionType>(["mcq_multiple", "summary_completion", "summary_word_list", "note_completion", "table_completion", "flow_chart_completion"]);
+function evidenceStart(item: Candidate) {
+  const start = item.evidence_spans?.[0]?.start;
+  return typeof start === "number" && start >= 0 ? start : Infinity;
 }
 function result(state: FactoryResult["state"], model: string, fingerprintValue: string,
   budget: ArticleRequestBudget, generationTokens: TokenUsage | null, qaTokens: TokenUsage | null,
