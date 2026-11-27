@@ -8,13 +8,21 @@
   "meaningVi": "thường",
   "promptVi": "thường vào buổi tối",
   "referenceAnswers": [
-   "usually in the evening"
+   "usually in the evening",
+   "generally in the evening",
+   "normally in the evenings"
   ],
   "grammarTags": [
    "frequency-adverb"
   ],
   "explanationVi": "Usually thường đứng trước động từ chính trong câu đầy đủ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "usually on the evening",
+    "correction": "usually in the evening",
+    "reasonVi": "Với các buổi chung trong ngày (morning, afternoon, evening), ta luôn dùng giới từ 'in' (in the evening), không dùng 'on' hay 'at'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 2,
@@ -30,13 +38,21 @@
   "meaningVi": "xe buýt",
   "promptVi": "đi bằng xe buýt",
   "referenceAnswers": [
-   "go by bus"
+   "go by bus",
+   "travel by bus",
+   "take the bus"
   ],
   "grammarTags": [
    "transport-preposition"
   ],
   "explanationVi": "Go by bus dùng by để chỉ phương tiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "go by a bus",
+    "correction": "go by bus",
+    "reasonVi": "Khi nói đi bằng phương tiện giao thông chung với giới từ 'by', không được chèn mạo từ 'a/an/the' vào giữa (go by bus)."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 2,
@@ -52,13 +68,21 @@
   "meaningVi": "cuối tuần",
   "promptVi": "vào cuối tuần",
   "referenceAnswers": [
-   "at the weekend"
+   "at the weekend",
+   "on the weekend",
+   "during the weekend"
   ],
   "grammarTags": [
    "time-preposition"
   ],
   "explanationVi": "At the weekend là cách dùng phổ biến trong Anh-Anh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "in the weekend",
+    "correction": "at the weekend",
+    "reasonVi": "Để diễn đạt 'vào cuối tuần', tiếng Anh chuẩn dùng giới từ 'at' (at the weekend) hoặc 'on', tuyệt đối không dùng 'in'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 2,
@@ -82,7 +106,13 @@
   ],
   "explanationVi": "Have diễn đạt sở hữu; a đứng trước danh từ số ít.",
   "rationaleVi": "Một mệnh đề hiện tại đơn với đồ vật quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I have a bag blue.",
+    "correction": "I have a blue bag.",
+    "reasonVi": "Trong tiếng Anh, tính từ chỉ màu sắc (blue) phải đứng trước danh từ (bag) chứ không đứng sau như trật tự tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -97,14 +127,22 @@
   "meaningVi": "ăn cơm",
   "promptVi": "Cậu ấy ăn cơm ở nhà.",
   "referenceAnswers": [
-   "He eats rice at home."
+   "He eats rice at home.",
+   "He has rice at home.",
+   "He eats rice at his house."
   ],
   "grammarTags": [
    "third-person-present"
   ],
   "explanationVi": "Với he, động từ eat thêm -s ở hiện tại đơn.",
   "rationaleVi": "Một ý, có chủ ngữ và động từ ở ngôi thứ ba.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "He eat rice at home.",
+    "correction": "He eats rice at home.",
+    "reasonVi": "Chủ ngữ ngôi thứ ba số ít 'He' ở thì hiện tại đơn bắt buộc phải chia động từ thêm '-s' thành 'eats'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -119,14 +157,22 @@
   "meaningVi": "chăm sóc",
   "promptVi": "Mẹ tôi chăm sóc em bé mỗi sáng.",
   "referenceAnswers": [
-   "My mother looks after the baby every morning."
+   "My mother looks after the baby every morning.",
+   "My mother takes care of the baby every morning.",
+   "Every morning, my mum cares for the baby."
   ],
   "grammarTags": [
    "Subject-verb-object"
   ],
   "explanationVi": "Cụm 'looks after' có nghĩa là chăm sóc ai đó, được dùng trong câu đơn diễn tả hành động hàng ngày.",
   "rationaleVi": "Câu ngắn sử dụng chủ ngữ quen thuộc 'My mother' và động từ quen thuộc 'looks after' trong bối cảnh đời sống gia đình.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My mother look after the baby every morning.",
+    "correction": "My mother looks after the baby every morning.",
+    "reasonVi": "Chủ ngữ 'My mother' là ngôi thứ ba số ít nên cụm động từ ở hiện tại đơn phải chia thêm '-s' vào động từ chính (looks after)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -141,14 +187,22 @@
   "meaningVi": "đi bộ",
   "promptVi": "đi bộ đến trường",
   "referenceAnswers": [
-   "going to school on foot"
+   "going to school on foot",
+   "walking to school",
+   "getting to school on foot"
   ],
   "grammarTags": [
    "Prepositional phrase"
   ],
   "explanationVi": "Cụm giới từ 'on foot' chỉ phương tiện di chuyển là đi bằng chân (đi bộ).",
   "rationaleVi": "Cụm từ ngắn gọn, nói về việc đi lại hàng ngày đơn giản phù hợp cấp độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "going to school by foot",
+    "correction": "going to school on foot",
+    "reasonVi": "Khác với xe cộ dùng 'by' (by bus, by car), cụm từ cố định chỉ việc 'đi bộ' bắt buộc dùng giới từ 'on' (on foot)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -163,14 +217,22 @@
   "meaningVi": "trái cây tươi",
   "promptVi": "Họ mua trái cây tươi ở chợ.",
   "referenceAnswers": [
-   "They buy fresh fruit at the market."
+   "They buy fresh fruit at the market.",
+   "They purchase fresh fruit at the market.",
+   "They get fresh fruit from the market."
   ],
   "grammarTags": [
    "Simple sentence"
   ],
   "explanationVi": "Cụm 'fresh fruit' chỉ trái cây chưa qua chế biến hay đóng hộp, mua ở chợ đời sống.",
   "rationaleVi": "Câu ngắn với chủ ngữ 'They' và động từ 'buy' mô tả một hành động sinh hoạt đời sống rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "They buy fresh fruit in market.",
+    "correction": "They buy fresh fruit at the market.",
+    "reasonVi": "'Market' là danh từ đếm được số ít nên khi chỉ địa điểm đi chợ phải có mạo từ 'the' kèm giới từ 'at' (at the market), không viết trống 'in market'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -185,7 +247,9 @@
   "meaningVi": "uống nước",
   "promptVi": "Bạn nên uống nước sau khi tập thể dục.",
   "referenceAnswers": [
-   "You should drink water after exercising."
+   "You should drink water after exercising.",
+   "You ought to drink water after doing exercise.",
+   "After you work out, you should drink some water."
   ],
   "grammarTags": [
    "Modal verb structure"
@@ -213,14 +277,22 @@
   "meaningVi": "vào buổi chiều",
   "promptVi": "chơi bóng đá vào buổi chiều",
   "referenceAnswers": [
-   "playing football in the afternoon"
+   "playing football in the afternoon",
+   "playing soccer in the afternoon",
+   "having a game of football in the afternoon"
   ],
   "grammarTags": [
    "Time phrase"
   ],
   "explanationVi": "Cụm chỉ thời gian 'in the afternoon' xác định mốc thời gian buổi chiều.",
   "rationaleVi": "Cụm từ kết hợp hoạt động thể thao quen thuộc và thời gian đời sống đơn giản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "playing the football in the afternoon",
+    "correction": "playing football in the afternoon",
+    "reasonVi": "Khi nói chơi các môn thể thao (play + tên môn), ta không dùng mạo từ 'the' trước tên môn thể thao (playing football)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -235,14 +307,22 @@
   "meaningVi": "bắt đầu làm việc",
   "promptVi": "Anh ấy bắt đầu làm việc lúc tám giờ.",
   "referenceAnswers": [
-   "He starts work at eight o'clock."
+   "He starts work at eight o'clock.",
+   "He begins working at eight o'clock.",
+   "His work starts at eight."
   ],
   "grammarTags": [
    "Daily routine sentence"
   ],
   "explanationVi": "Cụm 'starts work' miêu tả thời điểm bắt đầu ca làm việc.",
   "rationaleVi": "Mệnh đề đơn giản với chủ ngữ 'He' diễn tả lịch trình công việc quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "He starts work at eight hours.",
+    "correction": "He starts work at eight o'clock.",
+    "reasonVi": "Để chỉ mốc giờ trên đồng hồ ('lúc tám giờ'), phải dùng 'eight o'clock', còn 'eight hours' chỉ khoảng thời gian kéo dài tám tiếng."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -257,14 +337,22 @@
   "meaningVi": "căn hộ nhỏ",
   "promptVi": "Chúng tôi sống trong một căn hộ nhỏ.",
   "referenceAnswers": [
-   "We live in a small flat."
+   "We live in a small flat.",
+   "We live in a small apartment.",
+   "Our home is a little apartment."
   ],
   "grammarTags": [
    "Present simple with place preposition"
   ],
   "explanationVi": "Từ 'flat' là cách dùng Anh - Anh phổ biến cho căn hộ, ghép với 'small' thành căn hộ nhỏ.",
   "rationaleVi": "Câu ngắn miêu tả nơi ở thực tế với từ vựng chuẩn Anh - Anh đơn giản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "We live in small flat.",
+    "correction": "We live in a small flat.",
+    "reasonVi": "Danh từ đếm được số ít 'flat' (căn hộ) không thể đứng thiếu mạo từ mà phải có 'a' phía trước cụm danh từ (a small flat)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -279,14 +367,22 @@
   "meaningVi": "đọc sách",
   "promptVi": "Học sinh đọc sách trong thư viện.",
   "referenceAnswers": [
-   "Students read books in the library."
+   "Students read books in the library.",
+   "Pupils read books inside the library.",
+   "At the library, students read books."
   ],
   "grammarTags": [
    "Subject + Verb + Object"
   ],
   "explanationVi": "Cụm 'read books' chỉ hoạt động học tập cơ bản của học sinh.",
   "rationaleVi": "Câu có cấu trúc cơ bản S-V-O đi kèm trạng ngữ chỉ nơi chốn trong môi trường học đường.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Student read book in the library.",
+    "correction": "Students read books in the library.",
+    "reasonVi": "Khi nói chung chung trong tiếng Anh, danh từ đếm được (student, book) không để số ít trơ trọi mà phải chia số nhiều (Students read books)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -301,14 +397,22 @@
   "meaningVi": "nước sạch",
   "promptVi": "nước sạch cho mọi người",
   "referenceAnswers": [
-   "clean water for everyone"
+   "clean water for everyone",
+   "clean water for all people",
+   "clean water for everybody"
   ],
   "grammarTags": [
    "Noun phrase"
   ],
   "explanationVi": "Cụm danh từ 'clean water' dùng để miêu tả nước an toàn không bị ô nhiễm.",
   "rationaleVi": "Cụm từ dễ hiểu về môi trường sống, phù hợp định hướng từ cụm từ lên câu ngắn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "clean water for every people",
+    "correction": "clean water for everyone",
+    "reasonVi": "'Every' chỉ đi với danh từ số ít nên không thể ghép 'every people'; để nói 'mọi người', hãy dùng đại từ 'everyone'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -323,14 +427,22 @@
   "meaningVi": "dùng điện thoại di động",
   "promptVi": "Ông tôi dùng điện thoại di động để gọi điện.",
   "referenceAnswers": [
-   "My grandfather uses a mobile phone to make calls."
+   "My grandfather uses a mobile phone to make calls.",
+   "My grandfather uses a cell phone to make phone calls.",
+   "My grandpa makes calls on a cell phone."
   ],
   "grammarTags": [
    "Purpose infinitive clause"
   ],
   "explanationVi": "Cụm 'uses a mobile phone' nói về thói quen sử dụng thiết bị công nghệ hàng ngày.",
   "rationaleVi": "Câu ngắn trình bày một ý rõ ràng về thói quen sinh hoạt công nghệ của người thân.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My grandfather uses a mobile phone for make calls.",
+    "correction": "My grandfather uses a mobile phone to make calls.",
+    "reasonVi": "Để diễn tả mục đích 'để làm gì', ta dùng cấu trúc 'to + V nguyên thể' (to make calls), không dùng 'for + V nguyên thể'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -345,14 +457,22 @@
   "meaningVi": "thăm bảo tàng",
   "promptVi": "Khách du lịch thăm bảo tàng vào buổi sáng.",
   "referenceAnswers": [
-   "Tourists visit the museum in the morning."
+   "Tourists visit the museum in the morning.",
+   "Travelers visit the museum during the morning.",
+   "In the morning, tourists go to see the museum."
   ],
   "grammarTags": [
    "Subject + Verb + Object + Time"
   ],
   "explanationVi": "Cụm 'visit the museum' là hoạt động tham quan du lịch quen thuộc.",
   "rationaleVi": "Câu đơn ngắn gọn với chủ ngữ 'Tourists' chỉ một hoạt động du lịch cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tourists visit to the museum in the morning.",
+    "correction": "Tourists visit the museum in the morning.",
+    "reasonVi": "Động từ 'visit' đi trực tiếp với địa điểm làm tân ngữ (visit the museum) nên không được thêm giới từ 'to' ở sau."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -367,14 +487,22 @@
   "meaningVi": "đợi xe buýt",
   "promptVi": "Nhiều người đợi xe buýt ở bến.",
   "referenceAnswers": [
-   "Many people wait for the bus at the stop."
+   "Many people wait for the bus at the stop.",
+   "A lot of people wait for the bus at the bus stop.",
+   "At the bus stop, lots of people wait for the bus."
   ],
   "grammarTags": [
    "Simple present with prepositional phrase"
   ],
   "explanationVi": "Cụm 'wait for the bus' dùng để chỉ hành động chờ phương tiện giao thông công cộng.",
   "rationaleVi": "Câu ngắn diễn tả cảnh sinh hoạt đô thị quen thuộc với động từ và giới từ cơ bản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many people wait the bus at the stop.",
+    "correction": "Many people wait for the bus at the stop.",
+    "reasonVi": "Động từ 'wait' khi mang nghĩa 'đợi ai hoặc cái gì' luôn phải đi kèm giới từ 'for' (wait for the bus), không dịch từng từ như tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -389,14 +517,22 @@
   "meaningVi": "nướng một chiếc bánh",
   "promptVi": "Tôi muốn nướng một chiếc bánh cho chị gái tôi.",
   "referenceAnswers": [
-   "I want to bake a cake for my sister."
+   "I want to bake a cake for my sister.",
+   "I would like to bake a cake for my older sister.",
+   "I'd like to bake my big sister a cake."
   ],
   "grammarTags": [
    "infinitive pattern"
   ],
   "explanationVi": "Cụm động từ 'bake a cake' nghĩa là nướng một chiếc bánh, kết hợp sau cấu trúc 'want to'.",
   "rationaleVi": "Câu ngắn sử dụng cấu trúc động từ quen thuộc 'want to' kết hợp cụm hành động thực tế, phù hợp trình độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I want bake a cake for my sister.",
+    "correction": "I want to bake a cake for my sister.",
+    "reasonVi": "Sau động từ 'want' bắt buộc phải có 'to' trước động từ nguyên thể (want to bake), không ghép liền hai động từ như tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -411,14 +547,22 @@
   "meaningVi": "đón tàu hỏa",
   "promptVi": "Họ đến nhà ga để đón tàu hỏa đi làm.",
   "referenceAnswers": [
-   "They go to the station to catch a train to work."
+   "They go to the station to catch a train to work.",
+   "They go to the railway station to take a train to work.",
+   "They head to the train station so they can get a train to work."
   ],
   "grammarTags": [
    "infinitive of purpose"
   ],
   "explanationVi": "Cụm 'catch a train' diễn tả hành động bắt/đón tàu hỏa để di chuyển.",
   "rationaleVi": "Sử dụng câu ghép chỉ mục đích đơn giản với các danh từ chỉ nơi chốn quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "They go the station to catch a train to work.",
+    "correction": "They go to the station to catch a train to work.",
+    "reasonVi": "Động từ 'go' khi chỉ hướng đi đến một địa điểm cụ thể (trừ 'home') bắt buộc phải có giới từ 'to' đi kèm (go to the station)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -433,14 +577,22 @@
   "meaningVi": "dọn dẹp công viên địa phương",
   "promptVi": "dọn dẹp công viên địa phương",
   "referenceAnswers": [
-   "clean the local park"
+   "clean the local park",
+   "clean up the local park",
+   "tidy up the park in the local area"
   ],
   "grammarTags": [
    "verb phrase"
   ],
   "explanationVi": "Cụm động từ chỉ hành động bảo vệ môi trường sống xung quanh.",
   "rationaleVi": "Cụm từ đơn giản giúp học viên củng cố từ vựng trước khi ghép thành câu hoàn chỉnh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "clean the park local",
+    "correction": "clean the local park",
+    "reasonVi": "Tính từ 'local' (địa phương) phải đứng trước danh từ 'park' theo đúng trật tự cụm danh từ tiếng Anh (the local park)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -455,14 +607,22 @@
   "meaningVi": "vào buổi sáng",
   "promptVi": "Cha tôi thường uống trà nóng vào buổi sáng.",
   "referenceAnswers": [
-   "My father usually drinks hot tea in the morning."
+   "My father usually drinks hot tea in the morning.",
+   "My father often has hot tea in the morning.",
+   "In the morning, my dad normally has hot tea."
   ],
   "grammarTags": [
    "time phrase"
   ],
   "explanationVi": "Cụm từ chỉ thời gian 'in the morning' thường đứng cuối câu đơn trong thì hiện tại đơn.",
   "rationaleVi": "Câu thể hiện một thói quen hằng ngày với trạng từ chỉ tần suất và cụm thời gian cơ bản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My father usually drink hot tea in the morning.",
+    "correction": "My father usually drinks hot tea in the morning.",
+    "reasonVi": "Dù có trạng từ tần suất 'usually' xen giữa, động từ chính vẫn phải chia thêm '-s' (drinks) theo chủ ngữ số ít 'My father'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -477,14 +637,22 @@
   "meaningVi": "gửi một thư điện tử",
   "promptVi": "Cô ấy muốn gửi một thư điện tử cho giáo viên của mình.",
   "referenceAnswers": [
-   "She wants to send an email to her teacher."
+   "She wants to send an email to her teacher.",
+   "She would like to send an email to her teacher.",
+   "She wants to send her teacher an email message."
   ],
   "grammarTags": [
    "simple object clause"
   ],
   "explanationVi": "Cụm 'send an email' mô tả hành động truyền thông tin qua máy tính hoặc điện thoại.",
   "rationaleVi": "Cấu trúc câu ngắn với đại từ nhân xưng quen thuộc và chủ đề giao tiếp công nghệ đơn giản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "She wants to send a email to her teacher.",
+    "correction": "She wants to send an email to her teacher.",
+    "reasonVi": "Danh từ 'email' bắt đầu bằng âm nguyên âm nên phải đi với mạo từ 'an' (an email) thay vì 'a'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -499,14 +667,22 @@
   "meaningVi": "chụp ảnh",
   "promptVi": "Du khách thích chụp ảnh bên bờ sông.",
   "referenceAnswers": [
-   "Tourists like to take photos by the river."
+   "Tourists like to take photos by the river.",
+   "Travelers enjoy taking pictures beside the river.",
+   "By the riverside, tourists like taking pictures."
   ],
   "grammarTags": [
    "verb pattern"
   ],
   "explanationVi": "'take photos' là cụm từ tự nhiên trong tiếng Anh Anh để nói về việc chụp hình.",
   "rationaleVi": "Câu kết hợp sở thích đời sống ngắn gọn với động từ quen thuộc 'like to'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tourists like to take photo by the river.",
+    "correction": "Tourists like to take photos by the river.",
+    "reasonVi": "'Photo' là danh từ đếm được nên cụm 'chụp ảnh' nói chung phải dùng số nhiều 'take photos' (hoặc 'take a photo' nếu chụp một tấm)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -521,7 +697,9 @@
   "meaningVi": "dọn dẹp phòng",
   "promptVi": "Trẻ em phải dọn dẹp phòng trước khi chơi.",
   "referenceAnswers": [
-   "Children must clean the room before playing."
+   "Children must clean the room before playing.",
+   "Children have to clean up the room before they play.",
+   "Before playing, kids must tidy up the room."
   ],
   "grammarTags": [
    "modal verb"
@@ -549,14 +727,22 @@
   "meaningVi": "đi ngủ",
   "promptVi": "Trẻ em nên đi ngủ sớm mỗi tối.",
   "referenceAnswers": [
-   "Children should go to sleep early every night."
+   "Children should go to sleep early every night.",
+   "Children ought to go to bed early each night.",
+   "Every night, kids should go to bed early."
   ],
   "grammarTags": [
    "advice sentence"
   ],
   "explanationVi": "Cụm 'go to sleep' diễn tả hành động bắt đầu giấc ngủ.",
   "rationaleVi": "Mô tả một lời khuyên sức khỏe đời sống đơn giản sử dụng động từ khuyết thiếu 'should'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Childrens should go to sleep early every night.",
+    "correction": "Children should go to sleep early every night.",
+    "reasonVi": "'Children' bản thân đã là danh từ số nhiều bất quy tắc của 'child' nên tuyệt đối không thêm '-s' thành 'childrens'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -571,7 +757,9 @@
   "meaningVi": "làm bài tập về nhà",
   "promptVi": "làm bài tập về nhà sau giờ học",
   "referenceAnswers": [
-   "do homework after school"
+   "do homework after school",
+   "do homework after classes",
+   "work on homework when school ends"
   ],
   "grammarTags": [
    "verb phrase"
@@ -599,14 +787,22 @@
   "meaningVi": "chơi cầu lông",
   "promptVi": "Chúng tôi thích chơi cầu lông trong khu vườn.",
   "referenceAnswers": [
-   "We like to play badminton in the garden."
+   "We like to play badminton in the garden.",
+   "We enjoy playing badminton in the garden.",
+   "We like having a game of badminton in the garden."
   ],
   "grammarTags": [
    "simple present"
   ],
   "explanationVi": "'play badminton' là cụm từ chỉ môn thể thao phổ biến, 'garden' dùng theo chuẩn tiếng Anh Anh.",
   "rationaleVi": "Câu đơn diễn tả sở thích thể thao trong ngữ cảnh đời sống thường nhật.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "We like play badminton in the garden.",
+    "correction": "We like to play badminton in the garden.",
+    "reasonVi": "Sau động từ 'like', động từ theo sau phải chia dạng 'to V' (like to play) hoặc 'V-ing', không để nguyên thể liền sau 'like'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -621,14 +817,22 @@
   "meaningVi": "trồng hoa",
   "promptVi": "Những người thợ làm vườn trồng hoa trong công viên.",
   "referenceAnswers": [
-   "The gardeners plant flowers in the park."
+   "The gardeners plant flowers in the park.",
+   "The gardeners grow flowers inside the park.",
+   "In the park, flowers are planted by the gardeners."
   ],
   "grammarTags": [
    "subject-verb-object"
   ],
   "explanationVi": "Cụm 'plant flowers' chỉ hành động chăm sóc cây cảnh trong công việc làm vườn.",
   "rationaleVi": "Mô tả hành động của nghề nghiệp bằng một câu đơn đơn giản có chủ ngữ và động từ quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The gardeners plants flowers in the park.",
+    "correction": "The gardeners plant flowers in the park.",
+    "reasonVi": "Chủ ngữ 'The gardeners' là danh từ số nhiều nên động từ ở hiện tại đơn giữ nguyên mẫu là 'plant', không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -643,14 +847,22 @@
   "meaningVi": "mua rau củ",
   "promptVi": "Họ mua rau củ ở siêu thị nhỏ.",
   "referenceAnswers": [
-   "They buy vegetables at the small supermarket."
+   "They buy vegetables at the small supermarket.",
+   "They purchase vegetables at the little supermarket.",
+   "They get vegetables from the small supermarket."
   ],
   "grammarTags": [
    "simple present tense"
   ],
   "explanationVi": "Cụm 'buy vegetables' nói về hoạt động mua sắm hàng hóa thiết yếu hằng ngày.",
   "rationaleVi": "Cấu trúc S-V-O cơ bản trong bối cảnh mua sắm kinh tế gia đình.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "They buy vegetable at the small supermarket.",
+    "correction": "They buy vegetables at the small supermarket.",
+    "reasonVi": "Khác với 'fruit', danh từ 'vegetable' là danh từ đếm được nên khi nói mua rau củ chung chung phải chia số nhiều là 'vegetables'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -665,14 +877,22 @@
   "meaningVi": "bánh mì tươi",
   "promptVi": "Anh ấy mua bánh mì tươi từ cửa hàng bánh vào buổi sáng.",
   "referenceAnswers": [
-   "He buys fresh bread from the bakery in the morning."
+   "He buys fresh bread from the bakery in the morning.",
+   "He purchases fresh bread from the bread shop in the morning.",
+   "In the morning, he gets fresh bread at the baker's."
   ],
   "grammarTags": [
    "simple sentence - present simple"
   ],
   "explanationVi": "Cụm 'fresh bread' có nghĩa là 'bánh mì tươi'. Câu sử dụng thì hiện tại đơn với chủ ngữ 'He' và động từ 'buys'.",
   "rationaleVi": "Mục này sử dụng một câu đơn ngắn với chủ ngữ và động từ quen thuộc diễn tả hoạt động sinh hoạt đời thường, phù hợp mức độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "He buys a fresh bread from the bakery in the morning.",
+    "correction": "He buys fresh bread from the bakery in the morning.",
+    "reasonVi": "'Bread' (bánh mì) là danh từ không đếm được trong tiếng Anh nên không dùng mạo từ 'a' phía trước (muốn đếm ổ phải dùng 'a loaf of bread')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -687,7 +907,9 @@
   "meaningVi": "uống nước",
   "promptVi": "Bạn nên uống nước mỗi ngày để giữ sức khỏe.",
   "referenceAnswers": [
-   "You should drink water every day to stay healthy."
+   "You should drink water every day to stay healthy.",
+   "You ought to drink water daily to keep healthy.",
+   "To stay in good health, you should drink water each day."
   ],
   "grammarTags": [
    "modal verb sentence"
@@ -715,14 +937,22 @@
   "meaningVi": "vào sáng sớm",
   "promptVi": "vào sáng sớm",
   "referenceAnswers": [
-   "in the early morning"
+   "in the early morning",
+   "early in the morning",
+   "during the early morning"
   ],
   "grammarTags": [
    "prepositional phrase"
   ],
   "explanationVi": "Chú ý cách dùng 'in the early morning' (vào sáng sớm) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Đây là một cụm từ thời gian ngắn và thông dụng, làm bước đệm cho người học kết hợp vào câu ngắn ở mức 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "at the early morning",
+    "correction": "in the early morning",
+    "reasonVi": "Khi nói vào buổi sáng dù có thêm tính từ 'early', ta vẫn giữ nguyên giới từ 'in' (in the early morning), không đổi sang 'at'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -737,14 +967,22 @@
   "meaningVi": "học tiếng Anh",
   "promptVi": "Học sinh học tiếng Anh cùng thầy giáo mới.",
   "referenceAnswers": [
-   "Students learn English with a new teacher."
+   "Students learn English with a new teacher.",
+   "Pupils study English with a new teacher.",
+   "Students study English together with a new teacher."
   ],
   "grammarTags": [
    "simple sentence - present simple"
   ],
   "explanationVi": "Cụm 'learn English' nghĩa là 'học tiếng Anh'. Động từ 'learn' đi liền với chủ ngữ số nhiều 'Students'.",
   "rationaleVi": "Câu thể hiện một ý đơn giản thuộc ngữ cảnh học tập ở trường với ngữ pháp căn bản, rất vừa sức cho trình độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Students learn English with new teacher.",
+    "correction": "Students learn English with a new teacher.",
+    "reasonVi": "'Teacher' là danh từ đếm được số ít nên cụm 'thầy giáo mới' bắt buộc phải có mạo từ 'a' đứng đầu (with a new teacher)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -759,14 +997,22 @@
   "meaningVi": "những cây xanh",
   "promptVi": "cây xanh trong khu vườn",
   "referenceAnswers": [
-   "green trees in the garden"
+   "green trees in the garden",
+   "green trees inside the garden",
+   "green trees out in the garden"
   ],
   "grammarTags": [
    "noun phrase with modifier"
   ],
   "explanationVi": "Cụm danh từ 'green trees' thể hiện đối tượng môi trường quen thuộc, kết hợp cụm giới từ 'in the garden'.",
   "rationaleVi": "Cụm danh từ cơ bản giúp học viên củng cố khả năng ghép từ trước khi mở rộng thành câu hoàn chỉnh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "trees green in the garden",
+    "correction": "green trees in the garden",
+    "reasonVi": "Người Việt hay dịch xuôi 'cây xanh' thành 'trees green', nhưng tính từ màu sắc trong tiếng Anh luôn đứng trước danh từ (green trees)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -781,14 +1027,22 @@
   "meaningVi": "sử dụng máy tính",
   "promptVi": "Tôi sử dụng máy tính để hoàn thành công việc.",
   "referenceAnswers": [
-   "I use a computer to finish my work."
+   "I use a computer to finish my work.",
+   "I use a computer to complete my work.",
+   "I get my work done by using a computer."
   ],
   "grammarTags": [
    "simple sentence with infinitive of purpose"
   ],
   "explanationVi": "Cụm 'use a computer' dịch là 'sử dụng máy tính'. Mệnh đề theo sau 'to finish my work' chỉ mục đích đơn giản.",
   "rationaleVi": "Item này trình bày một thao tác công nghệ cơ bản trong đời sống bằng một câu đơn giản gồm chủ ngữ 'I' và động từ 'use'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I use a computer to finish my works.",
+    "correction": "I use a computer to finish my work.",
+    "reasonVi": "Danh từ 'work' khi mang nghĩa 'công việc' hằng ngày là danh từ không đếm được nên không thêm '-s' thành 'works'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -803,14 +1057,22 @@
   "meaningVi": "thăm một thành phố mới",
   "promptVi": "thăm một thành phố mới",
   "referenceAnswers": [
-   "visit a new city"
+   "visit a new city",
+   "pay a visit to a new city",
+   "go to see a new city"
   ],
   "grammarTags": [
    "verb phrase"
   ],
   "explanationVi": "Chú ý cách dùng 'visit a new city' (thăm một thành phố mới) đúng ngữ cảnh và trật tự cụm từ tiếng Anh.",
   "rationaleVi": "Cụm động từ dễ hiểu giúp học viên thực hành các ý niệm cốt lõi trước khi nâng lên cấp độ câu phức phức tạp hơn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "visit new city",
+    "correction": "visit a new city",
+    "reasonVi": "'City' là danh từ đếm được số ít nên khi nói 'thăm một thành phố mới' bắt buộc phải có mạo từ 'a' phía trước (visit a new city)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -825,14 +1087,22 @@
   "meaningVi": "chơi quần vợt",
   "promptVi": "Họ chơi quần vợt ở câu lạc bộ địa phương.",
   "referenceAnswers": [
-   "They play tennis at the local club."
+   "They play tennis at the local club.",
+   "They play tennis at the club in the local area.",
+   "At the local club, they play games of tennis."
   ],
   "grammarTags": [
    "simple sentence - location"
   ],
   "explanationVi": "Cụm 'play tennis' nghĩa là 'chơi quần vợt'. Động từ 'play' đi cùng chủ ngữ 'They' và trạng ngữ chỉ địa điểm 'at the local club'.",
   "rationaleVi": "Một câu hoàn chỉnh ngắn diễn tả sở thích thể thao đời thường với các thành phần chủ - vị rất rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "They are play tennis at the local club.",
+    "correction": "They play tennis at the local club.",
+    "reasonVi": "Ở thì hiện tại đơn, không được dùng động từ 'to be' (are) đứng trước động từ thường nguyên thể (play); chỉ viết 'They play tennis'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -847,14 +1117,22 @@
   "meaningVi": "đi bộ",
   "promptVi": "Bác sĩ khuyên chúng ta nên đi bộ hằng ngày.",
   "referenceAnswers": [
-   "The doctor advises us to go for a walk every day."
+   "The doctor advises us to go for a walk every day.",
+   "The doctor advises us to take a walk daily.",
+   "The doctor suggests that we should walk each day."
   ],
   "grammarTags": [
    "Verb + Object + Infinitive"
   ],
   "explanationVi": "Cụm từ \"go for a walk\" nghĩa là đi bộ thư giãn, kết hợp với cấu trúc khuyên ai đó làm gì \"advise someone to do something\".",
   "rationaleVi": "Câu sử dụng chủ ngữ quen thuộc \"The doctor\" và động từ phổ biến, biểu đạt một ý rõ ràng về thói quen sức khỏe ở mức độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The doctor advises us should go for a walk every day.",
+    "correction": "The doctor advises us to go for a walk every day.",
+    "reasonVi": "Người Việt hay dịch thừa chữ 'nên' thành 'should', nhưng cấu trúc chuẩn của 'advise' là 'advise somebody to V' (advises us to go)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -869,14 +1147,22 @@
   "meaningVi": "đi tàu điện ngầm",
   "promptVi": "Họ đi tàu điện ngầm đến văn phòng làm việc.",
   "referenceAnswers": [
-   "They take the underground to the office."
+   "They take the underground to the office.",
+   "They travel to the office by subway.",
+   "They catch the metro to get to the office."
   ],
   "grammarTags": [
    "Simple Present Tense"
   ],
   "explanationVi": "Cụm \"take the underground\" thể hiện việc di chuyển bằng tàu điện ngầm theo phong cách Anh-Anh chuẩn.",
   "rationaleVi": "Mô tả hành động đi lại hằng ngày bằng một câu ngắn với chủ ngữ \"They\" và động từ chỉ chuyển động cơ bản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "They go the underground to the office.",
+    "correction": "They take the underground to the office.",
+    "reasonVi": "Khi đứng trước phương tiện có mạo từ 'the', phải dùng động từ 'take' (take the underground) chứ không dùng 'go' trực tiếp không giới từ."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -891,14 +1177,22 @@
   "meaningVi": "một khu vườn nhỏ phía sau nhà",
   "promptVi": "một khu vườn nhỏ phía sau nhà",
   "referenceAnswers": [
-   "a small back garden"
+   "a small back garden",
+   "a small garden behind the house",
+   "a little garden at the back of the house"
   ],
   "grammarTags": [
    "Noun Phrase"
   ],
   "explanationVi": "Cụm danh từ đơn giản miêu tả không gian nhà ở, sử dụng từ \"back garden\" tự nhiên trong tiếng Anh-Anh.",
   "rationaleVi": "Cung cấp cụm từ ngắn gọn, quen thuộc để phối hợp cùng các câu ngắn trong bộ luyện tập cấp độ 2.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "a back small garden",
+    "correction": "a small back garden",
+    "reasonVi": "Theo trật tự tính từ, tính từ chỉ kích thước ('small') phải đứng trước từ phân loại vị trí ('back'), tạo thành 'a small back garden'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -911,7 +1205,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "đọc một bản đồ",
   "referenceAnswers": [
-   "read a map"
+   "read a map",
+   "study a map",
+   "look over a map"
   ],
   "grammarTags": [
    "R05-U01",
@@ -947,7 +1243,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "một tấm thiệp sinh nhật",
   "referenceAnswers": [
-   "a birthday card"
+   "a birthday card",
+   "a greeting card for a birthday",
+   "a card for someone's birthday"
   ],
   "grammarTags": [
    "R05-U01",
@@ -983,7 +1281,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "viết một lời nhắn ngắn",
   "referenceAnswers": [
-   "write a short message"
+   "write a short message",
+   "write a brief message",
+   "write down a short note"
   ],
   "grammarTags": [
    "R05-U01",
@@ -1008,7 +1308,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "short message",
+  "meaningVi": "lời nhắn ngắn"
  },
  {
   "id": "esl-v2-r05-u01-004",
@@ -1017,7 +1319,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "đặt chìa khóa lên bàn",
   "referenceAnswers": [
-   "put the keys on the table"
+   "put the keys on the table",
+   "place the keys on the table",
+   "set the keys down on the table"
   ],
   "grammarTags": [
    "R05-U01",
@@ -1042,7 +1346,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "put the keys",
+  "meaningVi": "đặt chìa khóa"
  },
  {
   "id": "esl-v2-r05-u01-005",
@@ -1051,7 +1357,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "mang theo một chiếc áo khoác nhẹ",
   "referenceAnswers": [
-   "carry a light jacket"
+   "carry a light jacket",
+   "bring along a thin jacket",
+   "take a light jacket along"
   ],
   "grammarTags": [
    "R05-U01",
@@ -1087,7 +1395,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi khóa cửa trước khi ra ngoài.",
   "referenceAnswers": [
-   "I lock the door before I go out."
+   "I lock the door before I go out.",
+   "I lock the door before going outside.",
+   "Before heading out, I lock the door."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1112,7 +1422,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "lock the door",
+  "meaningVi": "khóa cửa"
  },
  {
   "id": "esl-v2-r05-u01-007",
@@ -1121,7 +1433,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Em gái tôi vẽ những bông hoa trong sổ tay.",
   "referenceAnswers": [
-   "My younger sister draws flowers in her notebook."
+   "My younger sister draws flowers in her notebook.",
+   "My little sister draws pictures of flowers in her notebook.",
+   "In her notepad, my younger sister draws flowers."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1146,7 +1460,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "draws flowers",
+  "meaningVi": "vẽ những bông hoa"
  },
  {
   "id": "esl-v2-r05-u01-008",
@@ -1155,7 +1471,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chúng tôi rửa bát sau bữa tối.",
   "referenceAnswers": [
-   "We wash the dishes after dinner."
+   "We wash the dishes after dinner.",
+   "We do the dishes after our evening meal.",
+   "After having dinner, we do the washing-up."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1191,7 +1509,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Người quản lý kiểm tra danh sách mỗi sáng.",
   "referenceAnswers": [
-   "The manager checks the list every morning."
+   "The manager checks the list every morning.",
+   "The manager looks over the list each morning.",
+   "Every morning, the manager goes through the list."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1227,7 +1547,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi để đôi giày ở cạnh cửa.",
   "referenceAnswers": [
-   "I leave my shoes by the door."
+   "I leave my shoes by the door.",
+   "I put my shoes next to the door.",
+   "I leave my pair of shoes beside the door."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1252,7 +1574,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "by the door",
+  "meaningVi": "ở cạnh cửa"
  },
  {
   "id": "esl-v2-r05-u01-011",
@@ -1261,7 +1585,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Các bạn của Lan mang đồ ăn đến buổi dã ngoại.",
   "referenceAnswers": [
-   "Lan's friends bring food to the picnic."
+   "Lan's friends bring food to the picnic.",
+   "Lan's friends bring food along to the picnic.",
+   "Food is brought to the picnic by Lan's friends."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1286,7 +1612,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "bring food",
+  "meaningVi": "mang đồ ăn"
  },
  {
   "id": "esl-v2-r05-u01-012",
@@ -1295,7 +1623,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bố tôi sửa chiếc ghế gỗ vào ngày Chủ nhật.",
   "referenceAnswers": [
-   "My father repairs the wooden chair on Sundays."
+   "My father repairs the wooden chair on Sundays.",
+   "My father mends the wooden chair on Sundays.",
+   "On Sundays, my dad fixes the chair made of wood."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1331,7 +1661,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Người bán hàng mở cửa tiệm lúc chín giờ.",
   "referenceAnswers": [
-   "The shop assistant opens the shop at nine."
+   "The shop assistant opens the shop at nine.",
+   "The store clerk opens the store at nine o'clock.",
+   "At nine o'clock, the salesperson opens up the shop."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1356,7 +1688,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "shop assistant",
+  "meaningVi": "người bán hàng"
  },
  {
   "id": "esl-v2-r05-u01-014",
@@ -1365,7 +1699,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi gửi một tấm bưu thiếp cho bà.",
   "referenceAnswers": [
-   "We send a postcard to our grandmother."
+   "We send a postcard to our grandmother.",
+   "We mail a postcard to our grandmother.",
+   "We send our grandma a postcard."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1401,7 +1737,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chú chó mang quả bóng đến cho chủ của nó.",
   "referenceAnswers": [
-   "The dog brings the ball to its owner."
+   "The dog brings the ball to its owner.",
+   "The dog carries the ball to its owner.",
+   "The dog brings its owner the ball."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1426,7 +1764,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?"
+  "skillFocus": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "targetTerm": "its owner",
+  "meaningVi": "chủ của nó"
  },
  {
   "id": "esl-v2-r05-u01-016",
@@ -1435,7 +1775,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Các công nhân dọn con đường vào buổi sáng.",
   "referenceAnswers": [
-   "The workers clean the road in the morning."
+   "The workers clean the road in the morning.",
+   "The workers clean up the road during the morning.",
+   "In the morning, the road is cleaned by the workers."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1471,7 +1813,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi cất vé xe buýt trong ví nhỏ của mình.",
   "referenceAnswers": [
-   "I keep my bus ticket in my small wallet."
+   "I keep my bus ticket in my small wallet.",
+   "I store my bus ticket inside my small wallet.",
+   "I put my bus ticket away in my little wallet."
   ],
   "grammarTags": [
    "R05-U01",
@@ -1507,7 +1851,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "một chiếc vali khá nặng",
   "referenceAnswers": [
-   "a rather heavy suitcase"
+   "a rather heavy suitcase",
+   "quite a heavy suitcase",
+   "a pretty heavy suitcase"
   ],
   "grammarTags": [
    "R05-U02",
@@ -1532,7 +1878,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "rather heavy",
+  "meaningVi": "khá nặng"
  },
  {
   "id": "esl-v2-r05-u02-002",
@@ -1541,7 +1889,9 @@
   "topic": "Văn hóa & Du lịch",
   "promptVi": "rất mệt sau chuyến đi",
   "referenceAnswers": [
-   "very tired after the trip"
+   "very tired after the trip",
+   "really tired after the journey",
+   "tired out after the trip"
   ],
   "grammarTags": [
    "R05-U02",
@@ -1566,7 +1916,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "after the trip",
+  "meaningVi": "sau chuyến đi"
  },
  {
   "id": "esl-v2-r05-u02-003",
@@ -1575,7 +1927,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "một người hàng xóm thân thiện",
   "referenceAnswers": [
-   "a friendly neighbour"
+   "a friendly neighbour",
+   "a warm and friendly neighbor",
+   "a friendly person who lives nearby"
   ],
   "grammarTags": [
    "R05-U02",
@@ -1600,7 +1954,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "friendly neighbour",
+  "meaningVi": "hàng xóm thân thiện"
  },
  {
   "id": "esl-v2-r05-u02-004",
@@ -1609,7 +1965,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "sẵn sàng cho bài kiểm tra",
   "referenceAnswers": [
-   "ready for the test"
+   "ready for the test",
+   "prepared for the test",
+   "all set for the test"
   ],
   "grammarTags": [
    "R05-U02",
@@ -1634,7 +1992,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "ready for",
+  "meaningVi": "sẵn sàng cho"
  },
  {
   "id": "esl-v2-r05-u02-005",
@@ -1680,7 +2040,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hai chiếc cốc này sạch.",
   "referenceAnswers": [
-   "These two cups are clean."
+   "These two cups are clean.",
+   "Both of these cups are clean.",
+   "Both cups here are clean."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1705,7 +2067,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "clean",
+  "meaningVi": "sạch sẽ"
  },
  {
   "id": "esl-v2-r05-u02-007",
@@ -1714,7 +2078,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Cô giáo của chúng tôi rất kiên nhẫn.",
   "referenceAnswers": [
-   "Our teacher is very patient."
+   "Our teacher is very patient.",
+   "Our teacher has a lot of patience.",
+   "Our teacher is such a patient person."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1739,7 +2105,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "very patient",
+  "meaningVi": "rất kiên nhẫn"
  },
  {
   "id": "esl-v2-r05-u02-008",
@@ -1748,7 +2116,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc hộp dưới giường trống.",
   "referenceAnswers": [
-   "The box under the bed is empty."
+   "The box under the bed is empty.",
+   "The box beneath the bed is empty.",
+   "The box under the bed has nothing inside it."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1773,7 +2143,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "empty",
+  "meaningVi": "trống không"
  },
  {
   "id": "esl-v2-r05-u02-009",
@@ -1808,7 +2180,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "worried about",
+  "meaningVi": "lo lắng về"
  },
  {
   "id": "esl-v2-r05-u02-010",
@@ -1817,7 +2191,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Những học sinh mới rất hào hứng.",
   "referenceAnswers": [
-   "The new students are very excited."
+   "The new students are very excited.",
+   "The new pupils are really excited.",
+   "The new students are full of excitement."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1879,7 +2255,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "at home",
+  "meaningVi": "có mặt ở nhà"
  },
  {
   "id": "esl-v2-r05-u02-012",
@@ -1888,7 +2266,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Buổi họp này rất quan trọng với nhóm.",
   "referenceAnswers": [
-   "This meeting is very important to the team."
+   "This meeting is very important to the team.",
+   "This meeting is really important for the group.",
+   "This meeting matters a lot to the team."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1913,7 +2293,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "important to",
+  "meaningVi": "quan trọng với"
  },
  {
   "id": "esl-v2-r05-u02-013",
@@ -1959,7 +2341,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Món súp quá nóng để ăn ngay.",
   "referenceAnswers": [
-   "The soup is too hot to eat now."
+   "The soup is too hot to eat now.",
+   "The soup is too hot to eat right away.",
+   "The soup is so hot that it cannot be eaten right now."
   ],
   "grammarTags": [
    "R05-U02",
@@ -1984,7 +2368,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "too hot",
+  "meaningVi": "quá nóng"
  },
  {
   "id": "esl-v2-r05-u02-015",
@@ -1993,7 +2379,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Cô ấy là một tình nguyện viên ở thư viện.",
   "referenceAnswers": [
-   "She is a volunteer at the library."
+   "She is a volunteer at the library.",
+   "She works as a volunteer in the library.",
+   "She volunteers at the library."
   ],
   "grammarTags": [
    "R05-U02",
@@ -2055,7 +2443,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "To be (am/is/are) để miêu tả người và vật"
+  "skillFocus": "To be (am/is/are) để miêu tả người và vật",
+  "targetTerm": "not ready",
+  "meaningVi": "chưa sẵn sàng"
  },
  {
   "id": "esl-v2-r05-u02-017",
@@ -2101,7 +2491,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "có một tấm bản đồ giấy",
   "referenceAnswers": [
-   "have a paper map"
+   "have a paper map",
+   "have a map made of paper",
+   "have got a paper map"
   ],
   "grammarTags": [
    "R05-U03",
@@ -2137,7 +2529,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "có ba người anh em họ",
   "referenceAnswers": [
-   "have three cousins"
+   "have three cousins",
+   "have got three cousins",
+   "have three cousins in the family"
   ],
   "grammarTags": [
    "R05-U03",
@@ -2162,7 +2556,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "cousins",
+  "meaningVi": "anh em họ"
  },
  {
   "id": "esl-v2-r05-u03-003",
@@ -2171,7 +2567,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "có một cuộc hẹn vào thứ Sáu",
   "referenceAnswers": [
-   "have an appointment on Friday"
+   "have an appointment on Friday",
+   "have an appointment scheduled for Friday",
+   "have got an appointment on Friday"
   ],
   "grammarTags": [
    "R05-U03",
@@ -2196,7 +2594,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "have an appointment",
+  "meaningVi": "có một cuộc hẹn"
  },
  {
   "id": "esl-v2-r05-u03-004",
@@ -2205,7 +2605,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "có nhiều bài cần đọc",
   "referenceAnswers": [
-   "have a lot of reading to do"
+   "have a lot of reading to do",
+   "have plenty of reading to do",
+   "have many texts to read"
   ],
   "grammarTags": [
    "R05-U03",
@@ -2230,7 +2632,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "reading to do",
+  "meaningVi": "bài cần đọc"
  },
  {
   "id": "esl-v2-r05-u03-005",
@@ -2276,7 +2680,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cậu ấy có một chiếc đồng hồ màu bạc.",
   "referenceAnswers": [
-   "He has a silver watch."
+   "He has a silver watch.",
+   "He owns a silver wristwatch.",
+   "He's got a silver-colored watch."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2301,7 +2707,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "silver watch",
+  "meaningVi": "đồng hồ màu bạc"
  },
  {
   "id": "esl-v2-r05-u03-007",
@@ -2310,7 +2718,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi có đủ ghế cho khách.",
   "referenceAnswers": [
-   "We have enough chairs for the guests."
+   "We have enough chairs for the guests.",
+   "We have sufficient chairs for the guests.",
+   "We've got enough chairs to seat the guests."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2335,7 +2745,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "have enough chairs",
+  "meaningVi": "có đủ ghế"
  },
  {
   "id": "esl-v2-r05-u03-008",
@@ -2344,7 +2756,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có một ý tưởng đơn giản.",
   "referenceAnswers": [
-   "She has a simple idea."
+   "She has a simple idea.",
+   "She has a straightforward idea.",
+   "She's got a simple idea in mind."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2369,7 +2783,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "simple idea",
+  "meaningVi": "ý tưởng đơn giản"
  },
  {
   "id": "esl-v2-r05-u03-009",
@@ -2378,7 +2794,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hai anh em tôi có phòng ngủ riêng.",
   "referenceAnswers": [
-   "My two brothers have separate bedrooms."
+   "My two brothers have separate bedrooms.",
+   "My two brothers have their own bedrooms.",
+   "Each of my two brothers has his own bedroom."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2403,7 +2821,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "separate bedrooms",
+  "meaningVi": "phòng ngủ riêng"
  },
  {
   "id": "esl-v2-r05-u03-010",
@@ -2412,7 +2832,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc máy ảnh này có màn hình lớn.",
   "referenceAnswers": [
-   "This camera has a large screen."
+   "This camera has a large screen.",
+   "This camera comes with a big screen.",
+   "There is a big screen on this camera."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2437,7 +2859,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "large screen",
+  "meaningVi": "màn hình lớn"
  },
  {
   "id": "esl-v2-r05-u03-011",
@@ -2446,7 +2870,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bà tôi có một khu vườn rau nhỏ.",
   "referenceAnswers": [
-   "My grandmother has a small vegetable garden."
+   "My grandmother has a small vegetable garden.",
+   "My grandmother owns a little vegetable garden.",
+   "My grandma has got a small vegetable patch."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2508,7 +2934,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "the same teacher",
+  "meaningVi": "cùng một giáo viên"
  },
  {
   "id": "esl-v2-r05-u03-013",
@@ -2517,7 +2945,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Trường của họ có hai phòng máy tính.",
   "referenceAnswers": [
-   "Their school has two computer rooms."
+   "Their school has two computer rooms.",
+   "There are two computer rooms at their school.",
+   "Their school has got two computer labs."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2542,7 +2972,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "computer rooms",
+  "meaningVi": "phòng máy tính"
  },
  {
   "id": "esl-v2-r05-u03-014",
@@ -2551,7 +2983,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Em bé có đôi mắt rất sáng.",
   "referenceAnswers": [
-   "The baby has very bright eyes."
+   "The baby has very bright eyes.",
+   "The baby's eyes are very bright.",
+   "The baby has got really bright eyes."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2576,7 +3010,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "bright eyes",
+  "meaningVi": "đôi mắt sáng"
  },
  {
   "id": "esl-v2-r05-u03-015",
@@ -2648,7 +3084,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "three books",
+  "meaningVi": "ba cuốn sách"
  },
  {
   "id": "esl-v2-r05-u03-017",
@@ -2657,7 +3095,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Cả hai đội đều có cơ hội giành chiến thắng.",
   "referenceAnswers": [
-   "Both teams have a chance to win."
+   "Both teams have a chance to win.",
+   "Both teams have an opportunity to win.",
+   "Each of the two teams has a chance of winning."
   ],
   "grammarTags": [
    "R05-U03",
@@ -2682,7 +3122,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Have và has: có, sở hữu, đặc điểm"
+  "skillFocus": "Have và has: có, sở hữu, đặc điểm",
+  "targetTerm": "chance to win",
+  "meaningVi": "cơ hội giành chiến thắng"
  },
  {
   "id": "esl-v2-r05-u04-001",
@@ -2691,7 +3133,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "có thể đi xe đạp",
   "referenceAnswers": [
-   "can ride a bicycle"
+   "can ride a bicycle",
+   "be able to ride a bike",
+   "know how to ride a bicycle"
   ],
   "grammarTags": [
    "R05-U04",
@@ -2716,7 +3160,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "ride a bicycle",
+  "meaningVi": "đi xe đạp"
  },
  {
   "id": "esl-v2-r05-u04-002",
@@ -2751,7 +3197,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "remember the password",
+  "meaningVi": "nhớ mật khẩu"
  },
  {
   "id": "esl-v2-r05-u04-003",
@@ -2760,7 +3208,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "có thể nói một chút tiếng Pháp",
   "referenceAnswers": [
-   "can speak a little French"
+   "can speak a little French",
+   "be able to speak a little French",
+   "can speak a bit of French"
   ],
   "grammarTags": [
    "R05-U04",
@@ -2785,7 +3235,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "a little french",
+  "meaningVi": "một chút tiếng Pháp"
  },
  {
   "id": "esl-v2-r05-u04-004",
@@ -2820,7 +3272,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "enter the room",
+  "meaningVi": "đi vào phòng"
  },
  {
   "id": "esl-v2-r05-u04-005",
@@ -2829,7 +3283,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi có thể tìm đường bằng bản đồ này.",
   "referenceAnswers": [
-   "I can find the way with this map."
+   "I can find the way with this map.",
+   "I can find my way using this map.",
+   "I am able to find the way with this map."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2865,7 +3321,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Em họ tôi có thể đếm đến một trăm.",
   "referenceAnswers": [
-   "My cousin can count to one hundred."
+   "My cousin can count to one hundred.",
+   "My cousin is able to count up to one hundred.",
+   "My younger cousin can count all the way to a hundred."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2890,7 +3348,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "count to",
+  "meaningVi": "đếm đến"
  },
  {
   "id": "esl-v2-r05-u04-007",
@@ -2899,7 +3359,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thể mở cửa sổ giúp tôi.",
   "referenceAnswers": [
-   "You can open the window for me."
+   "You can open the window for me.",
+   "You can help me open the window.",
+   "You can open the window to help me."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2961,7 +3423,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "corridor",
+  "meaningVi": "hành lang"
  },
  {
   "id": "esl-v2-r05-u04-009",
@@ -2970,7 +3434,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có thể giải thích quy tắc bằng tiếng Anh.",
   "referenceAnswers": [
-   "She can explain the rule in English."
+   "She can explain the rule in English.",
+   "She is able to explain the rule in English.",
+   "She can use English to explain the rule."
   ],
   "grammarTags": [
    "R05-U04",
@@ -2995,7 +3461,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "explain the rule",
+  "meaningVi": "giải thích quy tắc"
  },
  {
   "id": "esl-v2-r05-u04-010",
@@ -3030,7 +3498,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "take photos underwater",
+  "meaningVi": "chụp ảnh dưới nước"
  },
  {
   "id": "esl-v2-r05-u04-011",
@@ -3039,7 +3509,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi có thể mượn chiếc ghế này được không?",
   "referenceAnswers": [
-   "Can I borrow this chair?"
+   "Can I borrow this chair?",
+   "May I borrow this chair?",
+   "Is it okay if I borrow this chair?"
   ],
   "grammarTags": [
    "R05-U04",
@@ -3064,7 +3536,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "borrow this chair",
+  "meaningVi": "mượn chiếc ghế này"
  },
  {
   "id": "esl-v2-r05-u04-012",
@@ -3099,7 +3573,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "attend practice",
+  "meaningVi": "tham gia buổi tập"
  },
  {
   "id": "esl-v2-r05-u04-013",
@@ -3108,7 +3584,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Chúng ta có thể sử dụng cửa phụ khi trời mưa.",
   "referenceAnswers": [
-   "We can use the side entrance when it rains."
+   "We can use the side entrance when it rains.",
+   "We can use the side door when it is raining.",
+   "On rainy days, we can use the side door."
   ],
   "grammarTags": [
    "R05-U04",
@@ -3133,7 +3611,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "side entrance",
+  "meaningVi": "cửa phụ"
  },
  {
   "id": "esl-v2-r05-u04-014",
@@ -3142,7 +3622,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Các em nhỏ có thể chơi trong sân sau giờ học.",
   "referenceAnswers": [
-   "The children can play in the yard after school."
+   "The children can play in the yard after school.",
+   "The young children can play in the courtyard after classes.",
+   "After school finishes, the kids can play out in the yard."
   ],
   "grammarTags": [
    "R05-U04",
@@ -3167,7 +3649,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "after school",
+  "meaningVi": "sau giờ học"
  },
  {
   "id": "esl-v2-r05-u04-015",
@@ -3202,7 +3686,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "on the sign",
+  "meaningVi": "trên tấm biển"
  },
  {
   "id": "esl-v2-r05-u04-016",
@@ -3237,7 +3723,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "fix the lamp",
+  "meaningVi": "sửa chiếc đèn"
  },
  {
   "id": "esl-v2-r05-u04-017",
@@ -3272,7 +3760,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép"
+  "skillFocus": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "targetTerm": "change the location",
+  "meaningVi": "đổi địa điểm"
  },
  {
   "id": "esl-v2-r05-u05-001",
@@ -3307,7 +3797,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "on the table",
+  "meaningVi": "ở trên bàn"
  },
  {
   "id": "esl-v2-r05-u05-002",
@@ -3342,7 +3834,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "spicy food",
+  "meaningVi": "đồ ăn cay"
  },
  {
   "id": "esl-v2-r05-u05-003",
@@ -3377,7 +3871,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "enough paper",
+  "meaningVi": "đủ giấy"
  },
  {
   "id": "esl-v2-r05-u05-004",
@@ -3412,7 +3908,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "wait until tonight",
+  "meaningVi": "đợi đến tối"
  },
  {
   "id": "esl-v2-r05-u05-005",
@@ -3447,7 +3945,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "drink coffee",
+  "meaningVi": "uống cà phê"
  },
  {
   "id": "esl-v2-r05-u05-006",
@@ -3482,7 +3982,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "by motorbike",
+  "meaningVi": "bằng xe máy"
  },
  {
   "id": "esl-v2-r05-u05-007",
@@ -3517,7 +4019,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "not clean",
+  "meaningVi": "không sạch"
  },
  {
   "id": "esl-v2-r05-u05-008",
@@ -3552,7 +4056,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "have classes",
+  "meaningVi": "có lớp học"
  },
  {
   "id": "esl-v2-r05-u05-009",
@@ -3587,7 +4093,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "long films",
+  "meaningVi": "những bộ phim dài"
  },
  {
   "id": "esl-v2-r05-u05-010",
@@ -3659,7 +4167,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "spare key",
+  "meaningVi": "chìa khóa dự phòng"
  },
  {
   "id": "esl-v2-r05-u05-012",
@@ -3694,7 +4204,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "have dinner",
+  "meaningVi": "ăn tối"
  },
  {
   "id": "esl-v2-r05-u05-013",
@@ -3729,7 +4241,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "open on mondays",
+  "meaningVi": "mở cửa vào thứ Hai"
  },
  {
   "id": "esl-v2-r05-u05-014",
@@ -3801,7 +4315,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Phủ định đúng với be, do/does và can"
+  "skillFocus": "Phủ định đúng với be, do/does và can",
+  "targetTerm": "his own phone",
+  "meaningVi": "điện thoại riêng"
  },
  {
   "id": "esl-v2-r05-u05-016",
@@ -3847,7 +4363,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bây giờ bạn đang ở đâu?",
   "referenceAnswers": [
-   "Where are you now?"
+   "Where are you now?",
+   "Where are you right now?",
+   "Where are you at the moment?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -3872,7 +4390,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "where are you",
+  "meaningVi": "bạn đang ở đâu"
  },
  {
   "id": "esl-v2-r05-u06-002",
@@ -3881,7 +4401,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thích món súp này không?",
   "referenceAnswers": [
-   "Do you like this soup?"
+   "Do you like this soup?",
+   "Do you enjoy this soup?",
+   "Do you like the taste of this soup?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -3906,7 +4428,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "like this soup",
+  "meaningVi": "thích món súp này"
  },
  {
   "id": "esl-v2-r05-u06-003",
@@ -3915,7 +4439,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cuộc họp bắt đầu khi nào?",
   "referenceAnswers": [
-   "When does the meeting start?"
+   "When does the meeting start?",
+   "When does the meeting begin?",
+   "What time does the meeting start?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -3951,7 +4477,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi có thể dùng chiếc bút này không?",
   "referenceAnswers": [
-   "Can I use this pen?"
+   "Can I use this pen?",
+   "May I use this pen?",
+   "Is it okay if I use this pen?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -3976,7 +4504,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "use this pen",
+  "meaningVi": "dùng chiếc bút này"
  },
  {
   "id": "esl-v2-r05-u06-005",
@@ -3985,7 +4515,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Bạn có sống gần trường không?",
   "referenceAnswers": [
-   "Do you live near the school?"
+   "Do you live near the school?",
+   "Do you live close to the school?",
+   "Is your home near the school?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4010,7 +4542,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "live near",
+  "meaningVi": "sống gần"
  },
  {
   "id": "esl-v2-r05-u06-006",
@@ -4019,7 +4553,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy có học vào buổi tối không?",
   "referenceAnswers": [
-   "Does she study in the evening?"
+   "Does she study in the evening?",
+   "Does she study during the evening?",
+   "Does she do her studying in the evenings?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4055,7 +4591,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Những chiếc vé này có đắt không?",
   "referenceAnswers": [
-   "Are these tickets expensive?"
+   "Are these tickets expensive?",
+   "Do these tickets cost a lot of money?",
+   "Are these tickets pricey?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4091,7 +4629,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Bố của bạn làm việc ở đâu?",
   "referenceAnswers": [
-   "Where does your father work?"
+   "Where does your father work?",
+   "Where is your father's workplace?",
+   "Where does your dad work?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4116,7 +4656,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "work",
+  "meaningVi": "làm việc"
  },
  {
   "id": "esl-v2-r05-u06-009",
@@ -4125,7 +4667,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bạn ăn sáng lúc mấy giờ?",
   "referenceAnswers": [
-   "What time do you have breakfast?"
+   "What time do you have breakfast?",
+   "What time do you eat breakfast?",
+   "At what time do you have your breakfast?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4150,7 +4694,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "have breakfast",
+  "meaningVi": "ăn sáng"
  },
  {
   "id": "esl-v2-r05-u06-010",
@@ -4159,7 +4705,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Phòng máy tính có mở cửa hôm nay không?",
   "referenceAnswers": [
-   "Is the computer room open today?"
+   "Is the computer room open today?",
+   "Is the computer lab open today?",
+   "Is the computer room open for use today?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4184,7 +4732,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "open today",
+  "meaningVi": "mở cửa hôm nay"
  },
  {
   "id": "esl-v2-r05-u06-011",
@@ -4193,7 +4743,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có thể mang theo chiếc ô này không?",
   "referenceAnswers": [
-   "Can you bring this umbrella?"
+   "Can you bring this umbrella?",
+   "Could you bring this umbrella with you?",
+   "Are you able to take this umbrella along?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4229,7 +4781,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ai là giáo viên tiếng Anh của bạn?",
   "referenceAnswers": [
-   "Who is your English teacher?"
+   "Who is your English teacher?",
+   "Who teaches you English?",
+   "Who is the teacher for your English class?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4254,7 +4808,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "english teacher",
+  "meaningVi": "giáo viên tiếng Anh"
  },
  {
   "id": "esl-v2-r05-u06-013",
@@ -4263,7 +4819,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Những người hàng xóm của bạn có nuôi chó không?",
   "referenceAnswers": [
-   "Do your neighbours have a dog?"
+   "Do your neighbours have a dog?",
+   "Do your neighbours keep a dog?",
+   "Do your neighbours own any dogs?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4299,7 +4857,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Khi nào thư viện đóng cửa?",
   "referenceAnswers": [
-   "When does the library close?"
+   "When does the library close?",
+   "What time does the library close?",
+   "What is the closing time of the library?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4335,7 +4895,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn đã sẵn sàng cho buổi học chưa?",
   "referenceAnswers": [
-   "Are you ready for the lesson?"
+   "Are you ready for the lesson?",
+   "Are you prepared for the class?",
+   "Are you all set for the lesson?"
   ],
   "grammarTags": [
    "R05-U06",
@@ -4360,7 +4922,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "lesson",
+  "meaningVi": "buổi học"
  },
  {
   "id": "esl-v2-r05-u06-016",
@@ -4395,6 +4959,8 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản"
+  "skillFocus": "Câu hỏi Yes/No và Wh- cơ bản",
+  "targetTerm": "take the bus",
+  "meaningVi": "đi xe buýt"
  }
 ]

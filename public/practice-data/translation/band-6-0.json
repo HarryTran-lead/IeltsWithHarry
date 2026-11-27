@@ -8,13 +8,21 @@
   "meaningVi": "quyền riêng tư",
   "promptVi": "Người dùng cần hiểu cách ứng dụng thu thập dữ liệu để bảo vệ quyền riêng tư.",
   "referenceAnswers": [
-   "Users need to understand how apps collect data in order to protect their privacy."
+   "Users need to understand how apps collect data in order to protect their privacy.",
+   "People must know how mobile applications gather personal information so that they can safeguard their privacy.",
+   "To keep their private details safe, users ought to be aware of the ways apps collect data."
   ],
   "grammarTags": [
    "in-order-to"
   ],
   "explanationVi": "In order to nêu mục đích bảo vệ quyền riêng tư.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Users need to understand how apps collect datas in order to protect their privacy.",
+    "correction": "Users need to understand how apps collect data in order to protect their privacy.",
+    "reasonVi": "'Data' vốn đã mang nghĩa số nhiều/không đếm được trong tiếng Anh hiện đại nên tuyệt đối không bao giờ thêm '-s' thành 'datas'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -30,7 +38,9 @@
   "meaningVi": "năng lượng tái tạo",
   "promptVi": "Đầu tư vào năng lượng tái tạo có thể giảm sự phụ thuộc vào nhiên liệu hóa thạch.",
   "referenceAnswers": [
-   "Investing in renewable energy can reduce dependence on fossil fuels."
+   "Investing in renewable energy can reduce dependence on fossil fuels.",
+   "Putting funds into clean energy sources helps lower our reliance on fossil fuels.",
+   "Allocating money to renewable power can cut down on how much we rely on fossil fuels."
   ],
   "grammarTags": [
    "gerund-subject"
@@ -58,7 +68,9 @@
   "meaningVi": "tiếp cận bình đẳng",
   "promptVi": "Chính phủ cần bảo đảm mọi trẻ em được tiếp cận giáo dục chất lượng một cách bình đẳng.",
   "referenceAnswers": [
-   "Governments should ensure that all children have equal access to quality education."
+   "Governments should ensure that all children have equal access to quality education.",
+   "State authorities must guarantee that every child has fair access to high-standard schooling.",
+   "It is essential for governments to make sure all children can receive quality education on an equal footing."
   ],
   "grammarTags": [
    "ensure-that"
@@ -86,7 +98,9 @@
   "meaningVi": "xe buýt đáng tin cậy",
   "promptVi": "Khi có xe buýt đúng giờ và ổn định, người đi làm dễ chọn chúng thay cho ô tô hơn, nhờ đó có thể giảm ùn tắc.",
   "referenceAnswers": [
-   "When reliable buses are available, commuters are more likely to use them instead of cars, which can reduce congestion."
+   "When reliable buses are available, commuters are more likely to use them instead of cars, which can reduce congestion.",
+   "If punctual and dependable bus services are in place, workers are more inclined to leave their cars at home, helping to ease traffic jams.",
+   "Having reliable buses that run on schedule encourages commuters to switch from driving to public transit, and this can cut down on road congestion."
   ],
   "grammarTags": [
    "relative-result-clause"
@@ -143,14 +157,22 @@
   "meaningVi": "lượng dinh dưỡng nạp vào",
   "promptVi": "Khi thanh thiếu niên tiêu thụ quá nhiều thực phẩm chế biến sẵn, lượng dinh dưỡng nạp vào của các em sẽ suy giảm, dẫn đến nguy cơ mắc các bệnh mãn tính sớm hơn.",
   "referenceAnswers": [
-   "When teenagers consume excessive amounts of processed food, their nutritional intake declines, leading to an increased risk of developing chronic illnesses earlier in life."
+   "When teenagers consume excessive amounts of processed food, their nutritional intake declines, leading to an increased risk of developing chronic illnesses earlier in life.",
+   "If adolescents eat too much processed food, they take in fewer vital nutrients, which raises the likelihood of suffering from long-term diseases at a younger age.",
+   "Eating excessive processed items reduces teenagers' overall nutrition, putting them at greater risk of facing chronic health conditions earlier than usual."
   ],
   "grammarTags": [
    "Conditional clause & mechanism"
   ],
   "explanationVi": "Dùng liên từ 'When' chỉ quan hệ nguyên nhân - kết quả theo thời gian/điều kiện tự nhiên, theo sau bởi mệnh đề chứa cụm danh từ 'nutritional intake'.",
   "rationaleVi": "Mục tiêu 6.0 yêu cầu dùng từ ngữ chuyên biệt ('nutritional intake') cùng cấu trúc chỉ nguyên nhân - hệ quả chính xác và tự nhiên.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "When teenagers consume excessive amounts of processed food, their nutritional intake declines, leads to an increased risk of developing chronic illnesses earlier in life.",
+    "correction": "When teenagers consume excessive amounts of processed food, their nutritional intake declines, leading to an increased risk of developing chronic illnesses earlier in life.",
+    "reasonVi": "Sau dấu phẩy cuối mệnh đề chính, để diễn tả hệ quả 'dẫn đến...' phải dùng phân từ hiện tại 'leading to' (rút gọn của 'which leads to'), không dùng động từ chia thì 'leads to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -165,7 +187,9 @@
   "meaningVi": "giờ làm việc linh hoạt",
   "promptVi": "Nếu doanh nghiệp áp dụng giờ làm việc linh hoạt, nhân viên có thể cân bằng trách nhiệm gia đình tốt hơn mà không làm giảm năng suất chung.",
   "referenceAnswers": [
-   "Should companies adopt flexible working hours, employees can better balance family responsibilities without compromising overall productivity."
+   "Should companies adopt flexible working hours, employees can better balance family responsibilities without compromising overall productivity.",
+   "When businesses introduce flexible schedules, workers are able to manage their family duties more effectively while maintaining overall output.",
+   "Allowing staff to work flexible hours lets them juggle family commitments much better without hurting the company's total productivity."
   ],
   "grammarTags": [
    "Inverted conditional"
@@ -220,7 +244,7 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "pedestrianised zones",
   "meaningVi": "khu phố dành cho người đi bộ",
-  "promptVi": "Việc mở rộng các khu phố dành cho người đi bộ ở trung tâm thành phố không chỉ cải thiện chất lượng không khí mà còn có thể thúc đẩy thương mại địa phương.",
+  "promptVi": "Mở rộng các khu phố đi bộ ở trung tâm thành phố không chỉ cải thiện chất lượng không khí mà còn có thể thúc đẩy thương mại địa phương.",
   "referenceAnswers": [
    "Expanding pedestrianised zones in city centres not only improves air quality but can also boost local trade.",
    "Expanding pedestrianised zones in city centers not only improves air quality but can also boost local trade."
@@ -230,7 +254,13 @@
   ],
   "explanationVi": "Cấu trúc 'not only... but also...' kết nối hai tác động; 'can' giữ đúng sắc thái khả năng của câu tiếng Việt.",
   "rationaleVi": "Dùng từ chính xác 'pedestrianised zones' (Anh - Anh) thay cho 'walking streets' thể hiện vốn từ vựng chuẩn xác ở mức 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Expanding pedestrianised zones in city centres not only improves air quality but can also boosts local trade.",
+    "correction": "Expanding pedestrianised zones in city centres not only improves air quality but can also boost local trade.",
+    "reasonVi": "Dù vế trước chia 'improves' theo chủ ngữ số ít, ở vế sau đã có động từ khuyết thiếu 'can' nên động từ chính phải giữ nguyên mẫu là 'boost', không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -274,14 +304,22 @@
   "meaningVi": "kết quả học tập",
   "promptVi": "Dù sĩ số lớp học giảm thường gắn liền với kết quả học tập tốt hơn, một số nghiên cứu gần đây cho thấy phương pháp giảng dạy mới là yếu tố quyết định.",
   "referenceAnswers": [
-   "While smaller class sizes are often linked to better academic performance, recent studies suggest that new teaching methods play a far more decisive role."
+   "While smaller class sizes are often linked to better academic performance, recent studies suggest that new teaching methods play a far more decisive role.",
+   "Although fewer students in a classroom is often tied to higher achievement, recent studies point out that teaching methods are the truly decisive factor.",
+   "Smaller classes are frequently linked with better academic results, yet current research shows it is actually the teaching approach that plays the defining role."
   ],
   "grammarTags": [
    "Concession and evidence limitation"
   ],
   "explanationVi": "Mệnh đề 'While' tạo lập luận phản biện nhẹ, nối nguyên nhân phụ với nguyên nhân chính dẫn tới kết quả học tập ('academic performance').",
   "rationaleVi": "Phân tích nguyên nhân đa chiều với thuật ngữ giáo dục chuẩn xác giúp câu đáp ứng tiêu chí diễn đạt phức hợp mức 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While smaller class sizes are often linked to better academic performance, recent studies suggest that new teaching methods play a very more decisive role.",
+    "correction": "While smaller class sizes are often linked to better academic performance, recent studies suggest that new teaching methods play a far more decisive role.",
+    "reasonVi": "Không dùng 'very' để nhấn mạnh trước tính từ so sánh hơn ('more decisive'); thay vào đó phải dùng các từ nhấn mạnh so sánh như 'far', 'much' hoặc 'considerably'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -294,16 +332,24 @@
   "topic": "Công nghệ & Khoa học",
   "targetTerm": "automated systems",
   "meaningVi": "các hệ thống tự động hóa",
-  "promptVi": "Việc đưa các hệ thống tự động hóa vào dây chuyền sản xuất giúp loại bỏ các lỗi do con người, từ đó nâng cao độ chính xác của sản phẩm.",
+  "promptVi": "Tích hợp hệ thống tự động hóa vào dây chuyền sản xuất giúp loại bỏ sai sót của con người, qua đó nâng cao độ chính xác tổng thể của sản phẩm.",
   "referenceAnswers": [
-   "Integrating automated systems into production lines eliminates human error, thereby enhancing overall product precision."
+   "Integrating automated systems into production lines eliminates human error, thereby enhancing overall product precision.",
+   "Introducing automation into manufacturing lines removes mistakes made by workers, which improves the accuracy of the final products.",
+   "When factories bring automated technology onto the production line, human errors are eliminated and product precision rises as a result."
   ],
   "grammarTags": [
    "Participle clause showing effect"
   ],
   "explanationVi": "Danh động từ 'Integrating...' làm chủ ngữ kết hợp cụm phân từ 'thereby enhancing...' biểu thị hệ quả trực tiếp từ cơ chế công nghệ.",
   "rationaleVi": "Sử dụng 'automated systems' thay cho từ chung chung như 'machines' cùng cấu trúc chỉ hệ quả gọn gàng, phù hợp band 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Integrating automated systems into production lines eliminates human error, thereby enhances overall product precision.",
+    "correction": "Integrating automated systems into production lines eliminates human error, thereby enhancing overall product precision.",
+    "reasonVi": "'Thereby' là trạng từ chứ không phải liên từ, nên khi đứng sau dấu phẩy để chỉ kết quả ('từ đó...'), động từ theo sau phải ở dạng V-ing ('thereby enhancing')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -318,14 +364,22 @@
   "meaningVi": "lối sống ít vận động",
   "promptVi": "Trái với quan niệm rằng thời gian rảnh rỗi thúc đẩy tập luyện, sự phổ biến của thiết bị điện tử lại khiến nhiều người trẻ rơi vào lối sống ít vận động.",
   "referenceAnswers": [
-   "Contrary to the belief that free time encourages exercise, the prevalence of electronic devices has led many young people into a sedentary lifestyle."
+   "Contrary to the belief that free time encourages exercise, the prevalence of electronic devices has led many young people into a sedentary lifestyle.",
+   "Although people often assume spare time motivates physical activity, the widespread use of digital gadgets has actually pushed many youths toward inactive habits.",
+   "Rather than encouraging young people to work out during their free time, the popularity of electronic screens has resulted in a largely inactive lifestyle."
   ],
   "grammarTags": [
    "Counterargument structure"
   ],
   "explanationVi": "Mở đầu với 'Contrary to...' để đưa ra phản biện về nguyên nhân dẫn đến 'sedentary lifestyle'.",
   "rationaleVi": "Thay thế từ mang tính mô tả chung ('lối sống lười biếng') bằng thuật ngữ y tế/xã hội chuẩn 'sedentary lifestyle' ở mức 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Contrary with the belief that free time encourages exercise, the prevalence of electronic devices has led many young people into a sedentary lifestyle.",
+    "correction": "Contrary to the belief that free time encourages exercise, the prevalence of electronic devices has led many young people into a sedentary lifestyle.",
+    "reasonVi": "Cụm từ cố định mang nghĩa 'trái với' là 'Contrary to + danh từ', tuyệt đối không dịch chữ 'với' sang giới từ 'with'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -340,7 +394,9 @@
   "meaningVi": "lượng tiêu thụ năng lượng",
   "promptVi": "Nếu các hộ gia đình lắp đặt thiết bị thông minh, lượng tiêu thụ năng lượng sẽ giảm đáng kể, khiến hóa đơn điện hằng tháng không còn là gánh nặng tài chính.",
   "referenceAnswers": [
-   "Were households to install smart appliances, energy consumption would drop significantly, ensuring monthly electricity bills no longer pose a financial burden."
+   "Were households to install smart appliances, energy consumption would drop significantly, ensuring monthly electricity bills no longer pose a financial burden.",
+   "If families equip their homes with smart devices, power usage would fall sharply, so monthly electricity costs would stop being a heavy financial strain.",
+   "By fitting homes with smart appliances, households would use far less energy and no longer find monthly power bills a financial burden."
   ],
   "grammarTags": [
    "Inverted second conditional"
@@ -368,14 +424,22 @@
   "meaningVi": "việc thiếu ngủ",
   "promptVi": "Lịch trình làm việc ca đêm kéo dài gây ra việc thiếu ngủ trầm trọng, dẫn đến sự suy giảm khả năng tập trung cũng như tốc độ phản xạ của người lao động.",
   "referenceAnswers": [
-   "Prolonged night-shift schedules cause severe sleep deprivation, resulting in a marked decline in workers' concentration and reaction speeds."
+   "Prolonged night-shift schedules cause severe sleep deprivation, resulting in a marked decline in workers' concentration and reaction speeds.",
+   "Working night shifts over long periods leads to serious sleep loss, which reduces both employees' focus and how quickly they react.",
+   "Extended overnight work schedules deprive staff of essential sleep, causing their concentration levels and reflexes to drop noticeably."
   ],
   "grammarTags": [
    "Causal verb chain"
   ],
   "explanationVi": "Động từ 'cause' liên kết nguyên nhân với 'sleep deprivation', sau đó cụm 'resulting in' chỉ ra chuỗi hệ quả tiếp theo.",
   "rationaleVi": "Thể hiện mối quan hệ nguyên nhân - hệ quả nhiều nấc với thuật ngữ y học/lao động chính xác ('sleep deprivation') ở mức 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Prolonged night-shift schedules cause severe sleep deprivation, resulting from a marked decline in workers' concentration and reaction speeds.",
+    "correction": "Prolonged night-shift schedules cause severe sleep deprivation, resulting in a marked decline in workers' concentration and reaction speeds.",
+    "reasonVi": "Cần phân biệt 'result in' (dẫn đến hệ quả) và 'result from' (bắt nguồn từ nguyên nhân); ở đây thiếu ngủ gây ra suy giảm tập trung nên phải dùng 'resulting in'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -390,14 +454,22 @@
   "meaningVi": "các ưu đãi tài chính",
   "promptVi": "Ngay cả khi chính phủ cung cấp các ưu đãi tài chính cho các doanh nghiệp khởi nghiệp, thành công lâu dài vẫn phụ thuộc vào nhu cầu thực tế của thị trường.",
   "referenceAnswers": [
-   "Even if the government offers financial incentives to startup businesses, long-term success still hinges on actual market demand."
+   "Even if the government offers financial incentives to startup businesses, long-term success still hinges on actual market demand.",
+   "Although authorities may grant financial support to new startups, lasting success ultimately depends on genuine demand in the market.",
+   "Even when startups receive government financial incentives, their long-term survival still comes down to real market demand."
   ],
   "grammarTags": [
    "Conditional concession with uncertainty"
   ],
   "explanationVi": "Liên từ 'Even if' diễn đạt điều kiện nhượng bộ, kết hợp động từ 'hinges on' biểu thị sự phụ thuộc của hệ quả vào yếu tố thị trường.",
   "rationaleVi": "Từ vựng kinh tế chuyên biệt ('financial incentives') cùng lối diễn đạt điều kiện kèm giới hạn điều kiện rất đặc trưng của 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even the government offers financial incentives to startup businesses, long-term success still hinges on actual market demand.",
+    "correction": "Even if the government offers financial incentives to startup businesses, long-term success still hinges on actual market demand.",
+    "reasonVi": "'Even' chỉ là trạng từ nhấn mạnh chứ không phải liên từ nối hai mệnh đề; để diễn đạt 'ngay cả khi', bắt buộc phải dùng cụm liên từ 'Even if'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -410,7 +482,7 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "affordable housing",
   "meaningVi": "nhà ở giá rẻ",
-  "promptVi": "Việc gia tăng nguồn cung nhà ở giá rẻ cho phép công nhân thu nhập thấp an cư, nhờ đó ổn định nguồn nhân lực cho các khu công nghiệp.",
+  "promptVi": "Tăng nguồn cung nhà ở giá phải chăng tạo điều kiện cho công nhân thu nhập thấp an cư, nhờ đó ổn định lực lượng lao động cho các khu công nghiệp.",
   "referenceAnswers": [
    "Increasing the supply of affordable housing allows low-income workers to settle down, thereby stabilising the labour force for industrial zones.",
    "Increasing the supply of affordable housing allows low-income workers to settle down, thereby stabilising the labor force for industrial zones."
@@ -420,7 +492,13 @@
   ],
   "explanationVi": "Chủ ngữ là danh động từ 'Increasing...', kéo theo hệ quả được nối bằng 'thereby stabilising' và thuật ngữ 'affordable housing'.",
   "rationaleVi": "Thay thế các từ diễn đạt đơn giản ('cheap houses') bằng thuật ngữ quy hoạch chính xác 'affordable housing' đáp ứng chuẩn 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Increasing the supply of affordable housing allows low-income workers settling down, thereby stabilising the labour force for industrial zones.",
+    "correction": "Increasing the supply of affordable housing allows low-income workers to settle down, thereby stabilising the labour force for industrial zones.",
+    "reasonVi": "Động từ 'allow' chỉ đi với V-ing khi không có tân ngữ ngay sau nó; khi đã có tân ngữ ('low-income workers'), bắt buộc phải dùng 'to V' ('to settle down')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -435,7 +513,9 @@
   "meaningVi": "hạn chế tỷ lệ nghỉ việc",
   "promptVi": "Do doanh nghiệp áp dụng chính sách phúc lợi tốt hơn, họ có thể hạn chế tỷ lệ nghỉ việc trong giai đoạn khủng hoảng.",
   "referenceAnswers": [
-   "Owing to better welfare policies implemented by enterprises, they can curb turnover rates during periods of crisis."
+   "Owing to better welfare policies implemented by enterprises, they can curb turnover rates during periods of crisis.",
+   "Because businesses offer stronger employee welfare policies, they are able to limit staff turnover during times of crisis.",
+   "By putting better welfare programmes in place, companies can reduce the number of workers quitting during a crisis."
   ],
   "grammarTags": [
    "cause and effect"
@@ -463,7 +543,9 @@
   "meaningVi": "giảm thiểu chấn thương",
   "promptVi": "Nếu vận động viên tuân thủ bài tập khởi động đúng cách, họ sẽ giảm thiểu chấn thương trong quá trình thi đấu.",
   "referenceAnswers": [
-   "Provided that athletes adhere to proper warm-up routines, they will mitigate injuries during competition."
+   "Provided that athletes adhere to proper warm-up routines, they will mitigate injuries during competition.",
+   "If sportspeople follow appropriate warm-up exercises, they can greatly reduce the risk of getting injured while competing.",
+   "Sticking to proper warm-up routines allows athletes to minimise injuries when they take part in competitions."
   ],
   "grammarTags": [
    "condition and result"
@@ -489,9 +571,11 @@
   "topic": "Môi trường & Năng lượng",
   "targetTerm": "degrade air quality",
   "meaningVi": "làm suy giảm chất lượng không khí",
-  "promptVi": "Việc xả thải công nghiệp chưa qua xử lý có thể làm suy giảm chất lượng không khí, buộc chính quyền địa phương phải thắt chặt quy định.",
+  "promptVi": "Tình trạng xả chất thải công nghiệp chưa qua xử lý có thể làm suy giảm chất lượng không khí, khiến chính quyền địa phương phải siết chặt quy định.",
   "referenceAnswers": [
-   "The discharge of untreated industrial waste can degrade air quality, prompting local authorities to tighten regulations."
+   "The discharge of untreated industrial waste can degrade air quality, prompting local authorities to tighten regulations.",
+   "Releasing raw industrial waste can worsen air quality, which forces local governments to enforce stricter rules.",
+   "When factories release untreated waste, air quality declines, leaving local officials with no choice but to toughen regulations."
   ],
   "grammarTags": [
    "mechanism and cause-effect"
@@ -548,14 +632,22 @@
   "meaningVi": "thúc đẩy tư duy phản biện",
   "promptVi": "Trường học chỉ có thể thúc đẩy tư duy phản biện khi giáo viên khuyến khích thảo luận mở thay vì áp đặt đáp án.",
   "referenceAnswers": [
-   "Schools can only foster critical thinking provided teachers encourage open discussion rather than imposing set answers."
+   "Schools can only foster critical thinking provided teachers encourage open discussion rather than imposing set answers.",
+   "Educational institutions can only nurture critical thinking if instructors promote open debate instead of forcing fixed answers on students.",
+   "Students only develop critical thinking at school when teachers welcome open discussions rather than dictating one correct answer."
   ],
   "grammarTags": [
    "restricted condition"
   ],
   "explanationVi": "Cấu trúc 'can only... provided...' giới hạn điều kiện cần thiết để một hệ quả tích cực xảy ra.",
   "rationaleVi": "Kết hợp điều kiện giới hạn và thuật ngữ học thuật quen thuộc ở trình độ 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Schools can only foster critical thinking provided teachers encourage open discussion instead of impose set answers.",
+    "correction": "Schools can only foster critical thinking provided teachers encourage open discussion rather than imposing set answers.",
+    "reasonVi": "Nếu dùng cụm giới từ 'instead of' để dịch 'thay vì', động từ theo sau bắt buộc phải chia V-ing ('imposing') chứ không để nguyên mẫu 'impose'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -568,16 +660,24 @@
   "topic": "Văn hóa & Du lịch",
   "targetTerm": "undermine traditional values",
   "meaningVi": "làm suy yếu các giá trị truyền thống",
-  "promptVi": "Việc thương mại hóa quá mức các lễ hội địa phương đe dọa làm suy yếu các giá trị truyền thống của cộng đồng.",
+  "promptVi": "Thương mại hóa quá mức các lễ hội địa phương đe dọa làm suy yếu những giá trị truyền thống trong cộng đồng.",
   "referenceAnswers": [
-   "Over-commercialising local festivals threatens to undermine traditional values within the community."
+   "Over-commercialising local festivals threatens to undermine traditional values within the community.",
+   "Turning local festivals into overly commercial events risks weakening a community's long-standing traditions.",
+   "When regional celebrations become too commercialised, the traditional values held by the community are put at risk."
   ],
   "grammarTags": [
    "action and risk implication"
   ],
   "explanationVi": "Chủ ngữ dạng V-ing ('Over-commercialising') kết hợp với động từ 'threatens to' làm rõ nguy cơ dẫn đến hệ quả tiêu cực.",
   "rationaleVi": "Từ vựng 'undermine' và cách diễn đạt nguyên nhân tiêu cực rất đặc trưng cho tiêu chuẩn IELTS 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Over-commercialising local festivals threatens undermining traditional values within the community.",
+    "correction": "Over-commercialising local festivals threatens to undermine traditional values within the community.",
+    "reasonVi": "Động từ 'threaten' khi mang nghĩa 'đe dọa sẽ làm gì' bắt buộc đi với động từ nguyên mẫu có 'to' ('threatens to undermine'), không dùng V-ing."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -592,7 +692,9 @@
   "meaningVi": "làm trầm trọng thêm các vấn đề sức khỏe",
   "promptVi": "Thói quen tiêu thụ thực phẩm chứa nhiều chất tạo ngọt nhân tạo có thể làm trầm trọng thêm các vấn đề sức khỏe ở người lớn tuổi.",
   "referenceAnswers": [
-   "The habit of consuming foods high in artificial sweeteners can exacerbate health problems among elderly people."
+   "The habit of consuming foods high in artificial sweeteners can exacerbate health problems among elderly people.",
+   "Regularly eating products loaded with artificial sweeteners can worsen existing medical issues in older adults.",
+   "For senior citizens, frequently consuming foods full of synthetic sweeteners may make their health conditions even worse."
   ],
   "grammarTags": [
    "cause and severity effect"
@@ -620,14 +722,22 @@
   "meaningVi": "rút ngắn thời gian xử lý",
   "promptVi": "Tích hợp trí tuệ nhân tạo vào phân tích dữ liệu giúp rút ngắn thời gian xử lý, cho phép nhà nghiên cứu đưa ra kết luận nhanh hơn.",
   "referenceAnswers": [
-   "Integrating artificial intelligence into data analysis helps streamline processing time, enabling researchers to reach conclusions faster."
+   "Integrating artificial intelligence into data analysis helps streamline processing time, enabling researchers to reach conclusions faster.",
+   "Using artificial intelligence to analyse data cuts down on processing time, allowing researchers to draw conclusions much more quickly.",
+   "When AI is applied to data analysis, information is processed faster, so scientists can arrive at their findings sooner."
   ],
   "grammarTags": [
    "mechanism and enabling effect"
   ],
   "explanationVi": "Dùng ', enabling...' làm mệnh đề phân tử chỉ kết quả trực tiếp từ hành động rút ngắn thời gian.",
   "rationaleVi": "Cấu trúc câu chỉ cơ chế công nghệ và hệ quả song song đạt mức độ tự nhiên 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Integrating artificial intelligence into data analysis helps streamline processing time, enabling researchers to reach to conclusions faster.",
+    "correction": "Integrating artificial intelligence into data analysis helps streamline processing time, enabling researchers to reach conclusions faster.",
+    "reasonVi": "Động từ 'reach' trong cụm 'reach conclusions' (đi đến kết luận) là ngoại động từ đi trực tiếp với tân ngữ, không bao giờ thêm giới từ 'to' ở giữa."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -642,7 +752,9 @@
   "meaningVi": "cản trở việc sở hữu nhà ở",
   "promptVi": "Lãi suất ngân hàng cao kéo dài sẽ cản trở việc sở hữu nhà ở của hộ gia đình trẻ, trừ khi chính phủ tung ra các gói hỗ trợ.",
   "referenceAnswers": [
-   "Prolonged high bank interest rates will hinder homeownership among young households, unless the government introduces support packages."
+   "Prolonged high bank interest rates will hinder homeownership among young households, unless the government introduces support packages.",
+   "Continuously high bank interest rates will make it harder for young families to buy homes, unless authorities roll out financial assistance schemes.",
+   "Young households will struggle to afford a house if high bank rates persist, unless the state steps in with support packages."
   ],
   "grammarTags": [
    "negative condition"
@@ -670,14 +782,22 @@
   "meaningVi": "gây áp lực lên hạ tầng địa phương",
   "promptVi": "Dù du lịch sinh thái mang lại nguồn thu đáng kể, sự gia tăng nhanh chóng của du khách vẫn có thể gây áp lực lên hạ tầng địa phương.",
   "referenceAnswers": [
-   "While ecotourism generates substantial revenue, the rapid surge in visitors can still strain local infrastructure."
+   "While ecotourism generates substantial revenue, the rapid surge in visitors can still strain local infrastructure.",
+   "Although eco-friendly tourism brings in considerable income, a sudden rise in tourist numbers can put heavy pressure on local facilities.",
+   "Ecotourism produces strong financial returns, yet local infrastructure may still struggle to cope when visitor numbers grow too quickly."
   ],
   "grammarTags": [
    "concession and limitation"
   ],
   "explanationVi": "Cấu trúc 'While..., ...can still...' giới hạn bớt sự lạc quan bằng cách nêu ra hệ quả thực tế đi kèm.",
   "rationaleVi": "Thể hiện tư duy phản biện kết hợp từ vựng chuyên biệt phù hợp định hướng IELTS 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While ecotourism generates substantial revenue, the rapid surge in visitors can still strain on local infrastructure.",
+    "correction": "While ecotourism generates substantial revenue, the rapid surge in visitors can still strain local infrastructure.",
+    "reasonVi": "Khi 'strain' là động từ ('gây áp lực lên'), nó đi trực tiếp với tân ngữ ('strain local infrastructure') mà không có 'on' (chỉ dùng 'on' trong cụm danh từ 'put a strain on')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -690,9 +810,11 @@
   "topic": "Gia đình & Đời sống",
   "targetTerm": "compromise family relationships",
   "meaningVi": "gây tổn hại đến quan hệ gia đình",
-  "promptVi": "Việc quá chú trọng vào mục tiêu sự nghiệp dễ gây tổn hại đến quan hệ gia đình do thời gian dành cho người thân bị thu hẹp.",
+  "promptVi": "Quá đặt nặng mục tiêu sự nghiệp dễ làm tổn hại các mối quan hệ gia đình vì thời gian dành cho người thân bị thu hẹp.",
   "referenceAnswers": [
-   "Overemphasising career goals can easily compromise family relationships because time spent with relatives is curtailed."
+   "Overemphasising career goals can easily compromise family relationships because time spent with relatives is curtailed.",
+   "Focusing too heavily on professional ambitions can harm family ties since people end up spending less time with their loved ones.",
+   "Putting career success above everything else often damages family bonds, as relatives get far less quality time together."
   ],
   "grammarTags": [
    "cause and consequence clause"
@@ -720,7 +842,9 @@
   "meaningVi": "thu hẹp khoảng cách số",
   "promptVi": "Nhờ việc triển khai internet miễn phí tại các vùng sâu vùng xa, chính phủ có thể thu hẹp khoảng cách số giữa các khu vực.",
   "referenceAnswers": [
-   "Thanks to the provision of free internet in remote areas, the government can bridge the digital divide between regions."
+   "Thanks to the provision of free internet in remote areas, the government can bridge the digital divide between regions.",
+   "By rolling out free internet access in isolated communities, authorities are able to narrow the technology gap across different areas.",
+   "Offering free internet in isolated areas enables the government to narrow the digital divide across regions."
   ],
   "grammarTags": [
    "positive cause and outcome"
@@ -746,16 +870,24 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "curriculum reform",
   "meaningVi": "cải cách chương trình giảng dạy",
-  "promptVi": "Việc cung cấp cho giáo viên các khóa bồi dưỡng chuyên sâu là điều thiết yếu nếu cải cách chương trình giảng dạy muốn nâng cao mức độ hào hứng của học sinh.",
+  "promptVi": "Tổ chức các khóa bồi dưỡng đúng trọng tâm cho giáo viên là điều thiết yếu nếu muốn công cuộc cải cách chương trình giảng dạy nâng cao được sự hứng thú tham gia của học sinh.",
   "referenceAnswers": [
-   "Providing teachers with targeted training is essential if curriculum reform is to improve student engagement."
+   "Providing teachers with targeted training is essential if curriculum reform is to improve student engagement.",
+   "Offering teachers specialised training courses is vital if syllabus reforms are meant to boost learners' interest and participation.",
+   "Curriculum changes will not succeed in making students more engaged unless teachers are given intensive professional training."
   ],
   "grammarTags": [
    "conditional clause with infinitive"
   ],
   "explanationVi": "Mệnh đề điều kiện 'if curriculum reform is to...' dùng cấu trúc 'be to V' để thể hiện điều kiện cần thiết nhằm đạt mục đích, thay thế cho cách diễn đạt nguyên nhân - kết quả đơn giản.",
   "rationaleVi": "Mục này phù hợp với IELTS 6.0 vì sử dụng cấu trúc điều kiện nâng cao (is to improve) và từ vựng chính xác như 'targeted training', 'curriculum reform' thay cho các từ chung chung.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Providing teachers with targeted trainings is essential if curriculum reform is to improve student engagement.",
+    "correction": "Providing teachers with targeted training is essential if curriculum reform is to improve student engagement.",
+    "reasonVi": "Dù tiếng Việt dịch là 'các khóa bồi dưỡng', danh từ 'training' trong tiếng Anh học thuật là danh từ không đếm được nên không thêm '-s' (muốn đếm phải dùng 'training courses')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -770,14 +902,22 @@
   "meaningVi": "nhận thức về dinh dưỡng",
   "promptVi": "Khi nhận thức về dinh dưỡng lan rộng trong cư dân đô thị, nhu cầu đối với nông sản hữu cơ địa phương đã tăng mạnh.",
   "referenceAnswers": [
-   "As nutritional awareness spreads among urban dwellers, demand for locally sourced organic produce has surged."
+   "As nutritional awareness spreads among urban dwellers, demand for locally sourced organic produce has surged.",
+   "With city residents becoming more aware of healthy nutrition, the appetite for locally grown organic food has risen sharply.",
+   "Because people in cities know more about nutrition these days, there is now a much higher demand for local organic farm products."
   ],
   "grammarTags": [
    "cause and effect clause"
   ],
   "explanationVi": "Mệnh đề chỉ nguyên nhân - thời gian 'As...' làm rõ sự gia tăng nhận thức kéo theo hệ quả tự nhiên là sự tăng vọt nhu cầu mua sắm.",
   "rationaleVi": "Câu diễn đạt nguyên nhân - kết quả rõ ràng ở cấp độ B2/6.0 với các từ vựng chính xác như 'surged', 'urban dwellers', 'locally sourced organic produce'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "As nutritional awareness spreads among urban dwellers, demand to locally sourced organic produce has surged.",
+    "correction": "As nutritional awareness spreads among urban dwellers, demand for locally sourced organic produce has surged.",
+    "reasonVi": "Danh từ 'demand' khi mang nghĩa 'nhu cầu đối với cái gì' luôn đi với giới từ 'for' ('demand for something'), không dùng 'to' hay 'with'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -822,7 +962,9 @@
   "meaningVi": "làm việc từ xa",
   "promptVi": "Trừ khi các doanh nghiệp thiết lập quy trình giao tiếp rõ ràng, việc làm việc từ xa trên diện rộng có thể làm suy giảm sự gắn kết nội bộ.",
   "referenceAnswers": [
-   "Unless companies establish clear communication protocols, widespread remote working could undermine team cohesion."
+   "Unless companies establish clear communication protocols, widespread remote working could undermine team cohesion.",
+   "If firms fail to set up clear communication procedures, large-scale remote work may weaken unity among staff.",
+   "Widespread telecommuting risks harming internal team spirit unless businesses put clear communication rules in place."
   ],
   "grammarTags": [
    "negative condition"
@@ -850,7 +992,9 @@
   "meaningVi": "hạ tầng năng lượng tái tạo",
   "promptVi": "Bằng cách đầu tư mạnh mẽ vào hạ tầng năng lượng tái tạo, chính quyền các vùng có thể hạn chế sự phụ thuộc vào nhiên liệu hóa thạch nhập khẩu.",
   "referenceAnswers": [
-   "By investing heavily in renewable infrastructure, regional governments can curb reliance on imported fossil fuels."
+   "By investing heavily in renewable infrastructure, regional governments can curb reliance on imported fossil fuels.",
+   "Through major investments in clean energy systems, local governments can reduce their dependence on fossil fuels bought from abroad.",
+   "Regional authorities can become less reliant on imported fossil fuels if they put substantial funding into renewable energy infrastructure."
   ],
   "grammarTags": [
    "means and result"
@@ -878,14 +1022,22 @@
   "meaningVi": "ưu đãi thuế",
   "promptVi": "Với điều kiện là các ưu đãi thuế hướng tới công nghệ xanh, doanh nghiệp nhỏ có nhiều khả năng áp dụng phương thức sản xuất bền vững.",
   "referenceAnswers": [
-   "Provided that tax incentives target green technology, small businesses are likely to adopt sustainable manufacturing practices."
+   "Provided that tax incentives target green technology, small businesses are likely to adopt sustainable manufacturing practices.",
+   "As long as tax breaks focus on environmentally friendly technology, small firms will be more willing to switch to sustainable production.",
+   "Small enterprises are far more likely to embrace eco-friendly manufacturing methods if tax incentives are aimed at green tech."
   ],
   "grammarTags": [
    "conditional qualification"
   ],
   "explanationVi": "'Provided that' đặt điều kiện ràng buộc cụ thể để hệ quả (doanh nghiệp áp dụng sản xuất bền vững) có khả năng xảy ra cao.",
   "rationaleVi": "Mục này đáp ứng mức 6.0 nhờ từ nối điều kiện trang trọng hơn 'if' cùng các cụm từ chính xác như 'tax incentives', 'sustainable manufacturing practices'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Provided that tax incentives target green technology, small businesses likely to adopt sustainable manufacturing practices.",
+    "correction": "Provided that tax incentives target green technology, small businesses are likely to adopt sustainable manufacturing practices.",
+    "reasonVi": "Trong cấu trúc 'be likely to V' (có khả năng làm gì), 'likely' đóng vai trò tính từ nên bắt buộc phải có động từ 'to be' đứng trước ('are likely to adopt')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -900,14 +1052,22 @@
   "meaningVi": "việc bảo tồn di sản văn hóa",
   "promptVi": "Sự thương mại hóa quá mức các di tích lịch sử đe dọa việc bảo tồn di sản văn hóa, buộc chính quyền phải tăng cường giám sát.",
   "referenceAnswers": [
-   "Excessive commercialisation of historic sites threatens cultural heritage preservation, prompting authorities to strengthen regulatory oversight."
+   "Excessive commercialisation of historic sites threatens cultural heritage preservation, prompting authorities to strengthen regulatory oversight.",
+   "Over-commercialising historical landmarks puts heritage conservation at risk, which forces officials to step up monitoring.",
+   "When historic monuments are exploited too much for profit, cultural preservation suffers and the government has to tighten its supervision."
   ],
   "grammarTags": [
    "participle clause of consequence"
   ],
   "explanationVi": "Hiện tại phân từ 'prompting authorities...' ở cuối câu bổ nghĩa cho cả mệnh đề chính, làm rõ hệ quả trực tiếp đối với cơ quan quản lý.",
   "rationaleVi": "Sử dụng phân từ chỉ hệ quả chính xác cả về ngữ nghĩa lẫn ngữ pháp, kết hợp các thuật ngữ học thuật ('commercialisation', 'regulatory oversight') phù hợp trình độ 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Excessive commercialisation of historic sites threaten cultural heritage preservation, prompting authorities to strengthen regulatory oversight.",
+    "correction": "Excessive commercialisation of historic sites threatens cultural heritage preservation, prompting authorities to strengthen regulatory oversight.",
+    "reasonVi": "Chủ ngữ chính của câu là danh từ không đếm được 'commercialisation' (số ít) chứ không phải 'historic sites' sau 'of', nên động từ phải thêm '-s' thành 'threatens'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -922,14 +1082,22 @@
   "meaningVi": "khoản trợ cấp nhà ở giá rẻ",
   "promptVi": "Trong khi các khoản trợ cấp nhà ở giá rẻ làm giảm bớt khó khăn trước mắt cho gia đình thu nhập thấp, sự ổn định lâu dài đòi hỏi phải tạo ra việc làm liên tục.",
   "referenceAnswers": [
-   "While affordable housing subsidies alleviate immediate distress for low-income families, long-term stability requires continuous employment creation."
+   "While affordable housing subsidies alleviate immediate distress for low-income families, long-term stability requires continuous employment creation.",
+   "Although low-cost housing grants ease short-term hardship for poorer households, lasting stability depends on ongoing job creation.",
+   "Subsidised housing gives low-income families immediate relief, yet true long-term security can only come from steadily generating new jobs."
   ],
   "grammarTags": [
    "concessive qualification"
   ],
   "explanationVi": "Liên từ 'While' được dùng để giới hạn hiệu lực của giải pháp ngắn hạn, so sánh đối chiếu với yêu cầu mang tính dài hạn.",
   "rationaleVi": "Mục này thể hiện khả năng diễn đạt ý kiến có sự bảo lưu/giới hạn (qualification) ở mức 6.0, thay thế động từ chung chung 'help' bằng 'alleviate'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While affordable housing subsidies alleviate immediate distress for low-income family, long-term stability requires continuous employment creation.",
+    "correction": "While affordable housing subsidies alleviate immediate distress for low-income families, long-term stability requires continuous employment creation.",
+    "reasonVi": "'Family' là danh từ đếm được nên khi nói chung một nhóm đối tượng không có mạo từ 'a', bắt buộc phải chuyển sang số nhiều là 'low-income families'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -944,14 +1112,22 @@
   "meaningVi": "các nghiên cứu theo dõi dọc",
   "promptVi": "Do chi phí đắt đỏ của việc thực hiện các nghiên cứu theo dõi dọc, các nhà nghiên cứu thường phụ thuộc vào dữ liệu cắt ngang, điều này hạn chế việc đưa ra kết luận về mối quan hệ nguyên nhân - kết quả.",
   "referenceAnswers": [
-   "Owing to the high cost of conducting longitudinal studies, researchers often rely on cross-sectional data, which limits causal conclusions."
+   "Owing to the high cost of conducting longitudinal studies, researchers often rely on cross-sectional data, which limits causal conclusions.",
+   "Because long-term follow-up studies are expensive to run, scientists frequently use cross-sectional data, making it harder to prove cause-and-effect links.",
+   "Running longitudinal research costs a great deal, so experts often turn to single-point data instead, even though that restricts their ability to draw causal conclusions."
   ],
   "grammarTags": [
    "reason preposition with relative clause"
   ],
   "explanationVi": "Cụm 'Owing to' nêu rõ lý do tài chính ở đầu câu, kết hợp mệnh đề quan hệ 'which limits...' để giải thích hạn chế kéo theo.",
   "rationaleVi": "Câu thể hiện rõ giới hạn của bằng chứng (evidence limitation) và sử dụng thuật ngữ nghiên cứu chính xác, đáp ứng đúng tiêu chí IELTS 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Owing to the high cost of conducting longitudinal studies, researchers often rely on cross-sectional data, that limits causal conclusions.",
+    "correction": "Owing to the high cost of conducting longitudinal studies, researchers often rely on cross-sectional data, which limits causal conclusions.",
+    "reasonVi": "Trong mệnh đề quan hệ không xác định đứng sau dấu phẩy để thay thế cho cả mệnh đề trước ('điều này...'), bắt buộc phải dùng đại từ 'which' chứ không dùng 'that'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -964,7 +1140,7 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "extracurricular sports programmes",
   "meaningVi": "chương trình thể thao ngoại khóa",
-  "promptVi": "Việc mở rộng các chương trình thể thao ngoại khóa giúp rèn luyện thể lực cho học sinh hiệu quả hơn so với các giờ học thể dục bắt buộc.",
+  "promptVi": "Mở rộng các chương trình thể thao ngoại khóa giúp rèn luyện thể lực cho học sinh hiệu quả hơn so với các tiết học thể dục bắt buộc.",
   "referenceAnswers": [
    "Expanding extracurricular sports programmes fosters physical fitness among pupils more effectively than compulsory physical education classes.",
    "Expanding extracurricular sports programs fosters physical fitness among pupils more effectively than compulsory physical education classes."
@@ -974,7 +1150,13 @@
   ],
   "explanationVi": "Cấu trúc so sánh hơn ('more effectively than') kết hợp danh động từ làm chủ ngữ thể hiện mức độ tác động vượt trội của một giải pháp cụ thể.",
   "rationaleVi": "Phù hợp cấp độ 6.0 nhờ sự so sánh kết quả rõ ràng và từ ngữ chuẩn Anh-Anh như 'programmes', 'pupils', 'fosters'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Expanding extracurricular sports programmes foster physical fitness among pupils more effectively than compulsory physical education classes.",
+    "correction": "Expanding extracurricular sports programmes fosters physical fitness among pupils more effectively than compulsory physical education classes.",
+    "reasonVi": "Chủ ngữ chính là danh động từ 'Expanding' (việc mở rộng) chứ không phải danh từ số nhiều 'programmes', nên động từ phải chia số ít là 'fosters'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -987,16 +1169,24 @@
   "topic": "Gia đình & Đời sống",
   "targetTerm": "work-life balance",
   "meaningVi": "sự cân bằng giữa công việc và cuộc sống",
-  "promptVi": "Việc không đạt được sự cân bằng giữa công việc và cuộc sống lành mạnh thường dẫn đến tình trạng mệt mỏi mãn tính, cuối cùng làm rạn nứt quan hệ gia đình.",
+  "promptVi": "Không đạt được sự cân bằng lành mạnh giữa công việc và cuộc sống thường dẫn đến tình trạng mệt mỏi mạn tính, cuối cùng gây căng thẳng cho các mối quan hệ gia đình.",
   "referenceAnswers": [
-   "Failure to achieve a healthy work-life balance frequently leads to chronic fatigue, ultimately straining family relationships."
+   "Failure to achieve a healthy work-life balance frequently leads to chronic fatigue, ultimately straining family relationships.",
+   "Not maintaining a proper balance between work and personal life often causes ongoing exhaustion, which eventually puts pressure on family ties.",
+   "When people struggle to balance their jobs with home life, they often suffer from constant tiredness, and over time this can damage family relationships."
   ],
   "grammarTags": [
    "cause chain with participle"
   ],
   "explanationVi": "Danh từ 'Failure...' kết hợp cụm 'leads to' và phân từ 'straining' thể hiện mối quan hệ nguyên nhân - hệ quả nối tiếp, diễn đạt đúng nghĩa 'làm rạn nứt'.",
   "rationaleVi": "Chuỗi nguyên nhân - hệ quả logic với động từ 'straining' diễn đạt chính xác tác hại lên mối quan hệ gia đình ở mức độ 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Failure to achieve a healthy work-life balance frequently leads to chronic fatigue, ultimately strains family relationships.",
+    "correction": "Failure to achieve a healthy work-life balance frequently leads to chronic fatigue, ultimately straining family relationships.",
+    "reasonVi": "Không thể nối hai động từ chia theo thì bằng dấu phẩy mà thiếu liên từ; cần dùng phân từ hiện tại 'ultimately straining' để chỉ hệ quả kéo theo."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1009,7 +1199,7 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "pedestrianised zones",
   "meaningVi": "các khu vực dành riêng cho người đi bộ",
-  "promptVi": "Việc thành lập các khu vực dành riêng cho người đi bộ ở trung tâm thành phố khuyến khích việc đi lại tích cực, từ đó gia tăng lượng khách ghé thăm các cửa hàng bán lẻ địa phương.",
+  "promptVi": "Thiết lập các khu phố đi bộ tại trung tâm thành phố khuyến khích thói quen di chuyển chủ động, qua đó làm tăng lượng khách ghé qua các cửa hàng bán lẻ địa phương.",
   "referenceAnswers": [
    "Establishing pedestrianised zones in city centres encourages active travel, thereby boosting footfall for local retailers.",
    "Establishing pedestrianised zones in city centers encourages active travel, thereby boosting footfall for local retailers."
@@ -1019,7 +1209,13 @@
   ],
   "explanationVi": "Trạng từ 'thereby' kết hợp V-ing giải thích kết quả logic kéo theo trực tiếp từ hành động được đề cập ở mệnh đề chính.",
   "rationaleVi": "Đạt yêu cầu 6.0 nhờ từ nối kết quả 'thereby' sắc nét và thuật ngữ kinh doanh/đô thị chính xác như 'pedestrianised zones', 'footfall'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Establishing pedestrianised zones in city centres encourages active travel, thereby boosts footfall for local retailers.",
+    "correction": "Establishing pedestrianised zones in city centres encourages active travel, thereby boosting footfall for local retailers.",
+    "reasonVi": "'Thereby' là trạng từ chứ không phải liên từ nối hai mệnh đề độc lập, nên sau dấu phẩy phải đi kèm cấu trúc V-ing là 'thereby boosting'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1034,14 +1230,22 @@
   "meaningVi": "tối ưu hóa",
   "promptVi": "Sự xuất hiện của phần mềm quản lý kho hiện đại giúp các doanh nghiệp bán lẻ tối ưu hóa quy trình chuỗi cung ứng, từ đó giảm thiểu tối đa tình trạng thất thoát hàng hóa.",
   "referenceAnswers": [
-   "The introduction of modern inventory management software allows retail enterprises to streamline their supply chain operations, thereby minimising product loss."
+   "The introduction of modern inventory management software allows retail enterprises to streamline their supply chain operations, thereby minimising product loss.",
+   "New stock-tracking software enables retail companies to improve their supply chain workflows, which helps keep inventory losses to a minimum.",
+   "With up-to-date warehouse management tools, retailers can run their supply chains more smoothly and cut down on lost goods as much as possible."
   ],
   "grammarTags": [
    "Result participle clause"
   ],
   "explanationVi": "Cấu trúc cho thấy mối quan hệ nguyên nhân - kết quả thông qua cụm từ 'thereby minimising', kết hợp với động từ chính xác 'streamline' thay cho các từ chung chung như 'improve' hay 'make better'.",
   "rationaleVi": "Câu sử dụng cấu trúc nguyên nhân - kết quả rõ ràng ở mức 6.0 với từ vựng chính xác trong chủ đề công nghệ và quản lý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The introduction of modern inventory management software allows retail enterprises streamline their supply chain operations, thereby minimising product loss.",
+    "correction": "The introduction of modern inventory management software allows retail enterprises to streamline their supply chain operations, thereby minimising product loss.",
+    "reasonVi": "Động từ 'allow' bắt buộc đi theo cấu trúc 'allow somebody to V', nên phải có 'to' trước động từ 'streamline'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1056,7 +1260,9 @@
   "meaningVi": "làm trầm trọng thêm",
   "promptVi": "Nếu bệnh nhân tự ý ngưng sử dụng thuốc kháng sinh trước liệu trình chỉ định, tình trạng kháng thuốc có thể gia tăng và làm trầm trọng thêm sự lây lan của vi khuẩn nguy hiểm.",
   "referenceAnswers": [
-   "Should patients prematurely discontinue their prescribed antibiotic course, drug resistance may increase and exacerbate the spread of dangerous bacteria."
+   "Should patients prematurely discontinue their prescribed antibiotic course, drug resistance may increase and exacerbate the spread of dangerous bacteria.",
+   "If patients stop taking their prescribed antibiotics too early, resistance to medication can grow and worsen the spread of harmful bacteria.",
+   "Stopping an antibiotic treatment before finishing the recommended course can boost drug resistance, making dangerous bacteria spread even faster."
   ],
   "grammarTags": [
    "Inverted conditional clause"
@@ -1082,16 +1288,24 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "alleviate",
   "meaningVi": "giảm bớt",
-  "promptVi": "Việc triển khai các hệ thống thoát nước ngầm diện rộng được kỳ vọng sẽ làm giảm bớt nguy cơ ngập lụt tại những khu vực thấp khi xuất hiện triều cường.",
+  "promptVi": "Triển khai các hệ thống thoát nước ngầm quy mô lớn được kỳ vọng sẽ giảm bớt nguy cơ ngập lụt tại những khu vực trũng thấp trong các đợt triều cường.",
   "referenceAnswers": [
-   "Implementing large-scale underground drainage systems is expected to alleviate flooding risks in low-lying areas during high tides."
+   "Implementing large-scale underground drainage systems is expected to alleviate flooding risks in low-lying areas during high tides.",
+   "Building extensive underground drainage networks is anticipated to lower the chance of floods in low-altitude neighbourhoods during high-tide periods.",
+   "Putting wide-reaching underground drains in place should help reduce flooding in low-lying zones whenever unusually high tides occur."
   ],
   "grammarTags": [
    "Passive expectation structure"
   ],
   "explanationVi": "Biểu đạt cơ chế tác động giải quyết vấn đề bằng động từ 'alleviate' thay cho 'reduce', cùng danh động từ làm chủ ngữ biểu thị giải pháp đô thị.",
   "rationaleVi": "Điển hình cho trình độ 6.0 với cấu trúc bị động chỉ mục đích/kỳ vọng và động từ chính xác.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Implementing large-scale underground drainage systems is expected will alleviate flooding risks in low-lying areas during high tides.",
+    "correction": "Implementing large-scale underground drainage systems is expected to alleviate flooding risks in low-lying areas during high tides.",
+    "reasonVi": "Tránh dịch từng từ 'được kỳ vọng sẽ' thành 'is expected will'; cấu trúc bị động chuẩn trong tiếng Anh là 'be expected to V' ('is expected to alleviate')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1106,14 +1320,22 @@
   "meaningVi": "nâng cao",
   "promptVi": "So với các hình thức luyện tập truyền thống, phương pháp huấn luyện cường độ cao ngắt quãng giúp vận động viên nâng cao sức bền thể lực trong thời gian ngắn hơn.",
   "referenceAnswers": [
-   "In comparison with conventional exercise routines, high-intensity interval training helps athletes enhance their physical endurance within a shorter timeframe."
+   "In comparison with conventional exercise routines, high-intensity interval training helps athletes enhance their physical endurance within a shorter timeframe.",
+   "Compared to traditional workout methods, high-intensity interval training enables athletes to build physical stamina more quickly.",
+   "While standard training takes longer, high-intensity interval workouts allow sportspeople to boost their endurance in less time."
   ],
   "grammarTags": [
    "Comparative reasoning clause"
   ],
   "explanationVi": "Sử dụng cụm so sánh 'In comparison with' mở đầu câu để đưa ra lập luận so sánh tác động, đi kèm động từ 'enhance' cụ thể hóa việc cải thiện thể lực.",
   "rationaleVi": "Mức 6.0 thể hiện qua việc so sánh hai phương pháp và diễn đạt hệ quả ngắn hạn bằng cấu trúc chặt chẽ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Compare with conventional exercise routines, high-intensity interval training helps athletes enhance their physical endurance within a shorter timeframe.",
+    "correction": "In comparison with conventional exercise routines, high-intensity interval training helps athletes enhance their physical endurance within a shorter timeframe.",
+    "reasonVi": "Mở đầu câu so sánh không được dùng động từ nguyên mẫu 'Compare with', mà phải dùng cụm giới từ 'In comparison with' hoặc phân từ 'Compared with'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1128,14 +1350,22 @@
   "meaningVi": "cắt giảm",
   "promptVi": "Trong trường hợp tỷ lệ lạm phát duy trì ở mức cao, ngân hàng trung ương có khả năng sẽ thắt chặt chính sách tiền tệ nhằm cắt giảm lượng tiền lưu thông trên thị trường.",
   "referenceAnswers": [
-   "In the event that inflation rates remain high, the central bank is likely to tighten monetary policy in order to curtail the money supply in circulation."
+   "In the event that inflation rates remain high, the central bank is likely to tighten monetary policy in order to curtail the money supply in circulation.",
+   "If inflation stays elevated, the central bank will probably adopt stricter monetary measures to reduce the amount of cash circulating in the economy.",
+   "Should high inflation persist, the central bank is expected to tighten its monetary policy so that less money circulates in the market."
   ],
   "grammarTags": [
    "Prepositional condition with purpose clause"
   ],
   "explanationVi": "Cụm 'In the event that' đặt giả định kinh tế và mệnh đề 'in order to curtail' thể hiện mục đích giải quyết hậu quả một cách chính xác.",
   "rationaleVi": "Đạt độ hoàn thiện 6.0 nhờ cấu trúc điều kiện trang trọng và thuật ngữ kinh tế chính xác.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In the event that inflation rates remain high, the central bank likely to tighten monetary policy in order to curtail the money supply in circulation.",
+    "correction": "In the event that inflation rates remain high, the central bank is likely to tighten monetary policy in order to curtail the money supply in circulation.",
+    "reasonVi": "Trong cấu trúc chỉ khả năng 'be likely to V', 'likely' là tính từ nên bắt buộc phải có động từ 'to be' đứng trước ('is likely to tighten')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1179,7 +1409,9 @@
   "meaningVi": "thúc đẩy",
   "promptVi": "Nhờ áp dụng mô hình học tập theo dự án, các nhà giáo dục có thể thúc đẩy tinh thần làm việc nhóm và khả năng giải quyết vấn đề của sinh viên.",
   "referenceAnswers": [
-   "Through the adoption of project-based learning, educators can foster teamwork and problem-solving abilities among university students."
+   "Through the adoption of project-based learning, educators can foster teamwork and problem-solving abilities among university students.",
+   "By using project-based teaching methods, lecturers can encourage collaboration and strengthen students' problem-solving skills.",
+   "Implementing a project-focused learning approach helps teachers build students' teamwork spirit and ability to tackle problems."
   ],
   "grammarTags": [
    "Means preposition phrase"
@@ -1207,14 +1439,22 @@
   "meaningVi": "trở ngại",
   "promptVi": "Trái ngược với kỳ vọng rằng thiết bị di động tiết kiệm thời gian cho người lao động, việc liên tục kiểm tra tin nhắn công việc ngoài giờ hành chính lại trở thành trở ngại cho quá trình phục hồi sức khỏe tinh thần.",
   "referenceAnswers": [
-   "Contrary to expectations that mobile devices save time for workers, constantly checking work messages outside office hours presents an impediment to mental recovery."
+   "Contrary to expectations that mobile devices save time for workers, constantly checking work messages outside office hours presents an impediment to mental recovery.",
+   "Although mobile technology is expected to save employees time, repeatedly checking work-related messages after hours actually hinders their mental recovery.",
+   "Instead of saving workers time as hoped, constantly reading work messages outside working hours acts as a barrier to mental recovery."
   ],
   "grammarTags": [
    "Counter-argument opening structure"
   ],
   "explanationVi": "Mở đầu bằng 'Contrary to expectations' để tạo cấu trúc phản biện, kết hợp với danh từ 'impediment' thể hiện nguyên nhân gây ra sự cản trở.",
   "rationaleVi": "Lập luận điều kiện/hệ quả mang tính phản biện với từ vựng chính xác ('impediment') đạt tiêu chuẩn 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Contrary with expectations that mobile devices save time for workers, constantly checking work messages outside office hours presents an impediment to mental recovery.",
+    "correction": "Contrary to expectations that mobile devices save time for workers, constantly checking work messages outside office hours presents an impediment to mental recovery.",
+    "reasonVi": "Người Việt hay dịch 'trái ngược với' thành 'contrary with', nhưng cụm cố định chuẩn trong tiếng Anh luôn đi với giới từ 'to' là 'contrary to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1229,7 +1469,9 @@
   "meaningVi": "gìn giữ",
   "promptVi": "Miễn là cộng đồng địa phương chủ động tham gia vào các hoạt động bảo tồn, thành phố mới có thể gìn giữ nét văn hóa dân gian trước sự đô thị hóa nhanh chóng.",
   "referenceAnswers": [
-   "Provided that the local community actively engages in conservation efforts, the city can safeguard its folklore traditions against rapid urbanisation."
+   "Provided that the local community actively engages in conservation efforts, the city can safeguard its folklore traditions against rapid urbanisation.",
+   "As long as local residents take an active part in preservation initiatives, the city will be able to protect its folk culture from fast-paced urbanisation.",
+   "The city can only preserve its traditional folk heritage amid rapid urban growth if the local community gets actively involved in conservation work."
   ],
   "grammarTags": [
    "Condition with 'provided that'"
@@ -1257,7 +1499,9 @@
   "meaningVi": "làm suy giảm",
   "promptVi": "Do kích thước mẫu khảo sát bị giới hạn ở một vùng duy nhất, phát hiện của nghiên cứu này có thể làm suy giảm tính tổng quát của toàn bộ dự án.",
   "referenceAnswers": [
-   "Owing to the survey sample size being restricted to a single region, the findings of this study might undermine the generalisability of the entire project."
+   "Owing to the survey sample size being restricted to a single region, the findings of this study might undermine the generalisability of the entire project.",
+   "Because the survey sample is limited to just one area, the results of this research may weaken how broadly the whole project can be applied.",
+   "Since the survey only covers a single region, its limited sample size could reduce the broad applicability of the entire project."
   ],
   "grammarTags": [
    "Cause preposition with modal hedging"
@@ -1283,9 +1527,11 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "targetTerm": "imperil",
   "meaningVi": "gây nguy hiểm cho",
-  "promptVi": "Việc bảo quản thực phẩm không đúng quy cách trong thời tiết nắng nóng có thể gây nguy hiểm cho sức khỏe của người tiêu dùng do sự phát triển nhanh chóng của vi khuẩn.",
+  "promptVi": "Bảo quản thực phẩm không đúng cách trong thời tiết nắng nóng có thể gây nguy hiểm cho sức khỏe người tiêu dùng do vi khuẩn sinh sôi nhanh chóng.",
   "referenceAnswers": [
-   "Improper food storage during hot weather can imperil consumer health as a result of rapid bacterial growth."
+   "Improper food storage during hot weather can imperil consumer health as a result of rapid bacterial growth.",
+   "Storing food improperly in hot weather can put consumers' health at risk because bacteria multiply quickly.",
+   "Consumers' health may be endangered when food is not stored properly during hot weather, as bacteria tend to grow rapidly."
   ],
   "grammarTags": [
    "Gerund subject with cause phrase"
@@ -1313,7 +1559,9 @@
   "meaningVi": "khuyến khích",
   "promptVi": "Nếu chính phủ miễn thuế cho các phương tiện chạy điện, chính sách này sẽ khuyến khích người dân chuyển sang các hình thức giao thông sạch hơn.",
   "referenceAnswers": [
-   "Were the government to grant tax exemptions for electric vehicles, such a policy would incentivise citizens to switch to cleaner modes of transport."
+   "Were the government to grant tax exemptions for electric vehicles, such a policy would incentivise citizens to switch to cleaner modes of transport.",
+   "If the government removes taxes on electric cars, this policy will encourage the public to adopt cleaner ways of travelling.",
+   "Removing tax on electric vehicles would motivate people to switch to more environmentally friendly forms of transport."
   ],
   "grammarTags": [
    "Inverted unreal condition"
@@ -1341,7 +1589,9 @@
   "meaningVi": "cắt giảm / hạn chế",
   "promptVi": "Nếu chính quyền thành phố trợ giá cho các dự án nhà ở xã hội, biện pháp này có thể cắt giảm đáng kể sự gia tăng giá thuê nhà bất hợp lý.",
   "referenceAnswers": [
-   "If the municipal council subsidises social housing projects, this measure could significantly curtail the unreasonable rise in rental prices."
+   "If the municipal council subsidises social housing projects, this measure could significantly curtail the unreasonable rise in rental prices.",
+   "If city authorities provide subsidies for social housing developments, this step could greatly reduce unreasonable increases in rent.",
+   "Providing financial support for public housing projects could help city officials sharply curb unfair rises in rental costs."
   ],
   "grammarTags": [
    "conditional clause for cause and effect"
@@ -1369,7 +1619,9 @@
   "meaningVi": "làm tổn hại / làm suy giảm",
   "promptVi": "Sự thiếu hụt nghiêm trọng trong dữ liệu khảo sát có thể làm tổn hại tính chính xác của các phân tích thống kê.",
   "referenceAnswers": [
-   "Severe gaps in survey data can compromise the accuracy of statistical analyses."
+   "Severe gaps in survey data can compromise the accuracy of statistical analyses.",
+   "Major shortages in survey data can harm the reliability of statistical analyses.",
+   "Statistical analyses may become inaccurate when there are serious gaps in the survey data collected."
   ],
   "grammarTags": [
    "cause and effect with precise verb"
@@ -1424,16 +1676,24 @@
   "topic": "Công việc & Kinh tế",
   "targetTerm": "bolster",
   "meaningVi": "củng cố / nâng cao",
-  "promptVi": "Việc cắt giảm giờ làm việc mà giữ nguyên lương giúp nhân viên duy trì động lực, từ đó củng cố năng suất lao động tổng thể.",
+  "promptVi": "Rút ngắn giờ làm việc mà không cắt giảm lương giúp nhân viên duy trì động lực, qua đó góp phần củng cố năng suất lao động tổng thể.",
   "referenceAnswers": [
-   "Reducing working hours without wage cuts helps employees maintain motivation, which subsequently serves to bolster overall productivity."
+   "Reducing working hours without wage cuts helps employees maintain motivation, which subsequently serves to bolster overall productivity.",
+   "Shortening working hours while keeping pay unchanged helps staff stay motivated, which in turn strengthens overall work productivity.",
+   "When companies cut working hours without lowering salaries, workers remain motivated, leading to higher overall productivity."
   ],
   "grammarTags": [
    "relative clause showing result"
   ],
   "explanationVi": "Mệnh đề quan hệ nối tiếp 'which subsequently serves to...' thể hiện hệ quả nối tiếp một cách tự nhiên và mạch lạc.",
   "rationaleVi": "Sử dụng mệnh đề quan hệ phi xác định để diễn tả hệ quả gián tiếp cùng từ vựng chính xác (bolster), phù hợp tiêu chí cấu trúc đa dạng Band 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Reducing working hours without wage cuts helps employees maintain motivation, that subsequently serves to bolster overall productivity.",
+    "correction": "Reducing working hours without wage cuts helps employees maintain motivation, which subsequently serves to bolster overall productivity.",
+    "reasonVi": "Sau dấu phẩy trong mệnh đề quan hệ không xác định (thay thế cho cả mệnh đề phía trước) bắt buộc phải dùng 'which', tuyệt đối không dùng 'that'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1448,14 +1708,22 @@
   "meaningVi": "khuyến khích",
   "promptVi": "Nhằm khuyến khích việc sử dụng phương tiện giao thông công cộng, chính quyền địa phương đã đưa ra chính sách giảm giá vé cho sinh viên.",
   "referenceAnswers": [
-   "To incentivise the use of public transport, local authorities have introduced discounted fares for students."
+   "To incentivise the use of public transport, local authorities have introduced discounted fares for students.",
+   "In order to promote public transit usage, local governments have launched reduced ticket prices for students.",
+   "Local councils have introduced cheaper fares for students as a way to encourage more people to use public transport."
   ],
   "grammarTags": [
    "infinitive clause of purpose"
   ],
   "explanationVi": "Cụm động từ nguyên mẫu chỉ mục đích 'To incentivise...' được đặt ở đầu câu để nhấn mạnh động cơ của chính sách.",
   "rationaleVi": "Đảo cụm chỉ mục đích lên đầu câu giúp thay đổi cấu trúc cú pháp, đồng thời dùng từ chuẩn Anh-Anh (incentivise) phù hợp Band 6.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "To incentivise the use of public transport, local authorities has introduced discounted fares for students.",
+    "correction": "To incentivise the use of public transport, local authorities have introduced discounted fares for students.",
+    "reasonVi": "Danh từ 'authorities' đang ở dạng số nhiều nên trợ động từ hiện tại hoàn thành phải chia là 'have introduced' chứ không phải 'has'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1470,14 +1738,22 @@
   "meaningVi": "suy giảm / xấu đi",
   "promptVi": "Chất lượng nước tại các dòng sông ven đô có xu hướng suy giảm nhanh chóng do sự xả thải xưởng sản xuất không kiểm soát.",
   "referenceAnswers": [
-   "Water quality in suburban rivers tends to deteriorate rapidly owing to unregulated discharge from manufacturing workshops."
+   "Water quality in suburban rivers tends to deteriorate rapidly owing to unregulated discharge from manufacturing workshops.",
+   "The quality of water in suburban rivers often drops quickly because of uncontrolled waste release from factories.",
+   "Uncontrolled industrial discharge from manufacturing plants causes the water quality in rivers on the edge of cities to decline rapidly."
   ],
   "grammarTags": [
    "reason prepositional phrase"
   ],
   "explanationVi": "Cụm từ chỉ nguyên nhân 'owing to' kết hợp với nội động từ 'deteriorate' để mô tả diễn biến tiêu cực của môi trường.",
   "rationaleVi": "Sử dụng cụm từ nối chỉ nguyên nhân (owing to) kết hợp với động từ biểu cảm chính xác (deteriorate) thay cho cấu trúc 'because' thông thường.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Water quality in suburban rivers tends to deteriorate rapidly because unregulated discharge from manufacturing workshops.",
+    "correction": "Water quality in suburban rivers tends to deteriorate rapidly owing to unregulated discharge from manufacturing workshops.",
+    "reasonVi": "Theo sau 'because' phải là một mệnh đề (S + V); khi đi trước cụm danh từ 'unregulated discharge', cần dùng 'owing to', 'due to' hoặc 'because of'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1490,16 +1766,24 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "foster",
   "meaningVi": "nuôi dưỡng / thúc đẩy",
-  "promptVi": "Việc kết hợp bài tập nhóm vào chương trình giảng dạy không chỉ giúp sinh viên nâng cao kĩ năng giao tiếp mà còn nuôi dưỡng tư duy sáng tạo.",
+  "promptVi": "Lồng ghép bài tập nhóm vào chương trình giảng dạy không chỉ nâng cao kỹ năng giao tiếp cho sinh viên mà còn giúp nuôi dưỡng tư duy sáng tạo.",
   "referenceAnswers": [
-   "Incorporating group assignments into the curriculum not only enhances students' communication skills but also helps to foster creative thinking."
+   "Incorporating group assignments into the curriculum not only enhances students' communication skills but also helps to foster creative thinking.",
+   "Including group projects in the syllabus helps students improve their communication skills as well as develop creative thinking.",
+   "Students can strengthen their communication abilities and nurture creativity when teachers integrate teamwork tasks into the curriculum."
   ],
   "grammarTags": [
    "correlative conjunction for addition"
   ],
   "explanationVi": "Cấu trúc song song 'not only... but also...' dùng để liên kết hai kết quả tích cực, đi kèm động từ 'foster'.",
   "rationaleVi": "Cấu trúc liên từ tương quan tạo sự cân bằng và mạch lạc trong việc trình bày nhiều tác động tích cực của một phương pháp giáo dục.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Incorporating group assignments into the curriculum not only enhances students' communication skills but also help to foster creative thinking.",
+    "correction": "Incorporating group assignments into the curriculum not only enhances students' communication skills but also helps to foster creative thinking.",
+    "reasonVi": "Trong cấu trúc song song 'not only... but also...', cả hai động từ đều chung chủ ngữ số ít 'Incorporating' nên 'help' phải thêm '-s' thành 'helps' tương xứng với 'enhances'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1510,7 +1794,7 @@
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Giáo dục & Trường học",
-  "promptVi": "Việc tăng số lượng máy tính không đồng nghĩa với việc mọi học sinh đều biết sử dụng chúng hiệu quả.",
+  "promptVi": "Trang bị thêm máy tính không nhất thiết có nghĩa là mọi học sinh đều có thể sử dụng chúng hiệu quả.",
   "referenceAnswers": [
    "Providing more computers does not necessarily mean that every student can use them effectively.",
    "An increase in the number of computers does not guarantee that all students know how to use them well.",
@@ -1536,7 +1820,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "use them effectively",
+  "meaningVi": "sử dụng chúng hiệu quả"
  },
  {
   "id": "esl-v2-r12-u01-002",
@@ -1601,7 +1887,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "access to",
+  "meaningVi": "khả năng tiếp cận"
  },
  {
   "id": "esl-v2-r12-u01-004",
@@ -1633,14 +1921,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "household appliances",
+  "meaningVi": "đồ gia dụng"
  },
  {
   "id": "esl-v2-r12-u01-005",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Công việc & Kinh tế",
-  "promptVi": "Việc công bố lịch học sớm giúp phụ huynh chủ động hơn trong việc sắp xếp công việc.",
+  "promptVi": "Công bố lịch học của trường sớm giúp phụ huynh sắp xếp công việc hiệu quả hơn.",
   "referenceAnswers": [
    "Publishing the school timetable early helps parents plan their work more effectively.",
    "Parents can organise their work better when schools release timetables in advance."
@@ -1805,7 +2095,7 @@
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Giao thông & Đi lại",
-  "promptVi": "Việc chuyển sang xe đạp không nhất thiết tiết kiệm thời gian, nhất là khi đường đi thiếu an toàn.",
+  "promptVi": "Chuyển sang đi xe đạp chưa chắc đã giúp tiết kiệm thời gian, nhất là ở những nơi tuyến đường thiếu an toàn.",
   "referenceAnswers": [
    "Switching to cycling does not necessarily save time, especially where routes are unsafe.",
    "Cycling is not always a faster option, particularly on roads that are not safe.",
@@ -1831,7 +2121,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "switching to cycling",
+  "meaningVi": "chuyển sang xe đạp"
  },
  {
   "id": "esl-v2-r12-u01-011",
@@ -1862,7 +2154,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "enrolment has risen",
+  "meaningVi": "số lượng đăng ký tăng"
  },
  {
   "id": "esl-v2-r12-u01-012",
@@ -1893,7 +2187,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "operating costs",
+  "meaningVi": "chi phí vận hành"
  },
  {
   "id": "esl-v2-r12-u01-013",
@@ -2059,7 +2355,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi"
+  "skillFocus": "Paraphrase thông dụng: giữ nghĩa và phạm vi",
+  "targetTerm": "automatically indicate",
+  "meaningVi": "tự động phản ánh"
  },
  {
   "id": "esl-v2-r12-u02-001",
@@ -2156,7 +2454,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Academic collocations: kết hợp từ đúng"
+  "skillFocus": "Academic collocations: kết hợp từ đúng",
+  "targetTerm": "struggle to access",
+  "meaningVi": "gặp khó khi tiếp cận"
  },
  {
   "id": "esl-v2-r12-u02-004",
@@ -2353,7 +2653,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Academic collocations: kết hợp từ đúng"
+  "skillFocus": "Academic collocations: kết hợp từ đúng",
+  "targetTerm": "set realistic goals",
+  "meaningVi": "đặt ra mục tiêu thực tế"
  },
  {
   "id": "esl-v2-r12-u02-010",
@@ -2417,14 +2719,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Academic collocations: kết hợp từ đúng"
+  "skillFocus": "Academic collocations: kết hợp từ đúng",
+  "targetTerm": "commuting distance",
+  "meaningVi": "quãng đường đi làm"
  },
  {
   "id": "esl-v2-r12-u02-012",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Gia đình & Đời sống",
-  "promptVi": "Việc đầu tư vào hệ thống thoát nước có thể giảm nguy cơ ngập lụt ở các khu vực trũng.",
+  "promptVi": "Đầu tư cho hệ thống thoát nước có thể làm giảm nguy cơ ngập lụt tại các khu vực trũng thấp.",
   "referenceAnswers": [
    "Investment in drainage systems can reduce the risk of flooding in low-lying areas.",
    "Funding better drainage may lower flood risks in places at low elevations."
@@ -2482,7 +2786,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Academic collocations: kết hợp từ đúng"
+  "skillFocus": "Academic collocations: kết hợp từ đúng",
+  "targetTerm": "avoid confusion",
+  "meaningVi": "tránh sự nhầm lẫn"
  },
  {
   "id": "esl-v2-r12-u02-014",
@@ -2555,7 +2861,7 @@
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Ẩm thực & Dinh dưỡng",
-  "promptVi": "Việc thu thập phản hồi thường xuyên giúp nhóm xác định các vấn đề cần ưu tiên.",
+  "promptVi": "Thường xuyên thu thập ý kiến phản hồi giúp cả nhóm xác định được những vấn đề cần ưu tiên.",
   "referenceAnswers": [
    "Collecting feedback regularly helps the team identify priority issues.",
    "Regularly gathering feedback allows the team to determine which problems need attention first."
@@ -2645,7 +2951,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "water samples",
+  "meaningVi": "mẫu nước"
  },
  {
   "id": "esl-v2-r12-u03-002",
@@ -2676,7 +2984,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "revised",
+  "meaningVi": "chỉnh sửa"
  },
  {
   "id": "esl-v2-r12-u03-003",
@@ -2749,7 +3059,7 @@
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Gia đình & Đời sống",
-  "promptVi": "Việc đăng ký phải được hoàn tất trước thứ Sáu nếu người tham dự muốn nhận tài liệu in.",
+  "promptVi": "Thủ tục đăng ký phải được hoàn tất trước thứ Sáu nếu người tham dự muốn nhận tài liệu in.",
   "referenceAnswers": [
    "Registration must be completed before Friday if participants want printed materials.",
    "Participants who wish to receive printed materials need to complete registration by Thursday."
@@ -2773,7 +3083,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "printed materials",
+  "meaningVi": "tài liệu in"
  },
  {
   "id": "esl-v2-r12-u03-006",
@@ -2837,7 +3149,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "according to severity",
+  "meaningVi": "theo mức độ nghiêm trọng"
  },
  {
   "id": "esl-v2-r12-u03-008",
@@ -2902,7 +3216,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "software bug",
+  "meaningVi": "lỗi phần mềm"
  },
  {
   "id": "esl-v2-r12-u03-010",
@@ -2967,7 +3283,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "numerous interviews",
+  "meaningVi": "nhiều cuộc phỏng vấn"
  },
  {
   "id": "esl-v2-r12-u03-012",
@@ -2998,7 +3316,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "financial feasibility",
+  "meaningVi": "tính khả thi về tài chính"
  },
  {
   "id": "esl-v2-r12-u03-013",
@@ -3095,7 +3415,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "tentative conclusions",
+  "meaningVi": "kết luận tạm thời"
  },
  {
   "id": "esl-v2-r12-u03-016",
@@ -3159,7 +3481,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm"
+  "skillFocus": "Bị động nâng cao: tường thuật và nhấn trọng tâm",
+  "targetTerm": "original assumptions",
+  "meaningVi": "giả định ban đầu"
  },
  {
   "id": "esl-v2-r12-u04-001",
@@ -3191,7 +3515,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "rising fuel prices",
+  "meaningVi": "giá nhiên liệu tăng"
  },
  {
   "id": "esl-v2-r12-u04-002",
@@ -3255,14 +3581,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "application processing",
+  "meaningVi": "quá trình xử lý đơn"
  },
  {
   "id": "esl-v2-r12-u04-004",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Công việc & Kinh tế",
-  "promptVi": "Việc giảm thời gian di chuyển có thể giúp nhân viên bớt mệt mỏi, nhưng hiệu quả còn phụ thuộc vào giờ làm.",
+  "promptVi": "Thời gian đi làm ngắn hơn có thể giúp nhân viên bớt mệt mỏi, dù tác động này cũng phụ thuộc vào giờ làm việc.",
   "referenceAnswers": [
    "Shorter commutes may reduce employee fatigue, although the effect also depends on working hours.",
    "Spending less time travelling to work could help staff feel less tired, but shift length also matters.",
@@ -3287,7 +3615,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "reduce employee fatigue",
+  "meaningVi": "giúp nhân viên bớt mệt mỏi"
  },
  {
   "id": "esl-v2-r12-u04-005",
@@ -3351,7 +3681,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "changing rainfall patterns",
+  "meaningVi": "lượng mưa thay đổi"
  },
  {
   "id": "esl-v2-r12-u04-007",
@@ -3416,7 +3748,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "direct sunlight",
+  "meaningVi": "ánh nắng trực tiếp"
  },
  {
   "id": "esl-v2-r12-u04-009",
@@ -3447,7 +3781,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "rise sharply",
+  "meaningVi": "tăng đột ngột"
  },
  {
   "id": "esl-v2-r12-u04-010",
@@ -3478,14 +3814,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "face longer commutes",
+  "meaningVi": "phải đi làm xa hơn"
  },
  {
   "id": "esl-v2-r12-u04-011",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Giáo dục & Trường học",
-  "promptVi": "Việc cung cấp nước uống miễn phí có thể khuyến khích học sinh chọn nước lọc thay cho đồ uống có đường.",
+  "promptVi": "Cung cấp nước uống miễn phí có thể khuyến khích học sinh chọn nước lọc thay vì đồ uống có đường.",
   "referenceAnswers": [
    "Providing free drinking water may encourage students to choose water instead of sugary drinks.",
    "Free access to drinking water could make students more likely to select water over sweetened beverages."
@@ -3542,7 +3880,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "prolonged power cut",
+  "meaningVi": "mất điện kéo dài"
  },
  {
   "id": "esl-v2-r12-u04-013",
@@ -3606,14 +3946,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "limited training",
+  "meaningVi": "ít được đào tạo"
  },
  {
   "id": "esl-v2-r12-u04-015",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Công nghệ & Khoa học",
-  "promptVi": "Việc đặt lịch khám trực tuyến giúp giảm thời gian chờ tại quầy, nhưng có thể gây khó cho người không quen công nghệ.",
+  "promptVi": "Hình thức đặt lịch hẹn trực tuyến giúp giảm thời gian chờ đợi tại quầy lễ tân, nhưng có thể gây khó khăn cho những người không quen dùng công nghệ.",
   "referenceAnswers": [
    "Online appointment booking reduces time spent waiting at reception, but it may be difficult for people unfamiliar with technology.",
    "Booking appointments online can shorten queues at the front desk while posing challenges for less digitally confident users."
@@ -3637,7 +3979,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động"
+  "skillFocus": "Nguyên nhân–hệ quả: phân tích chuỗi tác động",
+  "targetTerm": "unfamiliar with technology",
+  "meaningVi": "không quen công nghệ"
  },
  {
   "id": "esl-v2-r12-u04-016",
@@ -3735,7 +4079,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "preliminary results",
+  "meaningVi": "kết quả ban đầu"
  },
  {
   "id": "esl-v2-r12-u05-002",
@@ -3799,14 +4145,16 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "survey participants",
+  "meaningVi": "người tham gia khảo sát"
  },
  {
   "id": "esl-v2-r12-u05-004",
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Công nghệ & Khoa học",
-  "promptVi": "Việc giảm thông báo trên điện thoại có thể cải thiện khả năng tập trung trong một số tình huống.",
+  "promptVi": "Giảm bớt thông báo trên điện thoại có thể cải thiện khả năng tập trung trong một số tình huống nhất định.",
   "referenceAnswers": [
    "Reducing phone notifications might improve concentration in certain situations.",
    "Limiting mobile alerts may help people focus under some circumstances."
@@ -3830,7 +4178,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "improve concentration",
+  "meaningVi": "cải thiện khả năng tập trung"
  },
  {
   "id": "esl-v2-r12-u05-005",
@@ -3863,7 +4213,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "causal relationship",
+  "meaningVi": "quan hệ nhân quả"
  },
  {
   "id": "esl-v2-r12-u05-006",
@@ -3963,7 +4315,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "genuine progress",
+  "meaningVi": "tiến bộ thật"
  },
  {
   "id": "esl-v2-r12-u05-009",
@@ -3995,7 +4349,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "printed books",
+  "meaningVi": "sách in"
  },
  {
   "id": "esl-v2-r12-u05-010",
@@ -4027,7 +4383,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "learning format",
+  "meaningVi": "hình thức học"
  },
  {
   "id": "esl-v2-r12-u05-011",
@@ -4124,7 +4482,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "small proportion",
+  "meaningVi": "tỷ lệ nhỏ"
  },
  {
   "id": "esl-v2-r12-u05-014",
@@ -4155,7 +4515,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "peak hours",
+  "meaningVi": "giờ cao điểm"
  },
  {
   "id": "esl-v2-r12-u05-015",
@@ -4186,7 +4548,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Hedging: kiểm soát mức độ khẳng định"
+  "skillFocus": "Hedging: kiểm soát mức độ khẳng định",
+  "targetTerm": "sensitivity",
+  "meaningVi": "mức độ nhạy cảm"
  },
  {
   "id": "esl-v2-r12-u05-016",
@@ -4351,7 +4715,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu lập luận phức: kết hợp mệnh đề tự nhiên"
+  "skillFocus": "Câu lập luận phức: kết hợp mệnh đề tự nhiên",
+  "targetTerm": "applying the findings",
+  "meaningVi": "áp dụng kết quả"
  },
  {
   "id": "esl-v2-r12-u06-005",
@@ -4526,7 +4892,7 @@
   "practiceLevel": "6.0",
   "type": "sentence",
   "topic": "Đô thị & Nhà ở",
-  "promptVi": "Việc mở thêm công viên có thể cải thiện cơ hội vận động, nhưng lợi ích sẽ hạn chế nếu cư dân không thể đến đó an toàn.",
+  "promptVi": "Xây dựng thêm công viên có thể mở rộng cơ hội rèn luyện thể chất, nhưng lợi ích mang lại sẽ bị hạn chế nếu người dân không thể đi đến đó một cách an toàn.",
   "referenceAnswers": [
    "Creating more parks may improve opportunities for exercise, but the benefits will be limited if residents cannot reach them safely.",
    "New parks could support physical activity, although their value depends on people having safe access.",
@@ -4719,7 +5085,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu lập luận phức: kết hợp mệnh đề tự nhiên"
+  "skillFocus": "Câu lập luận phức: kết hợp mệnh đề tự nhiên",
+  "targetTerm": "advertising campaign",
+  "meaningVi": "chiến dịch quảng cáo"
  },
  {
   "id": "esl-v2-r12-u06-016",

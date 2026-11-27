@@ -37,7 +37,9 @@
   "meaningVi": "cải cách giáo dục dựa trên bằng chứng",
   "promptVi": "Cải cách giáo dục dựa trên bằng chứng đòi hỏi phải xem xét bối cảnh địa phương, thay vì giả định rằng một mô hình sẽ phù hợp ở mọi nơi. Một phương pháp hiệu quả ở trường có ít học sinh có thể không đạt kết quả tương tự tại lớp đông và thiếu giáo viên. Trước khi mở rộng, người làm chính sách cần nêu giả định về nguồn lực và thử nghiệm ở những bối cảnh khác nhau.",
   "referenceAnswers": [
-   "Evidence-based education reform requires attention to local context rather than the assumption that one model will work everywhere. An approach that works in a small school may not achieve the same results in crowded, understaffed classrooms. Before scaling it up, policymakers should state their assumptions about resources and test it in different settings."
+   "Evidence-based education reform requires attention to local context rather than the assumption that one model will work everywhere. An approach that works in a small school may not achieve the same results in crowded, understaffed classrooms. Before scaling it up, policymakers should state their assumptions about resources and test it in different settings.",
+   "Evidence-led educational reform demands careful regard for local conditions rather than presuming universal applicability for a single blueprint. A pedagogy that succeeds in small-enrolment schools may falter in overcrowded, under-resourced classrooms. Prior to scaling up, policymakers must articulate resource assumptions and pilot interventions across varied settings.",
+   "Grounding school reform in evidence means paying close attention to local realities instead of assuming one template fits all. What flourishes in a small, well-staffed school may fail completely in packed classrooms short on teachers. Before expanding any model, officials need to spell out what resources it assumes and test it across contrasting environments."
   ],
   "grammarTags": [
    "rather-than-assumption"
@@ -123,14 +125,22 @@
   "meaningVi": "cải cách dựa trên bằng chứng",
   "promptVi": "Một phương pháp giảng dạy thành công ở một thành phố chưa chắc hiệu quả ở vùng nông thôn. Nguồn lực, trình độ giáo viên và nhu cầu học sinh đều có thể khác. Cải cách dựa trên bằng chứng vì thế phải kiểm tra tính phù hợp với bối cảnh trước khi nhân rộng.",
   "referenceAnswers": [
-   "A teaching method that succeeds in one city may not work equally well in rural areas. Resources, teacher preparation and student needs may differ. Evidence-based reform therefore requires testing how well an approach fits a new context before it is scaled up."
+   "A teaching method that succeeds in one city may not work equally well in rural areas. Resources, teacher preparation and student needs may differ. Evidence-based reform therefore requires testing how well an approach fits a new context before it is scaled up.",
+   "An instructional strategy proven effective in an urban centre may not translate seamlessly to rural districts. Disparities in funding, educator training, and learner profiles can all alter outcomes. Evidence-based reform must therefore verify contextual suitability prior to broader rollout.",
+   "A teaching technique that works wonders in a city school won't necessarily deliver in the countryside. Budgets, teacher preparation, and what students actually need can look completely different. That is why evidence-based reform has to test how well a method fits local conditions before scaling it up."
   ],
   "grammarTags": [
    "contextual-validity"
   ],
   "explanationVi": "May not work equally well và requires testing tránh suy rộng quá mức từ một trường hợp.",
   "rationaleVi": "Lập luận về giới hạn khả năng áp dụng của bằng chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A teaching method that succeed in one city may not work equally well in rural areas.",
+    "correction": "A teaching method that succeeds in one city may not work equally well in rural areas.",
+    "reasonVi": "Trong mệnh đề quan hệ, động từ sau \"that\" phải chia theo danh từ số ít đứng trước nó là \"A teaching method\", nên phải thêm \"-s\" thành \"succeeds\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -172,7 +182,7 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "methodological limitation",
   "meaningVi": "giới hạn phương pháp luận",
-  "promptVi": "Việc gia tăng lượng người sử dụng làn đường dành cho xe đạp tại một số thành phố châu Âu trùng khớp với thời điểm ùn tắc giao thông giảm. Tuy nhiên, xu hướng này diễn ra đồng thời với đợt tăng giá nhiên liệu đột biến, vốn cũng làm giảm lượng ô tô lưu thông. Kết luận rằng hạ tầng xe đạp là nguyên nhân chính gây ra sự sụt giảm lưu lượng xe chứa đựng giới hạn phương pháp luận nếu bỏ qua yếu tố chi phí đi lại. Việc hoạch định đô thị đòi hỏi dữ liệu mô hình hóa tách biệt các động lực kinh tế với thay đổi hành vi.",
+  "promptVi": "Đà tăng lượng người sử dụng làn đường xe đạp tại một số thành phố châu Âu diễn ra trùng khớp với mức giảm rõ rệt của tình trạng ùn tắc giao thông. Tuy nhiên, xu hướng này xuất hiện song hành cùng đợt giá nhiên liệu tăng vọt, một yếu tố vốn độc lập làm giảm nhu cầu lái ô tô. Quy kết lưu lượng xe cơ giới sụt giảm chủ yếu nhờ hạ tầng xe đạp sẽ bộc lộ hạn chế về phương pháp luận nếu bỏ qua yếu tố chi phí đi lại. Quy hoạch đô thị hiệu quả đòi hỏi nguồn dữ liệu phân tách chi tiết nhằm bóc tách áp lực kinh tế khỏi những chuyển biến thực chất về hành vi.",
   "referenceAnswers": [
    "Increased cycling lane usage in several European cities coincided with a noticeable drop in traffic congestion. However, this trend occurred alongside a sharp spike in fuel prices, which independently curtailed car driving. Attributing reduced vehicular traffic primarily to cycling infrastructure reveals a methodological limitation if transport costs are ignored. Effective urban planning requires disaggregated data that isolates economic pressures from behavioural shifts.",
    "Increased cycling lane usage in several European cities coincided with a noticeable drop in traffic congestion. Even so, this trend occurred alongside a sharp spike in fuel prices, which independently curtailed car driving. Attributing reduced vehicular traffic primarily to cycling infrastructure reveals a methodological limitation if transport costs are ignored. Effective urban planning requires disaggregated data that isolates economic pressures from behavioural shifts."
@@ -203,14 +213,22 @@
   "meaningVi": "yếu tố nhiễu",
   "promptVi": "Khảo sát tại các công ty công nghệ cho thấy nhân viên làm việc từ xa hoàn thành nhiều dự án hơn so với đồng nghiệp tại văn phòng. Mặc dù kết quả này gợi ý hiệu suất cao hơn, nghiên cứu đã chọn lọc nhóm nhân sự có tính tự giác cao ngay từ đầu. Yếu tố nhiễu này khiến việc quy kết năng suất tăng thuần túy cho hình thức làm việc tại nhà trở nên thiếu căn cứ. Khả năng nhân rộng mô hình này sang các ngành nghề khác chỉ khả thi nếu duy trì được điều kiện tuyển chọn tương tự.",
   "referenceAnswers": [
-   "Surveys across technology firms indicate that remote employees completed more projects than their office-based peers. While this outcome suggests superior productivity, the study initially recruited highly self-motivated staff. This confounding factor makes it ungrounded to attribute performance gains purely to the home-working environment. Scalability to broader industries remains valid only under identical candidate selection criteria."
+   "Surveys across technology firms indicate that remote employees completed more projects than their office-based peers. While this outcome suggests superior productivity, the study initially recruited highly self-motivated staff. This confounding factor makes it ungrounded to attribute performance gains purely to the home-working environment. Scalability to broader industries remains valid only under identical candidate selection criteria.",
+   "Surveys of technology enterprises reveal that telecommuting staff delivered more projects than on-site counterparts. Although these figures imply heightened efficiency, the investigation pre-selected exceptionally self-disciplined personnel from the outset. Such confounding bias renders it unwarranted to ascribe productivity gains solely to remote work arrangements. Transferring this model to other sectors remains viable only if comparable recruitment filters are preserved.",
+   "Data from tech companies suggests remote workers wrapped up more projects than colleagues in the office. While that looks like a clear win for efficiency, the study effectively hand-picked highly self-driven employees to begin with. Because of that confounding variable, crediting the boost purely to working from home doesn't hold up. Scaling this setup to other industries would only work under similar hiring standards."
   ],
   "grammarTags": [
    "Confounding Variables & Validity"
   ],
   "explanationVi": "Đoạn văn nhận diện thiên vị chọn mẫu là một yếu tố nhiễu, từ đó giới hạn kết luận về năng suất làm việc từ xa.",
   "rationaleVi": "Yêu cầu kỹ năng phân tích phản biện Level 8.5 để đánh giá độ tin cậy của bằng chứng doanh nghiệp và đặt điều kiện cho khả năng nhân rộng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This confounding factor makes ungrounded to attribute performance gains purely to the home-working environment.",
+    "correction": "This confounding factor makes it ungrounded to attribute performance gains purely to the home-working environment.",
+    "reasonVi": "Trong cấu trúc \"make + it + tính từ + to-V\", bắt buộc phải có tân ngữ giả \"it\" đứng giữa \"makes\" và tính từ \"ungrounded\", không được lược bỏ."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -285,7 +303,9 @@
   "meaningVi": "kết luận sơ bộ",
   "promptVi": "Đợt thử nghiệm tuần làm việc bốn ngày tại các doanh nghiệp tự nguyện cho thấy chỉ số kiệt sức của người lao động giảm rõ rệt. Giới hạn của bằng chứng nằm ở chỗ các công ty tham gia vốn đã sở hữu văn hóa quản trị cởi mở và chế độ đãi ngộ tốt. Bất kỳ kết luận sơ bộ nào về lợi ích toàn diện của mô hình này đều phụ thuộc vào điều kiện môi trường doanh nghiệp có tính tương đồng. Việc áp dụng bắt buộc trên toàn bộ nền kinh tế có nguy cơ phản tác dụng nếu thiếu sự chuẩn bị về hạ tầng vận hành.",
   "referenceAnswers": [
-   "Trials of a four-day working week across participating firms demonstrated a marked decline in employee burnout scores. A key limitation of this evidence is that volunteer companies possessed open management cultures and good compensation packages. Any tentative conclusion regarding the universal benefits of this model remains conditional upon comparable organizational environments. Enforcing such schedules economy-wide risks backfiring unless operational infrastructure is adequately adapted."
+   "Trials of a four-day working week across participating firms demonstrated a marked decline in employee burnout scores. A key limitation of this evidence is that volunteer companies possessed open management cultures and good compensation packages. Any tentative conclusion regarding the universal benefits of this model remains conditional upon comparable organizational environments. Enforcing such schedules economy-wide risks backfiring unless operational infrastructure is adequately adapted.",
+   "Pilot programmes for a four-day workweek among self-selecting firms recorded pronounced reductions in staff burnout metrics. The evidentiary shortcoming stems from participating employers already maintaining progressive management practices and generous remuneration. Any provisional inference regarding universal advantages depends on comparable workplace conditions. Mandating this schedule across the wider economy risks unintended failure absent thorough operational preparation.",
+   "Voluntary trials of a four-day week brought sharp drops in employee exhaustion scores. The catch in the evidence is that the firms signing up already boasted open management styles and strong pay packages. Any early takeaway about broad benefits really only holds where corporate cultures look similar. Forcing the model across the whole economy could easily backfire if operational systems aren't ready for it."
   ],
   "grammarTags": [
    "Conditional Inference & Labour Economics"
@@ -340,7 +360,7 @@
   "topic": "Văn hóa & Du lịch",
   "targetTerm": "explanatory scope",
   "meaningVi": "phạm vi giải thích",
-  "promptVi": "Việc trùng tu các di sản văn hóa tại một số thị trấn cổ trùng hợp với sự tăng trưởng mạnh mẽ của doanh thu du lịch địa phương. Dù vậy, sự gia tăng này xảy ra đồng thời với các chiến dịch quảng bá du lịch cấp quốc gia được triển khai trên quy mô lớn. Phạm vi giải thích của dữ liệu hiện tại bị giới hạn, bởi lẽ nó không thể phân tách sức hút tự thân của di sản với lượng khách đến do tiếp thị. Sự bền vững của mô hình đầu tư di sản vì thế phụ thuộc vào khả năng duy trì lượng du khách khi chiến dịch quảng cáo kết thúc.",
+  "promptVi": "Công tác trùng tu các khu di sản văn hóa tại nhiều thị trấn cổ diễn ra trùng khớp với đợt bứt phá mạnh mẽ của doanh thu du lịch địa phương. Tuy nhiên, đà tăng trưởng này xuất hiện đồng thời với các chiến dịch quảng bá cấp quốc gia được triển khai trên quy mô lớn. Phạm vi lý giải của dữ liệu hiện hành bị thu hẹp, bởi chưa thể tách bạch sức hút tự thân của di sản khỏi lượng khách tìm đến nhờ tiếp thị. Tính khả thi của các mô hình đầu tư di sản vì thế phụ thuộc vào khả năng duy trì lượng du khách sau khi những chiến dịch quảng cáo khép lại.",
   "referenceAnswers": [
    "The restoration of cultural heritage sites across several historic towns coincided with a substantial surge in local tourism revenue. However, this upturn occurred simultaneously with nationwide promotional campaigns launched on a large scale. The explanatory scope of current data is restricted, as it fails to separate organic heritage appeal from marketing-driven visits. The viability of heritage investment models therefore depends on sustaining tourist numbers once advertising campaigns conclude.",
    "The restoration of cultural heritage sites across several historic towns coincided with a substantial surge in local tourism revenue. Even so, this upturn occurred simultaneously with nationwide promotional campaigns launched on a large scale. The explanatory scope of current data is restricted, as it fails to separate organic heritage appeal from marketing-driven visits. The viability of heritage investment models therefore depends on sustaining tourist numbers once advertising campaigns conclude."
@@ -350,7 +370,13 @@
   ],
   "explanationVi": "Đoạn văn chỉ ra phạm vi giải thích hẹp của dữ liệu hiện tại do sự xuất hiện của biến số truyền thông đồng thời.",
   "rationaleVi": "Đạt Level 8.5 với tư duy đánh giá dự án văn hóa - kinh tế đa biến, tránh ngụy biện tương quan thành nguyên nhân và đưa ra điều kiện bền vững lâu dài.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The explanatory scope of current data is restricted, as it fails to separate organic heritage appeal with marketing-driven visits.",
+    "correction": "The explanatory scope of current data is restricted, as it fails to separate organic heritage appeal from marketing-driven visits.",
+    "reasonVi": "Cấu trúc chuẩn để diễn tả \"phân tách/tách biệt A với B\" là \"separate A from B\", không dịch chữ \"với\" trong tiếng Việt sang giới từ \"with\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -394,14 +420,22 @@
   "meaningVi": "mối tương quan ngụy tạo",
   "promptVi": "Một khảo sát dinh dưỡng gần đây phát hiện những người tiêu thụ thực phẩm hữu cơ thường có chỉ số vi sinh đường ruột đa dạng hơn hẳn nhóm còn lại. Giới hạn của phát hiện này nằm ở chỗ người mua thực phẩm hữu cơ thường tuân thủ chế độ ăn giàu chất xơ và tập luyện thể thao định kỳ. Việc vội vã tuyên bố thực phẩm hữu cơ trực tiếp cải thiện hệ vi sinh là một mối tương quan ngụy tạo nếu bỏ qua toàn bộ thói quen sống lành mạnh đi kèm. Các khuyến nghị dinh dưỡng cộng đồng chỉ có giá trị thực tiễn khi hiệu ứng của bản thân loại thực phẩm đó được tách biệt khỏi phong cách sống tổng thể.",
   "referenceAnswers": [
-   "A recent nutritional survey revealed that individuals consuming organic food exhibited significantly more diverse gut microbiomes than their counterparts. The limitation of this finding stems from the fact that organic food buyers generally adhere to high-fibre diets and regular exercise regimes. Declaring organic produce to be the direct driver of microbiome health constitutes a spurious correlation if these concurrent healthy lifestyle habits are ignored. Public dietary recommendations retain practical value only when the specific effect of the food itself is isolated from overall lifestyle choices."
+   "A recent nutritional survey revealed that individuals consuming organic food exhibited significantly more diverse gut microbiomes than their counterparts. The limitation of this finding stems from the fact that organic food buyers generally adhere to high-fibre diets and regular exercise regimes. Declaring organic produce to be the direct driver of microbiome health constitutes a spurious correlation if these concurrent healthy lifestyle habits are ignored. Public dietary recommendations retain practical value only when the specific effect of the food itself is isolated from overall lifestyle choices.",
+   "A recent dietary study observed markedly greater gut microbiome diversity among consumers of organic produce compared with non-consumers. However, this finding is constrained by the tendency of organic buyers to maintain high-fibre diets and consistent exercise routines. Hastily crediting organic food as the direct cause of microbiome health mistakes a spurious correlation for causation by overlooking broader healthy habits. Public nutrition guidance holds practical validity only once the food's intrinsic impact is disentangled from wider lifestyle factors.",
+   "A recent nutrition survey noted that people eating organic food tend to have far more diverse gut bacteria than others. The limitation is that shoppers buying organic also usually eat plenty of fibre and work out regularly. Jumping to the claim that organic food directly boosts gut health mistakes a false link for cause and effect while ignoring those accompanying habits. Public diet advice is only truly useful when the food's own effect is separated from overall lifestyle."
   ],
   "grammarTags": [
    "Spurious correlation & evidence limitation"
   ],
   "explanationVi": "Phân tích số liệu dinh dưỡng, chỉ ra nguy cơ nhầm lẫn mối tương quan ngụy tạo do không tách biệt lối sống tổng thể với tác động của thực phẩm hữu cơ.",
   "rationaleVi": "Thể hiện tư duy phản biện 8.5 qua việc bóc tách yếu tố lối sống đi kèm và sử dụng chính xác thuật ngữ 'spurious correlation' trong bối cảnh phân tích bằng chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The limitation of this finding stems from the fact that organic food buyers generally adhere high-fibre diets and regular exercise regimes.",
+    "correction": "The limitation of this finding stems from the fact that organic food buyers generally adhere to high-fibre diets and regular exercise regimes.",
+    "reasonVi": "Khác với \"follow\" hay \"obey\", động từ \"adhere\" (tuân thủ) là nội động từ nên bắt buộc phải đi kèm giới từ \"to\" (\"adhere to something\")."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -453,7 +487,13 @@
   ],
   "explanationVi": "Chỉ ra thiên vị chọn lọc trong thử nghiệm AI khi các ca khó bị lọc ra, khiến kết quả đo lường hiệu suất thiếu chính xác.",
   "rationaleVi": "Phù hợp tiêu chí 8.5 nhờ việc lột tả chính xác cơ chế 'selection bias' trong đánh giá ứng dụng công nghệ, vạch rõ giả định sai lầm của dữ liệu ban đầu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Consequently, replacing human support staff entirely base on these preliminary metrics represents a decision carrying high operational risk.",
+    "correction": "Consequently, replacing human support staff entirely based on these preliminary metrics represents a decision carrying high operational risk.",
+    "reasonVi": "Khi dùng như cụm phân từ rút gọn mang nghĩa \"dựa trên cái gì\" (không phải động từ chính của câu), bắt buộc phải thêm \"-d\" thành \"based on\" chứ không viết \"base on\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -468,7 +508,9 @@
   "meaningVi": "suy luận nhân quả",
   "promptVi": "Giả định rằng ánh sáng là yếu tố duy nhất ngăn ngừa tội phạm thiếu tính vững chắc, bởi chính quyền thành phố cũng đã tăng cường lực lượng tuần tra trong cùng thời điểm. Số liệu thống kê tại các đô thị du lịch cho thấy việc gia tăng hệ thống đèn chiếu sáng công cộng diễn ra cùng lúc với sự sụt giảm của vi phạm trật tự ban đêm. Một suy luận nhân quả thoả đáng đòi hỏi phải so sánh đối chứng với các khu vực lắp đèn nhưng không thay đổi mật độ cảnh sát. Hoạch định an ninh cộng đồng do đó phải cẩn trọng trước các kết luận vội vàng dựa trên dữ liệu chuỗi thời gian đơn thuần.",
   "referenceAnswers": [
-   "Assuming that illumination alone deters crime lacks robustness, given that municipal authorities also intensified police patrols over the exact same period. Statistical trends in tourist cities showed enhanced public street lighting coinciding with a reduction in night-time order violations. A valid causal inference requires a controlled comparison with districts where lighting was upgraded without altering police deployment levels. Community safety planning must therefore exercise caution against hasty conclusions drawn from simple time-series data."
+   "Assuming that illumination alone deters crime lacks robustness, given that municipal authorities also intensified police patrols over the exact same period. Statistical trends in tourist cities showed enhanced public street lighting coinciding with a reduction in night-time order violations. A valid causal inference requires a controlled comparison with districts where lighting was upgraded without altering police deployment levels. Community safety planning must therefore exercise caution against hasty conclusions drawn from simple time-series data.",
+   "Presuming that street lighting alone deters offending is unsound, as municipal governments simultaneously expanded police patrols over the same interval. Crime statistics in tourist cities showed upgraded public illumination coinciding with fewer night-time public-order offences. Establishing a credible causal link demands controlled comparisons against neighbourhoods receiving improved lighting without altered policing levels. Public safety planners must therefore guard against premature inferences drawn from basic time-series figures.",
+   "Claiming that brighter streets by themselves prevent crime rests on shaky ground when city officials stepped up police patrols at the exact same time. Figures from tourist hubs did show nocturnal disorder falling alongside expanded street lighting. To prove real cause and effect, researchers need to compare districts that added lights without changing police presence. Security planners should therefore steer clear of hasty conclusions based purely on before-and-after timelines."
   ],
   "grammarTags": [
    "Causal inference & social policy"
@@ -533,7 +575,13 @@
   ],
   "explanationVi": "Xem xét tính hiệu quả của chương trình tài chính vi mô và chỉ ra hạn chế về khả năng tổng quát hóa do tiêu chí sàng lọc đầu vào.",
   "rationaleVi": "Thuộc cấp độ 8.5 với tư duy đánh giá tính nhân rộng của phát hiện thực nghiệm và dùng đúng thuật ngữ chuẩn Anh-Anh 'generalisability'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The generalisability of this success to communities lacking of foundational business skills is therefore severely constrained.",
+    "correction": "The generalisability of this success to communities lacking foundational business skills is therefore severely constrained.",
+    "reasonVi": "Động từ và phân từ hiện tại \"lacking\" đi trực tiếp với tân ngữ (\"lacking foundational business skills\"), tuyệt đối không thêm \"of\" như danh từ \"a lack of\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -585,7 +633,13 @@
   ],
   "explanationVi": "Cụm từ 'selection bias' chỉ lỗi phương pháp luận khi mẫu nghiên cứu không đại diện cho tổng thể do tự chọn lọc. Trong đoạn văn, yếu tố này được dùng để phản biện luận điểm về hiệu quả làm việc từ xa.",
   "rationaleVi": "Đoạn văn thuộc Cấp độ 8.5 vì xây dựng lập luận phản biện chặt chẽ về phương pháp nghiên cứu nhân sự, đòi hỏi khả năng phân tích giới hạn của bằng chứng và sử dụng cấu trúc điều kiện phức hợp.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "However, the study exclusively attracted individuals who naturally favoured working independent and possessed robust time-management skills.",
+    "correction": "However, the study exclusively attracted individuals who naturally favoured working independently and possessed robust time-management skills.",
+    "reasonVi": "Để bổ nghĩa cho động từ thường \"working\" (làm việc một cách độc lập), ta phải dùng trạng từ \"independently\" chứ không dùng tính từ \"independent\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -600,7 +654,9 @@
   "meaningVi": "nhân quả ngược",
   "promptVi": "Số liệu từ các sáng kiến thể thao cộng đồng ghi nhận người lớn tuổi chơi các môn vợt thường xuyên có tỉ lệ suy giảm nhận thức thấp hơn. Dù vậy, mối tương quan này có thể xuất phát từ hiện tượng nhân quả ngược, khi những cá nhân duy trì sự minh mẫn vốn có xu hướng tiếp tục tham gia các hoạt động vận động phức tạp. Việc suy luận một cơ chế sinh học bảo vệ trực tiếp vẫn còn quá sớm nếu thiếu theo dõi nền dài hạn. Xây dựng hướng dẫn vận động thể chất cho người cao tuổi do đó đòi hỏi các thử nghiệm lâm sàng tiến cứu.",
   "referenceAnswers": [
-   "Data from community sports initiatives indicates that older adults regularly playing racquet sports exhibit lower rates of cognitive decline. Yet, this correlation may stem from reverse causality, as individuals maintaining inherent mental sharpness naturally tend to continue participating in complex motor activities. Inferring a direct protective biological mechanism remains premature without long-term baseline tracking. Formulating physical activity guidelines for aging populations therefore demands prospective clinical trials."
+   "Data from community sports initiatives indicates that older adults regularly playing racquet sports exhibit lower rates of cognitive decline. Yet, this correlation may stem from reverse causality, as individuals maintaining inherent mental sharpness naturally tend to continue participating in complex motor activities. Inferring a direct protective biological mechanism remains premature without long-term baseline tracking. Formulating physical activity guidelines for aging populations therefore demands prospective clinical trials.",
+   "Records from community athletics programmes show that seniors who regularly play racquet sports experience lower rates of cognitive deterioration. Yet this association may reflect reverse causality, whereby individuals who retain greater mental acuity naturally continue engaging in complex physical pursuits. Deducing a direct protective biological mechanism remains premature without extended baseline monitoring. Designing exercise recommendations for older adults thus necessitates prospective clinical trials.",
+   "Community sports figures suggest older adults who play racquet sports often suffer less cognitive decline. Even so, the link could run the other way around, since people who stay sharp mentally are naturally more likely to keep up demanding sports. It is still too early to claim a direct biological shield without long-term baseline tracking. Crafting fitness advice for ageing populations therefore calls for forward-looking clinical trials."
   ],
   "grammarTags": [
    "Causal Reasoning / Reverse Causality"
@@ -628,7 +684,9 @@
   "meaningVi": "biến số nhiễu",
   "promptVi": "Các bảo tàng nghệ thuật áp dụng công nghệ thực tế ảo ghi nhận lượng khách tham quan trẻ tuổi tăng vọt trong nửa năm đầu. Mặc dù vậy, xu hướng này diễn ra đồng thời với một chiến dịch truyền thông văn hóa quy mô lớn trên mạng xã hội do nhà nước tài trợ. Việc không tách biệt tác động của quảng bá khỏi sự hấp dẫn của công nghệ tạo ra một biến số nhiễu quan trọng trong phân tích. Phê duyệt ngân sách bảo tồn di sản lâu dài không nên quy kết sự gia tăng công chúng thuần túy cho các màn hình tương tác kỹ thuật số.",
   "referenceAnswers": [
-   "Art museums adopting virtual reality technology recorded a surge in young visitors during the first six months. Nevertheless, this trend coincided with a massive state-funded social media campaign promoting cultural heritage. Failing to isolate marketing impact from technological engagement introduces a crucial confounding variable into the analysis. Long-term heritage budget approvals should refrain from attributing audience expansion purely to digital interactive displays."
+   "Art museums adopting virtual reality technology recorded a surge in young visitors during the first six months. Nevertheless, this trend coincided with a massive state-funded social media campaign promoting cultural heritage. Failing to isolate marketing impact from technological engagement introduces a crucial confounding variable into the analysis. Long-term heritage budget approvals should refrain from attributing audience expansion purely to digital interactive displays.",
+   "Art galleries introducing virtual reality installations saw sharp rises in younger visitors over the initial six months. However, this uptick coincided with an extensive government-backed cultural promotion campaign across social media. Failing to disentangle publicity effects from technological appeal introduces a major confounding factor into the evaluation. Long-term heritage funding decisions ought not to credit audience growth exclusively to interactive digital displays.",
+   "Art museums that brought in virtual reality reported a spike in young attendees during the first half-year. At the same time, though, a huge state-funded social media push was promoting cultural heritage. Not separating marketing reach from tech novelty creates a serious blind spot in the analysis. Long-term heritage budgets shouldn't assume interactive screens alone drove the bigger crowds."
   ],
   "grammarTags": [
    "Data Interpretation / Confounding Variable"
@@ -656,7 +714,9 @@
   "meaningVi": "các yếu tố nhiễu",
   "promptVi": "Tại các quận thương mại, việc áp dụng phí ô tô vào trung tâm trùng hợp với sự gia tăng doanh thu bán lẻ địa phương. Dù những người ủng hộ cho rằng khu vực thu phí kích thích thương mại đi bộ, chính sách này lại được triển khai cùng lúc với dự án chỉnh trang phố xá và giảm thuế doanh nghiệp nhỏ. Sự thiếu sót trong việc kiểm soát các yếu tố nhiễu này khiến kết luận phí giao thông trực tiếp thúc đẩy kinh tế trở nên thiếu vững chắc. Các chiến lược phát triển đô thị cần phân tách rõ hiệu ứng can thiệp hạ tầng trước khi nhân rộng mô hình tính phí sang các khu vực khác.",
   "referenceAnswers": [
-   "The introduction of central vehicle congestion charges across commercial districts coincided with a rise in local retail revenue. Although advocates claim toll zones stimulate pedestrian commerce, the policy was implemented alongside street beautification projects and small-business tax rebates. Failing to control for these confounding factors undermines the claim that transport pricing directly drives economic growth. Urban development strategies must isolate infrastructure interventions before replicating charge schemes elsewhere."
+   "The introduction of central vehicle congestion charges across commercial districts coincided with a rise in local retail revenue. Although advocates claim toll zones stimulate pedestrian commerce, the policy was implemented alongside street beautification projects and small-business tax rebates. Failing to control for these confounding factors undermines the claim that transport pricing directly drives economic growth. Urban development strategies must isolate infrastructure interventions before replicating charge schemes elsewhere.",
+   "In commercial quarters, levying downtown vehicle entry charges coincided with higher local retail turnover. Although proponents contend that congestion zones stimulate pedestrian spending, the measure rolled out concurrently with streetscape upgrades and small-business tax relief. Neglecting to control for these confounding influences undermines claims that road pricing directly spurs economic activity. Urban growth frameworks must isolate infrastructure effects before replicating toll regimes elsewhere.",
+   "Introducing car entry fees in business districts happened alongside a rise in local shop sales. Supporters argue toll zones encourage foot-traffic shopping, yet the city also revamped streets and cut small-business taxes at the same time. Without controlling for those overlapping moves, claiming traffic charges directly lift sales doesn't hold water. City planners have to untangle the impact of street upgrades before rolling out fees to other neighbourhoods."
   ],
   "grammarTags": [
    "Policy Evaluation / Confounding Factors"
@@ -693,7 +753,13 @@
   ],
   "explanationVi": "Thuật ngữ 'underlying assumption' chỉ tiền đề ẩn đằng sau một lập luận hoặc dự báo, giúp vạch rõ ranh giới giữa mô hình lý thuyết và hành vi thực tế của con người.",
   "rationaleVi": "Đoạn văn thể hiện Cấp độ 8.5 qua việc bóc tách giả định chưa được kiểm chứng của chính sách công, đi từ số liệu bề nổi đến phân tích hiệu ứng dội ngược về mặt hành vi.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If this consumption rebound will occur, actual emission reductions will fall far short of theoretical calculations.",
+    "correction": "If this consumption rebound occurs, actual emission reductions will fall far short of theoretical calculations.",
+    "reasonVi": "Trong câu điều kiện loại 1 diễn tả giả định có thể xảy ra ở tương lai, mệnh đề sau \"If\" chỉ chia thì hiện tại đơn (\"occurs\"), không dùng \"will occur\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -706,16 +772,24 @@
   "topic": "Giao thông & Đi lại",
   "targetTerm": "methodological flaw",
   "meaningVi": "khuyết điểm phương pháp luận",
-  "promptVi": "Việc đưa xe buýt điện vào vận hành tại một số đô thị trùng khớp với sự sụt giảm nồng độ bụi mịn đo được dọc các trục đường chính. Dù vậy, giới chức thành phố đồng thời hạ hạn mức tốc độ của xe tải nặng và tăng tần suất quét dọn đường phố. Việc vội vã quy kết sự cải thiện không khí thuần túy cho động cơ điện thể hiện một khuyết điểm phương pháp luận do bỏ qua các biện pháp giảm bụi đường song song. Hoạch định giao thông đòi hỏi mô hình hóa đa biến nghiêm ngặt để chứng minh tính hiệu quả của khoản chi phí thay thế đoàn xe.",
+  "promptVi": "Đưa xe buýt điện vào vận hành tại một số đô thị diễn ra trùng thời điểm nồng độ bụi mịn đo dọc các trục đường huyết mạch sụt giảm. Dẫu vậy, chính quyền thành phố cũng đồng thời hạ giới hạn tốc độ đối với xe tải hạng nặng và tăng tần suất quét dọn đường phố. Vội vàng quy kết kết quả cải thiện không khí thuần túy cho hệ truyền động điện là một khiếm khuyết phương pháp luận vì bỏ qua các biện pháp giảm bụi đường diễn ra song song. Quy hoạch giao thông đòi hỏi mô hình phân tích đa biến chặt chẽ nhằm chứng minh tính xác đáng của khoản chi phí thay mới đoàn xe.",
   "referenceAnswers": [
-   "Deploying electric buses across several municipalities coincided with a reduction in fine particulate concentration measured along major arterial roads. Nevertheless, city authorities concurrently lowered heavy vehicle speed limits and increased street sweeping frequency. Prematurely attributing air quality improvements solely to electric powertrains represents a methodological flaw that overlooks co-occurring road dust mitigations. Transport planning requires rigorous multi-variate modeling to justify fleet replacement expenditures."
+   "Deploying electric buses across several municipalities coincided with a reduction in fine particulate concentration measured along major arterial roads. Nevertheless, city authorities concurrently lowered heavy vehicle speed limits and increased street sweeping frequency. Prematurely attributing air quality improvements solely to electric powertrains represents a methodological flaw that overlooks co-occurring road dust mitigations. Transport planning requires rigorous multi-variate modeling to justify fleet replacement expenditures.",
+   "Introducing electric buses in several cities coincided with lower fine-particulate readings along major corridors. Nevertheless, municipal authorities simultaneously reduced heavy-truck speed caps and stepped up street cleaning schedules. Hastily attributing cleaner air solely to electric drivetrains constitutes a methodological flaw by overlooking parallel dust-control actions. Transit planning requires rigorous multivariable analysis to justify costly fleet electrification outlays.",
+   "Putting electric buses on the road in several cities lined up with falling particulate levels along busy avenues. Still, officials also cut speed limits for heavy lorries and swept streets more often during the same period. Crediting electric motors alone for the cleaner air is flawed reasoning that ignores other dust-cutting measures. Transport planners need solid multivariable modelling before signing off on expensive fleet upgrades."
   ],
   "grammarTags": [
    "Research Critique / Methodological Flaw"
   ],
   "explanationVi": "Cụm 'methodological flaw' quy định sai sót trong thiết kế hoặc phân tích dữ liệu thực nghiệm, dùng để chỉ trích việc suy diễn nhân quả thiếu kiểm soát biến số.",
   "rationaleVi": "Đoạn văn mang tính chất tranh luận khoa học Cấp độ 8.5, chỉ rõ điểm yếu trong quy trình thực nghiệm và yêu cầu năng lực mô hình hóa đa biến trong giao thông.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Prematurely attributing air quality improvements solely for electric powertrains represents a methodological flaw that overlooks co-occurring road dust mitigations.",
+    "correction": "Prematurely attributing air quality improvements solely to electric powertrains represents a methodological flaw that overlooks co-occurring road dust mitigations.",
+    "reasonVi": "Cấu trúc \"quy kết kết quả A cho nguyên nhân B\" trong tiếng Anh là \"attribute A to B\", không dịch chữ \"cho\" sang giới từ \"for\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -738,7 +812,13 @@
   ],
   "explanationVi": "Cụm 'spurious correlation' mô tả hai hiện tượng biến đổi tương đồng do ảnh hưởng của biến thứ ba chứ không hề có quan hệ nguyên nhân - kết quả trực tiếp.",
   "rationaleVi": "Đoạn văn thể hiện Cấp độ 8.5 bằng cách phân tích sắc bén sự nhầm lẫn giữa điều kiện kinh tế - xã hội và tác động sinh học của dinh dưỡng thông qua ngôn từ chuẩn xác.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even though, communities with high fermented food intake also exhibited higher average incomes and superior access to healthcare services.",
+    "correction": "Even so, communities with high fermented food intake also exhibited higher average incomes and superior access to healthcare services.",
+    "reasonVi": "Để nối câu đơn mới với nghĩa \"Mặc dù vậy,\" (đứng trước dấu phẩy), phải dùng trạng từ liên kết \"Even so,\" chứ không dùng liên từ phụ thuộc \"Even though\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -811,7 +891,9 @@
   "meaningVi": "nhân quả ngược",
   "promptVi": "Nhóm người cao tuổi tham gia các môn thể thao đồng đội đạt điểm số cao hơn về khả năng vận động chức năng. Mặc dù vậy, phát hiện quan sát này chưa thể loại trừ nguy cơ nhân quả ngược, bởi những cá nhân sở hữu sức khỏe cơ xương khớp tốt ngay từ đầu vốn có xu hướng duy trì các hoạt động thể chất tập thể. Giả định rằng thể thao đồng đội trực tiếp mang lại khả năng vận động tốt hơn vẫn chưa có căn cứ nếu thiếu đánh giá thể trạng ban đầu. Các hướng dẫn y tế cộng đồng chỉ nên đưa ra khuyến nghị khi các thử nghiệm tiến cứu có đối chứng xác nhận được hướng tác động thực sự.",
   "referenceAnswers": [
-   "Elderly individuals participating in team sports record higher functional mobility scores. Nonetheless, this observational finding fails to address the risk of reverse causality, as individuals with superior baseline musculoskeletal health are naturally more inclined to sustain group athletic activities. Assuming that team sports directly cause improved mobility remains unproven without baseline physical assessments. Public health guidelines should withhold definitive recommendations until prospective controlled trials confirm the true directional effect."
+   "Elderly individuals participating in team sports record higher functional mobility scores. Nonetheless, this observational finding fails to address the risk of reverse causality, as individuals with superior baseline musculoskeletal health are naturally more inclined to sustain group athletic activities. Assuming that team sports directly cause improved mobility remains unproven without baseline physical assessments. Public health guidelines should withhold definitive recommendations until prospective controlled trials confirm the true directional effect.",
+   "Older adults engaged in team athletics achieve higher functional mobility scores. However, such observational evidence cannot rule out reverse causality, since individuals possessing robust baseline musculoskeletal health are inherently likelier to keep up group sports. Presuming that collective athletics directly generates superior mobility remains unsubstantiated without initial physical screening. Public health directives should defer formal recommendations until prospective controlled studies verify the genuine direction of causality.",
+   "Seniors who play team sports score higher on day-to-day physical mobility. Yet this observational pattern can't exclude reverse causation, because people who already have strong joints and muscles naturally stay active in group games. Claiming team sports directly build better mobility lacks proof unless baseline fitness is measured first. Health authorities should hold back firm guidance until controlled forward-looking trials show which way the effect runs."
   ],
   "grammarTags": [
    "reasoning - reverse causality"
@@ -837,16 +919,24 @@
   "topic": "Công nghệ & Khoa học",
   "targetTerm": "confounding variable",
   "meaningVi": "biến số nhiễu",
-  "promptVi": "Việc triển khai các công cụ trí tuệ nhân tạo tạo sinh tại các doanh nghiệp được theo sau bởi sự gia tăng rõ rệt về tốc độ bàn giao phần mềm theo quý. Dù vậy, giai đoạn áp dụng công nghệ này diễn ra cùng lúc với đợt tái cấu trúc nhân sự quy mô lớn nhằm thay thế nhân viên cấp thấp bằng các nhà thầu giàu kinh nghiệm. Việc bỏ qua biến số nhiễu quan trọng này làm mất giá trị của suy luận nhân quả trực tiếp giữa trí tuệ nhân tạo và đầu ra công việc. Các quyết định phân bổ ngân sách cho bản quyền phần mềm cần mô hình hóa đa biến để tách biệt hiệu quả công nghệ khỏi việc thay đổi cơ cấu lao động.",
+  "promptVi": "Ngay sau khi khối doanh nghiệp ứng dụng các công cụ trí tuệ nhân tạo tạo sinh, tốc độ bàn giao phần mềm hằng quý đã ghi nhận mức tăng rõ rệt. Tuy nhiên, quá trình triển khai này lại diễn ra trùng thời điểm với đợt tái cơ cấu nhân sự quy mô lớn nhằm thay thế lớp nhân viên ít kinh nghiệm bằng đội ngũ nhà thầu lành nghề. Bỏ qua biến gây nhiễu trọng yếu này sẽ làm mất giá trị của mọi kết luận nhân quả trực tiếp giữa trí tuệ nhân tạo và đầu ra công việc. Các quyết định phân bổ ngân sách cho bản quyền phần mềm đòi hỏi mô hình hóa đa biến để tách biệt hiệu quả công nghệ khỏi tác động của tái cơ cấu lao động.",
   "referenceAnswers": [
-   "Enterprise adoption of generative AI tools was followed by a marked increase in quarterly software delivery speeds. Yet, this implementation coincided with a large-scale workforce restructuring that replaced junior staff with experienced contractors. Overlooking this major confounding variable invalidates any straightforward causal link between artificial intelligence and work output. Budget allocation decisions regarding software licenses require multi-variable modeling to isolate technological efficacy from workforce restructuring."
+   "Enterprise adoption of generative AI tools was followed by a marked increase in quarterly software delivery speeds. Yet, this implementation coincided with a large-scale workforce restructuring that replaced junior staff with experienced contractors. Overlooking this major confounding variable invalidates any straightforward causal link between artificial intelligence and work output. Budget allocation decisions regarding software licenses require multi-variable modeling to isolate technological efficacy from workforce restructuring.",
+   "Corporate deployment of generative AI tools was followed by notable gains in quarterly software delivery pace. Yet this technological rollout overlapped with sweeping workforce restructuring that substituted junior staff with seasoned contractors. Ignoring this major confounding factor invalidates any simple causal inference linking AI to higher output. Software licensing budgets ought to rely on multivariable modelling to distinguish technological gains from shifts in staff composition.",
+   "Bringing generative AI into firms was followed by noticeably faster quarterly software releases. At the same time, however, companies carried out major staffing shake-ups, swapping junior hires for veteran contractors. Glossing over that huge confounding factor ruins any straightforward claim that AI boosted output. Decisions on software licence spending need multivariable analysis to separate tech performance from changes in team seniority."
   ],
   "grammarTags": [
    "reasoning - confounding variable"
   ],
   "explanationVi": "'Confounding variable' là biến số ngoài dự tính gây ảnh hưởng đến cả nguyên nhân lẫn kết quả, dẫn đến kết luận sai lệch. Đoạn văn kiểm tra giới hạn của dữ liệu hiệu suất công nghệ.",
   "rationaleVi": "Thể hiện độ sâu phân tích 8.5 khi bóc tách tác động của công nghệ khỏi các yếu tố quản trị doanh nghiệp song hành bằng văn phong học thuật mạch lạc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Overlooking this major confounding variable invalidates any straightforward causal link between artificial intelligence with work output.",
+    "correction": "Overlooking this major confounding variable invalidates any straightforward causal link between artificial intelligence and work output.",
+    "reasonVi": "Cấu trúc \"giữa A và/với B\" trong tiếng Anh luôn cố định là \"between A and B\", tuyệt đối không kết hợp \"between\" với giới từ \"with\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -861,7 +951,9 @@
   "meaningVi": "giả định nền tảng",
   "promptVi": "Các đô thị mở rộng mạng lưới cây xanh ghi nhận nhiệt độ vi khí hậu giảm tại các khu dân cư trong hai mùa hè liên tiếp. Tuy nhiên, hiệu ứng làm mát này dựa trên một giả định nền tảng rằng chính quyền địa phương duy trì việc tưới nước đều đặn trong các đợt hạn hán nghiêm trọng. Nếu nắng nóng cực đoan làm cạn kiệt nguồn nước dự trữ, thảm thực vật không được tưới sẽ mất khả năng thoát hơi nước và không thể giảm áp lực nhiệt. Chiến lược thích ứng với biến đổi khí hậu do đó phải đảm bảo nguồn nước dự phòng thay vì coi cây xanh là giải pháp chống nóng vô điều kiện.",
   "referenceAnswers": [
-   "Cities expanding urban forestry networks recorded lower microclimate temperatures in residential districts over two consecutive summers. Nevertheless, this cooling effect relies on the baseline assumption that local authorities maintain constant irrigation during periods of severe drought. Should extreme heat deplete water reserves, unwatered canopies lose their evapotranspirative capacity and fail to mitigate thermal stress. Climate adaptation strategies must establish contingency water sourcing rather than treating greenery as an unconditional heat shield."
+   "Cities expanding urban forestry networks recorded lower microclimate temperatures in residential districts over two consecutive summers. Nevertheless, this cooling effect relies on the baseline assumption that local authorities maintain constant irrigation during periods of severe drought. Should extreme heat deplete water reserves, unwatered canopies lose their evapotranspirative capacity and fail to mitigate thermal stress. Climate adaptation strategies must establish contingency water sourcing rather than treating greenery as an unconditional heat shield.",
+   "Municipalities expanding urban tree canopies observed cooler residential microclimates across two consecutive summers. Yet this cooling benefit rests on a foundational premise that local councils sustain regular irrigation throughout severe droughts. Should extreme heat exhaust water supplies, unwatered foliage loses its capacity for evapotranspiration and fails to relieve heat stress. Climate adaptation planning must consequently secure backup water reserves rather than treating greenery as an unconditional cooling remedy.",
+   "Cities planting more street trees saw cooler neighbourhood temperatures over two summers running. That cooling effect, however, hinges on councils keeping up steady watering during harsh dry spells. If severe heatwaves drain water supplies, parched vegetation stops releasing moisture and can't ease heat stress anymore. Climate adaptation plans therefore have to lock in emergency water sources instead of assuming greenery always cools unconditionally."
   ],
   "grammarTags": [
    "reasoning - baseline assumption"
@@ -889,7 +981,9 @@
   "meaningVi": "thiên vị chọn lọc",
   "promptVi": "Học sinh trung học tham gia các học viện tranh biện ngoại khóa đạt điểm số vượt trội trong các bài kiểm tra tư duy phản biện khi tốt nghiệp. Thay vì chứng minh rằng việc giảng dạy tranh biện giúp nâng cao năng lực trí tuệ, nghiên cứu này mắc phải thiên vị chọn lọc do người tham gia chủ yếu đến từ các gia đình có trình độ học vấn của cha mẹ cao. Quy kết thành tích học tập xuất sắc thuần túy cho chương trình tranh biện là sự đánh đồng giữa nền tảng học sinh và giá trị giảng dạy. Ban giám hiệu các trường cần tiến hành các thử nghiệm kiểm soát ngẫu nhiên trước khi tài trợ cho việc bắt buộc đưa tranh biện vào giảng dạy trên toàn quốc.",
   "referenceAnswers": [
-   "High school students enrolled in extracurricular debate academies demonstrated superior critical thinking test scores at graduation. Far from proving that debate instruction enhances cognitive skills, the study suffered from selection bias because participants predominantly belonged to households with high parental educational attainment. Attributing academic excellence purely to the debate curriculum conflates student background with instructional merit. School boards should conduct randomised controlled trials before funding nationwide debate mandates."
+   "High school students enrolled in extracurricular debate academies demonstrated superior critical thinking test scores at graduation. Far from proving that debate instruction enhances cognitive skills, the study suffered from selection bias because participants predominantly belonged to households with high parental educational attainment. Attributing academic excellence purely to the debate curriculum conflates student background with instructional merit. School boards should conduct randomised controlled trials before funding nationwide debate mandates.",
+   "Secondary pupils attending extracurricular debate academies achieved superior critical-thinking scores upon graduation. Rather than demonstrating that debate training elevates cognitive ability, the study suffered from selection bias because enrollees largely hailed from highly educated households. Attributing outstanding academic outcomes solely to debate instruction conflates family background with pedagogical impact. Education authorities ought to run randomised controlled trials prior to financing mandatory nationwide debate curricula.",
+   "High schoolers in after-school debate clubs posted top marks on critical-thinking exams when they graduated. Far from proving debate classes sharpen minds, the study skewed heavily toward kids whose parents already held advanced degrees. Crediting stellar results purely to the debate programme mixes up home advantage with teaching value. School leaders need to run randomised controlled trials before spending money to make debate mandatory everywhere."
   ],
   "grammarTags": [
    "reasoning - selection bias"
@@ -946,7 +1040,9 @@
   "meaningVi": "giới hạn phương pháp luận",
   "promptVi": "Các khảo sát quan sát liên kết việc tiêu thụ thực phẩm chế biến sẵn với tỷ lệ gia tăng rối loạn chuyển hóa ở người làm việc văn phòng tại đô thị. Điều cốt yếu là một giới hạn phương pháp luận lớn xuất hiện từ việc phụ thuộc vào nhật ký ăn uống tự kê khai, vốn nổi tiếng dễ bỏ sót các bữa ăn vặt không lành mạnh. Việc khẳng định mối quan hệ liều lượng - đáp ứng chính xác mà thiếu sự xác minh của các chỉ dấu sinh học khách quan có nguy cơ tính toán sai rủi ro dinh dưỡng thực tế. Các hướng dẫn chế độ ăn do đó cần tiết chế các tuyên bố cho đến khi phương pháp theo dõi chuyển hóa xác nhận tính chính xác của dữ liệu tự báo cáo.",
   "referenceAnswers": [
-   "Observational surveys link high consumption of ultra-processed foods with elevated incidence of metabolic disorders among urban professionals. Crucially, a major methodological limitation arises from the reliance on self-reported dietary recalls, which are notoriously prone to underreporting unhealthy snacking. Asserting a precise dose-response relationship without objective biomarker verification risks miscalculating the actual nutritional risk. Dietary guidelines must temper their claims until metabolomic tracking validates self-reported consumption data."
+   "Observational surveys link high consumption of ultra-processed foods with elevated incidence of metabolic disorders among urban professionals. Crucially, a major methodological limitation arises from the reliance on self-reported dietary recalls, which are notoriously prone to underreporting unhealthy snacking. Asserting a precise dose-response relationship without objective biomarker verification risks miscalculating the actual nutritional risk. Dietary guidelines must temper their claims until metabolomic tracking validates self-reported consumption data.",
+   "Observational studies associate ultra-processed food intake with rising metabolic disorder rates among city office workers. Crucially, a major methodological flaw stems from relying on self-reported food diaries, which are notoriously susceptible to omitting unhealthy snacks. Claiming an exact dose-response relationship without objective biomarker confirmation risks misestimating actual dietary hazards. Nutrition guidelines should therefore moderate their assertions until metabolic profiling verifies self-reported intake records.",
+   "Observational surveys tie processed food consumption to higher metabolic issues in urban desk workers. The big methodological catch is leaning on self-reported food logs, which people famously underreport when it comes to junk snacks. Asserting a precise dose-response link without objective biological markers can easily misjudge real nutrition risks. Dietary advice ought to tone down strong claims until metabolic tracking backs up what people say they eat."
   ],
   "grammarTags": [
    "reasoning - methodological limitation"
@@ -1001,9 +1097,11 @@
   "topic": "Công nghệ & Khoa học",
   "targetTerm": "confounding variable",
   "meaningVi": "biến số nhiễu",
-  "promptVi": "Việc gia tăng thời lượng sử dụng các ứng dụng mạng xã hội ở thanh thiếu niên trùng khớp với sự gia tăng tỷ lệ chẩn đoán lo âu trong cùng thời kỳ. Mặc dù các nhà hoạt động cảnh báo về tác hại của màn hình kỹ thuật số, phân tích hiện tại chưa kiểm soát được biến số nhiễu là sự thiếu hụt giấc ngủ và áp lực học tập ngày càng tăng. Việc coi mạng xã hội là nguyên nhân duy nhất gây nên suy giảm sức khỏe tâm thần phản ánh một đánh giá thiếu thận trọng về các dữ liệu hành vi. Các chính sách bảo vệ giới trẻ cần tính đến môi trường sống tổng thể trước khi ban hành quy định cấm đoán đơn thuần.",
+  "promptVi": "Đà tăng thời lượng sử dụng mạng xã hội ở thanh thiếu niên diễn ra trùng khớp với xu hướng gia tăng tỷ lệ chẩn đoán lo âu trong cùng giai đoạn. Mặc dù giới hoạt động liên tục cảnh báo về màn hình kỹ thuật số, các phân tích hiện tại vẫn chưa tính đến biến gây nhiễu từ tình trạng thiếu ngủ và áp lực học tập ngày càng nặng nề. Xem mạng xã hội là tác nhân duy nhất làm suy giảm sức khỏe tâm thần phản ánh lối đánh giá quá vội vàng trước dữ liệu hành vi. Các chính sách bảo vệ giới trẻ phải xét đến môi trường sống tổng thể trước khi ban hành những lệnh cấm đoán tuyệt đối.",
   "referenceAnswers": [
-   "An increase in social media usage among teenagers coincides with a rise in diagnosed anxiety rates over the same period. Although activists warn against digital screens, current analyses fail to account for the confounding variable of sleep deprivation and heightened academic pressure. Framing social media as the sole driver of deteriorating mental health reflects an overhasty assessment of behavioural data. Youth protection policies must consider the holistic living environment before enacting outright prohibitions."
+   "An increase in social media usage among teenagers coincides with a rise in diagnosed anxiety rates over the same period. Although activists warn against digital screens, current analyses fail to account for the confounding variable of sleep deprivation and heightened academic pressure. Framing social media as the sole driver of deteriorating mental health reflects an overhasty assessment of behavioural data. Youth protection policies must consider the holistic living environment before enacting outright prohibitions.",
+   "Rising adolescent time spent on social media platforms parallels increased anxiety diagnoses over the same timeframe. While campaigners highlight the dangers of digital screens, existing studies fail to adjust for confounding factors such as sleep loss and mounting academic stress. Treating social media as the sole cause of declining mental wellbeing reflects an incautious reading of behavioural evidence. Youth safeguards must address the broader living context before imposing blanket bans.",
+   "Longer hours on social apps among teens have matched a climb in diagnosed anxiety during the same period. Even though advocates warn about screen harm, current analyses don't factor in confounding pressures like lost sleep and heavier school stress. Blaming social media alone for worsening mental health is a hasty take on behavioural data. Youth policies need to look at young people's whole environment before slapping on outright bans."
   ],
   "grammarTags": [
    "Conditionality & Confounding Variables"
@@ -1145,7 +1243,7 @@
   "topic": "Môi trường & Năng lượng",
   "targetTerm": "boundary condition",
   "meaningVi": "điều kiện biên",
-  "promptVi": "Việc lắp đặt hệ thống pin năng lượng mặt trời mái nhà đã giảm đáng kể lượng điện tiêu thụ từ lưới quốc gia của các khu công nghiệp trong những tháng mùa hè. Tuy nhiên, hiệu quả kinh tế của giải pháp này chịu sự chi phối của điều kiện biên liên quan đến khả năng lưu trữ của pin tích điện và độ ổn định bức xạ theo mùa. Khi thời tiết chuyển sang mùa mưa kéo dài, việc thiếu hụt nguồn điện mặt trời buộc các nhà máy phải quay lại phụ thuộc hoàn toàn vào nguồn năng lượng hóa thạch. Hoạch định an ninh năng lượng cho các khu sản xuất vì thế không thể dựa vào các chỉ số sản lượng đỉnh điểm ngắn hạn.",
+  "promptVi": "Lắp đặt hệ thống điện mặt trời áp mái đã giúp các khu công nghiệp cắt giảm đáng kể lượng điện tiêu thụ từ lưới quốc gia trong những tháng mùa hè. Tuy nhiên, tính khả thi về tài chính của giải pháp này bị ràng buộc bởi điều kiện biên liên quan đến dung lượng pin lưu trữ và mức bức xạ theo mùa. Vào những mùa mưa kéo dài, tình trạng thiếu hụt điện mặt trời buộc các nhà máy phải quay lại phụ thuộc hoàn toàn vào nhiên liệu hóa thạch truyền thống. Hoạch định an ninh năng lượng dài hạn cho các ngành công nghiệp không thể chỉ dựa vào những chỉ số sản lượng đỉnh điểm ngắn hạn.",
   "referenceAnswers": [
    "Installing rooftop solar panel systems substantially reduced grid electricity consumption for industrial parks during summer months. However, the financial viability of this deployment is constrained by a boundary condition related to battery storage capacity and seasonal irradiance levels. During prolonged rainy seasons, solar power deficits force factories to revert entirely to traditional fossil fuels. Long-term energy security planning for industrial sectors cannot rely solely on short-term peak production metrics.",
    "Installing rooftop solar panel systems substantially reduced grid electricity consumption for industrial parks during summer months. However, the financial viability of this deployment is constrained by a boundary condition related to battery storage capacity and seasonal irradiance levels. During prolonged rainy seasons, solar power deficits force factories to revert entirely to traditional fossil fuels. Long-term energy security planning for industrial sectors can't rely solely on short-term peak production metrics.",
@@ -1156,7 +1254,13 @@
   ],
   "explanationVi": "'Boundary condition' (điều kiện biên / giới hạn áp dụng) xác định ranh giới hiệu quả của năng lượng mặt trời (phụ thuộc thời tiết và pin lưu trữ).",
   "rationaleVi": "Mục này thể hiện sự tinh tế trong việc nêu điều kiện giới hạn của bằng chứng kỹ thuật/kinh tế phù hợp với IELTS 8.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "However, the financial viability of this deployment is constrained by a boundary condition related with battery storage capacity and seasonal irradiance levels.",
+    "correction": "However, the financial viability of this deployment is constrained by a boundary condition related to battery storage capacity and seasonal irradiance levels.",
+    "reasonVi": "Tính từ \"related\" (liên quan đến) luôn đi cố định với giới từ \"to\" (\"related to something\"), không dùng giới từ \"with\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1171,7 +1275,9 @@
   "meaningVi": "giới hạn phương pháp luận",
   "promptVi": "Khảo sát khách tham quan tại các lễ hội văn hóa truyền thống ghi nhận mức chi tiêu bình quân của du khách quốc tế tăng trưởng mạnh so với năm ngoái. Một giới hạn phương pháp luận cốt lõi nằm ở việc dữ liệu thu thập hoàn toàn dựa vào phỏng vấn tự kê khai tại lối ra, nơi những du khách chi tiêu ít thường từ chối tham gia. Việc vội vã dự báo doanh thu du lịch toàn tỉnh dựa trên các con số thiếu đại diện này có thể dẫn đến sự bóp méo trong phân bổ ngân sách hạ tầng. Ban quản lý du lịch cần kết hợp dữ liệu giao dịch ngân hàng ẩn danh để kiểm chứng tính chính xác của khảo sát.",
   "referenceAnswers": [
-   "Surveys conducted at traditional cultural festivals indicate a sharp year-on-year increase in average spending by international tourists. A fundamental methodological limitation stems from the reliance on self-reported exit interviews, where low-spending visitors frequently opt out of participation. Extrapolating provincial tourism revenue based on such unrepresentative figures risks distorting future infrastructure budget allocations. Tourism boards must incorporate anonymised banking transaction data to cross-validate survey findings."
+   "Surveys conducted at traditional cultural festivals indicate a sharp year-on-year increase in average spending by international tourists. A fundamental methodological limitation stems from the reliance on self-reported exit interviews, where low-spending visitors frequently opt out of participation. Extrapolating provincial tourism revenue based on such unrepresentative figures risks distorting future infrastructure budget allocations. Tourism boards must incorporate anonymised banking transaction data to cross-validate survey findings.",
+   "Visitor polls at traditional cultural festivals point to robust year-on-year growth in average spending by overseas tourists. A central methodological weakness arises from relying exclusively on voluntary exit interviews, in which modest spenders routinely decline to take part. Projecting province-wide tourism income from such skewed figures risks distorting subsequent infrastructure funding decisions. Tourism authorities should integrate anonymised bank card records to validate survey accuracy.",
+   "Exit surveys at traditional festivals show international visitors spending much more on average than last year. The core flaw is that the numbers come purely from voluntary interviews at the gates, which budget-conscious travellers often skip. Forecasting provincial tourism revenue from such lopsided samples can throw off future infrastructure budgets. Tourism boards need to cross-check those polls against anonymised bank transaction data."
   ],
   "grammarTags": [
    "Data Evaluation & Methodological Limitations"
@@ -1225,7 +1331,7 @@
   "topic": "Công nghệ & Khoa học",
   "targetTerm": "spurious correlation",
   "meaningVi": "tương quan ngụy tạo",
-  "promptVi": "Việc triển khai hệ thống khóa thông minh tại các khu dân cư ngoại ô trùng hợp với sự sụt giảm số vụ trộm nhà. Tuy nhiên, lực lượng cảnh sát địa phương đã tăng gấp đôi số lượng tuần tra trong cùng thời điểm. Quy kết tỷ lệ tội phạm thấp hơn thuần túy cho công nghệ thông minh có nguy cơ tạo ra một tương quan ngụy tạo nếu không kiểm soát yếu tố tuần tra. Các quy hoạch an ninh đô thị cần phân tách mật độ tuần tra trước khi quyết định cấp ngân sách cho việc nâng cấp kỹ thuật số.",
+  "promptVi": "Đợt lắp đặt hệ thống khóa thông minh tại các khu dân cư ngoại ô diễn ra trùng thời điểm số vụ trộm đột nhập nhà dân sụt giảm. Tuy nhiên, lực lượng cảnh sát địa phương cũng đã tăng gấp đôi hoạt động tuần tra trong đúng khoảng thời gian đó. Quy kết tỷ lệ tội phạm giảm xuống thuần túy nhờ công nghệ thông minh có nguy cơ dẫn đến kết luận tương quan giả tạo nếu không kiểm soát yếu tố tần suất tuần tra. Quy hoạch tổng thể về an ninh đô thị phải bóc tách mật độ tuần tra của cảnh sát trước khi phân bổ ngân sách nâng cấp thiết bị số.",
   "referenceAnswers": [
    "The implementation of smart lock systems in suburban neighbourhoods coincided with a drop in residential burglaries. However, local police patrols were doubled during the exact same period. Attributing the lower crime rate solely to smart tech risks drawing a spurious correlation without controlling for patrol frequency. Urban security masterplans must isolate policing density before allocating funds for digital retrofits.",
    "The implementation of smart lock systems in suburban neighborhoods coincided with a drop in residential burglaries. However, local police patrols were doubled during the exact same period. Attributing the lower crime rate solely to smart tech risks drawing a spurious correlation without controlling for patrol frequency. Urban security masterplans must isolate policing density before allocating funds for digital retrofits.",
@@ -1285,7 +1391,9 @@
   "meaningVi": "giả định nền tảng",
   "promptVi": "Điện hóa các đoàn xe buýt đô thị đã giảm đáng kể lượng khí thải từ ống xả dọc theo các trục đường giao thông chính. Mặc dù vậy, khẳng định rằng sự chuyển dịch này mang lại lợi ích môi trường ròng dựa trên một giả định nền tảng rằng lưới điện khu vực phụ thuộc chủ yếu vào năng lượng tái tạo. Nếu nhiên liệu hóa thạch tiếp tục chiếm ưu thế trong sản xuất điện, lượng phát thải carbon chỉ đơn thuần bị dịch chuyển về mặt địa lý chứ không bị loại bỏ. Các chiến lược phát triển bền vững của thành phố phải đánh giá toàn bộ vòng đời phát thải trước khi mở rộng trợ giá xe điện.",
   "referenceAnswers": [
-   "Electrifying municipal bus fleets has significantly lowered tailpipe emissions along major transit corridors. Nevertheless, asserting that this shift delivers net environmental gains rests on an underlying assumption that the regional power grid relies heavily on renewable energy. Should fossil fuels continue to dominate electricity generation, the carbon footprint is merely displaced geographically rather than eliminated. City sustainability strategies must evaluate full life-cycle emissions prior to expanding electric vehicle subsidies."
+   "Electrifying municipal bus fleets has significantly lowered tailpipe emissions along major transit corridors. Nevertheless, asserting that this shift delivers net environmental gains rests on an underlying assumption that the regional power grid relies heavily on renewable energy. Should fossil fuels continue to dominate electricity generation, the carbon footprint is merely displaced geographically rather than eliminated. City sustainability strategies must evaluate full life-cycle emissions prior to expanding electric vehicle subsidies.",
+   "Transitioning urban bus fleets to electric power has markedly curtailed exhaust emissions along primary arterial routes. Even so, claiming that this conversion produces an overall environmental benefit depends on a foundational premise that the local electricity grid is predominantly supplied by renewables. Where fossil fuels remain the primary source of power generation, carbon emissions are simply relocated rather than eradicated. Municipal sustainability plans must therefore assess cradle-to-grave emissions before scaling up subsidies for electric vehicles.",
+   "Switching city buses to electricity has substantially cut tailpipe pollutants across major transport corridors. That said, arguing that this change yields net ecological advantages presupposes that regional electricity comes largely from renewable sources. If coal and gas continue to dominate power production, the carbon burden is only shifted elsewhere geographically instead of being eliminated. Before expanding electric vehicle subsidies, city planners need to examine full life-cycle emissions."
   ],
   "grammarTags": [
    "Underlying assumption & policy condition"
@@ -1313,14 +1421,22 @@
   "meaningVi": "nhân quả ngược",
   "promptVi": "Doanh nghiệp đưa phòng tập thể thao vào văn phòng ghi nhận tỉ lệ nhân viên nghỉ ốm ngắn hạn giảm trong hai năm theo dõi. Một khuyết điểm phương pháp luận cốt lõi xuất phát từ khả năng xảy ra nhân quả ngược, khi những nhân sự vốn có sức khỏe tốt có xu hướng tích cực sử dụng tiện ích thể thao và tự nhiên ít nghỉ làm hơn. Việc suy luận rằng các phòng tập thể thao trực tiếp làm giảm tỷ lệ vắng mặt vẫn còn quá sớm nếu thiếu các đánh giá thể trạng nền ban đầu. Bộ phận quản trị nhân sự nên theo dõi diễn biến sức khỏe người lao động trước khi bắt buộc triển khai mô hình này trên toàn hệ thống.",
   "referenceAnswers": [
-   "Companies introducing workplace fitness facilities recorded a drop in short-term employee sick leave over a two-year monitoring period. A fundamental methodological flaw arises from the possibility of reverse causality, as inherently healthier staff tend to utilise fitness amenities actively and miss work less often anyway. Inferring that fitness facilities directly cause reduced absenteeism remains premature without longitudinal baseline health testing. Corporate human resources departments ought to track employee health trajectories prior to mandating fitness interventions across all branches."
+   "Companies introducing workplace fitness facilities recorded a drop in short-term employee sick leave over a two-year monitoring period. A fundamental methodological flaw arises from the possibility of reverse causality, as inherently healthier staff tend to utilise fitness amenities actively and miss work less often anyway. Inferring that fitness facilities directly cause reduced absenteeism remains premature without longitudinal baseline health testing. Corporate human resources departments ought to track employee health trajectories prior to mandating fitness interventions across all branches.",
+   "Employers that installed on-site gyms observed a decline in brief sickness absences among staff during a two-year follow-up period. A central methodological weakness stems from potential reverse causation, whereby employees who are already physically fit are more inclined to make regular use of gym facilities and take fewer sick days regardless. Concluding that workplace gyms directly lower absenteeism is premature in the absence of baseline fitness assessments. Human resources teams should monitor workforce health trends before making such programmes mandatory company-wide.",
+   "Firms that added office gyms saw short-term sick leave drop over two years of tracking. At the heart of the issue, however, is a methodological flaw involving reverse causality: naturally healthier workers are far more likely to use the gym consistently and miss work less often in the first place. Without initial physical health checks, assuming that the gym itself drives down absences jumps the gun. Rather than rolling out the scheme across every office right away, HR departments ought to track how employee health evolves over time."
   ],
   "grammarTags": [
    "Reverse causality & sample limitation"
   ],
   "explanationVi": "Thuật ngữ 'reverse causality' giải thích chiều tác động ngược lại: sức khỏe tốt có trước thúc đẩy việc tập luyện, thay vì phòng tập làm tăng sức khỏe.",
   "rationaleVi": "Item này rèn luyện khả năng nhận diện suy luận sai lầm về chiều nhân quả trong dữ liệu nhân sự doanh nghiệp ở cấp độ nâng cao.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Corporate human resources departments ought to track employee health trajectories prior to mandate fitness interventions across all branches.",
+    "correction": "Corporate human resources departments ought to track employee health trajectories prior to mandating fitness interventions across all branches.",
+    "reasonVi": "Trong cụm \"prior to\" (trước khi), từ \"to\" là giới từ chứ không phải \"to\" của động từ nguyên mẫu, nên động từ theo sau bắt buộc chia dạng V-ing (\"prior to mandating\")."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1335,7 +1451,9 @@
   "meaningVi": "thiên vị chọn lọc",
   "promptVi": "Các trường đại học áp dụng mô hình lớp học đảo ngược báo cáo điểm thi kết thúc học phần của sinh viên tham gia cao hơn mặt bằng chung. Thay vì chứng minh sự vượt trội về phương pháp giảng dạy, các chỉ số thu thập được lại mắc phải thiên vị chọn lọc do thử nghiệm thu hút những cá nhân có tinh thần tự học cao chủ động đăng ký. Việc tổng quát hóa kết quả tích cực này sang nhóm sinh viên có học lực kém hơn là dựa trên những giả định chưa được kiểm chứng về tính tự chủ của người học. Hội đồng giáo dục cần tiến hành phân bổ ngẫu nhiên trước khi cải cách chương trình cốt lõi trên phạm vi toàn quốc.",
   "referenceAnswers": [
-   "Universities adopting flipped classroom models reported higher end-of-term assessment scores among participating students. Rather than confirming pedagogical superiority, the gathered metrics suffer from selection bias because the trial attracted highly self-motivated individuals who proactively registered for the module. Generalising these positive outcomes to lower-performing student cohorts rests on unverified assumptions regarding learner autonomy. Educational boards ought to conduct randomised allocations before reforming core curricula nationwide."
+   "Universities adopting flipped classroom models reported higher end-of-term assessment scores among participating students. Rather than confirming pedagogical superiority, the gathered metrics suffer from selection bias because the trial attracted highly self-motivated individuals who proactively registered for the module. Generalising these positive outcomes to lower-performing student cohorts rests on unverified assumptions regarding learner autonomy. Educational boards ought to conduct randomised allocations before reforming core curricula nationwide.",
+   "Higher education institutions implementing flipped classroom approaches reported superior end-of-semester exam grades among participating cohorts. Instead of demonstrating instructional superiority, these figures are compromised by selection bias, as the pilot attracted highly autonomous learners who enrolled voluntarily. Extrapolating such encouraging findings to academically weaker students relies on untested assumptions about learner self-direction. Education boards should carry out randomised assignments before overhauling core national curricula.",
+   "Universities that trialled flipped teaching saw participating students outperform the average on final module exams. Far from proving that the teaching method itself works better, the data suffer from selection bias because motivated, self-directed students chose to sign up in the first place. Extending these gains to lower-achieving learners takes unproven assumptions about student autonomy for granted. Before rolling out nationwide curriculum reforms, education authorities need to run randomised trials."
   ],
   "grammarTags": [
    "Selection bias & generalisability condition"
@@ -1361,7 +1479,7 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "methodological limitation",
   "meaningVi": "giới hạn phương pháp luận",
-  "promptVi": "Việc chuyển đổi các trung tâm đô thị lịch sử thành phố đi bộ đã mang lại sự gia tăng rõ rệt về lượng khách đi bộ và doanh thu cửa hàng trong vòng mười hai tháng. Tuy nhiên, xu hướng quan sát được này lại diễn ra cùng lúc với một chiến dịch quảng bá du lịch quốc tế quy mô lớn giúp tăng lượng du khách trên toàn vùng. Một giới hạn phương pháp luận nghiêm trọng xuất phát từ việc nghiên cứu không thể tách biệt sự thay đổi thiết kế không gian khỏi các nỗ lực xúc tiến kinh tế vĩ mô. Cơ quan quy hoạch đô thị phải áp dụng phân tích không gian phản thực tế trước khi quy kết sức sống thương mại thuần túy cho việc cấm xe cơ giới.",
+  "promptVi": "Chuyển đổi các khu trung tâm đô thị cổ thành phố đi bộ đã mang lại mức tăng rõ rệt cả về lưu lượng khách bộ hành lẫn doanh thu cửa hàng sau mười hai tháng. Tuy nhiên, xu hướng quan sát được này lại diễn ra trùng khớp với một chiến dịch quảng bá du lịch quốc tế quy mô lớn giúp thúc đẩy lượng khách trên toàn vùng. Một hạn chế phương pháp luận nghiêm trọng bắt nguồn từ chỗ nghiên cứu chưa thể tách biệt thay đổi trong thiết kế không gian khỏi các nỗ lực xúc tiến kinh tế vĩ mô. Cơ quan quy hoạch đô thị phải áp dụng phân tích không gian phản thực tế trước khi quy kết sức sống thương mại thuần túy cho mô hình khu vực không xe cơ giới.",
   "referenceAnswers": [
    "Pedestrianising historic city centres yielded a marked increase in footfall and store revenue over twelve months. This observed trend, however, coincided with a major international tourism campaign that boosted visitor numbers across the entire region. A severe methodological limitation stems from the study's inability to isolate spatial design changes from macroeconomic promotional efforts. Urban planning authorities must apply counterfactual spatial analysis before attributing commercial vitality strictly to car-free zones.",
    "Pedestrianising historic city centers yielded a marked increase in footfall and store revenue over twelve months. This observed trend, however, coincided with a major international tourism campaign that boosted visitor numbers across the entire region. A severe methodological limitation stems from the study's inability to isolate spatial design changes from macroeconomic promotional efforts. Urban planning authorities must apply counterfactual spatial analysis before attributing commercial vitality strictly to car-free zones."
@@ -1419,9 +1537,11 @@
   "topic": "Văn hóa & Du lịch",
   "targetTerm": "generalisability",
   "meaningVi": "khả năng tổng quát hóa",
-  "promptVi": "Việc áp dụng giá vé tham quan phân cấp tại các bảo tàng quốc gia đã mang lại nguồn kinh phí lớn hơn cho các dự án bảo tồn di sản mà không làm giảm lượng khách. Một hạn chế lớn nằm ở chỗ dữ liệu thu thập chỉ giới hạn ở các địa điểm trọng điểm tại thủ đô, nơi tập trung đối tượng khách quốc tế có khả năng chi trả cao. Khả năng tổng quát hóa của chiến lược giá này sang các di tích văn hóa địa phương vẫn rất đáng nghi ngờ do thu nhập khả dụng của người dân bản địa thấp hơn đáng kể. Ban quản lý du lịch cần đánh giá độ co giãn của cầu theo giá tại từng khu vực trước khi ban hành mức phí tham quan đồng nhất trên toàn quốc.",
+  "promptVi": "Áp dụng biểu giá vé phân bậc tại hệ thống bảo tàng quốc gia đã giúp gia tăng tổng nguồn kinh phí cho các dự án bảo tồn mà không làm giảm lượng khách tham quan. Một lưu ý quan trọng nằm ở chỗ phạm vi thu thập dữ liệu chỉ bó hẹp tại những điểm trưng bày đầu tàu ở thủ đô vốn đón nhóm khách quốc tế khá giả. Khả năng khái quát hóa chiến lược định giá này sang các di tích văn hóa cấp vùng vẫn rất đáng hoài nghi do mức thu nhập khả dụng thấp hơn của khách tham quan địa phương. Cơ quan quản lý du lịch phải đánh giá độ co giãn của cầu tại từng vùng trước khi áp dụng đồng loạt một khung phí tham quan chuẩn hóa cho mọi di sản công cộng.",
   "referenceAnswers": [
-   "Introducing tiered entry fees at national museums resulted in higher overall funding for conservation projects without lowering visitor counts. A major caveat lies in the fact that data collection was restricted to flagship capital venues with affluent international clientele. The generalisability of this pricing strategy to regional cultural sites remains highly questionable given the lower disposable income of local patrons. Tourism boards must assess regional demand elasticity prior to enforcing standardised admission fees across all public heritage landmarks."
+   "Introducing tiered entry fees at national museums resulted in higher overall funding for conservation projects without lowering visitor counts. A major caveat lies in the fact that data collection was restricted to flagship capital venues with affluent international clientele. The generalisability of this pricing strategy to regional cultural sites remains highly questionable given the lower disposable income of local patrons. Tourism boards must assess regional demand elasticity prior to enforcing standardised admission fees across all public heritage landmarks.",
+   "Adopting tiered admission pricing at national museums generated greater funding for heritage preservation without deterring attendance. A key shortcoming, however, is that observations were confined to premier venues in the capital city, which attract wealthy overseas tourists with substantial spending power. Whether this pricing model can be transferred to provincial cultural landmarks remains doubtful, given residents' markedly lower disposable incomes. Tourism authorities must evaluate local price elasticity of demand before standardising museum admission fees nationwide.",
+   "Charging differentiated ticket prices at national museums boosted conservation budgets without shrinking visitor numbers. The catch is that the evidence comes exclusively from major flagship sites in the capital, where affluent foreign visitors are willing and able to pay more. Applying the same fee structure to regional heritage sites is far less certain to work because local residents have noticeably less disposable income. Before imposing uniform ticket prices across the country, tourism officials should test how sensitive demand is to price in each region."
   ],
   "grammarTags": [
    "Generalisability & sample constraint"
@@ -1447,16 +1567,24 @@
   "topic": "Công nghệ & Khoa học",
   "targetTerm": "confounding variable",
   "meaningVi": "biến số nhiễu",
-  "promptVi": "Việc triển khai một phần mềm quản lý dự án mới tại các công ty khởi nghiệp trùng hợp với sự tăng trưởng năng suất của nhân viên trong hai quý liên tiếp. Mặc dù vậy, đợt áp dụng này diễn ra cùng thời điểm với việc cắt giảm hạn ngạch cuộc họp hàng tuần và áp dụng chính sách làm việc linh hoạt. Việc bỏ qua biến số nhiễu quan trọng này khiến khẳng định công nghệ mới trực tiếp thúc đẩy hiệu suất trở nên thiếu căn cứ. Việc đánh giá công cụ kỹ thuật đòi hỏi các thử nghiệm đối chứng để tách biệt can thiệp công nghệ khỏi quá trình tái cấu trúc môi trường làm việc.",
+  "promptVi": "Quá trình đưa phần mềm quản lý dự án mới vào các công ty khởi nghiệp công nghệ diễn ra trùng khớp với mức tăng năng suất nhân sự đo lường được trong hai quý liên tiếp. Dẫu vậy, đợt triển khai này lại xuất hiện song hành cùng chủ trương cắt giảm số cuộc họp hằng tuần trên toàn công ty và áp dụng giờ làm việc linh hoạt. Bỏ qua biến gây nhiễu then chốt này khiến mọi khẳng định cho rằng phần mềm trực tiếp thúc đẩy hiệu suất trở nên quá vội vàng. Một cuộc đánh giá chặt chẽ đối với công cụ số này đòi hỏi các thử nghiệm có đối chứng nhằm tách biệt can thiệp công nghệ khỏi quá trình tái cấu trúc môi trường làm việc.",
   "referenceAnswers": [
-   "The implementation of a new project management software in tech start-ups coincided with a measurable surge in staff productivity over two consecutive quarters. Nevertheless, this roll-out occurred alongside a company-wide reduction in weekly meetings and the introduction of flexible working hours. Failing to account for this critical confounding variable renders any claim that the software directly boosted efficiency premature. A rigorous evaluation of the digital tool requires controlled trials isolating technological intervention from workplace restructuring."
+   "The implementation of a new project management software in tech start-ups coincided with a measurable surge in staff productivity over two consecutive quarters. Nevertheless, this roll-out occurred alongside a company-wide reduction in weekly meetings and the introduction of flexible working hours. Failing to account for this critical confounding variable renders any claim that the software directly boosted efficiency premature. A rigorous evaluation of the digital tool requires controlled trials isolating technological intervention from workplace restructuring.",
+   "Rolling out new project management software at start-up companies coincided with a rise in employee output across two straight quarters. However, this deployment occurred simultaneously with a reduction in weekly meeting quotas and the adoption of flexible working arrangements. Neglecting this critical confounding factor leaves any assertion that the software directly drove productivity gains unsupported. Assessing the technical tool properly requires controlled experiments that separate software adoption from broader workplace reorganisation.",
+   "Start-ups that introduced a new project management tool saw worker productivity climb for two consecutive quarters. Yet that rollout happened at the exact same time as fewer weekly meetings were mandated and flexible work policies came into effect. Once you overlook a confounding factor like that, claiming the software itself boosted performance simply does not hold water. To evaluate the software fairly, companies need controlled trials that untangle the technology from changes in how work is organised."
   ],
   "grammarTags": [
    "Conditionality & Confounding Variables"
   ],
   "explanationVi": "Mục 'confounding variable' được dùng để chỉ ra một yếu tố ngoại lai có thể giải thích sự thay đổi của kết quả thay vì bản thân công nghệ được áp dụng, làm sáng tỏ giới hạn của bằng chứng tương quan.",
   "rationaleVi": "Đoạn văn thể hiện lập luận phản biện cấp độ 8.5 bằng cách bác bỏ kết luận nhân quả vội vã, chỉ ra yếu tố nhiễu cụ thể và đưa ra điều kiện thử nghiệm cần thiết để xác minh tính đúng đắn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Nevertheless, this roll-out was occurred alongside a company-wide reduction in weekly meetings and the introduction of flexible working hours.",
+    "correction": "Nevertheless, this roll-out occurred alongside a company-wide reduction in weekly meetings and the introduction of flexible working hours.",
+    "reasonVi": "Động từ \"occur\" (diễn ra/xảy ra) là nội động từ nên chỉ dùng ở thể chủ động (\"occurred\"), tuyệt đối không chia thể bị động \"was occurred\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1471,7 +1599,9 @@
   "meaningVi": "thiên vị chọn lọc",
   "promptVi": "Học sinh tại các trường trung học áp dụng mô hình học tập theo dự án thực địa đạt tỷ lệ đỗ đại học cao hơn đáng kể so với trung bình toàn quốc. Mặc dù các con số này phản ánh một xu hướng tích cực, dữ liệu thu thập lại tập trung vào các trường chuyên ở đô thị nơi học sinh đầu vào đã qua sàng lọc kỹ lưỡng. Sự hiện diện của thiên vị chọn lọc này làm suy giảm đáng kể giá trị của giả định rằng học tập qua dự án tự nó vượt trội hơn giảng dạy truyền thống. Mọi thay đổi chính sách giáo dục quy mô lớn do đó phải dựa trên các nghiên cứu tiến cứu trải rộng trên nhiều môi trường học tập đa dạng.",
   "referenceAnswers": [
-   "Students attending secondary schools that adopted field-based project learning achieved significantly higher university entry rates than the national average. Whilst these figures reflect a positive trend, the collected data focused on selective urban schools whose intake had already undergone rigorous screening. The presence of selection bias severely weakens the assumption that project-based learning is inherently superior to conventional instruction. Any large-scale educational policy shift must therefore depend on prospective studies across diverse learning environments."
+   "Students attending secondary schools that adopted field-based project learning achieved significantly higher university entry rates than the national average. Whilst these figures reflect a positive trend, the collected data focused on selective urban schools whose intake had already undergone rigorous screening. The presence of selection bias severely weakens the assumption that project-based learning is inherently superior to conventional instruction. Any large-scale educational policy shift must therefore depend on prospective studies across diverse learning environments.",
+   "Secondary school pupils enrolled in field-based project learning programmes attained substantially higher university admission rates than the national norm. While these statistics point to an encouraging pattern, the sample was drawn primarily from selective city schools whose entrants had already been rigorously vetted. This selection bias considerably undermines the premise that project-based instruction is intrinsically more effective than standard classroom teaching. Major shifts in education policy must consequently be grounded in prospective research spanning varied school contexts.",
+   "High schoolers taking part in field-based project learning entered university at rates well above the national average. Even though the numbers look promising on the surface, the study looked mostly at selective urban schools where students had already passed strict entrance screening. Because of that selection bias, the claim that project-based learning beats traditional teaching on its own merits loses much of its weight. Broad policy reforms in education therefore need to rely on forward-looking studies across a wide mix of learning settings."
   ],
   "grammarTags": [
    "Assumptions & Selection Bias"
@@ -1584,9 +1714,11 @@
   "topic": "Văn hóa & Du lịch",
   "targetTerm": "boundary condition",
   "meaningVi": "điều kiện biên",
-  "promptVi": "Việc số hóa các bộ sưu tập di sản tại các trung tâm văn hóa lớn đã làm tăng gấp đôi lượng tương tác và đăng ký vé trước trực tuyến. Mặc dù vậy, hiệu quả của chiến lược này bị chi phối bởi một điều kiện biên liên quan đến sự có sẵn của băng thông rộng tốc độ cao và mức độ thông thạo công nghệ của công chúng mục tiêu. Tại các khu vực hẻo lánh nơi kết nối còn hạn chế, các cuộc triển lãm ảo không tạo ra bất kỳ sự gia tăng đo lường được nào về sự tham gia văn hóa. Việc nhân rộng các sáng kiến nghệ thuật số đòi hỏi phải đầu tư đáng kể vào hạ tầng thay vì cắt giảm sớm kinh phí cho các hoạt động trực tiếp.",
+  "promptVi": "Số hóa các bộ sưu tập di sản tại những trung tâm văn hóa lớn đã giúp lượng tương tác trực tuyến và đặt vé trước tăng gấp đôi. Mặc dù vậy, hiệu quả của chiến lược này chịu sự chi phối của điều kiện biên về độ phủ băng thông rộng tốc độ cao cũng như năng lực số ở nhóm công chúng mục tiêu. Tại các vùng hẻo lánh nơi kết nối mạng còn thiếu thốn, những cuộc triển lãm ảo không tạo ra bất kỳ mức tăng đo lường được nào về tỷ lệ tham gia đời sống văn hóa. Nhân rộng các sáng kiến nghệ thuật số có điều kiện tiên quyết là phải đầu tư mạnh cho hạ tầng thay vì sớm cắt giảm nguồn kinh phí dành cho hoạt động trực tiếp.",
   "referenceAnswers": [
-   "Digitising heritage collections at major cultural hubs doubled online engagement and advance ticket bookings. Nevertheless, the efficacy of this strategy is subject to a boundary condition regarding high-speed broadband availability and digital literacy among target audiences. In remote areas where connectivity remains inadequate, virtual exhibitions fail to yield any measurable increase in cultural participation. Scaling digital arts initiatives presupposes substantial infrastructure investment rather than premature reductions in physical funding."
+   "Digitising heritage collections at major cultural hubs doubled online engagement and advance ticket bookings. Nevertheless, the efficacy of this strategy is subject to a boundary condition regarding high-speed broadband availability and digital literacy among target audiences. In remote areas where connectivity remains inadequate, virtual exhibitions fail to yield any measurable increase in cultural participation. Scaling digital arts initiatives presupposes substantial infrastructure investment rather than premature reductions in physical funding.",
+   "Digitising heritage archives at major cultural institutions doubled online audience engagement and advance ticket reservations. However, the success of this approach is constrained by a boundary condition involving high-speed internet access and the technological proficiency of intended audiences. In isolated regions with poor connectivity, virtual showcases produce no measurable growth in cultural involvement. Expanding digital arts programmes requires substantial investment in connectivity infrastructure rather than prematurely cutting budgets for in-person programming.",
+   "Putting heritage collections online at leading cultural centres doubled both digital engagement and advance bookings. Even so, how well this works depends strictly on whether target audiences have fast broadband and the digital skills to use it. In remote communities where internet access is patchy, online exhibitions fail to spark any noticeable rise in cultural participation. Scaling up digital cultural projects means investing heavily in infrastructure first, instead of slashing funding for physical events too soon."
   ],
   "grammarTags": [
    "Qualifications & Boundary Conditions"
@@ -1612,9 +1744,11 @@
   "topic": "Môi trường & Năng lượng",
   "targetTerm": "lifecycle emissions",
   "meaningVi": "phát thải vòng đời",
-  "promptVi": "Việc thay thế đèn đường đô thị truyền thống bằng công nghệ LED đã đem lại sự sụt giảm lượng điện tiêu thụ hàng đêm trên các lưới điện thành phố. Mặc dù thành công vận hành này rất rõ ràng, kết luận rằng chuyển đổi này đem lại lợi ích môi trường ròng chỉ giữ nguyên giá trị nếu phát thải vòng đời từ khâu chế tạo và xử lý rác thải điện tử được hạch toán đầy đủ. Nếu việc khai thác nguyên liệu thô và xử lý linh kiện tạo ra ô nhiễm nghiêm trọng ở nơi khác, lượng tiết kiệm năng lượng tại chỗ coi như bị triệt tiêu về mặt sinh thái. Một chính sách môi trường đúng đắn đòi hỏi hạch toán cacbon toàn diện từ khâu tổng hợp vật liệu đến khi loại bỏ.",
+  "promptVi": "Thay thế đèn đường đô thị truyền thống bằng công nghệ LED đã giúp cắt giảm lượng điện tiêu thụ ban đêm trên khắp các lưới điện thành phố. Dù thành công vận hành này rất rõ ràng, kết luận rằng bước chuyển đổi mang lại lợi ích môi trường ròng chỉ giữ nguyên giá trị khi lượng phát thải vòng đời từ khâu sản xuất đến xử lý rác thải điện tử được hạch toán đầy đủ. Nếu quá trình khai thác nguyên liệu thô và gia công linh kiện gây ô nhiễm nghiêm trọng ở nơi khác, phần năng lượng tiết kiệm được tại chỗ coi như bị triệt tiêu về mặt sinh thái. Một chính sách môi trường đúng đắn đòi hỏi phải hạch toán carbon toàn diện từ khâu tổng hợp vật liệu cho đến khi thải bỏ cuối vòng đời.",
   "referenceAnswers": [
-   "Replacing conventional urban streetlights with LED technology secured reductions in nocturnal electricity consumption across municipal grids. Clear as this operational success is, concluding that the transition delivers net environmental gains remains valid only if lifecycle emissions from manufacturing and electronic waste disposal are fully accounted for. Should raw material extraction and component processing generate severe pollution elsewhere, local energy savings are ecologically neutralised. Sound environmental policy demands full carbon accounting from material synthesis to end-of-life disposal."
+   "Replacing conventional urban streetlights with LED technology secured reductions in nocturnal electricity consumption across municipal grids. Clear as this operational success is, concluding that the transition delivers net environmental gains remains valid only if lifecycle emissions from manufacturing and electronic waste disposal are fully accounted for. Should raw material extraction and component processing generate severe pollution elsewhere, local energy savings are ecologically neutralised. Sound environmental policy demands full carbon accounting from material synthesis to end-of-life disposal.",
+   "Substituting LED fixtures for traditional urban streetlamps delivered lower overnight power usage across municipal electricity networks. Clear though these operational savings may be, claiming a net environmental benefit holds true only when lifecycle emissions from production and e-waste management are comprehensively incorporated. If resource extraction and component disposal cause substantial pollution elsewhere, on-site energy reductions are effectively offset in ecological terms. Rigorous environmental policymaking requires comprehensive carbon accounting spanning material synthesis through final disposal.",
+   "Swapping out conventional street lighting for LEDs cut night-time electricity demand across city grids. While the day-to-day energy savings are undeniable, calling this an overall win for the environment only makes sense if emissions from manufacturing and electronic waste disposal are counted in full. Whenever mining raw materials and handling discarded parts create serious pollution in other regions, local electricity savings are wiped out ecologically. Effective environmental policy therefore needs end-to-end carbon tracking, from raw material production right through to disposal."
   ],
   "grammarTags": [
    "Evidence Limitation & Lifecycle Evaluation"
@@ -1642,7 +1776,9 @@
   "meaningVi": "giới hạn phương pháp luận",
   "promptVi": "Khảo sát giao thông chỉ ra rằng những người đi làm chuyển sang xe đạp điện tiết kiệm bình quân mười lăm phút cho các chuyến đi hằng ngày. Một giới hạn phương pháp luận cốt lõi xuất phát từ việc phụ thuộc vào nhật ký tự kê khai được thu thập duy nhất trong những tháng hè thời tiết ôn hòa. Sự thiếu hụt dữ liệu theo dõi thực nghiệm trong điều kiện mùa đông khắc nghiệt khiến các tuyên bố về sự thay đổi phương thức di chuyển lâu dài trở nên thiếu căn cứ. Các cơ quan quản lý giao thông đô thị nên thu thập dữ liệu cảm biến quanh năm trước khi phân bổ ngân sách đầu tư cho hạ tầng xe đạp riêng.",
   "referenceAnswers": [
-   "Transport surveys indicate that commuters switching to e-bikes saved an average of fifteen minutes on daily journeys. A core methodological limitation stems from reliance on self-reported logs collected exclusively during mild summer months. The absence of empirical tracking during severe winter conditions leaves claims regarding long-term modal shift unsubstantiated. Urban transit authorities ought to collect year-round sensor data before allocating capital budgets to dedicated cycling infrastructure."
+   "Transport surveys indicate that commuters switching to e-bikes saved an average of fifteen minutes on daily journeys. A core methodological limitation stems from reliance on self-reported logs collected exclusively during mild summer months. The absence of empirical tracking during severe winter conditions leaves claims regarding long-term modal shift unsubstantiated. Urban transit authorities ought to collect year-round sensor data before allocating capital budgets to dedicated cycling infrastructure.",
+   "Commuter surveys show that travellers adopting electric bicycles trimmed an average of fifteen minutes off their daily trips. A primary methodological weakness arises from relying on self-reported travel diaries compiled solely during mild summer weather. Without empirical monitoring during harsh winter months, assertions of lasting changes in transport habits remain unverified. Municipal transport planners should gather continuous year-round sensor data before committing capital funds to segregated cycling lanes.",
+   "Transport surveys suggest that people who switched to e-bikes shaved around fifteen minutes off their everyday commute. The main flaw in the evidence, however, is that it rests on personal travel logs recorded only in pleasant summer conditions. Because there is no hard tracking data from severe winter weather, claims about a permanent shift in how people travel lack solid proof. Before spending public budgets on dedicated bike infrastructure, city transport agencies ought to collect sensor data across all seasons."
   ],
   "grammarTags": [
    "Methodological Limitations & Data Integrity"
@@ -1668,9 +1804,11 @@
   "topic": "Môi trường & Năng lượng",
   "targetTerm": "spurious correlation",
   "meaningVi": "tương quan ngụy tạo",
-  "promptVi": "Việc mở rộng công suất trang trại điện gió ngoài khơi trùng hợp với sự sụt giảm đáng kể cường độ carbon của lưới điện khu vực. Dù vậy, quan sát này bỏ qua việc đóng cửa đồng thời các nhà máy chế tạo công nghiệp nặng tại cùng các dải ven biển. Việc quy kết lưới điện sạch hơn thuần túy cho hạ tầng tái tạo có nguy cơ tạo ra một tương quan ngụy tạo do bỏ qua các chuyển dịch công nghiệp vĩ mô. Các đánh giá giải carbon do đó phải sử dụng các phân tích vòng đời đa ngành thay vì dựa vào dữ liệu thời gian thô sơ.",
+  "promptVi": "Mở rộng công suất các trang trại điện gió ngoài khơi diễn ra trùng khớp với mức sụt giảm đáng kể cường độ phát thải carbon trên lưới điện khu vực. Dù vậy, quan sát này đã bỏ qua thực tế là hàng loạt nhà máy chế tạo công nghiệp nặng nằm dọc cùng dải ven biển cũng ngừng hoạt động vào đúng thời điểm đó. Quy kết lưới điện sạch hơn hoàn toàn nhờ hạ tầng năng lượng tái tạo có nguy cơ tạo lập một mối tương quan giả tạo do phớt lờ các dịch chuyển công nghiệp vĩ mô. Các đánh giá về quá trình khử carbon vì thế phải sử dụng phân tích vòng đời đa ngành thay vì chỉ dựa vào dữ liệu thời gian thô sơ.",
   "referenceAnswers": [
-   "Expanding offshore wind farm capacity coincided with a notable decline in regional grid carbon intensity. Nevertheless, this observation ignores the concurrent decommissioning of heavy industrial manufacturing plants within the same coastal zones. Attributing the cleaner grid exclusively to renewable infrastructure risks establishing a spurious correlation by overlooking macro-industrial shifts. Decarbonisation assessments must therefore employ multi-sectoral lifecycle analyses rather than relying on crude temporal data."
+   "Expanding offshore wind farm capacity coincided with a notable decline in regional grid carbon intensity. Nevertheless, this observation ignores the concurrent decommissioning of heavy industrial manufacturing plants within the same coastal zones. Attributing the cleaner grid exclusively to renewable infrastructure risks establishing a spurious correlation by overlooking macro-industrial shifts. Decarbonisation assessments must therefore employ multi-sectoral lifecycle analyses rather than relying on crude temporal data.",
+   "Growth in offshore wind generation capacity occurred alongside a pronounced reduction in the carbon intensity of the regional power grid. Even so, this correlation overlooks the simultaneous shutdown of heavy industrial plants along the same coastline. Crediting the drop in emissions solely to renewable energy infrastructure risks inferring a spurious link by neglecting wider industrial restructuring. Decarbonisation evaluations should therefore rely on cross-sectoral lifecycle assessments instead of rudimentary time-series comparisons.",
+   "Adding more offshore wind capacity happened right alongside a sharp fall in the regional grid's carbon intensity. What that observation leaves out, however, is that energy-intensive factories along the very same coast were shutting down at the same time. Giving renewables all the credit for a cleaner grid risks mistaking macro-industrial decline for a direct cause-and-effect link. To measure decarbonisation accurately, analysts need multi-sector lifecycle studies rather than simplistic over-time figures."
   ],
   "grammarTags": [
    "argumentation & methodology"
@@ -1728,7 +1866,9 @@
   "meaningVi": "biến số nhiễu",
   "promptVi": "Các cuộc thử nghiệm tuần làm việc bốn ngày tại các công ty công nghệ đã cho thấy sự gia tăng rõ rệt về doanh thu hàng giờ tạo ra trên mỗi nhân viên. Điều cốt yếu là các doanh nghiệp tham gia đồng thời tự động hóa các quy trình làm việc hành chính thường quy và loại bỏ các cuộc họp nội bộ không cần thiết. Việc không kiểm soát biến số nhiễu này khiến khẳng định rằng việc rút ngắn giờ làm trực tiếp nâng cao năng suất trở nên thiếu căn cứ phần lớn. Lãnh đạo doanh nghiệp nên tách biệt các can thiệp tái cấu trúc vận hành trước khi chuẩn hóa lịch làm việc rút ngắn.",
   "referenceAnswers": [
-   "Trials of a four-day workweek across technology firms demonstrated a marked increase in hourly revenue generated per employee. Crucially, participating businesses simultaneously automated routine administrative workflows and eliminated non-essential internal meetings. Failing to control for this confounding variable renders the assertion that reduced working hours directly boost productivity largely ungrounded. Corporate leaders should isolate operational restructuring interventions prior to standardising shortened work schedules."
+   "Trials of a four-day workweek across technology firms demonstrated a marked increase in hourly revenue generated per employee. Crucially, participating businesses simultaneously automated routine administrative workflows and eliminated non-essential internal meetings. Failing to control for this confounding variable renders the assertion that reduced working hours directly boost productivity largely ungrounded. Corporate leaders should isolate operational restructuring interventions prior to standardising shortened work schedules.",
+   "Pilot programmes testing a four-day working week across tech enterprises revealed a substantial rise in revenue earned per employee per hour. Crucially, the firms involved concurrently automated repetitive administrative tasks and scrapped superfluous internal meetings. Leaving this confounding factor uncontrolled renders any conclusion that shorter hours directly raise productivity largely unfounded. Business executives should disentangle operational workflow reforms before institutionalising condensed workweeks.",
+   "Four-day workweek trials in technology companies showed hourly revenue per worker climbing noticeably. What really matters, though, is that those same firms simultaneously automated routine paperwork and cut out unnecessary staff meetings. Failing to account for those parallel changes makes the idea that working fewer hours directly lifts productivity mostly guesswork. Before making shorter schedules standard policy, company leaders need to separate out the impact of internal workflow restructuring."
   ],
   "grammarTags": [
    "causal reasoning & variables"
@@ -1756,7 +1896,9 @@
   "meaningVi": "điều kiện biên",
   "promptVi": "Trẻ nhỏ theo học các trường mầm non song ngữ toàn thời gian đạt điểm số cao hơn về chức năng điều hành so với bạn bè học đơn ngữ. Mặc dù vậy, tương quan tích cực này vẫn chịu sự chi phối của một điều kiện biên nghiêm ngặt liên quan đến việc liệu cha mẹ có duy trì một môi trường đọc viết phong phú tại nhà hay không. Nếu thiếu sự tương tác trí tuệ thường xuyên từ gia đình, các lợi thế phát triển của việc giảng dạy song ngữ sớm sẽ suy giảm đáng kể. Hoạch định chính sách giáo dục phải đánh giá các yếu tố gia đình đi kèm thay vì xem việc học song ngữ sớm là một giải pháp nâng cao trí tuệ vô điều kiện.",
   "referenceAnswers": [
-   "Young children enrolled in immersive dual-language preschools achieved higher executive function scores than their monolingual peers. Nevertheless, this positive correlation remains subject to a strict boundary condition regarding whether parents maintain a rich literacy environment at home. In the absence of regular cognitive engagement from families, the developmental advantages of early bilingual instruction diminish substantially. Educational policy planning must evaluate accompanying domestic factors rather than viewing early immersion as an unconditional cognitive panacea."
+   "Young children enrolled in immersive dual-language preschools achieved higher executive function scores than their monolingual peers. Nevertheless, this positive correlation remains subject to a strict boundary condition regarding whether parents maintain a rich literacy environment at home. In the absence of regular cognitive engagement from families, the developmental advantages of early bilingual instruction diminish substantially. Educational policy planning must evaluate accompanying domestic factors rather than viewing early immersion as an unconditional cognitive panacea.",
+   "Children enrolled in full-time bilingual preschools outperformed monolingual classmates on measures of executive function. Nevertheless, this favourable association remains governed by a strict boundary condition regarding whether families foster a rich literacy environment at home. Without consistent intellectual stimulation from parents, the cognitive benefits of early dual-language schooling fade noticeably. Education policymakers must account for supporting household conditions rather than treating early bilingual education as an unconditional cognitive cure-all.",
+   "Youngsters attending full-day bilingual kindergartens scored higher on executive function tests than peers raised in single-language classrooms. That positive link, however, only holds under a tight condition: parents have to maintain an active reading and literacy environment at home. When children miss out on regular mental engagement from their families, the developmental edge of early bilingual teaching drops sharply. Rather than viewing early bilingual schooling as a guaranteed boost to intelligence on its own, policymakers must factor in home dynamics."
   ],
   "grammarTags": [
    "logic & qualifications"
@@ -1815,7 +1957,9 @@
   "meaningVi": "giới hạn phương pháp luận",
   "promptVi": "Các nghiên cứu quan sát đã liên kết việc tiêu thụ các sản phẩm thay thế thịt gốc thực vật với sự sụt giảm nhẹ các chỉ số mỡ máu ở người tiêu dùng đô thị. Một giới hạn phương pháp luận lớn xuất phát từ việc phụ thuộc vào nhật ký ăn uống tự kê khai, vốn thường xuyên ghi nhận thiếu lượng thức ăn vặt và ước tính sai khẩu phần. Việc suy ra một cơ chế trị liệu trực tiếp mà không có sự xác minh bằng chỉ dấu sinh học khách quan có nguy cơ phóng đại hiệu ích lâm sàng của các sản phẩm thay thế chế biến sâu. Hướng dẫn dinh dưỡng cộng đồng nên duy trì thái độ dè dặt thực nghiệm cho đến khi các thử nghiệm lâm sàng được kiểm soát chặt chẽ xác nhận những kết quả tự báo cáo này.",
   "referenceAnswers": [
-   "Observational studies linked the consumption of plant-based meat substitutes with modest reductions in blood lipid markers among urban consumers. A major methodological limitation stems from reliance on self-reported dietary logs, which frequently underreport snack intake and misestimate portion sizes. Inferring a direct therapeutic mechanism without objective biomarker validation risks overstating the clinical utility of ultra-processed alternatives. Public nutritional guidelines should maintain empirical reserve until tightly controlled clinical trials confirm these self-reported findings."
+   "Observational studies linked the consumption of plant-based meat substitutes with modest reductions in blood lipid markers among urban consumers. A major methodological limitation stems from reliance on self-reported dietary logs, which frequently underreport snack intake and misestimate portion sizes. Inferring a direct therapeutic mechanism without objective biomarker validation risks overstating the clinical utility of ultra-processed alternatives. Public nutritional guidelines should maintain empirical reserve until tightly controlled clinical trials confirm these self-reported findings.",
+   "Observational studies have associated plant-based meat alternatives with slight improvements in blood lipid profiles among city dwellers. A notable methodological drawback lies in the use of self-completed food diaries, which habitually omit snack consumption and misjudge serving sizes. Deducing a direct clinical benefit without verification via objective biomarkers risks exaggerating the health value of heavily processed substitutes. Public dietary guidance should remain empirically cautious until rigorously controlled clinical trials corroborate these self-reported outcomes.",
+   "Observational research has tied plant-based meat substitutes to small drops in blood lipid levels among urban shoppers. A major flaw in this approach is its dependence on self-reported food logs, where people regularly leave out snacks and get portion sizes wrong. Jumping to conclusions about a direct therapeutic effect without hard biomarker proof risks overhyping the medical benefits of ultra-processed alternatives. Public nutrition advice ought to stay cautious until tightly controlled clinical trials back up what people report eating."
   ],
   "grammarTags": [
    "critique & methodology"
@@ -1872,14 +2016,22 @@
   "meaningVi": "khẳng định nhân quả",
   "promptVi": "Thống kê thương mại ghi nhận việc khánh thành tuyến đường sắt tốc độ cao nối các tỉnh lân cận được theo sau bởi sự gia tăng số lượng doanh nghiệp đăng ký mới. Mặc dù giới phân tích quy kết sự phát triển này cho khả năng kết nối hạ tầng, dự án diễn ra cùng lúc với chính sách miễn thuế và trợ giá thuê đất. Việc bỏ qua các ưu đãi tài chính song song dẫn tới một khẳng định nhân quả chưa đủ căn cứ về tác động thuần túy của giao thông. Cơ quan hoạch định chính sách cần áp dụng mô hình kinh tế lượng không gian để phân tách hiệu ứng kết nối khỏi các gói kích thích tài khóa.",
   "referenceAnswers": [
-   "Commercial statistics indicate that the inauguration of a high-speed rail line connecting neighbouring provinces was followed by an increase in new business registrations. Although analysts attribute this expansion to enhanced transport connectivity, the project coincided with tax exemptions and land lease subsidies. Overlooking these parallel financial incentives yields an unverified causal claim regarding the pure economic impact of transport infrastructure. Policy authorities ought to apply spatial econometric modelling to decouple connectivity effects from fiscal stimulus packages."
+   "Commercial statistics indicate that the inauguration of a high-speed rail line connecting neighbouring provinces was followed by an increase in new business registrations. Although analysts attribute this expansion to enhanced transport connectivity, the project coincided with tax exemptions and land lease subsidies. Overlooking these parallel financial incentives yields an unverified causal claim regarding the pure economic impact of transport infrastructure. Policy authorities ought to apply spatial econometric modelling to decouple connectivity effects from fiscal stimulus packages.",
+   "Business registry figures show that the opening of a high-speed rail corridor linking neighbouring provinces was followed by a rise in newly incorporated enterprises. While analysts credit this growth to improved transport links, the rail launch occurred alongside tax breaks and subsidised land leases. Neglecting these concurrent fiscal supports produces an unsubstantiated causal assertion about the standalone effect of rail infrastructure. Policymakers should employ spatial econometric analysis to separate connectivity gains from financial stimulus measures.",
+   "Trade figures reveal that launching a high-speed rail link between adjacent provinces was followed by an uptick in new company registrations. Although commentators point to better transport access as the driver, the railway opened at the exact same time as tax exemptions and land-rent subsidies took effect. Ignoring those parallel financial perks leads to an unsupported claim about what transport alone achieved. To untangle genuine connectivity effects from fiscal stimulus, policymakers need to apply spatial econometric models."
   ],
   "grammarTags": [
    "causality & policy analysis"
   ],
   "explanationVi": "'Causal claim' ám chỉ một phát biểu hay kết luận rằng sự kiện này trực tiếp gây ra sự kiện kia, vốn thường cần bị phản biện nếu chưa loại trừ hết các tác động phụ trợ.",
   "rationaleVi": "Thể hiện tư duy IELTS 8.5 thông qua phân tích mô hình phát triển hạ tầng, phân biệt rõ giữa tương quan thời gian với mối quan hệ nguyên nhân - kết quả thực sự.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Commercial statistics indicate that the inauguration of a high-speed rail line connecting neighbouring provinces were followed by an increase in new business registrations.",
+    "correction": "Commercial statistics indicate that the inauguration of a high-speed rail line connecting neighbouring provinces was followed by an increase in new business registrations.",
+    "reasonVi": "Chủ ngữ chính của mệnh đề là danh từ số ít \"the inauguration\" chứ không phải \"provinces\" đứng sát động từ, nên phải chia bị động số ít là \"was followed\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1936,7 +2088,13 @@
   ],
   "explanationVi": "Không đảo quan hệ thời gian. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "An internal report recorded less in-person visits after the hospital introduced remote consultations.",
+    "correction": "An internal report recorded fewer in-person visits after the hospital introduced remote consultations.",
+    "reasonVi": "Danh từ \"visits\" (lượt khám) là danh từ đếm được số nhiều nên phải dùng \"fewer\" thay vì \"less\" (vốn chỉ đi với danh từ không đếm được)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -1964,12 +2122,20 @@
   ],
   "explanationVi": "Không nâng thường thành luôn luôn.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A hypothetical study asked participants whether did they read regularly.",
+    "correction": "A hypothetical study asked participants whether they read regularly.",
+    "reasonVi": "Trong câu hỏi gián tiếp sau \"whether\" hoặc \"if\", mệnh đề phải giữ trật tự câu trần thuật (\"they read\") chứ không đảo trợ động từ \"did\" lên trước chủ ngữ."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Đánh giá độ tin cậy của bằng chứng"
+  "skillFocus": "Đánh giá độ tin cậy của bằng chứng",
+  "targetTerm": "hypothetical study",
+  "meaningVi": "nghiên cứu giả định"
  },
  {
   "id": "esl-v2-r17-u01-005",
@@ -1990,7 +2156,13 @@
   ],
   "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài. Giữ đúng nhóm được so sánh, không tự suy ra kết quả thử nghiệm. Không xem khác biệt điểm số sau can thiệp là tác động thuần của can thiệp.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless that initial difference is not accounted for, the programme’s effect may be overstated.",
+    "correction": "Unless that initial difference is accounted for, the programme’s effect may be overstated.",
+    "reasonVi": "Bản thân từ \"Unless\" đã mang nghĩa phủ định \"Nếu... không\", nên mệnh đề đi kèm phải ở dạng khẳng định (\"is accounted for\"), không thêm \"not\" gây sai ngược nghĩa."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2006,7 +2178,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Một trang tin trích dẫn phần trăm tăng trưởng mà không nêu mức ban đầu. Nếu số người dùng ban đầu rất nhỏ, mức tăng phần trăm cao vẫn có thể tương ứng với một thay đổi tuyệt đối hạn chế. Người đọc cần cả hai đại lượng trước khi đánh giá tác động.",
   "referenceAnswers": [
-   "A news site cited a percentage increase without stating the starting level. If the initial user base was very small, a large percentage rise could still represent a modest absolute change. Readers need both figures to assess the impact."
+   "A news site cited a percentage increase without stating the starting level. If the initial user base was very small, a large percentage rise could still represent a modest absolute change. Readers need both figures to assess the impact.",
+   "A news outlet reported percentage growth without disclosing the baseline figure. When the initial user count is minimal, an impressive percentage increase can still reflect a negligible absolute gain. Readers require both metrics before judging the true scale of the impact.",
+   "One news website highlighted a steep percentage jump while leaving out where the numbers started. If the original user group was tiny, even a huge percentage rise only translates into a small change in real terms. Without seeing both numbers side by side, readers cannot properly weigh the actual impact."
   ],
   "grammarTags": [
    "evidence_quality",
@@ -2142,7 +2316,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Khi một thành phố mở thêm tuyến xe buýt, cư dân gần trung tâm có thể tiếp cận dịch vụ ngay. Những người ở vùng ven vẫn phải đi xa để đến điểm dừng. Đánh giá chỉ dựa trên số chuyến xe mới sẽ bỏ qua sự khác biệt về khả năng tiếp cận này.",
   "referenceAnswers": [
-   "When a city introduces additional bus routes, central residents may gain access immediately. People on the outskirts may still have to travel far to reach a stop. An assessment based solely on the number of new services would overlook this difference in accessibility."
+   "When a city introduces additional bus routes, central residents may gain access immediately. People on the outskirts may still have to travel far to reach a stop. An assessment based solely on the number of new services would overlook this difference in accessibility.",
+   "When a municipality expands its bus network, inner-city inhabitants can benefit from the new routes immediately. Residents in outlying neighbourhoods, by contrast, must still cover considerable distances to reach a boarding point. Evaluating success purely by the count of added services overlooks this disparity in geographic access.",
+   "Once a city puts on extra bus routes, people living near the centre can hop on right away. Those out in the suburbs, however, still face a long trek just to get to a bus stop. Judging the rollout solely by how many new buses run misses this uneven access altogether."
   ],
   "grammarTags": [
    "heterogeneous_impacts",
@@ -2188,7 +2364,13 @@
   ],
   "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "However, learners need suitable devices and quiet place to participate.",
+    "correction": "However, learners need suitable devices and a quiet place to participate.",
+    "reasonVi": "Danh từ \"place\" là danh từ đếm được số ít chưa xác định nên bắt buộc phải có mạo từ \"a\" đứng trước cụm \"a quiet place\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2204,7 +2386,9 @@
   "topic": "Xã hội & Chính sách",
   "promptVi": "Một khoản phí giao hàng cố định có vẻ áp dụng như nhau cho mọi đơn. Nhưng với đơn hàng giá trị thấp, khoản phí ấy chiếm tỷ lệ cao hơn trong tổng chi tiêu. Vì thế, một quy định đồng nhất vẫn có thể tạo gánh nặng không tương xứng.",
   "referenceAnswers": [
-   "A flat delivery fee appears to apply equally to every order. On low-value purchases, however, it accounts for a larger share of total spending. A uniform charge can therefore impose a disproportionate burden."
+   "A flat delivery fee appears to apply equally to every order. On low-value purchases, however, it accounts for a larger share of total spending. A uniform charge can therefore impose a disproportionate burden.",
+   "A fixed shipping fee seemingly treats every customer transaction identically. For inexpensive items, however, that same fee represents a substantially higher proportion of the overall outlay. Consequently, a uniform pricing rule can still place an uneven burden on smaller buyers.",
+   "On paper, a flat delivery charge looks like it applies the same rule to every order. Yet when someone buys a low-cost item, that fixed fee eats up a much bigger slice of what they spend. That is why an identical fee can still hit smaller purchases disproportionately hard."
   ],
   "grammarTags": [
    "heterogeneous_impacts",
@@ -2226,7 +2410,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Tác động không đồng đều giữa các nhóm"
+  "skillFocus": "Tác động không đồng đều giữa các nhóm",
+  "targetTerm": "disproportionate burden",
+  "meaningVi": "gánh nặng không tương xứng"
  },
  {
   "id": "esl-v2-r17-u02-007",
@@ -2235,7 +2421,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một công ty ghi nhận năng suất trung bình tăng sau khi cho phép làm việc linh hoạt. Nhân viên làm công việc độc lập báo cáo nhiều lợi ích hơn, còn những nhóm cần phối hợp liên tục gặp khó khăn ban đầu. Báo cáo sẽ thiếu cân bằng nếu chỉ nêu chỉ số năng suất chung mà không phân tích khác biệt giữa nhóm.",
   "referenceAnswers": [
-   "A company recorded higher average productivity after introducing flexible working. Staff in independent roles reported greater benefits, while teams requiring constant coordination faced initial difficulties. The report would be unbalanced if it cited only the overall productivity figure without examining subgroup differences."
+   "A company recorded higher average productivity after introducing flexible working. Staff in independent roles reported greater benefits, while teams requiring constant coordination faced initial difficulties. The report would be unbalanced if it cited only the overall productivity figure without examining subgroup differences.",
+   "An enterprise observed an uptick in mean productivity following the introduction of flexible work policies. Employees performing autonomous tasks cited stronger advantages, whereas teams dependent on continuous collaboration encountered early setbacks. Any report presenting only the aggregate productivity metric without disaggregating outcomes across teams would lack balance.",
+   "One firm saw overall productivity climb on average once flexible working was rolled out. People working independently noticed clear gains, while collaborative teams that need constant back-and-forth struggled at first. Only quoting the company-wide average without breaking down how different groups fared gives a skewed picture."
   ],
   "grammarTags": [
    "heterogeneous_impacts",
@@ -2268,7 +2456,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Một dự án cải tạo công viên giúp tăng diện tích không gian xanh công cộng. Tuy nhiên, người lớn tuổi cần lối đi an toàn, trẻ em cần khu vui chơi và người dùng xe lăn cần đường tiếp cận phù hợp. Chỉ tiêu diện tích không đủ để kết luận rằng mọi nhóm đều sử dụng được công viên như nhau.",
   "referenceAnswers": [
-   "A park renovation increases the amount of public green space. Older visitors, however, need safe paths, children need play areas, and wheelchair users require accessible routes. Area alone is insufficient to establish that all groups can use the park equally."
+   "A park renovation increases the amount of public green space. Older visitors, however, need safe paths, children need play areas, and wheelchair users require accessible routes. Area alone is insufficient to establish that all groups can use the park equally.",
+   "A park refurbishment expands the total area of urban green space available to the public. Nevertheless, elderly visitors require secure walkways, young children need dedicated play zones, and wheelchair users depend on step-free access. Measuring square footage alone is inadequate to confirm that the park serves every demographic equally.",
+   "Upgrading a park certainly adds more public greenery to a neighbourhood. Still, older residents need safe footpaths, kids need places to play, and people in wheelchairs need proper ramps and smooth routes. Simply counting extra square metres does not prove that everyone can actually enjoy the space on equal terms."
   ],
   "grammarTags": [
    "heterogeneous_impacts",
@@ -2301,7 +2491,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Một quận có mạng ổn định có thể thử dịch vụ trực tuyến trước. Với những quận thường xuyên mất kết nối, duy trì lựa chọn trực tiếp là cần thiết. Vì vậy, kế hoạch triển khai chung nên có nhiều lộ trình thay vì áp đặt cùng một tiến độ cho tất cả.",
   "referenceAnswers": [
-   "A district with reliable connectivity could pilot the online service first. In districts with frequent outages, retaining an in-person option is essential. A common rollout plan should therefore allow several pathways rather than impose a single timetable on everyone."
+   "A district with reliable connectivity could pilot the online service first. In districts with frequent outages, retaining an in-person option is essential. A common rollout plan should therefore allow several pathways rather than impose a single timetable on everyone.",
+   "A district with dependable internet infrastructure is well placed to trial digital services first. In neighbourhoods plagued by frequent disconnections, however, preserving face-to-face service delivery remains vital. A shared implementation strategy should therefore incorporate multiple tracks rather than enforcing a uniform schedule across every area.",
+   "Neighbourhoods with rock-solid internet can easily test out online services ahead of others. Where connections drop regularly, keeping an in-person option open is non-negotiable. Instead of forcing every district onto the exact same timeline, a joint rollout plan needs flexible pathways."
   ],
   "grammarTags": [
    "conditional_policy_design",
@@ -2334,7 +2526,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một trường muốn áp dụng chấm bài tự động để giáo viên có thêm thời gian hướng dẫn. Trước khi mở rộng, trường cần kiểm tra hệ thống có chấm công bằng đối với các cách diễn đạt khác nhau hay không. Nếu kết quả thiếu ổn định, cách hợp lý hơn là giữ giáo viên trong vòng phản biện.",
   "referenceAnswers": [
-   "A school wants to use automated marking to give teachers more time for guidance. Before scaling it up, the school needs to check whether different valid expressions are assessed fairly. If results are inconsistent, retaining teacher review is the more reasonable approach."
+   "A school wants to use automated marking to give teachers more time for guidance. Before scaling it up, the school needs to check whether different valid expressions are assessed fairly. If results are inconsistent, retaining teacher review is the more reasonable approach.",
+   "A school intends to adopt automated grading so instructors can devote more hours to mentoring students. Prior to wider deployment, administrators must verify whether the tool evaluates diverse valid phrasings equitably. Should grading accuracy prove erratic, keeping educators involved in the review loop is the more prudent choice.",
+   "A school wants to bring in automated marking to free up teachers for one-on-one guidance. Before rolling it out more broadly, it has to test whether the software scores different, equally valid ways of writing fairly. Whenever the marks fluctuate unpredictably, keeping teachers in the feedback loop makes far more sense."
   ],
   "grammarTags": [
    "conditional_policy_design",
@@ -2345,7 +2539,13 @@
   ],
   "explanationVi": "Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Before scaling up it, the school needs to check whether different valid expressions are assessed fairly.",
+    "correction": "Before scaling it up, the school needs to check whether different valid expressions are assessed fairly.",
+    "reasonVi": "Với cụm động từ tách được như \"scale up\", khi tân ngữ là đại từ nhân xưng (\"it\") thì đại từ bắt buộc phải đứng ở giữa (\"scaling it up\") chứ không đứng cuối cụm."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2361,7 +2561,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Một mô hình thu gom rác hoạt động tốt ở khu phố có đường rộng. Nhưng khu vực hẻm nhỏ cần phương tiện và giờ thu gom khác. Điều đáng nhân rộng là nguyên tắc phân loại, không nhất thiết là cùng một loại xe và lịch trình.",
   "referenceAnswers": [
-   "A waste-collection model works well in streets with ample road space. Narrow alleyways, however, require different vehicles and collection times. What should be replicated is the sorting principle, not necessarily the same trucks and timetable."
+   "A waste-collection model works well in streets with ample road space. Narrow alleyways, however, require different vehicles and collection times. What should be replicated is the sorting principle, not necessarily the same trucks and timetable.",
+   "A refuse-collection scheme performs effectively in neighbourhoods with wide thoroughfares. Narrow lanes, conversely, demand specialised smaller vehicles and adjusted pickup schedules. What merits replication elsewhere is the core waste-sorting framework, rather than the exact fleet and timetable.",
+   "A rubbish collection system runs smoothly in districts with broad streets. Tight alleyways, though, call for different trucks and collection slots. What other areas should copy is the underlying sorting principle, not necessarily the identical vehicles or schedule."
   ],
   "grammarTags": [
    "conditional_policy_design",
@@ -2383,7 +2585,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thiết kế chính sách theo điều kiện"
+  "skillFocus": "Thiết kế chính sách theo điều kiện",
+  "targetTerm": "ample road space",
+  "meaningVi": "không gian đường rộng"
  },
  {
   "id": "esl-v2-r17-u03-006",
@@ -2415,7 +2619,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thiết kế chính sách theo điều kiện"
+  "skillFocus": "Thiết kế chính sách theo điều kiện",
+  "targetTerm": "sufficient grounds",
+  "meaningVi": "đủ cơ sở"
  },
  {
   "id": "esl-v2-r17-u03-007",
@@ -2458,7 +2664,9 @@
   "topic": "Xã hội & Chính sách",
   "promptVi": "Một hệ thống cảnh báo mới có thể được mở rộng sau khi kiểm tra tại những nơi có đặc điểm khác nhau. Trước tiên, nhà quản lý cần xác định các trường hợp cảnh báo sai và hướng xử lý khi mất điện. Chỉ khi những rủi ro này được giải quyết ở mức chấp nhận được, việc triển khai diện rộng mới có cơ sở.",
   "referenceAnswers": [
-   "A new warning system could be expanded after tests in settings with different characteristics. Managers first need to identify false alarms and establish what to do during power failures. Only once those risks are addressed to an acceptable degree would a wider rollout be justified."
+   "A new warning system could be expanded after tests in settings with different characteristics. Managers first need to identify false alarms and establish what to do during power failures. Only once those risks are addressed to an acceptable degree would a wider rollout be justified.",
+   "A newly developed alert system may be scaled up following trials across varied operating environments. Initially, supervisors must catalogue false-positive triggers and formulate contingency procedures for blackouts. Only after those vulnerabilities are mitigated to a satisfactory threshold is broad deployment warranted.",
+   "Officials can expand a new warning system once it has been tested under diverse local conditions. First, managers have to pinpoint false alarms and map out how to handle power outages. Until those risks are brought down to a manageable level, rolling it out everywhere cannot really be justified."
   ],
   "grammarTags": [
    "conditional_policy_design",
@@ -2469,7 +2677,13 @@
   ],
   "explanationVi": "Chỉ khi = điều kiện cần, không được đổi thành điều kiện đủ chỉ bằng if. May/might/can tùy ngữ cảnh; không nâng thành will/must. Không đảo quan hệ thời gian.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Only once those risks are addressed to an acceptable degree a wider rollout would be justified.",
+    "correction": "Only once those risks are addressed to an acceptable degree would a wider rollout be justified.",
+    "reasonVi": "Khi đầu câu mở đầu bằng \"Only once + mệnh đề phụ\" (Chỉ khi...), mệnh đề chính phía sau bắt buộc phải đảo trợ động từ lên trước chủ ngữ (\"would a wider rollout be justified\")."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2520,7 +2734,9 @@
   "topic": "Xã hội & Chính sách",
   "promptVi": "Một khoản trợ cấp đồng đều có ưu điểm là đơn giản trong quản lý. Hỗ trợ theo nhu cầu lại có thể hướng nguồn lực tới những người gặp khó khăn nhất nhưng cần thêm dữ liệu và chi phí xét duyệt. Quyết định hợp lý phụ thuộc vào mức độ chấp nhận được của chi phí quản lý và mục tiêu công bằng.",
   "referenceAnswers": [
-   "A universal subsidy is relatively simple to administer. Needs-based support may direct resources to those facing the greatest hardship, but requires additional data and assessment costs. A defensible choice depends on acceptable administrative costs and the equity objective."
+   "A universal subsidy is relatively simple to administer. Needs-based support may direct resources to those facing the greatest hardship, but requires additional data and assessment costs. A defensible choice depends on acceptable administrative costs and the equity objective.",
+   "A flat universal grant offers the clear benefit of administrative simplicity. Means-tested assistance, conversely, channels funds toward those in greatest need, yet demands extra verification data and screening expenditure. Selecting the better option hinges on the acceptable level of administrative overhead and the priority placed on equity.",
+   "Handing out the same subsidy to everyone is easy to run. Targeting support by financial need gets money to the hardest-hit households, though it brings extra paperwork and assessment costs. Which path makes sense comes down to how much administrative cost is tolerable and how strongly fairness is prioritised."
   ],
   "grammarTags": [
    "equity_vs_equality",
@@ -2542,7 +2758,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Đánh đổi giữa công bằng và hiệu quả"
+  "skillFocus": "Đánh đổi giữa công bằng và hiệu quả",
+  "targetTerm": "universal subsidy",
+  "meaningVi": "khoản trợ cấp đồng đều"
  },
  {
   "id": "esl-v2-r17-u04-005",
@@ -2551,7 +2769,9 @@
   "topic": "Xã hội & Chính sách",
   "promptVi": "Khi ngân sách khan hiếm, nâng cấp thiết bị cho mọi cơ sở có thể không mang lại lợi ích như nhau. Một số cơ sở đã có đủ thiết bị nhưng thiếu nhân lực vận hành. Phân bổ nguồn lực theo nút thắt thực tế có thể hiệu quả hơn chia đều theo danh mục.",
   "referenceAnswers": [
-   "When funding is scarce, upgrading equipment at every facility may not generate equal benefits. Some facilities already have adequate equipment but lack staff to operate it. Allocating resources according to actual bottlenecks could be more effective than dividing them evenly by category."
+   "When funding is scarce, upgrading equipment at every facility may not generate equal benefits. Some facilities already have adequate equipment but lack staff to operate it. Allocating resources according to actual bottlenecks could be more effective than dividing them evenly by category.",
+   "Under tight fiscal constraints, modernising machinery across every site may yield uneven returns. Certain branches already possess sufficient hardware yet lack qualified personnel to run it. Directing funds toward genuine operational bottlenecks can prove far more productive than uniform allocations across budget lines.",
+   "When budgets are stretched thin, buying new gear for every single facility will not help them all equally. Some sites already have all the equipment they need but are short on staff to operate it. Targeting money at the real bottlenecks works better than splitting funds evenly across categories."
   ],
   "grammarTags": [
    "equity_vs_equality",
@@ -2642,7 +2862,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Đánh đổi giữa công bằng và hiệu quả"
+  "skillFocus": "Đánh đổi giữa công bằng và hiệu quả",
+  "targetTerm": "assessment criteria",
+  "meaningVi": "chỉ tiêu đánh giá"
  },
  {
   "id": "esl-v2-r17-u04-008",
@@ -2719,7 +2941,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một hệ thống phản hồi tự động có thể giúp giáo viên xử lý số lượng bài lớn. Nhưng nếu hệ thống thường xuyên hiểu sai câu đúng theo cách diễn đạt khác, lợi ích về tốc độ sẽ bị giới hạn. Vì vậy, hướng hợp lý là dùng công cụ cho phản hồi ban đầu và giữ cơ chế phản biện trước khi quyết định điểm cuối cùng.",
   "referenceAnswers": [
-   "An automated feedback system could help teachers handle large numbers of submissions. But if it repeatedly misjudges valid alternative phrasing, its speed advantage is limited. A reasonable approach is therefore to use it for initial feedback while retaining a review process before final marks are decided."
+   "An automated feedback system could help teachers handle large numbers of submissions. But if it repeatedly misjudges valid alternative phrasing, its speed advantage is limited. A reasonable approach is therefore to use it for initial feedback while retaining a review process before final marks are decided.",
+   "An automated feedback platform can assist instructors in managing heavy marking loads. Yet if the software consistently penalises legitimate variations in expression, its time-saving value diminishes substantially. A sound strategy is thus to deploy the tool for preliminary feedback while preserving human oversight before final grades are awarded.",
+   "Automated feedback software can help teachers get through huge piles of assignments. Still, if it keeps misreading accurate answers just because they are phrased differently, the speed gain does not count for much. A sensible middle ground is letting the tool give first-round feedback while keeping a human review step before marks are finalised."
   ],
   "grammarTags": [
    "qualified_synthesis",
@@ -2730,7 +2954,13 @@
   ],
   "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể. Giữ giới hạn của phát biểu và điều kiện áp dụng. Không nâng thường thành luôn luôn.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "An automated feedback system could help teachers handle large amounts of submissions.",
+    "correction": "An automated feedback system could help teachers handle large numbers of submissions.",
+    "reasonVi": "Danh từ \"submissions\" (bài nộp) là danh từ đếm được số nhiều nên phải đi với \"numbers of\", không dùng \"amounts of\" (chỉ dành cho danh từ không đếm được)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2759,7 +2989,13 @@
   ],
   "explanationVi": "Giữ đúng tác nhân, mức chắc chắn, phạm vi và quan hệ giữa các câu.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tracking business survival is therefore a more reasonable priority than declare long-term success.",
+    "correction": "Tracking business survival is therefore a more reasonable priority than declaring long-term success.",
+    "reasonVi": "Trong cấu trúc so sánh với \"than\", hai vế được so sánh phải song song về từ loại, nên vế sau phải dùng V-ing (\"declaring\") để tương xứng với chủ ngữ \"Tracking\" ở đầu câu."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2775,7 +3011,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Một địa phương cần quyết định giữa tăng số phòng khám và cải thiện chất lượng tại các cơ sở hiện có. Nếu vấn đề chính là khoảng cách đi lại, mở điểm mới có thể phù hợp hơn. Nếu vấn đề là thiếu nhân lực chuyên môn, đầu tư vào đào tạo có thể mang lại lợi ích lớn hơn. Không có lựa chọn ưu tiên duy nhất nếu chưa xác định đúng điểm nghẽn.",
   "referenceAnswers": [
-   "A locality must choose between adding clinics and improving existing facilities. If travel distance is the main problem, new sites may be more appropriate. If the constraint is a shortage of skilled staff, training could deliver greater benefits. There is no single priority before the actual bottleneck is identified."
+   "A locality must choose between adding clinics and improving existing facilities. If travel distance is the main problem, new sites may be more appropriate. If the constraint is a shortage of skilled staff, training could deliver greater benefits. There is no single priority before the actual bottleneck is identified.",
+   "A municipality must weigh constructing additional clinics against upgrading care standards at existing sites. Where excessive travel distances pose the primary barrier, establishing new locations may be warranted. Conversely, if a deficit of qualified clinicians is the main obstacle, workforce training could yield superior outcomes. No single priority can be set until the true bottleneck is diagnosed.",
+   "Local planners have to decide whether to open more clinics or improve the quality of the ones already operating. If getting to a clinic takes too long, adding new branches makes more sense. If the real hold-up is a lack of trained medical staff, investing in training will pay off far more. Until you diagnose the exact bottleneck, there is no one-size-fits-all priority."
   ],
   "grammarTags": [
    "qualified_synthesis",
@@ -2820,7 +3058,13 @@
   ],
   "explanationVi": "Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không hoán đổi dữ liệu quan sát với hiệu quả thực tế.",
   "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "However, complaint-resolution times remain inconsistently, and older people are underrepresented in the survey.",
+    "correction": "However, complaint-resolution times remain inconsistent, and older people are underrepresented in the survey.",
+    "reasonVi": "Động từ \"remain\" (vẫn duy trì ở trạng thái nào) là liên động từ nên bắt buộc đi kèm tính từ \"inconsistent\" chứ không dùng trạng từ \"inconsistently\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",

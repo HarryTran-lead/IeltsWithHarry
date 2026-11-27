@@ -8,7 +8,9 @@
   "meaningVi": "vui",
   "promptVi": "rất vui",
   "referenceAnswers": [
-   "very happy"
+   "very happy",
+   "very pleased",
+   "really glad"
   ],
   "grammarTags": [
    "adverb-adjective"
@@ -30,7 +32,9 @@
   "meaningVi": "nước",
   "promptVi": "một cốc nước",
   "referenceAnswers": [
-   "a glass of water"
+   "a glass of water",
+   "a cup of water",
+   "one glass of water"
   ],
   "grammarTags": [
    "quantity-phrase"
@@ -52,7 +56,9 @@
   "meaningVi": "phòng",
   "promptVi": "căn phòng nhỏ",
   "referenceAnswers": [
-   "a small room"
+   "a small room",
+   "the small room",
+   "a little room"
   ],
   "grammarTags": [
    "adjective-noun"
@@ -74,7 +80,9 @@
   "meaningVi": "túi nhỏ",
   "promptVi": "một chiếc túi nhỏ",
   "referenceAnswers": [
-   "a small bag"
+   "a small bag",
+   "a small-sized bag",
+   "a little bag"
   ],
   "grammarTags": [
    "adjective-noun"
@@ -96,7 +104,9 @@
   "meaningVi": "bút màu xanh",
   "promptVi": "hai cây bút màu xanh",
   "referenceAnswers": [
-   "two blue pens"
+   "two blue pens",
+   "two blue-coloured pens",
+   "two pens in blue"
   ],
   "grammarTags": [
    "number-adjective-noun"
@@ -118,7 +128,9 @@
   "meaningVi": "một gia đình trẻ",
   "promptVi": "một gia đình trẻ",
   "referenceAnswers": [
-   "a young family"
+   "a young family",
+   "a young household",
+   "a family with young members"
   ],
   "grammarTags": [
    "Adjective + Noun"
@@ -140,7 +152,9 @@
   "meaningVi": "một cuốn sách bài tập cũ",
   "promptVi": "một cuốn sách bài tập cũ",
   "referenceAnswers": [
-   "an old exercise book"
+   "an old exercise book",
+   "an old workbook",
+   "an old practice book"
   ],
   "grammarTags": [
    "Adjective + Noun Phrase"
@@ -162,7 +176,9 @@
   "meaningVi": "những chiếc bánh quy sô-cô-la ngon",
   "promptVi": "những chiếc bánh quy sô-cô-la ngon",
   "referenceAnswers": [
-   "tasty chocolate biscuits"
+   "tasty chocolate biscuits",
+   "delicious chocolate cookies",
+   "yummy chocolate biscuits"
   ],
   "grammarTags": [
    "Adjective Order + Noun"
@@ -184,7 +200,9 @@
   "meaningVi": "một chiếc xe buýt thành phố đông đúc",
   "promptVi": "một chiếc xe buýt thành phố đông đúc",
   "referenceAnswers": [
-   "a crowded city bus"
+   "a crowded city bus",
+   "a crowded urban bus",
+   "a packed city bus"
   ],
   "grammarTags": [
    "Adjective + Noun Compound"
@@ -206,7 +224,9 @@
   "meaningVi": "một buổi sáng nắng đẹp",
   "promptVi": "một buổi sáng nắng đẹp",
   "referenceAnswers": [
-   "a bright sunny morning"
+   "a bright sunny morning",
+   "a pleasant sunny morning",
+   "a lovely sunny morning"
   ],
   "grammarTags": [
    "Multiple Adjectives"
@@ -228,7 +248,9 @@
   "meaningVi": "một lối sống lành mạnh",
   "promptVi": "một lối sống lành mạnh",
   "referenceAnswers": [
-   "a healthy lifestyle"
+   "a healthy lifestyle",
+   "a healthy way of life",
+   "a healthy way of living"
   ],
   "grammarTags": [
    "Fixed Collocation"
@@ -250,7 +272,9 @@
   "meaningVi": "một công việc bán thời gian",
   "promptVi": "một công việc bán thời gian",
   "referenceAnswers": [
-   "a part-time job"
+   "a part-time job",
+   "a part-time position",
+   "a job with part-time hours"
   ],
   "grammarTags": [
    "Compound Adjective + Noun"
@@ -272,7 +296,9 @@
   "meaningVi": "những con đường thành phố nhỏ hẹp",
   "promptVi": "những con đường thành phố nhỏ hẹp",
   "referenceAnswers": [
-   "narrow city streets"
+   "narrow city streets",
+   "narrow urban roads",
+   "small, narrow streets in the city"
   ],
   "grammarTags": [
    "Adjective + Noun Modifier"
@@ -294,7 +320,9 @@
   "meaningVi": "một căn bếp hiện đại",
   "promptVi": "một căn bếp hiện đại",
   "referenceAnswers": [
-   "a modern kitchen"
+   "a modern kitchen",
+   "an up-to-date kitchen",
+   "a modern-style kitchen"
   ],
   "grammarTags": [
    "Adjective + Noun"
@@ -316,7 +344,9 @@
   "meaningVi": "một chiếc điện thoại di động mới",
   "promptVi": "một chiếc điện thoại di động mới",
   "referenceAnswers": [
-   "a new mobile phone"
+   "a new mobile phone",
+   "a new cell phone",
+   "a new mobile"
   ],
   "grammarTags": [
    "Adjective + Noun Phrase"
@@ -338,7 +368,9 @@
   "meaningVi": "một bãi biển cát yên bình",
   "promptVi": "một bãi biển cát yên bình",
   "referenceAnswers": [
-   "a quiet sandy beach"
+   "a quiet sandy beach",
+   "a peaceful sandy beach",
+   "a calm sandy beach"
   ],
   "grammarTags": [
    "Adjective Order"
@@ -360,7 +392,9 @@
   "meaningVi": "một trận đấu bóng đá kịch tính",
   "promptVi": "một trận đấu bóng đá kịch tính",
   "referenceAnswers": [
-   "an exciting football match"
+   "an exciting football match",
+   "a thrilling football game",
+   "an exciting game of football"
   ],
   "grammarTags": [
    "Adjective + Noun Compound"
@@ -382,7 +416,9 @@
   "meaningVi": "một buổi chiều muộn",
   "promptVi": "một buổi chiều muộn",
   "referenceAnswers": [
-   "a late afternoon"
+   "a late afternoon",
+   "one late afternoon",
+   "an afternoon at a late hour"
   ],
   "grammarTags": [
    "adjective position"
@@ -404,7 +440,9 @@
   "meaningVi": "một cơn đau đầu nặng",
   "promptVi": "một cơn đau đầu nặng",
   "referenceAnswers": [
-   "a bad headache"
+   "a bad headache",
+   "a severe headache",
+   "a terrible headache"
   ],
   "grammarTags": [
    "fixed collocation"
@@ -426,7 +464,9 @@
   "meaningVi": "một mức lương cao",
   "promptVi": "một mức lương cao",
   "referenceAnswers": [
-   "a high salary"
+   "a high salary",
+   "a high wage",
+   "a big salary"
   ],
   "grammarTags": [
    "adjective order"
@@ -448,7 +488,9 @@
   "meaningVi": "công viên công cộng lớn",
   "promptVi": "một công viên công cộng lớn",
   "referenceAnswers": [
-   "a large public park"
+   "a large public park",
+   "a big public park",
+   "a big park for the public"
   ],
   "grammarTags": [
    "adjective order"
@@ -470,7 +512,9 @@
   "meaningVi": "máy tính xách tay nhanh",
   "promptVi": "một máy tính xách tay nhanh",
   "referenceAnswers": [
-   "a fast laptop"
+   "a fast laptop",
+   "a high-speed laptop",
+   "a speedy laptop computer"
   ],
   "grammarTags": [
    "adjective position"
@@ -492,7 +536,9 @@
   "meaningVi": "bài thi khó",
   "promptVi": "một bài thi khó",
   "referenceAnswers": [
-   "a difficult exam"
+   "a difficult exam",
+   "a hard test",
+   "a tough exam"
   ],
   "grammarTags": [
    "determiner and adjective order"
@@ -514,7 +560,9 @@
   "meaningVi": "bể bơi ngoài trời",
   "promptVi": "một bể bơi ngoài trời",
   "referenceAnswers": [
-   "an outdoor swimming pool"
+   "an outdoor swimming pool",
+   "an open-air swimming pool",
+   "an outdoor pool"
   ],
   "grammarTags": [
    "determiner and modifier"
@@ -536,7 +584,9 @@
   "meaningVi": "nước cam tươi",
   "promptVi": "nước cam tươi",
   "referenceAnswers": [
-   "fresh orange juice"
+   "fresh orange juice",
+   "freshly made orange juice",
+   "juice from fresh oranges"
   ],
   "grammarTags": [
    "adjective order"
@@ -558,7 +608,9 @@
   "meaningVi": "vé tàu khứ hồi",
   "promptVi": "một chiếc vé tàu khứ hồi",
   "referenceAnswers": [
-   "a return train ticket"
+   "a return train ticket",
+   "a round-trip train ticket",
+   "a return ticket for the train"
   ],
   "grammarTags": [
    "noun modifier"
@@ -580,7 +632,9 @@
   "meaningVi": "không khí trong lành",
   "promptVi": "không khí trong lành",
   "referenceAnswers": [
-   "fresh air"
+   "fresh air",
+   "clean air",
+   "pure air"
   ],
   "grammarTags": [
    "fixed collocation"
@@ -602,7 +656,9 @@
   "meaningVi": "ngôi nhà hai tầng",
   "promptVi": "một ngôi nhà hai tầng",
   "referenceAnswers": [
-   "a two-storey house"
+   "a two-storey house",
+   "a two-floor house",
+   "a house with two floors"
   ],
   "grammarTags": [
    "compound adjective"
@@ -653,7 +709,9 @@
   "meaningVi": "trà xanh nóng",
   "promptVi": "trà xanh nóng",
   "referenceAnswers": [
-   "hot green tea"
+   "hot green tea",
+   "green tea served hot",
+   "steaming hot green tea"
   ],
   "grammarTags": [
    "adjective order"
@@ -675,7 +733,9 @@
   "meaningVi": "một kỳ nghỉ hè",
   "promptVi": "một kỳ nghỉ hè",
   "referenceAnswers": [
-   "a summer holiday"
+   "a summer holiday",
+   "a summer vacation",
+   "a summer break"
   ],
   "grammarTags": [
    "noun adjunct phrase"
@@ -697,7 +757,9 @@
   "meaningVi": "một ga tàu hỏa",
   "promptVi": "một ga tàu hỏa",
   "referenceAnswers": [
-   "a railway station"
+   "a railway station",
+   "a train station",
+   "a rail station"
   ],
   "grammarTags": [
    "compound noun"
@@ -719,7 +781,9 @@
   "meaningVi": "một khu vườn đẹp",
   "promptVi": "một khu vườn đẹp",
   "referenceAnswers": [
-   "a beautiful garden"
+   "a beautiful garden",
+   "a lovely garden",
+   "a pretty garden"
   ],
   "grammarTags": [
    "adjective modification"
@@ -741,7 +805,9 @@
   "meaningVi": "một bác sĩ giỏi",
   "promptVi": "một bác sĩ giỏi",
   "referenceAnswers": [
-   "a good doctor"
+   "a good doctor",
+   "a skilled doctor",
+   "a great doctor"
   ],
   "grammarTags": [
    "adjective modification"
@@ -763,7 +829,9 @@
   "meaningVi": "một thư viện trường nhỏ",
   "promptVi": "một thư viện trường nhỏ",
   "referenceAnswers": [
-   "a small school library"
+   "a small school library",
+   "a small library at the school",
+   "a little school library"
   ],
   "grammarTags": [
    "adjective order"
@@ -785,7 +853,9 @@
   "meaningVi": "một tin nhắn ngắn",
   "promptVi": "một tin nhắn ngắn",
   "referenceAnswers": [
-   "a short text message"
+   "a short text message",
+   "a brief message",
+   "a short text"
   ],
   "grammarTags": [
    "compound noun phrase"
@@ -807,7 +877,9 @@
   "meaningVi": "một đôi giày thể thao",
   "promptVi": "một đôi giày thể thao",
   "referenceAnswers": [
-   "a pair of trainers"
+   "a pair of trainers",
+   "a pair of sports shoes",
+   "a pair of sneakers"
   ],
   "grammarTags": [
    "fixed quantifier phrase"
@@ -829,7 +901,9 @@
   "meaningVi": "một con phố mua sắm đông đúc",
   "promptVi": "một con phố mua sắm đông đúc",
   "referenceAnswers": [
-   "a busy shopping street"
+   "a busy shopping street",
+   "a crowded shopping street",
+   "a packed shopping street"
   ],
   "grammarTags": [
    "adjective order"
@@ -851,7 +925,9 @@
   "meaningVi": "một dòng sông sạch",
   "promptVi": "một dòng sông sạch",
   "referenceAnswers": [
-   "a clean river"
+   "a clean river",
+   "an unpolluted river",
+   "a river with clean water"
   ],
   "grammarTags": [
    "adjective modification"
@@ -873,7 +949,9 @@
   "meaningVi": "một lễ hội âm nhạc",
   "promptVi": "một lễ hội âm nhạc",
   "referenceAnswers": [
-   "a music festival"
+   "a music festival",
+   "a musical festival",
+   "a festival of music"
   ],
   "grammarTags": [
    "noun adjunct phrase"

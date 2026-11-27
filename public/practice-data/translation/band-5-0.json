@@ -8,13 +8,21 @@
   "meaningVi": "cơ hội",
   "promptVi": "Học bổng này tạo cơ hội cho sinh viên ở vùng nông thôn theo học đại học.",
   "referenceAnswers": [
-   "This scholarship gives students from rural areas the opportunity to attend university."
+   "This scholarship gives students from rural areas the opportunity to attend university.",
+   "This grant offers learners from the countryside a chance to pursue higher education.",
+   "Thanks to this scholarship, rural students have the chance to go to university."
   ],
   "grammarTags": [
    "opportunity-to"
   ],
   "explanationVi": "Opportunity to attend university nêu cơ hội tiếp cận đại học.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This scholarship gives students from rural areas the opportunity to attend to university.",
+    "correction": "This scholarship gives students from rural areas the opportunity to attend university.",
+    "reasonVi": "Khi mang nghĩa 'theo học' hoặc 'tham dự', 'attend' là ngoại động từ đi trực tiếp với danh từ ('attend university'), không có giới từ 'to' như 'go to'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -30,7 +38,9 @@
   "meaningVi": "giảm rác thải",
   "promptVi": "Các cửa hàng có thể giảm rác thải bằng cách dùng ít bao bì hơn.",
   "referenceAnswers": [
-   "Shops can reduce waste by using less packaging."
+   "Shops can reduce waste by using less packaging.",
+   "Stores are able to cut down on rubbish by using smaller amounts of packaging.",
+   "Using less wrapping material allows stores to cut back on the amount of waste they create."
   ],
   "grammarTags": [
    "by-gerund"
@@ -58,13 +68,21 @@
   "meaningVi": "giờ làm linh hoạt",
   "promptVi": "Giờ làm linh hoạt giúp cha mẹ cân bằng công việc và gia đình.",
   "referenceAnswers": [
-   "Flexible hours help parents balance work and family life."
+   "Flexible hours help parents balance work and family life.",
+   "Flexible working schedules assist parents in maintaining a balance between their jobs and home life.",
+   "Having adaptable working hours makes it easier for mothers and fathers to juggle their careers and family responsibilities."
   ],
   "grammarTags": [
    "balance-work-family"
   ],
   "explanationVi": "Balance work and family life là cách kết hợp từ tự nhiên.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Flexible hours help parents balance works and family life.",
+    "correction": "Flexible hours help parents balance work and family life.",
+    "reasonVi": "'Work' mang nghĩa 'công việc nói chung' là danh từ không đếm được nên luôn ở dạng số ít, không thêm '-s' ('works' nghĩa là tác phẩm nghệ thuật)."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -109,14 +127,22 @@
   "meaningVi": "công viên công cộng",
   "promptVi": "Công viên công cộng cho trẻ em một nơi an toàn để chơi, nhất là ở thành phố đông đúc.",
   "referenceAnswers": [
-   "Public parks give children a safe place to play, especially in crowded cities."
+   "Public parks give children a safe place to play, especially in crowded cities.",
+   "Public green spaces provide youngsters with a secure area to play in, particularly in busy urban areas.",
+   "Especially in densely populated cities, kids can enjoy a safe place to play thanks to public parks."
   ],
   "grammarTags": [
    "specific-example"
   ],
   "explanationVi": "Especially giới hạn đối tượng được hưởng lợi rõ hơn.",
   "rationaleVi": "Nhận định được cụ thể hóa bằng nhóm người và bối cảnh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Public parks give childrens a safe place to play, especially in crowded cities.",
+    "correction": "Public parks give children a safe place to play, especially in crowded cities.",
+    "reasonVi": "'Children' bản thân nó đã là danh từ số nhiều bất quy tắc của 'child', nên tuyệt đối không thêm '-s' thành 'childrens'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -139,7 +165,13 @@
   ],
   "explanationVi": "Cấu trúc 'I believe that... because...' được dùng để thể hiện quan điểm cá nhân rõ ràng kèm theo lý do cụ thể về lợi ích giải tỏa căng thẳng của thể thao.",
   "rationaleVi": "Câu thể hiện quan điểm trực tiếp kèm lý do cụ thể phù hợp mục tiêu Band 5.0, cấu trúc ngữ pháp vừa sức và từ vựng quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I believe that daily running improves mental health because it gives people a break from stressed working hours.",
+    "correction": "I believe that daily running improves mental health because it gives people a break from stressful working hours.",
+    "reasonVi": "'Stressed' chỉ cảm xúc căng thẳng của con người, còn để mô tả tính chất gây áp lực của 'working hours' thì phải dùng tính từ 'stressful'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -154,7 +186,9 @@
   "meaningVi": "làn đường dành riêng cho xe buýt",
   "promptVi": "Theo tôi, chính quyền nên xây dựng thêm các làn đường dành riêng cho xe buýt nhằm giảm bớt thời gian di chuyển của người dân trong giờ cao điểm.",
   "referenceAnswers": [
-   "In my view, the council should construct more bus lanes to reduce commuting time for local residents during peak hours."
+   "In my view, the council should construct more bus lanes to reduce commuting time for local residents during peak hours.",
+   "In my opinion, the authorities ought to build additional dedicated bus lanes in order to cut travel times for citizens during rush hour.",
+   "I believe the local government should add more bus-only lanes so that residents spend less time travelling in rush hour."
   ],
   "grammarTags": [
    "policy suggestion with outcome"
@@ -182,14 +216,22 @@
   "meaningVi": "túi tái sử dụng",
   "promptVi": "Siêu thị nên tính phí túi nhựa vì quy định này khuyến khích khách hàng mang theo túi tái sử dụng khi đi mua sắm.",
   "referenceAnswers": [
-   "Supermarkets ought to charge for plastic bags because this policy encourages customers to bring reusable bags when shopping."
+   "Supermarkets ought to charge for plastic bags because this policy encourages customers to bring reusable bags when shopping.",
+   "Supermarkets should make shoppers pay for plastic bags since this rule motivates them to carry reusable ones when buying groceries.",
+   "Supermarkets should introduce a fee for plastic bags, as doing so prompts shoppers to bring along their own reusable bags."
   ],
   "grammarTags": [
    "cause and effect"
   ],
   "explanationVi": "Mệnh đề nguyên nhân - kết quả 'because this policy encourages...' giải thích rõ cơ chế tác động của chính sách môi trường.",
   "rationaleVi": "Sử dụng động từ 'ought to' cùng lý do hành vi cụ thể (mang túi dùng nhiều lần), minh họa đúng yêu cầu nêu lý do rõ ràng của mức 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Supermarkets ought charge for plastic bags because this policy encourages customers to bring reusable bags when shopping.",
+    "correction": "Supermarkets ought to charge for plastic bags because this policy encourages customers to bring reusable bags when shopping.",
+    "reasonVi": "Khác với 'should', động từ khuyết thiếu 'ought' bắt buộc phải đi kèm 'to' trước động từ nguyên thể ('ought to charge')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -204,7 +246,9 @@
   "meaningVi": "các khóa học trực tuyến",
   "promptVi": "Từ góc nhìn của tôi, các khóa học trực tuyến rất hữu ích cho người đi làm vì họ có thể tự học vào buổi tối mà không cần nghỉ việc.",
   "referenceAnswers": [
-   "From my perspective, online courses are very helpful for working adults because they can study independently in the evening without quitting their jobs."
+   "From my perspective, online courses are very helpful for working adults because they can study independently in the evening without quitting their jobs.",
+   "In my view, internet-based courses are extremely useful for employees since they are able to learn on their own at night without leaving their jobs.",
+   "As I see it, working people benefit a lot from online classes, as they can study by themselves in the evenings without having to give up their jobs."
   ],
   "grammarTags": [
    "personal viewpoint with justification"
@@ -232,7 +276,9 @@
   "meaningVi": "đồ ăn vặt không lành mạnh",
   "promptVi": "Chính phủ nên cấm quảng cáo đồ ăn vặt không lành mạnh vào khung giờ xem truyền hình của trẻ em nhằm ngăn ngừa tình trạng béo phì ở học sinh.",
   "referenceAnswers": [
-   "Governments should ban adverts for junk food during children's television hours to prevent obesity among school pupils."
+   "Governments should ban adverts for junk food during children's television hours to prevent obesity among school pupils.",
+   "The authorities ought to prohibit commercials for unhealthy snacks during kids' TV viewing times in order to stop obesity in schoolchildren.",
+   "To keep school-aged kids from becoming obese, the government should put a ban on unhealthy snack ads when children are watching television."
   ],
   "grammarTags": [
    "argument with specific purpose"
@@ -260,14 +306,22 @@
   "meaningVi": "các căn hộ giá rẻ",
   "promptVi": "Xây dựng các căn hộ giá rẻ gần các khu công nghiệp là điều cần thiết vì việc này giúp công nhân tiết kiệm đáng kể chi phí đi lại.",
   "referenceAnswers": [
-   "Building affordable flats near industrial zones is essential because it helps workers save a significant amount of money on travel costs."
+   "Building affordable flats near industrial zones is essential because it helps workers save a significant amount of money on travel costs.",
+   "Constructing low-cost apartments close to industrial parks is vital since it enables factory employees to cut down considerably on commuting expenses.",
+   "It is necessary to develop budget-friendly housing next to industrial areas so that workers can save a great deal on transport."
   ],
   "grammarTags": [
    "gerund subject with reasoning"
   ],
   "explanationVi": "Chủ ngữ danh động từ 'Building affordable flats...' nêu giải pháp, mệnh đề 'because' minh họa lợi ích tài chính trực tiếp.",
   "rationaleVi": "Sử dụng danh động từ làm chủ ngữ và giải thích lý do tiết kiệm chi phí cụ thể, đáp ứng yêu cầu lập luận cơ bản chuẩn Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Building affordable flats near industrial zones is essential because it helps workers save a significant number of money on travel costs.",
+    "correction": "Building affordable flats near industrial zones is essential because it helps workers save a significant amount of money on travel costs.",
+    "reasonVi": "'Money' là danh từ không đếm được nên phải đi với 'an amount of', còn 'a number of' chỉ đi với danh từ đếm được số nhiều."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -311,7 +365,9 @@
   "meaningVi": "làm việc từ xa",
   "promptVi": "Nhiều người cho rằng việc làm việc từ xa hai ngày một tuần rất có lợi vì cha mẹ có thể chuẩn bị bữa ăn tối cùng gia đình.",
   "referenceAnswers": [
-   "Many people argue that working remotely two days a week is beneficial because parents can prepare dinner together with their family."
+   "Many people argue that working remotely two days a week is beneficial because parents can prepare dinner together with their family.",
+   "Numerous people believe that working from home twice a week is advantageous since mothers and fathers are able to cook the evening meal with their families.",
+   "A lot of people feel that doing remote work for two days each week is really helpful, as it gives parents the chance to make dinner with their families."
   ],
   "grammarTags": [
    "general opinion with family example"
@@ -339,14 +395,22 @@
   "meaningVi": "các tấm pin năng lượng mặt trời",
   "promptVi": "Nếu chính phủ giảm thuế cho việc lắp đặt các tấm pin năng lượng mặt trời, nhiều hộ gia đình sẽ sẵn sàng tự sản xuất điện sạch tại nhà.",
   "referenceAnswers": [
-   "If the government reduces taxes on installing solar panels, many households will be willing to generate clean electricity at home."
+   "If the government reduces taxes on installing solar panels, many households will be willing to generate clean electricity at home.",
+   "Provided that the authorities cut taxes on fitting solar panels, numerous families will be happy to produce green power in their own homes.",
+   "Many families will gladly generate their own clean power at home if the state lowers taxes on putting up solar panels."
   ],
   "grammarTags": [
    "first conditional argument"
   ],
   "explanationVi": "Câu điều kiện loại 1 'If... will...' dùng để đưa ra dự đoán có căn cứ về chính sách khuyến khích năng lượng sạch.",
   "rationaleVi": "Dùng câu điều kiện cơ bản để nêu mối quan hệ nguyên nhân - kết quả cụ thể, phù hợp với tiêu chí diễn đạt lập luận ở Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "If the government reduces taxes on installing solar panels, many households will willing to generate clean electricity at home.",
+    "correction": "If the government reduces taxes on installing solar panels, many households will be willing to generate clean electricity at home.",
+    "reasonVi": "'Willing' là tính từ chứ không phải động từ, nên sau 'will' bắt buộc phải có động từ 'be' ('will be willing to')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -361,14 +425,22 @@
   "meaningVi": "thời khóa biểu nhà trường",
   "promptVi": "Việc lùi giờ học lại ba mươi phút trong thời khóa biểu nhà trường là quyết định hợp lý vì học sinh sẽ tỉnh táo hơn trong tiết học đầu tiên.",
   "referenceAnswers": [
-   "Starting thirty minutes later in the school timetable is a sensible decision because pupils will be more alert during their first lesson."
+   "Starting thirty minutes later in the school timetable is a sensible decision because pupils will be more alert during their first lesson.",
+   "Delaying school start times by half an hour in the schedule is a reasonable choice since students will feel more awake in their opening class.",
+   "It makes sense to push the school schedule back by thirty minutes, as students will feel more awake during their first period."
   ],
   "grammarTags": [
    "evaluation with practical reason"
   ],
   "explanationVi": "Tính từ 'sensible' dùng để đánh giá đề xuất, được bổ trợ bằng lý do sức khỏe/sự tập trung của học sinh.",
   "rationaleVi": "Nêu một điều chỉnh thời gian cụ thể (lùi 30 phút) và giải thích lợi ích rõ ràng (tỉnh táo hơn), đúng trọng tâm Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Start thirty minutes later in the school timetable is a sensible decision because pupils will be more alert during their first lesson.",
+    "correction": "Starting thirty minutes later in the school timetable is a sensible decision because pupils will be more alert during their first lesson.",
+    "reasonVi": "Động từ đứng đầu câu làm chủ ngữ phải chuyển sang dạng danh động từ V-ing ('Starting'), không được để nguyên thể 'Start'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -420,7 +492,13 @@
   ],
   "explanationVi": "Mệnh đề lý do 'because it deters...' giải thích cơ chế phòng ngừa tội phạm của thiết bị công nghệ.",
   "rationaleVi": "Đề xuất giải pháp an ninh đô thị cụ thể với tác động thực tế (ngăn vi phạm vào ban đêm), hoàn toàn sát với tiêu chuẩn Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Installing security cameras in community parks is an effective solution because it deters unlawful behaviour in night.",
+    "correction": "Installing security cameras in community parks is an effective solution because it deters unlawful behaviour at night.",
+    "reasonVi": "Khác với 'in the morning/evening', để nói 'vào ban đêm' nói chung ta phải dùng cụm giới từ cố định là 'at night', không dùng 'in night'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -435,7 +513,9 @@
   "meaningVi": "bể bơi đạt chuẩn",
   "promptVi": "Theo quan điểm của tôi, hội đồng thành phố nên xây dựng thêm bể bơi đạt chuẩn vì hoạt động này giúp thanh thiếu niên rèn luyện thể lực vào kỳ nghỉ hè.",
   "referenceAnswers": [
-   "In my view, the city council should build more standard swimming pools because this activity helps teenagers improve their physical fitness during the summer holidays."
+   "In my view, the city council should build more standard swimming pools because this activity helps teenagers improve their physical fitness during the summer holidays.",
+   "From my point of view, municipal authorities ought to construct additional standard-sized swimming pools since swimming enables adolescents to build up their strength over the summer break.",
+   "I believe the city council should construct more proper swimming pools, as swimming helps young people boost their physical health over the summer break."
   ],
   "grammarTags": [
    "opinion and specific reason"
@@ -492,14 +572,22 @@
   "meaningVi": "ánh sáng xanh",
   "promptVi": "Việc hạn chế sử dụng điện thoại thông minh trước khi ngủ là điều cần thiết vì ánh sáng xanh khiến người trẻ khó ngủ sâu.",
   "referenceAnswers": [
-   "Restricting smartphone use before bed is essential because blue light makes it difficult for young people to sleep deeply."
+   "Restricting smartphone use before bed is essential because blue light makes it difficult for young people to sleep deeply.",
+   "Limiting the use of mobile phones prior to bedtime is necessary since blue light prevents youths from getting deep sleep.",
+   "It is important to cut back on smartphone time right before going to sleep, as the blue light from screens stops young people from sleeping soundly."
   ],
   "grammarTags": [
    "practical cause and effect"
   ],
   "explanationVi": "Chủ ngữ danh động từ 'Restricting...' nêu vấn đề, theo sau là nguyên nhân trực tiếp liên quan đến tác động của ánh sáng xanh.",
   "rationaleVi": "Sử dụng cơ chế nguyên nhân - kết quả rõ ràng, giải thích lý do cụ thể cho một thói quen công nghệ phổ biến.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Restricting smartphone use before bed is essential because blue light makes young people difficult to sleep deeply.",
+    "correction": "Restricting smartphone use before bed is essential because blue light makes it difficult for young people to sleep deeply.",
+    "reasonVi": "Viết 'makes young people difficult' sẽ mang nghĩa sai là 'khiến người trẻ trở nên khó tính'; phải dùng tân ngữ giả 'makes it difficult for somebody to V'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -514,7 +602,9 @@
   "meaningVi": "tuyến đường dành cho xe đạp",
   "promptVi": "Nếu chính quyền mở rộng các tuyến đường dành cho xe đạp, người dân đô thị sẽ đi làm bằng xe đạp nhiều hơn để tránh kẹt xe.",
   "referenceAnswers": [
-   "If the local authority expands cycling paths, urban residents will cycle to work more often to avoid traffic jams."
+   "If the local authority expands cycling paths, urban residents will cycle to work more often to avoid traffic jams.",
+   "Provided the government widens bike lanes, city dwellers will ride their bicycles to their workplaces more frequently in order to escape traffic congestion.",
+   "City residents will commute by bike more regularly to stay out of heavy traffic if the authorities build wider cycle routes."
   ],
   "grammarTags": [
    "conditional statement with specific outcome"
@@ -542,14 +632,22 @@
   "meaningVi": "các lễ hội truyền thống",
   "promptVi": "Các địa phương cần duy trì các lễ hội truyền thống vì những sự kiện này thu hút du khách và tạo thêm việc làm cho người dân bản địa.",
   "referenceAnswers": [
-   "Localities need to maintain traditional festivals because these events attract tourists and create extra jobs for native residents."
+   "Localities need to maintain traditional festivals because these events attract tourists and create extra jobs for native residents.",
+   "Local regions must preserve cultural festivals since such celebrations draw visitors and generate additional employment for local people.",
+   "Keeping traditional celebrations alive is vital for local areas, as they bring in holidaymakers and provide more work opportunities for locals."
   ],
   "grammarTags": [
    "benefit with concrete evidence"
   ],
   "explanationVi": "Nêu sự cần thiết của việc bảo tồn văn hóa kèm lợi ích kinh tế - xã hội trực tiếp cho dân địa phương.",
   "rationaleVi": "Tránh nhận định mơ hồ về văn hóa bằng cách đưa ra hai tác động đo lường được: thu hút khách và tạo việc làm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Localities need to maintain traditional festivals because these event attract tourists and create extra jobs for native residents.",
+    "correction": "Localities need to maintain traditional festivals because these events attract tourists and create extra jobs for native residents.",
+    "reasonVi": "Từ hạn định số nhiều 'these' bắt buộc phải đi với danh từ đếm được số nhiều có '-s' ('these events')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -564,7 +662,9 @@
   "meaningVi": "các thí nghiệm khoa học thực hành",
   "promptVi": "Trường học nên tổ chức nhiều thí nghiệm khoa học thực hành hơn để giúp học sinh dễ nhớ kiến thức lý thuyết trên lớp.",
   "referenceAnswers": [
-   "Schools should organise more practical science experiments to help students remember theoretical knowledge taught in class easily."
+   "Schools should organise more practical science experiments to help students remember theoretical knowledge taught in class easily.",
+   "Educational institutions ought to arrange more hands-on science experiments in order to assist pupils in retaining classroom theory with ease.",
+   "Holding more hands-on science experiments is something schools should do so that students can recall classroom theories more easily."
   ],
   "grammarTags": [
    "practical reason for educational change"
@@ -592,14 +692,22 @@
   "meaningVi": "nhãn thông tin dinh dưỡng chi tiết",
   "promptVi": "Cá nhân tôi thấy việc in nhãn thông tin dinh dưỡng chi tiết trên bao bì thực phẩm là rất quan trọng vì nó giúp người tiêu dùng lựa chọn đồ ăn ít đường.",
   "referenceAnswers": [
-   "Personally, I think printing detailed nutritional labels on food packaging is very important as it helps consumers choose low-sugar food."
+   "Personally, I think printing detailed nutritional labels on food packaging is very important as it helps consumers choose low-sugar food.",
+   "In my personal opinion, putting comprehensive nutrition facts on food wrappers is crucial because it enables shoppers to pick products with less sugar.",
+   "For me, it really matters that food packages carry full nutritional details, since this allows buyers to go for lower-sugar options."
   ],
   "grammarTags": [
    "opinion supported by consumer choice detail"
   ],
   "explanationVi": "Mở đầu bằng 'Personally, I think' để nêu quan điểm về tiêu dùng thực phẩm an toàn kèm lý do hạn chế đường.",
   "rationaleVi": "Dẫn chứng cụ thể 'lựa chọn đồ ăn ít đường' giải thích minh bạch cho tầm quan trọng của nhãn mác thực phẩm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Personally, I think printing detail nutritional labels on food packaging is very important as it helps consumers choose low-sugar food.",
+    "correction": "Personally, I think printing detailed nutritional labels on food packaging is very important as it helps consumers choose low-sugar food.",
+    "reasonVi": "Để bổ nghĩa cho cụm danh từ 'nutritional labels', ta phải dùng tính từ 'detailed' (chi tiết, có '-ed') chứ không dùng danh từ 'detail'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -614,14 +722,22 @@
   "meaningVi": "các căn hộ chung cư cao tầng",
   "promptVi": "Việc phát triển các căn hộ chung cư cao tầng mang lại giải pháp chỗ ở hữu hiệu cho những gia đình trẻ có thu nhập trung bình.",
   "referenceAnswers": [
-   "Developing high-rise apartments provides an effective housing solution for young families with average incomes."
+   "Developing high-rise apartments provides an effective housing solution for young families with average incomes.",
+   "Constructing tall apartment buildings offers a practical accommodation option for young households earning moderate wages.",
+   "For young middle-income families, building high-rise blocks of flats serves as a very useful answer to their housing needs."
   ],
   "grammarTags": [
    "targeted social benefit"
   ],
   "explanationVi": "Mô hình chủ ngữ v-ing chỉ xu hướng đô thị hóa và nhóm đối tượng thụ hưởng xác định.",
   "rationaleVi": "Xác định rõ đối tượng hưởng lợi (gia đình trẻ thu nhập trung bình), giúp lập luận Band 5.0 có định hướng rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Developing high-rise apartments provides an effective housing solution for young families have average incomes.",
+    "correction": "Developing high-rise apartments provides an effective housing solution for young families with average incomes.",
+    "reasonVi": "Một mệnh đề đơn không thể có hai động từ chia thì ('provides' và 'have'); hãy dùng giới từ 'with' ('families with average incomes') hoặc mệnh đề quan hệ 'who have'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -665,7 +781,9 @@
   "meaningVi": "đồ bảo hộ nghiêm ngặt",
   "promptVi": "Các công ty xây dựng phải trang bị đồ bảo hộ nghiêm ngặt cho công nhân để giảm nguy cơ tai nạn tại công trường.",
   "referenceAnswers": [
-   "Construction companies must provide strict safety gear for workers to reduce the risk of accidents at building sites."
+   "Construction companies must provide strict safety gear for workers to reduce the risk of accidents at building sites.",
+   "Building firms are required to strictly equip labourers with protective clothing in order to lower the chance of accidents on construction sites.",
+   "To cut down on workplace accidents at construction sites, building contractors have to make sure their workers wear full safety equipment."
   ],
   "grammarTags": [
    "necessity with preventive reason"
@@ -693,14 +811,22 @@
   "meaningVi": "việc khám sức khỏe định kỳ",
   "promptVi": "Người cao tuổi được khuyên nên duy trì việc khám sức khỏe định kỳ nhằm phát hiện sớm các bệnh mãn tính như huyết áp cao.",
   "referenceAnswers": [
-   "Elderly people are advised to maintain regular health check-ups in order to detect chronic diseases such as high blood pressure early."
+   "Elderly people are advised to maintain regular health check-ups in order to detect chronic diseases such as high blood pressure early.",
+   "Senior citizens are recommended to have routine medical examinations so that long-term illnesses like hypertension can be spotted at an early stage.",
+   "It is advisable for older adults to keep up with regular medical check-ups to catch chronic conditions like high blood pressure early on."
   ],
   "grammarTags": [
    "medical advice with specific example"
   ],
   "explanationVi": "Dạng bị động 'are advised to' kết hợp với ví dụ minh họa cụ thể 'such as high blood pressure'.",
   "rationaleVi": "Việc bổ sung ví dụ 'huyết áp cao' giúp làm rõ cụm từ 'bệnh mãn tính', đáp ứng tiêu chuẩn bổ trợ ý của Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Elderly people advised to maintain regular health check-ups in order to detect chronic diseases such as high blood pressure early.",
+    "correction": "Elderly people are advised to maintain regular health check-ups in order to detect chronic diseases such as high blood pressure early.",
+    "reasonVi": "Câu mang nghĩa bị động ('được khuyên') nên bắt buộc phải có động từ 'to be' đứng trước phân từ hai ('are advised')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -715,14 +841,22 @@
   "meaningVi": "các thư viện công cộng miễn phí",
   "promptVi": "Theo quan sát của tôi, các thư viện công cộng miễn phí rất có lợi cho cộng đồng vì chúng cung cấp không gian yên tĩnh cho sinh viên ôn thi.",
   "referenceAnswers": [
-   "From my observation, free public libraries are highly beneficial to the community because they provide a quiet space for university students to revise for exams."
+   "From my observation, free public libraries are highly beneficial to the community because they provide a quiet space for university students to revise for exams.",
+   "Based on what I have observed, cost-free public libraries bring great value to society since they offer a peaceful environment for college students to prepare for tests.",
+   "As far as I have noticed, communities gain a lot from free public libraries, as undergraduates can use these calm places to study for their exams."
   ],
   "grammarTags": [
    "observation with specific functional benefit"
   ],
   "explanationVi": "Mở đầu bằng cụm từ chỉ quan sát cá nhân 'From my observation' và nêu lợi ích công năng cụ thể cho sinh viên.",
   "rationaleVi": "Đưa ra môi trường ôn thi yên tĩnh làm bằng chứng giải thích cho lợi ích của dịch vụ công cộng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "From my observation, free public libraries are highly beneficial to the community because they provide a quite space for university students to revise for exams.",
+    "correction": "From my observation, free public libraries are highly beneficial to the community because they provide a quiet space for university students to revise for exams.",
+    "reasonVi": "Học viên rất hay nhầm chính tả giữa trạng từ 'quite' (khá là) và tính từ 'quiet' (yên tĩnh); trước danh từ 'space' phải dùng 'quiet'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -737,7 +871,9 @@
   "meaningVi": "kích cỡ khẩu phần ăn",
   "promptVi": "Tôi cho rằng các quán ăn nên thu nhỏ kích cỡ khẩu phần ăn vì việc này giúp thực khách tránh việc lãng phí thức ăn thừa.",
   "referenceAnswers": [
-   "In my view, eateries should reduce their portion sizes because this helps diners avoid wasting leftover food."
+   "In my view, eateries should reduce their portion sizes because this helps diners avoid wasting leftover food.",
+   "I believe that restaurants ought to serve smaller portions since doing so assists customers in preventing food waste from leftovers.",
+   "To my mind, food outlets should offer smaller meal portions, as this stops customers from leaving behind uneaten food that goes to waste."
   ],
   "grammarTags": [
    "opinion and reason"
@@ -765,14 +901,22 @@
   "meaningVi": "thời gian sử dụng màn hình",
   "promptVi": "Việc các bậc phụ huynh chủ động giới hạn thời gian sử dụng màn hình của con cái là rất quan trọng vì nó ngăn ngừa tình trạng suy giảm thị lực ở trẻ nhỏ.",
   "referenceAnswers": [
-   "It is crucial for parents to actively limit their children's screen time as this prevents eyesight deterioration in young kids."
+   "It is crucial for parents to actively limit their children's screen time as this prevents eyesight deterioration in young kids.",
+   "Taking the initiative to restrict children's time in front of screens is vital for parents because it stops poor vision from developing in young children.",
+   "Parents really need to take an active role in cutting down how long their kids look at screens, since doing so protects little ones from worsening eyesight."
   ],
   "grammarTags": [
    "importance and effect"
   ],
   "explanationVi": "Mẫu câu 'It is crucial for [sb] to [do sth] as [clause]' dùng để khẳng định mức độ quan trọng và đưa ra tác động cụ thể.",
   "rationaleVi": "Sử dụng mệnh đề chỉ nguyên nhân 'as...' để làm rõ cho đánh giá ban đầu, đúng định hướng diễn đạt của mức 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "It is crucial for parents actively limit their children's screen time as this prevents eyesight deterioration in young kids.",
+    "correction": "It is crucial for parents to actively limit their children's screen time as this prevents eyesight deterioration in young kids.",
+    "reasonVi": "Trong cấu trúc giả chủ ngữ 'It is + tính từ + for somebody + to V', không được quên 'to' trước động từ ('to actively limit')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -787,7 +931,9 @@
   "meaningVi": "hệ thống hoàn trả tiền đặt cọc",
   "promptVi": "Việc áp dụng hệ thống hoàn trả tiền đặt cọc cho vỏ chai nhựa sẽ khuyến khích người dân phân loại rác thải tái chế tại nhà.",
   "referenceAnswers": [
-   "Introducing a deposit-return scheme for plastic bottles will encourage residents to sort recyclable waste at home."
+   "Introducing a deposit-return scheme for plastic bottles will encourage residents to sort recyclable waste at home.",
+   "Implementing a refund system for empty plastic bottles will motivate citizens to separate recyclable rubbish in their households.",
+   "Putting a deposit-refund system in place for empty plastic bottles will give locals an incentive to separate their household recycling."
   ],
   "grammarTags": [
    "action and result"
@@ -815,7 +961,9 @@
   "meaningVi": "các hoạt động ngoại khóa",
   "promptVi": "Theo tôi, các trường trung học nên tài trợ nhiều hơn cho các hoạt động ngoại khóa nhằm giúp học sinh phát triển kỹ năng làm việc nhóm.",
   "referenceAnswers": [
-   "From my perspective, secondary schools ought to provide more funding for extracurricular activities so as to help pupils develop teamwork skills."
+   "From my perspective, secondary schools ought to provide more funding for extracurricular activities so as to help pupils develop teamwork skills.",
+   "In my opinion, high schools should allocate greater financial support to after-school activities in order to assist students in building their ability to work in teams.",
+   "I think putting more money into extracurricular programmes is something secondary schools should do to help teenagers learn how to cooperate in groups."
   ],
   "grammarTags": [
    "opinion and purpose"
@@ -873,14 +1021,22 @@
   "meaningVi": "mức lương tối thiểu",
   "promptVi": "Tăng mức lương tối thiểu cho công nhân ngành bán lẻ là bước đi cần thiết vì việc này giúp họ trang trải chi phí sinh hoạt đắt đỏ.",
   "referenceAnswers": [
-   "Raising the minimum wage for retail workers is a necessary step since it enables them to cover expensive living costs."
+   "Raising the minimum wage for retail workers is a necessary step since it enables them to cover expensive living costs.",
+   "Increasing the lowest legal pay for shop employees is an essential measure because it allows them to afford high day-to-day expenses.",
+   "To help retail staff cope with the high cost of living, it is vital to put up their minimum pay rate."
   ],
   "grammarTags": [
    "evaluation and reasoning"
   ],
   "explanationVi": "Sử dụng V-ing làm chủ ngữ 'Raising...' kết hợp mệnh đề chỉ lý do 'since it enables...' trong tiếng Anh Anh.",
   "rationaleVi": "Đánh giá tính cần thiết của chính sách kinh tế kèm giải thích lợi ích thực tế cho người lao động, phù hợp trình độ 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Rising the minimum wage for retail workers is a necessary step since it enables them to cover expensive living costs.",
+    "correction": "Raising the minimum wage for retail workers is a necessary step since it enables them to cover expensive living costs.",
+    "reasonVi": "'Rise' là nội động từ không có tân ngữ; khi có tân ngữ 'the minimum wage' (nâng/tăng cái gì lên) thì bắt buộc dùng ngoại động từ 'raise' ('Raising')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -895,14 +1051,22 @@
   "meaningVi": "việc đi chung xe",
   "promptVi": "Nhiều chuyên gia khẳng định rằng việc đi chung xe đến văn phòng làm giảm đáng kể lượng khí thải từ các phương tiện cá nhân.",
   "referenceAnswers": [
-   "Many experts maintain that carpooling to the office significantly reduces emissions from private vehicles."
+   "Many experts maintain that carpooling to the office significantly reduces emissions from private vehicles.",
+   "Numerous specialists state that sharing car rides to work noticeably cuts down on exhaust fumes produced by personal cars.",
+   "According to a lot of specialists, sharing a car to commute to the workplace leads to a major drop in pollution from private vehicles."
   ],
   "grammarTags": [
    "reported viewpoint and effect"
   ],
   "explanationVi": "Động từ 'maintain that...' đưa ra góc nhìn của chuyên gia, liên kết với mệnh đề giải thích hiệu quả cụ thể.",
   "rationaleVi": "Diễn đạt quan điểm chuyên môn có dẫn chứng lý do thực tế về môi trường giao thông, vừa tầm bậc 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many experts maintain that carpooling to the office reduces significantly emissions from private vehicles.",
+    "correction": "Many experts maintain that carpooling to the office significantly reduces emissions from private vehicles.",
+    "reasonVi": "Không đặt trạng từ chen giữa ngoại động từ và tân ngữ trực tiếp ('reduces ... emissions'); hãy đặt 'significantly' trước động từ ('significantly reduces')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -917,14 +1081,22 @@
   "meaningVi": "sức khỏe tinh thần",
   "promptVi": "Cá nhân tôi tin rằng việc duy trì thói quen đi bộ trong công viên mỗi sáng rất có lợi cho sức khỏe tinh thần của người lao động.",
   "referenceAnswers": [
-   "Personally, I believe that maintaining a habit of walking in the park every morning benefits workers' mental well-being."
+   "Personally, I believe that maintaining a habit of walking in the park every morning benefits workers' mental well-being.",
+   "For my part, I am convinced that keeping up a routine of taking morning walks in the park is very good for employees' psychological health.",
+   "I personally feel that going for a stroll in the park each morning does wonders for the mental health of working people."
   ],
   "grammarTags": [
    "belief and benefit"
   ],
   "explanationVi": "'Personally, I believe that...' dẫn dắt quan điểm cá nhân, theo sau là mệnh đề chỉ lợi ích cụ thể.",
   "rationaleVi": "Thể hiện quan điểm sức khỏe đi kèm ví dụ thói quen đi bộ buổi sáng, đúng định hướng bổ sung minh họa ở trình độ 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Personally, I believe that maintaining a habit of walking in the park every morning benefits for workers' mental well-being.",
+    "correction": "Personally, I believe that maintaining a habit of walking in the park every morning benefits workers' mental well-being.",
+    "reasonVi": "Khi 'benefit' là ngoại động từ, nó đi trực tiếp với tân ngữ không kèm giới từ ('benefits workers' mental well-being'); chỉ tính từ 'beneficial' mới đi với 'to/for'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -939,14 +1111,22 @@
   "meaningVi": "các khu di tích văn hóa",
   "promptVi": "Chính quyền địa phương nên miễn phí vé vào cửa các khu di tích văn hóa cho học sinh nhằm nâng cao nhận thức về lịch sử dân tộc.",
   "referenceAnswers": [
-   "Local authorities ought to offer free entry to heritage sites for schoolchildren so as to raise awareness of national history."
+   "Local authorities ought to offer free entry to heritage sites for schoolchildren so as to raise awareness of national history.",
+   "Local councils should grant students free admission to cultural landmarks in order to deepen their understanding of the country's history.",
+   "Letting school pupils visit cultural heritage sites without paying an entrance fee is something local governments should do to make them more aware of national history."
   ],
   "grammarTags": [
    "recommendation and aim"
   ],
   "explanationVi": "Động từ khuyết thiếu 'ought to' thể hiện lời khuyên/khuyến nghị, kết hợp 'so as to' chỉ mục tiêu giáo dục.",
   "rationaleVi": "Đề xuất chính sách văn hóa đi kèm lý do mở rộng hiểu biết lịch sử, đáp ứng yêu cầu lập luận đơn giản của band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Local authorities ought to offer free entry heritage sites for schoolchildren so as to raise awareness of national history.",
+    "correction": "Local authorities ought to offer free entry to heritage sites for schoolchildren so as to raise awareness of national history.",
+    "reasonVi": "Danh từ 'entry' (vé/quyền vào cửa nơi nào) bắt buộc phải đi kèm giới từ 'to' phía sau ('entry to heritage sites'), không nối trực tiếp như tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -961,7 +1141,9 @@
   "meaningVi": "làm thêm giờ không lương",
   "promptVi": "Các doanh nghiệp phải cắt giảm tình trạng làm thêm giờ không lương để nhân viên có thời gian tái tạo sức lao động sau ca làm việc.",
   "referenceAnswers": [
-   "Businesses must reduce unpaid overtime so that employees have time to recharge after their work shifts."
+   "Businesses must reduce unpaid overtime so that employees have time to recharge after their work shifts.",
+   "Companies have to cut down on uncompensated extra hours in order for staff members to have time to recover their energy once their shifts end.",
+   "So that workers get enough time to rest and regain their strength after finishing a shift, firms need to curb unpaid overtime."
   ],
   "grammarTags": [
    "obligation and purpose"
@@ -989,14 +1171,22 @@
   "meaningVi": "các cơ sở vật chất thể thao",
   "promptVi": "Việc đầu tư vào các cơ sở vật chất thể thao cộng đồng là quyết định đúng đắn vì nó khuyến khích thanh thiếu niên tránh xa các tệ nạn xã hội.",
   "referenceAnswers": [
-   "Investing in community sports facilities is a wise decision because it encourages teenagers to stay away from social evils."
+   "Investing in community sports facilities is a wise decision because it encourages teenagers to stay away from social evils.",
+   "Putting money into public sports centres is a sensible choice since it motivates young people to steer clear of harmful social behaviours.",
+   "It is a smart move to fund local sports facilities, as doing so encourages adolescents to keep away from social vices."
   ],
   "grammarTags": [
    "judgment and rationale"
   ],
   "explanationVi": "Cụm danh động từ 'Investing in...' đi cùng tính từ đánh giá 'wise decision' và mệnh đề nguyên nhân 'because...'.",
   "rationaleVi": "Đưa ra nhận định về đầu tư thể thao kèm lý do tác động xã hội tích cực đối với giới trẻ, phù hợp mức 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Investing in community sports facilities is a wise decision because it encourages teenagers stay away from social evils.",
+    "correction": "Investing in community sports facilities is a wise decision because it encourages teenagers to stay away from social evils.",
+    "reasonVi": "Cấu trúc đúng của động từ 'encourage' khi có tân ngữ là 'encourage somebody to do something' ('encourages teenagers to stay away'), không được bỏ 'to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1040,7 +1230,9 @@
   "meaningVi": "hệ thống thanh toán kỹ thuật số",
   "promptVi": "Nhiều cửa hàng nhỏ nên chấp nhận các hệ thống thanh toán kỹ thuật số vì phương thức này giúp người mua tiết kiệm thời gian chờ đợi tại quầy thu ngân.",
   "referenceAnswers": [
-   "Many small shops should accept digital payment systems because this method helps buyers save time waiting at the checkout counter."
+   "Many small shops should accept digital payment systems because this method helps buyers save time waiting at the checkout counter.",
+   "Numerous small stores ought to adopt cashless payment options since doing so enables shoppers to spend less time queuing at the till.",
+   "Taking electronic payments is something many small retail stores should do, as it cuts down the time customers spend waiting at the cashier's desk."
   ],
   "grammarTags": [
    "Reason clause with because"
@@ -1068,14 +1260,22 @@
   "meaningVi": "các buổi học bơi",
   "promptVi": "Việc đưa các buổi học bơi vào chương trình tiểu học là rất quan trọng nhằm giúp trẻ em phòng tránh nguy cơ đuối nước khi đi chơi hè.",
   "referenceAnswers": [
-   "Including swimming lessons in the primary school curriculum is essential to help children avoid the risk of drowning during summer trips."
+   "Including swimming lessons in the primary school curriculum is essential to help children avoid the risk of drowning during summer trips.",
+   "Adding swimming classes to elementary school programmes is vital in order to protect youngsters from the danger of drowning on summer outings.",
+   "It is really important that primary schools teach swimming as part of their timetable so kids stay safe from drowning while away on summer holidays."
   ],
   "grammarTags": [
    "Gerund subject expressing purpose"
   ],
   "explanationVi": "Động từ dạng V-ing đóng vai trò chủ ngữ ('Including...'), kết hợp cụm chỉ mục đích ('to help...') để giải thích lý do cụ thể.",
   "rationaleVi": "Mẫu câu sử dụng chủ ngữ danh động từ phù hợp trình độ 5.0, nêu rõ một hành động cụ thể và lý do mang tính thực tiễn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Including swimming lessons in the primary school curriculum is essential to help children avoid the risk of drowning while summer trips.",
+    "correction": "Including swimming lessons in the primary school curriculum is essential to help children avoid the risk of drowning during summer trips.",
+    "reasonVi": "Trước cụm danh từ ('summer trips') phải dùng giới từ 'during', còn liên từ 'while' chỉ đi với mệnh đề (S + V) hoặc V-ing."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1090,7 +1290,9 @@
   "meaningVi": "dịch vụ lưu trú nhà dân (homestay)",
   "promptVi": "Du khách nên thử chọn dịch vụ lưu trú nhà dân khi đến vùng cao bởi vì loại hình này giúp họ trải nghiệm đời sống văn hóa của người bản địa một cách chân thực.",
   "referenceAnswers": [
-   "Tourists should try choosing homestay accommodation when visiting highland regions because this option allows them to experience local cultural life authentically."
+   "Tourists should try choosing homestay accommodation when visiting highland regions because this option allows them to experience local cultural life authentically.",
+   "Visitors ought to consider staying with local host families when travelling to mountainous areas since this arrangement lets them gain a genuine taste of indigenous culture.",
+   "Staying in a homestay is well worth trying for holidaymakers heading to the highlands, as it gives them a real feel for the everyday culture of native residents."
   ],
   "grammarTags": [
    "Expressing opinion with cause"
@@ -1118,14 +1320,22 @@
   "meaningVi": "thùng rác công cộng",
   "promptVi": "Chính quyền thành phố cần lắp đặt thêm thùng rác công cộng dọc các bãi biển để ngăn du khách vứt vỏ chai và bao bì nhựa xuống cát.",
   "referenceAnswers": [
-   "The city government needs to install more public litter bins along beaches to prevent tourists from dropping plastic bottles and wrappers on the sand."
+   "The city government needs to install more public litter bins along beaches to prevent tourists from dropping plastic bottles and wrappers on the sand.",
+   "Municipal authorities have to place additional public rubbish bins along the coast in order to stop visitors from leaving plastic containers and packaging on the beach.",
+   "To keep holidaymakers from throwing empty bottles and plastic wrappers onto the sand, the city council must set up more public waste bins by the beach."
   ],
   "grammarTags": [
    "Purpose clause with infinitive"
   ],
   "explanationVi": "Sử dụng cấu trúc 'need to do something' kết hợp cụm động từ chỉ mục đích 'to prevent somebody from doing something' với ví dụ cụ thể về rác thải nhựa.",
   "rationaleVi": "Câu nêu đề xuất giải quyết vấn đề xã hội cùng ví dụ minh họa rõ ràng (vỏ chai, bao bì nhựa), đáp ứng tiêu chí Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The city government needs to install more public litter bins along beaches to prevent tourists to drop plastic bottles and wrappers on the sand.",
+    "correction": "The city government needs to install more public litter bins along beaches to prevent tourists from dropping plastic bottles and wrappers on the sand.",
+    "reasonVi": "Cấu trúc chuẩn để nói 'ngăn cản ai làm gì' là 'prevent somebody (from) + V-ing' ('prevent tourists from dropping'), tuyệt đối không dùng 'to V'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1140,7 +1350,9 @@
   "meaningVi": "các bữa ăn nấu tại nhà",
   "promptVi": "Ăn các bữa ăn nấu tại nhà thường xuyên mang lại lợi ích rõ rệt vì người dân có thể kiểm soát lượng muối và dầu ăn trong từng món ăn.",
   "referenceAnswers": [
-   "Eating home-cooked meals regularly offers clear benefits because people can control the amount of salt and cooking oil in each dish."
+   "Eating home-cooked meals regularly offers clear benefits because people can control the amount of salt and cooking oil in each dish.",
+   "Having homemade food on a regular basis brings obvious advantages since individuals are able to regulate how much salt and oil goes into every dish.",
+   "There are clear perks to eating meals prepared at home often, as it lets people keep track of the salt and cooking oil used in each dish."
   ],
   "grammarTags": [
    "Gerund subject with explicit reason"
@@ -1168,14 +1380,22 @@
   "meaningVi": "bóng đèn LED",
   "promptVi": "Thay thế đèn sợi đốt bằng bóng đèn LED là một giải pháp thiết thực nhằm giúp các văn phòng giảm điện năng tiêu thụ hằng tháng.",
   "referenceAnswers": [
-   "Replacing incandescent lights with LED light bulbs is a practical solution to help offices reduce their monthly electricity consumption."
+   "Replacing incandescent lights with LED light bulbs is a practical solution to help offices reduce their monthly electricity consumption.",
+   "Switching from traditional filament bulbs to LED lights is a sensible measure to assist workplaces in cutting their monthly power usage.",
+   "Swapping out incandescent bulbs for LED ones serves as a realistic way to help workplaces cut down on the power they use each month."
   ],
   "grammarTags": [
    "Substitution gerund structure"
   ],
   "explanationVi": "Cấu trúc 'Replacing X with Y' đóng vai trò chủ ngữ, chỉ ra giải pháp kèm lý do là giảm chi phí điện hằng tháng.",
   "rationaleVi": "Cấu trúc thay thế bằng danh động từ phù hợp ngữ cảnh Band 5.0 để đưa ra nhận định mang tính giải pháp cho một vấn đề quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Replacing incandescent lights by LED light bulbs is a practical solution to help offices reduce their monthly electricity consumption.",
+    "correction": "Replacing incandescent lights with LED light bulbs is a practical solution to help offices reduce their monthly electricity consumption.",
+    "reasonVi": "Trong câu chủ động mang nghĩa 'thay thế cái gì bằng cái gì', động từ 'replace' đi với giới từ 'with' ('replace A with B'), không dịch chữ 'bằng' thành 'by'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1190,14 +1410,22 @@
   "meaningVi": "xe buýt điện",
   "promptVi": "Triển khai xe buýt điện trong các khu đô thị là quyết định sáng suốt vì phương tiện này không xả khí thải ra môi trường.",
   "referenceAnswers": [
-   "Deploying electric buses in urban areas is a wise decision because these vehicles emit no exhaust gases into the environment."
+   "Deploying electric buses in urban areas is a wise decision because these vehicles emit no exhaust gases into the environment.",
+   "Putting electric buses into service across cities is a smart choice since this form of transport releases no exhaust fumes into the surroundings.",
+   "It makes great sense to roll out electric buses in towns and cities, as they run without releasing any polluting gases into the environment."
   ],
   "grammarTags": [
    "Presenting rationale for urban policy"
   ],
   "explanationVi": "Dùng V-ing 'Deploying...' làm chủ ngữ, kết hợp mệnh đề 'because' nêu lý do cụ thể về mặt môi trường (không xả khí thải).",
   "rationaleVi": "Giúp học viên Band 5.0 luyện tập đưa ra quan điểm đánh giá ('wise decision') kèm cơ sở giải thích cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Deploying electronic buses in urban areas is a wise decision because these vehicles emit no exhaust gases into the environment.",
+    "correction": "Deploying electric buses in urban areas is a wise decision because these vehicles emit no exhaust gases into the environment.",
+    "reasonVi": "Phương tiện chạy bằng năng lượng điện phải dùng tính từ 'electric' ('electric buses'), còn 'electronic' chỉ dùng cho thiết bị vi mạch điện tử như máy tính hay điện thoại."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1212,7 +1440,9 @@
   "meaningVi": "các dự án nhóm",
   "promptVi": "Giảng viên đại học nên giao nhiều dự án nhóm hơn vì hình thức này luyện cho sinh viên cách phân chia công việc và giải quyết tranh cãi.",
   "referenceAnswers": [
-   "University lecturers should assign more group projects because this format trains students to divide tasks and resolve conflicts."
+   "University lecturers should assign more group projects because this format trains students to divide tasks and resolve conflicts.",
+   "University teachers ought to give more group assignments as this approach teaches students how to share workloads and settle disagreements.",
+   "By setting more team projects, university professors can help students practise splitting up work and dealing with arguments."
   ],
   "grammarTags": [
    "Subject-verb-object with reason clause"
@@ -1240,7 +1470,9 @@
   "meaningVi": "bàn làm việc đứng",
   "promptVi": "Trang bị bàn làm việc đứng trong văn phòng giúp nhân viên hạn chế tình trạng đau lưng do ngồi liên tục nhiều giờ liền.",
   "referenceAnswers": [
-   "Providing standing desks in offices helps employees reduce back pain caused by sitting continuously for many hours."
+   "Providing standing desks in offices helps employees reduce back pain caused by sitting continuously for many hours.",
+   "Equipping offices with standing desks enables staff to limit backache resulting from sitting non-stop for long hours.",
+   "Office workers suffer less back pain from hours of continuous sitting when workplaces put in standing desks."
   ],
   "grammarTags": [
    "Action-benefit cause structure"
@@ -1268,14 +1500,22 @@
   "meaningVi": "các làng nghề truyền thống",
   "promptVi": "Tổ chức các chuyến tham quan thực tế tới các làng nghề truyền thống giúp học sinh hiểu rõ hơn về quy trình làm gốm và dệt lụa thủ công.",
   "referenceAnswers": [
-   "Organising field trips to traditional craft villages helps students gain a better understanding of manual pottery and silk weaving processes."
+   "Organising field trips to traditional craft villages helps students gain a better understanding of manual pottery and silk weaving processes.",
+   "Arranging school trips to traditional craft villages allows pupils to better understand the processes of handmade pottery and silk weaving.",
+   "Students can learn much more about how pottery is made and silk is woven by hand when schools run excursions to traditional craft villages."
   ],
   "grammarTags": [
    "Benefit statement with concrete example"
   ],
   "explanationVi": "Cụm danh động từ 'Organising...' làm chủ ngữ, kết hợp với các ví dụ cụ thể ('pottery and silk weaving') để minh họa cho lợi ích.",
   "rationaleVi": "Tránh khẳng định chung chung bằng cách đưa ví dụ về hai nghề thủ công cụ thể, đáp ứng đúng định hướng biên tập Band 5.0.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Organising field trips to traditional craft villages helps students gain a better understand of manual pottery and silk weaving processes.",
+    "correction": "Organising field trips to traditional craft villages helps students gain a better understanding of manual pottery and silk weaving processes.",
+    "reasonVi": "Sau cụm mạo từ và tính từ 'a better' bắt buộc phải là danh từ 'understanding' (sự hiểu biết), không được dùng động từ 'understand'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1290,7 +1530,9 @@
   "meaningVi": "cửa sổ cách âm",
   "promptVi": "Khi sống gần các tuyến đường lớn, cư dân nên lắp đặt cửa sổ cách âm nhằm giảm bớt tiếng ồn từ xe tải vào ban đêm.",
   "referenceAnswers": [
-   "When living near major roads, residents should install soundproof windows to reduce noise from trucks at night."
+   "When living near major roads, residents should install soundproof windows to reduce noise from trucks at night.",
+   "People who live close to main roads ought to fit soundproof windows in order to cut down on noise from lorries at night.",
+   "To block out night-time truck noise, anyone living next to a busy road should put in soundproof windows."
   ],
   "grammarTags": [
    "Adverbial condition clause"
@@ -1318,14 +1560,22 @@
   "meaningVi": "những giấc ngủ trưa ngắn",
   "promptVi": "Dành thời gian cho những giấc ngủ trưa ngắn giúp người lao động phục hồi sự tập trung và giảm bớt mệt mỏi trong ca làm việc buổi chiều.",
   "referenceAnswers": [
-   "Taking time for short afternoon naps helps workers restore their focus and reduce fatigue during the afternoon shift."
+   "Taking time for short afternoon naps helps workers restore their focus and reduce fatigue during the afternoon shift.",
+   "Making time for brief midday naps allows employees to regain their concentration and ease tiredness during the afternoon shift.",
+   "Workers can get their focus back and feel less tired on their afternoon shift if they set aside time for a quick nap."
   ],
   "grammarTags": [
    "Gerund subject with health outcome"
   ],
   "explanationVi": "Sử dụng 'Taking time...' làm chủ ngữ, đi kèm hai động từ chỉ lợi ích cụ thể 'restore' và 'reduce' trong ngữ cảnh ca làm việc buổi chiều.",
   "rationaleVi": "Cấu trúc nêu lợi ích sức khỏe/thói quen bằng ngôn từ tự nhiên, phù hợp trình độ Band 5.0 chú trọng tính cụ thể của lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Taking time for short afternoon naps helps workers restore their focus and reducing fatigue during the afternoon shift.",
+    "correction": "Taking time for short afternoon naps helps workers restore their focus and reduce fatigue during the afternoon shift.",
+    "reasonVi": "Hai động từ nối với nhau bằng 'and' cùng phụ thuộc vào 'helps workers' phải song song cùng dạng nguyên thể ('restore ... and reduce'), không chia lệch thành 'reducing'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1348,7 +1598,13 @@
   ],
   "explanationVi": "Cụm 'ride-hailing apps' chỉ các ứng dụng như Grab hay Be. Mệnh đề chỉ nguyên nhân 'because...' đưa ra lý do cụ thể về minh bạch giá cước để làm rõ quan điểm.",
   "rationaleVi": "Thích hợp cho mức độ 5.0 vì thể hiện quan điểm cá nhân rõ ràng ('I believe') kèm lý do cụ thể về tiện ích công nghệ đời sống.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I believe ride-hailing apps are very convenient for urban residents because they help passengers know the exact fare in advanced.",
+    "correction": "I believe ride-hailing apps are very convenient for urban residents because they help passengers know the exact fare in advance.",
+    "reasonVi": "Cụm từ cố định mang nghĩa 'trước' là 'in advance' (không có '-d'), còn 'advanced' có '-d' là tính từ mang nghĩa 'tiên tiến/nâng cao'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1363,14 +1619,22 @@
   "meaningVi": "ngôn ngữ ký hiệu",
   "promptVi": "Tôi ủng hộ việc dạy ngôn ngữ ký hiệu ở trường phổ thông vì khóa học này giúp học sinh giao tiếp dễ dàng với bạn học khiếm thính.",
   "referenceAnswers": [
-   "I support teaching sign language in secondary schools because this course helps pupils communicate easily with deaf classmates."
+   "I support teaching sign language in secondary schools because this course helps pupils communicate easily with deaf classmates.",
+   "I am in favour of introducing sign language in secondary schools since this subject enables students to interact easily with deaf peers.",
+   "Teaching sign language at school gets my support because the course makes it easy for students to talk with classmates who cannot hear."
   ],
   "grammarTags": [
    "opinion and reason"
   ],
   "explanationVi": "'Sign language' dùng để chỉ ngôn ngữ ký hiệu. Câu thể hiện quan điểm 'I support...' kèm nguyên nhân cụ thể về lợi ích hỗ trợ bạn khiếm thính.",
   "rationaleVi": "Đạt mức 5.0 do nêu được thái độ ủng hộ một chính sách giáo dục quen thuộc và đi kèm lý do giải thích minh họa rõ ràng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I support to teach sign language in secondary schools because this course helps pupils communicate easily with deaf classmates.",
+    "correction": "I support teaching sign language in secondary schools because this course helps pupils communicate easily with deaf classmates.",
+    "reasonVi": "Khi theo sau động từ 'support' (ủng hộ việc làm gì) là một động từ khác, ta phải chia ở dạng V-ing ('support teaching'), không dùng 'to V'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1414,14 +1678,22 @@
   "meaningVi": "chính sách đổi trả",
   "promptVi": "Từ góc nhìn của tôi, các cửa hàng trực tuyến nên đưa ra chính sách đổi trả linh hoạt vì điều này giúp khách hàng yên tâm khi đặt mua quần áo.",
   "referenceAnswers": [
-   "From my perspective, online shops ought to offer a flexible return policy because this helps customers feel confident when ordering clothes."
+   "From my perspective, online shops ought to offer a flexible return policy because this helps customers feel confident when ordering clothes.",
+   "In my view, online retailers should provide flexible return policies, as this gives shoppers peace of mind when buying clothing.",
+   "The way I see it, shoppers feel much more reassured about ordering clothes online when stores have an easy return and exchange policy."
   ],
   "grammarTags": [
    "opinion and concrete evidence"
   ],
   "explanationVi": "'Return policy' nghĩa là chính sách đổi trả hàng. Mở đầu bằng 'From my perspective' thể hiện góc nhìn cá nhân và mệnh đề 'because...' bổ sung lý do cụ thể.",
   "rationaleVi": "Thuộc trình độ 5.0 khi người học trình bày được nhận định về dịch vụ mua sắm trực tuyến cùng lý do thực tế liên quan đến tâm lý khách hàng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "From my perspective, online shops ought to offer a flexible return policy because this helps customers feel confident when order clothes.",
+    "correction": "From my perspective, online shops ought to offer a flexible return policy because this helps customers feel confident when ordering clothes.",
+    "reasonVi": "Khi rút gọn mệnh đề cùng chủ ngữ sau liên từ 'when', động từ chủ động phải chuyển sang dạng V-ing ('when ordering'), không được để nguyên thể 'when order'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1436,14 +1708,22 @@
   "meaningVi": "đồ ăn vặt chứa nhiều đường",
   "promptVi": "Cung cấp trái cây tươi tại nơi làm việc là một chính sách hay vì nó giúp nhân viên giảm bớt tiêu thụ đồ ăn vặt chứa nhiều đường.",
   "referenceAnswers": [
-   "Providing fresh fruit at the workplace is a good policy as it helps employees reduce their consumption of sugary snacks."
+   "Providing fresh fruit at the workplace is a good policy as it helps employees reduce their consumption of sugary snacks.",
+   "Offering fresh fruit in the office is a sensible policy because it encourages staff to cut down on high-sugar snacks.",
+   "Supplying fresh fruit at work is a great idea since it helps workers cut back on eating sweet snacks."
   ],
   "grammarTags": [
    "evaluation and cause"
   ],
   "explanationVi": "'Sugary snacks' chỉ các món ăn nhẹ ngọt như bánh kẹo. Mệnh đề 'as it helps...' đóng vai trò đưa ra nguyên nhân thuyết phục cho đánh giá ban đầu.",
   "rationaleVi": "Điểm 5.0 được thể hiện qua việc đánh giá một giải pháp sức khỏe tại công sở kết hợp giải thích lý do cụ thể thay vì nói chung chung.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Providing fresh fruit at the workplace is a good policy as it helps employees reduce their consumption sugary snacks.",
+    "correction": "Providing fresh fruit at the workplace is a good policy as it helps employees reduce their consumption of sugary snacks.",
+    "reasonVi": "Khác với động từ 'consume', danh từ 'consumption' bắt buộc phải nối với danh từ chỉ đối tượng tiêu thụ phía sau bằng giới từ 'of' ('consumption of sugary snacks')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1487,7 +1767,9 @@
   "meaningVi": "trang phục tự do",
   "promptVi": "Nếu các công ty cho phép nhân viên mặc trang phục tự do vào thứ Sáu, bầu không khí làm việc sẽ trở nên thoải mái và bớt căng thẳng hơn.",
   "referenceAnswers": [
-   "If companies allow staff to wear casual clothes on Fridays, the working atmosphere will become more relaxed and less stressful."
+   "If companies allow staff to wear casual clothes on Fridays, the working atmosphere will become more relaxed and less stressful.",
+   "If businesses permit employees to dress casually on Fridays, the workplace environment will feel more comfortable and less tense.",
+   "The office mood will become much more laid-back and less stressful if firms let their workers wear casual clothes on Fridays."
   ],
   "grammarTags": [
    "condition and result"
@@ -1545,7 +1827,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Theo tôi, học sinh nên có cơ hội chọn một số môn tự chọn.",
   "referenceAnswers": [
-   "In my view, students should have the opportunity to choose some elective subjects."
+   "In my view, students should have the opportunity to choose some elective subjects.",
+   "In my opinion, pupils ought to be given the chance to pick several optional subjects.",
+   "Personally, I think learners should get the chance to choose a few optional courses."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1640,7 +1924,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Theo quan điểm của tôi, đi bộ là một cách đơn giản để tăng hoạt động thể chất hằng ngày.",
   "referenceAnswers": [
-   "From my perspective, walking is a simple way to increase daily physical activity."
+   "From my perspective, walking is a simple way to increase daily physical activity.",
+   "In my opinion, going for walks is an easy method to boost everyday physical exercise.",
+   "As I see it, walking offers a straightforward way to get more exercise each day."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1649,12 +1935,20 @@
   ],
   "explanationVi": "From my perspective đi với đánh giá cá nhân; walking là danh động từ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "According to my perspective, walking is a simple way to increase daily physical activity.",
+    "correction": "From my perspective, walking is a simple way to increase daily physical activity.",
+    "reasonVi": "'According to' chỉ dùng để trích dẫn ý kiến của người hoặc nguồn khác chứ không đi với 'my/me'; hãy dùng 'From my perspective' hoặc 'In my opinion'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "physical activity",
+  "meaningVi": "hoạt động thể chất"
  },
  {
   "id": "esl-v2-r10-u01-006",
@@ -1686,7 +1980,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "reduce traffic pressure",
+  "meaningVi": "giảm áp lực giao thông"
  },
  {
   "id": "esl-v2-r10-u01-007",
@@ -1695,7 +1991,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi phản đối ý kiến rằng điểm thi là thước đo duy nhất của năng lực.",
   "referenceAnswers": [
-   "I disagree with the idea that exam scores are the only measure of ability."
+   "I disagree with the idea that exam scores are the only measure of ability.",
+   "I oppose the view that test results are the sole way to judge a person's capability.",
+   "I don't agree with the claim that someone's ability can only be measured by exam marks."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1704,12 +2002,20 @@
   ],
   "explanationVi": "disagree with the idea that nêu rõ quan điểm phản đối.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I am disagree with the idea that exam scores are the only measure of ability.",
+    "correction": "I disagree with the idea that exam scores are the only measure of ability.",
+    "reasonVi": "'Disagree' (và 'agree') là động từ thường chứ không phải tính từ, nên tuyệt đối không thêm động từ 'to be' ('am') vào phía trước."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "measure of ability",
+  "meaningVi": "thước đo năng lực"
  },
  {
   "id": "esl-v2-r10-u01-008",
@@ -1718,7 +2024,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Theo tôi, trẻ em cần thời gian vui chơi không có màn hình.",
   "referenceAnswers": [
-   "In my opinion, children need time for screen-free play."
+   "In my opinion, children need time for screen-free play.",
+   "In my view, youngsters require playtime away from electronic screens.",
+   "I believe kids ought to have time to play without any digital screens around."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1727,7 +2035,13 @@
   ],
   "explanationVi": "need time for + cụm danh từ; screen-free bổ nghĩa cho play.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In my opinion, children needs time for screen-free play.",
+    "correction": "In my opinion, children need time for screen-free play.",
+    "reasonVi": "'Children' là danh từ số nhiều bất quy tắc (dù không có đuôi '-s'), nên động từ theo sau phải giữ nguyên thể số nhiều là 'need'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -1766,7 +2080,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "accessible green space",
+  "meaningVi": "không gian xanh dễ tiếp cận"
  },
  {
   "id": "esl-v2-r10-u01-010",
@@ -1807,7 +2123,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Theo tôi, học trực tuyến nên bổ sung chứ không hoàn toàn thay thế lớp học trực tiếp.",
   "referenceAnswers": [
-   "In my view, online learning should complement rather than completely replace face-to-face classes."
+   "In my view, online learning should complement rather than completely replace face-to-face classes.",
+   "In my opinion, online study ought to support in-person lessons instead of fully taking their place.",
+   "As I see it, virtual courses should work alongside classroom teaching, not replace it altogether."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1902,7 +2220,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi cho rằng các cửa hàng nhỏ vẫn có vai trò quan trọng trong cộng đồng.",
   "referenceAnswers": [
-   "I would argue that small shops still play an important role in communities."
+   "I would argue that small shops still play an important role in communities.",
+   "I believe that small local stores continue to serve a vital function in neighbourhoods.",
+   "To my mind, small shops still matter a great deal to local communities."
   ],
   "grammarTags": [
    "r10_u01",
@@ -1922,7 +2242,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "important role",
+  "meaningVi": "vai trò quan trọng"
  },
  {
   "id": "esl-v2-r10-u01-015",
@@ -1941,12 +2263,20 @@
   ],
   "explanationVi": "although nêu nhượng bộ; still giữ ý sở thích không thay đổi.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U01), chủ đề Thể hiện quan điểm.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although learning apps are useful, but I still prefer printed books when I need to concentrate for a long time.",
+    "correction": "Although learning apps are useful, I still prefer printed books when I need to concentrate for a long time.",
+    "reasonVi": "Trong tiếng Anh, đã dùng 'Although' ở đầu câu thì tuyệt đối không dùng thêm 'but' ở mệnh đề sau (chỉ chọn một trong hai để nối hai mệnh đề)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Thể hiện quan điểm"
+  "skillFocus": "Thể hiện quan điểm",
+  "targetTerm": "printed books",
+  "meaningVi": "sách in"
  },
  {
   "id": "esl-v2-r10-u01-016",
@@ -2029,12 +2359,20 @@
   ],
   "explanationVi": "because đưa lý do trực tiếp cho lập trường.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I support public buses because they make travel more easier for people without cars.",
+    "correction": "I support public buses because they make travel easier for people without cars.",
+    "reasonVi": "'Easier' bản thân đã là dạng so sánh hơn của 'easy' nên không được thêm 'more' vào phía trước tránh lỗi so sánh kép ('more easier')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "make travel easier",
+  "meaningVi": "giúp đi lại dễ hơn"
  },
  {
   "id": "esl-v2-r10-u02-002",
@@ -2064,7 +2402,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "group study",
+  "meaningVi": "học theo nhóm"
  },
  {
   "id": "esl-v2-r10-u02-003",
@@ -2073,7 +2413,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện cần được đầu tư vì không phải gia đình nào cũng mua được nhiều sách.",
   "referenceAnswers": [
-   "Libraries deserve investment because not every family can afford a large collection of books."
+   "Libraries deserve investment because not every family can afford a large collection of books.",
+   "Libraries need funding since not all households have enough money to buy many books.",
+   "Because buying lots of books is too expensive for some families, libraries really ought to receive proper investment."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2104,7 +2446,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Tôi thích đi bộ đến trường vì việc đó giúp tôi bắt đầu ngày mới năng động hơn.",
   "referenceAnswers": [
-   "I prefer walking to school because it helps me start the day more actively."
+   "I prefer walking to school because it helps me start the day more actively.",
+   "I like going to school on foot as doing so gives me a more energetic start to the day.",
+   "Walking to school is my preference since it gets me feeling more active first thing in the morning."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2113,12 +2457,20 @@
   ],
   "explanationVi": "prefer + V-ing và because + mệnh đề giải thích.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I prefer walking to school because it help me start the day more actively.",
+    "correction": "I prefer walking to school because it helps me start the day more actively.",
+    "reasonVi": "Chủ ngữ ngôi thứ ba số ít 'it' ở thì hiện tại đơn bắt buộc đi với động từ chia thêm '-s' ('it helps'), tránh quên '-s' do thói quen không chia động từ trong tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "start the day",
+  "meaningVi": "bắt đầu ngày mới"
  },
  {
   "id": "esl-v2-r10-u02-005",
@@ -2127,7 +2479,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Công ty nên hướng dẫn nhân viên mới kỹ hơn vì sai sót ban đầu có thể gây chậm trễ.",
   "referenceAnswers": [
-   "Companies should train new employees more thoroughly because early mistakes may cause delays."
+   "Companies should train new employees more thoroughly because early mistakes may cause delays.",
+   "Businesses ought to guide new staff more carefully, as initial errors can slow down work.",
+   "Since mistakes made early on can hold things up, employers need to give newcomers more thorough guidance."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2179,7 +2533,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "become overheated",
+  "meaningVi": "bị quá nóng"
  },
  {
   "id": "esl-v2-r10-u02-007",
@@ -2252,7 +2608,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Tôi muốn thành phố có thêm đường dành cho xe đạp vì tôi thấy đường hiện tại quá nguy hiểm.",
   "referenceAnswers": [
-   "I want the city to add more cycle lanes because I find the current roads too dangerous."
+   "I want the city to add more cycle lanes because I find the current roads too dangerous.",
+   "I would like the city to build additional bike paths since existing roads seem far too unsafe to me.",
+   "Because I consider the current streets too risky, I hope the city puts in more dedicated cycling lanes."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2261,12 +2619,20 @@
   ],
   "explanationVi": "want + object + to V; because cho lý do cá nhân.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I want the city add more cycle lanes because I find the current roads too dangerous.",
+    "correction": "I want the city to add more cycle lanes because I find the current roads too dangerous.",
+    "reasonVi": "Để diễn đạt 'muốn ai/cái gì làm việc gì', ta bắt buộc dùng cấu trúc 'want + tân ngữ + to V' ('want the city to add'), không bỏ 'to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "cycle lanes",
+  "meaningVi": "đường dành cho xe đạp"
  },
  {
   "id": "esl-v2-r10-u02-010",
@@ -2275,7 +2641,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Một lợi ích của lịch học linh hoạt là học viên có thể học vào lúc họ tập trung nhất.",
   "referenceAnswers": [
-   "One benefit of flexible study schedules is that learners can study when they concentrate best."
+   "One benefit of flexible study schedules is that learners can study when they concentrate best.",
+   "One advantage of adaptable study timetables is that students are able to work at their peak focus times.",
+   "Having a flexible timetable is helpful because it lets students study whenever their concentration is strongest."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2306,7 +2674,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Tôi không thích tin nhắn công việc vào buổi tối vì chúng khiến tôi khó nghỉ ngơi.",
   "referenceAnswers": [
-   "I dislike work messages in the evening because they make it harder for me to relax."
+   "I dislike work messages in the evening because they make it harder for me to relax.",
+   "I am not fond of receiving work-related messages at night, as they prevent me from resting properly.",
+   "Getting messages from work in the evening bothers me because it makes unwinding much more difficult."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2315,7 +2685,13 @@
   ],
   "explanationVi": "make it harder for + người + to V nêu tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I dislike work messages in evening because they make it harder for me to relax.",
+    "correction": "I dislike work messages in the evening because they make it harder for me to relax.",
+    "reasonVi": "Với các buổi trong ngày như sáng, chiều, tối, cụm giới từ chỉ thời gian bắt buộc phải có mạo từ 'the' ('in the evening')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2331,7 +2707,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Chúng ta nên bảo dưỡng xe buýt thường xuyên vì xe hỏng sẽ làm hành khách đến muộn.",
   "referenceAnswers": [
-   "We should maintain buses regularly because breakdowns can make passengers late."
+   "We should maintain buses regularly because breakdowns can make passengers late.",
+   "We ought to service buses on a regular basis since vehicle breakdowns will cause delays for riders.",
+   "Because broken-down buses end up making passengers late, we need to keep them well maintained."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2362,7 +2740,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Một nguyên nhân khiến nhiều người bỏ cuộc là họ đặt mục tiêu quá lớn ngay từ đầu.",
   "referenceAnswers": [
-   "One reason some people give up is that they set goals that are too ambitious at the start."
+   "One reason some people give up is that they set goals that are too ambitious at the start.",
+   "A key reason why many people quit is that they aim too high right from the beginning.",
+   "Many people end up giving up partly because the targets they set at first are far too big."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2371,12 +2751,20 @@
   ],
   "explanationVi": "some giới hạn phạm vi; is that nêu nguyên nhân.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "One reason some people give up is because they set goals that are too ambitious at the start.",
+    "correction": "One reason some people give up is that they set goals that are too ambitious at the start.",
+    "reasonVi": "Khi chủ ngữ đã là 'One reason' (hoặc 'The reason'), mệnh đề bổ ngữ sau 'is' phải bắt đầu bằng 'that' ('One reason ... is that ...') chứ không dùng 'because' để tránh lặp nghĩa nguyên nhân."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "set goals",
+  "meaningVi": "đặt mục tiêu"
  },
  {
   "id": "esl-v2-r10-u02-014",
@@ -2417,7 +2805,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu không có hướng dẫn rõ ràng, học viên dễ mắc lỗi vì họ phải tự đoán cách làm.",
   "referenceAnswers": [
-   "Without clear instructions, learners may make mistakes because they have to guess what to do."
+   "Without clear instructions, learners may make mistakes because they have to guess what to do.",
+   "If clear guidelines are not provided, students can easily make errors since they must figure out the steps by guessing.",
+   "Learners are prone to making mistakes when instructions are unclear, as it forces them to guess how to proceed."
   ],
   "grammarTags": [
    "r10_u02",
@@ -2437,7 +2827,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "make mistakes",
+  "meaningVi": "mắc lỗi"
  },
  {
   "id": "esl-v2-r10-u02-016",
@@ -2456,12 +2848,20 @@
   ],
   "explanationVi": "because chỉ ra nhóm người được hưởng lợi cụ thể.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U02), chủ đề Lập luận và lý do.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I support laptop-lending schemes because it gives learning opportunities to people without their own devices.",
+    "correction": "I support laptop-lending schemes because they give learning opportunities to people without their own devices.",
+    "reasonVi": "Đại từ thay thế cho cụm danh từ số nhiều 'laptop-lending schemes' phải là 'they' ('they give'), không dịch chữ 'nó' trong tiếng Việt thành 'it'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "learning opportunities",
+  "meaningVi": "cơ hội học tập"
  },
  {
   "id": "esl-v2-r10-u02-017",
@@ -2491,7 +2891,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lập luận và lý do"
+  "skillFocus": "Lập luận và lý do",
+  "targetTerm": "regain their concentration",
+  "meaningVi": "phục hồi sự tập trung"
  },
  {
   "id": "esl-v2-r10-u03-001",
@@ -2500,7 +2902,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, một học sinh không có máy tính ở nhà có thể dùng thiết bị của thư viện để làm bài tập.",
   "referenceAnswers": [
-   "For example, a student without a computer at home could use a library device to complete assignments."
+   "For example, a student without a computer at home could use a library device to complete assignments.",
+   "For instance, a pupil who lacks a home computer can use equipment at the library to do homework.",
+   "For example, if a student has no computer at home, they can finish their schoolwork on a library machine."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2563,7 +2967,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một ví dụ đơn giản là cửa hàng cho khách mang bình cá nhân khi mua nước.",
   "referenceAnswers": [
-   "A simple example is a shop allowing customers to bring their own bottles when buying drinks."
+   "A simple example is a shop allowing customers to bring their own bottles when buying drinks.",
+   "One straightforward example is when a store lets buyers use their personal flasks to purchase beverages.",
+   "To take a simple example, a store might let shoppers bring along their own bottles whenever they buy a drink."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2572,12 +2978,20 @@
   ],
   "explanationVi": "A simple example is + cụm danh từ; tình huống minh họa không gán địa điểm thật.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A simple example is a shop allowing customers bring their own bottles when buying drinks.",
+    "correction": "A simple example is a shop allowing customers to bring their own bottles when buying drinks.",
+    "reasonVi": "Cấu trúc đúng là 'allow somebody to do something' (cho phép ai làm gì), không dùng động từ nguyên mẫu không 'to' như sau 'let'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "their own bottles",
+  "meaningVi": "bình cá nhân"
  },
  {
   "id": "esl-v2-r10-u03-004",
@@ -2586,7 +3000,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, nếu một lớp học ghi lại lỗi phổ biến, học viên có thể ôn đúng điểm yếu của mình.",
   "referenceAnswers": [
-   "For example, if a class records common mistakes, learners can review their specific weaknesses."
+   "For example, if a class records common mistakes, learners can review their specific weaknesses.",
+   "For instance, when a class keeps a list of frequent errors, students are able to revise the exact areas they struggle with.",
+   "Say a class notes down common errors, for example; students can then focus their revision right on their weak points."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2606,7 +3022,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "specific weaknesses",
+  "meaningVi": "điểm yếu cụ thể"
  },
  {
   "id": "esl-v2-r10-u03-005",
@@ -2615,7 +3033,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Chẳng hạn, người làm ca tối có thể học qua bản ghi thay vì tham gia buổi học trực tiếp.",
   "referenceAnswers": [
-   "For example, people working evening shifts could study from recordings instead of attending live classes."
+   "For example, people working evening shifts could study from recordings instead of attending live classes.",
+   "For instance, workers on evening shifts can learn through recorded lessons rather than joining real-time sessions.",
+   "Instead of going to a live lesson, someone who works evening shifts could, for example, study using class recordings."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2635,7 +3055,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "working evening shifts",
+  "meaningVi": "làm ca tối"
  },
  {
   "id": "esl-v2-r10-u03-006",
@@ -2644,7 +3066,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Một trường hợp có thể xảy ra là khách du lịch chọn xe buýt khi ứng dụng chỉ rõ tuyến đường và giờ chạy.",
   "referenceAnswers": [
-   "One possible scenario is that tourists choose buses when an app clearly shows routes and timetables."
+   "One possible scenario is that tourists choose buses when an app clearly shows routes and timetables.",
+   "A likely situation is visitors opting to take the bus once a mobile app displays clear bus routes and schedules.",
+   "In one possible case, travellers might decide to go by bus if an app makes the routes and departure times easy to see."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2653,12 +3077,20 @@
   ],
   "explanationVi": "One possible scenario tránh trình bày như dữ kiện đã được kiểm chứng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "One possible scenario is that tourists choose buses when an app clearly show routes and timetables.",
+    "correction": "One possible scenario is that tourists choose buses when an app clearly shows routes and timetables.",
+    "reasonVi": "Chủ ngữ 'an app' là danh từ số ít ở thì hiện tại đơn nên động từ theo sau phải thêm '-s' thành 'shows'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "possible scenario",
+  "meaningVi": "trường hợp có thể xảy ra"
  },
  {
   "id": "esl-v2-r10-u03-007",
@@ -2667,7 +3099,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Ví dụ, một nhân viên mới có thể làm sai mẫu đơn nếu hướng dẫn chỉ dùng thuật ngữ chuyên môn.",
   "referenceAnswers": [
-   "For instance, a new employee may fill in a form incorrectly if the instructions use only technical terms."
+   "For instance, a new employee may fill in a form incorrectly if the instructions use only technical terms.",
+   "For example, a newly hired worker might complete a document wrongly when the guidelines contain nothing but specialist jargon.",
+   "If instructions are written purely in technical language, a newcomer could, for instance, end up filling out a form the wrong way."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2687,7 +3121,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "technical terms",
+  "meaningVi": "thuật ngữ chuyên môn"
  },
  {
   "id": "esl-v2-r10-u03-008",
@@ -2696,7 +3132,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một ví dụ gần gũi là người mua so sánh hai sản phẩm trước khi chọn món bền hơn.",
   "referenceAnswers": [
-   "An everyday example is a shopper comparing two products before choosing the more durable one."
+   "An everyday example is a shopper comparing two products before choosing the more durable one.",
+   "A familiar example is when a customer weighs up two items prior to picking the longer-lasting option.",
+   "A relatable example from daily life would be a buyer looking at two items side by side before going for the one that lasts longer."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2716,7 +3154,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "everyday example",
+  "meaningVi": "ví dụ gần gũi"
  },
  {
   "id": "esl-v2-r10-u03-009",
@@ -2725,7 +3165,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, khi phòng học quá nóng, học sinh có thể khó tập trung vào bài giảng.",
   "referenceAnswers": [
-   "For example, students may struggle to focus on a lesson when a classroom is too hot."
+   "For example, students may struggle to focus on a lesson when a classroom is too hot.",
+   "For instance, if a classroom becomes overly warm, pupils might find it hard to pay attention to the lecture.",
+   "Being in an overly hot classroom, for example, can make it really difficult for students to keep their mind on the lesson."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2756,7 +3198,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Chẳng hạn, một gia đình có thể giảm rác thải bằng cách sửa đồ dùng thay vì vứt bỏ chúng.",
   "referenceAnswers": [
-   "For instance, a family could reduce waste by repairing items instead of throwing them away."
+   "For instance, a family could reduce waste by repairing items instead of throwing them away.",
+   "For example, a household can cut down on rubbish by fixing household goods rather than discarding them.",
+   "Instead of throwing household items away, a family could, for example, mend them so they create less rubbish."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2787,7 +3231,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, nếu vé tháng rẻ hơn mua vé lẻ, một số người có thể đi tàu thường xuyên hơn.",
   "referenceAnswers": [
-   "For example, if a monthly pass costs less than individual tickets, some people may take the train more often."
+   "For example, if a monthly pass costs less than individual tickets, some people may take the train more often.",
+   "For instance, when a monthly ticket is cheaper than buying single fares, certain commuters might travel by train more regularly.",
+   "Some people could end up catching the train more frequently if, say, getting a monthly pass works out cheaper than single tickets."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2818,7 +3264,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một trường hợp minh họa là học viên thu âm câu trả lời để tự nghe lại cách phát âm.",
   "referenceAnswers": [
-   "One illustrative case is a learner recording an answer to check their pronunciation afterwards."
+   "One illustrative case is a learner recording an answer to check their pronunciation afterwards.",
+   "A good illustration is when a student records their spoken response in order to listen back to their own pronunciation.",
+   "To illustrate this, think of a student who tapes their answer so they can play it back and hear how they pronounce words."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2827,12 +3275,20 @@
   ],
   "explanationVi": "illustrative case là ví dụ, không phải bằng chứng nghiên cứu.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U03), chủ đề Ví dụ minh họa.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "One illustrative case is a learner records an answer to check their pronunciation afterwards.",
+    "correction": "One illustrative case is a learner recording an answer to check their pronunciation afterwards.",
+    "reasonVi": "Một mệnh đề đơn không thể có hai động từ chia thì ('is' và 'records'), nên phải dùng phân từ 'recording' sau 'a learner' hoặc thêm 'that'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "illustrative case",
+  "meaningVi": "trường hợp minh họa"
  },
  {
   "id": "esl-v2-r10-u03-013",
@@ -2841,7 +3297,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Chẳng hạn, một công ty nhỏ có thể họp trực tuyến để bớt thời gian di chuyển.",
   "referenceAnswers": [
-   "For example, a small company could hold online meetings to reduce travel time."
+   "For example, a small company could hold online meetings to reduce travel time.",
+   "For instance, a small business can arrange virtual meetings in order to save time spent travelling.",
+   "To cut back on travel time, a small firm might, for example, run its meetings over the internet."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2861,7 +3319,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "hold online meetings",
+  "meaningVi": "họp trực tuyến"
  },
  {
   "id": "esl-v2-r10-u03-014",
@@ -2870,7 +3330,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Ví dụ, sinh viên có thể dùng danh sách việc cần làm để chia dự án lớn thành các bước nhỏ.",
   "referenceAnswers": [
-   "For instance, a student could use a checklist to divide a large project into smaller steps."
+   "For instance, a student could use a checklist to divide a large project into smaller steps.",
+   "For example, university students can rely on a to-do list to split a big project into smaller tasks.",
+   "By making a to-do list, for instance, students can break a big project down into smaller steps."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2901,7 +3363,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Một ví dụ giả định là công viên có thêm ghế để người lớn tuổi nghỉ chân trên đường đi bộ.",
   "referenceAnswers": [
-   "A hypothetical example would be a park adding more benches so older visitors can rest during a walk."
+   "A hypothetical example would be a park adding more benches so older visitors can rest during a walk.",
+   "One imagined scenario is a public park installing extra seating so that elderly people have places to sit while walking.",
+   "Suppose, as an example, that a park put in more benches to let seniors take a rest along the walking path."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2932,7 +3396,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Ví dụ, một quán ăn có thể ghi thành phần món để khách dị ứng thực phẩm lựa chọn an toàn hơn.",
   "referenceAnswers": [
-   "For example, a café could list ingredients so customers with food allergies can make safer choices."
+   "For example, a café could list ingredients so customers with food allergies can make safer choices.",
+   "For instance, a restaurant can note down the ingredients of its dishes so diners with food allergies can choose more safely.",
+   "Customers who have food allergies can pick safer meals if, for example, an eating place clearly states what goes into each dish."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2952,7 +3418,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Ví dụ minh họa"
+  "skillFocus": "Ví dụ minh họa",
+  "targetTerm": "food allergies",
+  "meaningVi": "dị ứng thực phẩm"
  },
  {
   "id": "esl-v2-r10-u03-017",
@@ -2961,7 +3429,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chẳng hạn, một nhóm dự án có thể kiểm tra tiến độ mỗi tuần để nhận ra vấn đề trước hạn chót.",
   "referenceAnswers": [
-   "For instance, a project team could review progress weekly to spot problems before the deadline."
+   "For instance, a project team could review progress weekly to spot problems before the deadline.",
+   "For example, a project group can check its progress every week in order to identify issues ahead of the due date.",
+   "Doing weekly progress checks, for example, allows a project team to catch any problems before the deadline arrives."
   ],
   "grammarTags": [
    "r10_u03",
@@ -2992,7 +3462,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Các cuốn sách cũ được phân loại trước khi đưa lên kệ.",
   "referenceAnswers": [
-   "Old books are sorted before they are put on the shelves."
+   "Old books are sorted before they are put on the shelves.",
+   "Old books are grouped into categories before being placed on the bookshelves.",
+   "Before going onto the shelves, the old books get sorted out first."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3001,12 +3473,20 @@
   ],
   "explanationVi": "are sorted và are put là bị động hiện tại, nhấn đối tượng chịu tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Old books are sorted before they put on the shelves.",
+    "correction": "Old books are sorted before they are put on the shelves.",
+    "reasonVi": "Đại từ 'they' chỉ 'old books' (vật chịu tác động) nên vế sau cũng phải chia bị động là 'they are put', tránh dịch sát tiếng Việt mà thiếu 'are'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "are sorted",
+  "meaningVi": "được phân loại"
  },
  {
   "id": "esl-v2-r10-u04-002",
@@ -3015,7 +3495,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Kết quả cuộc khảo sát sẽ được công bố vào tuần tới.",
   "referenceAnswers": [
-   "The survey results will be published next week."
+   "The survey results will be published next week.",
+   "The findings of the survey are going to be released next week.",
+   "Next week, the results from the survey will be announced publicly."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3046,7 +3528,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc cầu này được sửa chữa vào năm ngoái.",
   "referenceAnswers": [
-   "This bridge was repaired last year."
+   "This bridge was repaired last year.",
+   "Repair work was carried out on this bridge last year.",
+   "Last year, this bridge underwent repairs."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3055,12 +3539,20 @@
   ],
   "explanationVi": "was repaired là bị động quá khứ với mốc năm ngoái.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This bridge is repaired last year.",
+    "correction": "This bridge was repaired last year.",
+    "reasonVi": "Câu có mốc thời gian quá khứ 'last year' nên thể bị động phải chia quá khứ đơn 'was repaired' thay vì hiện tại 'is repaired'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "was repaired",
+  "meaningVi": "được sửa chữa"
  },
  {
   "id": "esl-v2-r10-u04-004",
@@ -3069,7 +3561,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Các yêu cầu hỗ trợ được trả lời theo thứ tự nhận được.",
   "referenceAnswers": [
-   "Support requests are answered in the order they are received."
+   "Support requests are answered in the order they are received.",
+   "Help enquiries are responded to in the sequence in which they arrive.",
+   "Requests for help get replied to based on the exact order they come in."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3078,12 +3572,20 @@
   ],
   "explanationVi": "are answered nêu quy trình; they are received là mệnh đề bị động bổ nghĩa.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Support requests are answer in the order they are received.",
+    "correction": "Support requests are answered in the order they are received.",
+    "reasonVi": "Câu bị động bắt buộc dùng cấu trúc 'be + V3/ed', nên sau 'are' phải chia quá khứ phân từ là 'answered' chứ không để nguyên mẫu."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "support requests",
+  "meaningVi": "yêu cầu hỗ trợ"
  },
  {
   "id": "esl-v2-r10-u04-005",
@@ -3113,7 +3615,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "not in use",
+  "meaningVi": "không được sử dụng"
  },
  {
   "id": "esl-v2-r10-u04-006",
@@ -3122,7 +3626,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bài kiểm tra đã được chấm nhưng chưa được trả lại cho học viên.",
   "referenceAnswers": [
-   "The tests have been marked but have not yet been returned to the learners."
+   "The tests have been marked but have not yet been returned to the learners.",
+   "The exam papers have already been graded, yet they still have not been handed back to the students.",
+   "Although the tests are already graded, the students haven't got them back yet."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3131,12 +3637,20 @@
   ],
   "explanationVi": "have been marked/returned dùng hiện tại hoàn thành bị động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The tests have marked but have not yet been returned to the learners.",
+    "correction": "The tests have been marked but have not yet been returned to the learners.",
+    "reasonVi": "Thì hiện tại hoàn thành ở thể bị động phải có 'been' theo công thức 'have/has + been + V3/ed' ('have been marked'), nếu thiếu 'been' sẽ thành câu chủ động sai nghĩa."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "have been marked",
+  "meaningVi": "đã được chấm"
  },
  {
   "id": "esl-v2-r10-u04-007",
@@ -3145,7 +3659,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Một lối đi mới đang được xây gần nhà ga.",
   "referenceAnswers": [
-   "A new walkway is being built near the station."
+   "A new walkway is being built near the station.",
+   "A new footpath is currently under construction close to the station.",
+   "Right near the station, a new pedestrian path is currently being put in."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3154,12 +3670,20 @@
   ],
   "explanationVi": "is being built là tiếp diễn bị động, nêu công việc đang diễn ra.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A new walkway is building near the station.",
+    "correction": "A new walkway is being built near the station.",
+    "reasonVi": "Chủ ngữ 'a new walkway' là vật được xây ở thì hiện tại tiếp diễn nên phải dùng bị động 'is being built' thay vì chủ động 'is building'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "walkway",
+  "meaningVi": "lối đi bộ"
  },
  {
   "id": "esl-v2-r10-u04-008",
@@ -3168,7 +3692,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Quy định này được giải thích cho nhân viên mới vào ngày đầu tiên.",
   "referenceAnswers": [
-   "This rule is explained to new employees on their first day."
+   "This rule is explained to new employees on their first day.",
+   "This regulation is made clear to new staff members on their first day at work.",
+   "On day one, new hires have this policy explained to them."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3177,7 +3703,13 @@
   ],
   "explanationVi": "is explained là bị động hiện tại; to new employees chỉ người nhận giải thích.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This rule is explained for new employees on their first day.",
+    "correction": "This rule is explained to new employees on their first day.",
+    "reasonVi": "Động từ 'explain' đi với giới từ 'to' để chỉ người nghe ('explain something to somebody'), không dịch chữ 'cho' sang 'for'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3193,7 +3725,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Các máy tính bị hỏng đã được thay thế trước khi học kỳ bắt đầu.",
   "referenceAnswers": [
-   "The broken computers were replaced before the term began."
+   "The broken computers were replaced before the term began.",
+   "The faulty computers were swapped for replacements prior to the start of the semester.",
+   "Prior to the semester starting, the damaged computers got replaced."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3202,12 +3736,20 @@
   ],
   "explanationVi": "were replaced thể hiện hành động hoàn tất trong quá khứ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The broken computers was replaced before the term began.",
+    "correction": "The broken computers were replaced before the term began.",
+    "reasonVi": "Chủ ngữ 'the broken computers' ở dạng số nhiều nên động từ 'to be' ở quá khứ phải chia là 'were' thay vì 'was'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "were replaced",
+  "meaningVi": "đã được thay thế"
  },
  {
   "id": "esl-v2-r10-u04-010",
@@ -3216,7 +3758,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Vé chỉ được hoàn tiền nếu sự kiện bị hủy.",
   "referenceAnswers": [
-   "Tickets are refunded only if the event is cancelled."
+   "Tickets are refunded only if the event is cancelled.",
+   "Refunds for tickets are given solely in the event of a cancellation.",
+   "Ticket holders only get their money back when the event is called off."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3225,12 +3769,20 @@
   ],
   "explanationVi": "are refunded và is cancelled là bị động; only if giữ điều kiện hạn chế.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tickets are refunded only if the event cancelled.",
+    "correction": "Tickets are refunded only if the event is cancelled.",
+    "reasonVi": "Mệnh đề 'the event...' mang nghĩa bị động ('bị hủy') nên bắt buộc phải có động từ 'to be' đi kèm quá khứ phân từ thành 'is cancelled'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "are refunded",
+  "meaningVi": "được hoàn tiền"
  },
  {
   "id": "esl-v2-r10-u04-011",
@@ -3239,7 +3791,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Những ý kiến của học viên cần được xem xét khi cập nhật giáo trình.",
   "referenceAnswers": [
-   "Learners' feedback should be considered when the curriculum is updated."
+   "Learners' feedback should be considered when the curriculum is updated.",
+   "Comments from students need to be taken into account whenever the syllabus is revised.",
+   "When revising the course syllabus, student opinions ought to be factored in."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3259,7 +3813,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "should be considered",
+  "meaningVi": "cần được xem xét"
  },
  {
   "id": "esl-v2-r10-u04-012",
@@ -3268,7 +3824,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Hầu hết các đơn đặt hàng được xử lý trong vòng hai ngày làm việc.",
   "referenceAnswers": [
-   "Most orders are processed within two working days."
+   "Most orders are processed within two working days.",
+   "The majority of customer orders are handled within two business days.",
+   "Within two business days, nearly all orders get dealt with."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3277,12 +3835,20 @@
   ],
   "explanationVi": "Most chứ không phải all; are processed thể hiện quy trình.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U04), chủ đề Câu bị động.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Most of orders are processed within two working days.",
+    "correction": "Most orders are processed within two working days.",
+    "reasonVi": "Khi nói chung không có mạo từ 'the' hay tính từ sở hữu, phải dùng 'Most + danh từ số nhiều' ('Most orders'), không thêm 'of'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "are processed",
+  "meaningVi": "được xử lý"
  },
  {
   "id": "esl-v2-r10-u04-013",
@@ -3312,7 +3878,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "converted into",
+  "meaningVi": "được chuyển thành"
  },
  {
   "id": "esl-v2-r10-u04-014",
@@ -3321,7 +3889,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Một số lớp buổi tối sẽ được tổ chức trực tuyến trong tháng tới.",
   "referenceAnswers": [
-   "Some evening classes will be held online next month."
+   "Some evening classes will be held online next month.",
+   "Several evening courses are going to be conducted over the internet next month.",
+   "Next month, a few of the evening lessons will take place online."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3352,7 +3922,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Các tài liệu quan trọng phải được lưu ở vị trí mà nhân viên có thể tìm thấy nhanh.",
   "referenceAnswers": [
-   "Important documents must be stored where staff can find them quickly."
+   "Important documents must be stored where staff can find them quickly.",
+   "Key files have to be kept in a place where employees are able to locate them rapidly.",
+   "Essential files need to be kept somewhere employees can get hold of them fast."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3372,7 +3944,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "must be stored",
+  "meaningVi": "phải được lưu trữ"
  },
  {
   "id": "esl-v2-r10-u04-016",
@@ -3381,7 +3955,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Những câu hỏi chưa rõ sẽ được giáo viên giải thích sau phần thảo luận.",
   "referenceAnswers": [
-   "Unclear questions will be explained by the teacher after the discussion."
+   "Unclear questions will be explained by the teacher after the discussion.",
+   "Any confusing questions are going to be clarified by the instructor once the discussion ends.",
+   "Following the group talk, the teacher will go over any questions that remain unclear."
   ],
   "grammarTags": [
    "r10_u04",
@@ -3401,7 +3977,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Câu bị động"
+  "skillFocus": "Câu bị động",
+  "targetTerm": "will be explained",
+  "meaningVi": "sẽ được giải thích"
  },
  {
   "id": "esl-v2-r10-u04-017",
@@ -3453,7 +4031,13 @@
   ],
   "explanationVi": "However nối ý tương phản; it quy chiếu ứng dụng.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This app is easy to use, however, it does not yet support offline use.",
+    "correction": "This app is easy to use. However, it does not yet support offline use.",
+    "reasonVi": "'However' là trạng từ liên kết chứ không phải liên từ như 'but', nên không được nối hai mệnh đề độc lập chỉ bằng dấu phẩy mà phải tách câu bằng dấu chấm hoặc chấm phẩy."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3469,7 +4053,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Thư viện mở cửa miễn phí. Ngoài ra, nơi này còn tổ chức các buổi đọc sách cho trẻ em.",
   "referenceAnswers": [
-   "The library is free to enter. In addition, it organises reading sessions for children."
+   "The library is free to enter. In addition, it organises reading sessions for children.",
+   "Admission to the library costs nothing. Furthermore, the venue runs reading activities for youngsters.",
+   "Anyone can visit the library free of charge. On top of that, kids' reading sessions are held there too."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3478,7 +4064,13 @@
   ],
   "explanationVi": "In addition bổ sung lợi ích, it thay cho library.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The library is free to enter. In addition to, it organises reading sessions for children.",
+    "correction": "The library is free to enter. In addition, it organises reading sessions for children.",
+    "reasonVi": "Đứng đầu câu trước dấu phẩy để nối ý với mệnh đề theo sau phải dùng 'In addition,', còn 'In addition to' bắt buộc đi kèm cụm danh từ hoặc V-ing."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3494,7 +4086,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Nhiều người thích học vào buổi sáng. Ngược lại, một số người làm việc tốt hơn vào buổi tối.",
   "referenceAnswers": [
-   "Many people prefer studying in the morning. By contrast, some work better in the evening."
+   "Many people prefer studying in the morning. By contrast, some work better in the evening.",
+   "A lot of people like to study during the morning. On the other hand, others are more productive in the evening.",
+   "Studying in the morning suits plenty of people. In contrast, there are some who get better work done in the evening."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3503,7 +4097,13 @@
   ],
   "explanationVi": "By contrast đối chiếu hai nhóm, some thay một số người.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many people prefer studying in the morning. By the contrast, some work better in the evening.",
+    "correction": "Many people prefer studying in the morning. By contrast, some work better in the evening.",
+    "reasonVi": "Cụm từ nối chỉ sự tương phản đúng là 'By contrast,' (hoặc 'In contrast,'), tuyệt đối không thêm mạo từ 'the' vào giữa."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3519,7 +4119,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Thành phố đã tăng số chuyến xe buýt. Biện pháp này có thể giúp hành khách bớt chờ đợi.",
   "referenceAnswers": [
-   "The city has increased bus services. This change may reduce waiting times for passengers."
+   "The city has increased bus services. This change may reduce waiting times for passengers.",
+   "The city has added more frequent bus runs. Such a measure could cut down how long commuters have to wait.",
+   "More bus trips have now been put on by the city. Doing this might mean passengers spend less time waiting around."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3582,7 +4184,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Công viên có đường đi bộ rộng. Nó cũng có nhiều ghế dành cho người cần nghỉ chân.",
   "referenceAnswers": [
-   "The park has wide walking paths. It also provides plenty of benches for people who need a rest."
+   "The park has wide walking paths. It also provides plenty of benches for people who need a rest.",
+   "Broad footpaths run through the park. In addition, there are numerous seats for visitors wishing to take a break.",
+   "You can find wide walking trails inside the park. Plenty of benches are available there as well for anyone needing to sit down and rest."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3645,7 +4249,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhóm đã phỏng vấn một số người dùng. Bước tiếp theo là tổng hợp ý kiến để cải thiện sản phẩm.",
   "referenceAnswers": [
-   "The team has interviewed several users. The next step is to summarise their feedback to improve the product."
+   "The team has interviewed several users. The next step is to summarise their feedback to improve the product.",
+   "The group has spoken with a number of users. The following stage is to compile their comments in order to make the product better.",
+   "Several users have already taken part in interviews with the team. What comes next is pulling their views together so the product can be improved."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3665,7 +4271,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "summarise their feedback",
+  "meaningVi": "tổng hợp ý kiến"
  },
  {
   "id": "esl-v2-r10-u05-009",
@@ -3674,7 +4282,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Giá thực phẩm đã tăng. Điều này khiến một số gia đình phải lập ngân sách cẩn thận hơn.",
   "referenceAnswers": [
-   "Food prices have risen. This has made some families budget more carefully."
+   "Food prices have risen. This has made some families budget more carefully.",
+   "The cost of groceries has gone up. Because of this, certain households have had to plan their spending with greater care.",
+   "Food has become more expensive. That increase has forced some families to manage their household budgets more carefully."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3705,7 +4315,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Trường học cung cấp tài liệu trực tuyến. Đồng thời, học sinh vẫn có thể mượn sách giấy.",
   "referenceAnswers": [
-   "The school provides online materials. At the same time, students can still borrow printed books."
+   "The school provides online materials. At the same time, students can still borrow printed books.",
+   "Digital learning resources are supplied by the school. Meanwhile, pupils are still able to take out physical books.",
+   "The school makes study materials available online. Alongside this, learners still have the option of borrowing paper copies."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3736,7 +4348,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Bến xe nằm gần khu dân cư. Nhờ đó, người dân có thể đi bộ ra đó thay vì lái xe.",
   "referenceAnswers": [
-   "The bus station is near the residential area. As a result, residents can walk there instead of driving."
+   "The bus station is near the residential area. As a result, residents can walk there instead of driving.",
+   "The bus terminal is located close to the housing area. Thanks to this, locals are able to go there on foot rather than by car.",
+   "The bus station sits close to local homes. That means residents can walk over there rather than drive."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3756,7 +4370,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "residential area",
+  "meaningVi": "khu dân cư"
  },
  {
   "id": "esl-v2-r10-u05-012",
@@ -3765,7 +4381,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một số người thích làm việc theo nhóm. Trong khi đó, những người khác tập trung tốt hơn khi ở một mình.",
   "referenceAnswers": [
-   "Some people prefer teamwork. Meanwhile, others concentrate better when working alone."
+   "Some people prefer teamwork. Meanwhile, others concentrate better when working alone.",
+   "Certain individuals enjoy working in groups. By comparison, other people focus more effectively on their own.",
+   "Working as part of a team appeals to some people. At the same time, there are others who find it easier to focus by themselves."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3774,12 +4392,20 @@
   ],
   "explanationVi": "Meanwhile đặt hai nhóm cạnh nhau mà không khẳng định nhóm nào tốt hơn.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Some people prefer teamwork. Meanwhile, others concentrate better when work alone.",
+    "correction": "Some people prefer teamwork. Meanwhile, others concentrate better when working alone.",
+    "reasonVi": "Khi rút gọn mệnh đề cùng chủ ngữ sau 'when', động từ chủ động phải chuyển sang dạng V-ing là 'when working alone', không dùng nguyên mẫu 'work'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "concentrate better",
+  "meaningVi": "tập trung tốt hơn"
  },
  {
   "id": "esl-v2-r10-u05-013",
@@ -3788,7 +4414,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Lớp học có ít học viên. Do đó, giáo viên có thể dành nhiều thời gian hơn cho từng người.",
   "referenceAnswers": [
-   "The class has few students. Consequently, the teacher can spend more time with each one."
+   "The class has few students. Consequently, the teacher can spend more time with each one.",
+   "There are only a small number of learners in the class. Therefore, the instructor is able to devote more time to every individual.",
+   "This class only has a handful of students. For that reason, the teacher gets to spend extra time with each person."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3808,7 +4436,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "spend more time",
+  "meaningVi": "dành nhiều thời gian hơn"
  },
  {
   "id": "esl-v2-r10-u05-014",
@@ -3817,7 +4447,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Nhiều sản phẩm dùng bao bì nhựa. Một lựa chọn khác là sử dụng hộp có thể tái sử dụng.",
   "referenceAnswers": [
-   "Many products come in plastic packaging. An alternative is to use reusable containers."
+   "Many products come in plastic packaging. An alternative is to use reusable containers.",
+   "A large number of goods are wrapped in plastic. Another option is switching to containers that can be used again.",
+   "Plastic wrapping is used on plenty of goods. Another way around this is using containers meant for repeat use."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3826,12 +4458,20 @@
   ],
   "explanationVi": "An alternative mở lựa chọn thay thế, không nói bao bì nào hoàn toàn không có tác động.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U05), chủ đề Liên kết câu.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Many products come in plastic packagings. An alternative is to use reusable containers.",
+    "correction": "Many products come in plastic packaging. An alternative is to use reusable containers.",
+    "reasonVi": "'Packaging' (bao bì) là danh từ không đếm được trong tiếng Anh nên không bao giờ thêm '-s' thành 'packagings'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "plastic packaging",
+  "meaningVi": "bao bì nhựa"
  },
  {
   "id": "esl-v2-r10-u05-015",
@@ -3840,7 +4480,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Tập thể dục thường xuyên mang lại lợi ích. Tuy vậy, người mới bắt đầu vẫn nên tăng cường độ từ từ.",
   "referenceAnswers": [
-   "Regular exercise has benefits. Nevertheless, beginners should still increase the intensity gradually."
+   "Regular exercise has benefits. Nevertheless, beginners should still increase the intensity gradually.",
+   "Working out regularly is beneficial. Even so, newcomers should still build up the intensity little by little.",
+   "Staying active on a regular basis does you good. Still, anyone just starting out ought to raise the workout intensity slowly."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3871,7 +4513,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Trang web cung cấp hướng dẫn từng bước. Nhờ những hướng dẫn này, người mới có thể tự hoàn thành quy trình.",
   "referenceAnswers": [
-   "The website provides step-by-step instructions. With this guidance, beginners can complete the process independently."
+   "The website provides step-by-step instructions. With this guidance, beginners can complete the process independently.",
+   "Detailed stage-by-stage directions are available on the site. Thanks to these instructions, first-time users are able to finish the procedure on their own.",
+   "The site walks users through each step clearly. Having those directions means newcomers can get through the whole process by themselves."
   ],
   "grammarTags": [
    "r10_u05",
@@ -3891,7 +4535,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Liên kết câu"
+  "skillFocus": "Liên kết câu",
+  "targetTerm": "complete the process",
+  "meaningVi": "hoàn thành quy trình"
  },
  {
   "id": "esl-v2-r10-u06-001",
@@ -3900,7 +4546,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thấy việc học 15 phút mỗi ngày dễ duy trì hơn học ba giờ một lần mỗi tuần.",
   "referenceAnswers": [
-   "I find it easier to study for 15 minutes every day than for three hours once a week."
+   "I find it easier to study for 15 minutes every day than for three hours once a week.",
+   "To me, studying for 15 minutes a day is simpler to maintain than doing a single three-hour session each week.",
+   "I find sticking to 15 minutes of daily study much easier than sitting down for three hours once a week."
   ],
   "grammarTags": [
    "r10_u06",
@@ -3909,7 +4557,13 @@
   ],
   "explanationVi": "find it easier to ... than ... diễn đạt so sánh thói quen học.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I find easier to study for 15 minutes every day than for three hours once a week.",
+    "correction": "I find it easier to study for 15 minutes every day than for three hours once a week.",
+    "reasonVi": "Cấu trúc 'find + it + tính từ + to V' bắt buộc phải có tân ngữ giả 'it' đứng sau 'find', không được lược bỏ."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3946,7 +4600,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "afford to buy",
+  "meaningVi": "có điều kiện mua"
  },
  {
   "id": "esl-v2-r10-u06-003",
@@ -3955,7 +4611,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Nếu thời gian cho phép, chúng tôi sẽ kiểm tra lại bản dịch trước khi nộp.",
   "referenceAnswers": [
-   "If time allows, we will review the translation before submitting it."
+   "If time allows, we will review the translation before submitting it.",
+   "Provided there is enough time, we will double-check the translated text prior to handing it in.",
+   "We'll look over the translation again before turning it in, as long as we have enough time."
   ],
   "grammarTags": [
    "r10_u06",
@@ -3975,7 +4633,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "time allows",
+  "meaningVi": "thời gian cho phép"
  },
  {
   "id": "esl-v2-r10-u06-004",
@@ -4005,7 +4665,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "ignore other opinions",
+  "meaningVi": "bỏ qua ý kiến khác"
  },
  {
   "id": "esl-v2-r10-u06-005",
@@ -4014,7 +4676,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Bài tập này giúp tôi nhận ra mình vẫn thường nhầm các thì.",
   "referenceAnswers": [
-   "This exercise helps me realise that I still often confuse tenses."
+   "This exercise helps me realise that I still often confuse tenses.",
+   "Doing this task makes me aware that I still frequently mix up verb tenses.",
+   "Through this exercise, I can see how frequently I still get verb tenses mixed up."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4023,12 +4687,20 @@
   ],
   "explanationVi": "realise that diễn đạt nhận thức; still often duy trì tính lặp.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This exercise helps me realising that I still often confuse tenses.",
+    "correction": "This exercise helps me realise that I still often confuse tenses.",
+    "reasonVi": "Sau cấu trúc 'help + tân ngữ', động từ chỉ được ở dạng nguyên mẫu không 'to' hoặc có 'to' ('realise' / 'to realise'), không dùng V-ing."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "confuse tenses",
+  "meaningVi": "nhầm các thì"
  },
  {
   "id": "esl-v2-r10-u06-006",
@@ -4037,7 +4709,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Bên cạnh chi phí, chúng ta cũng nên cân nhắc thời gian di chuyển.",
   "referenceAnswers": [
-   "Besides the cost, we should also consider travel time."
+   "Besides the cost, we should also consider travel time.",
+   "In addition to the price, we ought to take journey time into account as well.",
+   "How long it takes to get there is something else we need to think about, not just the expense."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4057,7 +4731,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "consider travel time",
+  "meaningVi": "cân nhắc thời gian di chuyển"
  },
  {
   "id": "esl-v2-r10-u06-007",
@@ -4076,7 +4752,13 @@
   ],
   "explanationVi": "not only ... but also cân đối hai mục tiêu; retain không đồng nghĩa attract.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The project's goal is not only to attract more users but also retaining them over time.",
+    "correction": "The project's goal is not only to attract more users but also to retain them over time.",
+    "reasonVi": "Cấu trúc song hành 'not only ... but also ...' đòi hỏi hai vế cùng dạng ngữ pháp, nên sau 'to attract' phải dùng 'to retain' chứ không đổi sang V-ing 'retaining'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -4102,12 +4784,20 @@
   ],
   "explanationVi": "Just because ... does not mean ... tránh suy luận quá mức.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Just because an app is popular does not mean it suits with every learner.",
+    "correction": "Just because an app is popular does not mean it suits every learner.",
+    "reasonVi": "Động từ 'suit' là ngoại động từ đi trực tiếp với tân ngữ ('suit somebody'), không thêm giới từ 'with' theo lối dịch từng từ 'phù hợp với' (chỉ dùng 'be suitable for')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "suits every learner",
+  "meaningVi": "hợp với mọi học viên"
  },
  {
   "id": "esl-v2-r10-u06-009",
@@ -4126,12 +4816,20 @@
   ],
   "explanationVi": "rather than + base verb sau want to; specific feedback là góp ý cụ thể.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I want to give specific feedbacks rather than simply say that the essay is not good.",
+    "correction": "I want to give specific feedback rather than simply say that the essay is not good.",
+    "reasonVi": "'Feedback' (ý kiến góp ý) là danh từ không đếm được nên luôn giữ nguyên dạng, tuyệt đối không thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "give specific feedback",
+  "meaningVi": "góp ý cụ thể"
  },
  {
   "id": "esl-v2-r10-u06-010",
@@ -4140,7 +4838,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Dù công việc có vẻ đơn giản, tôi vẫn cần kiểm tra chi tiết trước khi hoàn thành.",
   "referenceAnswers": [
-   "Even if the task seems simple, I still need to check the details before finishing it."
+   "Even if the task seems simple, I still need to check the details before finishing it.",
+   "Although the job appears straightforward, I still have to go through the details prior to completing it.",
+   "No matter how easy the job looks, I still need to look over the details carefully before I wrap it up."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4160,7 +4860,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "check the details",
+  "meaningVi": "kiểm tra chi tiết"
  },
  {
   "id": "esl-v2-r10-u06-011",
@@ -4190,7 +4892,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "increase in registrations",
+  "meaningVi": "tăng số lượng đăng ký"
  },
  {
   "id": "esl-v2-r10-u06-012",
@@ -4199,7 +4903,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Tốt hơn là sửa một lỗi đúng nguyên nhân thay vì làm đi làm lại bài dễ.",
   "referenceAnswers": [
-   "It is better to address the cause of a mistake than to repeat easy exercises."
+   "It is better to address the cause of a mistake than to repeat easy exercises.",
+   "Fixing the root cause of an error is more effective than doing simple tasks over and over again.",
+   "Rather than doing easy practice tasks again and again, it makes more sense to fix the real reason behind a mistake."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4208,12 +4914,20 @@
   ],
   "explanationVi": "address the cause khác chỉ sửa biểu hiện; than nối so sánh.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "It is better to address the cause of a mistake instead of to repeat easy exercises.",
+    "correction": "It is better to address the cause of a mistake than to repeat easy exercises.",
+    "reasonVi": "Cấu trúc so sánh hơn 'better' phải đi với 'than' ('better to V than to V'), và sau giới từ 'instead of' cũng không bao giờ dùng 'to V'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "address the cause",
+  "meaningVi": "giải quyết nguyên nhân"
  },
  {
   "id": "esl-v2-r10-u06-013",
@@ -4222,7 +4936,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Học viên có thể biết công thức nhưng vẫn không dùng được trong tình huống mới.",
   "referenceAnswers": [
-   "Learners may know a grammar rule but still be unable to use it in a new situation."
+   "Learners may know a grammar rule but still be unable to use it in a new situation.",
+   "Students might memorise a rule or formula, yet still fail to apply it in an unfamiliar context.",
+   "Even when learners know the formula, they may still find themselves unable to apply it in a fresh situation."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4242,7 +4958,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "grammar rule",
+  "meaningVi": "quy tắc ngữ pháp"
  },
  {
   "id": "esl-v2-r10-u06-014",
@@ -4251,7 +4969,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi đánh giá cao một lời giải chỉ rõ vì sao các lựa chọn khác không phù hợp.",
   "referenceAnswers": [
-   "I value an explanation that shows why other options are unsuitable."
+   "I value an explanation that shows why other options are unsuitable.",
+   "I appreciate an answer key that clearly explains why the remaining choices do not fit.",
+   "What I really appreciate is a solution that points out clearly why the other choices don't work."
   ],
   "grammarTags": [
    "r10_u06",
@@ -4260,12 +4980,20 @@
   ],
   "explanationVi": "value là đánh giá cao; that bổ nghĩa explanation.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I value an explanation that shows why are other options unsuitable.",
+    "correction": "I value an explanation that shows why other options are unsuitable.",
+    "reasonVi": "Mệnh đề danh ngữ bắt đầu bằng 'why' nằm giữa câu không phải câu hỏi trực tiếp nên không đảo ngữ, phải giữ trật tự 'why other options are'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "value an explanation",
+  "meaningVi": "đánh giá cao lời giải"
  },
  {
   "id": "esl-v2-r10-u06-015",
@@ -4284,12 +5012,20 @@
   ],
   "explanationVi": "does not automatically tránh đồng nhất số lượng và ghi nhớ.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Adding more exercises do not automatically help learners remember material for longer.",
+    "correction": "Adding more exercises does not automatically help learners remember material for longer.",
+    "reasonVi": "Chủ ngữ chính của câu là danh động từ 'Adding...' (luôn tính là ngôi thứ ba số ít) chứ không phải 'exercises', nên trợ động từ phải chia là 'does not'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "remember material",
+  "meaningVi": "nhớ kiến thức"
  },
  {
   "id": "esl-v2-r10-u06-016",
@@ -4308,11 +5044,19 @@
   ],
   "explanationVi": "Although giữ nhượng bộ; whether mở câu hỏi gián tiếp.",
   "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài bổ sung từ bộ ESL v2 (R10-U06), chủ đề Dịch câu theo ý.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Although I agree with the overall goal, but I still want to check whether the plan is realistic.",
+    "correction": "Although I agree with the overall goal, I still want to check whether the plan is realistic.",
+    "reasonVi": "Trong tiếng Anh không bao giờ dùng đồng thời cả 'Although' và 'but' trong cùng một câu như 'Dù... nhưng...' của tiếng Việt; chỉ được chọn một trong hai."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Dịch câu theo ý"
+  "skillFocus": "Dịch câu theo ý",
+  "targetTerm": "overall goal",
+  "meaningVi": "mục tiêu chung"
  }
 ]

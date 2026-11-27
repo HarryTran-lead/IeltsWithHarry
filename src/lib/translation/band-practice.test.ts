@@ -5,6 +5,7 @@ import { bandFile, bandIndex, CANONICAL_TOPICS, levelRubric, practiceBands, revi
 import { buildChunkPuzzle, splitParagraphSteps } from "./chunk-builder";
 import { closestAnswer, evaluateExpression } from "./compare-words";
 import { hintLadder } from "./hint-ladder";
+import { buildPhraseHints, buildSentenceBlueprint } from "./phrase-hints";
 import { practiceExerciseSchema } from "./schema";
 
 // The page fetches these files from /public; the test reads the same files from disk.
@@ -23,9 +24,11 @@ describe("band translation practice data", () => {
 
     const bands = await allExercises();
     const exercises = [...bands.values()].flat();
-    const original = exercises.filter((item) => item.source !== "esl-v2");
-    expect(exercises).toHaveLength(2040);
+    const original = exercises.filter((item) => item.source !== "esl-v2" && item.source !== "bridge-v3");
+    const bridges = exercises.filter((item) => item.source === "bridge-v3");
+    expect(exercises).toHaveLength(2080);
     expect(original).toHaveLength(950);
+    expect(bridges).toHaveLength(40);
     expect(exercises.filter((item) => item.source === "original-starter")).toHaveLength(51);
     expect(exercises.filter((item) => item.source === "original-level-authored")).toHaveLength(34);
     expect(new Set(exercises.map((item) => item.id)).size).toBe(exercises.length);
@@ -36,15 +39,15 @@ describe("band translation practice data", () => {
       const summary = bandIndex.find((item) => item.level === band);
       expect(summary?.keys).toEqual(items.map(reviewKey));
       expect(summary?.topics).toBe(new Set(items.map((item) => item.topic)).size);
-      // The 950 published exercises keep their per-band counts; ESL v2 only adds.
+      // The 950 published exercises keep their per-band counts; ESL v2 and bridge-v3 only add.
       const target = Number(band) < 3 ? 40 : Number(band) < 5 ? 50 : Number(band) < 7 ? 60 : 70;
-      expect(items.filter((item) => item.source !== "esl-v2")).toHaveLength(target);
+      expect(items.filter((item) => item.source !== "esl-v2" && item.source !== "bridge-v3")).toHaveLength(target);
       for (const item of items) {
         expect(item.practiceLevel).toBe(band);
         expect(practiceExerciseSchema.safeParse(item).success).toBe(true);
         expect(item.source).not.toMatch(/^original-pattern/);
-        if (item.targetTerm) expect(item.referenceAnswers[0].toLocaleLowerCase("en-US")).toContain(item.targetTerm.toLocaleLowerCase("en-US"));
-        else expect(item.source).toBe("esl-v2");
+        expect(item.targetTerm).toBeTruthy();
+        expect(item.referenceAnswers[0].toLocaleLowerCase("en-US")).toContain((item.targetTerm ?? "").toLocaleLowerCase("en-US"));
         if (band === "1.0") expect(item.type).toBe("word");
         if (band === "1.5" || band === "2.0") expect(item.type).toBe("phrase");
         if (band === "2.5") expect(["phrase", "sentence"]).toContain(item.type);
@@ -52,8 +55,9 @@ describe("band translation practice data", () => {
       if (Number(band) >= 7) {
         expect(items.every((item) => item.type === "paragraph")).toBe(true);
         for (const item of items) {
-          expect((item.promptVi.match(/[.!?]/g) ?? []).length).toBeGreaterThanOrEqual(3);
-          expect((item.referenceAnswers[0].match(/[.!?]/g) ?? []).length).toBeGreaterThanOrEqual(3);
+          const minSentences = item.source === "bridge-v3" ? 2 : 3;
+          expect((item.promptVi.match(/[.!?]/g) ?? []).length).toBeGreaterThanOrEqual(minSentences);
+          expect((item.referenceAnswers[0].match(/[.!?]/g) ?? []).length).toBeGreaterThanOrEqual(minSentences);
         }
       }
     }
@@ -168,5 +172,25 @@ describe("evaluateExpression & interactive builders", () => {
     });
     expect(steps).toHaveLength(3);
     expect(steps?.[1]?.promptVi).toBe("Câu hai đưa phản biện.");
+  });
+
+  it("segments Vietnamese sentences into tap-to-reveal phrase rescues and builds structural blueprints", () => {
+    const sample = {
+      id: "band-5.5-health",
+      type: "sentence" as const,
+      promptVi: "Tập thể dục thường xuyên có thể giúp phòng ngừa một số bệnh mãn tính.",
+      referenceAnswers: ["Regular exercise can help prevent some chronic diseases."],
+      targetTerm: "prevent",
+      meaningVi: "phòng ngừa",
+      explanationVi: "Prevent đi với danh từ chỉ bệnh; can help giữ sắc thái thận trọng.",
+    };
+    const chips = buildPhraseHints(sample);
+    expect(chips.length).toBeGreaterThanOrEqual(3);
+    expect(chips[0]?.en.toLowerCase()).toBe("regular exercise");
+    expect(chips.at(-1)?.en.toLowerCase()).toContain("chronic diseases");
+
+    const blueprint = buildSentenceBlueprint(sample);
+    expect(blueprint.formula).toContain("can help");
+    expect(blueprint.formula).not.toContain("___");
   });
 });

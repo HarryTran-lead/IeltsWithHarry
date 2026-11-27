@@ -7,7 +7,11 @@ Preserves 100% of exercise IDs and versions so learner progress never breaks.
 from __future__ import annotations
 
 import collections
+import json
+from pathlib import Path
 import re
+
+DATA_DIR = Path(__file__).resolve().parents[1] / "data/translation-practice"
 
 DIRECT_TOPIC_MAP: dict[str, str] = {
     "giáo dục": "Giáo dục & Trường học",
@@ -613,6 +617,170 @@ def expand_reference_answers(row: dict) -> None:
         if len(existing) >= 4:
             break
     row["referenceAnswers"] = existing
+
+
+def _load_json_if_exists(name: str):
+    p = DATA_DIR / name
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+
+
+def _extract_verified_substring(raw_term: str, answer: str) -> str | None:
+    clean = raw_term.strip().strip(".,;!?\"' ")
+    ans_lower = answer.lower()
+    ans_stripped = ans_lower.rstrip(".!?")
+    if not clean:
+        return None
+    if clean.lower() in ans_lower and clean.lower() != ans_stripped:
+        idx = ans_lower.index(clean.lower())
+        exact = answer[idx : idx + len(clean)]
+        return exact if exact.startswith("I ") or exact == "I" else exact.lower()
+    # Try longest contiguous multi-word or single content-word sub-span inside answer
+    words = clean.split()
+    for span_len in range(len(words) - 1, 0, -1):
+        for start in range(0, len(words) - span_len + 1):
+            sub = " ".join(words[start : start + span_len]).strip(".,;!?\"' ")
+            if len(sub) >= 3 and sub.lower() in ans_lower and sub.lower() != ans_stripped:
+                idx = ans_lower.index(sub.lower())
+                exact = answer[idx : idx + len(sub)]
+                return exact if exact.startswith("I ") or exact == "I" else exact.lower()
+    return None
+
+
+def apply_ai_packages_and_build_corpus(core_rows: list[dict]) -> list[dict]:
+    pkg1 = _load_json_if_exists("v3-pkg1-enrichment.json") or {}
+    pkg2 = _load_json_if_exists("v3-pkg2-paraphrases.json") or {}
+    pkg3 = _load_json_if_exists("v3-pkg3-bridge70.json") or []
+
+    tt_map: dict = pkg1.get("targetTerms") or {}
+    vi_map: dict = pkg1.get("naturalPrompts") or {}
+    err_map: dict = pkg1.get("commonErrors") or {}
+
+    curated = [curate_exercise(row) for row in core_rows]
+    used_prompts = {row["promptVi"].strip().lower() for row in curated}
+
+    for row in curated:
+        rid = row["id"]
+        answer = row["referenceAnswers"][0]
+
+        # Gói 1A: Naturalized Vietnamese prompts (preserve uniqueness & paragraph sentence count)
+        if rid in vi_map:
+            cand_vi = vi_map[rid].strip()
+            old_key = row["promptVi"].strip().lower()
+            cand_key = cand_vi.lower()
+            ok_sentences = float(row["practiceLevel"]) < 7.0 or len(re.findall(r"[.!?]", cand_vi)) >= 3
+            if cand_vi and ok_sentences and (cand_key == old_key or cand_key not in used_prompts):
+                used_prompts.discard(old_key)
+                row["promptVi"] = cand_vi
+                used_prompts.add(cand_key)
+
+        # Gói 1B: Fill remaining missing targetTerm + meaningVi
+        if not row.get("targetTerm") and rid in tt_map:
+            entry = tt_map[rid]
+            verified_tt = _extract_verified_substring(entry.get("targetTerm", ""), answer)
+            meaning = (entry.get("meaningVi") or "").strip()
+            if verified_tt and meaning:
+                row["targetTerm"] = verified_tt
+                row["meaningVi"] = meaning
+
+        # Fallback: guarantee 100% targetTerm coverage if any single item still lacked one
+        if not row.get("targetTerm") and row["type"] != "word":
+            content_words = [
+                m.group(0)
+                for m in re.finditer(r"[A-Za-z][A-Za-z'-]{3,}", answer)
+                if m.group(0).lower() not in {"this", "that", "these", "those", "with", "from", "into", "have", "been", "were", "they", "their", "them", "when", "what", "where", "which", "while", "because", "although"}
+            ]
+            if content_words:
+                picked = max(content_words, key=len)
+                if picked.lower() != answer.lower().rstrip(".!?"):
+                    row["targetTerm"] = picked.lower()
+                    row["meaningVi"] = f"từ trọng tâm ({row['topic'].split('&')[0].strip().lower()})"
+
+        # Gói 1C: Fill missing commonErrors
+        if not row["commonErrors"] and rid in err_map:
+            err_entry = err_map[rid]
+            inc = (err_entry.get("incorrect") or "").strip()
+            cor = (err_entry.get("correction") or "").strip()
+            rea = (err_entry.get("reasonVi") or "").strip()
+            if inc and cor and rea and inc != cor:
+                row["commonErrors"] = [{"incorrect": inc, "correction": cor, "reasonVi": rea}]
+
+        # Gói 2: Multi-answer genuine IELTS paraphrases
+        if rid in pkg2:
+            exp_text = row["explanationVi"]
+            seen_ans = {a.strip().lower() for a in row["referenceAnswers"]}
+            for alt in pkg2[rid]:
+                clean_alt = (alt or "").strip()
+                if not clean_alt:
+                    continue
+                if float(row["practiceLevel"]) >= 7.0 and len(re.findall(r"[.!?]", clean_alt)) < 3:
+                    continue
+                if clean_alt.lower() not in seen_ans and clean_alt not in exp_text:
+                    row["referenceAnswers"].append(clean_alt)
+                    seen_ans.add(clean_alt.lower())
+                if len(row["referenceAnswers"]) >= 4:
+                    break
+
+    # Gói 3: Append 40 brand-new 2-sentence Bridge exercises at Band 7.0
+    bridge_count = 0
+    for item_raw in pkg3:
+        prompt_vi = (item_raw.get("promptVi") or "").strip()
+        answer_en = (item_raw.get("answerEn") or "").strip()
+        if not prompt_vi or not answer_en:
+            continue
+        if prompt_vi.lower() in used_prompts:
+            continue
+        if len(re.findall(r"[.!?]", prompt_vi)) < 2 or len(re.findall(r"[.!?]", answer_en)) < 2:
+            continue
+
+        bridge_count += 1
+        bid = f"bridge-7.0-{bridge_count:03d}"
+        verified_tt = _extract_verified_substring(item_raw.get("targetTerm", ""), answer_en)
+        meaning_vi = (item_raw.get("meaningVi") or "").strip()
+        exp_vi = (item_raw.get("explanationVi") or "").strip()
+
+        refs = [answer_en]
+        seen_refs = {answer_en.lower()}
+        for alt_key in ("alt1", "alt2"):
+            alt_val = (item_raw.get(alt_key) or "").strip()
+            if alt_val and alt_val.lower() not in seen_refs and len(re.findall(r"[.!?]", alt_val)) >= 2:
+                refs.append(alt_val)
+                seen_refs.add(alt_val.lower())
+
+        # Ensure explanationVi never embeds a full referenceAnswer verbatim
+        for r in refs:
+            if r in exp_vi:
+                exp_vi = exp_vi.replace(r, "câu mẫu")
+
+        inc = (item_raw.get("errorIncorrect") or "").strip()
+        cor = (item_raw.get("errorCorrection") or "").strip()
+        rea = (item_raw.get("errorReasonVi") or "").strip()
+        errs = [{"incorrect": inc, "correction": cor, "reasonVi": rea}] if inc and cor and rea and inc != cor else []
+
+        bridge_row = {
+            "id": bid,
+            "practiceLevel": "7.0",
+            "type": "paragraph",
+            "topic": item_raw["topic"],
+            "skillFocus": (item_raw.get("skillFocus") or "Cầu nối 2 câu lập luận").strip(),
+            "promptVi": prompt_vi,
+            "referenceAnswers": refs,
+            "grammarTags": ["two_sentence_bridge", "cohesion", "band_7_0"],
+            "explanationVi": exp_vi or "Chú ý từ nối liên kết mạch logic giữa hai câu.",
+            "rationaleVi": "Cầu nối 2 câu liên kết chặt giúp chuyển tiếp mượt từ câu đơn lập luận Band 6.5 sang đoạn văn học thuật.",
+            "commonErrors": errs,
+            "calibrationStatus": "internal_review",
+            "editorialStatus": "pilot",
+            "source": "bridge-v3",
+            "version": 1,
+        }
+        if verified_tt and meaning_vi:
+            bridge_row["targetTerm"] = verified_tt
+            bridge_row["meaningVi"] = meaning_vi
+
+        curated.append(bridge_row)
+        used_prompts.add(prompt_vi.lower())
+
+    return curated
 
 
 def curate_exercise(row: dict) -> dict:

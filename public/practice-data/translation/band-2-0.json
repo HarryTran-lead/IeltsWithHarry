@@ -8,7 +8,9 @@
   "meaningVi": "mỗi ngày",
   "promptVi": "mỗi ngày",
   "referenceAnswers": [
-   "every day"
+   "every day",
+   "each day",
+   "daily"
   ],
   "grammarTags": [
    "time-phrase"
@@ -30,7 +32,9 @@
   "meaningVi": "anh hoặc em trai",
   "promptVi": "em trai tôi",
   "referenceAnswers": [
-   "my younger brother"
+   "my younger brother",
+   "my little brother",
+   "my brother who is younger than me"
   ],
   "grammarTags": [
    "possessive-phrase"
@@ -52,7 +56,9 @@
   "meaningVi": "bữa sáng",
   "promptVi": "bữa sáng lúc bảy giờ",
   "referenceAnswers": [
-   "breakfast at seven o'clock"
+   "breakfast at seven o'clock",
+   "breakfast at seven",
+   "a seven o'clock breakfast"
   ],
   "grammarTags": [
    "time-phrase"
@@ -74,7 +80,9 @@
   "meaningVi": "chị hoặc em gái của tôi",
   "promptVi": "chị gái tôi ở nhà",
   "referenceAnswers": [
-   "my sister at home"
+   "my sister at home",
+   "my elder sister at home",
+   "my older sister at home"
   ],
   "grammarTags": [
    "possessive-place-phrase"
@@ -96,7 +104,9 @@
   "meaningVi": "sau giờ học",
   "promptVi": "sau giờ học",
   "referenceAnswers": [
-   "after school"
+   "after school",
+   "after class",
+   "after lessons"
   ],
   "grammarTags": [
    "time-phrase"
@@ -118,7 +128,9 @@
   "meaningVi": "một ly nước cam tươi",
   "promptVi": "một ly nước cam tươi",
   "referenceAnswers": [
-   "a glass of fresh orange juice"
+   "a glass of fresh orange juice",
+   "a glass of freshly squeezed orange juice",
+   "a cup of fresh orange juice"
   ],
   "grammarTags": [
    "noun phrase - daily needs"
@@ -140,7 +152,9 @@
   "meaningVi": "một căn hộ nhỏ gần công viên",
   "promptVi": "một căn hộ nhỏ gần công viên",
   "referenceAnswers": [
-   "a small flat near the park"
+   "a small flat near the park",
+   "a small apartment close to the park",
+   "a little apartment not far from the park"
   ],
   "grammarTags": [
    "noun phrase - place"
@@ -162,7 +176,9 @@
   "meaningVi": "vào buổi tối thứ Bảy",
   "promptVi": "vào buổi tối thứ Bảy",
   "referenceAnswers": [
-   "on Saturday evening"
+   "on Saturday evening",
+   "in the evening on Saturday",
+   "on Saturday night"
   ],
   "grammarTags": [
    "prepositional phrase - time"
@@ -184,7 +200,9 @@
   "meaningVi": "trạm xe buýt đối diện nhà ga",
   "promptVi": "trạm xe buýt đối diện nhà ga",
   "referenceAnswers": [
-   "the bus stop opposite the station"
+   "the bus stop opposite the station",
+   "the bus stop across from the station",
+   "the bus stop facing the station"
   ],
   "grammarTags": [
    "prepositional phrase - place"
@@ -206,7 +224,9 @@
   "meaningVi": "bác sĩ gia đình của chúng tôi",
   "promptVi": "bác sĩ gia đình của chúng tôi",
   "referenceAnswers": [
-   "our family doctor"
+   "our family doctor",
+   "our family physician",
+   "our family's doctor"
   ],
   "grammarTags": [
    "noun phrase - people"
@@ -228,7 +248,9 @@
   "meaningVi": "thư viện mới của trường",
   "promptVi": "thư viện mới của trường",
   "referenceAnswers": [
-   "the new school library"
+   "the new school library",
+   "the school's new library",
+   "the new library at the school"
   ],
   "grammarTags": [
    "noun phrase - place"
@@ -250,7 +272,9 @@
   "meaningVi": "những đồng nghiệp tốt ở văn phòng",
   "promptVi": "những đồng nghiệp tốt ở văn phòng",
   "referenceAnswers": [
-   "good colleagues at the office"
+   "good colleagues at the office",
+   "good co-workers in the office",
+   "nice workmates at the office"
   ],
   "grammarTags": [
    "noun phrase - people & place"
@@ -272,7 +296,9 @@
   "meaningVi": "sân bóng đá gần trường học",
   "promptVi": "sân bóng đá gần trường học",
   "referenceAnswers": [
-   "the football pitch near the school"
+   "the football pitch near the school",
+   "the football field close to the school",
+   "the soccer field not far from the school"
   ],
   "grammarTags": [
    "prepositional phrase - place"
@@ -317,7 +343,9 @@
   "meaningVi": "chiếc điện thoại thông minh mới của tôi",
   "promptVi": "chiếc điện thoại thông minh mới của tôi",
   "referenceAnswers": [
-   "my new smartphone"
+   "my new smartphone",
+   "my brand-new smartphone",
+   "the new smartphone I have"
   ],
   "grammarTags": [
    "noun phrase - daily needs"
@@ -339,7 +367,9 @@
   "meaningVi": "bảo tàng lịch sử địa phương",
   "promptVi": "bảo tàng lịch sử địa phương",
   "referenceAnswers": [
-   "the local history museum"
+   "the local history museum",
+   "the local museum of history",
+   "the history museum in the local area"
   ],
   "grammarTags": [
    "noun phrase - place"
@@ -361,7 +391,9 @@
   "meaningVi": "thùng rác tái chế màu xanh lá",
   "promptVi": "thùng rác tái chế màu xanh lá",
   "referenceAnswers": [
-   "the green recycling bin"
+   "the green recycling bin",
+   "the green bin for recycling",
+   "the green trash can for recycling"
   ],
   "grammarTags": [
    "noun phrase - daily needs"
@@ -383,7 +415,9 @@
   "meaningVi": "một tách trà nóng",
   "promptVi": "một tách trà nóng",
   "referenceAnswers": [
-   "a cup of hot tea"
+   "a cup of hot tea",
+   "a hot cup of tea",
+   "a cup of steaming hot tea"
   ],
   "grammarTags": [
    "noun phrase"
@@ -405,7 +439,9 @@
   "meaningVi": "một căn bếp sạch sẽ",
   "promptVi": "một căn bếp sạch sẽ",
   "referenceAnswers": [
-   "a clean kitchen"
+   "a clean kitchen",
+   "a spotless kitchen",
+   "a nice and clean kitchen"
   ],
   "grammarTags": [
    "noun phrase"
@@ -427,7 +463,9 @@
   "meaningVi": "ông nội của bạn",
   "promptVi": "ông nội của bạn",
   "referenceAnswers": [
-   "your grandfather"
+   "your grandfather",
+   "your paternal grandfather",
+   "your grandpa"
   ],
   "grammarTags": [
    "possessive phrase"
@@ -449,7 +487,9 @@
   "meaningVi": "vào giữa trưa",
   "promptVi": "vào giữa trưa",
   "referenceAnswers": [
-   "at midday"
+   "at midday",
+   "at noon",
+   "in the middle of the day"
   ],
   "grammarTags": [
    "prepositional phrase"
@@ -471,7 +511,9 @@
   "meaningVi": "chuyến xe điện muộn",
   "promptVi": "chuyến xe điện muộn",
   "referenceAnswers": [
-   "the late tram"
+   "the late tram",
+   "the late streetcar",
+   "the late-evening tram"
   ],
   "grammarTags": [
    "noun phrase"
@@ -493,7 +535,9 @@
   "meaningVi": "một viên thuốc giảm đau",
   "promptVi": "một viên thuốc giảm đau",
   "referenceAnswers": [
-   "a painkiller tablet"
+   "a painkiller tablet",
+   "a pain-relief tablet",
+   "a painkiller pill"
   ],
   "grammarTags": [
    "noun phrase"
@@ -515,7 +559,9 @@
   "meaningVi": "người quản lý mới",
   "promptVi": "người quản lý mới",
   "referenceAnswers": [
-   "the new manager"
+   "the new manager",
+   "the newly appointed manager",
+   "the new person in charge"
   ],
   "grammarTags": [
    "noun phrase"
@@ -537,7 +583,9 @@
   "meaningVi": "một phòng máy tính hiện đại",
   "promptVi": "một phòng máy tính hiện đại",
   "referenceAnswers": [
-   "a modern computer lab"
+   "a modern computer lab",
+   "a modern computer room",
+   "an up-to-date computer lab"
   ],
   "grammarTags": [
    "noun phrase"
@@ -559,7 +607,9 @@
   "meaningVi": "một khu chợ đêm đông đúc",
   "promptVi": "một khu chợ đêm đông đúc",
   "referenceAnswers": [
-   "a crowded night market"
+   "a crowded night market",
+   "a busy night market",
+   "a packed night market"
   ],
   "grammarTags": [
    "noun phrase"
@@ -581,7 +631,9 @@
   "meaningVi": "một bể bơi công cộng lớn",
   "promptVi": "một bể bơi công cộng lớn",
   "referenceAnswers": [
-   "a large public swimming pool"
+   "a large public swimming pool",
+   "a big public swimming pool",
+   "a spacious public pool"
   ],
   "grammarTags": [
    "noun phrase"
@@ -603,7 +655,9 @@
   "meaningVi": "tai nghe không dây màu đen",
   "promptVi": "tai nghe không dây màu đen",
   "referenceAnswers": [
-   "black wireless headphones"
+   "black wireless headphones",
+   "black wireless earphones",
+   "wireless headphones in black"
   ],
   "grammarTags": [
    "noun phrase"
@@ -625,7 +679,9 @@
   "meaningVi": "một khu vườn rau xanh",
   "promptVi": "một khu vườn rau xanh",
   "referenceAnswers": [
-   "a green vegetable garden"
+   "a green vegetable garden",
+   "a green vegetable patch",
+   "a garden with green vegetables"
   ],
   "grammarTags": [
    "noun phrase"
@@ -647,7 +703,9 @@
   "meaningVi": "bánh mì nướng và bơ",
   "promptVi": "bánh mì nướng và bơ",
   "referenceAnswers": [
-   "toast and butter"
+   "toast and butter",
+   "toasted bread and butter",
+   "toast with butter"
   ],
   "grammarTags": [
    "noun phrase"
@@ -669,7 +727,9 @@
   "meaningVi": "một quán cà phê nhỏ gần nhà ga",
   "promptVi": "một quán cà phê nhỏ gần nhà ga",
   "referenceAnswers": [
-   "a small café near the station"
+   "a small café near the station",
+   "a small coffee shop close to the station",
+   "a little café not far from the station"
   ],
   "grammarTags": [
    "noun phrase"
@@ -691,7 +751,9 @@
   "meaningVi": "vào đầu buổi sáng",
   "promptVi": "vào đầu buổi sáng",
   "referenceAnswers": [
-   "in the early morning"
+   "in the early morning",
+   "early in the morning",
+   "at the start of the morning"
   ],
   "grammarTags": [
    "time phrase"
@@ -713,7 +775,9 @@
   "meaningVi": "một người thợ điện thân thiện",
   "promptVi": "một người thợ điện thân thiện",
   "referenceAnswers": [
-   "a friendly electrician"
+   "a friendly electrician",
+   "an approachable electrician",
+   "an electrician with a friendly attitude"
   ],
   "grammarTags": [
    "noun phrase"
@@ -735,7 +799,9 @@
   "meaningVi": "một chai nước khoáng mát",
   "promptVi": "một chai nước khoáng mát",
   "referenceAnswers": [
-   "a bottle of cool mineral water"
+   "a bottle of cool mineral water",
+   "a bottle of chilled mineral water",
+   "a cool bottle of mineral water"
   ],
   "grammarTags": [
    "noun phrase"
@@ -757,7 +823,9 @@
   "meaningVi": "một sân trường rộng rãi",
   "promptVi": "một sân trường rộng rãi",
   "referenceAnswers": [
-   "a spacious school playground"
+   "a spacious school playground",
+   "a spacious schoolyard",
+   "a large, open playground at school"
   ],
   "grammarTags": [
    "noun phrase"
@@ -779,7 +847,9 @@
   "meaningVi": "những người hàng xóm tốt bụng",
   "promptVi": "những người hàng xóm tốt bụng",
   "referenceAnswers": [
-   "kind neighbours"
+   "kind neighbours",
+   "kind-hearted neighbours",
+   "kind people living next door"
   ],
   "grammarTags": [
    "noun phrase"
@@ -801,7 +871,9 @@
   "meaningVi": "chuyến bay sớm vào ngày mai",
   "promptVi": "chuyến bay sớm vào ngày mai",
   "referenceAnswers": [
-   "an early flight tomorrow"
+   "an early flight tomorrow",
+   "tomorrow's early flight",
+   "a flight early tomorrow"
   ],
   "grammarTags": [
    "noun phrase"
@@ -823,7 +895,9 @@
   "meaningVi": "một phòng khách ấm cúng",
   "promptVi": "một phòng khách ấm cúng",
   "referenceAnswers": [
-   "a cosy living room"
+   "a cosy living room",
+   "a warm, welcoming living room",
+   "a cosy sitting room"
   ],
   "grammarTags": [
    "noun phrase"
@@ -845,7 +919,9 @@
   "meaningVi": "một bản đồ thành phố miễn phí",
   "promptVi": "một bản đồ thành phố miễn phí",
   "referenceAnswers": [
-   "a free city map"
+   "a free city map",
+   "a free map of the city",
+   "a city map free of charge"
   ],
   "grammarTags": [
    "noun phrase"
@@ -867,7 +943,9 @@
   "meaningVi": "một rạp chiếu phim địa phương cũ",
   "promptVi": "một rạp chiếu phim địa phương cũ",
   "referenceAnswers": [
-   "an old local cinema"
+   "an old local cinema",
+   "an old local movie theatre",
+   "an old cinema in the local area"
   ],
   "grammarTags": [
    "noun phrase"

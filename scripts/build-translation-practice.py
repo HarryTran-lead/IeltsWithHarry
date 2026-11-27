@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from curate_translation_v3 import curate_exercise, topic_counts_for_items
+from curate_translation_v3 import apply_ai_packages_and_build_corpus, topic_counts_for_items
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/translation-practice/starter-51.json"
@@ -311,7 +311,7 @@ if __name__ == "__main__":
     # ESL v2 additions (scripts/import-esl-v2-translation.py) are appended, never merged
     # into existing rows, so the IDs and versions behind learner progress stay as they were.
     core.extend(json.loads(ESL_V2.read_text(encoding="utf-8")))
-    core = [curate_exercise(row) for row in core]
+    core = apply_ai_packages_and_build_corpus(core)
     assert len({row["id"] for row in core}) == len(core), "duplicate exercise id"
     assert len({row["promptVi"].strip().lower() for row in core}) == len(core), "duplicate prompt"
 
