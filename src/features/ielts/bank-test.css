@@ -627,3 +627,19 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 /* Passages stored without paragraph letters get A, B, C… drawn in front, so headings questions can name them. */
 .bt-passage p[data-letter]::before,
 .cd-passage p[data-letter]::before { content: attr(data-letter); margin-right: 8px; font-weight: 800; }
+
+/* Apply the reference note-completion answer layout in both practice and real-test modes. */
+.bx-reading-mode.bx-real-mode .bq-gap-group { gap: 22px; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-sheet,
+.bx-reading-mode.bx-real-mode .bq-gaps.is-boxed { padding: 16px; border: 1px solid #cfd5dc; border-radius: 0; background: transparent; line-height: 1.9; }
+.bx-reading-mode.bx-real-mode .bq-gaps.is-boxed .bq-gap-row { padding: 8px 0; border-bottom: 0; line-height: 1.9; }
+.bx-reading-mode.bx-real-mode .bq-gaps.is-notes .bq-gap-row { gap: 12px; }
+.bx-reading-mode.bx-real-mode .bq-gaps.is-notes .bq-gap-row:not(:has(.bq-bullets))::before { content: "•"; flex: none; padding-left: 10px; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-inline { min-width: 0; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-no:not(.is-flagged) { min-width: 32px; height: 32px; background: #e4f5e9; color: #159447; font-size: .85em; }
+.bx-reading-mode.bx-real-mode .bq-gap { gap: 4px; margin-inline: 5px; vertical-align: baseline; }
+.bx-reading-mode.bx-real-mode .bq-gap input { width: 120px; max-width: 35vw; height: 30px; padding: 0 4px; border-bottom: 1px solid #38434b; border-radius: 0; background: transparent; font-weight: 500; }
+.bx-reading-mode.bx-real-mode .bq-gap input:focus { border-bottom: 2px solid #159447; background: #edf8f0; outline: 2px solid #159447; outline-offset: 2px; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-sheet > p { margin-block: 6px; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-sheet > p:first-child:has(> strong:only-child) { margin-bottom: 12px; text-align: center; }
+.bx-reading-mode.bx-real-mode .bq-gap-group .bq-bullets { padding-left: 24px; line-height: 1.9; }
