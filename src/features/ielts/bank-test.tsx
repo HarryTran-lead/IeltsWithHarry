@@ -62,7 +62,7 @@ export function AudioDock({ src, title, autoPlayNext, onEnded, examMode, started
 export function HeadingDrop({ question, number, value, held, onPlace, onClear, onLocate }: { question: ExamQuestion; number: number; value: string; held: string | null; onPlace: (key: string) => void; onClear: () => void; onLocate: () => void }) {
   const [over, setOver] = useState(false);
   const chosen = value ? question.options.find((option) => optionKey(option) === value) : undefined;
-  return <div className={`bt-heading-drop ${chosen ? "is-filled" : ""} ${over || held ? "is-over" : ""}`}
+  return <div id={`q-${question.id}`} className={`bt-heading-drop ${chosen ? "is-filled" : ""} ${over || held ? "is-over" : ""}`}
     onClick={(event) => { if (held && !(event.target as HTMLElement).closest("button")) onPlace(held); }}
     onDragOver={(event) => { event.preventDefault(); setOver(true); }}
     onDragLeave={() => setOver(false)}
@@ -73,6 +73,12 @@ export function HeadingDrop({ question, number, value, held, onPlace, onClear, o
     </button>
     {chosen && <button type="button" className="bt-heading-clear" onClick={onClear} aria-label={`Bỏ heading câu ${number}`}><X size={14} /></button>}
   </div>;
+}
+
+/** "**B** Consider…", "B. Consider…" or "B Consider…" → B: the paragraph letter a heading slot sits above. */
+export function paragraphLetter(paragraph: string) {
+  const match = /^\s*(?:\*\*([A-Z])[.:]?\*\*[.:]?|([A-Z])[.:]?)\s+/.exec(paragraph);
+  return match ? match[1] || match[2] : undefined;
 }
 
 /** A selection worth looking up: one to three English words, returned lower-case without edge punctuation. */
@@ -242,11 +248,21 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     }
     return slots;
   }, [section]);
+  // Only paragraphs the passage really starts with a letter get a slot; any other heading question stays answerable in the question pane.
+  const passageSlots = useMemo(() => {
+    const ids = new Set<string>();
+    for (const paragraph of section?.passage.split(/\n\s*\n/) ?? []) {
+      const letter = paragraphLetter(paragraph);
+      const slot = letter ? headingSlots.get(letter) : undefined;
+      if (slot) ids.add(slot.id);
+    }
+    return ids;
+  }, [section, headingSlots]);
   const props: AnswerProps = {
     answers, setAnswer, flags,
     toggleFlag: (id) => setFlags(flags.includes(id) ? flags.filter((item) => item !== id) : [...flags, id]),
     numberOf: (id) => numbers.get(id) ?? 0,
-    held, setHeld,
+    held, setHeld, passageSlots: listening ? undefined : passageSlots,
   };
   const headingGroupKey = (question: ExamQuestion) => groups.find((group) => group.questions.includes(question))?.key ?? "";
   const heldFor = (question: ExamQuestion) => { const key = headingGroupKey(question); return key && held?.startsWith(`${key}:`) ? held.slice(key.length + 1) : null; };
@@ -261,15 +277,18 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     setPart(sectionIndex);
     setAutoPlayPart(playNext ? sectionIndex : null);
     setCurrent(questionId ?? null);
-    if (questionId) setPane("questions");
+    if (questionId) setPane(passageSlots.has(questionId) ? "passage" : "questions");
     if (changed) setHeld(null);
     setMarkPop(null);
     window.setTimeout(() => {
-      const pane = questionPane.current;
       // Each pane scrolls on its own; scrollIntoView would also shift the fixed test sheet sideways.
       if (changed) passage.current?.scrollTo({ top: 0 });
-      if (!pane) return;
       const target = questionId ? document.getElementById(`q-${questionId}`) : null;
+      // A Matching Headings slot sits above its paragraph, so the passage pane scrolls to it instead.
+      const inPassage = Boolean(target && passage.current?.contains(target));
+      if (inPassage) setPane("passage");
+      const pane = inPassage ? passage.current : questionPane.current;
+      if (!pane) return;
       const scrollsItself = pane.scrollHeight > pane.clientHeight + 1;
       if (!target) { if (scrollsItself) pane.scrollTo({ top: 0, behavior: changed ? "auto" : "smooth" }); else pane.scrollIntoView({ block: "start" }); return; }
       if (scrollsItself) pane.scrollTo({ top: target.getBoundingClientRect().top - pane.getBoundingClientRect().top + pane.scrollTop - pane.clientHeight / 3, behavior: changed ? "auto" : "smooth" });
@@ -277,7 +296,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       const input = (target.matches("input") ? target : target.querySelector("input:not([type=radio]):not([type=checkbox])")) as HTMLInputElement | null;
       input?.focus({ preventScroll: true });
     }, 60);
-  }, [listening, notes, part, section]);
+  }, [listening, notes, part, section, passageSlots]);
 
   useEffect(() => {
     if (!jumpTo) return;
@@ -536,8 +555,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       {!listening && <article className={`bt-passage ${tool ? `uses-${tool}` : ""}`} ref={passage} tabIndex={-1} onMouseUp={onPaneMouseUp}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
-          const letter = /^\s*(?:\*\*([A-Z])[.:]?\*\*[.:]?|([A-Z])[.:]?)\s+/.exec(paragraph);
-          const slot = letter ? headingSlots.get(letter[1] || letter[2]) : undefined;
+          const letter = paragraphLetter(paragraph);
+          const slot = letter ? headingSlots.get(letter) : undefined;
           return <Fragment key={index}>
             {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
             <p data-paragraph={index}><RichText text={paragraph} /></p>

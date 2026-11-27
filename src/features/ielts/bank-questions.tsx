@@ -18,6 +18,8 @@ export type AnswerProps = {
   /** "groupKey:optionKey" picked from a word bank, shared so the passage's heading slots can take it too. */
   held?: string | null;
   setHeld?: (value: string | null) => void;
+  /** Matching Headings questions answered in a slot above their paragraph; the question pane then lists only the headings. */
+  passageSlots?: ReadonlySet<string>;
 };
 
 /** "A — Naysmith" → A, "iii — A short day" → iii, " — B. text" → B, "C. text" → C; the key is what gets scored. */
@@ -259,9 +261,11 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
   };
   const byNumber = new Map(group.questions.map((question) => [props.numberOf(question.id), question]));
   const headings = /matching[_-]headings/.test(group.type);
+  // Like YouPass and the computer-delivered test: headings go into the slot above each paragraph; only paragraphs the passage has no slot for keep a row here.
+  const loose = headings ? group.questions.filter((question) => !props.passageSlots?.has(question.id)) : [];
   const bank = <div className={`bq-bank ${headings ? "is-headings" : ""}`}>
       {headings && <strong className="bq-bank-title">List of Headings</strong>}
-      <small>Kéo đáp án thả vào ô trống{headings ? " (ở đây hoặc ngay trên đoạn văn bên trái)" : ""}, hoặc bấm chọn đáp án rồi bấm vào ô.{reusable ? " Mỗi lựa chọn dùng được nhiều lần." : ""}</small>
+      <small className="bq-bank-hint">{headings && !loose.length ? "Kéo heading thả vào ô trống phía trên mỗi đoạn văn, hoặc bấm chọn heading rồi bấm vào ô trống để điền." : `Kéo đáp án thả vào ô trống${headings ? " (ở đây hoặc ngay trên đoạn văn bên trái)" : ""}, hoặc bấm chọn đáp án rồi bấm vào ô.`}{reusable ? " Mỗi lựa chọn dùng được nhiều lần." : ""}</small>
       <div>{options.map((option) => <button
         type="button"
         key={option.key}
@@ -285,7 +289,7 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
         : <li key={question.id}><span className="bq-slot-stem">{richBlocks(prompt, () => null)}</span>{slot(question)}</li>;
     })}</ol>}
     {!headings && bank}
-    {headings && <ol className="bq-slots bq-heading-questions" aria-label="Câu hỏi matching headings">{group.questions.map((question) => <li key={question.id} id={`q-${question.id}`}><span className="bq-slot-stem">{withoutOwnNumber(question.prompt, props.numberOf(question.id))}</span><button type="button" className="bq-heading-goto" onClick={() => document.getElementById(`q-${question.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}>{props.numberOf(question.id)}</button></li>)}</ol>}
+    {loose.length > 0 && <ol className="bq-slots">{loose.map((question) => <li key={question.id}><span className="bq-slot-stem">{richBlocks(withoutOwnNumber(question.prompt, props.numberOf(question.id)), () => null)}</span>{slot(question)}</li>)}</ol>}
   </div>;
 }
 

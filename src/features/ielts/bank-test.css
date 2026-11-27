@@ -612,3 +612,14 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-over,
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled { border-color: #159447; background: #edf8f0; color: var(--bl-ink); }
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled .bt-heading-target { justify-content: flex-start; }
+
+/* YouPass-style heading list: plain heading cards without the numerals, a placed heading leaves the list until it is cleared from its slot. */
+.bx-reading-mode.bx-practice-mode .bq-bank-title { font-size: 1.05em; font-weight: 700; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-bank-hint { display: flex; gap: 6px; color: #7b8794; font-size: 13px; line-height: 1.45; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-bank-hint::before { content: "💡"; flex: none; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings > div { gap: 10px; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip { padding: 6px 12px; border-color: #d6dbe1; border-radius: 6px; background: #fff; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip b,
+.bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled .bt-heading-target b { display: none; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip.is-used { display: none; }
+.bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip.is-held { box-shadow: 0 0 0 2px rgba(21, 148, 71, .18); }

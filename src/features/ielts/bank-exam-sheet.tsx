@@ -100,8 +100,9 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
     if (changed) setHeld(null);
     window.setTimeout(() => {
       if (changed) passage.current?.scrollTo({ top: 0 });
-      const pane = questionPane.current;
       const target = id ? document.getElementById(`q-${id}`) : null;
+      // A heading slot sits above its paragraph, so the passage scrolls to it instead.
+      const pane = target && passage.current?.contains(target) ? passage.current : questionPane.current;
       if (!pane) return;
       if (!target) { pane.scrollTo({ top: 0 }); return; }
       pane.scrollTo({ top: target.getBoundingClientRect().top - pane.getBoundingClientRect().top + pane.scrollTop - pane.clientHeight / 3, behavior: "smooth" });
@@ -133,7 +134,7 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       const target = current ? document.getElementById(`q-${current}`) : null;
-      const row = target?.closest(".bq-question, .bq-gap-row, tr, .bq-many-set, .bq-slot") ?? target;
+      const row = target && !passage.current?.contains(target) ? target.closest(".bq-question, .bq-gap-row, tr, .bq-many-set, .bq-slot") ?? target : null;
       const inner = questionInner.current;
       setFlagTop(row && inner ? row.getBoundingClientRect().top - inner.getBoundingClientRect().top + 2 : null);
     });
@@ -251,6 +252,8 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
     const letter = /matching[_-]headings/.test(question.type) ? /^\s*paragraph\s+([A-Z])\s*$/i.exec(question.prompt)?.[1] : undefined;
     if (letter && question.options.length) slots.set(letter.toUpperCase(), question);
   }
+  // Headings placed above their paragraph are not repeated as rows in the question pane.
+  if (!listening) props.passageSlots = new Set(section.passage.split(/\n\s*\n/).flatMap((paragraph) => { const slot = slots.get(/^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1] ?? ""); return slot ? [slot.id] : []; }));
   const headingKey = (question: ExamQuestion) => groups.find((group) => group.questions.includes(question))?.key ?? "";
   const heldFor = (question: ExamQuestion) => { const key = headingKey(question); return key && held?.startsWith(`${key}:`) ? held.slice(key.length + 1) : null; };
   const first = numbers.get(section.questions[0].id) ?? 1, last = numbers.get(section.questions.at(-1)!.id) ?? first;
