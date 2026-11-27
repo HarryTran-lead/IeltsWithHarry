@@ -81,14 +81,14 @@
 .bq-choices label.is-on { border-color: var(--bl-accent); background: var(--bl-wash); }
 .bq-choices input { width: 18px; height: 18px; margin: 0; accent-color: var(--bl-accent); }
 .bq-choices b { width: 18px; color: #56697b; }
-/* Judgement questions: one compact row of answer pills under each statement. */
-.bq-question.is-judge { gap: 6px; padding: 8px 0 10px; border-bottom: 1px dashed #e6ebee; }
+/* Judgement questions: full-width radio rows beneath each statement. */
+.bq-question.is-judge { gap: 18px; padding: 12px 0 22px; }
 .bq-question.is-judge:last-child { border-bottom: 0; }
-.bq-choices.is-inline { display: flex; flex-wrap: wrap; gap: 6px; }
-.bq-choices.is-inline label { position: relative; gap: 0; padding: 5px 14px; border: 1.5px solid #d6e0e6; border-radius: 999px; background: #fff; color: #3d5368; font-size: 0.86em; font-weight: 800; letter-spacing: .02em; }
-.bq-choices.is-inline label:hover { border-color: var(--bl-accent); background: #fff; }
-.bq-choices.is-inline label.is-on { border-color: var(--bl-accent); background: var(--bl-accent); color: #fff; }
-.bq-choices.is-inline input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.bq-choices.is-inline { display: grid; gap: 4px; padding-left: 0; }
+.bq-choices.is-inline label { gap: 20px; min-height: 42px; padding: 8px 10px; border: 0; border-radius: 5px; background: transparent; color: var(--bl-ink); font-size: 1em; font-weight: 400; letter-spacing: 0; }
+.bq-choices.is-inline label:hover { background: #f3f4f5; }
+.bq-choices.is-inline label.is-on { background: var(--bl-wash); color: var(--bl-ink); }
+.bq-choices.is-inline input { position: static; flex: 0 0 20px; width: 20px; height: 20px; margin: 0; opacity: 1; pointer-events: auto; }
 .bq-choices.is-inline label:has(input:focus-visible) { outline: 3px solid #f2b84b; outline-offset: 2px; }
 .bq-gaps { display: grid; gap: 10px; }
 .bq-sheet { padding: 14px 16px; border: 1px solid #e6dcc6; border-radius: 14px; background: #fffdf7; line-height: 2.1; }

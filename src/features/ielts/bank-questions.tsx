@@ -168,7 +168,7 @@ function ChoiceList({ question, props, options, many = false, compact = false }:
   const value = props.answers[question.id] || "";
   const picked = many ? value.split(",").filter(Boolean) : [value];
   const number = props.numberOf(question.id);
-  // TRUE / FALSE / NOT GIVEN sit on one line under the statement, so a block of six statements stays on one screen.
+  // Judgement answers use separate radio rows beneath the statement.
   return <div className={`bq-question ${compact ? "is-judge" : ""} ${value ? "is-answered" : ""}`} id={`q-${question.id}`}>
     <div className="bq-stem"><NumberBadge number={number} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} /><div>{richBlocks(withoutOwnNumber(question.prompt, number), () => <span className="bq-blank" />)}</div></div>
     <div className={`bq-choices ${compact ? "is-inline" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${number}`}>{options.map((option) => {
