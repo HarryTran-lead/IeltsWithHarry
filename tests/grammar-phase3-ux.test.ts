@@ -57,17 +57,20 @@ describe("Grammar Phase 3 3-Star Mastery, Bite-sized Sprints & Combo UX", () => 
 
   it("renders 3-star progress, combo streak KPIs, and sprint copy in SessionSummary and GrammarToday", () => {
     const summaryHtml = renderToStaticMarkup(
-      createElement(SessionSummary, {
-        result: {
-          entries: [],
-          firstTry: { "A1-01:Q1": true, "A1-01:Q2": true, "A1-01:Q3": true, "A1-01:Q4": true, "A1-01:Q5": true },
-          bestCombo: 5,
+      createElement(
+        SessionSummary,
+        {
+          result: {
+            entries: [],
+            firstTry: { "A1-01:Q1": true, "A1-01:Q2": true, "A1-01:Q3": true, "A1-01:Q4": true, "A1-01:Q5": true },
+            bestCombo: 5,
+          },
+          progress: {},
+          title: "Hoàn thành chặng Có hướng dẫn",
+          starsEarned: 2,
         },
-        progress: {},
-        title: "Hoàn thành chặng Có hướng dẫn",
-        starsEarned: 2,
-        children: createElement("span", null, "Next"),
-      }),
+        createElement("span", null, "Next"),
+      ),
     );
     expect(summaryHtml).toContain("100%");
     expect(summaryHtml).toContain("🔥 x5");
