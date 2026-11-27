@@ -623,3 +623,7 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled .bt-heading-target b { display: none; }
 .bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip.is-used { display: none; }
 .bx-reading-mode.bx-practice-mode .bq-bank.is-headings .bq-chip.is-held { box-shadow: 0 0 0 2px rgba(21, 148, 71, .18); }
+
+/* Passages stored without paragraph letters get A, B, C… drawn in front, so headings questions can name them. */
+.bt-passage p[data-letter]::before,
+.cd-passage p[data-letter]::before { content: attr(data-letter); margin-right: 8px; font-weight: 800; }

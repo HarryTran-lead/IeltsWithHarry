@@ -81,6 +81,26 @@ export function paragraphLetter(paragraph: string) {
   return match ? match[1] || match[2] : undefined;
 }
 
+/** "Paragraph B", "Choose the correct heading for paragraph B.", "Which heading best summarises paragraph G?" → B / G; undefined when no paragraph is named. */
+export function headingQuestionLetter(question: ExamQuestion) {
+  if (!/matching[_-]headings/.test(question.type) || !question.options.length) return undefined;
+  return /\b(?:[Pp]aragraph|[Ss]ection)\s+\**([A-Z])\**(?![A-Za-z])/.exec(question.prompt)?.[1];
+}
+
+/**
+ * The letter of each paragraph. Labelled passages ("A. …", "**A** …") keep their printed letters; a passage without labels
+ * is lettered A, B, C… in order when its headings questions need it, as the IELTS paper does.
+ * A lone "A peat bog…" is a word, not a label: labels count only when at least two run on consecutively.
+ */
+export function passageLetters(paragraphs: string[], needed: boolean) {
+  const printed = paragraphs.map(paragraphLetter);
+  const found = printed.filter((letter): letter is string => Boolean(letter));
+  const labelled = found.length >= 2 && found.every((letter, index) => index === 0 || letter.charCodeAt(0) === found[index - 1].charCodeAt(0) + 1);
+  if (labelled) return { letters: printed, inferred: false };
+  if (!needed) return { letters: paragraphs.map(() => undefined), inferred: false };
+  return { letters: paragraphs.map((_, index) => index < 26 ? String.fromCharCode(65 + index) : undefined), inferred: true };
+}
+
 /** A selection worth looking up: one to three English words, returned lower-case without edge punctuation. */
 function lookupWord(text: string) {
   const word = text.trim().replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, "").replace(/\s+/g, " ");
@@ -239,25 +259,26 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const body = useRef<HTMLDivElement>(null);
   const section = sections[Math.min(part, sections.length - 1)];
   const groups = useMemo(() => groupQuestions(section?.questions ?? []), [section]);
-  // "Paragraph C" in a Matching Headings group also gets a drop slot above paragraph C of the passage.
+  // "Paragraph C" (or "Choose the heading for paragraph C") in a Matching Headings group gets a drop slot above paragraph C of the passage.
   const headingSlots = useMemo(() => {
     const slots = new Map<string, ExamQuestion>();
     for (const question of section?.questions ?? []) {
-      const letter = /matching[_-]headings/.test(question.type) ? /^\s*(?:\d+[.)]?\s+)?(?:paragraph|section)\s+([A-Z])[.:]?\s*$/i.exec(question.prompt.replace(/\*\*/g, ""))?.[1] : undefined;
-      if (letter && question.options.length) slots.set(letter.toUpperCase(), question);
+      const letter = headingQuestionLetter(question);
+      if (letter) slots.set(letter, question);
     }
     return slots;
   }, [section]);
-  // Only paragraphs the passage really starts with a letter get a slot; any other heading question stays answerable in the question pane.
+  const paragraphs = useMemo(() => section?.passage.split(/\n\s*\n/) ?? [], [section]);
+  const lettering = useMemo(() => passageLetters(paragraphs, headingSlots.size > 0), [paragraphs, headingSlots]);
+  // Only paragraphs the passage has get a slot; any other heading question stays answerable in the question pane.
   const passageSlots = useMemo(() => {
     const ids = new Set<string>();
-    for (const paragraph of section?.passage.split(/\n\s*\n/) ?? []) {
-      const letter = paragraphLetter(paragraph);
+    for (const letter of lettering.letters) {
       const slot = letter ? headingSlots.get(letter) : undefined;
       if (slot) ids.add(slot.id);
     }
     return ids;
-  }, [section, headingSlots]);
+  }, [lettering, headingSlots]);
   const props: AnswerProps = {
     answers, setAnswer, flags,
     toggleFlag: (id) => setFlags(flags.includes(id) ? flags.filter((item) => item !== id) : [...flags, id]),
@@ -554,12 +575,13 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       </aside>}
       {!listening && <article className={`bt-passage ${tool ? `uses-${tool}` : ""}`} ref={passage} tabIndex={-1} onMouseUp={onPaneMouseUp}>
         <h2>{section.title}</h2>
-        {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
-          const letter = paragraphLetter(paragraph);
+        {paragraphs.map((paragraph, index) => {
+          const letter = lettering.letters[index];
           const slot = letter ? headingSlots.get(letter) : undefined;
           return <Fragment key={index}>
             {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
-            <p data-paragraph={index}><RichText text={paragraph} /></p>
+            {/* An inferred letter is drawn by CSS so saved highlights keep their character offsets. */}
+            <p data-paragraph={index} data-letter={lettering.inferred ? letter : undefined}><RichText text={paragraph} /></p>
           </Fragment>;
         })}
       </article>}

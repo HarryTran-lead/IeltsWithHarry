@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowLeftRight, ArrowRight, Bell, Bookmark, Check, Eye, EyeO
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, optionKey, optionLabel, QuestionGroupView, richBlocks, type AnswerProps, type QuestionGroup } from "./bank-questions";
-import { HeadingDrop, printedListeningLayout } from "./bank-test";
+import { HeadingDrop, headingQuestionLetter, passageLetters, printedListeningLayout } from "./bank-test";
 import { encodeReadingMarks, encodeReadingNotes, rangeAt, savedReadingMarks, savedReadingNotes, textOffset, type ReadingMark, type ReadingNote } from "./reading-highlights";
 import "./bank-exam-sheet.css";
 
@@ -249,11 +249,13 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
   };
   const slots = new Map<string, ExamQuestion>();
   for (const question of section.questions) {
-    const letter = /matching[_-]headings/.test(question.type) ? /^\s*paragraph\s+([A-Z])\s*$/i.exec(question.prompt)?.[1] : undefined;
-    if (letter && question.options.length) slots.set(letter.toUpperCase(), question);
+    const letter = headingQuestionLetter(question);
+    if (letter) slots.set(letter, question);
   }
+  const paragraphs = section.passage.split(/\n\s*\n/);
+  const lettering = passageLetters(paragraphs, slots.size > 0);
   // Headings placed above their paragraph are not repeated as rows in the question pane.
-  if (!listening) props.passageSlots = new Set(section.passage.split(/\n\s*\n/).flatMap((paragraph) => { const slot = slots.get(/^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1] ?? ""); return slot ? [slot.id] : []; }));
+  if (!listening) props.passageSlots = new Set(lettering.letters.flatMap((letter) => { const slot = letter ? slots.get(letter) : undefined; return slot ? [slot.id] : []; }));
   const headingKey = (question: ExamQuestion) => groups.find((group) => group.questions.includes(question))?.key ?? "";
   const heldFor = (question: ExamQuestion) => { const key = headingKey(question); return key && held?.startsWith(`${key}:`) ? held.slice(key.length + 1) : null; };
   const first = numbers.get(section.questions[0].id) ?? 1, last = numbers.get(section.questions.at(-1)!.id) ?? first;
@@ -279,12 +281,12 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
         <div className={`cd-body ${listening ? "is-listening" : ""}`} ref={body}>
           {!listening && <><article className="cd-passage" ref={passage} onMouseUp={(event) => onPointerUp(event.clientX, event.clientY, event.target)}>
             <h2>{section.title}</h2>
-            {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
-              const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
+            {paragraphs.map((paragraph, index) => {
+              const letter = lettering.letters[index];
               const slot = letter ? slots.get(letter) : undefined;
               return <Fragment key={index}>
                 {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
-                <p data-paragraph={index}><RichText text={paragraph} /></p>
+                <p data-paragraph={index} data-letter={lettering.inferred ? letter : undefined}><RichText text={paragraph} /></p>
               </Fragment>;
             })}
           </article>
