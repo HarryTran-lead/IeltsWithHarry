@@ -15,12 +15,22 @@ const maxTicketLength = 8192;
 const maxTicketLifetime = 30 * 60_000;
 
 /** A dedicated server-only secret is required in live mode; never reuse a database key. */
+export function isGrammarSigningKeyValid(configured: string | undefined, demo: boolean): boolean {
+  if (demo) return true;
+  return Boolean(
+    configured &&
+      configured.trim() === configured &&
+      Buffer.byteLength(configured, "utf8") >= 32 &&
+      configured !== demoKey,
+  );
+}
+
 export function resolveGrammarSigningKey(configured: string | undefined, demo: boolean): string {
   if (demo) return demoKey;
-  if (!configured || configured.trim() !== configured || Buffer.byteLength(configured, "utf8") < 32 || configured === demoKey) {
+  if (!isGrammarSigningKeyValid(configured, false)) {
     throw new Error("Grammar assessment signing key is not configured or too short");
   }
-  return configured;
+  return configured!;
 }
 
 function signature(payload: string, key: string) {

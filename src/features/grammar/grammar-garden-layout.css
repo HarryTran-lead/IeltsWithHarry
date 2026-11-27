@@ -203,7 +203,9 @@
   .gg-layout .gg-levels :is(a, button) { min-height: 40px; padding: 4px 8px; }
   .gg-layout .gg-levels small { white-space: nowrap; }
   .gg-layout .gg-search { grid-area: search; }
-  .gg-layout .gg-chapters { grid-area: chapters; align-self: stretch; min-height: 0; max-height: 100%; padding-right: 4px; overflow: auto; overscroll-behavior: contain; }
+  .gg-layout .gg-chapters,
+  .gg-layout .gg-main > .gg-path { grid-area: chapters; align-self: stretch; min-height: 0; max-height: 100%; margin: 0; padding-right: 4px; overflow: auto; overscroll-behavior: contain; }
+  .gg-layout .gg-main > .gg-path { align-content: start; border: 1px solid var(--gg-line); border-radius: var(--gg-radius); background: var(--gg-surface); padding: 10px 12px; }
   .gg-layout .gg-preview-note { grid-area: note; margin: 0; font-size: var(--fs-2xs); line-height: 1.4; }
   .gg-layout .gg-aside { grid-area: aside; align-self: start; }
   .gg-layout .gg-main > .gg-lab-banner { grid-area: labs; align-self: start; margin: 0; padding: 8px 12px; }

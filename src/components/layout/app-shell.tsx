@@ -207,6 +207,8 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   // A self-study lesson (anything below a Lab's path map) gets the same trimmed header and quiet corners, so the work fits one screen.
   const lessonRoute = /^\/app\/(?:self-study\/(?:writing-task-1|writing-task-2|speaking|listening)|reading\/lab)\/.+/.test(pathname);
+  const grammarFocusRoute = /^\/app\/grammar\/(?:lesson|tests|diagnostic|placement|review|labs|live)(?:\/|$)/.test(pathname);
+  const grammarBoardRoute = pathname === "/app/grammar" || pathname.startsWith("/app/grammar/level/");
   const focusRoute = learningRoute || lessonRoute;
   const plannerRoute = pathname === "/app/planner";
   // Tasks still waiting today, late ones included: the number that should pull a learner back to the plan.
@@ -581,10 +583,10 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           ),
         )}
       </nav>
-      {!focusRoute && <NotebookWidget />}
+      {!focusRoute && !grammarFocusRoute && <NotebookWidget />}
       <StreakCelebration streak={learnerStreak} />
       {!demoMode && learnerStreak && <ActiveTimeTracker />}
-      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute || plannerRoute} />
+      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute || plannerRoute || grammarFocusRoute || grammarBoardRoute} />
     </div>
   );
 }

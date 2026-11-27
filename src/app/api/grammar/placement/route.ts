@@ -2,7 +2,7 @@ import { createClient as createAdminClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
 import { demoMode } from "@/lib/runtime";
 import { canTestLevel, grammarLevel, isLevelOpen } from "@/lib/grammar/gate";
-import { choosePlacement, gradePlacement, issueTicket, placementPool, publicPlacement, readTicket } from "@/lib/grammar/placement";
+import { choosePlacement, gradePlacement, isPlacementConfigured, issueTicket, placementPool, publicPlacement, readTicket } from "@/lib/grammar/placement";
 import type { GrammarLevel } from "@/lib/grammar/types";
 
 export const runtime = "nodejs";
@@ -18,15 +18,25 @@ async function context() {
 }
 
 function failure(error: unknown) {
-  const message = error instanceof Error ? error.message : "Không tải được bài kiểm tra.";
-  return Response.json({ error: message }, { status: message.includes("đăng nhập") ? 401 : 503, headers: { "Cache-Control": "no-store" } });
+  const message = error instanceof Error ? error.message : "";
+  if (message.includes("đăng nhập")) {
+    return Response.json({ error: "Bạn cần đăng nhập.", code: "AUTH_REQUIRED" }, { status: 401, headers: { "Cache-Control": "no-store" } });
+  }
+  if (message === "Chưa đủ câu hỏi để kiểm tra cấp độ này.") {
+    return Response.json({ error: message, code: "QUESTION_BANK_NOT_READY" }, { status: 503, headers: { "Cache-Control": "no-store" } });
+  }
+  // Never echo internal configuration or database error details to clients.
+  return Response.json(
+    { error: "Bài kiểm tra lên cấp tạm thời chưa sẵn sàng. Vui lòng thử lại sau.", code: "ASSESSMENT_UNAVAILABLE" },
+    { status: 503, headers: { "Cache-Control": "no-store" } },
+  );
 }
 
 export async function GET(request: Request) {
   try {
     const { userId, unlocked } = await context();
     const target = new URL(request.url).searchParams.get("target");
-    if (!target) return Response.json({ unlocked }, { headers: { "Cache-Control": "no-store" } });
+    if (!target) return Response.json({ unlocked, assessmentReady: isPlacementConfigured() }, { headers: { "Cache-Control": "no-store" } });
     if (!grammarLevel(target) || target === "A1") return Response.json({ error: "Cấp độ không hợp lệ." }, { status: 400 });
     if (!demoMode && !canTestLevel(target, unlocked)) return Response.json({ error: "Bạn cần mở cấp trước đó." }, { status: 403 });
     if (!demoMode && isLevelOpen(target, unlocked)) return Response.json({ error: "Cấp độ này đã mở." }, { status: 409 });

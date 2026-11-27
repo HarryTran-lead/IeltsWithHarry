@@ -227,3 +227,23 @@
 .gg-self-review { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .gg-self-review p { flex-basis: 100%; }
 .gg-self-review button[aria-pressed="true"] { border-color: var(--gg-brand); background: var(--gg-brand-soft); color: var(--gg-brand-ink); }
+
+/* Clear visual disabled state for primary and secondary Grammar actions */
+.gg .gg-primary:disabled {
+  border-color: #cfe0dd;
+  background: #dce7e5;
+  color: #6c8394;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+  opacity: 1;
+}
+.gg .gg-secondary:disabled {
+  border-color: var(--gg-line);
+  background: #f3f7f6;
+  color: #8aa0ae;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+  opacity: 0.72;
+}

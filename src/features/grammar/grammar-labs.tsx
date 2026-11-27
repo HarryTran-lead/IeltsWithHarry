@@ -12,7 +12,7 @@ import { isLevelOpen } from "@/lib/grammar/gate";
 import {
   labInfo, labKinds,
   type ChoiceQuestion, type ClinicItem, type ContextItem, type ContrastItem, type DiagnosticQuestion, type DiagnosticResult,
-  type LabGrade, type LabItem, type LabKind, type LabSummary, type LessonLabs, type OpenTask, type TransferItem, type TransformSet,
+  type LabGrade, type LabItem, type LabKind, type LabSummary, type LessonLabs, type LevelLabs, type OpenTask, type TransferItem, type TransformSet,
 } from "@/lib/grammar/labs-types";
 import "./grammar-labs.css";
 
@@ -76,7 +76,7 @@ export function LessonLabsPanel({ code }: { code: string }) {
   if (open) return <LabPlayer lab={open.lab} id={open.id} onClose={() => setOpen(null)} onAttempt={record} />;
   const total = labKinds.reduce((sum, lab) => sum + data.labs[lab].length, 0);
   return <div className="gg-labs-panel">
-    {data.concept && <section className="gg-lab-concept"><div><span className="gg-eyebrow">BẢN ĐỒ KIẾN THỨC · {data.concept.id}</span><h3>{data.concept.title}</h3><p>Nhóm: {data.concept.family}{data.concept.prerequisites.length ? ` · Cần nắm trước: ${data.concept.prerequisites.join(", ")}` : ""}</p></div>
+    {data.concept && <section className="gg-lab-concept"><div><span className="gg-eyebrow">BẢN ĐỒ KIẾN THỨC</span><h3>{data.concept.title}</h3>{data.concept.prerequisites.length > 0 && <p>Cần nắm trước: {data.concept.prerequisites.join(", ")}</p>}</div>
       {data.concept.skills.length > 0 && <ol>{data.concept.skills.map((skill) => <li key={skill.id}><strong>{skill.title}</strong>{skill.formula && <code>{skill.formula}</code>}</li>)}</ol>}</section>}
     <DraftNote preview={data.draftPreview} />
     {total === 0 ? <div className="gg-empty"><FlaskConical size={28} /><h2>Chưa có bài luyện chuyên sâu cho bài này</h2><p>Hãy luyện tập theo 4 giai đoạn, hoặc mở phần luyện thêm của cả cấp.</p><Link className="gg-primary" href={`${ROOT}/labs?level=${code.slice(0, 2)}`}>Luyện thêm {code.slice(0, 2)} <ArrowRight size={16} /></Link></div>
@@ -95,9 +95,66 @@ function LabSection({ lab, items, attempts, onOpen }: { lab: LabKind; items: Lab
   const Icon = icons[lab];
   const done = items.filter((item) => attempts[`${lab}:${item.id}`]).length;
   return <section className={`gg-lab-section gg-lab-${lab}`}>
-    <header><span className="gg-lab-icon"><Icon size={20} /></span><div><h3>{labInfo[lab].name} <small>{labInfo[lab].milestone}</small></h3><p>{labInfo[lab].description}</p></div><span className="gg-lab-count">{done}/{items.length}</span></header>
+    <header><span className="gg-lab-icon"><Icon size={20} /></span><div><h3>{labInfo[lab].name}</h3><p>{labInfo[lab].description}</p></div><span className="gg-lab-count">{done}/{items.length}</span></header>
     <LabCards lab={lab} items={items} attempts={attempts} onOpen={onOpen} />
   </section>;
+}
+
+const DISCOURSE_LESSONS = new Set(["A1-29", "A1-30", "A2-22", "A2-23", "A2-24", "A2-30", "B1-32", "B2-18", "B2-29", "C1-27", "C2-09", "C2-20"]);
+
+/** Từ nối trong ngữ cảnh (/app/grammar/live): context & discourse practice backed by M25 passages. */
+export function ContextPracticePage({ levelParam, unlocked }: { levelParam: string | null; unlocked: GrammarLevel[] }) {
+  const level = grammarLevels.includes(levelParam as GrammarLevel) ? levelParam as GrammarLevel : "A1";
+  const levelOpen = isLevelOpen(level, unlocked);
+  const [loaded, setLoaded] = useState<LevelLabs | null>(null);
+  const [failure, setFailure] = useState<{ level: GrammarLevel; message: string } | null>(null);
+  const [query, setQuery] = useState("");
+  const [openId, setOpenId] = useState<string | null>(null);
+  const { attempts, record } = useAttempts();
+  useEffect(() => {
+    if (!levelOpen) return;
+    let active = true;
+    getJson<LevelLabs>(`/api/grammar/labs?level=${level}`)
+      .then((value) => { if (active) setLoaded(value); })
+      .catch((cause) => { if (active) setFailure({ level, message: cause instanceof Error ? cause.message : "Không tải được bài ngữ cảnh." }); });
+    return () => { active = false; };
+  }, [level, levelOpen]);
+  const data = loaded?.level === level ? loaded : null;
+  const error = failure?.level === level ? failure.message : "";
+  if (openId) {
+    return <div className="gg-subpage gg-labs"><LabPlayer lab="context" id={openId} onClose={() => setOpenId(null)} onAttempt={record} /></div>;
+  }
+  const q = query.trim().toLowerCase();
+  const contextItems = (data?.labs.context ?? []).filter((item) => !q || `${item.title} ${item.subtitle ?? ""} ${item.lessonIds.join(" ")}`.toLowerCase().includes(q));
+  const connectorItems = contextItems.filter((item) => item.lessonIds.some((id) => DISCOURSE_LESSONS.has(id)) || /connect|link|conjunction|clause|transition|discourse|although|however|because|relative/i.test(`${item.title} ${item.subtitle ?? ""}`));
+  const otherItems = contextItems.filter((item) => !connectorItems.includes(item));
+  return <div className="gg-subpage gg-labs">
+    <Link className="gg-back" href={`${ROOT}/level/${level}`}><ArrowLeft size={16} /> Lộ trình {level}</Link>
+    <div className="gg-diagnostic-head">
+      <div>
+        <span className="gg-eyebrow">TỪ NỐI &amp; NGỮ CẢNH · {level}</span>
+        <h1>{grammarWorlds[level].icon} Từ nối trong ngữ cảnh</h1>
+        <p>Đọc đoạn văn thực tế, chọn từ nối và cấu trúc liên kết ý phù hợp với mạch văn, rồi luyện sửa câu.</p>
+      </div>
+      <div className="gg-lab-levels" role="group" aria-label="Chọn cấp độ">{grammarLevels.map((item) => <Link key={item} className={item === level ? "active" : ""} aria-disabled={!isLevelOpen(item, unlocked)} href={isLevelOpen(item, unlocked) ? `${ROOT}/live?level=${item}` : `${ROOT}/placement?target=${item}`}>{item}</Link>)}</div>
+    </div>
+    {!levelOpen ? <div className="gg-empty"><Layers size={28} /><h2>Cấp {level} đang khóa</h2><p>Mở cấp này trong lộ trình Grammar trước để luyện đoạn văn ngữ cảnh.</p><Link className="gg-primary" href={`${ROOT}/placement?target=${level}`}>Kiểm tra lên cấp <ArrowRight size={16} /></Link></div>
+      : error ? <div className="gg-error"><p>{error}</p></div>
+      : !data ? <div className="gg-loading">Đang tải bài luyện ngữ cảnh…</div>
+      : <>
+        <div className="gg-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Tìm bài ngữ cảnh trong ${level} (${data.labs.context.length} bài)…`} aria-label="Tìm bài ngữ cảnh" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div>
+        {connectorItems.length > 0 && <section className="gg-lab-section gg-lab-context">
+          <header><span className="gg-lab-icon"><Split size={20} /></span><div><h3>Trọng tâm từ nối &amp; liên kết câu</h3><p>Các đoạn văn tập trung vào liên từ, mệnh đề nối ý và mạch lập luận ở cấp {level}.</p></div><span className="gg-lab-count">{connectorItems.filter((item) => attempts[`context:${item.id}`]).length}/{connectorItems.length}</span></header>
+          <LabCards lab="context" items={connectorItems} attempts={attempts} onOpen={setOpenId} />
+        </section>}
+        {otherItems.length > 0 && <section className="gg-lab-section gg-lab-context">
+          <header><span className="gg-lab-icon"><Search size={20} /></span><div><h3>Đọc ngữ cảnh theo chủ điểm ({level})</h3><p>Nhận diện thì, đại từ và cấu trúc ngữ pháp đặt trong email, hội thoại và bài viết ngắn.</p></div><span className="gg-lab-count">{otherItems.filter((item) => attempts[`context:${item.id}`]).length}/{otherItems.length}</span></header>
+          <LabCards lab="context" items={otherItems} attempts={attempts} onOpen={setOpenId} />
+        </section>}
+        {!contextItems.length && <div className="gg-empty"><Search size={26} /><h2>Không tìm thấy đoạn văn phù hợp</h2></div>}
+        <DraftNote preview={data.draftPreview} />
+      </>}
+  </div>;
 }
 
 // ------------------------------------------------------------------ hub page
@@ -137,7 +194,7 @@ function DiagnosticCard({ level, available, expanded, onOpenClinic }: { level: G
   }
   const statusLabel = { REVIEW_PRIORITY: "Nên ôn trước", MIXED: "Chưa chắc", PROVISIONAL_STRENGTH: "Tạm ổn", INSUFFICIENT_EVIDENCE: "Chưa đủ dữ liệu" } as const;
   return <section className="gg-lab-section gg-lab-diagnostic">
-    <header><span className="gg-lab-icon"><Compass size={20} /></span><div><h3>Chẩn đoán nhanh {level} <small>M21</small></h3><p>Khoảng 12 câu, 2 câu cho mỗi chủ điểm. Kết quả gợi ý bài nên ôn và phần luyện sâu phù hợp, không phải điểm trình độ.</p></div></header>
+    <header><span className="gg-lab-icon"><Compass size={20} /></span><div><h3>Chẩn đoán nhanh {level}</h3><p>Khoảng 12 câu, 2 câu cho mỗi chủ điểm. Kết quả gợi ý bài nên ôn và phần luyện sâu phù hợp, không phải điểm trình độ.</p></div></header>
     {!available ? <p className="gg-side-foot">Bài chẩn đoán của cấp này chưa phát hành.</p>
       : result ? <div className="gg-lab-diag-result">
         <strong className="gg-lab-score">{result.points}/{result.total} câu khớp đáp án</strong><p>{result.summaryVi}</p>

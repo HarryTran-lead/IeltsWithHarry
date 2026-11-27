@@ -43,7 +43,11 @@ function normalizeAnswer(value: string, grading: Record<string, unknown> = {}) {
 
 export function gradeEditorialAnswer(question: SourceQuestion, answer: string) {
   const response = normalizeAnswer(answer, question.grading);
-  const accepted = [question.correct_answer, ...(question.accepted_answers ?? [])];
+  const baseAccepted = [question.correct_answer, ...(question.accepted_answers ?? [])];
+  const fullSentenceCorrections = question.type === "error_correction" && /«[^»]+»/.test(question.prompt_en)
+    ? baseAccepted.map((candidate) => question.prompt_en.replace(/«[^»]+»/, candidate))
+    : [];
+  const accepted = [...baseAccepted, ...fullSentenceCorrections];
   const isChoice = ["mcq", "error_choice"].includes(question.type);
   const validChoice = !isChoice || (question.options ?? []).some((option) => normalizeAnswer(option, question.grading) === response);
   const exactMatch = validChoice && accepted.some((candidate) => normalizeAnswer(candidate, question.grading) === response);

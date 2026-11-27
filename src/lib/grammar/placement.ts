@@ -3,12 +3,16 @@ import { randomInt } from "node:crypto";
 import { loadEditorialLesson } from "./editorial";
 import { GRAMMAR_TEST_SIZE, prerequisiteLevel, scoreGrammarPlacement } from "./gate";
 import type { GrammarLevel } from "./types";
-import { resolveGrammarSigningKey, signGrammarAssessmentTicket, verifyGrammarAssessmentTicket, type GrammarAssessmentTicket } from "./assessment-ticket";
+import { isGrammarSigningKeyValid, resolveGrammarSigningKey, signGrammarAssessmentTicket, verifyGrammarAssessmentTicket, type GrammarAssessmentTicket } from "./assessment-ticket";
 import catalog from "@/data/grammar-editorial/catalog.json";
 
 type Choice = { id: string; prompt: string; instruction: string; options: string[]; lessonCode: string };
 type AnswerKey = Choice & { correct: string; accepted: string[] };
 type Ticket = GrammarAssessmentTicket;
+
+export function isPlacementConfigured() {
+  return isGrammarSigningKeyValid(process.env.GRAMMAR_ASSESSMENT_SECRET, process.env.NEXT_PUBLIC_DEMO_MODE === "true");
+}
 
 function secret() {
   return resolveGrammarSigningKey(process.env.GRAMMAR_ASSESSMENT_SECRET, process.env.NEXT_PUBLIC_DEMO_MODE === "true");
