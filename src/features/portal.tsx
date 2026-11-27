@@ -106,7 +106,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
               : skillMode === "clips" || (skillMode === "banks" && pathname.split("/")[4] === "quick") ? <ClipDictation /> : <VoaDictation />
         ) : section === "practice" && skillMode === "translation" ? (
           <TranslationWorkspace />
-        ) : section === "grammar" && skillMode !== "live" ? (
+        ) : section === "grammar" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
           <VocabularyLanding />

@@ -87,9 +87,15 @@ function allSummaries(): LabSummary[] {
   for (const f of transformFamilies) if (f.ids.some((id) => m24LiveItem(id)))
     out.push({ lab: "transform", id: f.id, level: levelOf(f.level), lessonIds: [f.lessonId], title: f.cue, subtitle: `${f.ids.length} câu · ${lessonTitle(f.lessonId)}` });
   for (const c of contextDrafts) if (contextSource(c.id))
-    out.push({ lab: "context", id: c.id, level: levelOf(c.level), lessonIds: [c.lessonId], title: `${lessonTitle(c.lessonId)} · ${c.genre}`, subtitle: c.subtitle });
-  for (const t of transferDrafts) if (liveTask(t.id))
-    out.push({ lab: "transfer", id: t.id, level: levelOf(t.level), lessonIds: [t.lesson_id], title: t.title_vi, subtitle: `${t.mode === "SPEAKING" ? "Nói" : "Viết"} · ${t.stage === "INDEPENDENT_TRANSFER" ? "Tự vận dụng" : "Có hướng dẫn"}` });
+    out.push({ lab: "context", id: c.id, level: levelOf(c.level), lessonIds: [c.lessonId], title: `${lessonTitle(c.lessonId)} · ${c.genre}`, subtitle: /^[a-z0-9_]+:/i.test(c.subtitle) ? `Đọc hiểu ngữ cảnh · ${lessonTitle(c.lessonId)}` : c.subtitle });
+  for (const t of transferDrafts) if (liveTask(t.id)) {
+    const modeTitle = t.stage === "GUIDED_WRITING"
+      ? "Viết câu có hướng dẫn"
+      : t.mode === "SPEAKING"
+        ? "Nói theo tình huống"
+        : "Viết vận dụng độc lập";
+    out.push({ lab: "transfer", id: t.id, level: levelOf(t.level), lessonIds: [t.lesson_id], title: `${modeTitle} · ${lessonTitle(t.lesson_id)}`, subtitle: t.title_vi });
+  }
   return out;
 }
 let cache: LabSummary[] | null = null;

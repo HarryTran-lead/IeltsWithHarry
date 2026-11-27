@@ -16,6 +16,7 @@ type Result = { correct: number; total: number; percent: number; passed: boolean
 export function useGrammarUnlocks() {
   const [unlocked, setUnlocked] = useState<GrammarLevel[]>([]);
   const [ready, setReady] = useState(false);
+  const [assessmentReady, setAssessmentReady] = useState(true);
   const [error, setError] = useState("");
   useEffect(() => {
     let active = true;
@@ -23,12 +24,18 @@ export function useGrammarUnlocks() {
       try {
         if (demoMode) {
           const saved = JSON.parse(window.localStorage.getItem(STORAGE) || "[]");
-          if (active) setUnlocked(Array.isArray(saved) ? saved.filter((value) => grammarLevel(value)) : []);
+          if (active) {
+            setUnlocked(Array.isArray(saved) ? saved.filter((value) => grammarLevel(value)) : []);
+            setAssessmentReady(true);
+          }
         } else {
           const response = await fetch("/api/grammar/placement", { cache: "no-store" });
           const body = await response.json();
           if (!response.ok) throw new Error(body.error || "Không tải được cấp độ đã mở.");
-          if (active) setUnlocked((body.unlocked ?? []).filter((value: string) => grammarLevel(value)));
+          if (active) {
+            setUnlocked((body.unlocked ?? []).filter((value: string) => grammarLevel(value)));
+            setAssessmentReady(body.assessmentReady !== false);
+          }
         }
       } catch (cause) { if (active) setError(cause instanceof Error ? cause.message : "Không tải được cấp độ đã mở."); }
       finally { if (active) setReady(true); }
@@ -41,7 +48,7 @@ export function useGrammarUnlocks() {
     if (demoMode) window.localStorage.setItem(STORAGE, JSON.stringify(next));
     return next;
   }), []);
-  return { unlocked, ready, error, unlock };
+  return { unlocked, ready, assessmentReady, error, unlock };
 }
 
 export function LockedLevel({ level, unlocked }: { level: GrammarLevel; unlocked: GrammarLevel[] }) {
@@ -50,7 +57,7 @@ export function LockedLevel({ level, unlocked }: { level: GrammarLevel; unlocked
   return <div className="gg-subpage"><Link className="gg-back" href={ROOT}><ArrowLeft size={16} /> Lộ trình Grammar</Link><div className="gg-empty gg-unlock-empty"><LockKeyhole size={30} /><h1>Cấp {grammarLevel(level) ? level : "này"} đang khóa</h1><p>{eligible ? `Làm bài kiểm tra 20 câu của cấp ${previous} và đạt ít nhất ${GRAMMAR_PASS_PERCENT}% để mở ${level}.` : previous ? `Hãy mở cấp ${previous} trước khi kiểm tra lên ${level}.` : "Vui lòng chọn cấp độ hợp lệ."}</p><Link className="gg-primary" href={eligible ? `${ROOT}/placement?target=${level}` : ROOT}>{eligible ? "Làm bài mở khóa" : "Về A1"} <ArrowRight size={16} /></Link></div></div>;
 }
 
-export function GrammarUnlockPage({ targetParam, unlocked, onUnlock }: { targetParam: string | null; unlocked: GrammarLevel[]; onUnlock: (level: GrammarLevel) => void }) {
+export function GrammarUnlockPage({ targetParam, unlocked, assessmentReady = true, onUnlock }: { targetParam: string | null; unlocked: GrammarLevel[]; assessmentReady?: boolean; onUnlock: (level: GrammarLevel) => void }) {
   const target: GrammarLevel | undefined = targetParam && grammarLevel(targetParam) && targetParam !== "A1" ? targetParam : grammarLevels.find((level) => level !== "A1" && !isLevelOpen(level, unlocked));
   const [questions, setQuestions] = useState<Question[]>([]);
   const [ticket, setTicket] = useState("");
@@ -89,9 +96,10 @@ export function GrammarUnlockPage({ targetParam, unlocked, onUnlock }: { targetP
   return <div className="gg-subpage gg-unlock"><Link className="gg-back" href={ROOT}><ArrowLeft size={16} /> Lộ trình Grammar</Link><span className="gg-eyebrow">KIỂM TRA LÊN CẤP</span><h1>{target ? `Mở khóa cấp ${target}` : "Bạn đã mở tất cả cấp độ"}</h1><p>{target ? `20 câu chọn đáp án từ cấp ${previous}. Đúng ít nhất 16 câu (${GRAMMAR_PASS_PERCENT}%) để mở ${target}. Bạn có thể làm lại nếu chưa đạt.` : "Tiếp tục học và ôn tập theo lộ trình của bạn."}</p>
     {!eligible && target && !isLevelOpen(target, unlocked) && <div className="gg-sync">Bạn cần mở cấp {previous} trước.</div>}
     {target && isLevelOpen(target, unlocked) && !result && <div className="gg-sync">Cấp {target} đã mở. Bạn có thể vào học ngay.</div>}
+    {!assessmentReady && !result && eligible && !isLevelOpen(target!, unlocked) && <div className="gg-sync" role="status">Bài kiểm tra mở khóa đang tạm bảo trì cấu hình trên hệ thống. Trong lúc chờ, bạn vẫn có thể học trọn vẹn các cấp đã mở hoặc làm Chẩn đoán nhanh.</div>}
     {error && <div className="gg-sync" role="alert">{error}</div>}
     {result && <div className="gg-unlock-result"><strong>{result.correct}/{result.total} câu đúng · {result.percent}%</strong><p>{result.passed ? `Đã mở khóa ${target}.` : `Chưa đạt ${GRAMMAR_PASS_PERCENT}%. Hãy ôn cấp ${previous} rồi thử lại.`}</p><div><Link className="gg-primary" href={result.passed ? `${ROOT}/level/${target}` : `${ROOT}/level/${previous}`}>{result.passed ? `Vào học ${target}` : `Ôn lại ${previous}`} <ArrowRight size={16} /></Link>{!result.passed && <button className="gg-secondary" onClick={() => void start()}>Làm đề mới</button>}</div></div>}
-    {!questions.length && !result && eligible && !isLevelOpen(target!, unlocked) && <div className="gg-unlock-start"><p>Bài kiểm tra dùng câu hỏi trong bộ Grammar đang biên tập. Kết quả chỉ dùng để mở lộ trình học, không phải chứng chỉ năng lực.</p><button className="gg-primary" disabled={busy} onClick={() => void start()}>{busy ? "Đang tạo đề…" : "Bắt đầu kiểm tra"} <ArrowRight size={16} /></button></div>}
+    {!questions.length && !result && eligible && !isLevelOpen(target!, unlocked) && <div className="gg-unlock-start"><p>Bài kiểm tra gồm 20 câu trắc nghiệm tổng hợp các chủ điểm cốt lõi của cấp {previous} để mở khóa lộ trình {target}.</p><button className="gg-primary" disabled={busy || !assessmentReady} onClick={() => void start()}>{busy ? "Đang tạo đề…" : "Bắt đầu kiểm tra"} <ArrowRight size={16} /></button></div>}
     {questions.length > 0 && <div className="gg-unlock-questions">{questions.map((question, index) => <fieldset key={question.id} className="gg-unlock-question"><legend>Câu {index + 1} / {questions.length}</legend><strong>{question.prompt}</strong><p>{question.instruction}</p><div className="gg-unlock-options">{question.options.map((option) => <label key={option}><input type="radio" name={question.id} value={option} checked={answers[question.id] === option} onChange={() => setAnswers((current) => ({ ...current, [question.id]: option }))} />{option}</label>)}</div></fieldset>)}<div className="gg-unlock-submit"><span>{Object.keys(answers).length}/{questions.length} câu đã trả lời</span><button className="gg-primary" disabled={busy || Object.keys(answers).length !== questions.length} onClick={() => void submit()}>{busy ? "Đang chấm…" : "Nộp bài kiểm tra"}</button></div></div>}
   </div>;
 }
