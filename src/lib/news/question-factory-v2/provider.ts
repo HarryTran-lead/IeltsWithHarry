@@ -62,10 +62,10 @@ export async function strictGeminiJson<T>(
       }),
     });
   } catch {
-    await recordAiUsage(source, model, null);
+    await recordAiUsage(source, model, null, system);
     throw new FactoryProviderError("unavailable", "Gemini request failed or timed out");
   }
-  await recordAiUsage(source, model, response.status);
+  await recordAiUsage(source, model, response.status, system);
   if (response.status === 429) {
     const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
     const metric = /tokens? per minute|\bTPM\b/i.test(detail) ? "TPM"

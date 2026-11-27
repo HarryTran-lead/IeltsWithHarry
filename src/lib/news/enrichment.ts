@@ -257,8 +257,8 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
           method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
           headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
         });
-      } catch (cause) { await recordAiUsage(usageKey, model, null); throw cause; }
-      await recordAiUsage(usageKey, model, response.status);
+      } catch (cause) { await recordAiUsage(usageKey, model, null, system); throw cause; }
+      await recordAiUsage(usageKey, model, response.status, system);
       if (!resilient || response.status !== 503 || attempt >= 2) break;
       await response.body?.cancel().catch(() => undefined);
       await new Promise((resolve) => setTimeout(resolve, 750 * 2 ** attempt));
