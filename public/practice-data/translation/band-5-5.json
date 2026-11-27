@@ -8,13 +8,21 @@
   "meaningVi": "phòng ngừa",
   "promptVi": "Tập thể dục thường xuyên có thể giúp phòng ngừa một số bệnh mãn tính.",
   "referenceAnswers": [
-   "Regular exercise can help prevent some chronic diseases."
+   "Regular exercise can help prevent some chronic diseases.",
+   "Working out on a regular basis may assist in preventing certain long-term illnesses.",
+   "Certain chronic health conditions can be kept at bay by staying physically active regularly."
   ],
   "grammarTags": [
    "prevent-disease"
   ],
   "explanationVi": "Prevent đi với danh từ chỉ bệnh; can help giữ sắc thái thận trọng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Regular exercise can helps prevent some chronic diseases.",
+    "correction": "Regular exercise can help prevent some chronic diseases.",
+    "reasonVi": "Sau động từ khuyết thiếu 'can', động từ chính luôn ở dạng nguyên mẫu không chia ('help'), bất kể chủ ngữ là số ít hay số nhiều."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -30,13 +38,21 @@
   "meaningVi": "ùn tắc giao thông",
   "promptVi": "Ùn tắc giao thông nghiêm trọng hơn khi nhiều người lái xe một mình.",
   "referenceAnswers": [
-   "Traffic congestion gets worse when more people drive alone."
+   "Traffic congestion gets worse when more people drive alone.",
+   "Traffic jams become more severe whenever a larger number of motorists travel by car on their own.",
+   "Road congestion grows much more serious when lots of people drive around with no passengers."
   ],
   "grammarTags": [
    "when-clause"
   ],
   "explanationVi": "When nối tình huống lái xe một mình với ùn tắc tăng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Traffic congestion gets worse when more people drives alone.",
+    "correction": "Traffic congestion gets worse when more people drive alone.",
+    "reasonVi": "'People' bản chất là danh từ số nhiều nên động từ ở thì hiện tại đơn giữ nguyên mẫu là 'drive', không thêm '-s'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -52,7 +68,9 @@
   "meaningVi": "kỹ năng thực tế",
   "promptVi": "Trường học nên dạy thêm kỹ năng thực tế bên cạnh kiến thức học thuật.",
   "referenceAnswers": [
-   "Schools should teach more practical skills alongside academic knowledge."
+   "Schools should teach more practical skills alongside academic knowledge.",
+   "Schools ought to equip students with more hands-on skills in addition to academic learning.",
+   "As well as covering academic subjects, schools need to spend more time teaching real-world skills."
   ],
   "grammarTags": [
    "alongside-phrase"
@@ -109,14 +127,22 @@
   "meaningVi": "làn xe đạp an toàn",
   "promptVi": "Đạp xe đi làm tốt cho sức khỏe, nhưng sẽ kém thực tế ở thành phố thiếu làn xe đạp an toàn.",
   "referenceAnswers": [
-   "Cycling to work is healthy, but it is less practical in cities without safe bike lanes."
+   "Cycling to work is healthy, but it is less practical in cities without safe bike lanes.",
+   "Commuting by bicycle benefits health, yet it becomes far less realistic in urban areas that lack secure cycle paths.",
+   "Although riding a bike to work is great for your fitness, doing so isn't very practical in cities where safe cycling lanes are missing."
   ],
   "grammarTags": [
    "qualified-comparison"
   ],
   "explanationVi": "Less practical giới hạn lợi ích theo điều kiện hạ tầng.",
   "rationaleVi": "Có đánh giá cân bằng và điều kiện cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Cycle to work is healthy, but it is less practical in cities without safe bike lanes.",
+    "correction": "Cycling to work is healthy, but it is less practical in cities without safe bike lanes.",
+    "reasonVi": "Động từ nguyên mẫu không thể làm chủ ngữ đứng đầu câu; phải chuyển sang dạng danh động từ V-ing ('Cycling to work')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -160,7 +186,9 @@
   "meaningVi": "thu nhập không ổn định",
   "promptVi": "Trong khi làm việc tự do mang lại thời gian linh hoạt, hình thức này có thể dẫn đến thu nhập không ổn định nếu thiếu nguồn khách hàng thường xuyên.",
   "referenceAnswers": [
-   "While freelancing offers flexible hours, it can lead to an unstable income without a regular client base."
+   "While freelancing offers flexible hours, it can lead to an unstable income without a regular client base.",
+   "Although working as a freelancer provides a flexible schedule, this arrangement may result in irregular earnings if steady clients are lacking.",
+   "Freelance work gives people freedom over their hours, yet without steady clients it can mean unpredictable pay."
   ],
   "grammarTags": [
    "concession and condition"
@@ -188,7 +216,9 @@
   "meaningVi": "bất tiện",
   "promptVi": "Các căn hộ nhỏ phù hợp với người trẻ đi làm, song chúng có thể trở nên bất tiện một khi quy mô gia đình tăng lên.",
   "referenceAnswers": [
-   "Compact flats are suitable for young professionals, yet they can become inconvenient once family size increases."
+   "Compact flats are suitable for young professionals, yet they can become inconvenient once family size increases.",
+   "Small apartments work well for young workers, although they may become impractical as a family grows.",
+   "While small flats are a good fit for young working adults, they can turn out to be inconvenient when a family gets bigger."
   ],
   "grammarTags": [
    "contrast clause"
@@ -245,14 +275,22 @@
   "meaningVi": "cơ hội việc làm",
   "promptVi": "Học đại học giúp mở rộng cơ hội việc làm; tuy nhiên, hướng đi này có thể kém hiệu quả đối với những sinh viên thiếu mục tiêu rõ ràng.",
   "referenceAnswers": [
-   "Higher education helps broaden job prospects; however, this path may be ineffective for students who lack clear goals."
+   "Higher education helps broaden job prospects; however, this path may be ineffective for students who lack clear goals.",
+   "Attending university can widen career opportunities, but this option may not work well for students without clear goals.",
+   "Although getting a university degree opens up more job options, it might be less effective if learners do not have a clear direction."
   ],
   "grammarTags": [
    "qualification and contrast"
   ],
   "explanationVi": "Trạng từ liên kết 'however' phân tách hai mặt của việc học đại học, đi kèm mệnh đề quan hệ thu hẹp đối tượng áp dụng.",
   "rationaleVi": "Sử dụng 'however' kết hợp với sự giới hạn phạm vi áp dụng ('for students who...') đúng với định hướng qualification ở level 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Higher education helps broaden job prospects; however, this path may be ineffective for students who lack of clear goals.",
+    "correction": "Higher education helps broaden job prospects; however, this path may be ineffective for students who lack clear goals.",
+    "reasonVi": "Khi 'lack' đóng vai trò là động từ ('who lack...'), nó đi trực tiếp với tân ngữ mà không có 'of' (chỉ dùng 'of' khi 'lack' là danh từ như 'a lack of')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -267,14 +305,22 @@
   "meaningVi": "bệnh tim mạch",
   "promptVi": "Bất chấp sự tiện lợi của đồ ăn nhanh cho người bận rộn, việc tiêu thụ quá mức làm tăng nguy cơ mắc các bệnh tim mạch.",
   "referenceAnswers": [
-   "Despite the convenience of fast food for busy people, overconsuming it increases the risk of cardiovascular diseases."
+   "Despite the convenience of fast food for busy people, overconsuming it increases the risk of cardiovascular diseases.",
+   "Although fast food is convenient for people with busy schedules, eating too much of it raises the risk of heart disease.",
+   "Even though quick meals make life easier for busy individuals, excessive consumption can make cardiovascular problems more likely."
   ],
   "grammarTags": [
    "prepositional concession"
   ],
   "explanationVi": "Dùng giới từ 'Despite' đi với cụm danh từ ở đầu câu để nhượng bộ trước khi đưa ra tác hại sức khỏe.",
   "rationaleVi": "Sử dụng cấu trúc 'Despite + noun phrase' cùng kết hợp từ chỉ bệnh lý chuẩn xác giúp người học luyện phản xạ cấu trúc nhượng bộ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Despite of the convenience of fast food for busy people, overconsuming it increases the risk of cardiovascular diseases.",
+    "correction": "Despite the convenience of fast food for busy people, overconsuming it increases the risk of cardiovascular diseases.",
+    "reasonVi": "'Despite' dùng trực tiếp trước cụm danh từ hoặc V-ing mà tuyệt đối không đi kèm 'of' (nếu muốn có 'of' phải viết là 'In spite of')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -289,14 +335,22 @@
   "meaningVi": "tương tác trực tiếp",
   "promptVi": "Mạng xã hội giúp duy trì liên lạc dễ dàng hơn, ngoại trừ trường hợp nó làm giảm tương tác trực tiếp giữa bạn bè thân thiết.",
   "referenceAnswers": [
-   "Social media makes keeping in touch easier, except when it reduces face-to-face interaction among close friends."
+   "Social media makes keeping in touch easier, except when it reduces face-to-face interaction among close friends.",
+   "Social networking platforms help people stay connected more easily, except in cases where they reduce in-person contact between close friends.",
+   "Staying in touch is much easier through social media, except when it leads to less in-person interaction among close friends."
   ],
   "grammarTags": [
    "limitation clause"
   ],
   "explanationVi": "Cụm 'except when' đặt ở giữa câu để giới hạn bối cảnh mà lợi ích của mạng xã hội không còn đúng nữa.",
   "rationaleVi": "Đưa ra giới hạn cho nhận định bằng 'except when' giúp câu văn có tính bảo lưu (qualification), đặc trưng của IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Social media makes keep in touch easier, except when it reduces face-to-face interaction among close friends.",
+    "correction": "Social media makes keeping in touch easier, except when it reduces face-to-face interaction among close friends.",
+    "reasonVi": "Trong cấu trúc 'make + tân ngữ + tính từ', cụm động từ đóng vai trò tân ngữ phải chuyển sang danh động từ V-ing ('keeping in touch') chứ không để nguyên mẫu 'keep'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -311,14 +365,22 @@
   "meaningVi": "sự hiểu biết văn hóa",
   "promptVi": "Mặc dù việc học ngoại ngữ thúc đẩy sự hiểu biết văn hóa, thành công của nó phụ thuộc phần lớn vào cơ hội thực hành thực tế.",
   "referenceAnswers": [
-   "While learning a foreign language promotes cultural understanding, its success depends largely on having opportunities to practise."
+   "While learning a foreign language promotes cultural understanding, its success depends largely on having opportunities to practise.",
+   "Although studying a foreign language encourages cultural awareness, achieving success mainly relies on real-world practice opportunities.",
+   "Learning another language helps people understand different cultures, yet how well they succeed mostly depends on whether they get to practise it in real life."
   ],
   "grammarTags": [
    "concession clause"
   ],
   "explanationVi": "Mệnh đề nhượng bộ 'While...' đặt ở đầu câu, phân tách bằng dấu phẩy trước mệnh đề chính nêu điều kiện quyết định.",
   "rationaleVi": "Sử dụng kết hợp từ 'cultural understanding' và động từ chuẩn Anh-Anh 'practise' thể hiện yêu cầu từ vựng và ngữ pháp của cấp độ này.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While learning a foreign language promotes cultural understanding, its success is depends largely on having opportunities to practise.",
+    "correction": "While learning a foreign language promotes cultural understanding, its success depends largely on having opportunities to practise.",
+    "reasonVi": "'Depend' là động từ thường chứ không phải tính từ nên chia trực tiếp thành 'depends on', không thêm 'is' đứng trước (chỉ dùng 'is dependent on')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -333,7 +395,9 @@
   "meaningVi": "phương tiện công cộng",
   "promptVi": "Miễn phí vé xe buýt có thể khuyến khích sử dụng phương tiện công cộng, nhưng chính sách này chỉ hiệu quả nếu xe chạy đúng giờ.",
   "referenceAnswers": [
-   "Offering free bus fares might encourage the use of public transport, but this policy is effective only if buses run on time."
+   "Offering free bus fares might encourage the use of public transport, but this policy is effective only if buses run on time.",
+   "Making bus rides free could persuade more people to use public transit, yet this approach will only succeed if services remain punctual.",
+   "Free bus tickets may boost public transport use, provided that the buses actually stick to their schedules."
   ],
   "grammarTags": [
    "conditional contrast"
@@ -361,14 +425,22 @@
   "meaningVi": "hàng kém chất lượng",
   "promptVi": "Mua sắm trực tuyến tiết kiệm thời gian cho người tiêu dùng, mặc dù rủi ro mua phải hàng kém chất lượng vẫn là một mối lo ngại.",
   "referenceAnswers": [
-   "Online shopping saves time for consumers, even though the risk of purchasing poor-quality goods remains a concern."
+   "Online shopping saves time for consumers, even though the risk of purchasing poor-quality goods remains a concern.",
+   "Buying things online helps shoppers save time, although the chance of receiving low-quality products is still a worry.",
+   "While e-commerce is a great time-saver for customers, people still worry about ending up with substandard items."
   ],
   "grammarTags": [
    "concession clause position"
   ],
   "explanationVi": "Đặt mệnh đề nhượng bộ 'even though...' ở cuối câu để làm nổi bật sự đối lập với ưu điểm ban đầu.",
   "rationaleVi": "Đảo vị trí mệnh đề nhượng bộ ra sau giúp đa dạng hóa câu và duy trì tư duy so sánh hai mặt chuẩn IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Online shopping saves time for consumers, despite the risk of purchasing poor-quality goods remains a concern.",
+    "correction": "Online shopping saves time for consumers, even though the risk of purchasing poor-quality goods remains a concern.",
+    "reasonVi": "Sau 'despite' chỉ được dùng cụm danh từ hoặc V-ing, còn khi theo sau là mệnh đề đầy đủ chủ-vị ('the risk ... remains...') thì phải dùng 'even though' hoặc 'although'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -412,14 +484,22 @@
   "meaningVi": "công việc nhà",
   "promptVi": "Sống nhiều thế hệ giúp chia sẻ công việc nhà, dù phải chấp nhận rủi ro phát sinh mâu thuẫn do quan điểm sống khác nhau.",
   "referenceAnswers": [
-   "Multigenerational living helps share household chores, albeit at the risk of generating conflicts due to differing viewpoints."
+   "Multigenerational living helps share household chores, albeit at the risk of generating conflicts due to differing viewpoints.",
+   "Living with multiple generations makes it easier to divide housework, although conflicts may arise because of different lifestyles and opinions.",
+   "When several generations live under one roof, domestic duties can be shared, even though differences in life views might cause arguments."
   ],
   "grammarTags": [
    "concessive qualification"
   ],
   "explanationVi": "Dùng liên từ nhượng bộ ngắn 'albeit' đi kèm cụm danh từ để bổ sung khía cạnh tiêu cực một cách ngắn gọn.",
   "rationaleVi": "Cấu trúc nhượng bộ rút gọn với 'albeit' giúp nâng cao tính tự nhiên và mượt mà trong việc trình bày hai mặt vấn đề ở cấp độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Multigenerational living helps share household chores, albeit at the risk of generating conflicts because differing viewpoints.",
+    "correction": "Multigenerational living helps share household chores, albeit at the risk of generating conflicts due to differing viewpoints.",
+    "reasonVi": "Trước cụm danh từ 'differing viewpoints' phải dùng 'due to' (hoặc 'because of'), còn 'because' chỉ dùng khi theo sau là mệnh đề có đủ chủ ngữ và động từ."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -463,7 +543,9 @@
   "meaningVi": "có tác động hạn chế",
   "promptVi": "Việc mở rộng các khu công viên xanh giúp cải thiện chất lượng không khí, song giải pháp này có tác động hạn chế ở những đô thị có mật độ xây dựng quá cao.",
   "referenceAnswers": [
-   "Expanding green park areas helps improve air quality, yet this measure may have limited impact in cities with excessively high building density."
+   "Expanding green park areas helps improve air quality, yet this measure may have limited impact in cities with excessively high building density.",
+   "Creating more public parks contributes to cleaner air, but its effect is quite limited in overly crowded and heavily built-up cities.",
+   "Although adding green spaces can enhance air quality, this solution does not achieve much in urban areas packed with too many buildings."
   ],
   "grammarTags": [
    "contrast and limitation"
@@ -491,14 +573,22 @@
   "meaningVi": "mở rộng tầm mắt của sinh viên",
   "promptVi": "Trong khi việc du học giúp mở rộng tầm mắt của sinh viên, trải nghiệm này chỉ thực sự có lợi với điều kiện họ chủ động hòa nhập vào cộng đồng địa phương.",
   "referenceAnswers": [
-   "While studying abroad helps broaden students' horizons, this experience is only truly beneficial provided that they actively integrate into the local community."
+   "While studying abroad helps broaden students' horizons, this experience is only truly beneficial provided that they actively integrate into the local community.",
+   "Although studying in another country widens students' perspectives, it is only genuinely helpful if they make an effort to fit into the local society.",
+   "Getting an education overseas can open students' minds, yet they will only gain real value from it as long as they actively engage with local people."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Mệnh đề nhượng bộ với 'While' đặt ở đầu câu, đi kèm với điều kiện cụ thể dùng 'provided that' ở vế sau để cân bằng hai mặt của chủ đề du học.",
   "rationaleVi": "Sử dụng từ nối nhượng bộ và liên từ điều kiện 'provided that' giúp thể hiện tư duy lập luận có điều kiện rõ ràng ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While studying in abroad helps broaden students' horizons, this experience is only truly beneficial provided that they actively integrate into the local community.",
+    "correction": "While studying abroad helps broaden students' horizons, this experience is only truly beneficial provided that they actively integrate into the local community.",
+    "reasonVi": "'Abroad' bản thân đã là trạng từ chỉ nơi chốn ('ở nước ngoài') nên đi trực tiếp sau động từ thành 'studying abroad', không thêm giới từ 'in' hay 'to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -513,7 +603,9 @@
   "meaningVi": "sức khỏe tim mạch",
   "promptVi": "Chế độ ăn chay có thể mang lại nhiều lợi ích cho sức khỏe tim mạch, ngoại trừ trường hợp người thực hiện không bổ sung đầy đủ các vi chất cần thiết.",
   "referenceAnswers": [
-   "A vegetarian diet can offer numerous benefits for cardiovascular health, except where individuals fail to supplement essential micronutrients adequately."
+   "A vegetarian diet can offer numerous benefits for cardiovascular health, except where individuals fail to supplement essential micronutrients adequately.",
+   "Following a vegetarian diet can bring many heart health benefits, except when people fail to get enough vital micronutrients.",
+   "A meat-free diet can do wonders for your heart, except in cases where people neglect to add enough essential micronutrients."
   ],
   "grammarTags": [
    "qualification and exception"
@@ -570,14 +662,22 @@
   "meaningVi": "sự cân bằng cuộc sống và công việc",
   "promptVi": "Bất chấp việc làm việc tại nhà thúc đẩy sự cân bằng cuộc sống và công việc, mô hình này dễ làm giảm năng suất trừ khi công ty duy trì hệ thống đánh giá rõ ràng.",
   "referenceAnswers": [
-   "Despite the fact that working from home promotes a good work-life balance, this model risks lowering productivity unless companies maintain a clear evaluation system."
+   "Despite the fact that working from home promotes a good work-life balance, this model risks lowering productivity unless companies maintain a clear evaluation system.",
+   "Although remote work supports a healthier balance between job and personal life, it can easily reduce output if firms lack a transparent performance review system.",
+   "Even though working from home helps staff balance their careers and home life, productivity may drop unless employers keep a clear way to assess their work."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Sử dụng cấu trúc 'Despite the fact that' ở đầu câu để nhượng bộ và mệnh đề 'unless' ở cuối câu để xác định điều kiện loại trừ.",
   "rationaleVi": "Cấu trúc phức hợp chứa nhượng bộ và từ nối 'unless' thể hiện lập luận mạch lạc, đáp ứng yêu cầu Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Despite the fact that working from home promotes a good work-life balance, this model risks to lower productivity unless companies maintain a clear evaluation system.",
+    "correction": "Despite the fact that working from home promotes a good work-life balance, this model risks lowering productivity unless companies maintain a clear evaluation system.",
+    "reasonVi": "Động từ 'risk' bắt buộc đi kèm danh động từ V-ing ('risks lowering'), tuyệt đối không dùng 'to V' ('risks to lower')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -592,7 +692,9 @@
   "meaningVi": "di sản văn hóa",
   "promptVi": "Mặc dù việc số hóa di sản văn hóa giúp công chúng dễ tiếp cận hơn, giải pháp này khó thay thế trải nghiệm thực tế khi thiếu sự tương tác trực tiếp.",
   "referenceAnswers": [
-   "Whilst digitalising cultural heritage makes it more accessible to the public, this solution can hardly replace real-life experiences in the absence of direct interaction."
+   "Whilst digitalising cultural heritage makes it more accessible to the public, this solution can hardly replace real-life experiences in the absence of direct interaction.",
+   "Although turning cultural heritage into digital formats improves public access, it cannot easily match in-person visits without face-to-face engagement.",
+   "Digitising historical treasures makes them easier for everyone to explore, yet without direct interaction, it is hard for this approach to replace experiencing them in person."
   ],
   "grammarTags": [
    "concession and limitation"
@@ -620,14 +722,22 @@
   "meaningVi": "vốn đầu tư trực tiếp nước ngoài",
   "promptVi": "Bất chấp những ưu điểm rõ rệt của việc thu hút vốn đầu tư trực tiếp nước ngoài, sự tăng trưởng này chỉ bền vững khi doanh nghiệp nội địa đủ sức cạnh tranh.",
   "referenceAnswers": [
-   "In spite of the clear advantages of attracting foreign direct investment, such growth remains sustainable only when domestic enterprises are sufficiently competitive."
+   "In spite of the clear advantages of attracting foreign direct investment, such growth remains sustainable only when domestic enterprises are sufficiently competitive.",
+   "Despite the obvious benefits of bringing in foreign direct investment, this kind of growth can only last if local companies are strong enough to compete.",
+   "Even though attracting overseas investment brings clear gains, economic growth will not stay sustainable unless homegrown businesses remain competitive."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Mở đầu bằng cụm giới từ nhượng bộ 'In spite of', đi cùng mệnh đề điều kiện thời gian 'only when' ở vế sau nhằm chỉ rõ giới hạn bền vững.",
   "rationaleVi": "Việc lồng ghép điều kiện để làm rõ một nhận định kinh tế thể hiện khả năng diễn đạt có qualification của trình độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "In spite of the clear advantages of attracting foreign direct investment, such growth remains sustainably only when domestic enterprises are sufficiently competitive.",
+    "correction": "In spite of the clear advantages of attracting foreign direct investment, such growth remains sustainable only when domestic enterprises are sufficiently competitive.",
+    "reasonVi": "'Remain' là liên động từ (linking verb) nên theo sau phải là tính từ 'sustainable' để bổ nghĩa cho chủ ngữ, không dùng trạng từ 'sustainably'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -642,7 +752,9 @@
   "meaningVi": "giảm áp lực giao thông",
   "promptVi": "Các hệ thống tàu điện ngầm có thể giảm áp lực giao thông, mặc dù các dự án này đòi hỏi vốn đầu tư khổng lồ và chỉ đạt hiệu quả tối đa trên các tuyến đường đông đúc.",
   "referenceAnswers": [
-   "Underground railways can alleviate traffic pressure, although such projects require massive capital investment and only reach maximum efficiency on heavily used routes."
+   "Underground railways can alleviate traffic pressure, although such projects require massive capital investment and only reach maximum efficiency on heavily used routes.",
+   "Subway networks can ease road congestion, even though building them costs huge amounts of money and they only perform at their best along busy corridors.",
+   "While metro systems help take pressure off city traffic, they demand enormous funding and are only truly efficient on high-demand routes."
   ],
   "grammarTags": [
    "concession and condition"
@@ -670,7 +782,9 @@
   "meaningVi": "thử nghiệm lâm sàng",
   "promptVi": "Các cuộc thử nghiệm lâm sàng giúp xác minh hiệu quả của thuốc mới, dẫu cho kết quả nghiên cứu vẫn có độ tin cậy hạn chế nếu quy mô mẫu thử quá nhỏ.",
   "referenceAnswers": [
-   "Clinical trials help verify the effectiveness of new drugs, though research findings still have limited reliability if the sample size is too small."
+   "Clinical trials help verify the effectiveness of new drugs, though research findings still have limited reliability if the sample size is too small.",
+   "Clinical testing is useful for confirming how well new medicines work, although the outcomes are less dependable when too few participants are included.",
+   "Medical trials help prove whether a new drug is effective, yet the study results remain somewhat unreliable if the test group is overly small."
   ],
   "grammarTags": [
    "counterargument and condition"
@@ -698,14 +812,22 @@
   "meaningVi": "thực phẩm hữu cơ",
   "promptVi": "Thực phẩm hữu cơ chứa ít dư lượng hóa chất hơn, nhưng người tiêu dùng chỉ thực sự được hưởng lợi nếu quy trình chứng nhận nguồn gốc giữ được tính minh bạch.",
   "referenceAnswers": [
-   "Organic food contains fewer chemical residues, but consumers only truly benefit if the origin certification process remains transparent."
+   "Organic food contains fewer chemical residues, but consumers only truly benefit if the origin certification process remains transparent.",
+   "Organic produce has lower levels of chemical residue, yet shoppers will only genuinely benefit when origin certification stays clear and honest.",
+   "Although organic products contain fewer harmful chemicals, buyers only gain real advantages as long as the system for verifying their origin is transparent."
   ],
   "grammarTags": [
    "contrast and condition"
   ],
   "explanationVi": "Nối hai vế đối lập bằng đẳng từ 'but', vế thứ hai kèm mệnh đề điều kiện 'if' để xác định hạn chế của lợi ích.",
   "rationaleVi": "Câu kết hợp liên từ đối lập đơn giản với mệnh đề điều kiện cụ thể, rất tự nhiên và đúng tầm IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Organic food contains fewer chemical residues, but consumers are only truly benefit if the origin certification process remains transparent.",
+    "correction": "Organic food contains fewer chemical residues, but consumers only truly benefit if the origin certification process remains transparent.",
+    "reasonVi": "Động từ 'benefit' bản thân đã mang nghĩa chủ động là 'được hưởng lợi', nên không dịch chữ 'được' trong tiếng Việt sang 'are' trước động từ nguyên mẫu."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -720,14 +842,22 @@
   "meaningVi": "phản tác dụng",
   "promptVi": "Việc tăng thuế hàng hóa xa xỉ có thể giúp bổ sung ngân sách quốc gia, mặc dù chính sách này có thể phản tác dụng một khi dẫn đến tình trạng buôn lậu gia tăng.",
   "referenceAnswers": [
-   "Raising taxes on luxury goods can help boost the national budget, even though this policy may prove counterproductive once it leads to an increase in smuggling."
+   "Raising taxes on luxury goods can help boost the national budget, even though this policy may prove counterproductive once it leads to an increase in smuggling.",
+   "Increasing taxes on high-end products can add more revenue to state funds, although this measure could backfire if it causes smuggling to rise.",
+   "Higher taxes on luxury items may strengthen government budgets, yet the policy can have the opposite effect once it encourages more illegal trade."
   ],
   "grammarTags": [
    "concession and implication"
   ],
   "explanationVi": "Vế chính nêu ưu điểm của chính sách, nối với mệnh đề nhượng bộ 'even though' và từ chỉ thời điểm/điều kiện 'once' để chỉ ra hậu quả tiêu cực.",
   "rationaleVi": "Đánh giá hai mặt của một chính sách công kèm theo điều kiện nảy sinh rủi ro phản ánh chính xác tiêu chí ngữ pháp và lập luận ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Raising taxes on luxury goods can help boost the national budget, even though this policy may prove counterproductive once leads to an increase in smuggling.",
+    "correction": "Raising taxes on luxury goods can help boost the national budget, even though this policy may prove counterproductive once it leads to an increase in smuggling.",
+    "reasonVi": "Sau liên từ 'once' bắt buộc phải có chủ ngữ rõ ràng ('once it leads to...'), không được lược bỏ chủ ngữ như câu tiếng Việt 'một khi dẫn đến...'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -771,7 +901,9 @@
   "meaningVi": "sự đánh đổi về môi trường",
   "promptVi": "Dù các nhà máy thuỷ điện cung cấp nguồn điện dồi dào, dự án xây đập thường đòi hỏi sự đánh đổi về môi trường do gây tổn hại đến hệ sinh thái sông.",
   "referenceAnswers": [
-   "While hydroelectric plants provide abundant electricity, dam construction often involves an environmental trade-off by damaging river ecosystems."
+   "While hydroelectric plants provide abundant electricity, dam construction often involves an environmental trade-off by damaging river ecosystems.",
+   "Although hydropower stations generate plenty of electricity, building dams usually comes at an environmental cost because it harms river habitats.",
+   "Hydroelectric facilities can supply large amounts of power, yet dam projects frequently harm river ecosystems as an unavoidable environmental trade-off."
   ],
   "grammarTags": [
    "Concessive balance of benefits vs trade-offs"
@@ -799,14 +931,22 @@
   "meaningVi": "trải nghiệm vừa tốt vừa xấu",
   "promptVi": "Việc mở rộng các khu đô thị vệ tinh mang lại chỗ ở giá rẻ hơn, dẫu cho xu hướng này là một trải nghiệm vừa tốt vừa xấu vì làm kéo dài thời gian di chuyển hàng ngày của người dân.",
   "referenceAnswers": [
-   "Expanding satellite towns provides cheaper housing, even though this trend is a mixed blessing as it lengthens residents' daily commutes."
+   "Expanding satellite towns provides cheaper housing, even though this trend is a mixed blessing as it lengthens residents' daily commutes.",
+   "Developing satellite cities offers more affordable homes, although this trend brings both pros and cons since people have to spend longer commuting every day.",
+   "While building up outer urban areas makes housing cheaper, it turns out to be a mixed blessing because residents end up with much longer daily travel times."
   ],
   "grammarTags": [
    "Concession with nuanced evaluation idiom"
   ],
   "explanationVi": "'Mixed blessing' là thành ngữ chỉ một hiện tượng mang lại cả lợi ích lẫn rắc rối.",
   "rationaleVi": "Mức độ 5.5 yêu cầu nêu hai mặt vấn đề bằng cách dùng thành ngữ đánh giá kết hợp với liên từ nhượng bộ 'even though'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Expanding satellite towns provides more cheaper housing, even though this trend is a mixed blessing as it lengthens residents' daily commutes.",
+    "correction": "Expanding satellite towns provides cheaper housing, even though this trend is a mixed blessing as it lengthens residents' daily commutes.",
+    "reasonVi": "'Cheap' là tính từ ngắn một âm tiết nên dạng so sánh hơn đã là 'cheaper', không được thêm 'more' phía trước (lỗi so sánh kép)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -850,14 +990,22 @@
   "meaningVi": "việc bảo tồn văn hóa",
   "promptVi": "Dù du lịch di sản giúp gia tăng thu nhập cho người dân bản địa, việc bảo tồn văn hóa chỉ thực sự hiệu quả với điều kiện chính quyền địa phương giới hạn lượng khách tham quan mỗi ngày.",
   "referenceAnswers": [
-   "While heritage tourism increases local income, cultural preservation is only effective provided that local authorities limit the daily number of visitors."
+   "While heritage tourism increases local income, cultural preservation is only effective provided that local authorities limit the daily number of visitors.",
+   "Although heritage tourism boosts earnings for local residents, protecting local culture only works well if officials cap the daily visitor numbers.",
+   "Cultural tourism can bring more money to native communities, yet preserving traditions is only truly successful when local governments restrict how many tourists enter each day."
   ],
   "grammarTags": [
    "Concession paired with conditional restriction"
   ],
   "explanationVi": "'Cultural preservation' đóng vai trò là chủ ngữ chính chịu sự điều phối của điều kiện 'provided that'.",
   "rationaleVi": "Câu kết hợp mệnh đề nhượng bộ 'While' và điều kiện giới hạn 'provided that' đúng chuẩn đầu ra 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While heritage tourism increases local income, cultural preservation is only effective provided that local authorities limit the daily amount of visitors.",
+    "correction": "While heritage tourism increases local income, cultural preservation is only effective provided that local authorities limit the daily number of visitors.",
+    "reasonVi": "'Visitors' là danh từ đếm được số nhiều nên phải dùng 'the (daily) number of visitors', còn 'amount of' chỉ đi với danh từ không đếm được."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -872,14 +1020,22 @@
   "meaningVi": "gánh nặng tài chính",
   "promptVi": "Bất chấp những lợi ích an sinh xã hội khi miễn phí chăm sóc y tế, chính sách này tạo ra gánh nặng tài chính lớn trừ khi được hỗ trợ đầy đủ từ doanh thu thuế thu nhập.",
   "referenceAnswers": [
-   "Despite the welfare benefits of free healthcare, this policy creates a heavy financial burden unless backed by sufficient income tax revenue."
+   "Despite the welfare benefits of free healthcare, this policy creates a heavy financial burden unless backed by sufficient income tax revenue.",
+   "Although free medical care brings clear social welfare advantages, it puts significant strain on public finances if it is not properly funded by income taxes.",
+   "Even though providing healthcare at no cost improves social security, the scheme becomes a major financial load unless enough income tax revenue supports it."
   ],
   "grammarTags": [
    "Prepositional concession with condition"
   ],
   "explanationVi": "'Financial burden' thể hiện mặt trái về ngân sách của chính sách y tế miễn phí.",
   "rationaleVi": "Sử dụng giới từ nhượng bộ 'Despite' kết hợp điều kiện phủ định 'unless' thể hiện tư duy phân tích hai mặt ở mức 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Despite the welfare benefits of free healthcare, this policy creates heavy financial burden unless backed by sufficient income tax revenue.",
+    "correction": "Despite the welfare benefits of free healthcare, this policy creates a heavy financial burden unless backed by sufficient income tax revenue.",
+    "reasonVi": "'Burden' (gánh nặng) là danh từ đếm được số ít nên bắt buộc phải có mạo từ 'a' đứng trước cụm 'a heavy financial burden'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -894,14 +1050,22 @@
   "meaningVi": "lợi thế cạnh tranh",
   "promptVi": "Việc đầu tư vào các trung tâm huấn luyện hiện đại tạo ra lợi thế cạnh tranh cho vận động viên, dẫu cho kết quả thi đấu vẫn phụ thuộc phần lớn vào tố chất cá nhân.",
   "referenceAnswers": [
-   "Investing in modern training facilities gives athletes a competitive advantage, even if match performance still depends largely on personal talent."
+   "Investing in modern training facilities gives athletes a competitive advantage, even if match performance still depends largely on personal talent.",
+   "Funding up-to-date training centres helps athletes gain an edge over rivals, although their competition results still rely heavily on natural ability.",
+   "While state-of-the-art sports facilities give players a competitive edge, how well they perform in events mostly comes down to individual talent."
   ],
   "grammarTags": [
    "Concession evaluating advantage vs personal factors"
   ],
   "explanationVi": "'Competitive advantage' làm rõ lợi ích của cơ sở vật chất nhưng bị giới hạn bởi yếu tố năng khiếu.",
   "rationaleVi": "Cấu trúc so sánh mặt tích cực và hạn chế bằng 'even if' giúp người học 5.5 phát triển ý có trình bày điều kiện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Investing on modern training facilities gives athletes a competitive advantage, even if match performance still depends largely on personal talent.",
+    "correction": "Investing in modern training facilities gives athletes a competitive advantage, even if match performance still depends largely on personal talent.",
+    "reasonVi": "Động từ 'invest' đi với giới từ 'in' ('invest in something' - đầu tư vào cái gì), không dùng 'on' như động từ 'spend'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -916,7 +1080,9 @@
   "meaningVi": "bằng chứng thực nghiệm",
   "promptVi": "Mặc dù các lý thuyết giáo dục mới nghe có vẻ thuyết phục, chúng đòi hỏi bằng chứng thực nghiệm rõ ràng trước khi được đưa vào giảng dạy đại trà.",
   "referenceAnswers": [
-   "While new educational theories sound convincing, they require clear empirical evidence before being implemented in mainstream teaching."
+   "While new educational theories sound convincing, they require clear empirical evidence before being implemented in mainstream teaching.",
+   "Although modern teaching theories may seem persuasive, they need solid practical evidence before schools adopt them widely.",
+   "New ideas in education often sound promising, yet they must be backed by clear real-world proof before becoming part of everyday classroom teaching."
   ],
   "grammarTags": [
    "Concession with evidence limitation"
@@ -1031,14 +1197,22 @@
   "meaningVi": "giá trị dinh dưỡng",
   "promptVi": "Trong khi thực phẩm đóng hộp mang lại sự tiện lợi cho cuộc sống hiện đại, sản phẩm này bị giảm giá trị dinh dưỡng trừ khi được xử lý bằng công nghệ bảo quản tiên tiến.",
   "referenceAnswers": [
-   "While canned food offers convenience for modern life, this product suffers a loss of nutritional value unless processed with advanced preservation technology."
+   "While canned food offers convenience for modern life, this product suffers a loss of nutritional value unless processed with advanced preservation technology.",
+   "Although tinned food is convenient in today's fast-paced world, it loses nutrients unless modern preservation methods are used during processing.",
+   "Canned meals certainly make modern life easier, yet their nutritional quality drops unless manufacturers apply advanced food preservation techniques."
   ],
   "grammarTags": [
    "Concession with conditional exception"
   ],
   "explanationVi": "'Nutritional value' chỉ hàm lượng chất dinh dưỡng có trong đồ ăn đóng hộp.",
   "rationaleVi": "Cấu trúc nhượng bộ 'While' đi kèm điều kiện 'unless' thể hiện rõ sự so sánh hai mặt của vấn đề ở trình độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While canned food offers convenience for modern life, this product suffers a loss of nutritional value unless processing with advanced preservation technology.",
+    "correction": "While canned food offers convenience for modern life, this product suffers a loss of nutritional value unless processed with advanced preservation technology.",
+    "reasonVi": "Khi rút gọn mệnh đề sau 'unless' mà chủ ngữ 'this product' mang nghĩa bị động ('được xử lý'), phải dùng quá khứ phân từ 'processed' chứ không dùng V-ing."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1082,7 +1256,9 @@
   "meaningVi": "bản sắc văn hóa",
   "promptVi": "Việc phục dựng các làng nghề truyền thống góp phần bảo tồn bản sắc văn hóa, dẫu cho xu hướng này dễ dẫn đến thương mại hóa nếu chính quyền không kiểm soát chất lượng sản phẩm.",
   "referenceAnswers": [
-   "Restoring traditional craft villages helps preserve cultural identity, even though this trend can easily lead to commercialisation unless local authorities control product quality."
+   "Restoring traditional craft villages helps preserve cultural identity, even though this trend can easily lead to commercialisation unless local authorities control product quality.",
+   "Reviving historic craft villages supports the preservation of cultural heritage, although it can quickly become overly commercial if officials fail to monitor product standards.",
+   "Bringing back traditional artisan villages helps keep cultural identity alive, yet without government quality checks, the trend can easily turn into mere commercialisation."
   ],
   "grammarTags": [
    "concession with limitation"
@@ -1110,14 +1286,22 @@
   "meaningVi": "vi phạm quyền riêng tư",
   "promptVi": "Trong khi các thiết bị nhà thông minh mang lại sự tiện lợi đáng kể, công nghệ này vẫn ẩn chứa nguy cơ vi phạm quyền riêng tư trừ khi người dùng chủ động bảo mật dữ liệu cá nhân.",
   "referenceAnswers": [
-   "While smart home devices offer considerable convenience, this technology still carries a risk of privacy breaches unless users actively secure their personal data."
+   "While smart home devices offer considerable convenience, this technology still carries a risk of privacy breaches unless users actively secure their personal data.",
+   "Although smart home gadgets provide great convenience, they still pose privacy risks if users do not take steps to protect their personal information.",
+   "Connected home technology makes daily life much easier, yet people's privacy remains at risk unless they actively safeguard their own data."
   ],
   "grammarTags": [
    "contrast and condition"
   ],
   "explanationVi": "'While' ở đầu câu giới thiệu mặt tích cực, nối tiếp bằng rủi ro và điều kiện ràng buộc dùng 'unless'.",
   "rationaleVi": "Mô hình so sánh ưu-nhược điểm kết hợp điều kiện loại trừ phù hợp với năng lực lập luận có giới hạn ở Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "While smart home devices offer considerate convenience, this technology still carries a risk of privacy breaches unless users actively secure their personal data.",
+    "correction": "While smart home devices offer considerable convenience, this technology still carries a risk of privacy breaches unless users actively secure their personal data.",
+    "reasonVi": "Cần phân biệt 'considerable' (đáng kể, lớn) dùng cho mức độ/số lượng với 'considerate' (chu đáo, biết quan tâm) chỉ tính cách con người."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1132,14 +1316,22 @@
   "meaningVi": "nhà ở đô thị",
   "promptVi": "Các khu chung cư cao tầng là giải pháp hiệu quả cho cuộc khủng hoảng nhà ở đô thị, nhưng hình thức này chỉ tạo ra môi trường sống tốt với điều kiện không gian cộng đồng được duy trì đầy đủ.",
   "referenceAnswers": [
-   "High-rise apartment complexes are an effective solution to the urban housing crisis, yet this living model only creates a good environment provided that community spaces are adequately maintained."
+   "High-rise apartment complexes are an effective solution to the urban housing crisis, yet this living model only creates a good environment provided that community spaces are adequately maintained.",
+   "Tall apartment buildings offer a practical answer to city housing shortages, but they only provide a pleasant living environment if shared public areas are properly looked after.",
+   "While high-rise residential blocks effectively ease urban housing problems, residents will only enjoy a good quality of life as long as communal spaces are well maintained."
   ],
   "grammarTags": [
    "qualification with provided that"
   ],
   "explanationVi": "'yet' thể hiện sự đối lập nhẹ và 'provided that' làm điều kiện tiên quyết cho nhận định ban đầu.",
   "rationaleVi": "Cấu trúc đưa ra nhận định đi kèm điều kiện xác thực (provided that) thể hiện tư duy phản biện mức độ 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "High-rise apartment complexes are an effective solution to the urban housing crisis, yet this living model only creates a good environment provided that community spaces are adequate maintained.",
+    "correction": "High-rise apartment complexes are an effective solution to the urban housing crisis, yet this living model only creates a good environment provided that community spaces are adequately maintained.",
+    "reasonVi": "Để bổ nghĩa cho quá khứ phân từ 'maintained', bắt buộc phải dùng trạng từ đuôi '-ly' là 'adequately' thay vì tính từ 'adequate'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1184,7 +1376,9 @@
   "meaningVi": "sự hài lòng với công việc",
   "promptVi": "Giờ làm việc linh hoạt có thể làm tăng sự hài lòng với công việc của nhân viên, mặc dù hình thức này dễ làm mờ ranh giới giữa công việc và đời sống cá nhân nếu không có sự quản lý thời gian nghiêm ngặt.",
   "referenceAnswers": [
-   "Flexible working hours can increase job satisfaction among employees, although this arrangement easily blurs the line between work and personal life without strict time management."
+   "Flexible working hours can increase job satisfaction among employees, although this arrangement easily blurs the line between work and personal life without strict time management.",
+   "Allowing flexible work schedules can make staff happier in their jobs, even though it can easily mix work and private life if time is not managed strictly.",
+   "While flexible hours often boost employee satisfaction, the boundary between professional duties and personal time can quickly fade unless workers manage their schedules carefully."
   ],
   "grammarTags": [
    "concession and negative implication"
@@ -1241,14 +1435,22 @@
   "meaningVi": "tinh thần đồng đội",
   "promptVi": "Phương pháp học theo dự án giúp học sinh phát triển tinh thần đồng đội, dẫu cho hình thức này khó đánh giá công bằng năng lực cá nhân một khi sự phân công công việc không rõ ràng.",
   "referenceAnswers": [
-   "Project-based learning helps students develop team spirit, even if this approach makes it difficult to fairly assess individual ability once task allocation is unclear."
+   "Project-based learning helps students develop team spirit, even if this approach makes it difficult to fairly assess individual ability once task allocation is unclear.",
+   "Learning through group projects builds teamwork among students, although it becomes hard to judge each person's ability fairly when roles are not clearly divided.",
+   "While project work encourages students to collaborate well, grading individual performance fairly is tough once tasks are poorly assigned."
   ],
   "grammarTags": [
    "concession with condition"
   ],
   "explanationVi": "'even if' dùng để nêu khả năng rủi ro xảy ra, bổ trợ bởi mệnh đề chỉ thời điểm/điều kiện 'once...'.",
   "rationaleVi": "Sử dụng từ nối nhượng bộ (even if) và liên từ điều kiện (once) phù hợp để thể hiện hai mặt của một phương pháp giáo dục.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Project-based learning helps students develop team spirit, even if this approach is difficult to fairly assess individual ability once task allocation is unclear.",
+    "correction": "Project-based learning helps students develop team spirit, even if this approach makes it difficult to fairly assess individual ability once task allocation is unclear.",
+    "reasonVi": "Không dịch từng từ 'hình thức này khó đánh giá năng lực' thành 'this approach is difficult to assess ability' (vì 'assess' đã có tân ngữ), mà phải dùng tân ngữ giả 'makes it difficult to assess...'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1263,14 +1465,22 @@
   "meaningVi": "thói quen ăn uống",
   "promptVi": "Việc chuyển sang thịt thực vật hỗ trợ cải thiện thói quen ăn uống xanh, song sự thay đổi này chỉ mang lại lợi ích sức khỏe lâu dài với điều kiện người tiêu dùng tránh các sản phẩm chế biến sẵn chứa quá nhiều muối.",
   "referenceAnswers": [
-   "Switching to plant-based meat supports greener dietary habits, but this change only brings long-term health benefits provided consumers avoid heavily processed items with high sodium content."
+   "Switching to plant-based meat supports greener dietary habits, but this change only brings long-term health benefits provided consumers avoid heavily processed items with high sodium content.",
+   "Adopting plant-based meat alternatives encourages more eco-friendly eating habits, yet people will only see lasting health gains if they stay away from salty processed products.",
+   "Choosing meat substitutes made from plants promotes greener diets, though long-term health benefits depend on consumers avoiding overly processed options loaded with salt."
   ],
   "grammarTags": [
    "qualification with provided"
   ],
   "explanationVi": "Vế đầu nêu lợi ích, liên từ 'but' kết hợp cụm 'provided' đặt ra điều kiện cụ thể về tiêu dùng.",
   "rationaleVi": "Nhận định có tính điều kiện hóa rõ ràng, dùng kết hợp từ chính xác (dietary habits) theo tiêu chuẩn 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Switching to plant-based meat supports greener dietary habits, but this change only brings long-term health benefits provided consumers avoid heavily process items with high sodium content.",
+    "correction": "Switching to plant-based meat supports greener dietary habits, but this change only brings long-term health benefits provided consumers avoid heavily processed items with high sodium content.",
+    "reasonVi": "Trước danh từ 'items', từ 'process' phải chia ở dạng quá khứ phân từ thêm '-ed' thành 'processed' để làm tính từ mang nghĩa bị động ('được chế biến sẵn')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1293,7 +1503,13 @@
   ],
   "explanationVi": "'although' kết nối vế nhượng bộ tác động xấu, còn 'unless' đưa ra giải pháp hạ tầng bắt buộc.",
   "rationaleVi": "Nêu hai mặt của một chính sách đô thị kèm giải pháp hạn chế tác động tiêu cực, đúng định hướng Band 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Charging cars to enter into city centres helps reduce congestion, although this policy risks harming small businesses unless public transport is upgraded comprehensively.",
+    "correction": "Charging cars to enter city centres helps reduce congestion, although this policy risks harming small businesses unless public transport is upgraded comprehensively.",
+    "reasonVi": "Khi mang nghĩa đi vào một địa điểm vật lý, động từ 'enter' đi trực tiếp với tân ngữ ('enter city centres'), không thêm giới từ 'into'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1308,14 +1524,22 @@
   "meaningVi": "sự tự chủ tài chính",
   "promptVi": "Các khoản tín dụng nhỏ giúp người dân nông thôn đạt được sự tự chủ tài chính, ngoại trừ trường hợp lãi suất vay quá cao khiến người vay rơi vào cái bẫy nợ nần.",
   "referenceAnswers": [
-   "Microfinance loans help rural residents achieve financial independence, except when loan interest rates are too high, causing borrowers to fall into a debt trap."
+   "Microfinance loans help rural residents achieve financial independence, except when loan interest rates are too high, causing borrowers to fall into a debt trap.",
+   "Small credit loans enable people in the countryside to become financially self-reliant, except in cases where excessive interest rates push borrowers into endless debt.",
+   "Providing small loans helps rural communities manage their own finances independently, except when high interest charges end up trapping borrowers in debt."
   ],
   "grammarTags": [
    "exception clause"
   ],
   "explanationVi": "Dùng 'except when' để đưa ra ngoại lệ phủ định tính hiệu quả của khoản vay tín dụng nhỏ.",
   "rationaleVi": "Cách diễn đạt có giới hạn và điều kiện loại trừ (except when) giúp bài viết cân bằng và thực tế hơn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Microfinance loans help rural residents achieve financial independence, except when loan interest rates are too high, causing borrowers fall into a debt trap.",
+    "correction": "Microfinance loans help rural residents achieve financial independence, except when loan interest rates are too high, causing borrowers to fall into a debt trap.",
+    "reasonVi": "Khác với 'make somebody do something', động từ 'cause' bắt buộc đi theo cấu trúc 'cause somebody to do something' ('causing borrowers to fall')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1330,14 +1554,22 @@
   "meaningVi": "quản lý tiền bạc",
   "promptVi": "Việc cho con tuổi teen tiền tiêu vặt hàng tuần giúp trẻ rèn luyện kỹ năng quản lý tiền bạc, nhưng biện pháp này chỉ hiệu quả với điều kiện cha mẹ thiết lập các quy tắc chi tiêu rõ ràng ngay từ đầu.",
   "referenceAnswers": [
-   "Giving teenagers a weekly allowance helps them practise money management skills, but this measure is only effective provided parents set clear spending rules from the beginning."
+   "Giving teenagers a weekly allowance helps them practise money management skills, but this measure is only effective provided parents set clear spending rules from the beginning.",
+   "Providing teens with weekly pocket money helps them learn how to handle finances, yet this approach only works if parents establish clear spending guidelines from the start.",
+   "While a weekly allowance teaches teenagers to budget their money, it is only effective as long as parents lay down clear rules on spending right from the outset."
   ],
   "grammarTags": [
    "conditional contrast"
   ],
   "explanationVi": "Mệnh đề chính dùng Gerund 'Giving teenagers...', kết hợp 'but... provided' để đặt điều kiện cho giáo dục gia đình.",
   "rationaleVi": "Đưa ra lời khuyên/giải pháp kèm điều kiện áp dụng thực tế, đạt tiêu chuẩn ngữ pháp và từ vựng IELTS 5.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Giving teenagers a weekly allowance helps them practise money management skills, but this measure is only effective provided parents will set clear spending rules from the beginning.",
+    "correction": "Giving teenagers a weekly allowance helps them practise money management skills, but this measure is only effective provided parents set clear spending rules from the beginning.",
+    "reasonVi": "Trong mệnh đề điều kiện bắt đầu bằng 'provided (that)' (tương tự 'if'), động từ phải chia ở thì hiện tại đơn ('set') chứ không dùng 'will set'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1381,7 +1613,9 @@
   "meaningVi": "tuần làm việc bốn ngày",
   "promptVi": "Trong khi tuần làm việc bốn ngày giúp tiết kiệm thời gian đi lại, mô hình này có thể gây mệt mỏi thể chất vào những ngày làm việc kéo dài.",
   "referenceAnswers": [
-   "While a four-day work week saves commuting time, this model can cause physical fatigue on extended working days."
+   "While a four-day work week saves commuting time, this model can cause physical fatigue on extended working days.",
+   "Although working four days a week cuts down on travel time, the longer shifts on workdays can leave employees feeling physically exhausted.",
+   "A four-day working week reduces the time spent commuting, yet having to work longer hours on those days can tire people out physically."
   ],
   "grammarTags": [
    "Direct Contrast with Concession"
@@ -1446,7 +1680,13 @@
   ],
   "explanationVi": "Cụm 'despite carrying a risk' đặt ở vế sau để cân bằng giữa tác dụng giảm cân và rủi ro sức khỏe đi kèm với điều kiện kiểm soát calo.",
   "rationaleVi": "Phù hợp với tiêu chí Band 5.5 nhờ việc dùng từ nối nhượng bộ đi kèm điều kiện cụ thể hóa tính khả thi của giải pháp.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Intermittent fasting supports effective weight management, despite carry a risk of energy depletion if calorie intake is not carefully monitored.",
+    "correction": "Intermittent fasting supports effective weight management, despite carrying a risk of energy depletion if calorie intake is not carefully monitored.",
+    "reasonVi": "'Despite' là giới từ nên động từ đứng ngay sau nó bắt buộc phải chuyển sang dạng danh động từ V-ing ('despite carrying'), không để nguyên mẫu."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1491,7 +1731,9 @@
   "meaningVi": "các lễ hội âm nhạc quốc tế",
   "promptVi": "Trong khi việc tổ chức các lễ hội âm nhạc quốc tế kích thích du lịch địa phương, hoạt động này dễ xáo trộn cuộc sống của cư dân nếu mức độ tiếng ồn không được kiểm soát tốt.",
   "referenceAnswers": [
-   "Whereas hosting international music festivals stimulates local tourism, this activity can easily disrupt residents' daily lives if noise levels are poorly regulated."
+   "Whereas hosting international music festivals stimulates local tourism, this activity can easily disrupt residents' daily lives if noise levels are poorly regulated.",
+   "Although holding international music festivals boosts tourism in the area, these events can easily disturb local residents when noise is not properly controlled.",
+   "International music festivals bring more tourists to local towns, yet they can upset residents' everyday routines if sound levels are not kept under control."
   ],
   "grammarTags": [
    "Comparative Concession with Conditional Clause"
@@ -1519,7 +1761,9 @@
   "meaningVi": "các chương trình tài chính vi mô",
   "promptVi": "Mặc dù các chương trình tài chính vi mô hỗ trợ các hộ kinh doanh nhỏ, tác động của chúng đối với tỷ lệ nghèo đói chung vẫn bị hạn chế nếu thiếu sự phát triển hạ tầng kèm theo.",
   "referenceAnswers": [
-   "Despite supporting small entrepreneurs, microfinance schemes have a limited impact on overall poverty rates without accompanying infrastructure development."
+   "Despite supporting small entrepreneurs, microfinance schemes have a limited impact on overall poverty rates without accompanying infrastructure development.",
+   "Although microfinance programmes help small business owners, they do little to reduce overall poverty unless infrastructure is also developed alongside them.",
+   "Microfinance initiatives give useful backing to small businesses, yet their effect on cutting general poverty remains small without better local infrastructure."
   ],
   "grammarTags": [
    "Prepositional Concession with Qualifier"
@@ -1639,7 +1883,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "salt intake",
+  "meaningVi": "lượng muối tiêu thụ"
  },
  {
   "id": "esl-v2-r11-u01-004",
@@ -1777,7 +2023,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "remains unstable",
+  "meaningVi": "vẫn không ổn định"
  },
  {
   "id": "esl-v2-r11-u01-008",
@@ -2125,7 +2373,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Although / even though: nhượng bộ có mệnh đề"
+  "skillFocus": "Although / even though: nhượng bộ có mệnh đề",
+  "targetTerm": "represent the views",
+  "meaningVi": "phản ánh quan điểm"
  },
  {
   "id": "esl-v2-r11-u02-001",
@@ -2222,7 +2472,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "high initial cost",
+  "meaningVi": "chi phí ban đầu cao"
  },
  {
   "id": "esl-v2-r11-u02-004",
@@ -2286,7 +2538,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "finds time",
+  "meaningVi": "tìm được thời gian"
  },
  {
   "id": "esl-v2-r11-u02-006",
@@ -2420,7 +2674,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "completed the race",
+  "meaningVi": "hoàn thành cuộc đua"
  },
  {
   "id": "esl-v2-r11-u02-010",
@@ -2520,7 +2776,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp"
+  "skillFocus": "Despite / in spite of / however: nối ý đúng ngữ pháp",
+  "targetTerm": "meet my needs",
+  "meaningVi": "đáp ứng nhu cầu"
  },
  {
   "id": "esl-v2-r11-u02-013",
@@ -2720,7 +2978,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "extra day off",
+  "meaningVi": "thêm một ngày nghỉ"
  },
  {
   "id": "esl-v2-r11-u03-002",
@@ -2851,7 +3111,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "personal finance",
+  "meaningVi": "tài chính cá nhân"
  },
  {
   "id": "esl-v2-r11-u03-006",
@@ -2981,7 +3243,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "survey results",
+  "meaningVi": "kết quả khảo sát"
  },
  {
   "id": "esl-v2-r11-u03-010",
@@ -3012,7 +3276,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "invest time",
+  "meaningVi": "đầu tư thời gian"
  },
  {
   "id": "esl-v2-r11-u03-011",
@@ -3109,7 +3375,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "overlook important factors",
+  "meaningVi": "bỏ sót yếu tố quan trọng"
  },
  {
   "id": "esl-v2-r11-u03-014",
@@ -3140,7 +3408,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "had enough time",
+  "meaningVi": "có đủ thời gian"
  },
  {
   "id": "esl-v2-r11-u03-015",
@@ -3171,7 +3441,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "changes significantly",
+  "meaningVi": "thay đổi lớn"
  },
  {
   "id": "esl-v2-r11-u03-016",
@@ -3202,7 +3474,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Giả định loại 2 và even if"
+  "skillFocus": "Giả định loại 2 và even if",
+  "targetTerm": "slightly lower",
+  "meaningVi": "thấp hơn một chút"
  },
  {
   "id": "esl-v2-r11-u03-017",
@@ -3400,7 +3674,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "staffing costs",
+  "meaningVi": "chi phí nhân sự"
  },
  {
   "id": "esl-v2-r11-u04-006",
@@ -3431,7 +3707,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "may be justified",
+  "meaningVi": "có thể hợp lý"
  },
  {
   "id": "esl-v2-r11-u04-007",
@@ -3462,7 +3740,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "maintain study habits",
+  "meaningVi": "duy trì thói quen học"
  },
  {
   "id": "esl-v2-r11-u04-008",
@@ -3563,7 +3843,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "improve staff morale",
+  "meaningVi": "cải thiện tinh thần nhân viên"
  },
  {
   "id": "esl-v2-r11-u04-011",
@@ -3728,7 +4010,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "recorded lectures",
+  "meaningVi": "bài giảng được ghi hình"
  },
  {
   "id": "esl-v2-r11-u04-016",
@@ -3761,7 +4045,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "suggest a trend",
+  "meaningVi": "gợi ý xu hướng"
  },
  {
   "id": "esl-v2-r11-u04-017",
@@ -3792,7 +4078,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Quan điểm có điều kiện và giới hạn"
+  "skillFocus": "Quan điểm có điều kiện và giới hạn",
+  "targetTerm": "automated checks",
+  "meaningVi": "kiểm tra tự động"
  },
  {
   "id": "esl-v2-r11-u05-001",
@@ -3891,7 +4179,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "experienced learners",
+  "meaningVi": "người học có kinh nghiệm"
  },
  {
   "id": "esl-v2-r11-u05-004",
@@ -3924,7 +4214,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "lack safe pavements",
+  "meaningVi": "thiếu vỉa hè an toàn"
  },
  {
   "id": "esl-v2-r11-u05-005",
@@ -4023,7 +4315,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "personalised service",
+  "meaningVi": "dịch vụ cá nhân"
  },
  {
   "id": "esl-v2-r11-u05-008",
@@ -4091,7 +4385,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "selected randomly",
+  "meaningVi": "được chọn ngẫu nhiên"
  },
  {
   "id": "esl-v2-r11-u05-010",
@@ -4326,7 +4622,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic"
+  "skillFocus": "Mệnh đề phụ rõ chủ thể và quan hệ logic",
+  "targetTerm": "digital payments",
+  "meaningVi": "thanh toán điện tử"
  },
  {
   "id": "esl-v2-r11-u06-001",
@@ -4426,7 +4724,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "deadline is approaching",
+  "meaningVi": "thời hạn sắp hết"
  },
  {
   "id": "esl-v2-r11-u06-004",
@@ -4628,7 +4928,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "specific start date",
+  "meaningVi": "ngày bắt đầu cụ thể"
  },
  {
   "id": "esl-v2-r11-u06-010",
@@ -4659,7 +4961,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "find them entertaining",
+  "meaningVi": "thấy chúng giải trí"
  },
  {
   "id": "esl-v2-r11-u06-011",
@@ -4691,7 +4995,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "enrolment fee",
+  "meaningVi": "phí đăng ký"
  },
  {
   "id": "esl-v2-r11-u06-012",
@@ -4756,7 +5062,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "test that assumption",
+  "meaningVi": "kiểm tra giả định đó"
  },
  {
   "id": "esl-v2-r11-u06-014",
@@ -4789,7 +5097,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới"
+  "skillFocus": "Sửa lỗi logic và chuyển giao sang ngữ cảnh mới",
+  "targetTerm": "in-person lessons",
+  "meaningVi": "buổi học trực tiếp"
  },
  {
   "id": "esl-v2-r11-u06-015",

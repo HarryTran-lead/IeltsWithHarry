@@ -37,13 +37,21 @@
   "meaningVi": "tập thể dục",
   "promptVi": "Tôi tập thể dục ba lần một tuần để khỏe hơn.",
   "referenceAnswers": [
-   "I exercise three times a week to stay healthy."
+   "I exercise three times a week to stay healthy.",
+   "I work out three times a week in order to become healthier.",
+   "To get healthier, I do exercise three times every week."
   ],
   "grammarTags": [
    "purpose-infinitive"
   ],
   "explanationVi": "To stay healthy diễn đạt mục đích của việc tập thể dục.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I exercise three time a week to stay healthy.",
+    "correction": "I exercise three times a week to stay healthy.",
+    "reasonVi": "Khi mang nghĩa là 'số lần' thay vì 'thời gian', từ 'time' là danh từ đếm được nên đi sau số đếm 'three' bắt buộc phải thêm '-s' thành 'three times'."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -59,13 +67,21 @@
   "meaningVi": "rẻ hơn",
   "promptVi": "Chiếc áo màu xanh rẻ hơn chiếc áo màu đỏ.",
   "referenceAnswers": [
-   "The blue shirt is cheaper than the red one."
+   "The blue shirt is cheaper than the red one.",
+   "The blue shirt is less expensive than the red shirt.",
+   "The blue shirt costs less than the red one."
   ],
   "grammarTags": [
    "comparative"
   ],
   "explanationVi": "Cheaper than là cấu trúc so sánh hơn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The blue shirt is more cheaper than the red one.",
+    "correction": "The blue shirt is cheaper than the red one.",
+    "reasonVi": "'Cheap' là tính từ ngắn một âm tiết nên khi so sánh hơn chỉ cần thêm đuôi '-er' thành 'cheaper', tuyệt đối không dùng thêm từ 'more' ở phía trước."
+   }
+  ],
   "editorialStatus": "pilot",
   "source": "original-starter",
   "version": 1,
@@ -110,14 +126,22 @@
   "meaningVi": "nhẹ hơn",
   "promptVi": "Chiếc túi này nhẹ hơn chiếc túi của tôi.",
   "referenceAnswers": [
-   "This bag is lighter than mine."
+   "This bag is lighter than mine.",
+   "This bag weighs less than my bag.",
+   "My bag is heavier than this one."
   ],
   "grammarTags": [
    "comparative"
   ],
   "explanationVi": "Lighter than là so sánh hơn; mine thay cho my bag.",
   "rationaleVi": "So sánh đơn giản trong ngữ cảnh quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This bag is lighter than my.",
+    "correction": "This bag is lighter than mine.",
+    "reasonVi": "Tính từ sở hữu 'my' không thể đứng một mình mà phải có danh từ theo sau; muốn thay thế cho cả cụm 'my bag' ở cuối câu thì phải dùng đại từ sở hữu 'mine'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "original-level-authored",
@@ -132,14 +156,22 @@
   "meaningVi": "đi nghỉ",
   "promptVi": "Gia đình tôi sẽ đi nghỉ ở Đà Nẵng vào mùa hè này để thư giãn.",
   "referenceAnswers": [
-   "My family is going on holiday to Da Nang this summer to relax."
+   "My family is going on holiday to Da Nang this summer to relax.",
+   "My family will take a holiday in Da Nang this summer in order to relax.",
+   "This summer, my family is going to Da Nang for a vacation to unwind."
   ],
   "grammarTags": [
    "Expressing plans and purpose"
   ],
   "explanationVi": "Dùng thì hiện tại tiếp diễn 'is going on holiday' cho kế hoạch và 'to relax' để chỉ mục đích.",
   "rationaleVi": "Mẫu câu diễn đạt kế hoạch gia đình và mục đích đơn giản phù hợp trình độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My family is going on holiday to Da Nang this summer for relax.",
+    "correction": "My family is going on holiday to Da Nang this summer to relax.",
+    "reasonVi": "Để chỉ mục đích của hành động ('để làm gì'), ta dùng cấu trúc 'to + động từ nguyên mẫu' ('to relax'), không dùng giới từ 'for' đi trực tiếp với động từ nguyên mẫu."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -154,14 +186,22 @@
   "meaningVi": "cay hơn",
   "promptVi": "Món ăn này cay hơn món ăn tôi đã ăn tối qua.",
   "referenceAnswers": [
-   "This dish is spicier than the meal I ate last night."
+   "This dish is spicier than the meal I ate last night.",
+   "This meal is spicier than the dish I had yesterday evening.",
+   "The dish I ate last night was not as spicy as this one."
   ],
   "grammarTags": [
    "Comparative adjective"
   ],
   "explanationVi": "Dùng tính từ so sánh hơn 'spicier than' để so sánh hai món ăn.",
   "rationaleVi": "So sánh tính chất đơn giản của đồ ăn là chủ đề giao tiếp cơ bản ở cấp độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This dish spicier than the meal I ate last night.",
+    "correction": "This dish is spicier than the meal I ate last night.",
+    "reasonVi": "Trong tiếng Anh, tính từ ('spicier') không thể tự làm vị ngữ như tiếng Việt mà bắt buộc phải có động từ 'to be' ('is') đứng trước."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -176,14 +216,22 @@
   "meaningVi": "giảm cân",
   "promptVi": "Anh ấy muốn giảm cân nên anh ấy sẽ đi bộ đến công ty mỗi ngày.",
   "referenceAnswers": [
-   "He wants to lose weight, so he is going to walk to work every day."
+   "He wants to lose weight, so he is going to walk to work every day.",
+   "Because he wants to lose weight, he will walk to his office every day.",
+   "Since he wants to lose weight, he's going to go to work on foot daily."
   ],
   "grammarTags": [
    "Expressing cause and planned action"
   ],
   "explanationVi": "Nối hai mệnh đề bằng từ 'so' để chỉ kết quả/kế hoạch hành động dựa trên mong muốn.",
   "rationaleVi": "Sử dụng từ nối 'so' và thì dự định đơn giản đúng với định hướng Level 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "He wants to lose weight, so he is going to walk to work everyday.",
+    "correction": "He wants to lose weight, so he is going to walk to work every day.",
+    "reasonVi": "'Everyday' viết liền là tính từ chỉ đứng trước danh từ, còn trạng từ chỉ tần suất 'mỗi ngày' đứng cuối câu phải tách rời thành hai từ 'every day'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -206,7 +254,13 @@
   ],
   "explanationVi": "Dùng từ tiếng Anh-Anh 'flat' cho căn hộ và dạng so sánh hơn 'larger than', 'further from'.",
   "rationaleVi": "So sánh hai không gian sống đơn giản kết hợp từ vựng Anh-Anh cho trình độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Our new flat is larger than the old house, but it is farer from the city centre.",
+    "correction": "Our new flat is larger than the old house, but it is further from the city centre.",
+    "reasonVi": "'Far' là tính từ bất quy tắc nên dạng so sánh hơn phải đổi thành 'further' (hoặc 'farther'), không được thêm đuôi '-er' thành 'farer'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -221,14 +275,22 @@
   "meaningVi": "chuẩn bị tốt cho",
   "promptVi": "Học sinh thức dậy sớm vì họ muốn chuẩn bị tốt cho kỳ thi.",
   "referenceAnswers": [
-   "The students wake up early because they want to prepare well for the exam."
+   "The students wake up early because they want to prepare well for the exam.",
+   "Students get up early as they want to get well prepared for the test.",
+   "Because they want to prepare well for their exam, the students get out of bed early."
   ],
   "grammarTags": [
    "Expressing reason with because"
   ],
   "explanationVi": "Dùng liên từ 'because' để giải thích lý do cho hành động thức dậy sớm.",
   "rationaleVi": "Cấu trúc nối hai ý gần nhau bằng 'because' hoàn toàn phù hợp với Level 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The students wake up early because they want to prepare good for the exam.",
+    "correction": "The students wake up early because they want to prepare well for the exam.",
+    "reasonVi": "Để bổ nghĩa cho động từ thường 'prepare', ta phải dùng trạng từ 'well' chứ không được dùng tính từ 'good' như cách nói 'chuẩn bị tốt' trong tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -251,7 +313,13 @@
   ],
   "explanationVi": "Kết hợp kế hoạch 'am going to buy', liên từ 'because' và so sánh hơn 'faster than'.",
   "rationaleVi": "Kết hợp nói dự định và so sánh đơn giản qua liên từ 'because' đúng trọng tâm 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I going to buy a new laptop because it is faster than my current one.",
+    "correction": "I am going to buy a new laptop because it is faster than my current one.",
+    "reasonVi": "Cấu trúc dự định trong tương lai là 'be going to + V', nên với chủ ngữ 'I' bắt buộc phải có động từ to be 'am' đứng trước 'going to'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -266,14 +334,22 @@
   "meaningVi": "để kết bạn mới",
   "promptVi": "Mẹ tôi tham gia một câu lạc bộ cầu lông để kết bạn mới.",
   "referenceAnswers": [
-   "My mother joined a badminton club to make new friends."
+   "My mother joined a badminton club to make new friends.",
+   "My mum became a member of a badminton club in order to meet new friends.",
+   "To make some new friends, my mother signed up for a badminton club."
   ],
   "grammarTags": [
    "Expressing purpose with to-infinitive"
   ],
   "explanationVi": "Sử dụng động từ nguyên mẫu có 'to' ('to make') để nêu mục đích của hành động.",
   "rationaleVi": "Cấu trúc chỉ mục đích bằng 'to V' là ngữ pháp nền tảng cho cấp độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My mother joined a badminton club to make new friend.",
+    "correction": "My mother joined a badminton club to make new friends.",
+    "reasonVi": "'Friend' là danh từ đếm được nên không thể đứng trơ trọi ở dạng số ít không mạo từ; khi nói kết bạn nói chung ta luôn dùng dạng số nhiều là 'make new friends'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -288,14 +364,22 @@
   "meaningVi": "đắt hơn",
   "promptVi": "Xe buýt ở thành phố này đắt hơn xe buýt ở quê tôi.",
   "referenceAnswers": [
-   "The buses in this city are more expensive than the ones in my hometown."
+   "The buses in this city are more expensive than the ones in my hometown.",
+   "Buses in this city cost more than those in my hometown.",
+   "Compared to the buses in my hometown, the ones in this city are pricier."
   ],
   "grammarTags": [
    "Comparative with long adjectives"
   ],
   "explanationVi": "Dùng 'more expensive than' để so sánh chi phí phương tiện ở hai nơi.",
   "rationaleVi": "So sánh giá cả bằng tính từ dài là kĩ năng ngôn ngữ cơ bản thuộc trình độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The buses in this city is more expensive than the ones in my hometown.",
+    "correction": "The buses in this city are more expensive than the ones in my hometown.",
+    "reasonVi": "Động từ to be phải chia theo danh từ chính làm chủ ngữ là 'The buses' (số nhiều dùng 'are'), không chia theo danh từ số ít đứng gần nó là 'this city'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -310,14 +394,22 @@
   "meaningVi": "xin nghỉ làm một ngày",
   "promptVi": "Cô ấy cảm thấy mệt mỏi nên cô ấy sẽ xin nghỉ làm một ngày vào tuần tới.",
   "referenceAnswers": [
-   "She feels tired, so she is going to take a day off work next week."
+   "She feels tired, so she is going to take a day off work next week.",
+   "Because she is feeling tired, she will ask for a day off work next week.",
+   "Next week, she's going to take one day off from work since she feels tired."
   ],
   "grammarTags": [
    "Reason with so and future plan"
   ],
   "explanationVi": "Nối mệnh đề nguyên nhân và kế hoạch tương lai bằng từ nối 'so'.",
   "rationaleVi": "Sử dụng 'so' kết nối lý do và kế hoạch công việc đơn giản chuẩn cấp độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "She feels tiring, so she is going to take a day off work next week.",
+    "correction": "She feels tired, so she is going to take a day off work next week.",
+    "reasonVi": "Tính từ đuôi '-ing' ('tiring') mô tả tính chất gây mệt của sự vật, còn để diễn tả cảm xúc của con người ('cảm thấy mệt') thì phải dùng tính từ đuôi '-ed' ('tired')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -332,14 +424,22 @@
   "meaningVi": "giảm ô nhiễm",
   "promptVi": "Chúng tôi sẽ trồng thêm cây xanh xung quanh khu vực này để giảm ô nhiễm.",
   "referenceAnswers": [
-   "We are going to plant more trees around this area to reduce pollution."
+   "We are going to plant more trees around this area to reduce pollution.",
+   "We will plant more green trees around this neighbourhood in order to lower pollution.",
+   "To cut down on pollution, we're going to grow more trees around this area."
   ],
   "grammarTags": [
    "Action plan for environmental purpose"
   ],
   "explanationVi": "Dùng 'are going to plant' chỉ kế hoạch và 'to reduce pollution' chỉ mục đích.",
   "rationaleVi": "Nói về ý định và mục đích trong chủ đề môi trường quen thuộc ở mức 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "We will going to plant more trees around this area to reduce pollution.",
+    "correction": "We are going to plant more trees around this area to reduce pollution.",
+    "reasonVi": "Không được trộn lẫn 'will' và 'be going to' với nhau; bạn chỉ chọn hoặc 'will plant' hoặc 'are going to plant' để diễn tả hành động tương lai."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -362,7 +462,13 @@
   ],
   "explanationVi": "Kết hợp so sánh hơn của trạng từ 'faster than' và giải thích lý do bằng 'because'.",
   "rationaleVi": "Diễn đạt so sánh trải nghiệm thời gian kèm lý do bằng 'because' vừa sức level 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The weekend passes faster than weekdays because I am always busy with houseworks.",
+    "correction": "The weekend passes faster than weekdays because I am always busy with housework.",
+    "reasonVi": "'Housework' (cũng như 'homework') là danh từ không đếm được trong tiếng Anh nên luôn giữ nguyên dạng số ít, tuyệt đối không bao giờ thêm '-s'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -385,7 +491,13 @@
   ],
   "explanationVi": "Cấu trúc gồm mục tiêu 'want to improve', từ nối 'so' và kế hoạch 'am going to go on a trip abroad'.",
   "rationaleVi": "Nói về mục đích học tập liên quan đến kế hoạch đi lại bằng từ nối 'so' đúng mức 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I want to improve my English, so I am going to go on a trip to abroad.",
+    "correction": "I want to improve my English, so I am going to go on a trip abroad.",
+    "reasonVi": "'Abroad' là trạng từ chỉ nơi chốn (tương tự 'here', 'there') chứ không phải danh từ, nên đi thẳng sau 'go' hoặc 'trip' mà không dùng giới từ 'to' phía trước."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -400,14 +512,22 @@
   "meaningVi": "điện thoại di động",
   "promptVi": "Tôi dự định mua một chiếc điện thoại di động mới vì camera của nó tốt hơn camera trên chiếc điện thoại hiện tại của tôi.",
   "referenceAnswers": [
-   "I plan to buy a new mobile phone because its camera is better than the one on my current phone."
+   "I plan to buy a new mobile phone because its camera is better than the one on my current phone.",
+   "I intend to get a new mobile phone since it has a better camera than my present phone.",
+   "Because its camera is better than my current phone's camera, I'm planning to buy a new cellphone."
   ],
   "grammarTags": [
    "plans and reasons"
   ],
   "explanationVi": "Dùng cấu trúc 'plan to + V' để nói về kế hoạch và 'because' để đưa ra lý do kèm so sánh hơn 'better than the one on...'.",
   "rationaleVi": "Phù hợp với trình độ 3.5 nhờ cấu trúc câu ghép dùng 'because' và từ vựng chủ đề công nghệ quen thuộc.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I plan to buy a new mobile phone because it's camera is better than the one on my current phone.",
+    "correction": "I plan to buy a new mobile phone because its camera is better than the one on my current phone.",
+    "reasonVi": "'It's' có dấu nháy là viết tắt của 'it is', còn để chỉ sở hữu 'của nó' đứng trước danh từ 'camera' thì phải dùng tính từ sở hữu 'its' không có dấu nháy."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -422,14 +542,22 @@
   "meaningVi": "định",
   "promptVi": "Anh ấy định chơi bóng đá vào cuối tuần này để rèn luyện sức khỏe.",
   "referenceAnswers": [
-   "He intends to play football this weekend to improve his health."
+   "He intends to play football this weekend to improve his health.",
+   "He plans to play soccer this weekend in order to build up his health.",
+   "To keep fit and healthy, he's going to play football this weekend."
   ],
   "grammarTags": [
    "intentions and purpose"
   ],
   "explanationVi": "Dùng 'intends to + V' để diễn tả ý định/kế hoạch và 'to + V' để nêu mục đích.",
   "rationaleVi": "Câu diễn đạt kế hoạch và mục đích bằng các cấu trúc ngữ pháp cơ bản ở mức độ IELTS 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "He intends to play the football this weekend to improve his health.",
+    "correction": "He intends to play football this weekend to improve his health.",
+    "reasonVi": "Khi dùng động từ 'play' với tên các môn thể thao ('football'), ta không dùng mạo từ 'the' ở giữa (chỉ dùng 'the' khi chơi nhạc cụ như 'play the piano')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -444,14 +572,22 @@
   "meaningVi": "yên tĩnh hơn",
   "promptVi": "Công viên này yên tĩnh hơn công viên gần nhà tôi nên nhiều người đến đây đọc sách.",
   "referenceAnswers": [
-   "This park is quieter than the park near my house, so many people come here to read."
+   "This park is quieter than the park near my house, so many people come here to read.",
+   "Because this park is more peaceful than the one near my home, a lot of people visit it to read books.",
+   "Many people come here to read books since this park is quieter than the one by my house."
   ],
   "grammarTags": [
    "comparisons and result"
   ],
   "explanationVi": "Sử dụng tính từ so sánh hơn 'quieter than' kết hợp với liên từ 'so' để chỉ kết quả.",
   "rationaleVi": "Nối hai vế bằng từ 'so' và so sánh tính từ ngắn là yêu cầu trọng tâm của Level 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This park is quieter than the park near my house, so many peoples come here to read.",
+    "correction": "This park is quieter than the park near my house, so many people come here to read.",
+    "reasonVi": "Bản thân từ 'people' (mọi người) đã là danh từ số nhiều của 'person' rồi, nên khi đi sau 'many' tuyệt đối không thêm '-s' thành 'peoples'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -474,7 +610,13 @@
   ],
   "explanationVi": "Dùng tính từ so sánh hơn 'slower than' và 'safer' kết hợp từ nối 'but' để so sánh hai phương tiện đi lại.",
   "rationaleVi": "Chủ đề giao thông đi lại đời thường với phép so sánh đơn giản phù hợp cho người học ở mức 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Travelling by a train is slower than travelling by coach, but it is safer for long journeys.",
+    "correction": "Travelling by train is slower than travelling by coach, but it is safer for long journeys.",
+    "reasonVi": "Khi nói về phương tiện giao thông với giới từ 'by', ta cộng trực tiếp với danh từ chỉ phương tiện ('by train', 'by coach') mà không thêm mạo từ 'a/an' hay 'the' vào giữa."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -489,7 +631,9 @@
   "meaningVi": "đăng ký",
   "promptVi": "Chị tôi sẽ đăng ký một khóa học nấu ăn vào tháng sau để mở một quán ăn nhỏ.",
   "referenceAnswers": [
-   "My sister will enrol on a cooking course next month to open a small eatery."
+   "My sister will enrol on a cooking course next month to open a small eatery.",
+   "My older sister is going to sign up for a cooking class next month in order to start a small restaurant.",
+   "Next month, my sister will register for a cooking course so that she can open a small food shop."
   ],
   "grammarTags": [
    "future plans and purpose"
@@ -525,7 +669,13 @@
   ],
   "explanationVi": "Cấu trúc so sánh hơn với tính từ dài 'more bitter than' và nối vế kết quả bằng 'so'.",
   "rationaleVi": "Cấu trúc so sánh tính từ đi kèm liên từ 'so' rất phổ biến và phù hợp cho khung năng lực 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Green tea is more bitter than black tea, so my brother does not likes drinking it.",
+    "correction": "Green tea is more bitter than black tea, so my brother does not like drinking it.",
+    "reasonVi": "Khi đã mượn trợ động từ 'does' trong câu phủ định ('does not'), động từ chính phía sau bắt buộc phải đưa về dạng nguyên mẫu không chia ('like' chứ không phải 'likes')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -540,7 +690,9 @@
   "meaningVi": "hiện đại hơn",
   "promptVi": "Văn phòng mới hiện đại hơn văn phòng cũ vì công ty vừa đầu tư thêm nhiều thiết bị.",
   "referenceAnswers": [
-   "The new office is more modern than the old office because the company has just invested in more equipment."
+   "The new office is more modern than the old office because the company has just invested in more equipment.",
+   "The new office is more up-to-date than the old one since the company has recently put money into lots of additional equipment.",
+   "Because the company just invested in plenty of extra equipment, the new office is more modern than the previous one."
   ],
   "grammarTags": [
    "comparisons and reason"
@@ -568,7 +720,9 @@
   "meaningVi": "túi vải",
   "promptVi": "Mọi người nên mang theo túi vải khi đi siêu thị để giảm lượng rác thải nhựa.",
   "referenceAnswers": [
-   "People should take cloth bags when going to the supermarket to reduce plastic waste."
+   "People should take cloth bags when going to the supermarket to reduce plastic waste.",
+   "Everyone should bring fabric bags to the supermarket in order to cut down on plastic waste.",
+   "To lower the amount of plastic rubbish, people ought to carry cloth bags when shopping at the supermarket."
   ],
   "grammarTags": [
    "purpose and advice"
@@ -604,7 +758,13 @@
   ],
   "explanationVi": "Dùng 'be going to' diễn tả dự định cá nhân và 'because' đi kèm so sánh hơn 'more expensive'.",
   "rationaleVi": "Cấu trúc 'be going to' chỉ kế hoạch gần gũi với cuộc sống gia đình là ngữ pháp đặc trưng cấp độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I am going to cook at home tonight because eat at a restaurant is more expensive.",
+    "correction": "I am going to cook at home tonight because eating at a restaurant is more expensive.",
+    "reasonVi": "Động từ nguyên mẫu ('eat') không thể trực tiếp làm chủ ngữ của mệnh đề, mà phải chuyển sang dạng danh động từ V-ing ('eating at a restaurant')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -619,14 +779,22 @@
   "meaningVi": "trái cây tươi hơn",
   "promptVi": "Cửa hàng này bán trái cây tươi hơn siêu thị nên mẹ tôi chọn mua trái cây ở đây.",
   "referenceAnswers": [
-   "This shop sells fresher fruit than the supermarket, so my mother chooses to buy fruit here."
+   "This shop sells fresher fruit than the supermarket, so my mother chooses to buy fruit here.",
+   "Because the fruit at this store is fresher than at the supermarket, my mum decides to buy fruit here.",
+   "My mother chooses to get her fruit here since this shop offers fresher fruit than the supermarket does."
   ],
   "grammarTags": [
    "comparisons and result"
   ],
   "explanationVi": "Sử dụng dạng so sánh hơn của danh từ kèm tính từ 'fresher fruit than' và từ nối 'so'.",
   "rationaleVi": "Chủ đề mua sắm/kinh tế gia đình với từ nối 'so' và so sánh đơn giản hoàn toàn hợp trình độ 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This shop sells fresher fruit than the supermarket, so my mother chooses buy fruit here.",
+    "correction": "This shop sells fresher fruit than the supermarket, so my mother chooses to buy fruit here.",
+    "reasonVi": "Tiếng Anh không ghép trực tiếp hai động từ 'chọn mua' cạnh nhau như tiếng Việt, mà sau động từ 'choose' bắt buộc phải dùng 'to + V' ('chooses to buy')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -641,7 +809,9 @@
   "meaningVi": "nhằm",
   "promptVi": "Hội đồng thành phố sẽ xây một thư viện mới nhằm phục vụ cư dân địa phương.",
   "referenceAnswers": [
-   "The city council will build a new library in order to serve local residents."
+   "The city council will build a new library in order to serve local residents.",
+   "The city council is going to construct a new library to serve people living in the area.",
+   "To serve the local community, the city council will put up a new library."
   ],
   "grammarTags": [
    "future plans and purpose"
@@ -669,7 +839,9 @@
   "meaningVi": "gặp nhau vào thứ Hai",
   "promptVi": "Nhóm nghiên cứu sẽ gặp nhau vào thứ Hai vì họ cần thảo luận về các kết quả mới.",
   "referenceAnswers": [
-   "The research team will meet on Monday because they need to discuss the new results."
+   "The research team will meet on Monday because they need to discuss the new results.",
+   "The research group is going to have a meeting on Monday as they need to talk about the new findings.",
+   "Because they have to discuss the latest results, the research team will get together on Monday."
   ],
   "grammarTags": [
    "plans and reasons"
@@ -697,14 +869,22 @@
   "meaningVi": "hiệu quả hơn / tiết kiệm năng lượng hơn",
   "promptVi": "Nhà trường sẽ lắp đặt các tấm pin mặt trời vì chúng hiệu quả hơn hệ thống cũ.",
   "referenceAnswers": [
-   "The school is going to install solar panels because they are more efficient than the old system."
+   "The school is going to install solar panels because they are more efficient than the old system.",
+   "The school will put in solar panels since they work more efficiently than the previous system.",
+   "Because solar panels are more efficient than the old system, the school is going to set them up."
   ],
   "grammarTags": [
    "Plan and Comparison with Because"
   ],
   "explanationVi": "Cấu trúc 'is going to' thể hiện kế hoạch và 'more efficient than' dùng để so sánh tính hiệu quả giữa hai hệ thống năng lượng.",
   "rationaleVi": "Phù hợp trình độ 3.5 với câu đơn nối bằng 'because', nói về kế hoạch tương lai và so sánh đơn giản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The school is going to install solar panels because they are more efficient then the old system.",
+    "correction": "The school is going to install solar panels because they are more efficient than the old system.",
+    "reasonVi": "Trong cấu trúc so sánh hơn phải dùng liên từ 'than' (hơn), không được nhầm lẫn chính tả với trạng từ chỉ thời gian 'then' (sau đó)."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -719,7 +899,9 @@
   "meaningVi": "nên / cho nên",
   "promptVi": "Nam muốn cải thiện kỹ năng nói tiếng Anh so với năm ngoái nên bạn ấy sẽ tham gia một câu lạc bộ ngôn ngữ.",
   "referenceAnswers": [
-   "Nam wants to improve his English speaking skills compared to last year, so he will join a language club."
+   "Nam wants to improve his English speaking skills compared to last year, so he will join a language club.",
+   "Because Nam hopes to speak English better than he did last year, he is going to join a language club.",
+   "Nam will become a member of a language club since he wants his English speaking skills to be better than last year."
   ],
   "grammarTags": [
    "Purpose and Result with So"
@@ -747,14 +929,22 @@
   "meaningVi": "nhẹ hơn",
   "promptVi": "Tôi dự định mua một chiếc máy tính bảng mới vì nó nhẹ hơn máy tính bảng của anh tôi.",
   "referenceAnswers": [
-   "I plan to buy a new tablet because it is lighter than my brother's tablet."
+   "I plan to buy a new tablet because it is lighter than my brother's tablet.",
+   "I intend to get a new tablet since it weighs less than my older brother's one.",
+   "Because it's lighter than the tablet my brother has, I'm planning to purchase a new tablet."
   ],
   "grammarTags": [
    "Intent and Comparison with Because"
   ],
   "explanationVi": "'lighter than' là dạng so sánh hơn của tính từ ngắn 'light', kết hợp với 'because' để giải thích cho dự định 'plan to buy'.",
   "rationaleVi": "Sử dụng cấu trúc so sánh tính từ ngắn cơ bản và từ nối 'because' đúng trọng tâm IELTS 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I plan to buy a new tablet because it is lighter than my brother tablet.",
+    "correction": "I plan to buy a new tablet because it is lighter than my brother's tablet.",
+    "reasonVi": "Khi chỉ quyền sở hữu của một người đối với đồ vật ('máy tính bảng của anh tôi'), danh từ chỉ người bắt buộc phải thêm sở hữu cách ''s' thành 'my brother's tablet'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -769,14 +959,22 @@
   "meaningVi": "rẻ hơn",
   "promptVi": "Du khách chọn đi du lịch bằng xe khách vì chi phí rẻ hơn đi tàu hỏa.",
   "referenceAnswers": [
-   "Tourists choose to travel by coach because it is cheaper than taking the train."
+   "Tourists choose to travel by coach because it is cheaper than taking the train.",
+   "Visitors decide to travel by long-distance bus since the cost is lower than going by train.",
+   "Because going by coach costs less than taking a train, holidaymakers choose to travel this way."
   ],
   "grammarTags": [
    "Choice and Comparison with Because"
   ],
   "explanationVi": "Dùng 'cheaper than' để so sánh chi phí hai phương tiện và 'because' để giải thích lý do cho sự lựa chọn.",
   "rationaleVi": "Câu biểu đạt lý do và so sánh đơn giản trong chủ đề du lịch/đi lại, phù hợp với tiêu chí 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Tourists choose to travel with coach because it is cheaper than taking the train.",
+    "correction": "Tourists choose to travel by coach because it is cheaper than taking the train.",
+    "reasonVi": "Tiếng Việt đều dịch là 'bằng', nhưng 'with' chỉ dùng cho công cụ cầm tay, còn đi bằng phương tiện giao thông thì bắt buộc dùng giới từ 'by' ('travel by coach')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -791,7 +989,9 @@
   "meaningVi": "nên",
   "promptVi": "Thức ăn tự nấu lành mạnh hơn đồ ăn nhanh nên chị tôi sẽ mang cơm hộp đi làm.",
   "referenceAnswers": [
-   "Home-cooked food is healthier than fast food, so my sister will bring a packed lunch to work."
+   "Home-cooked food is healthier than fast food, so my sister will bring a packed lunch to work.",
+   "Meals cooked at home are better for health than fast food, so my older sister is going to take a lunchbox to work.",
+   "Since homemade meals are healthier than fast food, my sister will carry her own lunchbox to work."
   ],
   "grammarTags": [
    "Comparison and Plan with So"
@@ -819,14 +1019,22 @@
   "meaningVi": "ấm áp hơn",
   "promptVi": "Gia đình tôi sẽ chuyển sang căn hộ này vì nó ấm hơn ngôi nhà hiện tại vào mùa đông.",
   "referenceAnswers": [
-   "My family is going to move to this flat because it is warmer than our current house in winter."
+   "My family is going to move to this flat because it is warmer than our current house in winter.",
+   "My family will relocate to this apartment since it stays warmer in winter than the house we live in now.",
+   "Because this apartment is warmer during the winter than our present home, my family is going to move into it."
   ],
   "grammarTags": [
    "Plan and Comparison with Because"
   ],
   "explanationVi": "Cụm 'is going to move' chỉ dự định nhà ở, còn 'warmer than' so sánh đặc điểm thời tiết/nhiệt độ giữa hai nơi ở.",
   "rationaleVi": "Cấu trúc thì tương lai gần kết hợp mệnh đề chỉ lý do 'because' và tính từ so sánh hơn thích hợp cho bậc 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My family is going to move to this flat because it is warmer than our current house on winter.",
+    "correction": "My family is going to move to this flat because it is warmer than our current house in winter.",
+    "reasonVi": "Trước tên các mùa trong năm ('spring', 'summer', 'autumn', 'winter'), ta luôn dùng giới từ 'in' ('in winter') chứ không dùng 'on' hay 'at'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -870,7 +1078,9 @@
   "meaningVi": "rộng lớn hơn",
   "promptVi": "Bảo tàng nghệ thuật mới rộng hơn bảo tàng cũ nên nó sẽ thu hút nhiều khách tham quan hơn.",
   "referenceAnswers": [
-   "The new art museum is larger than the old museum, so it will attract more visitors."
+   "The new art museum is larger than the old museum, so it will attract more visitors.",
+   "Because the new art museum is more spacious than the old one, it is going to draw more visitors.",
+   "The new art museum will bring in more visitors since it is bigger than the previous one."
   ],
   "grammarTags": [
    "Comparison and Result with So"
@@ -898,14 +1108,22 @@
   "meaningVi": "yên tĩnh hơn",
   "promptVi": "Quản lý sẽ làm việc ở phòng họp riêng vì nơi đó yên tĩnh hơn văn phòng chính.",
   "referenceAnswers": [
-   "The manager is going to work in a private meeting room because it is quieter than the main office."
+   "The manager is going to work in a private meeting room because it is quieter than the main office.",
+   "The manager will work inside a separate meeting room since that place is less noisy than the main office.",
+   "Because a private meeting room is more peaceful than the main office, the manager's going to work there."
   ],
   "grammarTags": [
    "Plan and Comparison with Because"
   ],
   "explanationVi": "Mục đích/kế hoạch 'is going to work' được giải thích bằng mệnh đề so sánh môi trường làm việc 'quieter than'.",
   "rationaleVi": "Ứng dụng đúng mục tiêu học tập 3.5: diễn đạt kế hoạch công việc và so sánh điều kiện môi trường bằng 'because'.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "The manager is going to work in a private meeting room because is quieter than the main office.",
+    "correction": "The manager is going to work in a private meeting room because it is quieter than the main office.",
+    "reasonVi": "Mỗi mệnh đề sau 'because' đều bắt buộc phải có đầy đủ cả chủ ngữ lẫn động từ, nên không được bỏ trống đại từ chủ ngữ 'it' trước 'is quieter'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -928,7 +1146,13 @@
   ],
   "explanationVi": "'sweeter than' dùng so sánh hương vị đồ ăn, nối tiếp bằng liên từ 'so' để nêu ý định sử dụng ('am going to use').",
   "rationaleVi": "Đề tài đời sống gần gũi, câu nối hai ý bằng 'so' và so sánh tính từ ngắn đúng tầm mức 3.5.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "This orange is sweeter than the watermelon, so I am going to use it to do juice.",
+    "correction": "This orange is sweeter than the watermelon, so I am going to use it to make juice.",
+    "reasonVi": "Tiếng Việt đều nói là 'làm', nhưng khi chế biến đồ ăn thức uống tạo ra sản phẩm mới thì phải dùng động từ 'make' ('make juice') chứ không dùng 'do'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -943,7 +1167,9 @@
   "meaningVi": "sạch hơn / ít ô nhiễm hơn",
   "promptVi": "Hội đồng thành phố sẽ đầu tư vào xe buýt điện vì chúng sạch hơn xe chạy bằng nhiên liệu truyền thống.",
   "referenceAnswers": [
-   "The city council will invest in electric buses because they are cleaner than traditional fuel vehicles."
+   "The city council will invest in electric buses because they are cleaner than traditional fuel vehicles.",
+   "The city council is going to put money into electric buses since they are cleaner than conventional fuel vehicles.",
+   "Because electric buses are cleaner than vehicles running on traditional fuel, the city council will invest in them."
   ],
   "grammarTags": [
    "Plan and Comparison with Because"
@@ -971,7 +1197,9 @@
   "meaningVi": "an toàn hơn",
   "promptVi": "Môn bơi lội an toàn hơn các môn thể thao mạo hiểm nên bố mẹ sẽ đăng ký cho em trai tôi học lớp này.",
   "referenceAnswers": [
-   "Swimming is safer than extreme sports, so my parents will enrol my younger brother in this class."
+   "Swimming is safer than extreme sports, so my parents will enrol my younger brother in this class.",
+   "Because swimming is less dangerous than extreme sports, my parents are going to sign my little brother up for this course.",
+   "My mum and dad will register my younger brother for this class since swimming is safer than extreme sports."
   ],
   "grammarTags": [
    "Comparison and Plan with So"
@@ -999,7 +1227,9 @@
   "meaningVi": "bánh quy",
   "promptVi": "Em gái tôi sẽ học làm bánh quy vào cuối tuần này vì chúng ngon hơn bánh mua ở cửa hàng.",
   "referenceAnswers": [
-   "My younger sister will learn to make biscuits this weekend because they are tastier than store-bought ones."
+   "My younger sister will learn to make biscuits this weekend because they are tastier than store-bought ones.",
+   "My little sister is going to learn how to bake cookies this weekend since they taste better than those bought in shops.",
+   "Because homemade biscuits are more delicious than shop-bought ones, my younger sister's going to learn to make them this weekend."
   ],
   "grammarTags": [
    "plan with because & comparison"
@@ -1027,7 +1257,9 @@
   "meaningVi": "tuabin gió",
   "promptVi": "Chính quyền địa phương sẽ dựng các tuabin gió mới vì chúng sạch hơn lò đốt than.",
   "referenceAnswers": [
-   "The local council will build new wind turbines because they are cleaner than coal burners."
+   "The local council will build new wind turbines because they are cleaner than coal burners.",
+   "The local authorities are going to put up new wind turbines since they are cleaner than coal-burning furnaces.",
+   "Because wind turbines are cleaner than coal burners, the local government will set up new ones."
   ],
   "grammarTags": [
    "intention with because & comparison"
@@ -1055,14 +1287,22 @@
   "meaningVi": "căn hộ",
   "promptVi": "Anh trai tôi định thuê một căn hộ nhỏ hơn để tiết kiệm tiền sinh hoạt hàng tháng.",
   "referenceAnswers": [
-   "My brother intends to rent a smaller flat to save money on monthly living expenses."
+   "My brother intends to rent a smaller flat to save money on monthly living expenses.",
+   "My older brother plans to rent a smaller apartment in order to cut down on his monthly living costs.",
+   "To save money on his living expenses each month, my big brother is planning to rent a smaller flat."
   ],
   "grammarTags": [
    "purpose with to-infinitive & comparison"
   ],
   "explanationVi": "Cấu trúc 'intends to rent' chỉ dự định, 'smaller flat' thể hiện so sánh hơn và 'to save' thể hiện mục đích.",
   "rationaleVi": "Đáp ứng đúng mục tiêu Level 3.5 về việc diễn đạt dự định/mục đích bằng động từ nguyên mẫu có 'to' và tính từ so sánh ngắn.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "My brother intends to rent a flat smaller to save money on monthly living expenses.",
+    "correction": "My brother intends to rent a smaller flat to save money on monthly living expenses.",
+    "reasonVi": "Tính từ so sánh hơn ('smaller') bổ nghĩa cho danh từ ('flat') vẫn phải đứng trước danh từ đó theo cụm 'a smaller flat', không đặt sau danh từ như tiếng Việt."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1077,7 +1317,9 @@
   "meaningVi": "mùa thu",
   "promptVi": "Thời tiết vào mùa thu mát mẻ hơn mùa hè nên chúng tôi sẽ tổ chức một buổi dã ngoại ngoài trời.",
   "referenceAnswers": [
-   "The weather in autumn is cooler than in summer, so we will organise an outdoor picnic."
+   "The weather in autumn is cooler than in summer, so we will organise an outdoor picnic.",
+   "Because autumn weather is cooler than summer weather, we are going to hold a picnic outdoors.",
+   "We're going to have an outdoor picnic since it feels cooler in the autumn than in the summer."
   ],
   "grammarTags": [
    "cause and effect with so & comparison"
@@ -1105,7 +1347,9 @@
   "meaningVi": "sân bóng đá",
   "promptVi": "Sân bóng đá mới rộng hơn sân cũ nên nhóm chúng tôi sẽ luyện tập ở đó vào thứ Bảy.",
   "referenceAnswers": [
-   "The new football pitch is larger than the old one, so our team will practise there on Saturday."
+   "The new football pitch is larger than the old one, so our team will practise there on Saturday.",
+   "Because the new soccer field is bigger than the previous one, our group is going to train there on Saturday.",
+   "Our group will do our practice at the new football field on Saturday since it's wider than the old pitch."
   ],
   "grammarTags": [
    "cause and effect with so & comparison"
@@ -1133,14 +1377,22 @@
   "meaningVi": "điện thoại di động",
   "promptVi": "Tôi định mua một chiếc điện thoại di động mỏng hơn để dễ mang theo khi đi làm.",
   "referenceAnswers": [
-   "I plan to buy a thinner mobile phone to carry easily when going to work."
+   "I plan to buy a thinner mobile phone to carry easily when going to work.",
+   "I intend to get a slimmer cellphone so that I can carry it easily when I go to work.",
+   "So it's easier to take with me to work, I'm planning to buy a thinner mobile phone."
   ],
   "grammarTags": [
    "plan and purpose with to-infinitive & comparison"
   ],
   "explanationVi": "'plan to buy' thể hiện kế hoạch, tính từ 'thinner' dùng để so sánh và 'to carry' biểu thị mục đích.",
   "rationaleVi": "Thuộc phạm vi Level 3.5 nhờ sự xuất hiện của cấu trúc chỉ mục đích, kế hoạch cá nhân và so sánh tính từ cơ bản.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "I plan to buy a thiner mobile phone to carry easily when going to work.",
+    "correction": "I plan to buy a thinner mobile phone to carry easily when going to work.",
+    "reasonVi": "'Thin' kết thúc bằng một nguyên âm cộng một phụ âm đơn ('-in'), nên khi thêm đuôi '-er' bắt buộc phải gấp đôi phụ âm cuối thành 'thinner'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1155,7 +1407,9 @@
   "meaningVi": "thùng rác",
   "promptVi": "Trường học sẽ đặt thêm thùng rác ở sân trường vì việc này giúp giữ không gian sạch hơn.",
   "referenceAnswers": [
-   "The school will place more dustbins in the playground because this helps keep the space cleaner."
+   "The school will place more dustbins in the playground because this helps keep the space cleaner.",
+   "The school is going to put more rubbish bins in the schoolyard since doing this helps keep the area cleaner.",
+   "Because it helps keep the space cleaner, the school will set up more trash cans in the schoolyard."
   ],
   "grammarTags": [
    "plan with because & comparison"
@@ -1183,7 +1437,9 @@
   "meaningVi": "thời khóa biểu",
   "promptVi": "Thời khóa biểu mới linh hoạt hơn kỳ trước nên sinh viên sẽ có nhiều thời gian tự học hơn.",
   "referenceAnswers": [
-   "The new timetable is more flexible than last term's, so students will have more self-study time."
+   "The new timetable is more flexible than last term's, so students will have more self-study time.",
+   "Because the new schedule has more flexibility than last semester's, students are going to get more time to study on their own.",
+   "Students will have more time to study by themselves since the new class schedule is more flexible than last term's."
   ],
   "grammarTags": [
    "cause and effect with so & comparison"
@@ -1302,7 +1558,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "wait a moment",
+  "meaningVi": "đợi một chút"
  },
  {
   "id": "esl-v2-r07-u01-003",
@@ -1374,7 +1632,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "send the document",
+  "meaningVi": "gửi tài liệu"
  },
  {
   "id": "esl-v2-r07-u01-005",
@@ -1383,7 +1643,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Nhìn những đám mây đen kia kìa; sắp mưa rồi.",
   "referenceAnswers": [
-   "Look at those dark clouds; it's going to rain."
+   "Look at those dark clouds; it's going to rain.",
+   "Take a look at those black clouds over there; it is about to rain.",
+   "Have a look at those heavy dark clouds; it's about to start raining."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1408,7 +1670,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "dark clouds",
+  "meaningVi": "đám mây đen"
  },
  {
   "id": "esl-v2-r07-u01-006",
@@ -1455,7 +1719,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Họ đã tiết kiệm đủ tiền; mùa hè tới họ định mua xe đạp mới.",
   "referenceAnswers": [
-   "They've saved enough money; they're going to buy new bicycles next summer."
+   "They've saved enough money; they're going to buy new bicycles next summer.",
+   "They have put aside enough money, and they plan to purchase new bikes next summer.",
+   "Now that they've saved up enough money, they intend to get new bicycles next summer."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1480,7 +1746,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "saved enough money",
+  "meaningVi": "tiết kiệm đủ tiền"
  },
  {
   "id": "esl-v2-r07-u01-008",
@@ -1489,7 +1757,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chúng tôi dự định trồng rau sau khi chuyển đến nhà mới.",
   "referenceAnswers": [
-   "We're going to grow vegetables after we move into our new home."
+   "We're going to grow vegetables after we move into our new home.",
+   "We plan to plant vegetables once we move into our new house.",
+   "After moving to our new place, we intend to grow vegetables."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1514,7 +1784,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "grow vegetables",
+  "meaningVi": "trồng rau"
  },
  {
   "id": "esl-v2-r07-u01-009",
@@ -1549,7 +1821,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "booked a table",
+  "meaningVi": "đặt bàn"
  },
  {
   "id": "esl-v2-r07-u01-010",
@@ -1558,7 +1832,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Cô ấy có lịch hẹn bác sĩ vào sáng thứ Hai tới.",
   "referenceAnswers": [
-   "She's seeing the doctor next Monday morning."
+   "She's seeing the doctor next Monday morning.",
+   "She has an appointment with the doctor next Monday morning.",
+   "Next Monday morning, she's got a doctor's appointment."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1594,7 +1870,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Họ đã đặt vé; thứ Sáu này họ sẽ bay đến Đà Nẵng.",
   "referenceAnswers": [
-   "They've booked their tickets; they're flying to Da Nang this Friday."
+   "They've booked their tickets; they're flying to Da Nang this Friday.",
+   "They have already reserved their tickets, and they will take a flight to Da Nang this Friday.",
+   "With their tickets already booked, they're catching a flight to Da Nang this Friday."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1619,7 +1897,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "booked their tickets",
+  "meaningVi": "đặt vé"
  },
  {
   "id": "esl-v2-r07-u01-012",
@@ -1654,7 +1934,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "arranged to meet",
+  "meaningVi": "hẹn gặp"
  },
  {
   "id": "esl-v2-r07-u01-013",
@@ -1689,7 +1971,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "next match",
+  "meaningVi": "trận sau"
  },
  {
   "id": "esl-v2-r07-u01-014",
@@ -1698,7 +1982,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Nhìn đường ngập nước thế này, chúng ta có lẽ sẽ đến muộn.",
   "referenceAnswers": [
-   "With the road flooded like this, we're probably going to arrive late."
+   "With the road flooded like this, we're probably going to arrive late.",
+   "Looking at how flooded the street is, we will likely get there late.",
+   "Seeing the road under water like this, we're probably going to turn up late."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1723,7 +2009,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "flooded",
+  "meaningVi": "ngập nước"
  },
  {
   "id": "esl-v2-r07-u01-015",
@@ -1758,7 +2046,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kế hoạch tương lai"
+  "skillFocus": "Kế hoạch tương lai",
+  "targetTerm": "return the book",
+  "meaningVi": "trả cuốn sách"
  },
  {
   "id": "esl-v2-r07-u01-016",
@@ -1767,7 +2057,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Tuần sau lớp tôi sẽ tham quan bảo tàng; giáo viên đã đặt vé rồi.",
   "referenceAnswers": [
-   "Our class is visiting the museum next week; the teacher has already booked the tickets."
+   "Our class is visiting the museum next week; the teacher has already booked the tickets.",
+   "Next week, my class is going on a trip to the museum, as our teacher has already reserved the tickets.",
+   "Our teacher has booked the tickets already, so my class is going to visit the museum next week."
   ],
   "grammarTags": [
    "future_plans_and_predictions",
@@ -1841,7 +2133,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Con đường này ngắn hơn con đường đi qua chợ.",
   "referenceAnswers": [
-   "This route is shorter than the one through the market."
+   "This route is shorter than the one through the market.",
+   "This road is shorter than the way that goes through the market.",
+   "The road going through the market is longer than this way."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -1877,7 +2171,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Quyển sách này thú vị hơn quyển tôi đọc tuần trước.",
   "referenceAnswers": [
-   "This book is more interesting than the one I read last week."
+   "This book is more interesting than the one I read last week.",
+   "This book is more engaging than the book that I read last week.",
+   "The book I read last week wasn't as interesting as this one."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -1913,7 +2209,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bài kiểm tra hôm nay dễ hơn bài hôm qua.",
   "referenceAnswers": [
-   "Today's test is easier than yesterday's."
+   "Today's test is easier than yesterday's.",
+   "The test we have today is simpler than the one from yesterday.",
+   "Yesterday's test was harder than the one today."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -1949,7 +2247,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Trường tôi xa nhà hơn thư viện.",
   "referenceAnswers": [
-   "My school is farther from home than the library."
+   "My school is farther from home than the library.",
+   "My school is located further away from my house than the library is.",
+   "Compared to the library, my school is a longer distance from home."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -1985,7 +2285,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc vali xanh nặng hơn chiếc vali đỏ.",
   "referenceAnswers": [
-   "The blue suitcase is heavier than the red one."
+   "The blue suitcase is heavier than the red one.",
+   "The blue suitcase weighs more than the red suitcase.",
+   "The red suitcase isn't as heavy as the blue one."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2010,7 +2312,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "suitcase",
+  "meaningVi": "chiếc vali"
  },
  {
   "id": "esl-v2-r07-u02-006",
@@ -2019,7 +2323,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Mùa hè ở đây nóng hơn mùa xuân.",
   "referenceAnswers": [
-   "Summer is hotter than spring here."
+   "Summer is hotter than spring here.",
+   "In this area, the weather in summer is hotter than in spring.",
+   "Here, it gets hotter during the summer than it does in the spring."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2044,7 +2350,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "hotter than",
+  "meaningVi": "nóng hơn"
  },
  {
   "id": "esl-v2-r07-u02-007",
@@ -2053,7 +2361,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Bữa tối này ngon hơn bữa trưa hôm nay.",
   "referenceAnswers": [
-   "This dinner is better than today's lunch."
+   "This dinner is better than today's lunch.",
+   "This evening meal is more delicious than the lunch earlier today.",
+   "Today's lunch wasn't as tasty as this dinner."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2089,7 +2399,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chiếc áo này rẻ hơn nhưng bền hơn chiếc áo kia.",
   "referenceAnswers": [
-   "This shirt is cheaper but more durable than the other one."
+   "This shirt is cheaper but more durable than the other one.",
+   "This shirt costs less than that one, yet it lasts longer.",
+   "Although this shirt is less expensive, it is stronger and lasts longer than that one."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2114,7 +2426,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "more durable",
+  "meaningVi": "bền hơn"
  },
  {
   "id": "esl-v2-r07-u02-009",
@@ -2123,7 +2437,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Đây là căn phòng yên tĩnh nhất trong nhà.",
   "referenceAnswers": [
-   "This is the quietest room in the house."
+   "This is the quietest room in the house.",
+   "This room is the most peaceful one in the whole house.",
+   "No other room in the house is as quiet as this one."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2148,7 +2464,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "quietest room",
+  "meaningVi": "căn phòng yên tĩnh nhất"
  },
  {
   "id": "esl-v2-r07-u02-010",
@@ -2157,7 +2475,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Lan đến sớm nhất trong nhóm.",
   "referenceAnswers": [
-   "Lan arrives the earliest in the group."
+   "Lan arrives the earliest in the group.",
+   "Lan is the earliest person to arrive in the group.",
+   "In the group, nobody gets there earlier than Lan does."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2182,7 +2502,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "the earliest",
+  "meaningVi": "sớm nhất"
  },
  {
   "id": "esl-v2-r07-u02-011",
@@ -2191,7 +2513,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Trong ba phương án, xe buýt là rẻ nhất.",
   "referenceAnswers": [
-   "Of the three options, the bus is the cheapest."
+   "Of the three options, the bus is the cheapest.",
+   "Among the three choices, taking the bus costs the least.",
+   "Going by bus is the least expensive out of all three options."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2216,7 +2540,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "three options",
+  "meaningVi": "ba phương án"
  },
  {
   "id": "esl-v2-r07-u02-012",
@@ -2225,7 +2551,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Đây là ngày bận nhất của tôi trong tuần.",
   "referenceAnswers": [
-   "This is my busiest day of the week."
+   "This is my busiest day of the week.",
+   "Out of the whole week, this is the day when I am busiest.",
+   "I'm busier on this day than on any other day of the week."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2250,7 +2578,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "busiest day",
+  "meaningVi": "ngày bận nhất"
  },
  {
   "id": "esl-v2-r07-u02-013",
@@ -2285,7 +2615,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "as tall as",
+  "meaningVi": "cao bằng"
  },
  {
   "id": "esl-v2-r07-u02-014",
@@ -2294,7 +2626,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Em trai tôi chạy nhanh bằng tôi.",
   "referenceAnswers": [
-   "My younger brother runs as fast as I do."
+   "My younger brother runs as fast as I do.",
+   "My little brother can run at the same speed as me.",
+   "When it comes to running, my younger brother is just as quick as I am."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2319,7 +2653,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "as fast as",
+  "meaningVi": "nhanh bằng"
  },
  {
   "id": "esl-v2-r07-u02-015",
@@ -2328,7 +2664,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Bài tập mới ít khó hơn bài tập trước.",
   "referenceAnswers": [
-   "The new exercise is less difficult than the previous one."
+   "The new exercise is less difficult than the previous one.",
+   "The new task is not as hard as the last exercise.",
+   "Compared with the previous exercise, the new one is less challenging."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2353,7 +2691,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "less difficult",
+  "meaningVi": "ít khó hơn"
  },
  {
   "id": "esl-v2-r07-u02-016",
@@ -2362,7 +2702,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Trong lớp Minh giải bài toán đó nhanh nhất.",
   "referenceAnswers": [
-   "Minh solves that problem the fastest in the class."
+   "Minh solves that problem the fastest in the class.",
+   "In the class, Minh works out that maths problem more quickly than anyone else.",
+   "Out of the whole class, Minh is the quickest to figure out that maths problem."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2387,7 +2729,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "So sánh"
+  "skillFocus": "So sánh",
+  "targetTerm": "solves that problem",
+  "meaningVi": "giải bài toán đó"
  },
  {
   "id": "esl-v2-r07-u02-017",
@@ -2396,7 +2740,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thấy chiếc ghế này thoải mái hơn, nhưng chiếc kia chắc chắn hơn.",
   "referenceAnswers": [
-   "I find this chair more comfortable, but the other one is sturdier."
+   "I find this chair more comfortable, but the other one is sturdier.",
+   "To me, this chair feels more comfortable to sit on, whereas that chair is more solid.",
+   "I think this chair is comfier, though that other chair is built more strongly."
   ],
   "grammarTags": [
    "comparatives_and_superlatives",
@@ -2432,7 +2778,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Sáng qua tôi mang theo ô để khỏi bị ướt.",
   "referenceAnswers": [
-   "I brought an umbrella yesterday morning to stay dry."
+   "I brought an umbrella yesterday morning to stay dry.",
+   "Yesterday morning, I took an umbrella with me so that I would not get wet.",
+   "To avoid getting wet, I carried an umbrella yesterday morning."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2468,7 +2816,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi tập nói mỗi tối để phát âm rõ hơn.",
   "referenceAnswers": [
-   "We practise speaking every evening in order to improve our pronunciation."
+   "We practise speaking every evening in order to improve our pronunciation.",
+   "We do speaking practice every night to pronounce words more clearly.",
+   "So that our pronunciation becomes clearer, we practise speaking every single evening."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2493,7 +2843,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "improve our pronunciation",
+  "meaningVi": "cải thiện phát âm"
  },
  {
   "id": "esl-v2-r07-u03-003",
@@ -2502,7 +2854,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Mai đặt báo thức mỗi tối để dậy đúng giờ.",
   "referenceAnswers": [
-   "Mai sets an alarm every night to wake up on time."
+   "Mai sets an alarm every night to wake up on time.",
+   "Every evening, Mai sets her alarm clock in order to get up on time.",
+   "So that she can get out of bed on time, Mai puts her alarm on every night."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2527,7 +2881,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "sets an alarm",
+  "meaningVi": "đặt báo thức"
  },
  {
   "id": "esl-v2-r07-u03-004",
@@ -2536,7 +2892,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Hôm qua tôi đến thư viện để tìm tài liệu cho bài thuyết trình.",
   "referenceAnswers": [
-   "I went to the library yesterday to find materials for my presentation."
+   "I went to the library yesterday to find materials for my presentation.",
+   "Yesterday, I visited the library in order to look for reference materials for my presentation.",
+   "To search for materials for my presentation, I headed over to the library yesterday."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2572,7 +2930,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Sáng nay họ mở cửa sổ để không khí trong lành vào phòng.",
   "referenceAnswers": [
-   "They opened the window this morning to let fresh air in."
+   "They opened the window this morning to let fresh air in.",
+   "This morning, they opened the window so that fresh air could come into the room.",
+   "To allow fresh air into the room, they opened up the window this morning."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2608,7 +2968,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi học từ mới hằng ngày để đọc tin tức dễ hơn.",
   "referenceAnswers": [
-   "I learn new words every day in order to read the news more easily."
+   "I learn new words every day in order to read the news more easily.",
+   "I study new vocabulary daily so that I can read the news more easily.",
+   "To make reading the news easier, I pick up new words every day."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2633,7 +2995,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "read the news",
+  "meaningVi": "đọc tin tức"
  },
  {
   "id": "esl-v2-r07-u03-007",
@@ -2642,7 +3006,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Cô ấy đi bộ đến trường để tiết kiệm tiền đi lại.",
   "referenceAnswers": [
-   "She walks to school to save money on transport."
+   "She walks to school to save money on transport.",
+   "She goes to school on foot in order to cut down on travel costs.",
+   "So she can save money on travel expenses, she walks to school."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2667,7 +3033,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "save money",
+  "meaningVi": "tiết kiệm tiền"
  },
  {
   "id": "esl-v2-r07-u03-008",
@@ -2676,7 +3044,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua chúng tôi đến sớm để chọn chỗ ngồi tốt.",
   "referenceAnswers": [
-   "We arrived early yesterday to choose good seats."
+   "We arrived early yesterday to choose good seats.",
+   "Yesterday, we got there early in order to pick nice seats.",
+   "So that we could get good places to sit, we turned up early yesterday."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2712,7 +3082,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Tối qua tôi tắt điện thoại để tập trung vào bài học.",
   "referenceAnswers": [
-   "I turned off my phone last night to focus on the lesson."
+   "I turned off my phone last night to focus on the lesson.",
+   "Last night, I switched off my mobile phone in order to concentrate on the lesson.",
+   "To pay full attention to the lesson, I switched my phone off yesterday evening."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2748,7 +3120,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Trong buổi họp hôm qua, họ nói chậm hơn để mọi người có thể hiểu.",
   "referenceAnswers": [
-   "They spoke more slowly at yesterday’s meeting so that everyone could understand."
+   "They spoke more slowly at yesterday’s meeting so that everyone could understand.",
+   "During the meeting yesterday, they talked at a slower pace in order for everybody to understand.",
+   "To make sure everybody could understand, they spoke more slowly during yesterday's meeting."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2784,7 +3158,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Mỗi buổi học cô giáo viết ví dụ lên bảng để học sinh dễ nhớ.",
   "referenceAnswers": [
-   "The teacher writes examples on the board so that students can remember them more easily."
+   "The teacher writes examples on the board so that students can remember them more easily.",
+   "In every lesson, the teacher puts examples up on the board to help students remember more easily.",
+   "During each class, the teacher writes down examples on the board so it's easier for students to remember."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2820,7 +3196,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi thường để nước trên bàn để khách có thể tự lấy.",
   "referenceAnswers": [
-   "I usually leave water on the table so that guests can help themselves."
+   "I usually leave water on the table so that guests can help themselves.",
+   "I normally put water on the table in order for visitors to serve themselves.",
+   "To let guests get water by themselves, I usually keep some on the table."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2845,7 +3223,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "help themselves",
+  "meaningVi": "tự lấy"
  },
  {
   "id": "esl-v2-r07-u03-013",
@@ -2854,7 +3234,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Chúng tôi đã giảm âm lượng để em bé có thể ngủ.",
   "referenceAnswers": [
-   "We lowered the volume so that the baby could sleep."
+   "We lowered the volume so that the baby could sleep.",
+   "We turned down the sound in order to let the baby sleep.",
+   "To allow the baby to get some sleep, we turned the volume down."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2879,7 +3261,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Mục đích"
+  "skillFocus": "Mục đích",
+  "targetTerm": "lowered the volume",
+  "meaningVi": "giảm âm lượng"
  },
  {
   "id": "esl-v2-r07-u03-014",
@@ -2888,7 +3272,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Sáng nay tôi đi chợ sớm để mua rau tươi.",
   "referenceAnswers": [
-   "I went to the market early this morning to buy fresh vegetables."
+   "I went to the market early this morning to buy fresh vegetables.",
+   "This morning, I visited the market early in order to purchase fresh vegetables.",
+   "To pick up some fresh veggies, I went to the market early this morning."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2924,7 +3310,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua cậu ấy mang theo bản đồ để tránh bị lạc.",
   "referenceAnswers": [
-   "He brought a map yesterday to avoid getting lost."
+   "He brought a map yesterday to avoid getting lost.",
+   "Yesterday, he took a map along with him so that he would not lose his way.",
+   "So he wouldn't get lost, he carried a map with him yesterday."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2960,7 +3348,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Hôm qua chúng tôi đánh dấu ngày thi vào lịch để không quên.",
   "referenceAnswers": [
-   "We marked the exam date on the calendar yesterday so that we wouldn't forget it."
+   "We marked the exam date on the calendar yesterday so that we wouldn't forget it.",
+   "Yesterday, we circled the test date on our calendar in order not to forget it.",
+   "To make sure we wouldn't forget, we highlighted the test date on the calendar yesterday."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -2996,7 +3386,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Hôm qua bạn tôi ghi lại câu hỏi để hỏi giáo viên sau giờ học.",
   "referenceAnswers": [
-   "My friend wrote down the question yesterday to ask the teacher after class."
+   "My friend wrote down the question yesterday to ask the teacher after class.",
+   "Yesterday, my friend noted down the question in order to ask the teacher after the lesson.",
+   "To ask the teacher once the lesson ended, my friend jotted down the question yesterday."
   ],
   "grammarTags": [
    "purpose_clauses",
@@ -3032,7 +3424,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Hôm qua tôi ở nhà vì trời mưa to.",
   "referenceAnswers": [
-   "I stayed home yesterday because it was raining heavily."
+   "I stayed home yesterday because it was raining heavily.",
+   "Yesterday, I remained indoors since it rained very hard.",
+   "Because of the heavy rain yesterday, I just stayed at home."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3068,7 +3462,9 @@
   "topic": "Thể thao & Giải trí",
   "promptVi": "Trời mưa to nên trận đấu đã bị hoãn.",
   "referenceAnswers": [
-   "It rained heavily, so the match was postponed."
+   "It rained heavily, so the match was postponed.",
+   "Because there was heavy rain, the game had to be delayed.",
+   "The game got put off due to the heavy rain."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3093,7 +3489,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "rained heavily",
+  "meaningVi": "mưa to"
  },
  {
   "id": "esl-v2-r07-u04-003",
@@ -3139,7 +3537,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Xe buýt đến muộn nên chúng tôi lỡ phần đầu buổi học.",
   "referenceAnswers": [
-   "The bus arrived late, so we missed the start of class."
+   "The bus arrived late, so we missed the start of class.",
+   "Because the bus was delayed, we missed the beginning of the lesson.",
+   "We missed the first part of our lesson since the bus showed up late."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3164,7 +3564,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "arrived late",
+  "meaningVi": "đến muộn"
  },
  {
   "id": "esl-v2-r07-u04-005",
@@ -3173,7 +3575,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi mang áo khoác vì dự báo nói trời sẽ lạnh.",
   "referenceAnswers": [
-   "I brought a jacket because the forecast said it would be cold."
+   "I brought a jacket because the forecast said it would be cold.",
+   "I took a coat with me since the weather forecast predicted cold weather.",
+   "As the weather report said it was going to be cold, I packed a jacket."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3209,7 +3613,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Vì mất điện, cửa hàng đã đóng sớm.",
   "referenceAnswers": [
-   "The shop closed early because the power was out."
+   "The shop closed early because the power was out.",
+   "Because there was a power cut, the store shut early.",
+   "There was no electricity, so the shop had to close up early."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3234,7 +3640,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "power was out",
+  "meaningVi": "mất điện"
  },
  {
   "id": "esl-v2-r07-u04-007",
@@ -3243,7 +3651,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Điện thoại tôi hết pin nên tôi không gọi được.",
   "referenceAnswers": [
-   "My phone ran out of battery, so I couldn't make a call."
+   "My phone ran out of battery, so I couldn't make a call.",
+   "Because my phone battery died, I was unable to call anyone.",
+   "I couldn't phone anyone since my mobile had a dead battery."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3268,7 +3678,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "make a call",
+  "meaningVi": "gọi điện"
  },
  {
   "id": "esl-v2-r07-u04-008",
@@ -3277,7 +3689,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua cô ấy nói rất rõ nên mọi người đều hiểu hướng dẫn.",
   "referenceAnswers": [
-   "She spoke clearly yesterday, so everyone understood the instructions."
+   "She spoke clearly yesterday, so everyone understood the instructions.",
+   "Because she spoke very clearly yesterday, everybody could follow the directions.",
+   "Everybody got the instructions yesterday since she talked so clearly."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3313,7 +3727,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Tôi đã chọn đi bộ vì nhà ga ở gần.",
   "referenceAnswers": [
-   "I chose to walk because the station was nearby."
+   "I chose to walk because the station was nearby.",
+   "I decided to go on foot since the train station was close by.",
+   "Because the station wasn't far away, I opted to walk there."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3338,7 +3754,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "chose to walk",
+  "meaningVi": "chọn đi bộ"
  },
  {
   "id": "esl-v2-r07-u04-010",
@@ -3347,7 +3765,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Đường đang được sửa nên chúng ta phải đi đường vòng.",
   "referenceAnswers": [
-   "The road is being repaired, so we have to take a detour."
+   "The road is being repaired, so we have to take a detour.",
+   "Because the street is under repair, we need to go a different way.",
+   "We've got to take another route since they're fixing the road right now."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3372,7 +3792,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "take a detour",
+  "meaningVi": "đi đường vòng"
  },
  {
   "id": "esl-v2-r07-u04-011",
@@ -3418,7 +3840,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tháng trước Bình luyện tập đều đặn nên anh ấy tiến bộ nhanh.",
   "referenceAnswers": [
-   "Binh practised regularly last month, so he improved quickly."
+   "Binh practised regularly last month, so he improved quickly.",
+   "Because Binh trained consistently last month, he made fast progress.",
+   "Binh got much better in a short time thanks to his regular practice last month."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3443,7 +3867,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "practised regularly",
+  "meaningVi": "luyện tập đều đặn"
  },
  {
   "id": "esl-v2-r07-u04-013",
@@ -3452,7 +3878,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Vì nhà hàng quá đông, chúng tôi phải đợi bàn.",
   "referenceAnswers": [
-   "We had to wait for a table because the restaurant was crowded."
+   "We had to wait for a table because the restaurant was crowded.",
+   "Since the restaurant was very busy, we needed to wait to be seated.",
+   "The restaurant was packed, so we had to queue up for a table."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3477,7 +3905,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "crowded",
+  "meaningVi": "đông đúc"
  },
  {
   "id": "esl-v2-r07-u04-014",
@@ -3549,7 +3979,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "drinking more water",
+  "meaningVi": "uống thêm nước"
  },
  {
   "id": "esl-v2-r07-u04-016",
@@ -3558,7 +3990,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cậu bé nghỉ một lát vì cậu ấy mệt sau khi chạy.",
   "referenceAnswers": [
-   "The boy took a short break because he was tired after running."
+   "The boy took a short break because he was tired after running.",
+   "The little boy rested for a moment as he felt exhausted after his run.",
+   "Feeling worn out from running, the boy stopped to rest for a bit."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3583,7 +4017,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Vì sao/vì vậy"
+  "skillFocus": "Vì sao/vì vậy",
+  "targetTerm": "short break",
+  "meaningVi": "quãng nghỉ ngắn"
  },
  {
   "id": "esl-v2-r07-u04-017",
@@ -3592,7 +4028,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Tối qua mọi người giữ im lặng nên em bé tiếp tục ngủ.",
   "referenceAnswers": [
-   "Everyone stayed quiet last night, so the baby kept sleeping."
+   "Everyone stayed quiet last night, so the baby kept sleeping.",
+   "Because everybody remained silent yesterday evening, the baby continued to sleep.",
+   "Nobody made any noise last night, so the baby carried on sleeping."
   ],
   "grammarTags": [
    "cause_and_effect",
@@ -3654,7 +4092,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a few apples",
+  "meaningVi": "vài quả táo"
  },
  {
   "id": "esl-v2-r07-u05-002",
@@ -3663,7 +4103,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Chúng tôi chỉ còn một ít sữa trong tủ lạnh.",
   "referenceAnswers": [
-   "We only have a little milk left in the fridge."
+   "We only have a little milk left in the fridge.",
+   "There is just a small amount of milk remaining in our refrigerator.",
+   "We've just got a bit of milk left in the fridge."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3699,7 +4141,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn có quả trứng nào ở nhà không?",
   "referenceAnswers": [
-   "Do you have any eggs at home?"
+   "Do you have any eggs at home?",
+   "Are there any eggs in your house?",
+   "Have you got any eggs at your place?"
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3724,7 +4168,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "at home",
+  "meaningVi": "ở nhà"
  },
  {
   "id": "esl-v2-r07-u05-004",
@@ -3733,7 +4179,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Trong bếp có vài củ cà rốt.",
   "referenceAnswers": [
-   "There are some carrots in the kitchen."
+   "There are some carrots in the kitchen.",
+   "There are a few carrots inside the kitchen.",
+   "In the kitchen, there are several carrots."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3832,7 +4280,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "meeting room",
+  "meaningVi": "phòng họp"
  },
  {
   "id": "esl-v2-r07-u05-007",
@@ -3841,7 +4291,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Cô ấy chỉ có một ít tiền mặt bên mình.",
   "referenceAnswers": [
-   "She has a little cash with her."
+   "She has a little cash with her.",
+   "She is carrying only a small amount of cash.",
+   "She's just got a bit of cash on her."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3866,7 +4318,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a little cash",
+  "meaningVi": "một ít tiền mặt"
  },
  {
   "id": "esl-v2-r07-u05-008",
@@ -3875,7 +4329,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Chúng ta cần thêm một ít gạo cho bữa tối.",
   "referenceAnswers": [
-   "We need some more rice for dinner."
+   "We need some more rice for dinner.",
+   "We require a little extra rice for the evening meal.",
+   "For dinner, we're going to need a bit more rice."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3911,7 +4367,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Có bao nhiêu học sinh trong lớp bạn?",
   "referenceAnswers": [
-   "How many students are there in your class?"
+   "How many students are there in your class?",
+   "What is the number of pupils in your class?",
+   "How many pupils does your class have?"
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3947,7 +4405,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Bạn uống bao nhiêu nước mỗi ngày?",
   "referenceAnswers": [
-   "How much water do you drink each day?"
+   "How much water do you drink each day?",
+   "What amount of water do you consume every day?",
+   "Every day, how much water do you have?"
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -3972,7 +4432,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "how much water",
+  "meaningVi": "bao nhiêu nước"
  },
  {
   "id": "esl-v2-r07-u05-011",
@@ -4007,7 +4469,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a few minutes",
+  "meaningVi": "vài phút"
  },
  {
   "id": "esl-v2-r07-u05-012",
@@ -4016,7 +4480,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Tôi cần một chút lời khuyên cho buổi phỏng vấn.",
   "referenceAnswers": [
-   "I need a little advice for the interview."
+   "I need a little advice for the interview.",
+   "I am in need of some guidance for the interview.",
+   "I could really use a few tips for the interview."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -4041,7 +4507,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a little advice",
+  "meaningVi": "một chút lời khuyên"
  },
  {
   "id": "esl-v2-r07-u05-013",
@@ -4087,7 +4555,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Có quá nhiều xe máy trên con đường này.",
   "referenceAnswers": [
-   "There are too many motorbikes on this road."
+   "There are too many motorbikes on this road.",
+   "This street has far too many motorcycles on it.",
+   "This road is packed with way too many motorcycles."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -4112,7 +4582,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "too many motorbikes",
+  "meaningVi": "quá nhiều xe máy"
  },
  {
   "id": "esl-v2-r07-u05-015",
@@ -4121,7 +4593,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Cô ấy thường thêm một ít đường vào trà.",
   "referenceAnswers": [
-   "She usually adds a little sugar to her tea."
+   "She usually adds a little sugar to her tea.",
+   "She normally puts a small amount of sugar into her tea.",
+   "Most of the time, she stirs a bit of sugar into her cup of tea."
   ],
   "grammarTags": [
    "quantifiers_countability",
@@ -4146,7 +4620,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a little sugar",
+  "meaningVi": "một ít đường"
  },
  {
   "id": "esl-v2-r07-u05-016",
@@ -4181,7 +4657,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Lượng từ"
+  "skillFocus": "Lượng từ",
+  "targetTerm": "a few friends",
+  "meaningVi": "vài người bạn"
  },
  {
   "id": "esl-v2-r07-u06-001",
@@ -4190,7 +4668,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi pha trà và anh trai tôi chuẩn bị bữa sáng mỗi sáng.",
   "referenceAnswers": [
-   "I make tea, and my older brother prepares breakfast every morning."
+   "I make tea, and my older brother prepares breakfast every morning.",
+   "Every morning, I brew the tea while my elder brother makes breakfast.",
+   "Each morning, my big brother gets breakfast ready, and I make the tea."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4226,7 +4706,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Tôi muốn đi dạo nhưng trời đang mưa.",
   "referenceAnswers": [
-   "I want to go for a walk, but it's raining."
+   "I want to go for a walk, but it's raining.",
+   "I would like to take a walk; however, it is raining right now.",
+   "Even though I feel like going for a stroll, it's raining outside."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4251,7 +4733,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "it's raining",
+  "meaningVi": "trời đang mưa"
  },
  {
   "id": "esl-v2-r07-u06-003",
@@ -4260,7 +4744,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Sáng qua xe buýt đến muộn nên chúng tôi bắt đầu cuộc họp muộn.",
   "referenceAnswers": [
-   "The bus arrived late yesterday morning, so we started the meeting late."
+   "The bus arrived late yesterday morning, so we started the meeting late.",
+   "Because the bus was delayed yesterday morning, our meeting began behind schedule.",
+   "Yesterday morning, we had to start the meeting late since the bus didn't show up on time."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4296,7 +4782,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Hôm qua tôi ở nhà vì tôi phải hoàn thành báo cáo.",
   "referenceAnswers": [
-   "I stayed home yesterday because I had to finish the report."
+   "I stayed home yesterday because I had to finish the report.",
+   "Yesterday, I remained at home since I needed to complete my report.",
+   "I had to get the report done yesterday, so I stayed in."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4332,7 +4820,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Tôi thích cà phê nhưng em gái tôi thích trà hơn.",
   "referenceAnswers": [
-   "I like coffee, but my younger sister prefers tea."
+   "I like coffee, but my younger sister prefers tea.",
+   "I enjoy drinking coffee, whereas my little sister likes tea better.",
+   "While I'm a fan of coffee, my younger sister is more into tea."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4357,7 +4847,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "prefers tea",
+  "meaningVi": "thích trà hơn"
  },
  {
   "id": "esl-v2-r07-u06-006",
@@ -4366,7 +4858,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Hôm qua chúng tôi mua bánh mì và mẹ tôi nấu súp.",
   "referenceAnswers": [
-   "We bought bread, and my mother made soup yesterday."
+   "We bought bread, and my mother made soup yesterday.",
+   "Yesterday, we purchased some bread while my mum cooked soup.",
+   "My mom prepared some soup yesterday, and we picked up the bread."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4402,7 +4896,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Hôm nay trời nắng nên chúng tôi đang ăn trưa ngoài sân.",
   "referenceAnswers": [
-   "It's sunny today, so we're having lunch in the yard."
+   "It's sunny today, so we're having lunch in the yard.",
+   "Because the weather is bright and sunny today, we are eating lunch out in the yard.",
+   "We're enjoying lunch in the yard right now since it's such a sunny day."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4427,7 +4923,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "having lunch",
+  "meaningVi": "đang ăn trưa"
  },
  {
   "id": "esl-v2-r07-u06-008",
@@ -4462,7 +4960,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "listens to music",
+  "meaningVi": "nghe nhạc"
  },
  {
   "id": "esl-v2-r07-u06-009",
@@ -4471,7 +4971,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Sáng qua chúng tôi đi bộ đến trường vì xe đạp bị hỏng.",
   "referenceAnswers": [
-   "We walked to school yesterday morning because our bicycle was broken."
+   "We walked to school yesterday morning because our bicycle was broken.",
+   "Yesterday morning, we went to school on foot since our bike was out of order.",
+   "Our bike broke down, so we had to walk to school yesterday morning."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4507,7 +5009,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Trời lạnh nhưng bọn trẻ vẫn đang chơi ngoài sân.",
   "referenceAnswers": [
-   "It's cold, but the children are still playing outside."
+   "It's cold, but the children are still playing outside.",
+   "Although the weather is chilly, the kids are still playing in the yard.",
+   "The kids are still out in the yard playing despite the cold weather."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4569,7 +5073,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "understand the question",
+  "meaningVi": "hiểu câu hỏi"
  },
  {
   "id": "esl-v2-r07-u06-012",
@@ -4578,7 +5084,9 @@
   "topic": "Ẩm thực & Dinh dưỡng",
   "promptVi": "Hôm qua Lan làm bài tập và bố cô ấy nấu bữa tối.",
   "referenceAnswers": [
-   "Lan did her homework, and her father cooked dinner yesterday."
+   "Lan did her homework, and her father cooked dinner yesterday.",
+   "Yesterday, Lan worked on her schoolwork while her dad prepared the evening meal.",
+   "Yesterday, Lan finished her homework, and her dad made dinner."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4640,7 +5148,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "bottle of water",
+  "meaningVi": "chai nước"
  },
  {
   "id": "esl-v2-r07-u06-014",
@@ -4649,7 +5159,9 @@
   "topic": "Văn hóa & Du lịch",
   "promptVi": "Minh muốn xem phim nhưng tối nay cậu ấy phải học.",
   "referenceAnswers": [
-   "Minh wants to watch a film, but he has to study tonight."
+   "Minh wants to watch a film, but he has to study tonight.",
+   "Minh would like to see a movie; however, he needs to do his studying this evening.",
+   "Even though Minh feels like watching a movie, he's got to study tonight."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4685,7 +5197,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Sáng nay tôi uống nước rồi tiếp tục chạy.",
   "referenceAnswers": [
-   "I drank some water, and then I continued running this morning."
+   "I drank some water, and then I continued running this morning.",
+   "This morning, I had a drink of water before carrying on with my run.",
+   "After drinking a bit of water this morning, I kept on running."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4721,7 +5235,9 @@
   "topic": "Gia đình & Đời sống",
   "promptVi": "Họ rất mệt nên đã về nhà sớm.",
   "referenceAnswers": [
-   "They were very tired, so they went home early."
+   "They were very tired, so they went home early.",
+   "Because they felt exhausted, they returned home early.",
+   "They headed home early since they were completely worn out."
   ],
   "grammarTags": [
    "basic_cohesion",
@@ -4746,6 +5262,8 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Kết nối hai ý"
+  "skillFocus": "Kết nối hai ý",
+  "targetTerm": "went home early",
+  "meaningVi": "về nhà sớm"
  }
 ]

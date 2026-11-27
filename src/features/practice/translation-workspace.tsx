@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown, ArrowRight, BookmarkCheck, BookmarkPlus, Check, ChevronDown, ChevronUp,
-  CircleCheck, Flame, Flag, Layers, Puzzle, RotateCcw, Sparkles, Tags, Volume2, Zap, PenLine,
+  CircleCheck, Compass, Flame, Flag, Layers, Lightbulb, Plus, Puzzle, RotateCcw, Sparkles, Tags, Volume2, Zap, PenLine,
 } from "lucide-react";
 import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
@@ -15,7 +15,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { bandIndex, levelRubric, loadBand, reviewKey, type BandExercise } from "@/lib/translation/band-practice";
 import { buildChunkPuzzle, splitParagraphSteps } from "@/lib/translation/chunk-builder";
 import { evaluateExpression, compareWords } from "@/lib/translation/compare-words";
-import { hintLadder } from "@/lib/translation/hint-ladder";
+import { buildPhraseHints, buildSentenceBlueprint } from "@/lib/translation/phrase-hints";
 import type { CoachFeedback } from "@/app/api/practice/translation-coach/route";
 import { TranslationModeLink } from "./translation-mode-link";
 import "./translation-workspace.css";
@@ -63,10 +63,6 @@ function firstPhase(item: BandExercise | undefined, mode: PracticeMode): Phase {
 }
 
 const allKeys = bandIndex.flatMap((summary) => summary.keys);
-
-function hintsFor(item?: BandExercise) {
-  return item ? hintLadder(item) : [];
-}
 
 function interleavePatterns(items: BandExercise[]) {
   const groups = new Map<string, BandExercise[]>();
@@ -120,7 +116,9 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
   const [paraIndex, setParaIndex] = useState(0);
   const [paraDrafts, setParaDrafts] = useState<string[]>([]);
 
-  const [hintStep, setHintStep] = useState(0);
+  // Tap-on-phrase lexical rescue & 1-click grammar blueprint state
+  const [revealedChipIds, setRevealedChipIds] = useState<string[]>([]);
+  const [showBlueprint, setShowBlueprint] = useState(false);
   const [showExactDiff, setShowExactDiff] = useState(false);
   const [savedIds, setSavedIds] = useState<Record<string, boolean>>({});
   const [coachState, setCoachState] = useState<{ loading: boolean; feedback?: CoachFeedback; error?: string } | null>(null);
@@ -137,6 +135,7 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
 
   const doneCardRef = useRef<HTMLDivElement>(null);
   const sessionRef = useRef<HTMLElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   async function lookUpSynonyms(raw: string) {
     const word = raw.match(/[A-Za-z][A-Za-z'-]*/)?.[0]?.toLowerCase();
@@ -240,7 +239,8 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
     setChunkFeedback("");
     setParaIndex(0);
     setParaDrafts([]);
-    setHintStep(0);
+    setRevealedChipIds([]);
+    setShowBlueprint(false);
     setShowExactDiff(false);
     setCoachState(null);
     setSynonym(null);
@@ -379,6 +379,8 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
       if (paraIndex + 1 < paragraphSteps.length) {
         setParaIndex(paraIndex + 1);
         setTranslation(updated[paraIndex + 1] ?? "");
+        setRevealedChipIds([]);
+        setShowBlueprint(false);
         setShortWarning(false);
         return;
       }
@@ -568,28 +570,72 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
     setCoachState(null);
   }
 
-  function nextHint() {
-    const total = hintsFor(current).length;
-    setHintStep((step) => (step < total ? step + 1 : 0));
+  const isParaStepMode = Boolean(current?.type === "paragraph" && stepByStepParagraph && paragraphSteps);
+
+  const activePhraseChips = current
+    ? buildPhraseHints(
+        current,
+        isParaStepMode && paragraphSteps?.[paraIndex]
+          ? {
+              promptVi: paragraphSteps[paraIndex].promptVi,
+              answerEn: paragraphSteps[paraIndex].answerEn,
+              suffix: `-s${paraIndex}`,
+            }
+          : undefined,
+      )
+    : [];
+
+  const activeBlueprint = current
+    ? buildSentenceBlueprint(
+        current,
+        isParaStepMode && paragraphSteps?.[paraIndex] ? paragraphSteps[paraIndex].answerEn : undefined,
+      )
+    : null;
+
+  function togglePhraseRescue(chipId: string) {
+    setRevealedChipIds((prev) =>
+      prev.includes(chipId) ? prev.filter((id) => id !== chipId) : [...prev, chipId],
+    );
   }
 
-  const keys = useRef({ rate, start, phase, finished, current, nextHint, effectiveMode, chunkPuzzle, toggleTile });
+  function revealNextPhrase() {
+    const nextUnrevealed = activePhraseChips.find((chip) => !revealedChipIds.includes(chip.id));
+    if (nextUnrevealed) {
+      setRevealedChipIds((prev) => [...prev, nextUnrevealed.id]);
+    } else {
+      setRevealedChipIds([]);
+    }
+  }
+
+  function insertChunkIntoDraft(enChunk: string) {
+    setTranslation((prev) => {
+      const base = prev.trimEnd();
+      if (!base) return enChunk;
+      return `${base} ${enChunk}`;
+    });
+    setShortWarning(false);
+    window.setTimeout(() => {
+      const el = textareaRef.current;
+      if (el) {
+        el.focus();
+        el.setSelectionRange(el.value.length, el.value.length);
+      }
+    }, 10);
+  }
+
+  const keys = useRef({ rate, start, phase, finished, current, effectiveMode, chunkPuzzle, toggleTile });
   useEffect(() => {
-    keys.current = { rate, start, phase, finished, current, nextHint, effectiveMode, chunkPuzzle, toggleTile };
+    keys.current = { rate, start, phase, finished, current, effectiveMode, chunkPuzzle, toggleTile };
   });
   useEffect(() => {
     if (!inSession) return;
     function onKey(event: KeyboardEvent) {
-      const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, nextHint: openHint, effectiveMode: modeNow, chunkPuzzle: puzzle, toggleTile: pick } = keys.current;
+      const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, effectiveMode: modeNow, chunkPuzzle: puzzle, toggleTile: pick } = keys.current;
       if (event.altKey && !event.ctrlKey && !event.metaKey) {
         const key = event.key.toLowerCase();
         if (key === "n" && item) {
           event.preventDefault();
           speak(phaseNow === "review" ? item.referenceAnswers[0] : (item.targetTerm ?? item.referenceAnswers[0]));
-        }
-        if (key === "g" && phaseNow === "translate" && hintsFor(item).length) {
-          event.preventDefault();
-          openHint();
         }
         return;
       }
@@ -998,58 +1044,158 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
                 <div className="practice-stage">
                   <div className="xp-prompt-head">
                     <span className="practice-stage-label">
-                      {current.type === "paragraph" && stepByStepParagraph && paragraphSteps
-                        ? `Viết từng câu (${paraIndex + 1}/${paragraphSteps.length}) để ghép thành đoạn văn học thuật`
-                        : `Diễn đạt ${current.type === "word" ? "từ" : current.type === "phrase" ? "cụm từ" : current.type === "paragraph" ? "đoạn văn" : "câu"} này bằng tiếng Anh`}
+                      {isParaStepMode && paragraphSteps
+                        ? `Viết từng câu (${paraIndex + 1}/${paragraphSteps.length}) · Chạm vào cụm tiếng Việt bất kỳ nếu quên từ`
+                        : current.type === "word"
+                          ? "Diễn đạt từ này bằng tiếng Anh"
+                          : "Chạm trực tiếp vào cụm tiếng Việt bị quên bên dưới để mở đúng từ đó"}
                     </span>
                     {current.targetTerm && (
-                      <button type="button" className="xp-inline-term" onClick={() => speak(current.targetTerm ?? "")} title="Nghe từ khóa (Alt+N)">
-                        <Volume2 size={14} /> Từ gợi mở: <b>{current.targetTerm}</b> {current.meaningVi ? `· ${current.meaningVi}` : ""}
-                      </button>
+                      <div className="xp-inline-term-group">
+                        <button type="button" className="xp-inline-term" onClick={() => speak(current.targetTerm ?? "")} title="Bấm để nghe phát âm">
+                          <Volume2 size={14} /> Từ trọng tâm: <b>{current.targetTerm}</b> {current.meaningVi ? `· ${current.meaningVi}` : ""}
+                        </button>
+                        <button
+                          type="button"
+                          className="xp-insert-mini"
+                          onClick={() => insertChunkIntoDraft(current.targetTerm ?? "")}
+                          title="Chèn từ trọng tâm vào câu đang viết"
+                        >
+                          <Plus size={12} /> Chèn
+                        </button>
+                      </div>
                     )}
                   </div>
 
-                  {current.type === "paragraph" && stepByStepParagraph && paragraphSteps ? (
-                    <div className="xp-para-studio">
-                      <div className="xp-para-steps">
-                        {paragraphSteps.map((step) => (
-                          <button
-                            key={step.index}
-                            type="button"
-                            className={`xp-para-pill ${step.index === paraIndex ? "active" : paraDrafts[step.index] ? "done" : ""}`}
-                            onClick={() => {
-                              const nextDrafts = [...paraDrafts];
-                              if (translation.trim()) nextDrafts[paraIndex] = translation.trim();
-                              setParaDrafts(nextDrafts);
-                              setParaIndex(step.index);
-                              setTranslation(nextDrafts[step.index] ?? "");
-                            }}
-                          >
-                            Câu {step.index + 1} {paraDrafts[step.index] ? "✓" : ""}
-                          </button>
+                  {isParaStepMode && paragraphSteps && (
+                    <div className="xp-para-steps">
+                      {paragraphSteps.map((step) => (
+                        <button
+                          key={step.index}
+                          type="button"
+                          className={`xp-para-pill ${step.index === paraIndex ? "active" : paraDrafts[step.index] ? "done" : ""}`}
+                          onClick={() => {
+                            const nextDrafts = [...paraDrafts];
+                            if (translation.trim()) nextDrafts[paraIndex] = translation.trim();
+                            setParaDrafts(nextDrafts);
+                            setParaIndex(step.index);
+                            setTranslation(nextDrafts[step.index] ?? "");
+                            setRevealedChipIds([]);
+                            setShowBlueprint(false);
+                          }}
+                        >
+                          Câu {step.index + 1} {paraDrafts[step.index] ? "✓" : ""}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  <blockquote lang="vi" className="xp-interactive-prompt">
+                    {current.type === "word" ? (
+                      current.promptVi
+                    ) : (
+                      activePhraseChips.map((chip, idx) => {
+                        const unlocked = revealedChipIds.includes(chip.id);
+                        return (
+                          <span key={chip.id}>
+                            {idx > 0 ? " " : ""}
+                            <button
+                              type="button"
+                              className={`xp-vi-segment ${unlocked ? "is-revealed" : ""}`}
+                              onClick={() => togglePhraseRescue(chip.id)}
+                              title={unlocked ? "Bấm để ẩn gợi mở cụm này" : "Quên cụm này? Bấm để xem từ tiếng Anh tương ứng"}
+                            >
+                              {chip.vi}
+                            </button>
+                          </span>
+                        );
+                      })
+                    )}
+                  </blockquote>
+
+                  {revealedChipIds.length > 0 && (
+                    <div className="xp-rescue-tray" role="region" aria-label="Từ vựng cứu trợ theo cụm">
+                      {activePhraseChips
+                        .filter((chip) => revealedChipIds.includes(chip.id))
+                        .map((chip) => (
+                          <div key={chip.id} className="xp-rescue-card">
+                            <span className="xp-rescue-vi">{chip.vi}</span>
+                            <ArrowRight size={13} aria-hidden="true" />
+                            <strong className="xp-rescue-en" lang="en">{chip.en}</strong>
+                            <button
+                              type="button"
+                              className="xp-icon-btn"
+                              onClick={() => speak(chip.en)}
+                              title={`Nghe "${chip.en}"`}
+                              aria-label={`Nghe ${chip.en}`}
+                            >
+                              <Volume2 size={13} />
+                            </button>
+                            <button
+                              type="button"
+                              className="xp-insert-mini"
+                              onClick={() => insertChunkIntoDraft(chip.en)}
+                              title="Chèn cụm này vào ô câu tiếng Anh của bạn"
+                            >
+                              <Plus size={12} /> Chèn vào câu
+                            </button>
+                          </div>
                         ))}
-                      </div>
-                      <blockquote lang="vi">{paragraphSteps[paraIndex].promptVi}</blockquote>
-                      {paraDrafts.some(Boolean) && (
-                        <div className="xp-para-assembled">
-                          <small>Đoạn văn đang thành hình của bạn:</small>
-                          <p lang="en">{paragraphSteps.map((_, idx) => (idx === paraIndex ? translation || "…" : paraDrafts[idx] || "…")).join(" ")}</p>
+                    </div>
+                  )}
+
+                  {isParaStepMode && paragraphSteps && paraDrafts.some(Boolean) && (
+                    <div className="xp-para-assembled">
+                      <small>Đoạn văn đang thành hình của bạn:</small>
+                      <p lang="en">{paragraphSteps.map((_, idx) => (idx === paraIndex ? translation || "…" : paraDrafts[idx] || "…")).join(" ")}</p>
+                    </div>
+                  )}
+
+                  <div className="practice-field">
+                    <div className="xp-field-head">
+                      <label htmlFor="xp-answer-input">
+                        {isParaStepMode && paragraphSteps
+                          ? `Câu tiếng Anh số ${paraIndex + 1} của bạn`
+                          : "Câu tiếng Anh của bạn"}
+                      </label>
+                      {current.type !== "word" && (
+                        <div className="xp-assist-pills">
+                          <button
+                            type="button"
+                            className={`xp-assist-btn ${revealedChipIds.length > 0 ? "is-active" : ""}`}
+                            onClick={revealNextPhrase}
+                            title="Mở gợi ý từng cụm từ vựng (hoặc bấm Ctrl+Space khi đang gõ)"
+                          >
+                            <Lightbulb size={13} />
+                            {revealedChipIds.length === 0
+                              ? "Mở 1 cụm từ bí"
+                              : revealedChipIds.length < activePhraseChips.length
+                                ? `Mở thêm cụm (${revealedChipIds.length}/${activePhraseChips.length})`
+                                : "Ẩn các cụm từ"}
+                          </button>
+                          <button
+                            type="button"
+                            className={`xp-assist-btn ${showBlueprint ? "is-active" : ""}`}
+                            onClick={() => setShowBlueprint((v) => !v)}
+                            title="Xem sơ đồ công thức ngữ pháp để tự ráp câu"
+                          >
+                            <Compass size={13} /> {showBlueprint ? "Ẩn công thức câu" : "Công thức câu"}
+                          </button>
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <blockquote lang="vi">{current.promptVi}</blockquote>
-                  )}
-
-                  <label className="practice-field">
-                    {current.type === "paragraph" && stepByStepParagraph && paragraphSteps
-                      ? `Câu tiếng Anh số ${paraIndex + 1} của bạn`
-                      : "Câu tiếng Anh của bạn"}
                     <textarea
+                      id="xp-answer-input"
+                      ref={textareaRef}
                       lang="en"
                       value={translation}
                       onChange={(event) => { setTranslation(event.target.value); setShortWarning(false); }}
                       onKeyDown={(event) => {
+                        if (event.ctrlKey && event.code === "Space") {
+                          event.preventDefault();
+                          revealNextPhrase();
+                          return;
+                        }
                         if (event.key !== "Enter" || event.shiftKey || event.nativeEvent.isComposing) return;
                         event.preventDefault();
                         if (translation.trim()) submitFreeTranslation();
@@ -1058,40 +1204,37 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
                       maxLength={2000}
                       autoFocus
                       spellCheck={false}
-                      placeholder="Nghĩ ý chính và viết tự nhiên bằng tiếng Anh…"
+                      placeholder="Nghĩ ý chính và viết tự nhiên bằng tiếng Anh… (bí từ nào bấm thẳng vào cụm tiếng Việt ở trên)"
                     />
-                  </label>
+                  </div>
+
+                  {showBlueprint && activeBlueprint && (
+                    <div className="xp-blueprint-card" role="region" aria-label="Công thức dựng câu">
+                      <div>
+                        <span className="xp-blueprint-label">🧭 Sơ đồ dựng câu</span>
+                        <p className="xp-blueprint-formula">{activeBlueprint.formula}</p>
+                      </div>
+                      <div>
+                        <span className="xp-blueprint-label">📌 Lưu ý ngữ pháp</span>
+                        <p className="xp-blueprint-tip">{activeBlueprint.grammarTip}</p>
+                      </div>
+                    </div>
+                  )}
 
                   {shortWarning && (
                     <p className="xp-soft-warning" role="status">
-                      Câu bạn gõ còn khá ngắn so với ý gốc. Hãy thử viết trọn câu (hoặc chuyển sang <b>Ghép cụm</b> nếu đang bí từ), hoặc bấm <b>Xem câu mẫu</b> lần nữa để đối chiếu ngay!
+                      Câu bạn gõ còn khá ngắn so với ý gốc. Hãy chạm vào cụm tiếng Việt đang bí để xem từ gợi mở (hoặc chuyển sang <b>Ghép cụm</b>), hay bấm <b>Đối chiếu câu mẫu</b> lần nữa để xem đáp án ngay!
                     </p>
                   )}
 
                   <div className="practice-actions">
                     <button className="practice-primary" type="button" disabled={!translation.trim()} onClick={submitFreeTranslation}>
-                      {current.type === "paragraph" && stepByStepParagraph && paragraphSteps && paraIndex + 1 < paragraphSteps.length
+                      {isParaStepMode && paragraphSteps && paraIndex + 1 < paragraphSteps.length
                         ? <>Sang câu {paraIndex + 2}/{paragraphSteps.length} <ArrowRight size={17} /><kbd>Enter</kbd></>
                         : <>Đối chiếu câu mẫu <kbd>Enter</kbd></>}
                     </button>
-                    {hintsFor(current).length > 0 && (
-                      <button className="practice-hint-toggle" type="button" onClick={nextHint}>
-                        {hintStep === 0 ? "Mở gợi ý" : hintStep < hintsFor(current).length ? `Gợi ý tiếp (${hintStep}/${hintsFor(current).length})` : "Ẩn gợi ý"} <kbd>Alt+G</kbd>
-                      </button>
-                    )}
-                    <small className="xp-key-note">Shift+Enter để xuống dòng</small>
+                    <small className="xp-key-note">Mẹo: Chạm cụm tiếng Việt hoặc bấm Ctrl+Space nếu bí từ · Shift+Enter để xuống dòng</small>
                   </div>
-
-                  {hintStep > 0 && (
-                    <ol className="practice-hint xp-hints" aria-live="polite">
-                      {hintsFor(current).slice(0, hintStep).map((hint) => (
-                        <li key={hint.kind} className={`is-${hint.kind}`}>
-                          <span className="xp-hint-label">{hint.label}</span>
-                          <span className="xp-hint-text" lang={hint.lang}>{hint.text}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  )}
                 </div>
               ) : (() => {
                 const evaluation = evaluateExpression(translation, current.referenceAnswers, current.commonErrors);

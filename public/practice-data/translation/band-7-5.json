@@ -65,9 +65,11 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "standardised testing",
   "meaningVi": "kiểm tra chuẩn hóa",
-  "promptVi": "Việc quá phụ thuộc vào các kỳ thi chuẩn hóa có thể khiến trường học xem nhẹ sự sáng tạo và năng lực hợp tác. Điểm thi giúp so sánh kết quả giữa các trường, nhưng chỉ phản ánh một phần việc học. Đánh giá chất lượng nên bổ sung bài tập dự án và phản hồi của giáo viên, đồng thời thừa nhận rằng các thước đo này cũng có giới hạn.",
+  "promptVi": "Nếu quá lệ thuộc vào các kỳ thi chuẩn hóa, nhà trường có thể xem nhẹ khả năng sáng tạo và tinh thần hợp tác. Điểm thi cho phép đối chiếu kết quả giữa các trường, nhưng chỉ phản ánh được một phần quá trình học tập. Công tác đánh giá nên kết hợp thêm bài tập dự án và nhận xét của giáo viên, đồng thời thừa nhận rằng chính những thước đo này cũng có giới hạn riêng.",
   "referenceAnswers": [
-   "Overreliance on standardised testing may cause schools to neglect creativity and collaboration. Test scores allow comparisons between schools, but capture only part of learning. Evaluation should also include project work and teacher feedback, while recognising that these measures have limitations too."
+   "Overreliance on standardised testing may cause schools to neglect creativity and collaboration. Test scores allow comparisons between schools, but capture only part of learning. Evaluation should also include project work and teacher feedback, while recognising that these measures have limitations too.",
+   "Excessive reliance on standardized exams can lead schools to overlook creativity and collaborative skills. Exam results enable cross-school comparisons, yet capture merely a fraction of student learning. Quality assessments should incorporate project assignments and teacher evaluations, while acknowledging these tools carry their own constraints.",
+   "Placing too much weight on uniform tests often pushes schools to sideline creative thinking and teamwork. Although test scores offer a handy yardstick between institutions, they reflect only a narrow slice of what pupils learn. Comprehensive evaluation ought to blend project work with teacher feedback, bearing in mind that those methods aren't flawless either."
   ],
   "grammarTags": [
    "overreliance"
@@ -153,7 +155,9 @@
   "meaningVi": "chuẩn hóa việc làm linh hoạt",
   "promptVi": "Cho phép nhân viên chọn giờ làm việc có thể giảm tỷ lệ nghỉ việc ở các doanh nghiệp dịch vụ. Mặc dù hình thức này tạo điều kiện cho người có con nhỏ, nhân sự mới tuyển dụng lại dễ mất cơ hội học hỏi trực tiếp từ đồng nghiệp giàu kinh nghiệm. Việc chuẩn hóa việc làm linh hoạt vì thế cần đi kèm lịch trực tiếp cố định để bảo vệ việc trao đổi tri thức.",
   "referenceAnswers": [
-   "Allowing staff to choose their working hours can reduce turnover in service firms. While this arrangement accommodates parents with young children, newly recruited personnel are prone to missing out on direct mentorship from experienced colleagues. Efforts to standardise flexible working must therefore be paired with fixed on-site hours to preserve knowledge transfer across teams."
+   "Allowing staff to choose their working hours can reduce turnover in service firms. While this arrangement accommodates parents with young children, newly recruited personnel are prone to missing out on direct mentorship from experienced colleagues. Efforts to standardise flexible working must therefore be paired with fixed on-site hours to preserve knowledge transfer across teams.",
+   "Letting employees choose their work schedules can lower staff attrition in service companies. Although this setup helps parents with young kids, newly hired staff can easily lose chances to learn firsthand from seasoned peers. Standardizing flexible work must therefore include fixed on-site overlap hours to safeguard knowledge sharing.",
+   "Giving workers control over their timetables can curb staff turnover across service industries. While working parents benefit greatly, junior recruits risk missing out on informal guidance from veteran colleagues. Consequently, formalizing flexible arrangements requires designated in-office hours so workplace knowledge continues to pass down."
   ],
   "grammarTags": [
    "Rebuttal and multi-stakeholder impact"
@@ -189,7 +193,13 @@
   ],
   "explanationVi": "Đoạn văn đánh giá hiệu quả môi trường của phí ùn tắc, đối chiếu với tác động tài chính lên người lao động thu nhập thấp, và đề xuất giải pháp cân bằng nguồn lực.",
   "rationaleVi": "Phù hợp tiêu chí 7.5 khi cân bằng giữa mục tiêu sinh thái và tác động xã hội phân tầng, sử dụng cấu trúc điều kiện chặt chẽ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Nevertheless, this flat fee imposes a substantial financial burden on low-income workers who obliged to commute by private transport.",
+    "correction": "Nevertheless, this flat fee imposes a substantial financial burden on low-income workers who are obliged to commute by private transport.",
+    "reasonVi": "Cụm 'bắt buộc phải làm gì' với 'oblige' luôn chia ở dạng bị động là 'be obliged to V', nên không được thiếu động từ 'are' ('who are obliged to commute')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -212,7 +222,13 @@
   ],
   "explanationVi": "Nêu mặt tích cực về kinh tế của du lịch, phản biện bằng thiệt hại sinh thái, rồi dùng yêu cầu tiêu chuẩn để đề xuất trách nhiệm tài chính cho doanh nghiệp.",
   "rationaleVi": "Cấu trúc lập luận 7.5 phân tích rõ hệ quả đối với cả cộng đồng bản địa lẫn môi trường tự nhiên mà không dùng từ thừa.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Even so, rapid increasing visitor numbers threaten delicate coral reefs and local freshwater supplies.",
+    "correction": "Even so, rapidly increasing visitor numbers threaten delicate coral reefs and local freshwater supplies.",
+    "reasonVi": "Để bổ nghĩa cho phân từ 'increasing' (đang gia tăng nhanh như thế nào), ta phải dùng trạng từ 'rapidly' thay vì tính từ 'rapid'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -225,9 +241,11 @@
   "topic": "Sức khỏe & Y tế",
   "targetTerm": "front-of-pack nutritional labelling",
   "meaningVi": "nhãn dinh dưỡng mặt trước bao bì",
-  "promptVi": "Việc bắt buộc in nhãn dinh dưỡng mặt trước bao bì giúp người mua dễ dàng nhận biết thực phẩm chế biến sẵn chứa quá nhiều đường. Mặc dù người tiêu dùng có học vấn cao nhanh chóng điều chỉnh thói quen mua sắm, các gia đình thu nhập thấp vẫn bị buộc phải chọn đồ ăn rẻ do hạn chế ngân sách. Do đó, minh bạch thông tin phải đi đôi với chính sách trợ giá thực phẩm tươi sống để thực sự cải thiện sức khỏe cộng đồng.",
+  "promptVi": "Quy định bắt buộc in nhãn dinh dưỡng ở mặt trước bao bì giúp người mua nhận diện ngay các loại thực phẩm chế biến sẵn chứa quá nhiều đường. Mặc dù nhóm người tiêu dùng có học vấn cao nhanh chóng điều chỉnh lựa chọn mua sắm, các hộ gia đình thu nhập thấp vẫn thường phải gắn bó với những mặt hàng giá rẻ vì ngân sách eo hẹp. Do đó, minh bạch thông tin phải đi đôi với chính sách trợ giá nông sản tươi sống để thực sự cải thiện sức khỏe cộng đồng.",
   "referenceAnswers": [
-   "Mandating front-of-pack nutritional labelling enables shoppers to identify processed foods containing excessive sugar at a glance. Although highly educated consumers swiftly alter their purchasing choices, lower-income households often remain bound to cheaper options by strict budget constraints. Consequently, information transparency must be coupled with fresh produce subsidies to truly improve public health."
+   "Mandating front-of-pack nutritional labelling enables shoppers to identify processed foods containing excessive sugar at a glance. Although highly educated consumers swiftly alter their purchasing choices, lower-income households often remain bound to cheaper options by strict budget constraints. Consequently, information transparency must be coupled with fresh produce subsidies to truly improve public health.",
+   "Requiring front-of-pack nutrition labels helps shoppers easily spot processed foods packed with excess sugar. While well-educated buyers rapidly adjust their shopping habits, low-income families are still forced toward cheap foods due to tight budgets. Therefore, clear labelling must be paired with subsidies on fresh produce to genuinely boost public health.",
+   "Mandatory nutrition summaries on the front of packaging make high-sugar processed items immediately obvious to consumers. Educated shoppers may pivot quickly to healthier picks, yet tighter finances still lock poorer households into buying cheaper fare. To make real strides in public health, transparent labelling has to go hand in hand with price support for fresh produce."
   ],
   "grammarTags": [
    "Consumer behaviour limitation and intervention design"
@@ -284,7 +302,9 @@
   "meaningVi": "cam kết giá điện trả ngược vào lưới",
   "promptVi": "Ví dụ, nếu các chính sách cam kết giá điện trả ngược vào lưới thúc đẩy nhiều hộ gia đình lắp đặt pin mặt trời trên mái nhà, tỷ trọng năng lượng sạch có thể tăng nhanh chóng. Mặc dù vậy, chi phí nâng cấp lưới điện lại bị đẩy sang cho những hộ không có khả năng tự sản xuất điện. Việc điều chỉnh định kỳ các mức giá trợ cấp là cần thiết để tránh gây thiệt hại cho người thuê nhà và các gia đình thu nhập thấp.",
   "referenceAnswers": [
-   "For example, if feed-in tariff guarantees incentivise numerous homeowners to install rooftop solar panels, the share of clean energy can rise rapidly. Nevertheless, grid upgrade costs may fall heavily on households unable to generate their own electricity. Periodic adjustments to these subsidy rates are essential to prevent low-income families and tenants from facing unfair economic burdens."
+   "For example, if feed-in tariff guarantees incentivise numerous homeowners to install rooftop solar panels, the share of clean energy can rise rapidly. Nevertheless, grid upgrade costs may fall heavily on households unable to generate their own electricity. Periodic adjustments to these subsidy rates are essential to prevent low-income families and tenants from facing unfair economic burdens.",
+   "For instance, if guaranteed feed-in tariffs encourage many households to install rooftop solar panels, clean energy's share can climb rapidly. Even so, grid upgrade expenses end up shifted onto households unable to generate their own power. Regularly adjusting subsidy rates is vital to avoid penalizing renters and low-income families.",
+   "Take feed-in tariff guarantees: if they prompt widespread rooftop solar installations, renewable energy's share of supply can surge quickly. The catch is that upgrading the power grid imposes costs on households that cannot produce their own electricity. Periodic reviews of subsidy levels are therefore crucial so tenants and low-income residents aren't left footing an unfair bill."
   ],
   "grammarTags": [
    "Infrastructure transition and multi-group economic burden"
@@ -312,7 +332,9 @@
   "meaningVi": "bảo tồn di sản gắn với thương mại hóa",
   "promptVi": "Mô hình bảo tồn di sản gắn với thương mại hóa cung cấp nguồn tài chính dồi dào để tu bổ các công trình cổ bị xuống cấp. Tuy nhiên, việc ưu tiên bán lẻ hàng lưu niệm đại trà có nguy cơ biến không gian văn hóa thành khu vui chơi giải trí, làm mất đi cộng đồng thợ thủ công truyền thống. Ban quản lý di sản cần đặt quy định kiểm soát diện tích kinh doanh nhằm giữ vững giá trị lịch sử cốt lõi.",
   "referenceAnswers": [
-   "Adopting commercial heritage conservation provides much-needed revenue for restoring dilapidated historic structures. Nonetheless, prioritising mass souvenir retail risks converting cultural spaces into commercial entertainment venues, gradually displacing local artisan communities. Heritage boards must enforce strict zoning limits on retail activities to preserve core historical values."
+   "Adopting commercial heritage conservation provides much-needed revenue for restoring dilapidated historic structures. Nonetheless, prioritising mass souvenir retail risks converting cultural spaces into commercial entertainment venues, gradually displacing local artisan communities. Heritage boards must enforce strict zoning limits on retail activities to preserve core historical values.",
+   "Commercialized heritage conservation generates substantial funds to restore deteriorating historic buildings. Yet prioritizing mass-market souvenir shops threatens to turn cultural quarters into entertainment parks, driving out traditional craftspeople. Heritage authorities must enforce retail floor-space caps to protect core historical integrity.",
+   "Linking heritage preservation with commercial activity unlocks vital capital for repairing crumbling landmarks. However, letting mass souvenir outlets dominate risks reducing authentic cultural districts to theme-park strips and pushing local artisans out. Strict limits on commercial retail space are needed from heritage boards to safeguard essential historical character."
   ],
   "grammarTags": [
    "Cultural authenticity vs economic sustainability"
@@ -338,16 +360,24 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "vocational apprenticeship pathways",
   "meaningVi": "lộ trình học nghề kết hợp thực tập",
-  "promptVi": "Việc mở rộng các lộ trình học nghề kết hợp thực tập giúp sinh viên nhanh chóng có việc làm ngay sau khi tốt nghiệp. Mặc dù giải pháp này giảm tình trạng thất nghiệp ở thanh niên, nhiều phụ huynh vẫn coi trọng bằng đại học truyền thống hơn do định kiến xã hội. Sự tham gia cam kết của các tập đoàn lớn trong việc công nhận bằng nghề sẽ là chìa khóa để nâng cao vị thế của hệ đào tạo ứng dụng.",
+  "promptVi": "Mở rộng các lộ trình học nghề gắn với thực tập giúp người học nhanh chóng tìm được việc làm ngay sau khi tốt nghiệp. Mặc dù giải pháp này kéo giảm tỷ lệ thất nghiệp ở thanh niên, nhiều phụ huynh vẫn chuộng bằng đại học truyền thống hơn do định kiến xã hội. Sự đồng hành cam kết của các tập đoàn lớn trong khâu công nhận văn bằng nghề sẽ là chìa khóa nâng tầm vị thế cho hệ đào tạo ứng dụng.",
   "referenceAnswers": [
-   "Expanding vocational apprenticeship pathways enables students to secure employment quickly upon graduation. Although this solution reduces youth unemployment, many parents still favour traditional university degrees owing to social stigma. Committed involvement from major corporations in recognising vocational qualifications will be key to elevating the status of applied education."
+   "Expanding vocational apprenticeship pathways enables students to secure employment quickly upon graduation. Although this solution reduces youth unemployment, many parents still favour traditional university degrees owing to social stigma. Committed involvement from major corporations in recognising vocational qualifications will be key to elevating the status of applied education.",
+   "Expanding work-integrated apprenticeships helps graduates move swiftly into jobs upon finishing school. Although this cuts youth joblessness, many parents still prize conventional university degrees because of social bias. Active commitment from major firms to recognize vocational credentials will be pivotal in raising applied training's standing.",
+   "Growing hands-on apprenticeship tracks allows young people to step straight into employment after graduating. Even though this curbs youth unemployment, social prejudice still leads many parents to favour traditional academic degrees. Persuading major employers to formally value vocational qualifications will be decisive in boosting the prestige of practical education."
   ],
   "grammarTags": [
    "Academic vs vocational debate and graduate outcomes"
   ],
   "explanationVi": "Đánh giá ưu điểm việc làm của học nghề, phản biện từ định kiến xã hội của phụ huynh, và đề xuất giải pháp doanh nghiệp bảo chứng.",
   "rationaleVi": "Phù hợp yêu cầu 7.5 với lập luận logic giải quyết cả rào cản nhận thức xã hội lẫn cơ hội thực tế của người học.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Committed involvement from major corporations in recognising vocational qualifications will be key to elevate the status of applied education.",
+    "correction": "Committed involvement from major corporations in recognising vocational qualifications will be key to elevating the status of applied education.",
+    "reasonVi": "Trong cấu trúc 'be key to' (là chìa khóa cho việc gì), chữ 'to' là giới từ chứ không phải 'to V', nên động từ theo sau bắt buộc phải ở dạng V-ing ('key to elevating')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -360,9 +390,11 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "open-access publishing",
   "meaningVi": "xuất bản mở",
-  "promptVi": "Việc yêu cầu các nghiên cứu y khoa sử dụng ngân sách nhà nước phải thực hiện xuất bản mở sẽ thúc đẩy quá trình phát triển thuốc ở những quốc gia có thu nhập thấp hơn. Mặc dù một số ý kiến phản đối cho rằng hình thức này đẩy chi phí xuất bản về phía nhà nghiên cứu, việc chia sẻ rộng rãi giúp các phòng thí nghiệm địa phương tiến hành lại các thử nghiệm lâm sàng mà không tốn phí truy cập đắt đỏ. Quy định bắt buộc minh bạch này rốt cuộc sẽ bình dân hóa việc đổi mới y tế cho các nhóm dân cư dễ bị tổn thương.",
+  "promptVi": "Yêu cầu các công trình nghiên cứu y khoa dùng ngân sách nhà nước công bố theo hình thức truy cập mở giúp thúc đẩy quá trình phát triển thuốc mới tại những quốc gia có thu nhập thấp hơn. Dù giới phản biện cho rằng quy định này đẩy chi phí xuất bản sang phía nhà nghiên cứu, cơ chế phổ biến rộng rãi lại giúp các phòng thí nghiệm khu vực kiểm chứng lại thử nghiệm lâm sàng mà không tốn phí đặt mua tạp chí đắt đỏ. Bắt buộc minh bạch hóa như vậy xét đến cùng sẽ phổ cập hóa các thành tựu đổi mới y tế cho những nhóm dân cư dễ bị tổn thương.",
   "referenceAnswers": [
-   "Requiring publicly funded medical research to adopt open-access publishing accelerates drug discovery across lower-income nations. While critics argue this shifts publication costs onto researchers, open dissemination enables regional laboratories to replicate clinical trials without prohibitive subscription fees. Mandating such transparency ultimately democratises healthcare innovation for vulnerable populations."
+   "Requiring publicly funded medical research to adopt open-access publishing accelerates drug discovery across lower-income nations. While critics argue this shifts publication costs onto researchers, open dissemination enables regional laboratories to replicate clinical trials without prohibitive subscription fees. Mandating such transparency ultimately democratises healthcare innovation for vulnerable populations.",
+   "Mandating open-access publishing for state-funded medical studies speeds up drug development in lower-income countries. Though some object that this shifts publishing fees onto scientists, broad sharing lets local labs replicate clinical trials without costly paywalls. This transparency mandate will ultimately make medical innovation accessible to vulnerable populations.",
+   "Requiring publicly financed health research to be published openly accelerates pharmaceutical progress across lower-income nations. Critics complain that researchers end up bearing publication charges, yet free dissemination allows regional labs to verify clinical trials without facing prohibitive paywalls. Over time, enforcing openness will place medical breakthroughs within reach of at-risk communities."
   ],
   "grammarTags": [
    "Complex argument & multi-group analysis"
@@ -420,7 +452,9 @@
   "meaningVi": "cải cách chế độ ăn uống",
   "promptVi": "Áp mức trần quy định lượng muối trong các bữa ăn tại nhà hàng thương mại mở ra lộ trình thực tế cho quá trình cải cách chế độ ăn uống của toàn quốc. Những cơ sở kinh doanh ẩm thực nhỏ ban đầu có thể gặp khó khăn khi điều chỉnh lại công thức truyền thống mà không làm mất đi hương vị nguyên bản. Dù vậy, việc áp dụng lộ trình tuân thủ từ từ kết hợp hỗ trợ kỹ thuật có thể ngăn ngừa thiệt hại tài chính nặng nề cho các quán ăn gia đình trong khi vẫn bảo vệ sức khỏe cộng đồng.",
   "referenceAnswers": [
-   "Imposing targeted caps on sodium content in commercial restaurant meals offers a pragmatic pathway towards national dietary reform. Small culinary businesses may struggle initially to reformulate traditional recipes without compromising authentic flavours. Nevertheless, gradual compliance windows combined with technical support can prevent severe financial hardship for family-run eateries while safeguarding public health."
+   "Imposing targeted caps on sodium content in commercial restaurant meals offers a pragmatic pathway towards national dietary reform. Small culinary businesses may struggle initially to reformulate traditional recipes without compromising authentic flavours. Nevertheless, gradual compliance windows combined with technical support can prevent severe financial hardship for family-run eateries while safeguarding public health.",
+   "Capping sodium levels in commercial restaurant dishes offers a practical path toward nationwide dietary reform. Small food businesses may initially struggle to adapt traditional recipes without sacrificing authentic taste. Still, phased compliance timelines paired with technical guidance can shield family eateries from heavy financial losses while protecting public health.",
+   "Setting legal ceilings on salt in restaurant meals provides a realistic route to improving national eating habits. Independent kitchens could find it tough at first to tweak classic recipes without losing their signature flavour. Gradual rollout periods backed by technical assistance, however, can spare family-run restaurants steep financial strain while safeguarding public health."
   ],
   "grammarTags": [
    "Policy impact & business mitigation"
@@ -456,7 +490,13 @@
   ],
   "explanationVi": "Đoạn văn thảo luận lợi ích của 'quyền nghỉ phép dành cho cha' đối với bình đẳng giới tại gia đình và rào cản từ văn hóa doanh nghiệp.",
   "rationaleVi": "Đáp ứng tiêu chuẩn Band 7.5 nhờ việc kết nối chính sách xã hội với những xung đột lợi ích và rào cản thực tế trong môi trường doanh nghiệp.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Addressing this structural barrier requires active endorsement from senior management alongside with clear legal guarantees against promotion discrimination.",
+    "correction": "Addressing this structural barrier requires active endorsement from senior management alongside clear legal guarantees against promotion discrimination.",
+    "reasonVi": "'Alongside' bản thân nó đã là giới từ mang nghĩa 'cùng với/bên cạnh', nên không được chèn dư từ 'with' phía sau (tránh nhầm với 'along with')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -529,7 +569,9 @@
   "meaningVi": "các dự án điện gió ngoài khơi",
   "promptVi": "Đẩy nhanh tiến độ các dự án điện gió ngoài khơi cung cấp nguồn năng lượng sạch cho hệ thống lưới điện, cắt giảm hiệu quả lượng phát thải carbon tại các khu đô thị. Mặc dù vậy, vùng cấm di chuyển xung quanh các cụm tuabin thường làm gián đoạn ngư trường ven biển, đe dọa sinh kế của lao động đánh bắt truyền thống. Khung pháp lý cần bắt buộc có các thỏa thuận chia sẻ không gian khai thác cùng cơ chế bồi thường tài chính nhằm bảo vệ cộng đồng ven biển trong quá trình chuyển dịch xanh.",
   "referenceAnswers": [
-   "Accelerating offshore wind developments provides clean power to grid systems, mitigating urban carbon footprints effectively. Nevertheless, restricted navigation around turbine arrays frequently disrupts coastal fishing grounds, threatening the livelihood of traditional maritime workers. Regulatory frameworks must insist on co-location agreements and financial compensation mechanisms to safeguard coastal communities during the green transition."
+   "Accelerating offshore wind developments provides clean power to grid systems, mitigating urban carbon footprints effectively. Nevertheless, restricted navigation around turbine arrays frequently disrupts coastal fishing grounds, threatening the livelihood of traditional maritime workers. Regulatory frameworks must insist on co-location agreements and financial compensation mechanisms to safeguard coastal communities during the green transition.",
+   "Fast-tracking offshore wind projects supplies clean electricity to power grids, effectively curbing urban carbon emissions. However, no-go navigation zones around turbine clusters often disrupt coastal fishing waters, endangering traditional fishers' livelihoods. Regulations must require shared-use sea agreements and financial compensation to protect coastal communities during the green shift.",
+   "Speeding up offshore wind farms feeds renewable power into national grids and cuts city carbon emissions significantly. On the other hand, exclusion zones around wind arrays frequently interfere with nearshore fisheries, putting traditional fishing livelihoods at risk. Clear rules mandating co-existence agreements and fair compensation are vital to shield coastal towns as the green transition unfolds."
   ],
   "grammarTags": [
    "Green transition & socio-economic tradeoff"
@@ -586,7 +628,9 @@
   "meaningVi": "hệ thống lưu trữ điện năng quy mô lưới",
   "promptVi": "Lắp đặt các lưới điện mặt trời nhỏ tại địa phương cung cấp nguồn điện độc lập ổn định cho các làng nông nghiệp vùng sâu vùng xa, giúp nâng cao năng suất nông nghiệp địa phương. Dù vậy, nếu không có hệ thống lưu trữ điện năng quy mô lưới đủ lớn, sự biến động thời tiết theo mùa vẫn có thể khiến các cộng đồng này đối mặt với nguy cơ mất điện kéo dài đúng vào vụ thu hoạch. Các khoản trợ cấp của nhà nước cần kết hợp việc bàn giao hạ tầng với đào tạo kỹ thuật cho người vận hành tại chỗ nhằm ngăn chặn tình trạng đình trệ kinh tế ở các hộ gia đình nông thôn.",
   "referenceAnswers": [
-   "Installing localized solar microgrids provides reliable off-grid electricity to remote farming villages, boosting local agricultural productivity. Without adequate grid-scale storage, however, seasonal weather fluctuations can leave these communities vulnerable to prolonged power outages during critical harvest periods. State subsidies must pair infrastructure delivery with technical training for local operators to prevent economic stagnation among rural households."
+   "Installing localized solar microgrids provides reliable off-grid electricity to remote farming villages, boosting local agricultural productivity. Without adequate grid-scale storage, however, seasonal weather fluctuations can leave these communities vulnerable to prolonged power outages during critical harvest periods. State subsidies must pair infrastructure delivery with technical training for local operators to prevent economic stagnation among rural households.",
+   "Deploying local solar microgrids delivers steady independent power to remote farming villages, lifting agricultural output. Yet without sufficient grid-scale battery storage, seasonal weather swings can still expose these villages to lengthy blackouts right at harvest time. Government subsidies should combine infrastructure handover with technical training for local operators to prevent rural economic stalls.",
+   "Setting up community-scale solar microgrids brings dependable off-grid power to isolated farming settlements and raises farm productivity. Without large-capacity energy storage, though, seasonal weather shifts can leave rural areas facing extended outages just as harvests peak. State grants need to pair equipment delivery with hands-on training for local technicians so rural economies don't stall."
   ],
   "grammarTags": [
    "concession and multi-group impact"
@@ -614,7 +658,9 @@
   "meaningVi": "sự khai thác thương mại",
   "promptVi": "Những kho lưu trữ kỹ thuật số do các nhà nghiên cứu đại học xây dựng cho phép bảo tồn ngôn ngữ có nguy cơ mai một của các dân tộc thiểu số cho thế hệ tương lai. Dù vậy, giới phản biện cảnh báo rằng các nền tảng truy cập mở có thể vô tình khiến những câu chuyện truyền thống thiêng liêng đối mặt với sự khai thác thương mại từ các công ty truyền thông bên ngoài mà thiếu sự đồng thuận của địa phương. Việc thiết lập các khung quản trị do cộng đồng dẫn dắt sẽ đảm bảo người kể chuyện bản địa giữ vững quyền tác giả trong khi vẫn đóng góp vào các dự án giáo dục quốc gia.",
   "referenceAnswers": [
-   "Digital repositories created by university researchers allow endangered ethnic minority languages to be preserved for future generations. Critics nevertheless warn that open-access platforms might expose sacred traditional stories to commercial exploitation by external media companies without local consent. Establishing community-led governance frameworks ensures that native storytellers retain copyright authority while still participating in national educational initiatives."
+   "Digital repositories created by university researchers allow endangered ethnic minority languages to be preserved for future generations. Critics nevertheless warn that open-access platforms might expose sacred traditional stories to commercial exploitation by external media companies without local consent. Establishing community-led governance frameworks ensures that native storytellers retain copyright authority while still participating in national educational initiatives.",
+   "Digital archives built by university scholars help preserve endangered minority languages for future generations. Still, critics warn open-access sites could inadvertently expose sacred traditional tales to commercial misuse by outside media firms without local permission. Setting up community-governed frameworks ensures indigenous storytellers keep authorship rights while contributing to national education projects.",
+   "Academic-led digital repositories safeguard threatened minority tongues so future generations can learn them. Critics caution, however, that open platforms might leave sacred oral traditions vulnerable to unauthorized commercial use by outside media corporations. Putting communities in charge of governance ensures native storytellers retain creative ownership even as their work enriches national education."
   ],
   "grammarTags": [
    "limitation and stakeholder counterargument"
@@ -642,7 +688,9 @@
   "meaningVi": "lối sống ít vận động",
   "promptVi": "Bằng cách đưa ba mươi phút thể dục bắt buộc vào thời khóa biểu hằng ngày, các trường học giúp thanh thiếu niên cải thiện sự tập trung tinh thần và chống lại lối sống ít vận động. Tuy nhiên, các quy định cứng nhắc vẫn có thể làm xa lánh những học sinh có bệnh mãn tính hoặc gặp căng thẳng học tập nếu thiếu các hình thức vận động không mang tính cạnh tranh. Các ban giám hiệu cần đa dạng hóa các hoạt động thể chất để học sinh dễ bị tổn thương có thể xây dựng thói quen rèn luyện lâu dài thay vì từ bỏ hoàn toàn thể thao.",
   "referenceAnswers": [
-   "By integrating thirty minutes of mandatory exercise into daily school timetables, schools help adolescents improve mental focus and counter a sedentary lifestyle. Rigid mandates can nonetheless alienate students with chronic health conditions or intense academic anxiety if non-competitive options are unavailable. School boards need to diversify physical activity offerings so that vulnerable pupils build lifelong wellness habits rather than dropping out of sports altogether."
+   "By integrating thirty minutes of mandatory exercise into daily school timetables, schools help adolescents improve mental focus and counter a sedentary lifestyle. Rigid mandates can nonetheless alienate students with chronic health conditions or intense academic anxiety if non-competitive options are unavailable. School boards need to diversify physical activity offerings so that vulnerable pupils build lifelong wellness habits rather than dropping out of sports altogether.",
+   "Embedding thirty minutes of compulsory exercise into daily school schedules helps teens sharpen mental focus and counter sedentary habits. Yet rigid rules can alienate students with chronic illnesses or academic stress if non-competitive options are lacking. School leaders should broaden physical activity choices so vulnerable youths form lasting exercise habits rather than quitting sport completely.",
+   "Adding a mandatory half-hour of daily movement to school timetables boosts teenagers' concentration and pushes back against inactive lifestyles. When rules leave no room for non-competitive alternatives, however, pupils dealing with chronic conditions or heavy academic stress can feel excluded. Expanding the variety of activities lets vulnerable students cultivate lifelong fitness routines instead of turning away from sport altogether."
   ],
   "grammarTags": [
    "condition and targeted intervention"
@@ -700,7 +748,9 @@
   "meaningVi": "chuyển giao công nghệ",
   "promptVi": "Các cơ chế tài chính thúc đẩy quá trình chuyển giao công nghệ nhanh chóng giữa viện nghiên cứu đại học và doanh nghiệp khởi nghiệp giúp đẩy nhanh việc thương mại hóa các giải pháp xanh. Tuy nhiên, các ưu tiên theo định hướng thị trường như vậy lại có xu hướng rút bớt nguồn vốn khỏi những nghiên cứu lý thuyết cơ bản vốn không đem lại lợi nhuận tức thì. Các hội đồng khoa học quốc gia cần duy trì sự phân bổ kinh phí cân bằng để khoa học nền tảng tiếp tục làm bệ phóng cho các đột phá công nghiệp trong tương lai.",
   "referenceAnswers": [
-   "Financial incentives that promote rapid technology transfer between university laboratories and commercial startups accelerate the commercialisation of green innovations. Such market-driven priorities, however, tend to divert institutional funding away from fundamental theoretical research that yields no immediate profit. National science councils must preserve balanced grant allocations so that basic science continues to underpin long-term industrial breakthroughs."
+   "Financial incentives that promote rapid technology transfer between university laboratories and commercial startups accelerate the commercialisation of green innovations. Such market-driven priorities, however, tend to divert institutional funding away from fundamental theoretical research that yields no immediate profit. National science councils must preserve balanced grant allocations so that basic science continues to underpin long-term industrial breakthroughs.",
+   "Funding mechanisms that speed up tech transfer from university labs to startups accelerate the commercial rollout of green solutions. However, market-oriented priorities tend to siphon money away from basic theoretical research lacking instant profits. National science councils must preserve balanced funding so foundational science continues driving future industrial breakthroughs.",
+   "Grants designed to bridge university labs and fledgling startups bring eco-friendly technologies to market much faster. The risk of chasing commercial returns is that pure theoretical inquiry—with no quick payoff—gets starved of capital. Keeping grant allocations balanced across national science bodies is essential if basic research is to keep sparking tomorrow's industrial leaps."
   ],
   "grammarTags": [
    "counter-evidence and strategic policy implication"
@@ -728,7 +778,9 @@
   "meaningVi": "tuần làm việc nén",
   "promptVi": "Để giúp nhân viên cân bằng giữa công việc gia đình và trách nhiệm chuyên môn, nhiều công ty dịch vụ đã thử nghiệm mô hình tuần làm việc nén bốn ngày mà không giảm lương. Trong khi lao động trí óc ghi nhận mức độ kiệt sức giảm xuống, công nhân làm theo ca trong ngành sản xuất lại đối mặt với tình trạng mệt mỏi thể chất nghiêm trọng do giờ làm mỗi ngày bị kéo dài. Việc điều chỉnh lịch làm việc linh hoạt theo đặc thù từng ngành là điều bắt buộc nếu các chủ doanh nghiệp muốn tránh làm gia tăng khoảng cách sức khỏe giữa các nhóm lao động.",
   "referenceAnswers": [
-   "To help employees balance domestic duties with career demands, several service firms have piloted a four-day compressed workweek without salary reductions. While knowledge workers report lower burnout under this system, shift labourers in manufacturing often face severe physical fatigue from extended daily hours. Tailoring flexible schedules to industry-specific demands is essential if employers wish to avoid widening health disparities across different worker tiers."
+   "To help employees balance domestic duties with career demands, several service firms have piloted a four-day compressed workweek without salary reductions. While knowledge workers report lower burnout under this system, shift labourers in manufacturing often face severe physical fatigue from extended daily hours. Tailoring flexible schedules to industry-specific demands is essential if employers wish to avoid widening health disparities across different worker tiers.",
+   "To help staff reconcile family life and work duties, many service companies have tested a compressed four-day week with full pay. While white-collar workers experience lower burnout, manufacturing shift workers suffer acute physical exhaustion from longer daily shifts. Adapting flexible schedules to each industry's realities is vital if employers want to avoid widening health gaps among worker groups.",
+   "Seeking to help staff manage home and career pressures, numerous service firms have trialled four-day compressed schedules on unchanged salaries. Office staff generally report less burnout, whereas factory shift workers endure intense physical strain when daily hours stretch longer. Employers must customize flexible hours to suit each sector's demands if they hope to prevent health inequalities across the workforce from growing."
   ],
   "grammarTags": [
    "comparison and subgroup vulnerability"
@@ -756,7 +808,9 @@
   "meaningVi": "sản lượng theo mùa",
   "promptVi": "Trong những năm gần đây, bếp ăn của các bệnh viện công đã tăng cường thu mua nông sản tươi trực tiếp từ các trang trại hữu cơ lân cận nhằm nâng cao chất lượng dinh dưỡng cho bệnh nhân. Dù vậy, những biến động thời tiết bất thường có thể làm gián đoạn sản lượng theo mùa, gây ra tình trạng thiếu hụt nguồn cung đột ngột và vượt ngân sách dự toán của các cơ sở y tế. Hợp đồng thu mua cấp vùng cần tích hợp các biên độ cung ứng linh hoạt để vừa bảo vệ thu nhập của nông dân nhỏ, vừa giữ cho chi phí suất ăn bệnh viện ở mức ổn định.",
   "referenceAnswers": [
-   "In recent years, public hospital canteens have increasingly sourced fresh produce directly from nearby organic farms to improve patient nutrition. Unpredictable weather shifts can nevertheless disrupt the seasonal yield, causing sudden supply deficits and budget overruns for medical facilities. Regional procurement contracts must include flexible sourcing buffers to protect smallholders' income while keeping hospital meal costs stable."
+   "In recent years, public hospital canteens have increasingly sourced fresh produce directly from nearby organic farms to improve patient nutrition. Unpredictable weather shifts can nevertheless disrupt the seasonal yield, causing sudden supply deficits and budget overruns for medical facilities. Regional procurement contracts must include flexible sourcing buffers to protect smallholders' income while keeping hospital meal costs stable.",
+   "Lately, public hospital kitchens have stepped up direct buying of fresh produce from nearby organic farms to boost patient nutrition. Yet erratic weather can disrupt seasonal harvests, triggering abrupt supply shortages and hospital budget overruns. Regional supply contracts need flexible sourcing margins to safeguard small farmers' earnings while keeping hospital meal budgets steady.",
+   "In recent years, state hospitals have increasingly bought fresh ingredients straight from local organic growers to raise patients' dietary standards. Unpredictable weather spells, however, can throw seasonal yields off course, leaving kitchens short on stock and pushing expenses past budget. Building adaptable sourcing clauses into regional contracts protects smallholders' livelihoods while stabilizing hospital food spending."
   ],
   "grammarTags": [
    "economic uncertainty and risk mitigation"
@@ -813,14 +867,22 @@
   "meaningVi": "chi phí vốn ban đầu",
   "promptVi": "Quy định pháp lý bắt buộc các tòa nhà văn phòng thương mại phải cải tạo nâng cao hiệu quả năng lượng giúp giảm đáng kể lượng điện tiêu thụ của một thành phố. Trong khi các tập đoàn lớn nhanh chóng thu hồi chi phí nhờ giảm hóa đơn điện nước, các doanh nghiệp vừa và nhỏ lại vật lộn với chi phí vốn ban đầu lớn. Nếu không có các khoản vay ưu đãi do chính phủ hỗ trợ, quy định này có nguy cơ đẩy các công ty nhỏ hơn ra khỏi các khu vực trung tâm và làm gia tăng sự bất bình đẳng thương mại.",
   "referenceAnswers": [
-   "A legal requirement for commercial office buildings to undergo energy efficiency retrofits significantly lowers a city's electricity consumption. While large corporations quickly recoup their outlay through reduced utility bills, small and medium enterprises struggle with the heavy initial capital expenditure. Without government-backed concessionary loans, this requirement risks driving smaller firms out of central districts and widening commercial inequality."
+   "A legal requirement for commercial office buildings to undergo energy efficiency retrofits significantly lowers a city's electricity consumption. While large corporations quickly recoup their outlay through reduced utility bills, small and medium enterprises struggle with the heavy initial capital expenditure. Without government-backed concessionary loans, this requirement risks driving smaller firms out of central districts and widening commercial inequality.",
+   "Laws requiring commercial office blocks to undergo energy-efficiency upgrades sharply reduce urban electricity demand. While big corporations quickly recover outlays via lower utility bills, SMEs struggle with steep upfront capital costs. Without state-backed low-interest loans, this mandate threatens to push smaller firms out of city centres and worsen commercial inequality.",
+   "Mandating energy retrofits across commercial offices delivers steep drops in citywide power use. Larger firms soon recoup the expense through smaller energy bills, yet small and medium businesses buckle under heavy initial outlays. Unless the government steps in with subsidized loans, smaller enterprises risk being priced out of downtown districts, deepening business inequality."
   ],
   "grammarTags": [
    "concession and condition"
   ],
   "explanationVi": "Đoạn văn phân tích tác động trái chiều của quy định cải tạo năng lượng: mang lại lợi ích chung nhưng tạo gánh nặng 'capital expenditure' (chi phí vốn ban đầu) cho doanh nghiệp nhỏ, từ đó đề xuất điều kiện hỗ trợ tài chính.",
   "rationaleVi": "Phát triển lập luận đa chiều ở cấp độ 7.5 bằng cách đối chiếu lợi ích của tập đoàn lớn với khó khăn tài chính của doanh nghiệp nhỏ, kết nối hệ quả kinh tế - xã hội cụ thể.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A legal requirement for commercial office buildings to undergo energy efficiency retrofits significantly lower a city's electricity consumption.",
+    "correction": "A legal requirement for commercial office buildings to undergo energy efficiency retrofits significantly lowers a city's electricity consumption.",
+    "reasonVi": "Chủ ngữ chính của câu là danh từ số ít 'A legal requirement' (không phải 'buildings' hay 'retrofits' đứng gần động từ), nên động từ phải chia số ít là 'lowers'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -843,7 +905,13 @@
   ],
   "explanationVi": "Đoạn văn phản biện chính sách cấm điện thoại bằng cách chỉ ra phản ứng phụ lên giáo viên qua thuật ngữ 'cognitive overload' (sự quá tải nhận thức), sau đó kết luận bằng một giải pháp nhân sự cân bằng.",
   "rationaleVi": "Đáp ứng tiêu chí 7.5 nhờ khả năng phản biện giải pháp bề nổi, chỉ ra gánh nặng tâm lý/vận hành đối với nhóm đối tượng thi hành (giáo viên) và đề xuất điều kiện điều chỉnh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "However, enforcing this blanket ban places a heavy monitoring burden on teachers, who already suffer from cognitive overload due to daily administrative paperworks.",
+    "correction": "However, enforcing this blanket ban places a heavy monitoring burden on teachers, who already suffer from cognitive overload due to daily administrative paperwork.",
+    "reasonVi": "Tương tự như 'homework' hay 'work', 'paperwork' (công việc giấy tờ) là danh từ không đếm được nên tuyệt đối không thêm 's' ở cuối."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -858,7 +926,9 @@
   "meaningVi": "sự mai một văn hóa",
   "promptVi": "Bằng cách đưa các lễ hội âm nhạc dân gian vào chương trình du lịch hằng năm, các cộng đồng nghệ nhân địa phương nhận được nguồn thu nhập đáng kể. Dù vậy, áp lực phải điều chỉnh tiết mục phục vụ du khách lưu trú ngắn hạn đang gây ra sự mai một văn hóa trong các nghi lễ cổ truyền. Ban tổ chức phải cân bằng giữa tính giải trí thương mại và việc bảo tồn nguyên bản để bảo vệ di sản của vùng đất.",
   "referenceAnswers": [
-   "By integrating folk music festivals into annual tourism calendars, local artisan communities gain substantial revenue. Nevertheless, pressure to adapt performances for short-stay tourists is causing cultural erosion in traditional sacred ceremonies. Event organisers must balance commercial entertainment against authentic preservation to safeguard the region's heritage."
+   "By integrating folk music festivals into annual tourism calendars, local artisan communities gain substantial revenue. Nevertheless, pressure to adapt performances for short-stay tourists is causing cultural erosion in traditional sacred ceremonies. Event organisers must balance commercial entertainment against authentic preservation to safeguard the region's heritage.",
+   "Featuring folk music festivals on annual tourism calendars brings substantial earnings to local artisan communities. Still, pressure to tailor performances for brief visitors is eroding cultural authenticity in traditional rituals. Organizers must strike a balance between commercial appeal and faithful preservation to safeguard regional heritage.",
+   "Weaving folk music festivals into yearly tourism schedules delivers vital revenue to community craftspeople and performers. At the same time, adapting sacred customs to suit fleeting tourists slowly waters down their cultural depth. Event planners have to weigh commercial draw against genuine preservation if local heritage is to survive intact."
   ],
   "grammarTags": [
    "prepositional clause and limitation"
@@ -886,7 +956,9 @@
   "meaningVi": "tình trạng việc làm bấp bênh",
   "promptVi": "Khi các nền tảng gọi xe công nghệ bị bắt buộc phải đóng bảo hiểm tai nạn cho tài xế, lao động tự do có được sự bảo vệ tài chính thiết thực. Mặc dù chi phí dịch vụ tăng nhẹ có thể khiến một số hành khách chuyển sang phương tiện công cộng, chính sách này xoa dịu đáng kể tình trạng việc làm bấp bênh của hàng nghìn lao động thu nhập thấp. Giới lập pháp cần ban hành quy định bắt buộc này nhằm ngăn các công ty công nghệ chuyển rủi ro vận hành sang người tài xế dễ bị tổn thương.",
   "referenceAnswers": [
-   "When app-based ride-hailing platforms are compelled to provide accident insurance, gig workers gain crucial financial protection. Although a minor fare increase might prompt some passengers to switch to public transport, this policy significantly alleviates precarious employment for thousands of low-income workers. Lawmakers need to enforce this statutory obligation to prevent tech firms from shifting operational risks onto vulnerable drivers."
+   "When app-based ride-hailing platforms are compelled to provide accident insurance, gig workers gain crucial financial protection. Although a minor fare increase might prompt some passengers to switch to public transport, this policy significantly alleviates precarious employment for thousands of low-income workers. Lawmakers need to enforce this statutory obligation to prevent tech firms from shifting operational risks onto vulnerable drivers.",
+   "Requiring ride-hailing apps to fund accident coverage gives gig drivers essential financial security. Although slight fare hikes might nudge some riders toward public transit, this rule markedly eases job precarity for thousands of low-income workers. Legislators must enact this mandate to stop tech platforms offloading operational risks onto vulnerable drivers.",
+   "Compelling ride-hailing platforms to cover accident insurance provides freelance drivers with badly needed financial protection. Minor price rises may prompt a handful of passengers to switch to buses or trains, yet the measure greatly reduces income insecurity for thousands of low-paid workers. Lawmakers ought to lock this duty into law so tech companies can no longer pass business risks down to vulnerable drivers."
   ],
   "grammarTags": [
    "adverbial clause and trade-off"
@@ -914,7 +986,9 @@
   "meaningVi": "biên lợi nhuận",
   "promptVi": "Ví dụ, nếu thuế cao được áp dụng đối với thực phẩm dư thừa bị tiêu hủy tại các siêu thị lớn, chính sách này có thể chuyển hướng hiệu quả lượng thức ăn còn dùng được sang các ngân hàng thực phẩm từ thiện. Sự dịch chuyển này làm giảm rác thải đô thị, song nó có thể thu hẹp biên lợi nhuận của những nhà bán lẻ nhỏ vốn thiếu kho bảo quản lạnh chuyên dụng. Việc miễn giảm thuế cho các chủ doanh nghiệp nhỏ hợp tác với tổ chức từ thiện địa phương sẽ bảo vệ chuỗi phân phối thực phẩm mà không làm suy yếu tính khả thi của kinh doanh tư nhân.",
   "referenceAnswers": [
-   "For example, if high taxes were imposed on food waste disposed of by major supermarkets, this policy could effectively redirect edible surplus to charitable food banks. While this shift reduces urban waste, it might shrink the profit margins of small retailers lacking specialised cold-storage facilities. Granting tax exemptions to small business owners who partner with local charities would safeguard food distribution without undermining private enterprise viability."
+   "For example, if high taxes were imposed on food waste disposed of by major supermarkets, this policy could effectively redirect edible surplus to charitable food banks. While this shift reduces urban waste, it might shrink the profit margins of small retailers lacking specialised cold-storage facilities. Granting tax exemptions to small business owners who partner with local charities would safeguard food distribution without undermining private enterprise viability.",
+   "For instance, levying steep taxes on edible food discarded by major supermarkets could effectively channel usable surplus to food banks. While this shift trims urban waste, it may squeeze profit margins at small grocers lacking specialized cold storage. Offering tax relief to small shopkeepers partnering with local charities would protect food redistribution without hurting private business viability.",
+   "Suppose large supermarkets faced heavy penalties for dumping unsold food; edible stock would rapidly flow to community food banks instead. Though city waste shrinks as a result, smaller grocers without dedicated refrigeration could see their slim margins squeezed further. Granting tax breaks to independent retailers who team up with local charities keeps food sharing alive without threatening small businesses' survival."
   ],
   "grammarTags": [
    "gerund subject and qualification"
@@ -1002,14 +1076,22 @@
   "meaningVi": "quyền riêng tư dữ liệu",
   "promptVi": "Các công nghệ cảm biến đeo trên người cho phép đội ngũ huấn luyện theo dõi áp lực thể chất và giảm thiểu hiệu quả chấn thương cho các vận động viên chuyên nghiệp. Trái lại, việc thu thập chỉ số sinh học liên tục dấy lên những lo ngại nghiêm trọng về quyền riêng tư dữ liệu, đặc biệt khi các hợp đồng tài trợ phụ thuộc vào chỉ số y tế cá nhân. Việc thiết lập các quy trình bảo mật nghiêm ngặt là điều bắt buộc để bảo vệ quyền lợi vận động viên trước sự khai thác thương mại xâm phạm.",
   "referenceAnswers": [
-   "Wearable sensor technologies enable coaching staff to monitor physical strain and effectively minimise injuries among professional athletes. Conversely, continuous biometric tracking raises severe concerns regarding data privacy, particularly when endorsement contracts hinge on personal medical metrics. Establishing stringent confidentiality protocols is essential to protect athletes' rights against intrusive commercial exploitation."
+   "Wearable sensor technologies enable coaching staff to monitor physical strain and effectively minimise injuries among professional athletes. Conversely, continuous biometric tracking raises severe concerns regarding data privacy, particularly when endorsement contracts hinge on personal medical metrics. Establishing stringent confidentiality protocols is essential to protect athletes' rights against intrusive commercial exploitation.",
+   "Wearable sensors let coaching teams track physical workload and effectively curb injuries among elite athletes. Conversely, nonstop biometric monitoring sparks serious data-privacy worries, especially when sponsorship deals hinge on personal health stats. Strict security protocols are vital to shield athletes' rights from intrusive commercial exploitation.",
+   "Fitness wearables enable coaches to monitor physical stress closely and keep pro athletes far safer from injury. On the flip side, round-the-clock biometric tracking raises tough privacy concerns whenever endorsement contracts depend on private medical figures. Robust data-protection rules are essential to defend athletes against invasive commercial misuse."
   ],
   "grammarTags": [
    "counterargument and ethics"
   ],
   "explanationVi": "Đoạn văn đi từ lợi ích công nghệ thể thao đến góc độ phản biện đạo đức về 'data privacy' (quyền riêng tư dữ liệu) khi bị thương mại hóa, chốt lại bằng giải pháp khung pháp lý.",
   "rationaleVi": "Thể hiện nét phân tích phản biện sắc bén của level 7.5 bằng cách kết nối việc ứng dụng dữ liệu khoa học với nguy cơ xâm phạm quyền riêng tư mang tính thương mại.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Conversely, continuous biometric tracking raises severe concerns regarding to data privacy, particularly when endorsement contracts hinge on personal medical metrics.",
+    "correction": "Conversely, continuous biometric tracking raises severe concerns regarding data privacy, particularly when endorsement contracts hinge on personal medical metrics.",
+    "reasonVi": "'Regarding' là giới từ đi trực tiếp với cụm danh từ ('regarding data privacy'), không được thêm 'to' phía sau (chỉ dùng 'to' trong cụm 'with regard to')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1170,7 +1252,9 @@
   "meaningVi": "học thuộc lòng máy móc",
   "promptVi": "Thay thế phương pháp học thuộc lòng máy móc bằng các đề án nghiên cứu thực tế giúp học sinh phổ thông phát triển tư duy phản biện. Dù sự thay đổi này chuẩn bị tốt hơn cho học sinh bước vào đại học, nó lại tạo ra khối lượng công việc chấm điểm khổng lồ cho giáo viên. Các phụ huynh ở vùng khó khăn cũng bày tỏ sự lo ngại khi con em họ thiếu thiết bị số để thực hiện các bài tập tra cứu sâu. Đảm bảo hạ tầng công nghệ bình đẳng và giảm tải hành chính cho đội ngũ giảng dạy là điều kiện tiên quyết để mô hình mới thành công.",
   "referenceAnswers": [
-   "Replacing rote learning with practical research projects enables secondary students to develop critical thinking skills. While this shift better prepares learners for university education, it imposes a staggering assessment workload on teachers. Parents in disadvantaged areas also express concern as their children lack digital devices to conduct in-depth research assignments. Ensuring equal technological infrastructure and alleviating administrative burdens for teaching staff are prerequisites for the new model to succeed."
+   "Replacing rote learning with practical research projects enables secondary students to develop critical thinking skills. While this shift better prepares learners for university education, it imposes a staggering assessment workload on teachers. Parents in disadvantaged areas also express concern as their children lack digital devices to conduct in-depth research assignments. Ensuring equal technological infrastructure and alleviating administrative burdens for teaching staff are prerequisites for the new model to succeed.",
+   "Swapping rote memorization for hands-on research projects helps high schoolers cultivate critical thinking. Although this shift readies students better for university, it saddles teachers with massive marking workloads. Parents in disadvantaged regions also worry their children lack digital devices for deep research tasks. Guaranteeing equal tech access and easing teachers' paperwork are prerequisites for this model's success.",
+   "Moving away from mechanical memorization towards practical inquiry projects equips secondary pupils with sharper analytical skills. While students enter university better prepared, teachers end up buried under heavy grading duties. Meanwhile, families in poorer districts worry their kids don't have the devices needed for thorough research. Fair digital access and lighter administrative demands on staff are indispensable if the reform is to work."
   ],
   "grammarTags": [
    "educational reform and structural barrier"
@@ -1235,7 +1319,13 @@
   ],
   "explanationVi": "Phân tích tác động của 'active transport' (di chuyển chủ động / giao thông tích cực) lên chất lượng không khí, giao thông thương mại và doanh thu cửa hàng bán lẻ, đi kèm giải pháp hạ tầng quy hoạch tích hợp.",
   "rationaleVi": "Đánh giá chi tiết tác động của quy hoạch giao thông tới nhiều bên (người đi xe đạp, tài xế thương mại, chủ tiệm bán lẻ), thể hiện tư duy IELTS 7.5 toàn diện.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Retail shop owners fear falling turnover because motorcyclists and car drivers find hard to park, even if cyclists boost footfall.",
+    "correction": "Retail shop owners fear falling turnover because motorcyclists and car drivers find it hard to park, even if cyclists boost footfall.",
+    "reasonVi": "Trong cấu trúc 'thấy khó/dễ để làm gì' với động từ 'find', bắt buộc phải có tân ngữ giả 'it' đứng giữa ('find it + tính từ + to V': 'find it hard to park')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1279,14 +1369,22 @@
   "meaningVi": "pin nhiên liệu hydro",
   "promptVi": "Các đơn vị vận tải đường dài chuyển đổi sang sử dụng pin nhiên liệu hydro sẽ cắt giảm đáng kể lượng phát thải trên đường cao tốc, mang lại lợi ích môi trường cho các cộng đồng ven đường. Dù vậy, những doanh nghiệp vận tải nhỏ lại đối mặt với chi phí nâng cấp quá cao, đe dọa trực tiếp đến khả năng tồn tại thương mại của họ. Việc kết hợp ưu đãi thuế có mục tiêu với hạ tầng nạp nhiên liệu dùng chung là điều bắt buộc để hỗ trợ các tài xế độc lập trong khi vẫn đạt được các mục tiêu khí hậu quốc gia.",
   "referenceAnswers": [
-   "Long-haul freight operators who transition to hydrogen fuel cells cut highway emissions significantly, bringing environmental benefits to roadside communities. Small haulage companies, nonetheless, face prohibitive upgrading costs that directly threaten their commercial viability. Targeted tax credits combined with shared refuelling infrastructure are essential to support independent drivers while meeting national climate targets."
+   "Long-haul freight operators who transition to hydrogen fuel cells cut highway emissions significantly, bringing environmental benefits to roadside communities. Small haulage companies, nonetheless, face prohibitive upgrading costs that directly threaten their commercial viability. Targeted tax credits combined with shared refuelling infrastructure are essential to support independent drivers while meeting national climate targets.",
+   "Long-distance hauliers switching to hydrogen fuel cells will sharply cut motorway emissions, benefiting roadside communities. Yet small transport operators face steep retrofit expenses that directly imperil their commercial survival. Pairing targeted tax incentives with shared refuelling hubs is essential to back independent truckers while hitting national climate goals.",
+   "Transitioning long-haul freight fleets to hydrogen fuel cells dramatically trims highway pollution, improving air quality for nearby towns. For modest haulage firms, however, prohibitive upgrade bills put their very survival on the line. Combining focused tax breaks with communal refuelling stations is key to keeping independent operators afloat while meeting national emissions targets."
   ],
   "grammarTags": [
    "Evaluative contrast and conditional resolution"
   ],
   "explanationVi": "Phân tích tác động môi trường tích cực của pin nhiên liệu hydro đối với cộng đồng dân cư đối lập với gánh nặng chi phí của doanh nghiệp nhỏ.",
   "rationaleVi": "Thể hiện tư duy phản biện cấp độ 7.5 khi cân bằng giữa mục tiêu sinh thái vĩ mô và rủi ro tài chính của doanh nghiệp quy mô nhỏ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Small haulage companies, nonetheless, face with prohibitive upgrading costs that directly threaten their commercial viability.",
+    "correction": "Small haulage companies, nonetheless, face prohibitive upgrading costs that directly threaten their commercial viability.",
+    "reasonVi": "Người Việt hay dịch 'đối mặt với' thành 'face with', nhưng ở thể chủ động 'face' là ngoại động từ đi thẳng với tân ngữ ('face costs'), chỉ dùng 'with' ở bị động 'be faced with'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1299,9 +1397,11 @@
   "topic": "Giáo dục & Trường học",
   "targetTerm": "immersive learning environments",
   "meaningVi": "môi trường học tập nhập vai",
-  "promptVi": "Việc triển khai các môi trường học tập nhập vai trong phòng học STEM cấp trung học giúp học sinh thực hiện an toàn các thí nghiệm hóa học ảo phức tạp. Giới phản biện chỉ ra rằng việc tiếp xúc với màn hình quá mức thường dẫn đến tình trạng mệt mỏi kỹ thuật số và làm giảm các cuộc thảo luận trực tiếp giữa học sinh. Ban giám hiệu các trường nên cân bằng các học phần ảo với những bài tập nhóm thực tế bắt buộc để giữ gìn sự tương tác xã hội trong khi vẫn nâng cao kỹ năng công nghệ.",
+  "promptVi": "Đưa môi trường học tập nhập vai vào các phòng học STEM bậc trung học giúp học sinh tiến hành những thí nghiệm hóa học ảo phức tạp một cách an toàn. Những người hoài nghi chỉ ra rằng tiếp xúc quá mức với màn hình thường gây mệt mỏi kỹ thuật số và làm giảm các cuộc thảo luận trực tiếp giữa học sinh với nhau. Ban giám hiệu nhà trường nên cân bằng giữa các học phần ảo với những bài tập nhóm thực tế bắt buộc nhằm duy trì tương tác xã hội song song với nâng cao kỹ năng kỹ thuật.",
   "referenceAnswers": [
-   "The deployment of immersive learning environments in secondary STEM classrooms enables pupils to conduct complex virtual chemistry experiments safely. Skeptics point out that excessive screen exposure often triggers digital fatigue and reduces direct interpersonal discussion among pupils. School boards should balance virtual modules with mandatory physical group tasks to preserve social interaction while upgrading technical skills."
+   "The deployment of immersive learning environments in secondary STEM classrooms enables pupils to conduct complex virtual chemistry experiments safely. Skeptics point out that excessive screen exposure often triggers digital fatigue and reduces direct interpersonal discussion among pupils. School boards should balance virtual modules with mandatory physical group tasks to preserve social interaction while upgrading technical skills.",
+   "Introducing immersive learning tools into secondary STEM classes lets students safely run intricate virtual chemistry experiments. Critics note that heavy screen time frequently induces digital exhaustion and curtails face-to-face peer discussion. School leaders ought to pair virtual units with mandatory in-person group tasks to protect social interaction alongside technical skill-building.",
+   "Bringing immersive simulation tech into high-school STEM labs allows pupils to carry out complex chemistry experiments virtually without safety risks. Sceptics counter that prolonged screen use causes digital fatigue and crowds out live classroom conversation. Balancing online modules with compulsory hands-on teamwork lets schools advance tech literacy without sacrificing social connection."
   ],
   "grammarTags": [
    "Counterargument integration and pragmatic policy proposal"
@@ -1329,7 +1429,9 @@
   "meaningVi": "giới hạn số lượng du khách",
   "promptVi": "Mặc dù việc áp đặt các giới hạn số lượng du khách nghiêm ngặt tại những di sản cổ xưa giúp ngăn ngừa hư hại vật lý cho các công trình mỏng manh, các cửa hàng lưu niệm và nhà nghỉ gia đình tại địa phương lại bị sụt giảm doanh thu ngay lập tức. Tại các thị trấn miền núi lịch sử, sự sụt giảm lượng khách tham quan đe dọa sinh kế của những thợ thủ công trong vùng vốn sống dựa vào chi tiêu du lịch theo mùa. Cơ quan quản lý du lịch phải đa dạng hóa hành trình di chuyển để nguồn lợi tài chính được phân bổ đều cho các doanh nghiệp nông thôn mà không làm quá tải các di tích dễ bị tổn thương.",
   "referenceAnswers": [
-   "While enforcing strict visitor caps at ancient heritage sites prevents physical damage to delicate structures, local gift shops and family-run guesthouses experience immediate revenue losses. In historic mountain towns, reduced footfall threatens the livelihoods of regional artisans who rely on seasonal tourist spending. Tourism boards must diversify travel itineraries so that financial rewards are spread evenly across rural businesses without overburdening vulnerable monuments."
+   "While enforcing strict visitor caps at ancient heritage sites prevents physical damage to delicate structures, local gift shops and family-run guesthouses experience immediate revenue losses. In historic mountain towns, reduced footfall threatens the livelihoods of regional artisans who rely on seasonal tourist spending. Tourism boards must diversify travel itineraries so that financial rewards are spread evenly across rural businesses without overburdening vulnerable monuments.",
+   "Although strict visitor limits at ancient heritage sites prevent physical wear on fragile monuments, local souvenir shops and family guesthouses suffer instant revenue drops. In historic mountain towns, falling visitor numbers jeopardize the livelihoods of local artisans dependent on seasonal tourist spending. Tourism authorities must spread out travel itineraries so economic gains reach rural businesses evenly without straining vulnerable landmarks.",
+   "Capping visitor numbers at ancient monuments protects delicate stonework from wear and tear, yet nearby gift stalls and family-run lodges feel an immediate hit to income. Across historic highland towns, thinner crowds threaten craftspeople who count on peak-season tourist trade to get by. By diversifying tourist routes, authorities can channel steady spending to rural enterprises without overwhelming fragile heritage sites."
   ],
   "grammarTags": [
    "Concessive balance and multi-group impact link"
@@ -1365,7 +1467,13 @@
   ],
   "explanationVi": "Phân tích lợi ích của mô hình nhà ở hợp tác cho người mẹ/bố đơn thân, rào cản từ hệ thống ngân hàng và giải pháp từ chính quyền.",
   "rationaleVi": "Đạt chuẩn 7.5 bằng cách đào sâu rào cản thể chế (tín dụng) đối với mô hình nhà ở xã hội và đề xuất sự can thiệp của chính sách công.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Municipal planning frameworks ought to guarantee financial backing for these co-living projects to prevent working-class families from squeezed out of urban centres.",
+    "correction": "Municipal planning frameworks ought to guarantee financial backing for these co-living projects to prevent working-class families from being squeezed out of urban centres.",
+    "reasonVi": "Sau giới từ 'from' cần động từ dạng V-ing, và vì mang nghĩa bị động ('bị đẩy ra') nên phải dùng danh động từ bị động 'being + V3/ed' ('from being squeezed out')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1407,7 +1515,7 @@
   "topic": "Thể thao & Giải trí",
   "targetTerm": "grassroots sports grants",
   "meaningVi": "khoản tài trợ thể thao phong trào",
-  "promptVi": "Việc chuyển nguồn thu thuế từ ngành cá cược thương mại vào các khoản tài trợ thể thao phong trào cho phép hội đồng địa phương tu bổ các bể bơi cộng đồng đang xuống cấp. Giới phản biện cảnh báo rằng việc phụ thuộc vào nguồn thu cá cược tạo ra sự lệ thuộc thiếu đạo đức vào một ngành công nghiệp gây hại cho những người chơi cờ bạc thu nhập thấp dễ bị tổn thương. Các cơ quan quản lý thể thao vùng phải thiết lập cơ chế tài chính độc lập để đảm bảo các chương trình rèn luyện thể chất cho thanh thiếu niên vừa lành mạnh về đạo đức vừa bền vững về tài chính.",
+  "promptVi": "Phân bổ nguồn thu thuế từ hoạt động cá cược thương mại sang quỹ tài trợ thể thao phong trào cho phép hội đồng địa phương cải tạo những bể bơi cộng đồng đang xuống cấp. Giới phê bình cảnh báo rằng dựa dẫm vào nguồn thu cá cược tạo ra mối lệ thuộc thiếu đạo đức vào một ngành kinh doanh vốn gây tổn hại cho những người chơi thu nhập thấp dễ bị tổn thương. Các cơ quan quản lý thể thao cấp vùng phải thiết lập cơ chế tài chính độc lập để bảo đảm các chương trình rèn luyện thể chất cho thanh thiếu niên vừa lành mạnh về đạo đức vừa vững vàng về tài chính.",
   "referenceAnswers": [
    "Channeling tax revenue from commercial gambling into grassroots sports grants allows local councils to renovate dilapidated community swimming pools. Critics caution that relying on betting revenues creates an unethical dependency on an industry that inflicts harm on vulnerable low-income gamblers. Regional sports authorities must establish independent funding mechanisms to ensure youth fitness programmes remain ethically sound and financially resilient.",
    "Channeling tax revenue from commercial gambling into grassroots sports grants allows local councils to renovate dilapidated community swimming pools. Critics caution that relying on betting revenues creates an unethical dependency on an industry that inflicts harm on vulnerable low-income gamblers. Regional sports authorities must establish independent funding mechanisms to ensure youth fitness programs remain ethically sound and financially resilient."
@@ -1438,7 +1546,9 @@
   "meaningVi": "hệ thống sưởi địa nhiệt",
   "promptVi": "Những khu nhà ở xã hội áp dụng hệ thống sưởi địa nhiệt giúp người dân thu nhập thấp giảm thiểu vĩnh viễn chi phí sưởi ấm trong mùa đông. Mặc dù vậy, hoạt động khoan sâu cần thiết trong giai đoạn xây dựng ban đầu tiềm ẩn rủi ro địa chất lớn và nguy cơ làm ảnh hưởng đến các tầng chứa nước ngầm. Quỹ năng lượng quốc gia nên bảo đảm rủi ro thăm dò ban đầu để các hiệp hội nhà ở địa phương có thể triển khai sưởi ấm sạch mà không đẩy gánh nặng tài chính phát sinh sang cho người thuê nhà.",
   "referenceAnswers": [
-   "Municipal housing estates that adopt geothermal heating achieve a permanent reduction in winter heating costs for low-income residents. Nevertheless, the deep drilling required during initial construction carries high upfront geological risks and potential disturbance to subterranean aquifers. National energy funds should underwrite early exploration risks so that local housing associations can implement clean heating without passing unexpected liabilities to tenants."
+   "Municipal housing estates that adopt geothermal heating achieve a permanent reduction in winter heating costs for low-income residents. Nevertheless, the deep drilling required during initial construction carries high upfront geological risks and potential disturbance to subterranean aquifers. National energy funds should underwrite early exploration risks so that local housing associations can implement clean heating without passing unexpected liabilities to tenants.",
+   "Social housing estates adopting geothermal heating permanently cut winter heating bills for low-income tenants. Still, initial deep-drilling work carries major geological hazards and risks disturbing underground aquifers. National energy funds ought to underwrite early exploration risks so local housing bodies can roll out clean heating without passing surprise costs to residents.",
+   "Public housing developments fitted with geothermal heating lock in lasting reductions in winter energy bills for lower-income households. The hurdle is that deep borehole drilling carries serious geological risks and could disrupt subterranean water tables. State energy funds should absorb upfront exploration liabilities, letting local housing groups install clean heating without saddling tenants with unexpected charges."
   ],
   "grammarTags": [
    "Technical limitation evaluation and risk-sharing solution"
@@ -1466,7 +1576,9 @@
   "meaningVi": "các khoản trợ cấp có mục tiêu",
   "promptVi": "Ví dụ, nếu chính quyền áp đặt quy định hạn chế đồ ăn nhanh xung quanh các trường trung học, biện pháp này có thể bước đầu giảm tỷ lệ béo phì ở thiếu niên tại các khu đô thị. Mặc dù vậy, chính sách đó sẽ gây thiệt hại doanh thu nghiêm trọng cho các chủ cửa hàng nhượng quyền nhỏ, đồng thời khiến phụ huynh thu nhập thấp mất đi phương án bữa ăn giá rẻ. Việc kết hợp quy định phân khu với các khoản trợ cấp có mục tiêu cho cửa hàng thực phẩm tươi sống là cần thiết để cân bằng sức khỏe học đường với ổn định tài chính gia đình.",
   "referenceAnswers": [
-   "For example, if authorities impose restrictions on fast-food outlets around secondary schools, this policy could initially reduce adolescent obesity rates in urban areas. Nevertheless, such a measure would inflict severe revenue losses on small franchise operators, while leaving low-income parents without cheap meal options. Pairing zoning rules with targeted subsidies for fresh food vendors is essential to balance student health against family financial stability."
+   "For example, if authorities impose restrictions on fast-food outlets around secondary schools, this policy could initially reduce adolescent obesity rates in urban areas. Nevertheless, such a measure would inflict severe revenue losses on small franchise operators, while leaving low-income parents without cheap meal options. Pairing zoning rules with targeted subsidies for fresh food vendors is essential to balance student health against family financial stability.",
+   "For instance, restricting fast-food outlets near high schools could initially curb urban teen obesity rates. Even so, the rule would hit small franchise owners' sales hard and strip low-income parents of affordable meal choices. Combining zoning limits with targeted subsidies for fresh-food sellers is crucial to balance student health and household financial stability.",
+   "Take limits on fast-food shops around secondary schools: such curbs might give an early boost to cutting city teen obesity. Yet small franchise operators would take a heavy revenue hit, while poorer families would lose convenient, low-cost meal options. Pairing planning restrictions with smart subsidies for fresh-produce stalls offers a practical way to protect both youth health and family budgets."
   ],
   "grammarTags": [
    "concession & multiple stakeholders"
@@ -1524,7 +1636,9 @@
   "meaningVi": "gánh nặng hạ tầng",
   "promptVi": "Những căn hộ diện tích nhỏ xây dựng với mật độ cao tại trung tâm thành phố mang lại giải pháp tức thì cho cuộc khủng hoảng nhà ở của lao động trẻ. Trái lại, giải pháp này gây ra gánh nặng hạ tầng lên hệ thống xử lý chất thải và không gian đỗ xe chung của cư dân lâu năm. Sự điều chỉnh quy hoạch phải cân nhắc năng lực chịu tải của địa phương nhằm đảm bảo chất lượng sống cho cả người mới đến và cộng đồng cũ.",
   "referenceAnswers": [
-   "High-density micro-apartments built in central districts offer an immediate remedy to the housing crisis for young workers. Conversely, this solution places an infrastructure strain on local waste management systems and shared parking spaces for long-term residents. Planning revisions must evaluate local carrying capacity to safeguard liveability for both newcomers and existing communities."
+   "High-density micro-apartments built in central districts offer an immediate remedy to the housing crisis for young workers. Conversely, this solution places an infrastructure strain on local waste management systems and shared parking spaces for long-term residents. Planning revisions must evaluate local carrying capacity to safeguard liveability for both newcomers and existing communities.",
+   "Compact high-density flats built downtown provide a quick fix for young workers' housing crunch. On the flip side, this strains local waste systems and shared parking used by long-time residents. Planning updates must factor in local infrastructure capacity to preserve liveability for both arrivals and established communities.",
+   "High-density micro-flats in city centres deliver rapid relief for young professionals struggling to find housing. At the same time, squeezing more residents into core blocks overloads rubbish collection and shared parking for established neighbours. Urban planning reforms have to match local infrastructure limits so neighbourhoods stay liveable for newcomers and longtime locals alike."
   ],
   "grammarTags": [
    "counterargument & capacity limit"
@@ -1552,7 +1666,9 @@
   "meaningVi": "độ tin cậy được nhìn nhận",
   "promptVi": "Các chứng chỉ kỹ năng ngắn hạn trực tuyến cho phép người lao động trưởng thành nhanh chóng cập nhật kiến thức mà không phải nghỉ việc. Mặc dù hình thức này tạo sự linh hoạt, độ tin cậy được nhìn nhận từ phía các nhà tuyển dụng đối với trình độ này vẫn thấp hơn nhiều so với bằng đại học chính quy. Việc thiết lập cơ chế kiểm định độc lập cho các khóa học ngắn hạn sẽ giúp gia tăng cơ hội thăng tiến cho người học mà không làm giảm tiêu chuẩn tuyển dụng của thị trường.",
   "referenceAnswers": [
-   "Online micro-credentials allow adult workers to reskill rapidly without taking leave from their jobs. Although this flexibility is advantageous, the perceived credibility of such qualifications among employers remains far lower than that of formal university degrees. Establishing an independent accreditation framework for short courses would boost career progression opportunities for learners without undermining market recruitment standards."
+   "Online micro-credentials allow adult workers to reskill rapidly without taking leave from their jobs. Although this flexibility is advantageous, the perceived credibility of such qualifications among employers remains far lower than that of formal university degrees. Establishing an independent accreditation framework for short courses would boost career progression opportunities for learners without undermining market recruitment standards.",
+   "Short online skill certificates let adult workers refresh skills fast without quitting their jobs. Despite this convenience, employers still view such credentials as far less credible than full university degrees. Creating independent accreditation for short courses would widen career advancement without lowering hiring standards.",
+   "Online micro-courses enable working adults to pick up new competencies quickly alongside full-time jobs. Even with that flexibility, hiring managers still place far less trust in short certificates than in conventional university degrees. Putting independent quality accreditation in place would help learners climb the career ladder without watering down recruitment standards."
   ],
   "grammarTags": [
    "concession & structural policy"
@@ -1638,7 +1754,9 @@
   "meaningVi": "dữ liệu độc quyền",
   "promptVi": "Nếu các cơ quan quản lý bắt buộc các ứng dụng di chuyển tư nhân chia sẻ dữ liệu hành trình, hệ thống giao thông công cộng đô thị có thể được tối ưu hóa hiệu quả. Mặc dù điều này giúp chính quyền thành phố nâng cao năng lực quy hoạch tuyến xe buýt, các công ty công nghệ lại lo ngại việc mất dữ liệu độc quyền sẽ làm giảm lợi thế cạnh tranh của họ. Khung quản lý dữ liệu cần thiết lập các giao thức mã hóa an toàn để bảo vệ bí mật kinh doanh mà vẫn phục vụ lợi ích hạ tầng chung.",
   "referenceAnswers": [
-   "If municipal authorities compel private transport applications to share movement data, urban public transit networks can be effectively optimized. While this could enhance city councils' bus route planning capacity, technology firms worry that losing proprietary data erodes their competitive edge. Data governance frameworks must incorporate secure encryption protocols to protect business confidentiality while supporting wider infrastructure aims."
+   "If municipal authorities compel private transport applications to share movement data, urban public transit networks can be effectively optimized. While this could enhance city councils' bus route planning capacity, technology firms worry that losing proprietary data erodes their competitive edge. Data governance frameworks must incorporate secure encryption protocols to protect business confidentiality while supporting wider infrastructure aims.",
+   "If regulators require private mobility apps to share trip data, city transit systems can be fine-tuned effectively. While this boosts municipal bus-route planning, tech firms fear losing proprietary data will erode their market edge. Data governance rules must build in robust encryption to guard trade secrets while serving wider public infrastructure goals.",
+   "Compelling private transport platforms to share travel patterns gives municipal planners the insight needed to streamline urban transit networks. City councils gain sharper bus scheduling as a result, yet tech firms worry that exposing proprietary records weakens their competitive standing. Sound data governance has to rely on strong encryption so commercial secrets stay safe while public infrastructure improves."
   ],
   "grammarTags": [
    "condition & technical compromise"
@@ -1695,7 +1813,9 @@
   "meaningVi": "sự tiêu chuẩn hóa",
   "promptVi": "Sự tiêu chuẩn hóa các kỳ thi cấp tiểu học giúp các cơ quan quản lý dễ dàng đánh giá chất lượng giáo dục mặt bằng chung trên cả nước. Trái lại, phương pháp này vô tình gây bất lợi cho những học sinh có phong cách học tập khác biệt, đồng thời gia tăng áp lực tài chính lên phụ huynh khi phải cho con học thêm. Việc áp dụng các hình thức đánh giá đa dạng là cần thiết để bảo đảm cơ hội phát triển toàn diện cho trẻ mà không làm biến dạng mục tiêu giáo dục ban đầu.",
   "referenceAnswers": [
-   "The standardisation of primary school examinations enables educational authorities to evaluate overall educational quality nationwide easily. Conversely, this approach inadvertently disadvantages students with different learning styles, while increasing financial pressure on parents who must pay for supplementary classes. Implementing diversified assessment methods is essential to ensure well-rounded development opportunities for children without distorting original educational goals."
+   "The standardisation of primary school examinations enables educational authorities to evaluate overall educational quality nationwide easily. Conversely, this approach inadvertently disadvantages students with different learning styles, while increasing financial pressure on parents who must pay for supplementary classes. Implementing diversified assessment methods is essential to ensure well-rounded development opportunities for children without distorting original educational goals.",
+   "Standardizing primary school tests makes it easier for officials to gauge nationwide educational standards. Conversely, this approach unwittingly penalizes pupils with diverse learning styles and raises parents' bills for private tutoring. Adopting varied assessment methods is vital to foster children's all-round growth without skewing core educational aims.",
+   "Uniform primary-level exams give education authorities a straightforward way to track national schooling quality. The drawback is that one-size-fits-all testing puts children with different learning strengths at a disadvantage and pushes parents to spend more on extra tuition. Bringing in broader assessment formats helps children develop across the board without distorting what education is meant to achieve."
   ],
   "grammarTags": [
    "Evaluative Argumentation & Stakeholder Impact"
@@ -1780,7 +1900,7 @@
   "topic": "Văn hóa & Du lịch",
   "targetTerm": "authentic representation",
   "meaningVi": "sự tái hiện chân thực",
-  "promptVi": "Việc dàn dựng các nghi lễ truyền thống phục vụ du khách mang lại nguồn thu nhập đáng kể cho các thợ thủ công và hướng dẫn viên địa phương. Dù vậy, hành động rút ngắn thời lượng biểu diễn để đáp ứng lịch trình tour thương mại đang làm mất đi sự tái hiện chân thực các giá trị tâm linh cổ xưa. Nếu ban quản lý du lịch không đưa các nghệ nhân lâu năm vào quá trình quy hoạch chương trình, di sản cộng đồng có nguy cơ bị biến thành công cụ giải trí hời hợt.",
+  "promptVi": "Tổ chức trình diễn các nghi lễ truyền thống phục vụ du khách mang lại nguồn thu nhập đáng kể cho đội ngũ nghệ nhân thủ công và hướng dẫn viên địa phương. Tuy nhiên, cắt ngắn thời lượng biểu diễn để chiều theo lịch trình tour thương mại lại làm sai lệch tính chân thực khi tái hiện những giá trị tâm linh cổ xưa. Nếu ban quản lý du lịch không mời các nghệ nhân kỳ cựu tham gia xây dựng chương trình, di sản cộng đồng có nguy cơ bị hạ thấp thành hoạt động giải trí hời hợt.",
   "referenceAnswers": [
    "Staging traditional rituals for tourists brings significant income to local artisans and guides. Nevertheless, shortening performance times to suit commercial tour itineraries compromises the authentic representation of ancient spiritual values. Unless tourism boards involve veteran artisans in program planning, community heritage risks being reduced to superficial entertainment.",
    "Staging traditional rituals for tourists brings significant income to local artisans and guides. Nevertheless, shortening performance times to suit commercial tour itineraries compromises the authentic representation of ancient spiritual values. Unless tourism boards involve veteran artisans in programme planning, community heritage risks being reduced to superficial entertainment."
@@ -1790,7 +1910,13 @@
   ],
   "explanationVi": "Thuật ngữ 'authentic representation' thể hiện sự tái hiện chân thực các giá trị văn hóa nguyên bản. Đoạn văn đào sâu tác động tiêu cực của thương mại hóa du lịch lên tính nguyên bản của di sản.",
   "rationaleVi": "Phát triển lập luận mức 7.5 qua việc cân bằng giữa lợi ích kinh tế ngắn hạn cho người làm du lịch và nguy cơ mai một văn hóa của các nghệ nhân đời trước.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Unless tourism boards do not involve veteran artisans in program planning, community heritage risks being reduced to superficial entertainment.",
+    "correction": "Unless tourism boards involve veteran artisans in program planning, community heritage risks being reduced to superficial entertainment.",
+    "reasonVi": "Liên từ 'Unless' bản thân nó đã mang nghĩa phủ định ('nếu... không'), nên mệnh đề đi ngay sau 'Unless' phải chia ở thể khẳng định ('Unless tourism boards involve...'), không thêm 'do not'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "ai-assisted-level-draft",
@@ -1805,7 +1931,9 @@
   "meaningVi": "tình trạng kiệt sức vì công việc",
   "promptVi": "Các hình thức làm việc từ xa mang đến cho nhân viên sự linh hoạt cao về thời gian và giảm thiểu chi phí di chuyển hằng ngày. Mặc dù vậy, sự xóa nhòa ranh giới giữa đời sống cá nhân và nhiệm vụ chuyên môn đang gây ra tình trạng kiệt sức vì công việc gia tăng ở lực lượng lao động trẻ. Lãnh đạo các doanh nghiệp cần áp dụng quy định ngắt kết nối bắt buộc ngoài giờ để bảo vệ sức khỏe tâm thần lâu dài cho nhân sự.",
   "referenceAnswers": [
-   "Remote working arrangements provide staff with substantial schedule flexibility and lower daily commuting expenses. Nevertheless, the blurring of boundaries between personal life and professional duties has triggered widespread occupational burnout among young professionals. Corporate leaders must implement mandatory after-hours disconnection policies to protect employee mental health over the long term."
+   "Remote working arrangements provide staff with substantial schedule flexibility and lower daily commuting expenses. Nevertheless, the blurring of boundaries between personal life and professional duties has triggered widespread occupational burnout among young professionals. Corporate leaders must implement mandatory after-hours disconnection policies to protect employee mental health over the long term.",
+   "Teleworking gives staff great schedule flexibility and trims daily travel costs. Even so, blurred lines between home life and job duties are fueling rising burnout among younger workers. Business leaders must enforce after-hours disconnect rules to safeguard employees' long-term mental health.",
+   "Working remotely hands employees considerable freedom over their hours while cutting daily commuting bills. Yet as personal time and work obligations bleed into one another, younger professionals are burning out at alarming rates. Company executives need to put strict right-to-disconnect rules in place after hours to protect staff mental wellbeing over the long run."
   ],
   "grammarTags": [
    "Organizational Dynamics & Mental Health"
@@ -1863,7 +1991,9 @@
   "meaningVi": "tính khả thi thương mại",
   "promptVi": "Tính khả thi thương mại thường quyết định dự án nghiên cứu đại học nào nhận được nguồn vốn đầu tư từ các tập đoàn công nghệ tư nhân. Sự ưu tiên theo định hướng thị trường này vô tình đẩy các ngành toán học thuần túy và khoa học xã hội vào tình trạng thiếu hụt ngân sách nghiêm trọng. Các hội đồng giáo dục cấp cao phải duy trì nguồn tài trợ riêng cho nghiên cứu cơ bản để bảo tồn sự phát triển tri thức toàn diện và bền vững.",
   "referenceAnswers": [
-   "Commercial viability often determines which university research projects receive investment capital from private technology corporations. This market-driven prioritisation inadvertently pushes pure mathematics and social sciences into severe budget deficits. Higher education councils must maintain dedicated funding for basic research to preserve comprehensive and sustainable intellectual development."
+   "Commercial viability often determines which university research projects receive investment capital from private technology corporations. This market-driven prioritisation inadvertently pushes pure mathematics and social sciences into severe budget deficits. Higher education councils must maintain dedicated funding for basic research to preserve comprehensive and sustainable intellectual development.",
+   "Commercial potential frequently dictates which university studies win funding from private tech giants. This market-driven bias leaves pure mathematics and social sciences starved of vital funds. Higher education boards must ring-fence grants for basic research to keep knowledge development broad and sustainable.",
+   "Whether a university project can turn a profit often decides if private tech corporations will back it. Focusing purely on market returns ends up leaving pure maths and the social sciences severely underfunded. University funding councils therefore have to protect dedicated budgets for foundational research so scholarship advances evenly and sustainably."
   ],
   "grammarTags": [
    "Resource Allocation & Academic Impact"
@@ -1919,9 +2049,11 @@
   "topic": "Đô thị & Nhà ở",
   "targetTerm": "legacy housing estates",
   "meaningVi": "các khu tập thể cũ",
-  "promptVi": "Việc bắt buộc lắp đặt đồng hồ nước thông minh tại các khu tập thể cũ giúp cơ quan quản lý phát hiện rò rỉ sớm và giảm đáng kể lượng nước thất thoát toàn thành phố. Ví dụ, nếu một quận nội thành triển khai dự án thí điểm này, lượng tiêu thụ nước không sinh hoạt có thể giảm mạnh, giúp chính quyền tiết kiệm chi phí vận hành. Mặc dù vậy, chi phí bảo trì thiết bị cảm biến phát sinh lại đổ dồn lên các hộ gia đình hưu trí vốn sống bằng lương hưu cố định. Việc kết hợp bảo hành dài hạn từ nhà cung cấp với chính sách hỗ trợ hộ yếu thế là giải pháp bắt buộc để duy trì hạ tầng sạch mà không gây bất bình đẳng xã hội.",
+  "promptVi": "Quy định bắt buộc lắp đặt đồng hồ nước thông minh tại các khu nhà tập thể cũ giúp cơ quan quản lý phát hiện sớm điểm rò rỉ và cắt giảm đáng kể lượng nước thất thoát trên toàn thành phố. Chẳng hạn, nếu một quận trung tâm triển khai dự án thí điểm này, lượng nước tiêu thụ ngoài sinh hoạt có thể giảm mạnh, giúp chính quyền địa phương tiết kiệm chi phí vận hành. Dẫu vậy, chi phí bảo trì cảm biến phát sinh lại đè nặng lên các hộ hưu trí vốn sống dựa vào khoản lương hưu cố định. Kết hợp chế độ bảo hành dài hạn từ nhà cung cấp với chính sách hỗ trợ các hộ yếu thế là giải pháp cấp thiết để duy trì hạ tầng sạch mà không gây bất bình đẳng xã hội.",
   "referenceAnswers": [
-   "Compulsory installation of smart water meters in legacy housing estates enables management agencies to detect leaks early and substantially cut city-wide water loss. For example, if a central borough implements this trial project, non-domestic water consumption could decline sharply, saving local authorities operational costs. Nevertheless, incurred sensor maintenance costs fall on retired households living on fixed pensions. Combining extended supplier warranties with support policies for vulnerable households is an imperative solution to sustain clean infrastructure without causing social inequality."
+   "Compulsory installation of smart water meters in legacy housing estates enables management agencies to detect leaks early and substantially cut city-wide water loss. For example, if a central borough implements this trial project, non-domestic water consumption could decline sharply, saving local authorities operational costs. Nevertheless, incurred sensor maintenance costs fall on retired households living on fixed pensions. Combining extended supplier warranties with support policies for vulnerable households is an imperative solution to sustain clean infrastructure without causing social inequality.",
+   "Mandating smart water meters in older housing blocks helps utilities spot leaks early and curb city-wide water waste. For instance, if an inner-city district pilots this scheme, non-residential water use could drop steeply, trimming municipal running costs. Yet extra sensor upkeep fees fall heavily on retired households living on fixed pensions. Pairing long supplier warranties with targeted aid for vulnerable residents is essential to sustain clean infrastructure without fueling social inequity.",
+   "Installing smart water meters in ageing apartment blocks lets authorities catch leaks quickly and slash urban water loss. Take an inner-city borough running a pilot: non-domestic consumption could fall dramatically, saving the council substantial operating funds. The catch is that ongoing sensor maintenance bills land squarely on pensioners living on fixed incomes. Combining extended vendor warranties with financial relief for vulnerable households keeps clean infrastructure running without deepening inequality."
   ],
   "grammarTags": [
    "Urban Infrastructure & Social Equity"
@@ -1959,7 +2091,13 @@
   ],
   "explanationVi": "Giữ đúng tác nhân, mức chắc chắn, phạm vi và quan hệ giữa các câu.",
   "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài bổ sung từ bộ ESL v2 (R15-U01), chủ đề Đánh giá luận cứ cạnh tranh.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Critics of a charge for driving into the city centre worry about night-shift workers, whereas supporters emphasise on the potential reduction in congestion.",
+    "correction": "Critics of a charge for driving into the city centre worry about night-shift workers, whereas supporters emphasise the potential reduction in congestion.",
+    "reasonVi": "'Emphasise' là ngoại động từ đi trực tiếp với tân ngữ ('emphasise the potential reduction'), chỉ dùng giới từ 'on' khi chuyển sang danh từ ('place emphasis on')."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -1975,7 +2113,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một đề xuất rút ngắn tuần làm việc có thể cải thiện cân bằng cuộc sống, nhưng một số doanh nghiệp nhỏ lo khó duy trì dịch vụ. Không nên xem hai nhận định này là hoàn toàn đối lập. Thí điểm theo ngành có thể giúp đánh giá lợi ích và chi phí vận hành trước khi áp dụng rộng rãi.",
   "referenceAnswers": [
-   "A shorter working week may improve work–life balance, but some small firms worry about maintaining services. These claims need not be mutually exclusive. Sector-specific trials could help assess both employee benefits and operating costs before wider adoption."
+   "A shorter working week may improve work–life balance, but some small firms worry about maintaining services. These claims need not be mutually exclusive. Sector-specific trials could help assess both employee benefits and operating costs before wider adoption.",
+   "Cutting the workweek could enhance work-life balance, yet some small businesses worry about keeping services running. These two views need not be treated as wholly incompatible. Sector-by-sector pilots could weigh employee gains against operating costs prior to broader rollout.",
+   "Shortening the working week promises healthier work-life balance, though smaller outfits fear service coverage may slip. Those concerns don't have to stand in strict opposition. Running trials within individual industries would let businesses measure staff benefits alongside operating expenses before scaling up."
   ],
   "grammarTags": [
    "weighing_competing_claims",
@@ -2007,7 +2147,9 @@
   "topic": "Công nghệ & Khoa học",
   "promptVi": "Có người cho rằng việc đặt giới hạn thời gian dùng mạng xã hội sẽ bảo vệ thanh thiếu niên, còn người khác lo rằng biện pháp này bỏ qua vai trò của gia đình. Tranh luận sẽ hữu ích hơn nếu phân biệt giới hạn bắt buộc với công cụ hỗ trợ phụ huynh. Hai biện pháp đó không nhất thiết tạo ra tác động giống nhau.",
   "referenceAnswers": [
-   "Some argue that limits on social-media use would protect teenagers, while others fear such rules overlook the role of families. The debate becomes more useful when mandatory restrictions are distinguished from tools that assist parents. The two approaches need not have the same effects."
+   "Some argue that limits on social-media use would protect teenagers, while others fear such rules overlook the role of families. The debate becomes more useful when mandatory restrictions are distinguished from tools that assist parents. The two approaches need not have the same effects.",
+   "Some contend that capping social media time protects adolescents, whereas others worry such rules sideline parents' role. The debate grows more constructive when compulsory caps are separated from tools empowering parents. Those two measures need not produce identical outcomes.",
+   "While proponents say limiting social-media hours shields teenagers, critics warn that strict caps overlook family responsibility. Discussions become far more productive once blanket restrictions are distinguished from features designed to help parents guide usage. Clearly, the two options can lead to quite different results."
   ],
   "grammarTags": [
    "weighing_competing_claims",
@@ -2138,7 +2280,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Các nhà trường có thể đưa nhiều hoạt động sáng tạo vào thời khóa biểu, nhưng không nên làm điều đó bằng cách cắt bỏ hoàn toàn việc luyện đọc cơ bản. Hai mục tiêu có thể cùng tồn tại nếu thời lượng học được phân bổ rõ ràng. Điều cần tranh luận là cách cân bằng, không phải chọn một bỏ một.",
   "referenceAnswers": [
-   "Schools may add more creative activities to the timetable, but they should not do so by eliminating foundational reading practice. Both aims can coexist if teaching time is allocated deliberately. The question is how to strike a balance, not which aim to abandon."
+   "Schools may add more creative activities to the timetable, but they should not do so by eliminating foundational reading practice. Both aims can coexist if teaching time is allocated deliberately. The question is how to strike a balance, not which aim to abandon.",
+   "Schools can weave more creative tasks into timetables without stripping out core reading instruction altogether. Both priorities can thrive side by side if class hours are apportioned thoughtfully. What needs debating is how to balance them, not which one to sacrifice.",
+   "Adding creative pursuits to the school day shouldn't mean abandoning basic reading practice. Given careful scheduling, both literacy and creativity can flourish together. The real issue is finding the right mix rather than treating it as an all-or-nothing choice."
   ],
   "grammarTags": [
    "weighing_competing_claims",
@@ -2159,7 +2303,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Đánh giá luận cứ cạnh tranh"
+  "skillFocus": "Đánh giá luận cứ cạnh tranh",
+  "targetTerm": "strike a balance",
+  "meaningVi": "đạt sự cân bằng"
  },
  {
   "id": "esl-v2-r15-u01-012",
@@ -2168,7 +2314,9 @@
   "topic": "Đô thị & Nhà ở",
   "promptVi": "Một thành phố có thể tự hào về lượng khách du lịch tăng, nhưng cư dân cũng có quyền lo ngại về nhà ở và không gian công cộng. Đánh giá chính sách chỉ dựa trên doanh thu sẽ bỏ qua những chi phí xã hội này. Vì vậy, chỉ số kinh tế cần được đọc cùng phản hồi của cộng đồng.",
   "referenceAnswers": [
-   "A city may welcome rising tourist numbers, while residents have legitimate concerns about housing and public space. Judging policy by revenue alone would overlook these social costs. Economic indicators should therefore be considered alongside community feedback."
+   "A city may welcome rising tourist numbers, while residents have legitimate concerns about housing and public space. Judging policy by revenue alone would overlook these social costs. Economic indicators should therefore be considered alongside community feedback.",
+   "A city may celebrate surging tourist arrivals, yet locals have valid worries over housing affordability and public spaces. Assessing policy purely through revenue ignores those social burdens. Economic metrics therefore need to be weighed alongside resident feedback.",
+   "Rising visitor figures are something cities naturally welcome, even as residents raise fair concerns about squeezed housing and crowded public areas. Judging success by tourist spending alone turns a blind eye to those social trade-offs. Consequently, financial data has to be read side by side with local community voices."
   ],
   "grammarTags": [
    "weighing_competing_claims",
@@ -2222,7 +2370,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Đánh giá luận cứ cạnh tranh"
+  "skillFocus": "Đánh giá luận cứ cạnh tranh",
+  "targetTerm": "raise awareness",
+  "meaningVi": "nâng cao nhận thức"
  },
  {
   "id": "esl-v2-r15-u01-014",
@@ -2298,7 +2448,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một công ty có thể tự động hóa bộ phận chăm sóc khách hàng để trả lời câu hỏi đơn giản nhanh hơn. Song những trường hợp phức tạp vẫn cần nhân viên có kinh nghiệm, và quá trình chuyển đổi cũng tốn chi phí đào tạo. Việc đánh giá nên tính cả tốc độ phản hồi lẫn chất lượng giải quyết vấn đề khó.",
   "referenceAnswers": [
-   "A company may automate routine customer enquiries to provide faster responses. Complex cases would still require experienced staff, and the transition would involve training costs. Any evaluation should consider both response times and the quality of solutions to difficult problems."
+   "A company may automate routine customer enquiries to provide faster responses. Complex cases would still require experienced staff, and the transition would involve training costs. Any evaluation should consider both response times and the quality of solutions to difficult problems.",
+   "A business can automate customer support to answer basic queries more rapidly. Yet complex cases still demand seasoned staff, and shifting systems carries training outlays. Evaluations ought to weigh response speed alongside how well tough issues are resolved.",
+   "Automating customer service helps companies clear straightforward enquiries far quicker. Even so, tricky problems still call for experienced agents, and adopting new systems requires spending on staff training. Any fair review should look at both turnaround times and how effectively complicated cases get settled."
   ],
   "grammarTags": [
    "opportunity_cost",
@@ -2330,7 +2482,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Mở rộng chương trình thực tập có thể giúp sinh viên tiếp xúc với công việc thật. Tuy nhiên, nếu vị trí không trả lương, những người cần đi làm để trang trải sinh hoạt sẽ khó tham gia. Chính sách nên cân nhắc hỗ trợ chi phí thay vì chỉ đếm số cơ hội được quảng bá.",
   "referenceAnswers": [
-   "Expanding internships may give students valuable workplace exposure. Yet unpaid placements can exclude those who must earn money to cover living costs. The policy should consider financial support rather than simply counting advertised opportunities."
+   "Expanding internships may give students valuable workplace exposure. Yet unpaid placements can exclude those who must earn money to cover living costs. The policy should consider financial support rather than simply counting advertised opportunities.",
+   "Broadening internship schemes can give students hands-on workplace experience. Yet unpaid roles shut out those who must work to cover living expenses. Policy should factor in financial stipends instead of merely tallying promoted placements.",
+   "Expanding student internships offers valuable exposure to real working environments. Still, when placements pay nothing, undergraduates who have to earn their keep are effectively locked out. Rather than simply counting how many openings are advertised, schemes ought to build in living-cost support."
   ],
   "grammarTags": [
    "opportunity_cost",
@@ -2362,7 +2516,9 @@
   "topic": "Môi trường & Năng lượng",
   "promptVi": "Một địa phương muốn ưu tiên thực phẩm được sản xuất gần nhà để rút ngắn quãng đường vận chuyển. Dẫu vậy, sản xuất trong nhà kính tiêu thụ nhiều năng lượng có thể làm giảm lợi ích môi trường dự kiến. Vì thế, nên so sánh toàn bộ quá trình sản xuất và vận chuyển thay vì chỉ nhìn vào khoảng cách.",
   "referenceAnswers": [
-   "A local authority wants to favour nearby food production to shorten transport distances. Nevertheless, energy-intensive greenhouses could reduce the expected environmental benefit. The comparison should therefore cover production and transport together rather than distance alone."
+   "A local authority wants to favour nearby food production to shorten transport distances. Nevertheless, energy-intensive greenhouses could reduce the expected environmental benefit. The comparison should therefore cover production and transport together rather than distance alone.",
+   "A municipality aims to prioritize locally grown food to trim haulage distances. Yet energy-hungry heated greenhouses could offset the anticipated environmental gains. Consequently, full production and transport emissions should be compared rather than looking at mileage alone.",
+   "Local authorities often favour nearby farms in order to shorten food supply lines. However, running energy-intensive greenhouses can wipe out much of the hoped-for green advantage. Looking at total production and shipping impacts together makes far more sense than judging by distance alone."
   ],
   "grammarTags": [
    "opportunity_cost",
@@ -2427,7 +2583,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một tuyến đường đi bộ ven sông có thể làm khu vực hấp dẫn hơn với khách tham quan. Nhưng nếu kế hoạch không dành đủ chỗ cho các cửa hàng nhỏ đang hoạt động, một số hộ kinh doanh có thể mất nguồn thu. Đánh giá dự án phải xét cả lợi ích du lịch và chi phí chuyển đổi của người bán hàng.",
   "referenceAnswers": [
-   "A riverside walkway could make the area more attractive to visitors. But if the plan leaves insufficient room for existing small shops, some traders may lose income. The project should be assessed against both tourism benefits and the transition costs faced by local vendors."
+   "A riverside walkway could make the area more attractive to visitors. But if the plan leaves insufficient room for existing small shops, some traders may lose income. The project should be assessed against both tourism benefits and the transition costs faced by local vendors.",
+   "A riverside promenade can make a district more inviting to tourists. Yet if the blueprint squeezes out existing small shops, some merchants risk losing earnings. Project assessments must weigh tourism gains against traders' transition costs.",
+   "Building a pedestrian path along the riverfront can boost a neighbourhood's appeal for sightseers. Should the layout crowd out established small businesses, though, local shopkeepers stand to lose vital income. Evaluating the scheme therefore means balancing visitor benefits against what relocation costs local traders."
   ],
   "grammarTags": [
    "opportunity_cost",
@@ -2558,7 +2716,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một thư viện muốn kéo dài giờ mở cửa để phục vụ người đi làm. Nếu chi phí nhân sự vượt quá khả năng ngân sách, thư viện có thể thử mở muộn vào những ngày có nhu cầu cao nhất trước. Cách làm này kiểm tra lợi ích mà không cam kết chi phí cố định quá lớn.",
   "referenceAnswers": [
-   "A library wants to extend its opening hours for working residents. If staffing costs exceed the available budget, it could first open late on the days with the highest demand. This would test the benefit without committing to an excessive fixed expense."
+   "A library wants to extend its opening hours for working residents. If staffing costs exceed the available budget, it could first open late on the days with the highest demand. This would test the benefit without committing to an excessive fixed expense.",
+   "A library aims to stay open longer for working patrons. Where staffing expenses strain the budget, it can trial late hours on peak-demand days first. That approach gauges value without locking in hefty fixed outlays.",
+   "To serve working locals better, a library may look into extending its opening hours. If paying extra staff stretches budgets too far, trialling late openings on the busiest evenings offers a practical first step. Doing so tests real demand before committing to steep ongoing costs."
   ],
   "grammarTags": [
    "opportunity_cost",
@@ -2602,7 +2762,13 @@
   ],
   "explanationVi": "Không đảo thời điểm, hành động và chủ thể. Không đảo quan hệ thời gian. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
   "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài bổ sung từ bộ ESL v2 (R15-U03), chủ đề Suy luận có căn cứ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A health app recorded more walking among participants after a four-weeks challenge.",
+    "correction": "A health app recorded more walking among participants after a four-week challenge.",
+    "reasonVi": "Khi cụm 'số đếm + danh từ' có dấu gạch nối đứng trước danh từ để làm tính từ ghép ('four-week challenge'), danh từ 'week' bắt buộc giữ ở số ít, không thêm 's'."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2640,7 +2806,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Suy luận có căn cứ"
+  "skillFocus": "Suy luận có căn cứ",
+  "targetTerm": "attributed entirely to",
+  "meaningVi": "được quy hoàn toàn cho"
  },
  {
   "id": "esl-v2-r15-u03-007",
@@ -2649,7 +2817,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Một nghiên cứu nhỏ tại một bệnh viện cho thấy thời gian chờ trung bình đã giảm sau khi đổi quy trình. Đây có thể là tín hiệu đáng quan tâm, nhưng bệnh viện đó có số nhân viên và loại bệnh nhân khác nhiều nơi khác. Trước khi áp dụng rộng rãi, cần đánh giá khả năng tái hiện kết quả ở các cơ sở khác.",
   "referenceAnswers": [
-   "A small study at one hospital found shorter average waits after a process change. This is a promising signal, but the hospital's staffing and patient mix may differ from those elsewhere. Wider adoption should follow an assessment of whether the result can be reproduced at other sites."
+   "A small study at one hospital found shorter average waits after a process change. This is a promising signal, but the hospital's staffing and patient mix may differ from those elsewhere. Wider adoption should follow an assessment of whether the result can be reproduced at other sites.",
+   "A small-scale study conducted at a single hospital reported reduced average waiting times following a procedural change. While this is an encouraging sign, the facility's staffing levels and patient profile differ markedly from those at many other locations. Before rolling out the change broadly, it is necessary to evaluate whether these outcomes can be replicated across other institutions.",
+   "Although a modest study at one hospital observed shorter mean waiting times after workflow adjustments, we should interpret this carefully. That site's workforce size and patient demographics may not match conditions elsewhere, even if the initial sign is noteworthy. Consequently, testing whether the findings hold true in different facilities must precede widespread implementation."
   ],
   "grammarTags": [
    "selection_bias",
@@ -2794,7 +2964,13 @@
   ],
   "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
   "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài bổ sung từ bộ ESL v2 (R15-U03), chủ đề Suy luận có căn cứ.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "Yet self-reported data can affected by memory and a desire to give expected answers.",
+    "correction": "Yet self-reported data can be affected by memory and a desire to give expected answers.",
+    "reasonVi": "Sau động từ khuyết thiếu \"can\" ở thể bị động bắt buộc phải có \"be\" (\"can be affected\"), không đi trực tiếp với phân từ hai."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -2843,7 +3019,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một thử nghiệm ứng dụng đọc sách chỉ kéo dài hai tuần nên có thể đánh giá mức độ tham gia ban đầu. Nó chưa đủ để cho biết học sinh có duy trì thói quen đọc suốt học kỳ hay không. Báo cáo cuối cần phân biệt tác động ngắn hạn với sự thay đổi bền vững.",
   "referenceAnswers": [
-   "A two-week trial of a reading app can assess initial engagement. It is too brief to show whether pupils will sustain their reading habits throughout a term. The final report should distinguish short-term effects from lasting changes."
+   "A two-week trial of a reading app can assess initial engagement. It is too brief to show whether pupils will sustain their reading habits throughout a term. The final report should distinguish short-term effects from lasting changes.",
+   "Lasting only two weeks, a trial of a reading application is sufficient to measure initial participation. However, it is not long enough to determine whether students maintain their reading habits across an entire term. The concluding report must therefore separate short-term effects from durable change.",
+   "Because a reading app pilot runs for just two weeks, it can really only capture early engagement. What it cannot tell us is whether learners keep up their reading routines over a whole semester. In the final evaluation, short-lived impacts need to be clearly distinguished from lasting behavioural shifts."
   ],
   "grammarTags": [
    "selection_bias",
@@ -2975,7 +3153,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một trường mở lớp phụ đạo sau giờ học nhằm hỗ trợ học sinh đang gặp khó khăn. Dẫu vậy, học sinh phải chăm em hoặc đi xa có thể không tham gia được. Nếu muốn công bằng, nhà trường cần cân nhắc cả thời gian, phương tiện và hình thức hỗ trợ thay thế.",
   "referenceAnswers": [
-   "A school offers after-class tutoring for pupils who are struggling. Yet students who care for younger siblings or travel long distances may be unable to attend. If equity is the aim, the school should consider timing, transport and alternative forms of support."
+   "A school offers after-class tutoring for pupils who are struggling. Yet students who care for younger siblings or travel long distances may be unable to attend. If equity is the aim, the school should consider timing, transport and alternative forms of support.",
+   "A school has introduced after-school tutoring sessions to assist students who are falling behind. Nevertheless, pupils with childcare responsibilities for younger siblings or long commutes may be prevented from attending. To ensure fairness, the school must factor in scheduling, transport options, and alternative support formats.",
+   "In an effort to help struggling learners, a school provides extra classes once the regular school day ends. Even so, those who have to look after younger brothers or sisters, or who live far away, might miss out. If the goal is genuine equity, administrators should look closely at timing, travel arrangements, and other ways of delivering help."
   ],
   "grammarTags": [
    "distributional_impact",
@@ -3041,7 +3221,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một nền tảng thanh toán điện tử giúp cửa hàng xử lý giao dịch nhanh hơn. Nhưng một số khách cao tuổi vẫn quen dùng tiền mặt, và phí giao dịch cũng có thể ảnh hưởng đến cửa hàng nhỏ. Việc triển khai cần giữ lựa chọn phù hợp thay vì buộc mọi giao dịch dùng một phương thức.",
   "referenceAnswers": [
-   "An electronic payment platform helps shops process transactions more quickly. But some older customers still prefer cash, and transaction fees may affect small retailers. Implementation should preserve workable choices rather than require every payment to use one method."
+   "An electronic payment platform helps shops process transactions more quickly. But some older customers still prefer cash, and transaction fees may affect small retailers. Implementation should preserve workable choices rather than require every payment to use one method.",
+   "A digital payment system enables stores to handle transactions more rapidly. However, certain elderly shoppers remain accustomed to paying in cash, while processing fees could place a burden on small businesses. Rollout plans should retain practical alternatives rather than mandating a single payment method for every purchase.",
+   "Although electronic payment platforms speed up checkouts for retailers, switching over is not seamless for everyone. Older customers often stick to cash out of habit, and transaction charges can squeeze smaller shops. Rather than forcing all payments through one channel, the rollout ought to preserve sensible options."
   ],
   "grammarTags": [
    "distributional_impact",
@@ -3062,7 +3244,9 @@
   "editorialStatus": "pilot",
   "source": "esl-v2",
   "version": 1,
-  "skillFocus": "Tác động khác nhau giữa các nhóm"
+  "skillFocus": "Tác động khác nhau giữa các nhóm",
+  "targetTerm": "process transactions",
+  "meaningVi": "xử lý giao dịch"
  },
  {
   "id": "esl-v2-r15-u04-010",
@@ -3106,7 +3290,9 @@
   "topic": "Giao thông & Đi lại",
   "promptVi": "Một chính sách tăng phí đỗ xe có thể khuyến khích người lái xe chuyển sang phương tiện khác. Nhưng người làm việc tại các địa điểm không có tuyến xe công cộng phù hợp có ít lựa chọn hơn. Do đó, tác động nên được xem xét theo địa điểm làm việc và thời gian đi lại.",
   "referenceAnswers": [
-   "Higher parking charges may encourage drivers to switch transport modes. But workers at sites without suitable public transport have fewer alternatives. The impact should therefore be examined by workplace location and commuting hours."
+   "Higher parking charges may encourage drivers to switch transport modes. But workers at sites without suitable public transport have fewer alternatives. The impact should therefore be examined by workplace location and commuting hours.",
+   "Raising parking fees may motivate motorists to adopt alternative modes of travel. Yet employees based in areas lacking convenient public transit have far fewer options available. Its effects should thus be assessed according to workplace location and commuting schedules.",
+   "While higher parking tariffs can nudge drivers into using other forms of transport, not everyone has that flexibility. Staff stationed at workplaces without adequate transit links are left with limited choices. As a result, any evaluation needs to account for both where people work and when they commute."
   ],
   "grammarTags": [
    "distributional_impact",
@@ -3138,7 +3324,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một công ty đưa hệ thống đánh giá thành tích dựa trên số cuộc gọi được xử lý. Chỉ số này có thể phù hợp với những yêu cầu đơn giản nhưng gây bất lợi cho nhân viên xử lý vụ việc khó. Muốn công bằng, cần kết hợp số lượng với độ phức tạp và chất lượng giải quyết.",
   "referenceAnswers": [
-   "A company assesses performance by the number of calls handled. That measure may suit straightforward enquiries but disadvantage staff who resolve difficult cases. A fair system needs to combine volume with case complexity and resolution quality."
+   "A company assesses performance by the number of calls handled. That measure may suit straightforward enquiries but disadvantage staff who resolve difficult cases. A fair system needs to combine volume with case complexity and resolution quality.",
+   "A firm has adopted a performance appraisal system based on call volume handled. While this metric may work well for routine enquiries, it penalises employees tasked with complex cases. Achieving fairness requires integrating quantitative output with case difficulty and service quality.",
+   "Measuring staff performance purely by the number of calls completed has clear limitations. Such a yardstick fits straightforward queries, yet puts workers handling tricky issues at an unfair disadvantage. To be equitable, the framework should balance call counts with both complexity and how well problems are resolved."
   ],
   "grammarTags": [
    "distributional_impact",
@@ -3170,7 +3358,9 @@
   "topic": "Giáo dục & Trường học",
   "promptVi": "Một thành phố muốn mở rộng khu vực đi xe đạp an toàn cho học sinh. Trong khi gia đình sống gần trường có thể sử dụng tuyến mới thường xuyên, học sinh ở xa hơn vẫn cần phương tiện kết nối. Chính sách cần xem phần nào của hành trình được giải quyết và nhóm nào còn bị bỏ lại.",
   "referenceAnswers": [
-   "A city wants to expand safe cycle routes for schoolchildren. Families living close to school may use the new routes frequently, while pupils farther away still need connecting transport. The policy should identify which parts of the journey it improves and which groups remain underserved."
+   "A city wants to expand safe cycle routes for schoolchildren. Families living close to school may use the new routes frequently, while pupils farther away still need connecting transport. The policy should identify which parts of the journey it improves and which groups remain underserved.",
+   "A municipality aims to enlarge safe cycling networks for school pupils. Whereas households situated near schools may use these new lanes regularly, students living at greater distances still require connecting transit. Policymakers must assess which segments of the commute are addressed and which groups remain overlooked.",
+   "Expanding protected bike lanes for students is a promising municipal goal, though its reach is uneven. Families within walking or short cycling distance will likely rely on the new paths daily, whereas those living further out still depend on feeder transport. The strategy ought to clarify what portion of the trip is actually covered and who is left out."
   ],
   "grammarTags": [
    "distributional_impact",
@@ -3247,7 +3437,13 @@
   ],
   "explanationVi": "Chỉ khi = điều kiện cần, không được đổi thành điều kiện đủ chỉ bằng if. May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài.",
   "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài bổ sung từ bộ ESL v2 (R15-U05), chủ đề Kết luận gắn với tiêu chí kiểm chứng.",
-  "commonErrors": [],
+  "commonErrors": [
+   {
+    "incorrect": "A city plans to introduce small electric shuttles in neighbourhoods with limited public transports.",
+    "correction": "A city plans to introduce small electric shuttles in neighbourhoods with limited public transport.",
+    "reasonVi": "Danh từ \"transport\" mang nghĩa hệ thống giao thông nói chung là danh từ không đếm được nên không thêm \"-s\" trong cụm \"public transport\"."
+   }
+  ],
   "calibrationStatus": "internal_review",
   "editorialStatus": "pilot",
   "source": "esl-v2",
@@ -3331,7 +3527,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một doanh nghiệp muốn giảm bao bì dùng một lần tại các cửa hàng. Đây là mục tiêu hợp lý nhưng khách hàng cần được cung cấp lựa chọn sử dụng lại thuận tiện, nếu không sự thay đổi có thể chỉ chuyển chi phí sang người mua. Tôi ủng hộ triển khai từng bước kèm đo lượng rác thực tế và phản hồi từ khách hàng.",
   "referenceAnswers": [
-   "A retailer wants to reduce single-use packaging in its stores. This is a reasonable goal, but customers need convenient reusable options; otherwise the change may merely shift costs onto buyers. I support a phased rollout accompanied by measures of actual waste and customer feedback."
+   "A retailer wants to reduce single-use packaging in its stores. This is a reasonable goal, but customers need convenient reusable options; otherwise the change may merely shift costs onto buyers. I support a phased rollout accompanied by measures of actual waste and customer feedback.",
+   "A company seeks to cut down on disposable packaging across its retail outlets. Although this objective makes sense, shoppers must be offered accessible reusable alternatives; otherwise, the shift risks merely passing expenses onto consumers. I favour a gradual rollout paired with tracking actual waste reduction and gathering buyer feedback.",
+   "Cutting single-use packaging in stores is a sensible aim for a retailer, provided it is done thoughtfully. Unless convenient reusable substitutes are made available, the policy may end up shifting extra costs onto shoppers. Personally, I would back a step-by-step introduction that monitors real waste levels alongside customer reactions."
   ],
   "grammarTags": [
    "conditional_recommendation",
@@ -3398,7 +3596,9 @@
   "topic": "Sức khỏe & Y tế",
   "promptVi": "Một bệnh viện đang xem xét hệ thống đặt lịch khám bằng ứng dụng để giảm xếp hàng trực tiếp. Giải pháp có thể hữu ích, song bệnh nhân không dùng điện thoại thông minh vẫn cần cách đặt lịch thay thế. Tôi sẽ coi dự án thành công nếu thời gian chờ giảm mà khả năng tiếp cận của nhóm này không xấu đi.",
   "referenceAnswers": [
-   "A hospital is considering app-based appointments to reduce queues at reception. The solution may help, but patients without smartphones still need an alternative booking method. I would regard the project as successful if waiting times fall without worsening access for this group."
+   "A hospital is considering app-based appointments to reduce queues at reception. The solution may help, but patients without smartphones still need an alternative booking method. I would regard the project as successful if waiting times fall without worsening access for this group.",
+   "A hospital is evaluating a mobile app booking system to ease in-person queues. While this approach could prove beneficial, patients who do not own smartphones must still have alternative ways to schedule visits. I would deem the initiative successful if waiting times decline without compromising access for those individuals.",
+   "Introducing an app-based appointment system could help a hospital cut down on physical waiting lines. Even so, anyone without a smartphone still needs another reliable way to book an appointment. From my perspective, the scheme only counts as a success if wait times drop while access for non-smartphone users stays intact."
   ],
   "grammarTags": [
    "conditional_recommendation",
@@ -3430,7 +3630,9 @@
   "topic": "Công việc & Kinh tế",
   "promptVi": "Một địa phương muốn chuyển một phần ngân sách quảng bá du lịch sang bảo trì đường mòn. Tôi ủng hộ lựa chọn này nếu việc bảo trì thực sự giải quyết các điểm mất an toàn và không làm suy giảm hỗ trợ cần thiết cho những cơ sở kinh doanh nhỏ. Sau một mùa du lịch, cần xem cả tình trạng đường và tác động đến sinh kế của người dân.",
   "referenceAnswers": [
-   "A local authority wants to redirect part of its tourism advertising budget to trail maintenance. I support this if repairs address genuine safety problems without undermining essential support for small businesses. After one tourist season, both trail conditions and effects on local livelihoods should be reviewed."
+   "A local authority wants to redirect part of its tourism advertising budget to trail maintenance. I support this if repairs address genuine safety problems without undermining essential support for small businesses. After one tourist season, both trail conditions and effects on local livelihoods should be reviewed.",
+   "A local council proposes reallocating a share of its tourism marketing funds toward trail upkeep. I endorse this decision provided the repairs tackle genuine safety hazards without reducing vital assistance for small enterprises. Following a tourist season, officials should review both trail quality and the consequences for residents' livelihoods.",
+   "Shifting some tourism promotion money into maintaining walking trails strikes me as a sound move, with two conditions. The work must fix real safety risks, and it shouldn't cut into essential backing for small local operators. Once a full season has passed, both the state of the paths and the impact on people's incomes ought to be assessed."
   ],
   "grammarTags": [
    "conditional_recommendation",
@@ -3495,7 +3697,9 @@
   "topic": "Xã hội & Chính sách",
   "promptVi": "Một thành phố muốn giảm giới hạn tốc độ gần trường học. Lập luận về an toàn có sức thuyết phục, nhưng biển báo sẽ ít tác dụng nếu thiết kế đường khiến người lái khó nhận ra khu vực cần giảm tốc. Tôi đề xuất kết hợp quy định với thay đổi hạ tầng, rồi kiểm tra tốc độ thực tế trước khi khẳng định chính sách có hiệu quả.",
   "referenceAnswers": [
-   "A city wants to lower speed limits near schools. The safety case is persuasive, but signs may have limited effect if road design makes the need to slow down unclear. I would combine the rule with physical changes and measure actual speeds before claiming success."
+   "A city wants to lower speed limits near schools. The safety case is persuasive, but signs may have limited effect if road design makes the need to slow down unclear. I would combine the rule with physical changes and measure actual speeds before claiming success.",
+   "A municipality plans to reduce speed limits in school zones. While the safety rationale is compelling, signage alone will have minimal impact if road layouts fail to signal the need to slow down. I recommend pairing the regulation with infrastructural modifications and measuring actual vehicle speeds before declaring the policy effective.",
+   "Lowering speed limits around schools makes a lot of sense from a safety standpoint, yet signs by themselves rarely change driver behaviour. If the street design doesn't visually cue motorists to ease off the accelerator, compliance will stay low. I would suggest coupling the new limit with physical road changes and checking real-world speeds before calling it a win."
   ],
   "grammarTags": [
    "conditional_recommendation",
