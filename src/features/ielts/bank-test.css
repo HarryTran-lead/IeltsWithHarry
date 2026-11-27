@@ -651,3 +651,11 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-studio-mode .bw-task, .bx-studio-mode .bw-side, .bx-studio-mode .wf-side, .bx-studio-mode .bs-side, .bx-studio-mode .bx-source-pane { top: 0; }
 .bx-studio-mode .bw-task, .bx-studio-mode .bx-source-pane { max-height: calc(100dvh - 140px); }
 @media (max-width: 600px) { .bx-studio-body { padding: 10px 10px 32px; } }
+
+/* Vietnamese: dictionary senses in the lookup card, the editor-written passage translation under each paragraph. */
+.bt-lookup-senses { display: grid; gap: 2px; }
+.bt-lookup-vi em { margin-right: 6px; padding: 1px 6px; border-radius: 4px; background: #eef2f4; color: #4d6070; font-size: 11px; font-style: normal; font-weight: 700; }
+.bt-lookup-vi.is-more { color: #4d6070; font-size: .92em; font-weight: 500; }
+.bt-lookup-para summary { margin-top: 6px; color: var(--bl-accent); font-size: 12.5px; font-weight: 700; cursor: pointer; }
+.bt-lookup-para small { display: block; margin-top: 4px; }
+.bt-passage-vi { margin: -6px 0 18px; padding: 8px 12px; border-left: 3px solid #8edab3; border-radius: 0 8px 8px 0; background: #f2faf5; color: #2f4f43; font-size: .94em; line-height: 1.65; }

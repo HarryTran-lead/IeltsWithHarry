@@ -3,7 +3,6 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
 import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Copy, Eraser, EyeOff, Highlighter, Languages, MessageSquarePlus, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Sun, Trash2, Volume2, X } from "lucide-react";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
-import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { quickDefine } from "@/lib/vocabulary/quick-define";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
@@ -107,23 +106,49 @@ function lookupWord(text: string) {
   return word.length <= 40 && /^[A-Za-z][A-Za-z'-]*(?: [A-Za-z][A-Za-z'-]*){0,2}$/.test(word) ? word.toLowerCase() : null;
 }
 
+/** SHA-256 of a passage with whitespace collapsed: the key its editor-written Vietnamese translation is stored under. */
+async function passageKey(passage: string) {
+  const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(passage.replace(/\s+/g, " ").trim()));
+  return [...new Uint8Array(bytes)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+/** Sentences of one paragraph, without its printed letter or bold marks, for matching English to Vietnamese. */
+function sentencesOf(paragraph: string, labelled: boolean) {
+  const text = paragraph.replace(/\*\*/g, "").replace(labelled ? /^\s*[A-Z][.:]?\s+/ : /^$/, "").replace(/\s+/g, " ").trim();
+  return text.split(/(?<=[.!?]["”’)]?)\s+(?=["“‘(]?[\p{Lu}0-9])/u).map((part) => part.trim()).filter(Boolean);
+}
+
+/** The Vietnamese sentence matching the looked-up English one when both paragraphs have the same number of sentences. */
+export function alignedSentence(english: string, vietnamese: string, sentence: string, labelled: boolean) {
+  const en = sentencesOf(english, labelled), vi = sentencesOf(vietnamese, labelled);
+  if (!sentence || en.length !== vi.length) return "";
+  const plain = (value: string) => value.replace(/\s+/g, " ").trim().toLowerCase();
+  const target = plain(sentence);
+  const index = en.findIndex((item) => plain(item).includes(target.slice(0, 60)) || target.includes(plain(item)));
+  return index < 0 ? "" : vi[index];
+}
+
+type Meaning = { pos: string; vi: string };
+
 /** Vietnamese meaning, pronunciation and a definition for a word picked in the passage, with "save to notebook". */
-function LookupCard({ word, x, y, sentence, docked = false, onClose }: { word: string; x: number; y: number; sentence?: string; docked?: boolean; onClose: () => void }) {
+function LookupCard({ word, x, y, sentence, sentenceVi = "", paragraphVi = "", docked = false, onClose }: { word: string; x: number; y: number; sentence?: string; sentenceVi?: string; paragraphVi?: string; docked?: boolean; onClose: () => void }) {
   const notebook = useOptionalNotebook();
   const card = useRef<HTMLDivElement>(null);
   const [found, setFound] = useState<{ phonetic: string; part: string; definition: string; example: string } | null>(null);
-  const [meaningVi, setMeaningVi] = useState<string | null>(null);
-  const [sentenceVi, setSentenceVi] = useState<string | null>(null);
+  const [meanings, setMeanings] = useState<Meaning[] | null>(null);
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState<"idle" | "saving" | "saved" | "error">("idle");
-  // Each source fills its part as soon as it answers; a slow translation stops waiting after 8 s.
+  // English definition from the open dictionary; Vietnamese senses from the site's English–Vietnamese dictionary data. No machine translation.
   useEffect(() => {
     let live = true;
     void quickDefine(word).then((value) => { if (live) setFound({ phonetic: value.phonetic ?? "", part: value.part ?? "", definition: value.definition ?? "", example: value.example ?? "" }); });
-    const timeout = new Promise<string[]>((resolve) => window.setTimeout(() => resolve([""]), 8000));
-    void Promise.race([translateEnglishToVietnamese(sentence ? [word, sentence] : [word]), timeout]).then((value) => { if (live) { setMeaningVi(value[0] ?? ""); setSentenceVi(value[1] ?? ""); } }, () => { if (live) { setMeaningVi(""); setSentenceVi(""); } });
+    void fetch(`/api/vocabulary/meaning?word=${encodeURIComponent(word)}`).then((response) => response.ok ? response.json() : { meanings: [] })
+      .then((data: { meanings?: Meaning[] }) => { if (live) setMeanings(data.meanings ?? []); }, () => { if (live) setMeanings([]); });
     return () => { live = false; };
-  }, [word, sentence]);
+  }, [word]);
+  // The sense with the same part of speech as the English definition comes first.
+  const ordered = meanings ? [...meanings].sort((a, b) => Number(b.pos === found?.part) - Number(a.pos === found?.part)) : null;
+  const meaningVi = ordered?.[0]?.vi ?? (meanings ? "" : null);
   useEffect(() => {
     const close = (event: MouseEvent) => { if (!card.current?.contains(event.target as Node) && !(docked && (event.target as HTMLElement).closest(".bt-passage, .bt-questions"))) onClose(); };
     const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
@@ -148,7 +173,7 @@ function LookupCard({ word, x, y, sentence, docked = false, onClose }: { word: s
       <button type="button" aria-label="Nghe phát âm" onClick={() => { if ("speechSynthesis" in window) { const voice = new SpeechSynthesisUtterance(word); voice.lang = "en-US"; window.speechSynthesis.speak(voice); } }}><Volume2 size={17} /></button>
       <button type="button" aria-label="Đóng" onClick={onClose}><X size={17} /></button>
     </header>
-    {meaningVi === null ? <p className="bt-lookup-loading" role="status">Đang dịch…</p> : meaningVi ? <p className="bt-lookup-vi">{meaningVi}</p> : <p className="bt-lookup-muted">Chưa dịch được từ này.</p>}
+    {ordered === null ? <p className="bt-lookup-loading" role="status">Đang tra nghĩa…</p> : ordered.length ? <div className="bt-lookup-senses">{ordered.slice(0, 3).map((item, index) => <p key={`${item.pos}:${index}`} className={index ? "bt-lookup-vi is-more" : "bt-lookup-vi"}>{item.pos && <em>{item.pos}</em>}{item.vi}</p>)}</div> : <p className="bt-lookup-muted">Từ điển chưa có nghĩa tiếng Việt cho từ này.</p>}
     {found === null ? <p className="bt-lookup-loading" role="status">Đang tra từ điển…</p> : found.definition ? <>
       <p className="bt-lookup-def">{found.part && <em>{found.part}</em>}{found.definition}</p>
       {found.example && <p className="bt-lookup-ex">“{found.example}”</p>}
@@ -156,13 +181,13 @@ function LookupCard({ word, x, y, sentence, docked = false, onClose }: { word: s
     {sentence && <div className="bt-lookup-context">
       <span>Trong bài đọc</span>
       <p>{marked.map((part, index) => index % 2 ? <mark key={index}>{part}</mark> : part)}</p>
-      {sentenceVi === null ? <small role="status">Đang dịch câu…</small> : sentenceVi ? <small>{sentenceVi}</small> : null}
+      {sentenceVi ? <small lang="vi">{sentenceVi}</small> : paragraphVi ? <details className="bt-lookup-para"><summary>Xem bản dịch cả đoạn</summary><small lang="vi"><RichText text={paragraphVi} /></small></details> : null}
     </div>}
     <footer>
       {notebook && <button type="button" disabled={!meaningVi || already || saved === "saving" || saved === "saved"} onClick={() => void save()}>{already || saved === "saved" ? <><Check size={15} /> Đã có trong Sổ tay</> : <><BookmarkPlus size={15} /> {saved === "saving" ? "Đang lưu…" : "Lưu vào Sổ tay"}</>}</button>}
       {saved === "error" && <small role="alert">Chưa lưu được.</small>}
       <button type="button" className="bt-lookup-copy" onClick={() => { void navigator.clipboard?.writeText(meaningVi ? `${word}: ${meaningVi}` : word).then(() => setCopied(true), () => undefined); }}>{copied ? <><Check size={15} /> Đã chép</> : <><Copy size={15} /> Sao chép</>}</button>
-      <small>Từ điển mở · dịch máy</small>
+      <small>Từ điển Anh–Việt mở{sentenceVi || paragraphVi ? " · Bản dịch đề HarryUp" : ""}</small>
     </footer>
   </div>;
 }
@@ -210,10 +235,13 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [current, setCurrent] = useState<string | null>(null);
   const [held, setHeld] = useState<string | null>(null);
   const [markPop, setMarkPop] = useState<{ x: number; y: number; mark?: ReadingMark; word?: string | null } | null>(null);
-  const [lookup, setLookup] = useState<{ word: string; x: number; y: number; sentence?: string; spot?: ReadingMark } | null>(null);
+  const [lookup, setLookup] = useState<{ word: string; x: number; y: number; sentence?: string; sentenceVi?: string; paragraphVi?: string; spot?: ReadingMark } | null>(null);
   // The dictionary is a practice aid: the real-test view keeps the sheet clean.
   const lookupAllowed = canMark && notes.__view !== "exam";
   const closeLookup = useCallback(() => setLookup(null), []);
+  // Editor-written Vietnamese translations (practice only): fetched per passage, keyed by the English text itself.
+  const [translations, setTranslations] = useState<Record<string, string[] | null>>({});
+  const [showVi, setShowVi] = useState(false);
   const [leading, setLeading] = useState<"tight" | "normal" | "loose">("normal");
   const [pane, setPane] = useState<"passage" | "questions">("passage");
   const tools = useRef<HTMLDivElement>(null);
@@ -279,6 +307,21 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     }
     return ids;
   }, [lettering, headingSlots]);
+  const passageVi = section ? translations[section.id] : undefined;
+  // Vietnamese paragraph for each English one (blank lines in the stored text are not paragraphs).
+  const viByParagraph = useMemo(() => {
+    const filled = paragraphs.filter((item) => item.trim());
+    if (!passageVi || passageVi.length !== filled.length) return null;
+    let next = 0;
+    return paragraphs.map((item) => item.trim() ? passageVi[next++] : "");
+  }, [paragraphs, passageVi]);
+  useEffect(() => {
+    if (!section || listening || notes.__view === "exam" || !section.passage || section.id in translations) return;
+    let live = true;
+    void passageKey(section.passage).then((key) => fetch(`/api/ielts/passage-vi?key=${key}`)).then((response) => response.ok ? response.json() : null)
+      .then((data: { vi?: string } | null) => { if (live) setTranslations((current) => ({ ...current, [section.id]: data?.vi ? data.vi.split(/\n\s*\n/).map((item) => item.trim()).filter(Boolean) : null })); }, () => undefined);
+    return () => { live = false; };
+  }, [section, listening, notes.__view, translations]);
   const props: AnswerProps = {
     answers, setAnswer, flags,
     toggleFlag: (id) => setFlags(flags.includes(id) ? flags.filter((item) => item !== id) : [...flags, id]),
@@ -433,10 +476,13 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     const after = /[.!?](\s|$)/.exec(text.slice(spot.end));
     const end = after ? spot.end + after.index + 1 : text.length;
     const box = range.getBoundingClientRect();
-    setLookup({ word, x: box.left + box.width / 2, y: box.top, sentence: text.slice(start, end).trim(), spot: { ...spot, start, end, quote: undefined } });
+    const sentence = text.slice(start, end).trim();
+    const viParagraph = spot.pane === "passage" && viByParagraph ? viByParagraph[spot.block] ?? "" : "";
+    const sentenceVi = viParagraph ? alignedSentence(paragraphs[spot.block] ?? "", viParagraph, sentence, !lettering.inferred && Boolean(lettering.letters[spot.block])) : "";
+    setLookup({ word, x: box.left + box.width / 2, y: box.top, sentence, sentenceVi, paragraphVi: sentenceVi ? "" : viParagraph, spot: { ...spot, start, end, quote: undefined } });
     window.getSelection()?.removeAllRanges();
     setMarkPop(null);
-  }, [lookupAllowed, selectedSpots, blockOf, lettering]);
+  }, [lookupAllowed, selectedSpots, blockOf, lettering, viByParagraph, paragraphs]);
 
   // With the highlighter off, selecting a word only offers the dictionary.
   const offerLookup = useCallback(() => {
@@ -574,6 +620,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         <button type="button" className={tool === "highlight" ? "is-on" : ""} aria-pressed={tool === "highlight"} title="Bút tô sáng: bôi đen chữ là tô (phím H)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("highlight")}><Highlighter size={19} />Tô sáng<small>Phím H</small></button>
         <button type="button" className={tool === "note" ? "is-on" : ""} aria-pressed={tool === "note"} title="Ghi chú: bôi đen chữ để ghi chú vào đó (phím N)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("note")}><MessageSquarePlus size={19} />Ghi chú<small>Phím N</small></button>
         {lookupAllowed && <button type="button" className={tool === "lookup" ? "is-on" : ""} aria-pressed={tool === "lookup"} title="Tra từ: bôi đen một từ để xem nghĩa trong câu (phím T)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("lookup")}><Languages size={19} />Tra từ<small>Phím T</small></button>}
+        {viByParagraph && <button type="button" className={showVi ? "is-on" : ""} aria-pressed={showVi} title="Hiện bản dịch tiếng Việt dưới mỗi đoạn" onClick={() => setShowVi(!showVi)}><Languages size={19} />Bản dịch<small>{showVi ? "Đang hiện" : "Song ngữ"}</small></button>}
         <button type="button" className={`bt-rail-notes ${notesOpen ? "is-open" : ""}`} aria-pressed={notesOpen} title="Mở cột ghi chú" onClick={() => notesOpen ? closeNotes() : setNotesOpen(true)}><NotebookPen size={17} />Sổ ghi<small>{sectionNotes.length || (notes.__general ? "1" : "0")}</small></button>
         {marks.some((mark) => mark.section === section.id) && <button type="button" className="bt-rail-clear" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={17} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
       </aside>}
@@ -586,6 +633,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
             {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
             {/* An inferred letter is drawn by CSS so saved highlights keep their character offsets. */}
             <p data-paragraph={index} data-letter={lettering.inferred ? letter : undefined}><RichText text={paragraph} /></p>
+            {showVi && viByParagraph?.[index] && <p className="bt-passage-vi" lang="vi"><RichText text={viByParagraph[index]} /></p>}
           </Fragment>;
         })}
       </article>}
@@ -599,7 +647,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
-      {showRail && lookup && <LookupCard key={`${lookup.word}:${lookup.sentence ?? ""}`} word={lookup.word} x={lookup.x} y={lookup.y} sentence={lookup.sentence} docked onClose={closeLookup} />}
+      {showRail && lookup && <LookupCard key={`${lookup.word}:${lookup.sentence ?? ""}`} word={lookup.word} x={lookup.x} y={lookup.y} sentence={lookup.sentence} sentenceVi={lookup.sentenceVi} paragraphVi={lookup.paragraphVi} docked onClose={closeLookup} />}
       {showRail && notesOpen && <aside className="bt-note-column" aria-label="Ghi chú">
         <header><b><NotebookPen size={16} /> Ghi chú</b><button type="button" onClick={closeNotes}><EyeOff size={15} /> Ẩn</button>{sectionNotes.length > 0 && <button type="button" onClick={() => { setPinned(pinned.filter((item) => item.section !== section.id)); setNoteFocus(null); }}><Trash2 size={15} /> Xoá tất cả</button>}</header>
         {!sectionNotes.length && <p className="bt-note-hint">Bật <b>Ghi chú</b> (phím N) rồi bôi đen chữ trong bài để ghi chú ngay tại chỗ đó.</p>}
