@@ -1,61 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { BookOpenText, Lightbulb, Loader2, PenLine, Search, Sparkles, Wand2, X } from "lucide-react";
+import { BookOpenText, CheckCircle2, Lightbulb, Loader2, PenLine, Search, Sparkles, Wand2, X } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { countEnglishWords } from "@/lib/writing-grading/contract";
 import { RichText, type BankExam } from "./bank-exam";
+import { writingGuide } from "./writing-guide";
 import "./bank-writing.css";
-
-type Part = { id: string; title: string; hint: string; target: string };
-
-/** The paragraph plan each task is written to, with what goes in each part. */
-function partsFor(type?: string): Part[] {
-  if (type === "task2") return [
-    { id: "intro", title: "Introduction", hint: "Viết lại đề bằng từ của bạn (paraphrase) + câu trả lời trực tiếp cho câu hỏi (thesis).", target: "40–60 từ" },
-    { id: "body1", title: "Body 1", hint: "Câu chủ đề nêu luận điểm 1 → giải thích → ví dụ cụ thể.", target: "80–100 từ" },
-    { id: "body2", title: "Body 2", hint: "Luận điểm 2 (hoặc mặt còn lại của vấn đề) → giải thích → ví dụ.", target: "80–100 từ" },
-    { id: "conclusion", title: "Conclusion", hint: "Tóm lại quan điểm, không thêm ý mới.", target: "30–50 từ" },
-  ];
-  if (type === "task1_general") return [
-    { id: "opening", title: "Mở thư", hint: "Dear … , + một câu nêu lý do viết thư.", target: "20–30 từ" },
-    { id: "body1", title: "Ý thứ nhất", hint: "Trả lời gạch đầu dòng thứ nhất của đề, có chi tiết cụ thể.", target: "40–50 từ" },
-    { id: "body2", title: "Ý thứ hai", hint: "Gạch đầu dòng thứ hai: giải thích, mô tả.", target: "40–50 từ" },
-    { id: "body3", title: "Ý thứ ba", hint: "Gạch đầu dòng thứ ba: đề nghị, yêu cầu hoặc kế hoạch.", target: "30–40 từ" },
-    { id: "closing", title: "Kết thư", hint: "Câu kết lịch sự + Yours sincerely / Best wishes, tên.", target: "15–25 từ" },
-  ];
-  return [
-    { id: "intro", title: "Introduction", hint: "Paraphrase đề: biểu đồ/bảng cho thấy gì, ở đâu, khi nào.", target: "20–30 từ" },
-    { id: "overview", title: "Overview", hint: "2 đặc điểm/xu hướng nổi bật nhất, không đưa số liệu chi tiết.", target: "30–40 từ" },
-    { id: "body1", title: "Body 1", hint: "Nhóm số liệu thứ nhất: so sánh, dẫn số liệu chính.", target: "50–60 từ" },
-    { id: "body2", title: "Body 2", hint: "Nhóm số liệu còn lại: thay đổi, so sánh, điểm cao/thấp nhất.", target: "50–60 từ" },
-  ];
-}
-
-const phraseBank: Record<string, string[]> = {
-  task1_academic: ["The chart illustrates …", "Overall, it is clear that …", "… rose sharply from X to Y", "… remained stable at around …", "In contrast, …", "… accounted for the largest proportion of …", "… was approximately twice as high as …"],
-  task1_general: ["I am writing to …", "I would be grateful if you could …", "Unfortunately, …", "I would like to suggest that …", "I look forward to hearing from you.", "Yours sincerely, / Best wishes,"],
-  task2: ["It is often argued that …", "In my view, …", "One major advantage is that …", "For instance, …", "This is largely because …", "On the other hand, …", "In conclusion, …"],
-};
-
-const guide: Record<string, { title: string; points: string[] }[]> = {
-  task1_academic: [
-    { title: "1. Đọc đề & dữ liệu", points: ["Xác định dạng hình: biểu đồ đường, cột, bảng, quy trình hay bản đồ.", "Ghi lại đơn vị, mốc thời gian và các nhóm được so sánh."] },
-    { title: "2. Viết Introduction", points: ["Paraphrase đề, không chép nguyên văn.", "Một câu là đủ."] },
-    { title: "3. Overview là phần quan trọng nhất", points: ["Nêu 2 xu hướng/đặc điểm lớn nhất.", "Không dùng số liệu chi tiết ở đây."] },
-    { title: "4. Hai đoạn thân bài", points: ["Nhóm dữ liệu hợp lý (theo thời gian hoặc theo hạng mục).", "Dẫn số liệu chọn lọc và so sánh, không liệt kê hết.", "Không suy đoán lý do."] },
-  ],
-  task1_general: [
-    { title: "1. Xác định mục đích & giọng văn", points: ["Thư trang trọng (người lạ, công ty) hay thân mật (bạn bè)?", "Trả lời đủ cả ba gạch đầu dòng của đề."] },
-    { title: "2. Bố cục", points: ["Mở thư nêu lý do viết.", "Mỗi gạch đầu dòng một đoạn.", "Kết thư phù hợp giọng văn."] },
-  ],
-  task2: [
-    { title: "1. Hiểu đề", points: ["Xác định dạng: Agree/Disagree, Discussion, Advantages/Disadvantages, Problem/Solution hay Two-part question.", "Gạch chân từ khóa và giới hạn của chủ đề."] },
-    { title: "2. Introduction", points: ["Paraphrase đề.", "Thesis trả lời trực tiếp câu hỏi."] },
-    { title: "3. Thân bài", points: ["Mỗi đoạn một ý chính, có giải thích và ví dụ.", "Dùng từ nối tự nhiên, tránh lặp từ."] },
-    { title: "4. Conclusion", points: ["Nhắc lại quan điểm bằng cách diễn đạt khác.", "Không đưa ý mới."] },
-  ],
-};
 
 const countWords = countEnglishWords;
 
@@ -91,7 +42,10 @@ export function Lookup({ initial = "" }: { initial?: string } = {}) {
  */
 export function WritingStudio({ exam, content, answers, setAnswers, visual }: { exam: BankExam; content: ExamContent; answers: Record<string, string>; setAnswers: (answers: Record<string, string>) => void; visual: ReactNode }) {
   const type = exam.practice_type ?? "task2";
-  const parts = partsFor(type);
+  // The guide, paragraph plan and phrases follow this prompt's own question type (read from its wording, no AI).
+  const plan = useMemo(() => writingGuide(type, content.prompt || exam.title), [type, content.prompt, exam.title]);
+  const parts = plan.parts;
+  const [checked, setChecked] = useState<string[]>([]);
   const [mode, setMode] = useState<"parts" | "free">(() => answers.__response && !parts.some((part) => answers[`__part_${part.id}`]) ? "free" : "parts");
   const [guideOpen, setGuideOpen] = useState(true);
   const minimum = content.minimumWords || (type === "task2" ? 250 : 150);
@@ -120,7 +74,19 @@ export function WritingStudio({ exam, content, answers, setAnswers, visual }: { 
       {visual}
       <div className="bw-guide">
         <button type="button" className="bw-guide-toggle" onClick={() => setGuideOpen(!guideOpen)} aria-expanded={guideOpen}><BookOpenText size={17} /> Hướng dẫn viết bài</button>
-        {guideOpen && (guide[type] ?? guide.task2).map((step) => <div key={step.title}><h4>{step.title}</h4><ul>{step.points.map((point) => <li key={point}>{point}</li>)}</ul></div>)}
+        {guideOpen && <>
+          <p className="bw-guide-kind"><span>Dạng đề</span><b>{plan.label}</b></p>
+          <div><h4>1. Đề yêu cầu bạn</h4><ul>{plan.demands.map((item) => <li key={item}>{item}</li>)}</ul></div>
+          {plan.stance && <div><h4>2. Chọn hướng viết</h4><p className="bw-guide-note">{plan.stance.note}</p><ul>{plan.stance.options.map((item) => <li key={item}>{item}</li>)}</ul></div>}
+          <div><h4>{plan.stance ? 3 : 2}. Bố cục từng đoạn</h4><ol className="bw-guide-plan">{plan.parts.map((part) => <li key={part.id}><b>{part.title}</b> <small>{part.target}</small><span>{part.hint}</span></li>)}</ol></div>
+          <div><h4>{plan.stance ? 4 : 3}. Thời gian</h4><p className="bw-guide-note">{plan.timing}</p></div>
+          <div><h4>{plan.stance ? 5 : 4}. Lỗi hay gặp với dạng này</h4><ul>{plan.traps.map((item) => <li key={item}>{item}</li>)}</ul></div>
+          <details className="bw-guide-check">
+            <summary><CheckCircle2 size={16} /> Tự kiểm tra trước khi nộp <small>{checked.length}/{plan.checklist.reduce((total, group) => total + group.items.length, 0)}</small></summary>
+            <p className="bw-guide-note">Theo 4 tiêu chí chấm Writing công khai của IELTS. Mỗi tiêu chí chiếm 1/4 điểm.</p>
+            {plan.checklist.map((group) => <fieldset key={group.criterion}><legend>{group.criterion}</legend>{group.items.map((item) => <label key={item}><input type="checkbox" checked={checked.includes(item)} onChange={() => setChecked(checked.includes(item) ? checked.filter((entry) => entry !== item) : [...checked, item])} /> {item}</label>)}</fieldset>)}
+          </details>
+        </>}
       </div>
     </section>
 
@@ -135,7 +101,7 @@ export function WritingStudio({ exam, content, answers, setAnswers, visual }: { 
       <div className="bw-meter" aria-hidden="true"><i style={{ width: `${Math.min(100, (words / minimum) * 100)}%` }} /></div>
       <details className="bw-outline">
         <summary><Lightbulb size={16} /> Outline · Dàn ý <small>Được lưu cùng bài, không tính vào word count</small></summary>
-        <textarea aria-label="Dàn ý bài viết" value={answers.__outline || ""} onChange={(event) => setAnswers({ ...answers, __outline: event.target.value })} placeholder={type === "task2" ? "Introduction: quan điểm chính\nBody 1: luận điểm + ví dụ\nBody 2: luận điểm + ví dụ\nConclusion: tóm tắt" : "Overview: xu hướng chính\nBody 1: nhóm số liệu đầu\nBody 2: nhóm số liệu còn lại"} rows={5} maxLength={5000} spellCheck />
+        <textarea aria-label="Dàn ý bài viết" value={answers.__outline || ""} onChange={(event) => setAnswers({ ...answers, __outline: event.target.value })} placeholder={plan.outline} rows={5} maxLength={5000} spellCheck />
       </details>
       {mode === "parts" ? <div className="bw-parts">{parts.map((part) => {
         const value = answers[`__part_${part.id}`] || "";
@@ -151,7 +117,7 @@ export function WritingStudio({ exam, content, answers, setAnswers, visual }: { 
       <h3><Search size={16} /> Tra từ vựng</h3>
       <Lookup />
       <h3><Lightbulb size={16} /> Cụm từ hữu ích</h3>
-      <ul className="bw-phrases">{(phraseBank[type] ?? phraseBank.task2).map((phrase) => <li key={phrase}>{phrase}</li>)}</ul>
+      <ul className="bw-phrases">{plan.phrases.map((phrase) => <li key={phrase}>{phrase}</li>)}</ul>
     </aside>
   </div>;
 }

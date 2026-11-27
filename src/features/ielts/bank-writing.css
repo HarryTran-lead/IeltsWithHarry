@@ -173,3 +173,20 @@
 @media (max-width: 1100px) { .wf-scorecard { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wf-overall { grid-column: 1 / -1; min-height: 92px; } }
 @media (max-width: 900px) { .wf-layout, .wf-upgrade { grid-template-columns: minmax(0, 1fr); } .wf-side { position: static; } }
 @media (max-width: 560px) { .wf-paper { padding: 14px; } .wf-text { font-size: var(--fs-md); } .wf-tabs { justify-self: stretch; } .wf-tabs button { flex: 1; justify-content: center; padding: 0 8px; font-size: var(--fs-sm); } }
+
+/* Writing guide tailored to the question type: kind badge, paragraph plan, criteria self-check. */
+.bw-guide-kind { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 8px 10px; border: 1px solid #f1d9c4; border-radius: var(--r-md); background: #fff6ee; font-size: var(--fs-sm); }
+.bw-guide-kind span { padding: 2px 8px; border-radius: 999px; background: #c2410c; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+.bw-guide-kind b { color: #7c2d12; }
+.bw-guide-note { margin: 0 0 4px; color: #4b5d6b; font-size: var(--fs-sm); line-height: 1.6; }
+.bw-guide-plan { display: grid; gap: 6px; margin: 0; padding-left: 20px; color: #34495e; font-size: var(--fs-sm); line-height: 1.55; }
+.bw-guide-plan b { color: #1f2f3d; }
+.bw-guide-plan small { color: #8a6b4f; font-size: 11.5px; }
+.bw-guide-plan span { display: block; }
+.bw-guide-check { padding: 10px 12px; border: 1px solid #d9e7e3; border-radius: var(--r-md); background: #f7fbfa; }
+.bw-guide-check summary { display: flex; align-items: center; gap: 7px; color: #0f6b5c; font-weight: 800; font-size: var(--fs-sm); cursor: pointer; }
+.bw-guide-check summary small { margin-left: auto; color: #4b7d72; font-weight: 700; }
+.bw-guide-check fieldset { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; border: 0; }
+.bw-guide-check legend { margin-bottom: 2px; padding: 0; color: #1f2f3d; font-size: var(--fs-sm); font-weight: 800; }
+.bw-guide-check label { display: flex; align-items: flex-start; gap: 8px; color: #34495e; font-size: var(--fs-sm); line-height: 1.5; cursor: pointer; }
+.bw-guide-check input { flex: none; margin-top: 4px; accent-color: #0f8a72; }
