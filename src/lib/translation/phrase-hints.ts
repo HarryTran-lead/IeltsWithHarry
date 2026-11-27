@@ -12,31 +12,41 @@ export type SentenceBlueprint = {
   grammarTip: string;
 };
 
+function viBoundary(phrase: string): RegExp {
+  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${phrase})(?![\\p{L}\\p{N}])`, "iu");
+}
+
+function isWholeSpan(text: string, start: number, end: number): boolean {
+  const before = start > 0 ? text[start - 1] : "";
+  const after = end < text.length ? text[end] : "";
+  return !/[\p{L}\p{N}]/u.test(before) && !/[\p{L}\p{N}]/u.test(after);
+}
+
 // Macro-constituent boundary anchors (SVO-preserving across Vietnamese and English):
 // Discourse frames, modals/auxiliaries, and subordinate/purpose/method clause openers.
 const BOUNDARY_ANCHORS: { vi: RegExp; en: RegExp }[] = [
-  { vi: /\b(tôi không cho rằng|tôi cho rằng|tôi tin rằng|tôi nghĩ rằng)\b/i, en: /\b(i do not believe|i don't believe|i believe|i think)\b/i },
-  { vi: /\b(mặc dù|dù cho|cho dù)\b/i, en: /\b(although|even though|though|while)\b/i },
-  { vi: /\b(bất chấp)\b/i, en: /\b(despite|in spite of)\b/i },
-  { vi: /\b(tuy nhiên|tuy vậy|dù vậy|song)\b/i, en: /\b(however|nevertheless|nonetheless|even so|yet)\b/i },
-  { vi: /\b(vì vậy|do đó|nhờ đó|kết quả là)\b/i, en: /\b(therefore|consequently|thus|as a result|hence)\b/i },
-  { vi: /\b(trong khi đó|ngược lại|trái lại)\b/i, en: /\b(whereas|while|by contrast|in contrast|conversely)\b/i },
-  { vi: /\b(ví dụ|chẳng hạn)\b/i, en: /\b(for example|for instance)\b/i },
-  { vi: /\b(không thể)\b/i, en: /\b(cannot|can't|could not|couldn't)\b/i },
-  { vi: /\b(có thể giúp)\b/i, en: /\b(can help|may help|could help|might help)\b/i },
-  { vi: /\b(có thể)\b/i, en: /\b(can|may|could|might)\b/i },
-  { vi: /\b(không nên)\b/i, en: /\b(should not|shouldn't|ought not to)\b/i },
-  { vi: /\b(nên)\b/i, en: /\b(should|ought to)\b/i },
-  { vi: /\b(cần phải|cần|đòi hỏi)\b/i, en: /\b(must|need to|needs to|require|requires)\b/i },
-  { vi: /\b(sẽ không)\b/i, en: /\b(will not|won't)\b/i },
-  { vi: /\b(sẽ)\b/i, en: /\b(will|'ll|is going to|are going to)\b/i },
-  { vi: /\b(bằng cách)\b/i, en: /\b(by)\s+[a-z]+ing\b/i },
-  { vi: /\b(thay vì)\b/i, en: /\b(rather than|instead of)\b/i },
-  { vi: /\b(bởi vì|vì|do)\b/i, en: /\b(because of|because|since|as|due to)\b/i },
-  { vi: /\b(nếu không|trừ khi)\b/i, en: /\b(unless)\b/i },
-  { vi: /\b(nếu)\b/i, en: /\b(if|provided that|when)\b/i },
-  { vi: /\b(khi)\b/i, en: /\b(when|while|as)\b/i },
-  { vi: /\b(để)\b/i, en: /\b(to|in order to|so that)\s+[a-z]+\b/i },
+  { vi: viBoundary("tôi không cho rằng|tôi cho rằng|tôi tin rằng|tôi nghĩ rằng"), en: /\b(i do not believe|i don't believe|i believe|i think)\b/i },
+  { vi: viBoundary("mặc dù|dù cho|cho dù"), en: /\b(although|even though|though|while)\b/i },
+  { vi: viBoundary("bất chấp"), en: /\b(despite|in spite of)\b/i },
+  { vi: viBoundary("tuy nhiên|tuy vậy|dù vậy|song"), en: /\b(however|nevertheless|nonetheless|even so|yet)\b/i },
+  { vi: viBoundary("vì vậy|do đó|nhờ đó|kết quả là"), en: /\b(therefore|consequently|thus|as a result|hence)\b/i },
+  { vi: viBoundary("trong khi đó|ngược lại|trái lại"), en: /\b(whereas|while|by contrast|in contrast|conversely)\b/i },
+  { vi: viBoundary("ví dụ|chẳng hạn"), en: /\b(for example|for instance)\b/i },
+  { vi: viBoundary("không thể"), en: /\b(cannot|can't|could not|couldn't)\b/i },
+  { vi: viBoundary("có thể giúp"), en: /\b(can help|may help|could help|might help)\b/i },
+  { vi: viBoundary("có thể"), en: /\b(can|may|could|might)\b/i },
+  { vi: viBoundary("không nên"), en: /\b(should not|shouldn't|ought not to)\b/i },
+  { vi: viBoundary("nên"), en: /\b(should|ought to)\b/i },
+  { vi: viBoundary("cần phải|cần|đòi hỏi"), en: /\b(must|need to|needs to|require|requires)\b/i },
+  { vi: viBoundary("sẽ không"), en: /\b(will not|won't)\b/i },
+  { vi: viBoundary("sẽ"), en: /\b(will|'ll|is going to|are going to)\b/i },
+  { vi: viBoundary("bằng cách"), en: /\b(by)\s+[a-z]+ing\b/i },
+  { vi: viBoundary("thay vì"), en: /\b(rather than|instead of)\b/i },
+  { vi: viBoundary("bởi vì|vì|do"), en: /\b(because of|because|since|as|due to)\b/i },
+  { vi: viBoundary("nếu không|trừ khi"), en: /\b(unless)\b/i },
+  { vi: viBoundary("nếu"), en: /\b(if|provided that|when)\b/i },
+  { vi: viBoundary("khi"), en: /\b(when|while|as)\b/i },
+  { vi: viBoundary("để"), en: /\b(to|in order to|so that)\s+[a-z]+\b/i },
 ];
 
 function splitSentences(text: string): string[] {
@@ -76,10 +86,20 @@ function splitClausePair(viText: string, enText: string, targetTerm?: string, me
     const tLower = targetTerm.toLocaleLowerCase("en-US").trim();
     const viIdx = mLower ? viLower.indexOf(mLower) : -1;
     const enIdx = tLower ? enLower.indexOf(tLower) : -1;
-    if (viIdx > 2 && enIdx > 2 && viIdx + mLower.length < vi.length - 3 && enIdx + tLower.length < en.length - 3) {
+    if (
+      viIdx > 2 && enIdx > 2
+      && viIdx + mLower.length < vi.length - 3 && enIdx + tLower.length < en.length - 3
+      && isWholeSpan(vi, viIdx, viIdx + mLower.length)
+      && isWholeSpan(en, enIdx, enIdx + tLower.length)
+    ) {
       const leftVi = vi.slice(0, viIdx).trim();
-      const midVi = vi.slice(viIdx, viIdx + mLower.length).trim();
-      const rightVi = vi.slice(viIdx + mLower.length).trim();
+      let midVi = vi.slice(viIdx, viIdx + mLower.length).trim();
+      let rightVi = vi.slice(viIdx + mLower.length).trim();
+      const leadPunct = /^[,.;:!?]+/.exec(rightVi);
+      if (leadPunct) {
+        midVi += leadPunct[0];
+        rightVi = rightVi.slice(leadPunct[0].length).trim();
+      }
 
       const leftEn = en.slice(0, enIdx).trim();
       const midEn = en.slice(enIdx, enIdx + tLower.length).trim();
@@ -141,11 +161,20 @@ function splitPredicateAndObject(viPred: string, enPred: string, targetTerm?: st
     const tClean = targetTerm.toLocaleLowerCase("en-US").trim();
     const vIdx = mClean ? viPred.toLocaleLowerCase("vi-VN").indexOf(mClean) : -1;
     const eIdx = tClean ? enPred.toLocaleLowerCase("en-US").indexOf(tClean) : -1;
-    if (vIdx >= 0 && eIdx >= 0) {
+    if (
+      vIdx >= 0 && eIdx >= 0
+      && isWholeSpan(viPred, vIdx, vIdx + mClean.length)
+      && isWholeSpan(enPred, eIdx, eIdx + tClean.length)
+    ) {
       const vEnd = vIdx + mClean.length;
       const eEnd = eIdx + tClean.length;
-      const vVerb = viPred.slice(0, vEnd).trim();
-      const vObj = viPred.slice(vEnd).trim();
+      let vVerb = viPred.slice(0, vEnd).trim();
+      let vObj = viPred.slice(vEnd).trim();
+      const leadPunct = /^[,.;:!?]+/.exec(vObj);
+      if (leadPunct) {
+        vVerb += leadPunct[0];
+        vObj = vObj.slice(leadPunct[0].length).trim();
+      }
       const eVerb = enPred.slice(0, eEnd).trim();
       const eObj = enPred.slice(eEnd).trim();
       if (vVerb.split(/\s+/).length <= 6 && vObj.split(/\s+/).length >= 2 && eObj.split(/\s+/).length >= 2) {
@@ -159,7 +188,7 @@ function splitPredicateAndObject(viPred: string, enPred: string, targetTerm?: st
 
   // Otherwise split modal+main-verb (first 2-3 words) from long object NP if object is >= 4 words.
   const enVerbMatch = /^(?:(?:can|could|may|might|should|must|will|would|cannot|can't|do not|don't|does not|doesn't)\s+(?:help\s+|not\s+|also\s+|still\s+)?[a-z]+)\b/i.exec(enPred);
-  const viVerbMatch = /^(?:(?:có thể giúp|có thể|không thể|không nên|nên|cần phải|cần|sẽ)\s+\S+(?:\s+\S+)?)\b/i.exec(viPred);
+  const viVerbMatch = /^(?:(?:có thể giúp|có thể|không thể|không nên|nên|cần phải|cần|sẽ)\s+\S+(?:\s+\S+)?)(?=$|\s)/iu.exec(viPred);
   if (enVerbMatch && viVerbMatch) {
     const vRest = viPred.slice(viVerbMatch[0].length).trim();
     const eRest = enPred.slice(enVerbMatch[0].length).trim();
