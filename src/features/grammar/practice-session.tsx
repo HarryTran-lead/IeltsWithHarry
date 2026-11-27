@@ -119,7 +119,7 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
   </>;
 }
 
-export function SessionSummary({ result, progress, title, starsEarned, note, children }: { result: SessionResult; progress: GrammarProgress; title: string; starsEarned?: 0 | 1 | 2 | 3; note?: ReactNode; children: ReactNode }) {
+export function SessionSummary({ result, progress, title, starsEarned, note, children }: { result: SessionResult; progress: GrammarProgress; title: string; starsEarned?: 0 | 1 | 2 | 3; note?: ReactNode; children?: ReactNode }) {
   const score = sessionScore(result);
   const share = score.answered ? score.correct / score.answered : 0;
   const cardRef = useRef<HTMLElement>(null);
