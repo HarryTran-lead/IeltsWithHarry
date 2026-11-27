@@ -34,6 +34,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
+import { HarryWordmark } from "@/components/layout/harry-wordmark";
 import { Tape } from "@/components/stickers/stickers";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
@@ -334,13 +335,11 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         >
           <Menu size={22} />
         </button>
-        <Link href="/app/dashboard" className="brand">
+        <Link href="/app/dashboard" className="brand" aria-label="HarryUp — Level Up Your English.">
           <span className="brand-mascot">
             <HarryMascot size={40} />
           </span>
-          <span>
-            Harry<b>Up</b>
-          </span>
+          <HarryWordmark />
         </Link>
         <div className="header-search">
           <Search size={17} />
@@ -553,7 +552,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         </nav>
         <div className="sidebar-card">
           <Tape tone="sun" />
-          <HarryBuddy size={60} className="sidebar-buddy" tips={["Small steps, big progress!", "Hôm nay học gì nào?", "Nhớ uống nước nhé!", "Mỗi bài luyện đều có giá trị.", "Cố lên, bạn làm được!"]} />
+          <HarryBuddy size={60} className="sidebar-buddy" tips={["Level Up Your English.", "Hôm nay học gì nào?", "Nhớ uống nước nhé!", "Mỗi bài luyện đều có giá trị.", "Cố lên, bạn làm được!"]} />
         </div>
       </aside>
       {menuOpen && (

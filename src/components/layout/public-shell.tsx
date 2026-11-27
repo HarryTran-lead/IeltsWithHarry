@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
+import { HarryWordmark } from "@/components/layout/harry-wordmark";
 import { Sticker } from "@/components/stickers/stickers";
 import { getViewerRole } from "@/lib/viewer-role";
 import { demoMode } from "@/lib/runtime";
@@ -10,11 +11,9 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="public-site">
       <header className="public-header">
-        <Link href="/" className="public-brand">
+        <Link href="/" className="public-brand" aria-label="HarryUp — Level Up Your English.">
           <HarryMascot size={40} />
-          <span>
-            Harry<b>Up</b>
-          </span>
+          <HarryWordmark />
         </Link>
         <nav>
           <Link href="/courses">Courses</Link>
@@ -26,19 +25,17 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
       <footer className="public-footer">
         <div className="public-footer-inner">
           <div className="public-footer-brand">
-            <Link href="/" className="public-brand">
+            <Link href="/" className="public-brand" aria-label="HarryUp — Level Up Your English.">
               <HarryMascot size={36} />
-              <span>
-                Harry<b>Up</b>
-              </span>
+              <HarryWordmark />
             </Link>
             <p>Không gian học tiếng Anh và IELTS: bài học soạn sẵn, tin tức mỗi ngày, sổ tay và phòng học chung.</p>
-            <span className="hand-note">Small steps, big progress!</span>
+            <span className="hand-note">Level Up Your English.</span>
           </div>
           <div>
             <h3>Học</h3>
             <Link href="/courses">Lộ trình 4 chặng</Link>
-            <Link href="/about">Về Harry Up</Link>
+            <Link href="/about">Về HarryUp</Link>
           </div>
           <div>
             <h3>Tài khoản</h3>
@@ -49,7 +46,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
           <Sticker name="plane" size={84} tilt={-8} float pop={false} className="public-footer-sticker" />
         </div>
         <div className="public-footer-bottom">
-          © Harry Up · Small steps, big progress.{demoMode ? " · Bản demo" : ""}
+          © HarryUp · Level Up Your English.{demoMode ? " · Bản demo" : ""}
         </div>
       </footer>
     </div>

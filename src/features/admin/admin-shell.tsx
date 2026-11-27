@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight, GraduationCap, LogOut, Menu, PanelLeftClose, PanelLeftOpen, X, type LucideIcon } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
+import { HarryWordmark } from "@/components/layout/harry-wordmark";
 import { AdminActionsSlot } from "./admin-ui";
 
 export type AdminNavItem = { href: string; label: string; icon: LucideIcon; active: boolean; onClick?: () => void };
@@ -56,7 +57,7 @@ export function AdminShell({
       <button type="button" className="admin-drawer-close" aria-label="Đóng menu" onClick={() => setDrawerOpen(false)}><X size={18} /></button>
       <Link prefetch={false} href="/admin" className="admin-brand">
         <span className="admin-brand-mark"><HarryMascot size={34} /></span>
-        <span><strong>Harry Up</strong><small>ADMIN PORTAL</small></span>
+        <span><HarryWordmark dark /><small>ADMIN PORTAL</small></span>
       </Link>
       <nav aria-label="Admin navigation">
         {groups.map((group) => <div className="admin-nav-group" key={group.label}>

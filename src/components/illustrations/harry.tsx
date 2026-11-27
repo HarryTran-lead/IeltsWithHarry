@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export function HarryMascot({ size = 74, className = "", eager = false }: { size?: number; className?: string; eager?: boolean }) {
-  return <Image className={className} src="/harryup-mascot.webp" width={size} height={size} loading={eager ? "eager" : "lazy"} alt="Harry Up mascot" />;
+  return <Image className={className} src="/harryup-mascot.webp" width={size} height={size} loading={eager ? "eager" : "lazy"} alt="HarryUp mascot" />;
 }
 
 export function StudyIllustration() {

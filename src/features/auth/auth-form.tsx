@@ -125,7 +125,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
   }
 
   return <div className="auth-layout"><div className="auth-main">
-    <span className="eyebrow">HARRY UP</span><h1>{titles[mode]}</h1><p className="auth-lead">{leads[mode]}</p>
+    <span className="eyebrow">HARRYUP</span><h1>{titles[mode]}</h1><p className="auth-lead">{leads[mode]}</p>
     {inactive ? <div className="card public-message">
       <p>{demoMode ? "Bản demo tách riêng Guest, học viên và admin. Phiên demo không tạo tài khoản thật; dữ liệu chỉ lưu trong trình duyệt này." : "Đăng nhập đang chờ kết nối Supabase project."}</p>
       {demoMode && (mode === "login" || mode === "register") && <div className="demo-role-actions"><button type="button" className="button primary" disabled={busy} onClick={() => void enterDemo("student")}>Vào trang học viên demo →</button><button type="button" className="button subtle" disabled={busy} onClick={() => void enterDemo("admin")}>Xem trang admin demo →</button></div>}
@@ -160,7 +160,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
     <Sticker name="bubble" label="Welcome!" size={98} tilt={8} delay={160} className="auth-bubble" />
     <Sticker name="harry" size={150} tilt={-5} float className="auth-harry" />
     <Sticker name="star" label="7.0+" size={66} tilt={-12} delay={260} className="auth-star" />
-    <span className="hand-note">Small steps, big progress!</span>
+    <span className="hand-note">Level Up Your English.</span>
     <ul>
       <li><i><Check size={12} strokeWidth={3.5} /></i> Lưu tiến độ và bài luyện đã nộp</li>
       <li><i><Check size={12} strokeWidth={3.5} /></i> Sổ tay cho từ mới và ghi chú</li>
