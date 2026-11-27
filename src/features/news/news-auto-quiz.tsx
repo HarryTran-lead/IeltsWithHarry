@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Languages, Lightbulb, RotateCcw, Sparkles, TrendingDown, TrendingUp, X, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
-import { usePracticeClock, useReadingEvidenceNavigation } from "@/features/reading/reading-workspace";
+import { createPortal } from "react-dom";
+import { anchor, usePracticeClock, useReadingEvidenceNavigation, useReadingLookup, wholeWordAt } from "@/features/reading/reading-workspace";
 import { recoverExamAnswers, type NewsExamSession } from "@/lib/news/exam-session";
 import { parseQuestionDiagram, sharedMatchingOptions } from "@/lib/news/question-presentation";
 import { addHighlight, highlightColors, parseHighlights, type Highlight, type HighlightColor } from "@/lib/highlights";
@@ -211,7 +212,17 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const [translationVisible, setTranslationVisible] = useState<Record<string, boolean>>({});
   const [translatingId, setTranslatingId] = useState<string | null>(null);
   const [questionHighlights, setQuestionHighlights] = useState<Record<string, Highlight[]>>({});
-  const [selection, setSelection] = useState<{ questionId: string; p: number; start: number; end: number; mark?: string } | null>(null);
+  // A selection in a question opens the same floating popover as the passage: colours, "Dịch câu" and the word's meaning.
+  const [selection, setSelection] = useState<{ questionId: string; p: number; start: number; end: number; mark?: string; x: number; y: number; below: boolean; word?: string } | null>(null);
+  const lookup = useReadingLookup();
+  useEffect(() => {
+    if (!selection) return;
+    const close = (event: Event) => { if (!(event.target instanceof Element && event.target.closest(".rw-popover"))) setSelection(null); };
+    window.addEventListener("scroll", close, true);
+    window.addEventListener("mousedown", close);
+    window.addEventListener("touchstart", close);
+    return () => { window.removeEventListener("scroll", close, true); window.removeEventListener("mousedown", close); window.removeEventListener("touchstart", close); };
+  }, [selection]);
   const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
   // Time spent on the round shown in the result card. The practice timer runs for the whole sitting, across question types.
   const [duration, setDuration] = useState<number | null>(null);
@@ -360,7 +371,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     if (!selected?.rangeCount || selected.isCollapsed) {
       const element = target instanceof Element ? target : target instanceof Node ? target.parentElement : null;
       const mark = element?.closest("mark[data-question-hl]");
-      if (mark && root.contains(mark)) setSelection({ questionId: question.id, p: paragraph, start: 0, end: 0, mark: mark.getAttribute("data-question-hl") ?? "" });
+      if (mark && root.contains(mark)) setSelection({ questionId: question.id, p: paragraph, start: 0, end: 0, mark: mark.getAttribute("data-question-hl") ?? "", ...anchor(mark.getBoundingClientRect(), false) });
       else setSelection(null);
       return;
     }
@@ -377,7 +388,14 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     };
     const start = offsetFor(range.startContainer, range.startOffset);
     const end = offsetFor(range.endContainer, range.endOffset);
-    if (start !== null && end !== null && start < end) setSelection({ questionId: question.id, p: paragraph, start, end });
+    if (start === null || end === null || start >= end) return;
+    const node = range.startContainer;
+    const word = node === range.endContainer && node.nodeType === Node.TEXT_NODE && /^[A-Za-z'-]+$/.test(range.toString().trim())
+      ? wholeWordAt(node.textContent ?? "", range.startOffset, range.endOffset) : "";
+    const position = anchor(range.getBoundingClientRect(), false);
+    position.x = Math.max(Math.min(220, window.innerWidth / 2), Math.min(window.innerWidth - Math.min(220, window.innerWidth / 2), position.x));
+    setSelection({ questionId: question.id, p: paragraph, start, end, ...position, word: word || undefined });
+    if (word && canTranslate && lookup.lookUp) lookup.lookUp(word, question.prompt);
   }
 
   function questionText(question: Question, start = 0, end = question.prompt.length, paragraph = 0) {
@@ -399,16 +417,23 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   }
 
   function highlightMenu(question: Question, number: number) {
-    if (selection?.questionId !== question.id) return null;
-    return <div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`} onMouseUp={(event) => event.stopPropagation()} onTouchEnd={(event) => event.stopPropagation()}>
-      {highlightColors.map((color) => <button type="button" key={color} className={color} onClick={() => paintQuestion(question, color)} aria-label={`Highlight màu ${color}`} />)}
-      {selection.mark && <button type="button" className="remove" onClick={() => {
+    if (selection?.questionId !== question.id || typeof document === "undefined") return null;
+    const word = selection.word;
+    const meaning = lookup.preview?.word === word?.toLowerCase() ? lookup.preview?.loading ? "Đang tra nghĩa…" : lookup.preview?.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…";
+    const stop = (event: { stopPropagation: () => void }) => event.stopPropagation();
+    return createPortal(<div className={`rw-popover ${selection.below ? "below" : ""}`} style={{ left: selection.x, top: selection.y }} role="dialog" aria-label={`Highlight câu ${number}`} onMouseUp={stop} onTouchEnd={stop}>
+      {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paintQuestion(question, color)} aria-label={`Highlight màu ${color}`} />)}
+      {selection.mark && <button type="button" className="rw-unmark" onClick={() => {
         const next = (questionHighlights[question.id] ?? []).filter((item) => item.id !== selection.mark);
         setQuestionHighlights((current) => ({ ...current, [question.id]: next }));
         try { localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`, JSON.stringify(next)); } catch { /* Keep highlights for this visit. */ }
         setSelection(null);
-      }}>Bỏ highlight</button>}
-    </div>;
+      }}><X size={14} /> Bỏ</button>}
+      {!selection.mark && canTranslate && <button type="button" className="rw-translate-selection" disabled={translatingId === question.id} onClick={() => { void toggleTranslation(question); window.getSelection()?.removeAllRanges(); setSelection(null); }}><Languages size={14} /> {translatingId === question.id ? "Đang dịch…" : "Dịch câu"}</button>}
+      {word && canTranslate && lookup.lookUp && (lookup.openDetails
+        ? <button type="button" className="rw-lookup-preview is-action" onClick={() => { lookup.openDetails?.(); window.getSelection()?.removeAllRanges(); setSelection(null); }} title="Mở bảng tra từ đầy đủ"><strong>{word.toLowerCase()}</strong>{meaning}<small>Xem chi tiết ›</small></button>
+        : <span className="rw-lookup-preview" role="status"><strong>{word.toLowerCase()}</strong>{meaning}</span>)}
+    </div>, document.body);
   }
 
   function questionTextInSource(question: Question, text: string, after = 0) {

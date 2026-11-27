@@ -34,6 +34,19 @@ export function usePracticeClock() { return useContext(PracticeClockContext); }
 const EvidenceNavigationContext = createContext<((quote: string) => boolean) | null>(null);
 /** Jump from a graded question's citation to its location in the passage. */
 export function useReadingEvidenceNavigation() { return useContext(EvidenceNavigationContext); }
+/** Word look-up shared with the question pane, so its selection popover matches the passage one. */
+export type ReadingLookup = { lookUp?: (word: string, context?: string) => void; preview: { word: string; meaning: string; loading: boolean } | null; openDetails?: () => void };
+const ReadingLookupContext = createContext<ReadingLookup>({ preview: null });
+export function useReadingLookup() { return useContext(ReadingLookupContext); }
+/** Grows a selection that starts or ends inside a word to the whole word ("tertainm" → "entertainment"). */
+export function wholeWordAt(text: string, start: number, end: number) {
+  const letter = /[A-Za-z'-]/;
+  let from = start, to = end;
+  while (from > 0 && letter.test(text[from - 1])) from -= 1;
+  while (to < text.length && letter.test(text[to])) to += 1;
+  const word = text.slice(from, to).replace(/^['-]+|['-]+$/g, "");
+  return /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word : "";
+}
 /** A panel beside the passage. Minimised panels become icons; `onSelect` panels open when the reader selects a word. */
 export type ReadingTool = { id: string; label: string; icon: React.ReactNode; count?: number; onSelect?: boolean; content: React.ReactNode };
 
@@ -56,7 +69,7 @@ function sentenceAt(paragraph: string, offset: number) {
  * selection menus (copy, search, translate) above it, which used to cover
  * ours; it only goes above when there is no room below.
  */
-function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below" | "touch"> {
+export function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below" | "touch"> {
   const room = window.innerHeight - rect.bottom;
   const below = room > (touch ? 110 : 70) || rect.top < 200;
   return { x: Math.max(80, Math.min(window.innerWidth - 80, rect.left + rect.width / 2)), y: below ? rect.bottom : rect.top, below, touch };
@@ -131,6 +144,11 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
   const [toolsMin, setToolsMin] = useState(newsReader);
   const [openTool, setOpenTool] = useState<string | null>(null);
   const lookupToolId = tools?.find((tool) => tool.onSelect)?.id ?? null;
+  const questionLookup = useMemo<ReadingLookup>(() => ({
+    lookUp: onSelectWord,
+    preview: lookupPreview ?? null,
+    openDetails: lookupToolId ? () => setOpenTool(lookupToolId) : undefined,
+  }), [onSelectWord, lookupPreview, lookupToolId]);
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const sideRef = useRef<HTMLDivElement>(null);
@@ -419,14 +437,17 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     });
     if (!ranges.length) return;
     const word = selection.toString().trim();
-    const lookupWord = onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word.toLowerCase() : undefined;
+    // A drag that cuts a word ("tertainm") looks up the whole word it sits in.
+    const firstRange = ranges[0];
+    const fullWord = ranges.length === 1 && /^[A-Za-z'-]+$/.test(word) ? wholeWordAt(text[firstRange.p], firstRange.start, firstRange.end) : "";
+    const lookupWord = onSelectWord && fullWord ? fullWord.toLowerCase() : undefined;
     const position = anchor(range.getBoundingClientRect(), event.type.startsWith("touch"));
     if (lookupWord || onTranslateSelection) { const margin = Math.min(onTranslateSelection ? 220 : 170, window.innerWidth / 2); position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x)); }
     setSelectionTranslation(null);
     setPopover({ ...position, ranges, word: lookupWord, selectedText: word });
     if (lookupWord && onSelectWord) {
       const first = ranges[0];
-      onSelectWord(word, sentenceAt(text[first.p], first.start));
+      onSelectWord(fullWord, sentenceAt(text[first.p], first.start));
       // On every screen size the popover shows the meaning first; the full lookup panel opens only from "Xem chi tiết".
     }
   }
@@ -586,7 +607,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
         onPointerDown={drag} onKeyDown={(event) => { if (event.key === "ArrowLeft") setSplit((value) => Math.max(30, value - 4)); if (event.key === "ArrowRight") setSplit((value) => Math.min(70, value + 4)); }}><i /></div>}
       <div className="rw-pane rw-side-pane" ref={sideRef}>
         {!practicing && toolPanel}
-        {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}><EvidenceNavigationContext.Provider value={showEvidence}>{practice.content}</EvidenceNavigationContext.Provider></PracticeClockContext.Provider></div>}
+        {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}><EvidenceNavigationContext.Provider value={showEvidence}><ReadingLookupContext.Provider value={questionLookup}>{practice.content}</ReadingLookupContext.Provider></EvidenceNavigationContext.Provider></PracticeClockContext.Provider></div>}
       </div>
     </div>
 
