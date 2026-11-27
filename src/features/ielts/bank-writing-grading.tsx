@@ -88,6 +88,7 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
     {state?.status === "needs_review" && <p>Đề Task 1 cần xác minh dữ liệu nguồn trước khi chấm. Bài viết của bạn vẫn được lưu.</p>}
     {state?.status === "failed" && <><p>{state.error_code === "CLOUDFLARE_QUOTA_EXCEEDED" ? "Đã hết hạn mức chấm miễn phí hôm nay. Bạn có thể thử lại sau 07:00 giờ Việt Nam." : "Chưa thể chấm bài lúc này. Bài viết vẫn được lưu nguyên vẹn."}</p>{(state.attempt_no ?? 3) < 3 && <button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("retry")}>Thử chấm lại</button>}</>}
     {error && <p className="bx-error" role="alert">{error}</p>}
+    {!grade && essay.trim() && <section className="wg-essay-pane wg-essay-saved"><div className="wg-pane-heading"><h3>Bài viết của bạn</h3><span>{essay.trim().split(/\s+/).length} từ</span></div><div className="wg-essay" lang="en">{essay}</div></section>}
     {grade && <>
       <div className="wg-band"><div><span>Band luyện tập · {grade.task_type === "academic_task1" ? "Academic Task 1" : "Academic Task 2"}</span><strong>{grade.task_band_display.toFixed(1)}</strong></div><p>{grade.summary_vi}</p></div>
       <nav className="wg-tabs" role="tablist" aria-label="Xem đánh giá Writing">

@@ -19,6 +19,7 @@
 .wg-pane-heading h3 { margin: 0; font-size: var(--fs-md); }
 .wg-pane-heading span { color: #6a7e8d; font-size: var(--fs-xs); }
 .wg-essay { max-height: min(68vh, 780px); padding: 18px 20px; overflow-y: auto; white-space: pre-wrap; font-size: var(--fs-md); line-height: 1.8; }
+.wg-essay-saved { margin-top: 16px; }
 .wg-highlight { display: inline; padding: 0 2px; border: 0; border-radius: 3px; background: #fff0ae; color: inherit; font: inherit; text-align: left; text-decoration: underline wavy #c55b25; text-underline-offset: 4px; cursor: pointer; scroll-margin-top: 140px; }
 .wg-highlight.is-selected { background: #ffd678; box-shadow: 0 0 0 2px #d07829; }
 .wg-highlight sup { margin-left: 2px; color: #8a421f; font-size: var(--fs-2xs); font-weight: 800; }
