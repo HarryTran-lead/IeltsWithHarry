@@ -162,3 +162,25 @@
 .cd-sheet .bq-printed { padding: 0; border: 0; border-radius: 0; background: none; line-height: 1.5em; }
 .cd-sheet .bq-printed > p > strong:first-child { color: #000; }
 .cd-sheet .bq-printed > p:first-child { text-align: center; font-size: 18px; }
+
+/* Matching Headings on the real-test sheet: same flow as practice (list on the right, numbered box above each paragraph), in the black-and-white test style. */
+.cd-sheet .bq-bank.is-headings { gap: 12px; padding: 0; border: 0; background: none; }
+.cd-sheet .bq-bank-title { color: #000; font: 700 16px/1.5em Arial, sans-serif; }
+.cd-sheet .bq-bank.is-headings .bq-bank-hint { color: #555; font: 500 14px/1.4 Arial, sans-serif; }
+.cd-sheet .bq-bank.is-headings > div { justify-items: start; gap: 12px; }
+.cd-sheet .bq-bank.is-headings .bq-chip { width: auto; max-width: 100%; padding: 6px 12px; font: 500 16px/1.5em Arial, sans-serif; cursor: grab; }
+.cd-sheet .bq-bank.is-headings .bq-chip b { display: none; }
+.cd-sheet .bq-bank.is-headings .bq-chip:hover { background: #f3f7fb; }
+.cd-sheet .bq-bank.is-headings .bq-chip.is-held { border: 2px solid #418ec8; background: #d7e9f8; color: #000; }
+.cd-sheet .bq-bank.is-headings .bq-chip.is-used { display: none; }
+.cd-sheet .bt-heading-drop { min-height: 42px; margin: 18px 0 10px; padding: 4px 8px; border: 1px dashed #000; background: #fff; color: #000; font: 500 16px/1.4 Arial, sans-serif; }
+.cd-sheet .bt-heading-target { justify-content: center; min-height: 32px; }
+.cd-sheet .bt-heading-no { min-width: 0; height: auto; padding: 0 4px; border-radius: 0; background: none; color: #000; font: 700 16px/1.5em Arial, sans-serif; }
+.cd-sheet .bt-heading-drop:not(.is-filled):not(.is-over) i { display: none; }
+.cd-sheet .bt-heading-drop i { color: #555; font-size: 14px; }
+.cd-sheet .bt-heading-drop.is-over { border: 2px dashed #418ec8; background: #eef6fd; }
+.cd-sheet .bt-heading-drop.is-filled { border: 1px solid #000; background: #fff; color: #000; font-weight: 500; }
+.cd-sheet .bt-heading-drop.is-filled .bt-heading-target { justify-content: flex-start; }
+.cd-sheet .bt-heading-drop.is-filled .bt-heading-target b { display: none; }
+.cd-sheet .bt-heading-clear { border-radius: 0; color: #000; }
+.cd-sheet .bt-heading-clear:hover { background: #eee; color: #d40000; }
