@@ -49,10 +49,11 @@ export function parsePracticeAnswers(value: unknown): Record<string, number | st
   for (const [id, answer] of entries) {
     if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
     if (typeof answer === "number" && Number.isInteger(answer) && answer >= 0 && answer <= 9) answers[id] = answer;
-    else if (typeof answer === "string" && answer.trim() && answer.length <= 120) answers[id] = answer.trim();
+    // A blank ("") is allowed and graded as wrong, as long as at least one question has an answer.
+    else if (typeof answer === "string" && answer.length <= 120) answers[id] = answer.trim();
     else return null;
   }
-  return answers;
+  return Object.values(answers).some((answer) => answer !== "") ? answers : null;
 }
 
 /** Grades the answered questions only, in the quiz's own order. Returns null if an answer is the wrong kind for its question. */
@@ -65,10 +66,10 @@ export function gradePractice(keys: QuizKey[], answers: Record<string, number | 
     if (key.question_type === "mcq_multiple") {
       const answer = answers[key.id];
       if (answer === undefined) continue;
-      if (typeof answer !== "number") return null;
+      if (answer !== "" && typeof answer !== "number") return null;
       const seen = given.get(key.prompt ?? "") ?? new Set<number>();
-      const correct = !seen.has(answer) && pairOf(key).some((other) => other.correct_index === answer);
-      seen.add(answer);
+      const correct = typeof answer === "number" && !seen.has(answer) && pairOf(key).some((other) => other.correct_index === answer);
+      if (typeof answer === "number") seen.add(answer);
       given.set(key.prompt ?? "", seen);
       review.push({ id: key.id, type: key.question_type, correct, correctIndex: key.correct_index, acceptedAnswers: key.accepted_answers,
         explanation: key.explanation, optionNotes: key.option_notes, supportingSentence: key.supporting_sentence });
@@ -77,7 +78,8 @@ export function gradePractice(keys: QuizKey[], answers: Record<string, number | 
     const answer = answers[key.id];
     if (answer === undefined) continue;
     let correct: boolean;
-    if (key.correct_index !== null) {
+    if (answer === "") correct = false; // a blank counts as wrong
+    else if (key.correct_index !== null) {
       if (typeof answer !== "number") return null;
       correct = answer === key.correct_index;
     } else {

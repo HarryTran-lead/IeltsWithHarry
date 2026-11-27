@@ -239,3 +239,39 @@ body:has(.rw.is-practice, .rw-setup-backdrop, .rw-flyout, .rw-popover) .notebook
 .rw.is-news.is-read .rw-bar { box-shadow: 0 -12px 0 #fff, 0 8px 20px -14px rgba(16, 42, 67, 0.4); }
 /* The question-pane popover is rendered on <body>, so it must sit above the full-screen practice layer. */
 body > .rw-popover { z-index: 1100; }
+
+/* Practice in colour: same paper layout, livelier palette so a round feels inviting. */
+.rw.is-practice { --pr-grad: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%); --pr-ink: #1e3a8a; }
+.rw.is-practice .rw-bar { background: linear-gradient(90deg, #ecfeff 0%, #eef2ff 55%, #fdf4ff 100%); border-bottom: 1px solid #dbeafe; }
+.rw.is-practice .rw-timer { background: linear-gradient(135deg, #fff1c2, #ffd9a0); color: #9a4b00; box-shadow: inset 0 0 0 1px #fbbf24; }
+.rw.is-practice .rw-side-pane { background: linear-gradient(180deg, #ecfdf8 0%, #eef2ff 55%, #fbf0ff 100%); }
+.rw.is-practice .rw-passage-pane { background: #fffdf8; }
+.rw.is-practice .rw-nav { background: #fff; border-top: 1px solid #e0e7ff; box-shadow: 0 -8px 20px -16px rgba(59, 130, 246, .6); }
+.rw.is-practice .rw-nav div button { border: 1.5px solid #c7d2fe; background: #fff; color: #4338ca; font-weight: 800; }
+.rw.is-practice .rw-nav div button:hover { border-color: #818cf8; background: #eef2ff; }
+.rw.is-practice .rw-nav div button.is-answered { border-color: transparent; background: var(--pr-grad); color: #fff; box-shadow: 0 6px 14px -8px rgba(59, 130, 246, .9); }
+.rw.is-practice .rw-nav div button.is-right { border-color: transparent; background: linear-gradient(135deg, #34d399, #16a34a); color: #fff; }
+.rw.is-practice .rw-nav div button.is-wrong { border-color: transparent; background: linear-gradient(135deg, #fb7185, #e11d48); color: #fff; }
+.rw.is-practice .rw-nav-score b, .rw.is-practice .rw-nav > span b { color: #2563eb; }
+
+.rw.is-practice .news-auto-quiz-heading h2 { background: linear-gradient(90deg, #0f766e, #2563eb 60%, #7c3aed); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rw.is-practice .news-type-picker button { border-color: #c7d2fe; color: #3730a3; }
+.rw.is-practice .news-type-picker button[aria-pressed="true"] { border-color: transparent; background: var(--pr-grad); color: #fff; box-shadow: 0 6px 16px -10px rgba(59, 130, 246, .9); }
+.rw.is-practice .news-auto-quiz .news-auto-group { padding: 18px 20px 20px; border: 1px solid #e0e7ff; border-radius: 18px; background: #fff; box-shadow: 0 14px 30px -24px rgba(67, 56, 202, .55); }
+.rw.is-practice .news-auto-quiz .news-auto-group-head h3 { color: #3730a3; }
+.rw.is-practice .news-auto-quiz .news-auto-group-head h3::before { content: ""; display: inline-block; width: 8px; height: 22px; margin-right: 9px; border-radius: 6px; vertical-align: -4px; background: var(--pr-grad); }
+.rw.is-practice .news-auto-quiz .news-auto-group-head p strong { color: #db2777; }
+.rw.is-practice .news-q-badge { background: var(--pr-grad); color: #fff; box-shadow: 0 6px 14px -8px rgba(20, 184, 166, .95); }
+.rw.is-practice .news-auto-quiz input.news-gap-input { border-bottom: 2px solid #93c5fd; border-radius: 6px 6px 0 0; background: #f5f8ff; color: var(--pr-ink); -webkit-text-fill-color: var(--pr-ink); }
+.rw.is-practice .news-auto-quiz input.news-gap-input:focus { border-bottom-color: #3b82f6; background: #eaf1ff; box-shadow: 0 6px 14px -10px rgba(59, 130, 246, .8); }
+.rw.is-practice .news-match-box { border-color: #c7d2fe; background: #f5f7ff; }
+.rw.is-practice .news-match-box.is-filled { border-color: #818cf8; background: #fff; }
+.rw.is-practice .news-match-chip { border-color: #c7d2fe; }
+.rw.is-practice .news-auto-options label { border-color: #dbe4ff; }
+.rw.is-practice .news-auto-options label:hover { border-color: #93c5fd; background: #f5f8ff; }
+.rw.is-practice .news-auto-options label.selected { border-color: #6366f1; background: #eef2ff; box-shadow: 0 8px 18px -14px rgba(79, 70, 229, .9); }
+.rw.is-practice .news-auto-options label.selected > .news-option-letter { background: var(--pr-grad); color: #fff; }
+.rw.is-practice .news-auto-submit { border-top-color: #e0e7ff; }
+.rw.is-practice .news-auto-submit .button.primary { border: 0; background: linear-gradient(135deg, #14b8a6, #3b82f6 60%, #6366f1); color: #fff; box-shadow: 0 12px 24px -14px rgba(59, 130, 246, .95); }
+.rw.is-practice .news-auto-submit .button.primary:not(:disabled):hover { filter: brightness(1.06); transform: translateY(-1px); }
+.rw.is-practice .news-auto-submit span { color: #3730a3; }
