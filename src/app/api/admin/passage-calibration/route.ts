@@ -2,7 +2,7 @@ import { z } from "zod";
 import { viewer } from "../../../../lib/ielts-bank/server";
 import { passageForScore, passageScore, textDifficulty, validRubric } from "../../../../lib/news/passage-difficulty";
 import { MAP_SYSTEM, mapSchema } from "../../../../lib/news/question-factory-v2/prompts";
-import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson, v2Model } from "../../../../lib/news/question-factory-v2/provider";
+import { alternateV2Model, ArticleRequestBudget, FactoryProviderError, strictGeminiJson, v2Model } from "../../../../lib/news/question-factory-v2/provider";
 import type { PassageMap } from "../../../../lib/news/question-factory-v2/types";
 
 export const runtime = "nodejs";
@@ -28,8 +28,13 @@ export async function POST(request: Request) {
   if (!parsed.success) return Response.json({ error: "Send a title and a passage of 400–12,000 characters" }, { status: 400, headers: noStore });
   const { title, text } = parsed.data;
   try {
-    const reply = await strictGeminiJson<{ passage_map?: PassageMap }>(MAP_SYSTEM, `TITLE: ${title}\n\nARTICLE:\n${text}`, mapSchema,
-      new ArticleRequestBudget(1), fetch, 4000, v2Model());
+    // Like an article's map step, an overloaded model (503) falls back once to the other model.
+    const ask = (model: string) => strictGeminiJson<{ passage_map?: PassageMap }>(MAP_SYSTEM, `TITLE: ${title}\n\nARTICLE:\n${text}`, mapSchema,
+      new ArticleRequestBudget(1), fetch, 4000, model);
+    const reply = await ask(v2Model()).catch((error) => {
+      if (error instanceof FactoryProviderError && error.kind === "unavailable") return ask(alternateV2Model(v2Model()));
+      throw error;
+    });
     const map = reply.data?.passage_map;
     const score = passageScore(map?.difficulty, map?.passage_style, text);
     return Response.json({
