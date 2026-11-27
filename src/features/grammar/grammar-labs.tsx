@@ -56,8 +56,9 @@ function Rich({ text }: { text?: string | null }) {
   return <>{text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => part.startsWith("**") && part.endsWith("**") && part.length > 4 ? <strong key={i}>{part.slice(2, -2)}</strong> : part)}</>;
 }
 
-function DraftNote({ preview }: { preview: boolean }) {
-  return <p className="gg-lab-draft" role="note">{preview ? "Bản nháp biên tập · chưa được giáo viên duyệt. " : ""}Phần luyện thêm chỉ để tự học: không tính điểm thành thạo, không mở khóa cấp, không chứng nhận CEFR/IELTS.</p>;
+function DraftNote({ preview }: { preview?: boolean }) {
+  void preview;
+  return <p className="gg-lab-draft" role="note">Phần luyện chuyên sâu giúp bạn áp dụng cấu trúc vào đọc hiểu ngữ cảnh, sửa lỗi và diễn đạt thực tế; kết quả dùng cho tự rèn luyện, không ảnh hưởng điều kiện mở khóa cấp.</p>;
 }
 
 // ------------------------------------------------------------------ lesson tab

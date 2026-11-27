@@ -113,7 +113,7 @@ function Roadmap({ level, progress, ready, chapterQuery, unlocked }: { level: Gr
           <Link className={`gg-chapter-test ${progress[chunk[0].code]?.chapterTest?.passed ? "is-passed" : ""}`} href={`${ROOT}/tests?level=${level}`}><ClipboardCheck size={17} aria-hidden="true" /><span><strong>Kiểm tra chặng {index + 1}</strong><small>{progress[chunk[0].code]?.chapterTest ? `Cao nhất ${Math.round(progress[chunk[0].code]!.chapterTest!.best * 100)}%${progress[chunk[0].code]!.chapterTest!.passed ? " · Đã đạt" : ""}` : `${chunk.length * 3} câu trộn từ ${chunk.length} bài`}</small></span><ChevronRight size={16} aria-hidden="true" /></Link>
         </details>;
       })}</div>}
-    <div className="gg-preview-note">A1 mở sẵn. Mỗi cấp tiếp theo yêu cầu đạt ít nhất {GRAMMAR_PASS_PERCENT}% trong bài kiểm tra 20 câu của cấp trước. Câu hỏi đang biên tập; kết quả chỉ dùng để mở lộ trình học, không phải chứng nhận năng lực.</div>
+    <div className="gg-preview-note">A1 mở sẵn. Mỗi cấp tiếp theo mở khóa khi đạt ít nhất {GRAMMAR_PASS_PERCENT}% trong bài kiểm tra 20 câu của cấp trước.</div>
   </>;
 }
 
@@ -220,7 +220,7 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
   const spacedLabel = reviewState ? (isDue(reviewState, clockNow()) ? "Đến hạn" : `Mở ${formatDue(reviewState.due, clockNow())}`) : "Chưa mở";
 
   return <div className="gg-lesson"><div className="gg-crumb"><Link href={`${ROOT}/level/${lesson?.level ?? "A1"}`}><ArrowLeft size={16} /> {lesson?.level} · Lộ trình</Link><ChevronRight size={15} /><span>{code}</span></div>
-    <div className="gg-lesson-head"><div><span className="gg-eyebrow">{code} · BẢN NHÁP BIÊN TẬP</span><h1>{guide.title}</h1><p>{guide.overview || guide.objectives[0]}</p></div><span className="gg-lesson-score">{reviewedCount(lessonProgress)}/{items.length} câu đã làm</span></div>
+    <div className="gg-lesson-head"><div><span className="gg-eyebrow">{code} · {lesson?.group ?? lesson?.level ?? "GRAMMAR"}</span><h1>{guide.title}</h1><p>{guide.overview || guide.objectives[0]}</p></div><span className="gg-lesson-score">{reviewedCount(lessonProgress)}/{items.length} câu đã làm</span></div>
     <div className="gg-lesson-tabs"><button className={tab === "theory" ? "active" : ""} onClick={() => setTab("theory")}><BookOpen size={17} /> Lý thuyết</button><button className={tab === "practice" && view?.type !== "deep" ? "active" : ""} onClick={() => { setTab("practice"); if (!view || view.type === "deep") startStage(openStage(items, lessonProgress)); }}><PenLine size={17} /> Luyện tập · {items.length} câu</button><button className={tab === "practice" && view?.type === "deep" ? "active" : ""} onClick={() => { setTab("practice"); setView({ type: "deep" }); }}><FlaskConical size={17} /> Luyện sâu <small className="gg-tab-note">tùy chọn</small></button></div>
     {tab === "theory" ? <Theory code={code} guide={guide} onCheck={quickCheck} onPractice={() => { markRead(); setTab("practice"); startStage(openStage(items, lessonProgress)); }} />
       : <div className="gg-practice">

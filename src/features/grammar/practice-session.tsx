@@ -189,7 +189,6 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
       {response.explanation && <p><b>Vì sao:</b> {response.explanation}</p>}
       {response.correct === null && <div className="gg-self-review" role="group" aria-label="Tự đối chiếu câu trả lời"><p>So sánh nghĩa và ngữ pháp. Nếu cách viết của bạn cũng đúng, chọn “Cách của tôi cũng đúng”. Tự xác nhận không được tính là câu đúng tự động.</p><button type="button" className="gg-secondary" aria-pressed={response.status === "SELF_CHECKED"} onClick={() => onSelfReview(true)}>Cách của tôi cũng đúng</button><button type="button" className="gg-secondary" aria-pressed={response.status === "NEED_REVIEW"} onClick={() => onSelfReview(false)}>Tôi cần ôn lại</button></div>}
       {missedFirst && <p className="gg-first-note">Lần đầu bạn trả lời chưa đúng, nên câu này vẫn nằm trong Sổ ôn. Làm đúng vào một ngày khác để đưa nó ra.</p>}
-      <small>Kết quả dùng cho tự luyện trên dữ liệu biên tập, chưa phải chứng nhận năng lực.</small>
     </div>}</div>
     <div className={`gg-actionbar ${graded ? `is-${tone}` : ""}`}>
       {graded ? <><strong className="gg-verdict">{tone === "right" ? <><Check size={18} aria-hidden="true" /> Chính xác!</> : tone === "wrong" ? <><X size={18} aria-hidden="true" /> Chưa đúng<span className="gg-verdict-answer"> · Đáp án: {response.referenceAnswer}</span></> : "Tự đối chiếu với đáp án mẫu"}</strong>
