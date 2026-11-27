@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { PASSAGE_LABEL_SINCE } from "../../lib/news/passage-difficulty";
 import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, ChevronDown, Clock3, ExternalLink, Flame, FlaskConical, Globe2, GraduationCap, Heart, Headphones, History, Laptop, Layers3, LayoutGrid, Leaf, ListChecks, Newspaper, Search, Shuffle, Sparkles, Tag, Trophy, UsersRound, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { releaseLocks } from "@/lib/runtime";
@@ -103,7 +104,6 @@ const HOT_FEED_MINIMUM = 12;
  * Articles stored from this moment on get their IELTS passage level from the question factory's passage map.
  * Older bodies keep a length-based guess, so only newer ones with a published question set show the label.
  */
-const PASSAGE_LABEL_SINCE = Date.parse("2026-11-26T16:48:56Z");
 /** The measured IELTS passage of an article body, or null for older bodies whose value is only a length guess. */
 function measuredPassage(body: { reading_passage?: number | null; passage_score?: number | null; ingested_at?: string | null } | null | undefined, hasQuiz: boolean) {
   if (!body?.reading_passage || !hasQuiz) return null;

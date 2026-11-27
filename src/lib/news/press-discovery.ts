@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { PASSAGE_LABEL_SINCE } from "./passage-difficulty";
 import { approvedFactualSource, approvedPressFactSource, factDossierSchema } from "./fact-dossier-schema";
 import { readFactualSource, writeArticleFromFacts, type PassageTarget } from "./fact-dossier";
 import { OWN_PUBLISHER } from "./daily-plan";
@@ -228,7 +229,7 @@ export function chooseTargets(counts: Record<PassageTarget, number>, count: numb
 /** Measured passage levels of the last three days (articles with a published question set). */
 async function passageTargets(db: Db, count: number) {
   if (!count) return [];
-  const since = new Date(Math.max(Date.now() - 3 * 86_400_000, Date.parse("2026-11-26T16:48:56Z"))).toISOString();
+  const since = new Date(Math.max(Date.now() - 3 * 86_400_000, PASSAGE_LABEL_SINCE)).toISOString();
   const { data: sets, error: setError } = await db.from("news_auto_quiz_sets").select("article_id").gte("generated_at", since).limit(500);
   if (setError) throw setError;
   const ids = (sets ?? []).map((row) => row.article_id);

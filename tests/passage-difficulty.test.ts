@@ -24,6 +24,18 @@ describe("passage difficulty score", () => {
     expect(passageForScore(high)).toBe(3);
     expect(passageForScore(PASSAGE_CUTOFFS.passage2)).toBe(2);
   });
+  it("scores only style, abstraction, argument and the text measures", () => {
+    const base = passageScore({ abstraction: 3, argument: 3, inference: 1, vocabulary: 1 }, "sections", academic);
+    expect(passageScore({ abstraction: 3, argument: 3, inference: 5, vocabulary: 5 }, "sections", academic)).toBe(base);
+    // Without usable text measures the score is the mean of the three judged parts.
+    expect(passageScore({ abstraction: 3, argument: 3, inference: 2, vocabulary: 2 }, "sections", "Too short.")).toBe(50);
+  });
+  it("puts a sectioned text that is fairly abstract and argued in Passage 3, as Cambridge does", () => {
+    // Typical calibration ratings: Passage 3 sections 3/3, Passage 2 sections 2/2, Passage 1 factual 1/1.
+    expect(passageForScore(passageScore({ abstraction: 3, argument: 3, inference: 3, vocabulary: 4 }, "sections", "Too short.")!)).toBe(3);
+    expect(passageForScore(passageScore({ abstraction: 2, argument: 2, inference: 2, vocabulary: 3 }, "sections", "Too short.")!)).toBe(2);
+    expect(passageForScore(passageScore({ abstraction: 1, argument: 1, inference: 2, vocabulary: 3 }, "factual", "Too short.")!)).toBe(1);
+  });
 });
 
 describe("evening out the passage mix", () => {
