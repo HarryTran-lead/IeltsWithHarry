@@ -27,7 +27,7 @@ export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.t
 
 export { typeLabel };
 
-function practiceLabel(exam: BankExam) {
+export function practiceLabel(exam: BankExam) {
   return catalogGroups[exam.skill as CatalogSkill]?.find((group) => group.id === exam.practice_type)?.label ?? exam.skill;
 }
 
@@ -280,7 +280,7 @@ export function ExamBar({ exam, answered, total, remaining, untimed = false, bus
   const shown = untimed ? Math.max(0, untimedLimitMinutes * 60 - remaining) : remaining;
   const minutes = Math.floor(shown / 60), seconds = shown % 60;
   const tone = untimed ? "" : remaining <= 60 ? "is-danger" : remaining <= 300 ? "is-warning" : "";
-  return <header className={`bx-bar ${exam.skill === "Reading" && onExit ? "bx-test-bar" : ""}`}>
+  return <header className={`bx-bar ${onExit && exam.skill !== "Listening" ? "bx-test-bar" : ""}`}>
     <div className="bx-bar-title">{onExit && exam.skill === "Reading" ? <span className="bx-test-brand">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/harryup-mascot.webp" alt="" />

@@ -643,3 +643,11 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-reading-mode.bx-real-mode .bq-gap-group .bq-sheet > p { margin-block: 6px; }
 .bx-reading-mode.bx-real-mode .bq-gap-group .bq-sheet > p:first-child:has(> strong:only-child) { margin-bottom: 12px; text-align: center; }
 .bx-reading-mode.bx-real-mode .bq-gap-group .bq-bullets { padding-left: 24px; line-height: 1.9; }
+
+/* Writing, Speaking and other studios in the same full-screen practice frame as Reading: no app sidebar, header or mascot. */
+.bx-studio-mode .bx-test-bar .bx-skill-chip { display: none; }
+.bx-studio-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 16px 20px 40px; background: #fbfaf7; }
+.bx-studio-mode .bx-error { margin: 8px 20px 0; }
+.bx-studio-mode .bw-task, .bx-studio-mode .bw-side, .bx-studio-mode .wf-side, .bx-studio-mode .bs-side, .bx-studio-mode .bx-source-pane { top: 0; }
+.bx-studio-mode .bw-task, .bx-studio-mode .bx-source-pane { max-height: calc(100dvh - 140px); }
+@media (max-width: 600px) { .bx-studio-body { padding: 10px 10px 32px; } }

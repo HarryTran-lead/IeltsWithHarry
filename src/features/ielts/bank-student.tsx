@@ -7,7 +7,7 @@ import { todayISO } from "@/lib/demo-data";
 import { attemptContent, attemptMinutes, untimedAttempt, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
-import { type ResumableAttempt, AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
+import { type ResumableAttempt, AnswerInput, ExamBar, ExamIntro, ExamResult, practiceLabel, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
 import { TestRunner } from "./bank-test";
 import { ExamSheet } from "./bank-exam-sheet";
 import { ReadingReview } from "./bank-reading-review";
@@ -127,6 +127,10 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       unansweredList={inScope.filter((item) => !answers[item.id]).map((item) => ({ id: item.id, number: item.number }))}
       flaggedList={inScope.filter((item) => flags.includes(item.id)).map((item) => ({ id: item.id, number: item.number }))}
       onJump={(id) => { setConfirming(false); setJump({ id, at: Date.now() }); }} />;
+  const leaveDialog = leaving && <div className="bx-dialog-layer"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>;
+  // Writing, Speaking and any other skill take over the screen like Reading: ribbon, test bar, then only the task.
+  const focusRibbon = <div className="br-practice-ribbon"><strong>Harry<span>Up</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span>{practiceLabel(exam) !== exam.skill && <span>{practiceLabel(exam)}</span>}</nav><small>Giao diện luyện tập</small></div>;
+  const focusClass = `bx-page bx-run bx-exam-mode bx-practice-mode bx-studio-mode bl-tone-${toneOf(exam.skill)}`;
   // Reading and Listening in the real-test view are the computer-delivered screen; its tick leads to "Click next", which submits.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening") && notes.__view === "exam") return <>
     <ExamSheet exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} remaining={remaining} busy={busy} onSubmit={() => void submit()} onExit={() => setLeaving(true)} />
@@ -140,28 +144,34 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />
     {dialog}
-    {leaving && <div className="bx-dialog-layer"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
+    {leaveDialog}
   </main>;
-  if (content && exam.skill === "Writing") return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
-    <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+  if (content && exam.skill === "Writing") return <main className={focusClass}>
+    {focusRibbon}
+    <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
-    <WritingStudio exam={exam} content={content} answers={answers} setAnswers={setAnswers} visual={<>{content.figureDescription && <p className="bx-figure"><strong>Mô tả hình:</strong> {content.figureDescription}</p>}{content.imageUrl && <a className="bx-ghost" href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a>}{Boolean(content.visual) && <BankVisual visual={content.visual} />}</>} />
+    <div className="bx-studio-body"><WritingStudio exam={exam} content={content} answers={answers} setAnswers={setAnswers} visual={<>{content.figureDescription && <p className="bx-figure"><strong>Mô tả hình:</strong> {content.figureDescription}</p>}{content.imageUrl && <a className="bx-ghost" href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a>}{Boolean(content.visual) && <BankVisual visual={content.visual} />}</>} /></div>
     {dialog}
+    {leaveDialog}
   </main>;
   if (content && exam.skill === "Speaking") {
     const items = speakingItems(content, exam.practice_type);
     const spoken = items.filter((item) => answers[item.id]).length;
-    return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
-      <ExamBar exam={exam} answered={spoken} total={items.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+    return <main className={focusClass}>
+      {focusRibbon}
+      <ExamBar exam={exam} answered={spoken} total={items.length} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
       {error && <p className="bx-error" role="alert">{error}</p>}
-      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} focusId={focusQuestion} />
+      <div className="bx-studio-body"><SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} focusId={focusQuestion} /></div>
       {confirming && <SubmitDialog unanswered={items.length - spoken} flagged={0} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
+      {leaveDialog}
     </main>;
   }
-  return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
-    <ExamBar exam={exam} answered={answered} total={questions.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
-    {questions.length > 1 && <QuestionNav questions={questions} active={active} answers={answers} flags={flags} onPick={setActive} />}
+  return <main className={focusClass}>
+    {focusRibbon}
+    <ExamBar exam={exam} answered={answered} total={questions.length} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
+    <div className="bx-studio-body">
+    {questions.length > 1 && <QuestionNav questions={questions} active={active} answers={answers} flags={flags} onPick={setActive} />}
     <div className="bx-panes">
       <section className="bx-source-pane" aria-label="Đề bài">
         <span className="bx-pane-label">{exam.skill === "Listening" ? "Bản ghi âm" : exam.skill === "Writing" ? "Đề bài" : exam.skill === "Speaking" ? "Chủ đề" : "Bài đọc"}</span>
@@ -193,7 +203,9 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       </section> : null}
     </div>
     <p className="bx-attribution">Nguồn: {exam.attribution} · {exam.license}</p>
+    </div>
     {dialog}
+    {leaveDialog}
   </main>;
 }
 
