@@ -38,8 +38,9 @@ describe("question forms by IELTS passage level", () => {
       expect(selected).not.toContain("ynng");
     }
   });
-  it("uses Passage 1's statements-and-completion template for most factual articles", () => {
+  it("gives Passage 1 statements with notes or a summary, and never single-answer choice", () => {
     const sets = Array.from({ length: 200 }, (_, n) => selectQuestionTypes(long, words, `factual-${n}`, 1, false));
-    expect(sets.filter((types) => types[0] === "tfng").length).toBeGreaterThan(100);
+    expect(sets.filter((types) => types.includes("tfng")).length).toBeGreaterThan(100);
+    expect(sets.some((types) => types.includes("mcq"))).toBe(false);
   });
 });

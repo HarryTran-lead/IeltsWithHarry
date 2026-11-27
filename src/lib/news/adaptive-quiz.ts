@@ -306,34 +306,40 @@ export const MIN_BLOCK = 3;
 
 /**
  * IELTS Academic Reading gives each passage two or three question forms, each as one block, in a recognisable
- * order. Templates are grouped by the passage they model, from Cambridge 15–18 (39 passages): each slot lists
- * interchangeable forms for that block.
+ * order. Templates are grouped by the passage they model, from 120 Cambridge passages (40 of each, 2026-11-27):
+ * each slot lists interchangeable forms for that block. Slots of one template share no form, so a template
+ * never picks the same form twice.
  */
 export const PASSAGE_TEMPLATES_BY_LEVEL: Record<1 | 2 | 3, IeltsQuestionType[][][]> = {
   1: [
-    // 10 of 12: statements, then notes, a table, a summary or sentences.
-    [["tfng"], ["note_completion", "table_completion", "summary_completion", "sentence_completion"]],
-    // Which paragraph contains…, then a summary or notes.
-    [["matching_information"], ["summary_completion", "note_completion", "sentence_completion"]],
-    // Rarer: choice, short written answers, then statements.
-    [["mcq"], ["short_answer", "sentence_completion", "note_completion"], ["tfng"]],
+    // 14 of 39: notes (or a table) first, then statements. Passage 1 uses no single-answer choice at all.
+    [["note_completion", "table_completion"], ["tfng"]],
+    // 10 of 39: statements first, then notes, a summary, a table or sentences.
+    [["tfng"], ["note_completion", "summary_completion", "table_completion", "sentence_completion"]],
+    // 5 of 39: which paragraph contains…, a summary, then features.
+    [["matching_information"], ["summary_completion", "note_completion", "sentence_completion"], ["matching_features"]],
   ],
   2: [
-    // Matching paragraphs, then a summary, then features or choice.
-    [["matching_information", "matching_headings"], ["summary_completion", "summary_word_list", "sentence_completion", "note_completion"], ["matching_features", "mcq", "mcq_multiple"]],
-    // Choice (single or Choose TWO), the writer's claims or the facts, then a summary or notes.
-    [["mcq", "mcq_multiple"], ["ynng", "tfng"], ["summary_completion", "summary_word_list", "note_completion"]],
+    // 29 of 40 open with matching paragraphs or headings, then a summary or sentences, then features,
+    // Choose TWO or statements.
+    [["matching_information", "matching_headings"], ["summary_completion", "summary_word_list", "sentence_completion", "note_completion"], ["matching_features", "mcq_multiple", "tfng"]],
+    // 5 of 40: choice, a summary, then the writer's claims or the facts.
+    [["mcq", "mcq_multiple"], ["summary_word_list", "summary_completion"], ["ynng", "tfng"]],
   ],
   3: [
-    // 10 of 14 open with choice; then a summary (9 of 14 from a word list) or sentence endings; then the writer's views.
-    [["mcq"], ["summary_word_list", "summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
-    [["matching_information"], ["ynng", "tfng"], ["summary_word_list", "summary_completion", "sentence_completion"]],
-    [["mcq"], ["matching_features"], ["summary_word_list", "summary_completion", "sentence_completion"]],
+    // 16 of 41 open with choice, then a summary from a word list or sentence endings, then the writer's views.
+    [["mcq"], ["summary_word_list", "matching_sentence_endings", "summary_completion", "sentence_completion"], ["ynng", "tfng"]],
+    // 9 of 41: matching paragraphs or headings, a summary, then features or the writer's views.
+    [["matching_information", "matching_headings"], ["summary_completion", "summary_word_list", "sentence_completion"], ["matching_features", "ynng", "tfng"]],
+    // 5 of 41: a summary from a word list first, then choice and the writer's views.
+    [["summary_word_list", "summary_completion"], ["mcq"], ["ynng", "tfng"]],
+    // 3 of 41: features, the writer's views, then a summary.
+    [["matching_features"], ["ynng", "tfng"], ["summary_completion", "summary_word_list"]],
   ],
 };
 export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = Object.values(PASSAGE_TEMPLATES_BY_LEVEL).flat();
 /** How often each template of a level is used, after its share of the Cambridge passages. */
-const TEMPLATE_WEIGHTS: Record<1 | 2 | 3, number[]> = { 1: [7, 2, 1], 2: [7, 3], 3: [6, 2, 2] };
+const TEMPLATE_WEIGHTS: Record<1 | 2 | 3, number[]> = { 1: [14, 10, 5], 2: [29, 5], 3: [16, 9, 5, 3] };
 
 /**
  * Picks the question forms for one article as IELTS blocks: two forms for a six-question set, at most three

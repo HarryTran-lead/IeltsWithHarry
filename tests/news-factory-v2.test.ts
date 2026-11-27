@@ -94,6 +94,19 @@ describe("Question Factory V2 editorial corpus", () => {
     // One contiguous block per form, in the template's order.
     expect(chosen.map((entry) => entry.type).filter((type, index, all) => type !== all[index - 1])).toEqual(["mcq", "tfng"]);
   });
+  it("orders answers down the passage as Cambridge does, except matching paragraphs and features", async () => {
+    const { selectPublished } = await import("../src/lib/news/question-factory-v2");
+    const item = (id: string, type: string, start: number, group = id) => ({ id, group_id: group, type, difficulty: "P2", options: [], prompt: id,
+      evidence_spans: [{ start, end: start + 10, quote: id }] }) as never;
+    // Generated out of order: statements by evidence 300, 100, 200; a summary group whose own sequence is kept;
+    // matching information, which Cambridge papers do not order.
+    const pool = [item("t3", "tfng", 300), item("t1", "tfng", 100), item("t2", "tfng", 200),
+      item("sB", "summary_completion", 900, "sum2"), item("sC", "summary_completion", 950, "sum2"),
+      item("sA1", "summary_completion", 500, "sum1"), item("sA2", "summary_completion", 480, "sum1"),
+      item("m2", "matching_information", 800, "mi"), item("m1", "matching_information", 50, "mi"), item("m3", "matching_information", 400, "mi")];
+    const chosen = selectPublished(pool, 10, ["tfng", "summary_completion", "matching_information"]) as { id: string }[];
+    expect(chosen.map((entry) => entry.id)).toEqual(["t1", "t2", "t3", "sA1", "sA2", "sB", "sC", "m2", "m1", "m3"]);
+  });
   it("picks two or three forms from one IELTS passage template", async () => {
     const { PASSAGE_TEMPLATES } = await import("../src/lib/news/adaptive-quiz");
     const long = Array.from({ length: 24 }, (_, i) => `Paragraph ${i} explains how Seabrook Water Board staff measured ${i + 10} samples in 2022 because residents asked, while the Harbor Office compared results.`)
