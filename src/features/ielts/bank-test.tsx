@@ -425,14 +425,18 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     // The sentence runs from just after the last full stop before the word to the next one after it.
     const lead = text.slice(0, spot.start);
     const stop = Math.max(lead.lastIndexOf(". "), lead.lastIndexOf("? "), lead.lastIndexOf("! "));
-    const start = stop < 0 ? 0 : stop + 2;
+    let start = stop < 0 ? 0 : stop + 2;
+    // The paragraph's printed letter ("F" on its own line reads as "FContemporary…") is not part of the first sentence.
+    const printed = !lettering.inferred && spot.pane === "passage" ? lettering.letters[spot.block] : undefined;
+    const label = start === 0 && printed ? new RegExp(`^\\s*${printed}[.:]?\\s*(?=[A-Z"“‘'(])`).exec(text) : null;
+    if (label && label[0].length <= spot.start) start = label[0].length;
     const after = /[.!?](\s|$)/.exec(text.slice(spot.end));
     const end = after ? spot.end + after.index + 1 : text.length;
     const box = range.getBoundingClientRect();
     setLookup({ word, x: box.left + box.width / 2, y: box.top, sentence: text.slice(start, end).trim(), spot: { ...spot, start, end, quote: undefined } });
     window.getSelection()?.removeAllRanges();
     setMarkPop(null);
-  }, [lookupAllowed, selectedSpots, blockOf]);
+  }, [lookupAllowed, selectedSpots, blockOf, lettering]);
 
   // With the highlighter off, selecting a word only offers the dictionary.
   const offerLookup = useCallback(() => {
