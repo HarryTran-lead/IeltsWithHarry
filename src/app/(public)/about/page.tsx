@@ -14,10 +14,10 @@ export default function AboutPage() {
     <div className="public-container">
       <header className="public-page-head">
         <div>
-          <span className="eyebrow">ABOUT HARRY UP</span>
-          <h1>Small steps. <span className="hl">Big progress.</span></h1>
+          <span className="eyebrow">ABOUT HARRYUP</span>
+          <h1>Level Up <span className="hl">Your English.</span></h1>
           <p>
-            Harry Up is a friendly learning space for beginners and IELTS
+            HarryUp is a friendly learning space for beginners and IELTS
             learners. Practice useful English, plan your week and see how each step
             adds up.
           </p>

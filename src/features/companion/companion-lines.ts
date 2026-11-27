@@ -248,7 +248,7 @@ export const companionLines: Record<CompanionTrigger, CompanionLine[]> = {
   /* ───────── Time on task ───────── */
   study_10: [
     { text: "10 phút rồi đó! Khởi động xong, giờ mới vào guồng nè 💪", mood: "happy" },
-    { text: "Bạn đã học 10 phút hôm nay. Small steps, big progress!", mood: "proud" },
+    { text: "Bạn đã học 10 phút hôm nay. Level Up Your English.", mood: "proud" },
     { text: "10 phút đầu tiên luôn là khó nhất, và bạn đã vượt qua rồi!", mood: "cheer" },
   ],
   study_20: [
@@ -557,7 +557,7 @@ export const companionLines: Record<CompanionTrigger, CompanionLine[]> = {
     { text: "Tại sao học sinh mang thang tới trường? Vì muốn lên… high school 🪜", mood: "cheer", choices: [{ label: "Haha 😂", say: "Còn bạn thì muốn lên… high band! 🎯", mood: "fire" }, { label: "Thêm cái nữa", next: "chat_joke" }] },
   ],
   chat_about: [
-    { text: "Harry là bạn đồng hành của Harry Up. Việc của Harry là nhắc bạn học và cổ vũ bạn mỗi ngày!", mood: "wave" },
+    { text: "Harry là bạn đồng hành của HarryUp. Việc của Harry là nhắc bạn học và cổ vũ bạn mỗi ngày!", mood: "wave" },
     { text: "Món Harry thích nhất? Từ vựng mới, ăn mãi không chán 😋", mood: "happy" },
     { text: "Ước mơ của Harry là thấy bạn cầm tấm bằng IELTS đúng band mục tiêu 🎓", mood: "love" },
   ],
