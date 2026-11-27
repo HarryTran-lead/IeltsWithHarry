@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, CalendarClock, Flag } from "lucide-react";
 import { clockNow, dueLessons, flaggedQuestions, formatDue, MIXED_REVIEW_SIZE } from "@/lib/grammar/schedule";
 import { grammarLevel, isLevelOpen } from "@/lib/grammar/gate";
 import { reviewedCount, type GrammarLevel, type GrammarProgress } from "@/lib/grammar/types";
-import { catalog, continueLesson, lessonHref, lessonTotal, nextLesson, ROOT } from "./grammar-catalog";
+import { catalog, continueLesson, lessonHref, lessonStars, nextLesson, nextStarTarget, ROOT } from "./grammar-catalog";
 import { useGrammarProgress } from "./grammar-progress";
 import "./grammar-tokens.css";
 import "./grammar-today.css";
@@ -20,7 +20,15 @@ const codeOpen = (code: string, unlocked?: GrammarLevel[]) => {
 export function GrammarToday({ progress, level, unlocked, compact = false }: { progress: GrammarProgress; level?: GrammarLevel; unlocked?: GrammarLevel[]; compact?: boolean }) {
   const now = clockNow();
   const current = level ? nextLesson(level, progress) : continueLesson(progress);
-  const done = reviewedCount(progress[current.code]);
+  const currentProgress = progress[current.code];
+  const done = reviewedCount(currentProgress);
+  const stars = lessonStars(current, currentProgress);
+  const targetInfo = nextStarTarget(current, currentProgress);
+  const subLabel = stars >= 3
+    ? `★★★ Đã thành thạo · Luyện thêm câu mới`
+    : done && targetInfo
+      ? `${"★".repeat(stars)}${"☆".repeat(3 - stars)} · Còn ${targetInfo.remaining} câu lên ${targetInfo.nextStar} Sao`
+      : "Chặng 1 Sao · 8 câu ngắn (~4 phút)";
   const due = dueLessons(progress, now).filter((code) => codeOpen(code, unlocked));
   const upcoming = Object.entries(progress).filter(([code]) => codeOpen(code, unlocked)).map(([, lesson]) => lesson.review?.due).filter((value): value is string => Boolean(value)).sort()[0];
   const mistakes = flaggedQuestions(progress).filter((item) => codeOpen(item.code, unlocked)).length;
@@ -28,8 +36,8 @@ export function GrammarToday({ progress, level, unlocked, compact = false }: { p
   return <section className={`gt ${compact ? "gt-compact" : ""}`} aria-label="Grammar hôm nay">
     <div className="gt-head"><span>{compact ? "GRAMMAR · HÔM NAY" : "HÔM NAY"}</span>{!compact && <h2>Việc nên làm trước</h2>}</div>
     <div className="gt-tiles">
-      <Link className="gt-tile gt-main" href={lessonHref(current.code, progress[current.code])}>
-        <BookOpen size={20} aria-hidden="true" /><span><small>{done ? "Tiếp tục bài" : "Bắt đầu bài"} {current.code}</small><strong>{current.title}</strong><em>{done ? `Đã làm ${done}/${lessonTotal(current)} câu` : "Đọc quy tắc rồi luyện 12 câu"}</em></span><ArrowRight size={16} aria-hidden="true" />
+      <Link className="gt-tile gt-main" href={lessonHref(current.code, currentProgress)}>
+        <BookOpen size={20} aria-hidden="true" /><span><small>{done ? "Tiếp tục bài" : "Khởi động bài"} {current.code}</small><strong>{current.title}</strong><em>{subLabel}</em></span><ArrowRight size={16} aria-hidden="true" />
       </Link>
       {due.length ? <Link className="gt-tile gt-due" href={`${ROOT}/lesson/${due[0]}?stage=spaced_review`}>
         <CalendarClock size={20} aria-hidden="true" /><span><small>Ôn cách quãng</small><strong>{due.length} bài đến hạn</strong><em>{due[0]} · {dueTitle}</em></span><ArrowRight size={16} aria-hidden="true" />
