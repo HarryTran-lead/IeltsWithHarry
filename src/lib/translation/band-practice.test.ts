@@ -174,7 +174,7 @@ describe("evaluateExpression & interactive builders", () => {
     expect(steps?.[1]?.promptVi).toBe("Câu hai đưa phản biện.");
   });
 
-  it("segments Vietnamese sentences into tap-to-reveal phrase rescues and builds structural blueprints", () => {
+  it("segments Vietnamese sentences into tap-to-reveal phrase rescues and builds structural blueprints", async () => {
     const sample = {
       id: "band-5.5-health",
       type: "sentence" as const,
@@ -192,5 +192,14 @@ describe("evaluateExpression & interactive builders", () => {
     const blueprint = buildSentenceBlueprint(sample);
     expect(blueprint.formula).toContain("can help");
     expect(blueprint.formula).not.toContain("___");
+
+    // Guarantee zero mid-word Vietnamese splits across all 2,080 exercises!
+    const all = [...(await allExercises()).values()].flat();
+    const brokenSplits = all.filter((item) => {
+      const joined = buildPhraseHints(item).map((c) => c.vi).join(" ").replace(/\s+/g, " ").trim();
+      const expected = item.promptVi.replace(/\s+/g, " ").trim();
+      return joined !== expected;
+    });
+    expect(brokenSplits).toEqual([]);
   });
 });
