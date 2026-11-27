@@ -42,7 +42,8 @@ export type Task2Enrichment = {
 const root = join(process.cwd(), "content/writing-task2");
 let cache: { lessons: Task2Lesson[]; answers: Record<string, LessonAnswers> } | null = null;
 
-export function readTask2Enrichments(dir = join(root, "enrich")): Task2Enrichment[] {
+export function readTask2Enrichments(): Task2Enrichment[] {
+  const dir = join(root, "enrich");
   if (!existsSync(dir)) return [];
   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
