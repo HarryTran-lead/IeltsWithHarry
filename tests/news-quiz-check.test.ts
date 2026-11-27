@@ -18,6 +18,8 @@ describe("Daily News practice by question type", () => {
     expect(parsePracticeAnswers({ [id(1)]: 9 })).toEqual({ [id(1)]: 9 });
     expect(parsePracticeAnswers({ [id(1)]: 10 })).toBeNull();
     expect(parsePracticeAnswers({ [id(1)]: "   " })).toBeNull();
+    // A blank beside a real answer is kept, so the round can be submitted and the blank graded wrong.
+    expect(parsePracticeAnswers({ [id(1)]: 1, [id(3)]: "" })).toEqual({ [id(1)]: 1, [id(3)]: "" });
     expect(parsePracticeAnswers({ [id(1)]: "x".repeat(121) })).toBeNull();
   });
 

@@ -443,7 +443,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   }
 
   async function submit() {
-    if (!shown.length || (!examMode && answered !== shown.length) || busy || submitting.current || saveConflict.current) return;
+    if (!shown.length || (!examMode && answered === 0) || busy || submitting.current || saveConflict.current) return;
     submitting.current=true;
     setBusy(true); setError("");
     try {
@@ -469,6 +469,17 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         submitted_at: new Date().toISOString(), partial, mode:examMode?"timed":"practice", breakdown: (practice.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds };
       setHistory((current) => [attempt, ...current].slice(0, 10));
       if (!partial) setSaved((current) => ({ submittedAt: attempt.submitted_at, attempts: (current?.attempts ?? 0) + 1 }));
+    } else if (!examMode && !qaMode && /Answer every question/.test(practice.error.message) && answered < shown.length) {
+      // The database update that accepts blanks may not be live yet: grade what was answered and mark the blanks wrong here.
+      const answeredOnly = Object.fromEntries(Object.entries(payload).filter(([, value]) => value !== ""));
+      const retry = await db.rpc("news_submit_auto_practice", { p_article_id: articleId, p_answers: answeredOnly, p_seconds: seconds });
+      if (retry.error) setError(retry.error.message);
+      else {
+        const answeredReview = (retry.data as { review: Review[] }).review;
+        const blanks = shown.filter((question) => !(question.id in answeredOnly)).map((question): Review => ({ id: question.id, correct: false, correctIndex: null, acceptedAnswers: null, explanation: "", optionNotes: null, supportingSentence: "" }));
+        review = [...answeredReview, ...blanks];
+        setHistory((current) => [{ id: crypto.randomUUID(), article_id: articleId, score: answeredReview.filter((item) => item.correct).length, total: review!.length, submitted_at: new Date().toISOString(), partial: true, mode: "practice", breakdown: (retry.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds }, ...current].slice(0, 10));
+      }
     } else if (examMode || practice.error.code !== "PGRST202") setError(practice.error.message);
     // Until the practice-history migration is applied, fall back to the older endpoints.
     else if (partial) {
@@ -583,9 +594,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       : review.acceptedAnswers?.[0] ?? "";
     const given = typeof value === "number" ? question.options[value] ?? "" : String(value ?? "");
     return <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`} key={question.id}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-      <strong>{withNumber ? `Câu ${number}: ` : ""}{review.correct ? "Chính xác!" : `Chưa đúng. Đáp án: ${key}`}</strong>
-      {!review.correct && given && <p>Bạn trả lời: “{truth ? given.toUpperCase() : given}”</p>}
-      <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
+      <strong>{withNumber ? `Câu ${number}: ` : ""}{review.correct ? "Chính xác!" : key ? `${given ? "Chưa đúng" : "Bỏ trống"}. Đáp án: ${key}` : "Bỏ trống"}</strong>
+      {!review.correct && (given ? <p>Bạn trả lời: “{truth ? given.toUpperCase() : given}”</p> : <p>Bạn để trống câu này nên được tính sai.</p>)}
+      {review.explanation && <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>}
       <EvidenceLink quote={review.supportingSentence} />
     </div></div>;
   }
@@ -840,10 +851,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         })}
       </div>;
     })}
-    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Trả lời đủ ${shown.length-answered} câu còn lại trước khi nộp.`}</small>}</span>
-      {blankWarning && <p className="news-submit-warning" role="alert">Còn {shown.length - answered} câu chưa trả lời; câu trống được tính sai. Bấm lần nữa để vẫn nộp.</p>}<button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => {
+    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Còn ${shown.length-answered} câu chưa làm; vẫn nộp được, câu trống tính sai.`}</small>}</span>
+      {blankWarning && <p className="news-submit-warning" role="alert">Còn {shown.length - answered} câu chưa trả lời; câu trống được tính sai. Bấm lần nữa để vẫn nộp.</p>}<button type="button" className="button primary" disabled={busy || (!examMode && answered === 0)} onClick={() => {
         // A timed sitting with blanks asks once more, so a stray tap does not end the attempt.
-        if (examMode && !examExpired && answered < shown.length && !blankWarning) { setWarningFor(answerKey); return; }
+        // Submitting with blanks asks once more, in practice as in the timed sitting, so a stray tap does not end the round.
+        if (!examExpired && answered < shown.length && !blankWarning) { setWarningFor(answerKey); return; }
         void submit();
       }}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : blankWarning ? "Vẫn nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
