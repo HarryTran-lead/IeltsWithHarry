@@ -139,7 +139,7 @@ function GapGroup({ group, props }: { group: QuestionGroup; props: AnswerProps }
   // A flow chart without a printed layout still reads as boxed steps joined by arrows.
   const flow = /flow[_-]?chart/.test(group.type);
   const boxed = /table[_-]completion|note[_-]completion/.test(group.type) && !carriers.length;
-  return <div className={`bq-gaps ${flow ? "is-flow" : ""} ${boxed ? "is-boxed" : ""}`}>
+  return <div className={`bq-gaps ${flow ? "is-flow" : ""} ${boxed ? "is-boxed" : ""} ${/note[_-]completion/.test(group.type) ? "is-notes" : ""}`}>
     {carriers.map(carrierBlock)}
     {group.questions.filter((question) => !covered.has(question.id) && !carriers.includes(question)).map((question) => {
       const prompt = withoutOwnNumber(question.prompt, props.numberOf(question.id));
@@ -298,9 +298,13 @@ export function groupRange(group: QuestionGroup, numberOf: (id: string) => numbe
 /** One "Questions 1–7" block with its instructions and the right answer controls for its type. */
 export function QuestionGroupView({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed?: string }) {
   const media = group.questions.find((question) => question.mediaUrl);
-  return <section className="bq-group" aria-label={groupRange(group, props.numberOf)}>
+  const oneWord = group.kind === "gap" && /^(?:NO MORE THAN (?:1|ONE) WORDS?|ONE WORD ONLY)[.!]?$/i.test(group.instructions.trim());
+  const instructions = oneWord
+    ? `${/note[_-]completion/.test(group.type) ? "Complete the notes below.\n" : ""}Write **ONE WORD ONLY** for each answer.`
+    : group.instructions;
+  return <section className={`bq-group ${group.kind === "gap" ? "bq-gap-group" : ""}`} aria-label={groupRange(group, props.numberOf)}>
     <h3 data-highlight-block>{groupRange(group, props.numberOf)}</h3>
-    {group.instructions && <div className="bq-instructions">{richBlocks(group.instructions, () => <span className="bq-blank" />)}</div>}
+    {instructions && <div className="bq-instructions">{richBlocks(instructions, () => <span className="bq-blank" />)}</div>}
     {media?.mediaUrl && <figure className="bq-media"><a href={media.mediaUrl} target="_blank" rel="noreferrer" aria-label="Mở sơ đồ hoặc bản đồ cỡ lớn"><img src={media.mediaUrl} alt={media.mediaReference || `Sơ đồ cho ${groupRange(group, props.numberOf)}`} loading="lazy" /></a><figcaption>Bấm vào hình để xem cỡ lớn.</figcaption></figure>}
     {group.kind === "gap" ? printed ? <PrintedGapGroup group={group} props={props} printed={printed} /> : <GapGroup group={group} props={props} />
       : group.kind === "matrix" ? <Matrix group={group} props={props} />
