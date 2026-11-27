@@ -285,6 +285,7 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
         : <li key={question.id}><span className="bq-slot-stem">{richBlocks(prompt, () => null)}</span>{slot(question)}</li>;
     })}</ol>}
     {!headings && bank}
+    {headings && <ol className="bq-slots bq-heading-questions" aria-label="Câu hỏi matching headings">{group.questions.map((question) => <li key={question.id} id={`q-${question.id}`}><span className="bq-slot-stem">{withoutOwnNumber(question.prompt, props.numberOf(question.id))}</span><button type="button" className="bq-heading-goto" onClick={() => document.getElementById(`q-${question.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}>{props.numberOf(question.id)}</button></li>)}</ol>}
   </div>;
 }
 

@@ -612,3 +612,5 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-over,
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled { border-color: #159447; background: #edf8f0; color: var(--bl-ink); }
 .bx-reading-mode.bx-practice-mode .bt-heading-drop.is-filled .bt-heading-target { justify-content: flex-start; }
+
+.bx-reading-mode.bx-practice-mode .bq-heading-questions { display: none; }
