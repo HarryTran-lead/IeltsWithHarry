@@ -275,7 +275,7 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
   // The IELTS paper prints the list of headings above the paragraphs; word banks and endings follow their sentences.
   return <div className="bq-pick">
     {headings && bank}
-    {printed ? <div className="bq-flow-sheet">{richBlocks(printed, (_key, number) => {
+    {headings ? null : printed ? <div className="bq-flow-sheet">{richBlocks(printed, (_key, number) => {
       const question = number === undefined ? undefined : byNumber.get(number);
       return question ? slot(question) : <span className="bq-blank" />;
     })}</div> : <ol className="bq-slots">{group.questions.map((question) => {
