@@ -30,10 +30,10 @@ type PracticeMode = "chunks" | "guided" | "express";
 const GUEST_TRIAL_LIMIT = 3;
 
 const ratingLabels: { value: Rating; label: string; sub: string }[] = [
-  { value: "again", label: "Chưa nhớ", sub: "Ôn lại sớm" },
-  { value: "hard", label: "Còn vấp", sub: "Đánh dấu khó" },
-  { value: "good", label: "Ổn", sub: "+10 XP" },
-  { value: "easy", label: "Mượt!", sub: "+12 XP" },
+  { value: "again", label: "Chưa nhớ", sub: "+3 XP · Ôn sớm" },
+  { value: "hard", label: "Còn vấp", sub: "+3 XP · Đánh dấu khó" },
+  { value: "good", label: "Ổn", sub: "+5 XP" },
+  { value: "easy", label: "Mượt!", sub: "+5 XP" },
 ];
 
 const stages: { name: string; detail: string; bands: string[]; sticker: StickerName; tone: string }[] = [
@@ -483,13 +483,17 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
     const nowIso = new Date().toISOString();
     const itemSlug = `translation-item:${reviewKey(item)}`;
     const isGood = rating === "good" || rating === "easy";
+    // Preserve mastery (`correct = 1`) once earned so later review ratings never reduce total XP.
+    const prevWasGood = reviews[reviewKey(item)]?.rating === "good" || reviews[reviewKey(item)]?.rating === "easy";
+    const storedCorrect = isGood || prevWasGood ? 1 : 0;
     void supabase
       .from("package_practice_results")
       .upsert(
-        { user_id: userId, lesson_slug: itemSlug, correct: isGood ? 1 : 0, checked: 1, total: 1, updated_at: nowIso },
+        { user_id: userId, lesson_slug: itemSlug, correct: storedCorrect, checked: 1, total: 1, updated_at: nowIso },
         { onConflict: "user_id,lesson_slug" },
       )
       .then(() => {
+        window.dispatchEvent(new Event("learner-xp-updated"));
         if (!finishedRound) return;
         const keys = bandIndex.find((b) => b.level === item.practiceLevel)?.keys ?? [];
         const checkedCount = Math.min(500, keys.filter((k) => Boolean(nextReviews[k])).length);
@@ -517,6 +521,7 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
   function rate(rating: Rating, buttonEl?: HTMLElement | null) {
     if (!current || phase !== "review") return;
     const key = reviewKey(current);
+    const prevRating = reviews[key]?.rating;
     const nowIso = new Date().toISOString();
     const nextReviews = { ...reviews, [key]: { rating, reviewedAt: nowIso } };
     setReviews(nextReviews);
@@ -527,32 +532,29 @@ export function TranslationWorkspace({ guestTrial = false }: { guestTrial?: bool
       catch { setMessage("Không lưu được tiến độ trên thiết bị này."); }
     }
 
-    const earned = rating === "easy" ? 12 : rating === "good" ? 10 : 5;
+    const prevItemXp = !prevRating ? 0 : prevRating === "good" || prevRating === "easy" ? 5 : 3;
+    const nextItemXp = rating === "good" || rating === "easy" ? 5 : 3;
+    const earned = Math.max(0, nextItemXp - prevItemXp);
     const nextCombo = rating === "good" || rating === "easy" ? combo + 1 : 0;
-    const bonusXp = nextCombo >= 3 ? 3 : 0;
-    const totalEarned = earned + bonusXp;
-    const newSessionXp = sessionXp + totalEarned;
+    const newSessionXp = sessionXp + earned;
 
     setCombo(nextCombo);
     if (nextCombo > bestCombo) setBestCombo(nextCombo);
     setSessionXp(newSessionXp);
 
     if (nextCombo === 3 || nextCombo === 5) {
-      celebrate(buttonEl, { label: `Combo x${nextCombo}! +${totalEarned} XP`, pieces: 18 });
+      celebrate(buttonEl, { label: earned > 0 ? `Combo x${nextCombo}! +${earned} XP` : `Combo x${nextCombo}!`, pieces: 18 });
     }
 
     const isLast = position + 1 >= session.length;
     syncItemToServer(current, rating, isLast, nextReviews);
 
     if (isLast) {
-      const completionBonus = 15;
-      const finalXp = newSessionXp + completionBonus;
-      setSessionXp(finalXp);
       setFinished(true);
       const goodTotal = Object.values({ ...roundRatings, [current.id]: rating }).filter((r) => r === "good" || r === "easy").length;
       emitCompanion({ kind: "score", score: goodTotal, total: session.length });
       window.setTimeout(() => {
-        celebrate(doneCardRef.current, { label: `+${finalXp} XP`, pieces: 32 });
+        celebrate(doneCardRef.current, { label: newSessionXp > 0 ? `+${newSessionXp} XP` : "Hoàn thành!", pieces: 32 });
       }, 120);
       return;
     }
