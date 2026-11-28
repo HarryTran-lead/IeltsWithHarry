@@ -240,15 +240,15 @@ body:has(.rw.is-practice, .rw-setup-backdrop, .rw-flyout, .rw-popover) .notebook
 /* The question-pane popover is rendered on <body>, so it must sit above the full-screen practice layer. */
 body > .rw-popover { z-index: 1100; }
 
-/* Practice theme: flat Harry Up colours (teal + navy), no gradients. Clean white
-   sheet, solid teal number badges and clear states, like an exam paper. */
+/* Practice theme: flat Harry Up colours (teal + navy), no gradients. Soft white
+   cards with round badges, pill inputs and clear states. */
 .rw.is-practice { --pr: #008b96; --pr-strong: #00737c; --pr-soft: #e3f5f4; --pr-ink: #142b45; --pr-line: #dfe5ea; --pr-ok: #15803d; --pr-ok-soft: #e7f6ec; --pr-bad: #d93a32; --pr-bad-soft: #fdeceb; }
 .rw.is-practice .rw-bar { background: #fff; border-bottom: 1px solid var(--pr-line); }
 .rw.is-practice .rw-timer { background: #fff6dd; color: #8a5a00; box-shadow: inset 0 0 0 1px #f4b740; }
 .rw.is-practice .rw-side-pane { background: #f4f7f8; }
 .rw.is-practice .rw-passage-pane { background: #fff; }
 .rw.is-practice .rw-nav { background: #fff; border-top: 1px solid var(--pr-line); box-shadow: none; }
-.rw.is-practice .rw-nav div button { border: 1.5px solid #cfd8df; border-radius: 8px; background: #fff; color: var(--pr-ink); font-weight: 700; box-shadow: none; }
+.rw.is-practice .rw-nav div button { border: 1.5px solid #cfd8df; border-radius: 999px; transition: background .2s, border-color .2s, transform .2s; background: #fff; color: var(--pr-ink); font-weight: 700; box-shadow: none; }
 .rw.is-practice .rw-nav div button:hover { border-color: var(--pr); color: var(--pr-strong); }
 .rw.is-practice .rw-nav div button.is-answered { border-color: var(--pr); background: var(--pr); color: #fff; }
 .rw.is-practice .rw-nav div button.is-right { border-color: var(--pr-ok); background: var(--pr-ok); color: #fff; }
@@ -256,34 +256,40 @@ body > .rw-popover { z-index: 1100; }
 .rw.is-practice .rw-nav-score b, .rw.is-practice .rw-nav > span b { color: var(--pr-strong); }
 
 .rw.is-practice .news-auto-quiz-heading h2 { color: var(--pr-ink); background: none; -webkit-text-fill-color: currentColor; }
-.rw.is-practice .news-type-picker button { border: 1.5px solid #cfd8df; background: #fff; color: var(--pr-ink); box-shadow: none; }
+.rw.is-practice .news-type-picker button { border: 1.5px solid #cfd8df; border-radius: 999px; background: #fff; color: var(--pr-ink); box-shadow: none; }
 .rw.is-practice .news-type-picker button:hover { border-color: var(--pr); }
 .rw.is-practice .news-type-picker button[aria-pressed="true"] { border-color: var(--pr-ink); background: var(--pr-ink); color: #fff; box-shadow: none; }
-.rw.is-practice .news-auto-quiz .news-auto-group { padding: 0; border: 1px solid var(--pr-line); border-radius: 12px; background: #fff; box-shadow: none; overflow: hidden; }
-.rw.is-practice .news-auto-quiz .news-auto-group > .news-auto-group-head.news-auto-group-head { margin: 0; padding: 14px 20px; border-bottom: 1px solid var(--pr-line); background: var(--pr-soft); }
-.rw.is-practice .news-auto-quiz .news-auto-group > :not(.news-auto-group-head) { margin-left: 20px; margin-right: 20px; }
-.rw.is-practice .news-auto-quiz .news-auto-group > :last-child { margin-bottom: 20px; }
+.rw.is-practice .news-auto-quiz .news-auto-group { padding: 0; border: 1px solid #e8eef1; border-radius: 22px; background: #fff; box-shadow: 0 1px 2px rgba(20, 43, 69, .04), 0 10px 28px -18px rgba(20, 43, 69, .22); overflow: hidden; }
+.rw.is-practice .news-auto-quiz .news-auto-group > .news-auto-group-head.news-auto-group-head { margin: 0; padding: 16px 22px; border-bottom: 0; background: var(--pr-soft); }
+.rw.is-practice .news-auto-quiz .news-auto-group > :not(.news-auto-group-head) { margin-left: 22px; margin-right: 22px; }
+.rw.is-practice .news-auto-quiz .news-auto-group > :last-child { margin-bottom: 22px; }
 .rw.is-practice .news-auto-quiz .news-auto-group-head h3 { color: var(--pr-ink); }
 .rw.is-practice .news-auto-quiz .news-auto-group-head p strong { color: var(--pr-bad); }
-.rw.is-practice .news-q-badge { border-radius: 8px; background: var(--pr); color: #fff; box-shadow: none; }
-.rw.is-practice .news-auto-quiz input.news-gap-input { border: 1.5px solid #cfd8df; border-radius: 6px; background: #fff; color: var(--pr-ink); -webkit-text-fill-color: var(--pr-ink); box-shadow: none; }
+.rw.is-practice .news-q-badge { border-radius: 999px; background: var(--pr); color: #fff; box-shadow: none; }
+.rw.is-practice .news-auto-quiz input.news-gap-input { min-height: 34px; padding: 4px 14px; border: 1.5px solid #d6e0e6; border-radius: 999px; background: #f6f9fa; transition: border-color .2s, background .2s, box-shadow .2s; color: var(--pr-ink); -webkit-text-fill-color: var(--pr-ink); box-shadow: none; }
 .rw.is-practice .news-auto-quiz input.news-gap-input:focus { border-color: var(--pr); background: #fff; box-shadow: 0 0 0 3px var(--pr-soft); outline: none; }
-.rw.is-practice .news-match-box { border: 1.5px dashed #b9c6d0; background: #fff; box-shadow: none; }
+.rw.is-practice .news-match-box { min-height: 38px; border: 1.5px dashed #c3d0d8; border-radius: 999px; background: #f6f9fa; box-shadow: none; transition: border-color .2s, background .2s; }
 .rw.is-practice .news-match-box:hover, .rw.is-practice .news-match-box.is-target { border-color: var(--pr); background: var(--pr-soft); }
 .rw.is-practice .news-match-box.is-filled { border: 1.5px solid var(--pr); background: #fff; }
-.rw.is-practice .news-match-chip { border: 1.5px solid #cfd8df; border-radius: 8px; background: #fff; }
-.rw.is-practice .news-match-chip:hover { border-color: var(--pr); }
-.rw.is-practice .news-auto-options label { border: 1.5px solid #dfe5ea; box-shadow: none; }
+.rw.is-practice .news-match-chip { padding-left: 16px; padding-right: 16px; border: 1.5px solid #dbe4ea; border-radius: 999px; background: #fff; box-shadow: 0 2px 6px -3px rgba(20, 43, 69, .18); transition: border-color .2s, transform .2s, box-shadow .2s; }
+.rw.is-practice .news-match-chip:hover { border-color: var(--pr); transform: translateY(-1px); box-shadow: 0 6px 14px -8px rgba(0, 139, 150, .5); }
+.rw.is-practice .news-auto-options label { border: 1.5px solid #e1e8ed; border-radius: 16px; box-shadow: none; transition: border-color .2s, background .2s; }
+.rw.is-practice .news-auto-options .news-option-letter { border-radius: 999px; }
 .rw.is-practice .news-auto-options label:hover { border-color: var(--pr); background: #fff; }
 .rw.is-practice .news-auto-options label.selected { border-color: var(--pr); background: var(--pr-soft); box-shadow: none; }
 .rw.is-practice .news-auto-options label.selected > .news-option-letter { background: var(--pr); color: #fff; }
 .rw.is-practice .news-auto-submit { border-top-color: var(--pr-line); }
-.rw.is-practice .news-auto-submit .button.primary { border: 0; border-radius: 10px; background: var(--pr); color: #fff; box-shadow: none; }
+.rw.is-practice .news-auto-submit .button.primary { border: 0; border-radius: 999px; padding-left: 26px; padding-right: 26px; background: var(--pr); color: #fff; box-shadow: none; }
 .rw.is-practice .news-auto-submit .button.primary:not(:disabled):hover { background: var(--pr-strong); transform: none; filter: none; }
 .rw.is-practice .news-auto-submit .button.primary:disabled { background: #cfd8df; color: #fff; opacity: 1; }
 .rw.is-practice .news-auto-submit span { color: var(--pr-ink); }
+/* Soft, rounded sheet: sentence/summary boxes and tables get rounded corners too. */
+.rw.is-practice .news-group-completion { border: 1px solid #e3eaee; border-radius: 18px; background: #fbfcfd; }
+.rw.is-practice .news-completion-table, .rw.is-practice .news-mi-grid { border-radius: 16px; overflow: hidden; }
+.rw.is-practice .news-auto-quiz .news-auto-written { border-radius: 14px; }
+.rw.is-practice .rw-timer { border-radius: 999px; }
 /* Reviewing answers: solid green for right, solid red for wrong or blank. */
-.rw.is-practice .news-auto-explanation { border: 1px solid #b7e2c4; border-left: 4px solid var(--pr-ok); background: var(--pr-ok-soft); color: #14532d; box-shadow: none; }
+.rw.is-practice .news-auto-explanation { border: 1px solid #b7e2c4; border-left: 4px solid var(--pr-ok); border-radius: 16px; background: var(--pr-ok-soft); color: #14532d; box-shadow: none; }
 .rw.is-practice .news-auto-explanation > svg { color: var(--pr-ok); }
 .rw.is-practice .news-auto-explanation.wrong { border-color: #f3c2bf; border-left-color: var(--pr-bad); background: var(--pr-bad-soft); color: #7f1d1d; }
 .rw.is-practice .news-auto-explanation.wrong > svg { color: var(--pr-bad); }
@@ -302,6 +308,6 @@ body > .rw-popover { z-index: 1100; }
 .rw.is-practice .news-auto-question.is-wrong .news-auto-written, .rw.is-practice .news-completion-table .is-wrong input { border-color: var(--pr-bad); background: var(--pr-bad-soft); }
 .rw.is-practice .news-mi-grid td.correct { background: #c9ecd3; }
 .rw.is-practice .news-mi-grid td.wrong { background: #f8cfcc; }
-.rw.is-practice .rw-nav-score { padding: 5px 12px; border-radius: 8px; background: var(--pr-soft); color: var(--pr-ink); }
-.rw.is-practice .news-quiz-result { border: 1px solid var(--pr-line); border-radius: 12px; background: #fff; box-shadow: none; }
+.rw.is-practice .rw-nav-score { padding: 5px 14px; border-radius: 999px; background: var(--pr-soft); color: var(--pr-ink); }
+.rw.is-practice .news-quiz-result { border: 1px solid #e8eef1; border-radius: 22px; background: #fff; box-shadow: none; }
 .rw.is-practice .news-quiz-result .is-main strong { color: #fff; background: none; -webkit-text-fill-color: #fff; }
