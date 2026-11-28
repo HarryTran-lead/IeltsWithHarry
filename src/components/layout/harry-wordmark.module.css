@@ -33,6 +33,11 @@
   color: #fff;
 }
 
+/* App header: name only, one size smaller, so the bar stays slim. */
+.compact .name {
+  font-size: 21px;
+}
+
 .dark .tagline {
   color: #b5d8dd;
 }
