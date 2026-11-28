@@ -215,7 +215,7 @@
 .news-word-list-summary .news-match-box{vertical-align:middle;margin:0 4px}
 
 /* Scorecard after grading: a ring of the round, a legend, and a sticker note pinned with washi tape (Harry Up's paper style). */
-.news-score-card{position:relative;display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:22px;margin-bottom:14px;padding:22px 24px;border:1px solid #e3eeef;border-radius:22px;background:#fff;box-shadow:0 10px 28px -20px rgba(20,43,69,.35)}
+.news-score-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:18px 28px;margin-bottom:14px;padding:22px 24px;border:1px solid #e3eeef;border-radius:22px;background:#fff;box-shadow:0 10px 28px -20px rgba(20,43,69,.35)}
 .news-score-tape{position:absolute;top:-9px;left:50%;width:84px;translate:-50% 0;rotate:-3deg}
 .news-score-ring{position:relative;width:128px;height:128px}
 .news-score-ring svg{width:100%;height:100%;rotate:-90deg}
@@ -225,17 +225,17 @@
 .news-score-ring strong{color:#142b45;font-size:30px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
 .news-score-ring strong span{color:#8391a6;font-size:17px}
 .news-score-ring small{margin-top:4px;color:#5d6f8c;font-size:12px;font-weight:700}
-.news-score-legend{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.news-score-legend{display:grid;gap:8px;max-width:240px;margin:0;padding:0;list-style:none}
 .news-score-legend li{display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:8px;min-width:132px;color:#3d566c;font-size:14px;font-weight:600}
 .news-score-legend i{width:12px;height:12px;border-radius:999px;background:#d5dde3}
 .news-score-legend .is-right i{background:#16a34a}.news-score-legend .is-wrong i{background:#f2665f}
 .news-score-legend b{color:#142b45;font-variant-numeric:tabular-nums}
-.news-score-note{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px 12px;padding:12px 16px;border-radius:18px;background:#fffbf0;border:1px dashed #f4cf7a}
+.news-score-note{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px 12px;padding:12px 16px;border-radius:18px;background:#fffbf0;border:1px dashed #f4cf7a}
 .news-score-note .sticker{grid-row:span 2}
 .news-score-note p{margin:0;color:#7a4b00;font-family:var(--font-hand),cursive;font-size:20px;line-height:1.2}
 .news-score-note small{color:#a07a2c;font-size:12px;font-weight:700}
 .news-quiz-result-stats:empty{display:none}
-@media(max-width:760px){.news-score-card{grid-template-columns:auto 1fr;gap:16px;padding:20px 16px}.news-score-note{grid-column:1/-1}.news-score-ring{width:112px;height:112px}}
+@media(max-width:520px){.news-score-card{gap:14px 18px;padding:20px 16px}.news-score-ring{width:108px;height:108px}.news-score-legend li{min-width:0}}
 
 /* Gap under review: the answer written, struck through, then the right answer as a ticket. */
 .news-gap.is-fixed{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
