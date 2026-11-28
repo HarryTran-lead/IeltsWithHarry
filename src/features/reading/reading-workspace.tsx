@@ -3,7 +3,7 @@
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Search, Timer, Trash2, X } from "lucide-react";
 import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, segments, trimRange, type Highlight, type HighlightColor } from "@/lib/highlights";
-import { Literata } from "next/font/google";
+import { Literata, Nunito } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { readingBlocks, readingComplete } from "@/lib/news/reading-progress";
@@ -14,6 +14,8 @@ import "./reading-workspace.css";
 
 // A book face for long passages, loaded only on pages with a reader.
 const readingFont = Literata({ subsets: ["latin", "vietnamese"], variable: "--font-reading", display: "swap" });
+// A rounded face for practice rounds, so the exam sheet reads soft and friendly.
+const practiceFont = Nunito({ subsets: ["latin", "vietnamese"], weight: ["400", "600", "700", "800"], variable: "--font-practice", display: "swap", preload: false });
 
 const sizes = [15, 16, 17, 18, 20, 22, 24];
 const DEFAULT_SIZE = 3;
@@ -543,7 +545,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     </div>)}
   </div> : null;
 
-  return <div className={`rw ${newsReader?"is-news":""} ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
+  return <div className={`rw ${newsReader?"is-news":""} ${readingFont.variable} ${practiceFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
