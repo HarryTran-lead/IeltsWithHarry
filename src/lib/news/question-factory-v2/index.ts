@@ -499,10 +499,12 @@ export async function generateNewsQuizV2(
       const gates: string[] = [];
       if (blocked) gates.push("QA_BLOCKED");
       if (chosen.length < 6) gates.push("TOO_FEW_APPROVED");
-      // Like an IELTS passage, a set has two or three forms, each a full block.
+      // An IELTS passage has two or three forms, each a full block. A set that falls short is still published
+      // and only flagged: holding it back left most new articles without questions (27–28/11/2026: 32 of 41
+      // failures were a single form), while the factory already tops up and repairs to reach more forms.
       const blockSizes = [...new Set(chosen.map((item) => item.type))].map((type) => chosen.filter((item) => item.type === type).length);
-      if (blockSizes.length < 2) gates.push("ONE_FORM");
-      if (blockSizes.some((size) => size < MIN_BLOCK)) gates.push("SHORT_BLOCK");
+      if (blockSizes.length < 2) issues.push("ONE_FORM");
+      if (blockSizes.some((size) => size < MIN_BLOCK)) issues.push("SHORT_BLOCK");
       if (direct > directLimit(chosen.length)) gates.push("TOO_MANY_DIRECT");
       if (skills.size < 2 || areas.size < 2) gates.push("LOW_DIVERSITY");
       issues.push(...gates);
