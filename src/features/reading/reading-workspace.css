@@ -254,6 +254,8 @@ body > .rw-popover { z-index: 1100; }
 .rw.is-practice .rw-nav div button { border: 1.5px solid #cfd8df; border-radius: 999px; transition: background .2s, border-color .2s, transform .2s; background: #fff; color: var(--pr-ink); font-weight: 700; box-shadow: none; }
 /* The full-screen layer must not inherit the page margin above the reader, or the bottom bar is cut off. */
 .rw.rw.is-practice { margin: 0; }
+/* The A−/A+ control scales the questions with the passage (the passage default size is 1×). */
+.rw.is-practice .rw-questions { zoom: var(--rw-zoom, 1); }
 .rw.is-practice .rw-nav div { gap: 8px; padding: 6px 12px; align-items: center; border: 2px solid #bfe6e8; border-radius: 999px; background: #fff; }
 .rw.is-practice .rw-nav div button { width: 30px; min-width: 30px; height: 30px; padding: 0; border-color: transparent; background: var(--pr-soft); color: var(--pr-strong); font-weight: 800; translate: none; }
 .rw.is-practice .rw-nav div button:hover { translate: none; border-color: var(--pr); color: var(--pr-strong); box-shadow: 0 0 0 3px var(--pr-soft); }
