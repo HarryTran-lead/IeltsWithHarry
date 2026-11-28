@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useEffectEvent, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type TouchEvent as ReactTouchEvent } from "react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type ReactNode, type TouchEvent as ReactTouchEvent } from "react";
 import Link from "next/link";
-import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Languages, Lightbulb, RotateCcw, Sparkles, TrendingDown, TrendingUp, X, XCircle } from "lucide-react";
+import { ArrowRight, ChartNoAxesColumn, Check, CheckCircle2, ChevronDown, Clock3, Languages, Lightbulb, RotateCcw, Sparkles, TrendingDown, TrendingUp, X, XCircle } from "lucide-react";
+import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
 import { createPortal } from "react-dom";
@@ -206,6 +207,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const expiredSubmission = useRef(false);
   // Reviews by question id. A full submission or the saved attempt covers every question; a practice round covers its own.
   const [reviews, setReviews] = useState<Record<string, Review>>({});
+  // After grading each question shows a one-line verdict; its explanation opens on demand.
+  const [openExplain, setOpenExplain] = useState<Record<string, boolean>>({});
+  const showEvidenceInPassage = useReadingEvidenceNavigation();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [translations, setTranslations] = useState<Record<string, string>>({});
@@ -527,6 +531,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setDuration(null);
+    setOpenExplain({});
     newRound();
   }
 
@@ -540,6 +545,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setDuration(null);
+    setOpenExplain({});
     newRound();
   }
 
@@ -563,6 +569,18 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   function gapInput(question: Question, number: number, badge = true) {
     const value = answers[question.id];
     const review = graded ? reviews[question.id] : undefined;
+    const key = review && !review.correct ? review.acceptedAnswers?.[0] : undefined;
+    if (review && key) {
+      // Reviewing a wrong gap: what was written, struck through, then the right answer as a ticket.
+      const given = typeof value === "string" ? value.trim() : "";
+      return <span className="news-gap is-wrong is-fixed">
+        {badge && <span className="news-q-badge">{number}</span>}
+        <span className="news-gap-fix" aria-label={`Câu ${number}: ${given ? `bạn viết ${given}` : "bỏ trống"}, đáp án đúng ${key}`}>
+          {given ? <s>{given}</s> : <span className="news-gap-empty">trống</span>}
+          <ArrowRight size={13} aria-hidden="true" /><b>{key}</b>
+        </span>
+      </span>;
+    }
     return <span className={`news-gap${review ? review.correct ? " is-correct" : " is-wrong" : ""}`}>
       {badge && <span className="news-q-badge">{number}</span>}
       <input className="news-gap-input" type="text" maxLength={60} autoComplete="off" spellCheck={false} aria-label={`Câu ${number}: chỗ trống`}
@@ -593,12 +611,28 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       ? truth ? question.options[review.correctIndex]?.toUpperCase() : question.options[review.correctIndex]
       : review.acceptedAnswers?.[0] ?? "";
     const given = typeof value === "number" ? question.options[value] ?? "" : String(value ?? "");
-    return <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`} key={question.id}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-      <strong>{withNumber ? `Câu ${number}: ` : ""}{review.correct ? "Chính xác!" : key ? `${given ? "Chưa đúng" : "Bỏ trống"}. Đáp án: ${key}` : "Bỏ trống"}</strong>
-      {!review.correct && (given ? <p>Bạn trả lời: “{truth ? given.toUpperCase() : given}”</p> : <p>Bạn để trống câu này nên được tính sai.</p>)}
-      {review.explanation && <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>}
-      <EvidenceLink quote={review.supportingSentence} />
-    </div></div>;
+    return explainCard(question.id, review.correct,
+      <>{withNumber ? `Câu ${number}: ` : ""}{review.correct ? "Chính xác!" : key ? <>{given ? "Chưa đúng" : "Bỏ trống"} · Đáp án <b className="news-explain-key">{key}</b></> : "Bỏ trống"}</>,
+      <>{!review.correct && (given ? <p>Bạn trả lời: “{truth ? given.toUpperCase() : given}”</p> : <p>Bạn để trống câu này nên được tính sai.</p>)}
+        {review.explanation && <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>}
+        <EvidenceLink quote={review.supportingSentence} /></>,
+      review.supportingSentence, Boolean(!review.correct || review.explanation || review.supportingSentence.trim()));
+  }
+
+  /** A graded question's verdict line; the explanation opens on demand and, on wide screens, marks the evidence in the passage. */
+  function explainCard(id: string, correct: boolean, title: ReactNode, body: ReactNode, quote: string, hasBody = true) {
+    const open = Boolean(openExplain[id]);
+    const toggle = () => {
+      setOpenExplain((current) => ({ ...current, [id]: !current[id] }));
+      if (!open && quote.trim() && window.matchMedia("(min-width: 861px)").matches) showEvidenceInPassage?.(quote);
+    };
+    return <div className={`news-auto-explanation${correct ? "" : " wrong"}${open ? " is-open" : ""}`} key={id}>
+      <div className="news-explain-head">{correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<strong>{title}</strong>
+        {hasBody && <button type="button" className="news-explain-toggle" aria-expanded={open} onClick={toggle}>
+          <Lightbulb size={14} aria-hidden="true" />{open ? "Thu gọn" : "Giải thích"}<ChevronDown size={14} aria-hidden="true" /></button>}
+      </div>
+      {open && <div className="news-explain-body">{body}</div>}
+    </div>;
   }
 
   /** An answer box filled from a block's shared list by drag and drop, or by choosing an option and then the box. */
@@ -772,14 +806,14 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
               </label>;
             })}</div>
             {selection?.questionId === question.id && selection.p > 0 && highlightMenu(question, numbers[0])}
-            {reviewed && <div className={`news-auto-explanation ${right === items.length ? "" : "wrong"}`}>{right === items.length ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-              <strong>{right === items.length ? "Chính xác cả hai đáp án!" : `Đúng ${right}/${items.length}. Đáp án: ${letters(keys)}`}</strong>
-              {right < items.length && chosen.size > 0 && <p>Bạn chọn: {letters(chosen)}</p>}
-              {pairReviews.map((review, index) => review && <div key={items[index].id}>
-                <p className="news-auto-why"><b>{review.correctIndex !== null ? `${String.fromCharCode(65 + review.correctIndex)}:` : "Vì sao:"}</b> {review.explanation}</p>
-                <EvidenceLink quote={review.supportingSentence} />
-              </div>)}
-            </div></div>}
+            {reviewed && explainCard(question.id, right === items.length,
+              right === items.length ? "Chính xác cả hai đáp án!" : <>Đúng {right}/{items.length} · Đáp án <b className="news-explain-key">{letters(keys)}</b></>,
+              <>{right < items.length && chosen.size > 0 && <p>Bạn chọn: {letters(chosen)}</p>}
+                {pairReviews.map((review, index) => review && <div key={items[index].id}>
+                  <p className="news-auto-why"><b>{review.correctIndex !== null ? `${String.fromCharCode(65 + review.correctIndex)}:` : "Vì sao:"}</b> {review.explanation}</p>
+                  <EvidenceLink quote={review.supportingSentence} />
+                </div>)}</>,
+              pairReviews.find((review) => review?.supportingSentence)?.supportingSentence ?? "")}
           </div>;
         })}
 
@@ -863,16 +897,45 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         const items = shown.filter((question) => question.question_type === type);
         return [type, { correct: items.filter((question) => reviews[question.id]?.correct).length, total: items.length }];
       }))])}
-      qaMode={qaMode} mode={examMode?"timed":"practice"} saved={saved && !partial ? saved : null} history={history} onRetry={retry} onRetryWrong={examMode ? undefined : retryWrong} />
+      qaMode={qaMode} mode={examMode?"timed":"practice"} saved={saved && !partial ? saved : null} history={history} onRetry={retry} onRetryWrong={examMode ? undefined : retryWrong}
+      blank={shown.filter((question) => !reviews[question.id]?.correct && blankAnswer(answers[question.id])).length}
+      explainAll={shown.length > 0 && shown.every((question) => openExplain[question.id])}
+      onExplainAll={() => setOpenExplain(shown.every((question) => openExplain[question.id]) ? {} : Object.fromEntries(shown.map((question) => [question.id, true])))} />
       {recoveryFeedback?.restoredToday ? <p role="status">Đã khôi phục chuỗi học! <Link href="/app/profile">Xem hồ sơ →</Link></p>
         : recoveryFeedback?.active ? <p role="status">Thử thách khôi phục chuỗi: {recoveryFeedback.completed}/{recoveryFeedback.required} bài đạt yêu cầu. Chỉ bài đã đọc xong và trả lời đúng toàn bộ câu hỏi mới được tính. <Link href="/app/profile">Xem tiến độ →</Link></p> : null}
     </div>}
   </section>;
 }
-function QuizResult({ score, total, partial, duration, breakdown, saved, history, qaMode, mode, onRetry, onRetryWrong }: {
+/** A question left empty: nothing typed, nothing chosen. */
+function blankAnswer(value: unknown) {
+  return value === undefined || value === null || (typeof value === "string" && !value.trim()) || (typeof value === "number" && value < 0)
+    || (Array.isArray(value) && value.length === 0);
+}
+
+/** The scorecard's note: a sticker and a handwritten line that fit the score. */
+function scoreNote(pct: number): { sticker: StickerName; line: string } {
+  if (pct >= 100) return { sticker: "star", line: "Tuyệt đối! Không sai câu nào." };
+  if (pct >= 70) return { sticker: "target", line: "Làm tốt lắm! Xem lại mấy câu sai là chắc điểm." };
+  if (pct >= 40) return { sticker: "bulb", line: "Đang lên rồi! Mở giải thích từng câu để biết vì sao." };
+  return { sticker: "coffee", line: "Bài này khó đó. Đọc giải thích rồi làm lại nhé!" };
+}
+
+/** Ring of the round: green for right, coral for wrong, the grey track left over is what was left blank. */
+function ScoreRing({ score, wrong, total }: { score: number; wrong: number; total: number }) {
+  const r = 46, c = 2 * Math.PI * r;
+  const part = (n: number) => total > 0 ? (n / total) * c : 0;
+  return <svg viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r={r} className="news-ring-track" />
+    {wrong > 0 && <circle cx="60" cy="60" r={r} className="news-ring-wrong" strokeDasharray={`${part(wrong)} ${c}`} strokeDashoffset={-part(score)} />}
+    {score > 0 && <circle cx="60" cy="60" r={r} className="news-ring-right" strokeDasharray={`${part(score)} ${c}`} />}
+  </svg>;
+}
+
+function QuizResult({ score, total, partial, duration, breakdown, saved, history, qaMode, mode, onRetry, onRetryWrong, blank, explainAll, onExplainAll }: {
   qaMode:boolean;mode:"timed"|"practice";score: number; total: number; partial: boolean; duration: number | null;
   breakdown: ReturnType<typeof sumBreakdowns>; saved: { submittedAt: string; attempts: number } | null;
   history: PracticeAttempt[]; onRetry: () => void; onRetryWrong?: () => void;
+  blank: number; explainAll: boolean; onExplainAll: () => void;
 }) {
   const pct = percent(score, total);
   // Compare with the attempt before this one, of the same kind (full quiz or chosen types).
@@ -880,9 +943,22 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
   const previous = same.length > 1 && same[0].score === score && same[0].total === total ? same[1] : null;
   const change = previous ? pct - percent(previous.score, previous.total) : null;
   const weakest = breakdown.length > 1 ? [...breakdown].sort((a, b) => a.percent - b.percent)[0] : null;
+  const wrong = Math.max(0, total - score - blank);
+  const note = scoreNote(pct);
   return <section className="news-quiz-result" aria-label="Kết quả bài làm">
+    <div className="news-score-card">
+      <Tape tone="teal" className="news-score-tape" />
+      <div className="news-score-ring"><ScoreRing score={score} wrong={wrong} total={total} />
+        <div><strong>{score}<span>/{total}</span></strong><small>câu đúng</small></div></div>
+      <ul className="news-score-legend" aria-label="Thống kê câu trả lời">
+        <li className="is-right"><i aria-hidden="true" />Đúng<b>{score}</b></li>
+        <li className="is-wrong"><i aria-hidden="true" />Sai<b>{wrong}</b></li>
+        <li className="is-blank"><i aria-hidden="true" />Bỏ trống<b>{blank}</b></li>
+      </ul>
+      <div className="news-score-note"><Sticker name={note.sticker} size={58} tilt={-8} />
+        <p>{note.line}</p><small>{pct}% đúng</small></div>
+    </div>
     <div className="news-quiz-result-stats">
-      <div className="is-main"><small>Số câu đúng</small><strong>{score}<span>/{total}</span></strong><em>{pct}%</em></div>
       {duration !== null && duration > 0 && <div><small><Clock3 size={13} /> Thời gian</small><strong>{formatDuration(duration)}</strong><em>~{Math.max(1, Math.round(duration / total))} giây/câu</em></div>}
       {change !== null && <div><small>So với lần trước</small><strong className={change > 0 ? "up" : change < 0 ? "down" : ""}>{change > 0 ? <TrendingUp size={18} /> : change < 0 ? <TrendingDown size={18} /> : null}{change > 0 ? "+" : ""}{change}%</strong><em>lần trước {previous!.score}/{previous!.total}</em></div>}
     </div>
@@ -901,6 +977,7 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
     </details>}
     <div className="news-quiz-result-actions">
       <span>{qaMode?"Kết quả kiểm thử, không ghi vào lịch sử học hoặc XP.":partial ? "Đã lưu vào lịch sử luyện theo dạng." : saved ? `Đã lưu lần làm thứ ${saved.attempts} lúc ${new Date(saved.submittedAt).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}.` : "Đã lưu vào lịch sử."}</span>
+      <button type="button" className="button subtle" onClick={onExplainAll}><Lightbulb size={15} /> {explainAll ? "Thu gọn giải thích" : "Mở hết giải thích"}</button>
       <Link href="/app/news/history" className="button subtle">Xem phân tích</Link>
       {score < total && onRetryWrong && <button type="button" className="button subtle" onClick={onRetryWrong}><RotateCcw size={15} /> Ôn {total - score} câu sai</button>}
       <button type="button" className="button primary" onClick={onRetry}><RotateCcw size={15} /> {mode==="timed"?"Luyện lượt mới":"Làm lại"}</button>
