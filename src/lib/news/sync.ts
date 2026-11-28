@@ -61,12 +61,13 @@ async function ingest(db: AdminClient, response: FetchResult, requireBody: boole
     if (articleError) throw articleError;
     const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
     // Passage-sized paragraphs only for articles stored from now on: an article that already has a body keeps
-    // its paragraphs, so its translation pairs and paragraph-matching questions still line up.
-    const { data: stored, error: storedError } = await db.from("news_article_bodies").select("article_id").in("article_id", [...ids.values()]);
+    // its stored text, so its translation pairs and paragraph-matching questions still line up. (A later sync
+    // of the same feed item must not write the feed's one-sentence paragraphs back over the joined ones.)
+    const { data: stored, error: storedError } = await db.from("news_article_bodies").select("article_id,body_text").in("article_id", [...ids.values()]);
     if (storedError) throw storedError;
-    const hasBody = new Set((stored ?? []).map((row) => row.article_id));
+    const storedText = new Map((stored ?? []).map((row) => [row.article_id, row.body_text as string]));
     const eligible = group.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash),
-      body_text: hasBody.has(ids.get(body.canonical_hash)) ? body.body_text : mergeShortParagraphs(body.body_text), rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis, byline: body.byline ?? null }] : []);
+      body_text: storedText.get(ids.get(body.canonical_hash)) || mergeShortParagraphs(body.body_text), rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis, byline: body.byline ?? null }] : []);
     if (eligible.length) {
       const { error } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id" });
       if (error) throw error;
