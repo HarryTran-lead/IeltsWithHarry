@@ -140,10 +140,10 @@ function CelebrationDialog({ celebration, streak, onClose }: { celebration: Cele
 
   return (
     <StreakShell tier={tier} className={`is-celebration ${big ? "is-big" : ""}`} labelledBy="streak-celebrate-title" describedBy="streak-celebrate-message"
-      onClose={onClose} sound={sound} onToggleSound={toggleSound}>
+      onClose={onClose} sound={sound} onToggleSound={toggleSound}
+      overlay={<canvas ref={canvas} className="streak-confetti" aria-hidden="true" />}>
       {(close) => (
         <>
-          <canvas ref={canvas} className="streak-confetti" aria-hidden="true" />
           <div className="streak-hero" aria-hidden="true">
             <span className="streak-rays" />
             <span className="streak-halo" />
