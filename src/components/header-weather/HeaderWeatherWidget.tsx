@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { Settings2 } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { useHeaderWeather } from './HeaderWeatherProvider';
-import { searchCities, weatherLabel, weatherSymbol } from './weatherApi';
-import { formatLocalClock, PHASE_LABELS } from './time';
+import { searchCities, weatherLabel } from './weatherApi';
 import type { GeocodingResult, HeaderDisplayMode } from './types';
 import styles from './headerWeather.module.css';
 
@@ -18,7 +17,7 @@ const MODES: { value: HeaderDisplayMode; title: string; detail: string }[] = [
 export function HeaderWeatherWidget() {
   const state = useHeaderWeather();
   const { hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
-    locating, locationError, weather, weatherLoading, weatherError, now, timezone, phase } = state;
+    locating, locationError, weather, weatherLoading, weatherError } = state;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<GeocodingResult[]>([]);
@@ -68,25 +67,14 @@ export function HeaderWeatherWidget() {
     setResults([]);
   }
 
-  const textClock = hydrated && now ? formatLocalClock(now, timezone) : '--:--';
-  const active = hydrated && mode === 'full';
+  // The temperature chip left the header to keep it slim; the reading now heads this panel instead.
   const caption = weather ? weatherLabel(weather.weatherCode) : weatherError ? 'Không tải được' : weatherLoading ? 'Đang tải...' : 'Chưa có dữ liệu';
+  const reading = hydrated && mode === 'full' && location
+    ? `${weather ? `${Math.round(weather.temperatureC)}°C · ` : ''}${location.name} · ${caption}`
+    : 'Chọn cách hiển thị';
 
   return (
     <div className={styles.widgetRoot} ref={root}>
-      {active && (
-        <div className={styles.weatherChip} aria-live="polite" title={!location ? 'Chọn thành phố trong cài đặt thời tiết' : undefined}>
-          <span className={styles.weatherEmoji} aria-hidden="true">{weather ? weatherSymbol(weather.weatherCode, weather.isDay) : '🧭'}</span>
-          <div className={styles.weatherText}>
-            <strong>
-              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn TP'}</span>
-              <span className={styles.weatherCompactValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : '--°C'}</span>
-            </strong>
-            <span className={styles.cityLabel} title={location?.name || 'Chưa chọn vị trí'}>{location?.name || 'Thời tiết theo vị trí'}</span>
-            <span className={styles.metaLine}>{textClock} · {location ? caption : PHASE_LABELS[phase]}</span>
-          </div>
-        </div>
-      )}
       <button
         className={styles.settingsButton}
         type="button"
@@ -95,11 +83,11 @@ export function HeaderWeatherWidget() {
         aria-expanded={open}
         title="Cài đặt hiệu ứng và thời tiết"
         onClick={() => setOpen((value) => !value)}
-      ><Settings2 size={16} aria-hidden="true" /></button>
+      ><Settings size={18} aria-hidden="true" /></button>
       {open && (
         <section className={styles.popover} role="dialog" aria-label="Tùy chỉnh header thời tiết">
           <div className={styles.popoverHeading}>
-            <div><strong>Thời tiết trên header</strong><small>Chọn cách hiển thị</small></div>
+            <div><strong>Thời tiết trên header</strong><small>{reading}</small></div>
             <button type="button" className={styles.closeButton} aria-label="Đóng cài đặt" onClick={() => setOpen(false)}>×</button>
           </div>
           <div className={styles.modeOptions}>

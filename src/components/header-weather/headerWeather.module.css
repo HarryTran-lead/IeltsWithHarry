@@ -76,8 +76,8 @@
 .weatherCompactValue { display:none; }
 .weatherText .cityLabel { display:none; font-size:10px; color:#243c5c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:108px; }
 .metaLine { display:none; font-size:9.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:var(--r-sm); background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
-.headerSurface .settingsButton { width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.45); box-shadow:none; }
+.settingsButton { width:40px; height:40px; display:grid; place-items:center; padding:0; border:1px solid rgba(18,48,79,.12); border-radius:50%; background:rgba(255,255,255,.92); color:#12304f; cursor:pointer; flex-shrink:0; }
+.headerSurface .settingsButton { width:40px; height:40px; border-radius:50%; border-color:rgba(18,48,79,.12); background:rgba(255,255,255,.92); box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
 .settingsButton:hover { background:#ecfaff; }
 .settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible,.strengthOption input:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
 .popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:var(--r-lg); background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
@@ -120,6 +120,6 @@
 
 /* Header remains readable and functional at laptop/tablet/mobile widths. */
 @media(max-width:1199px){ .weatherChip { min-width:95px; max-width:118px; padding:7px; } .weatherEmoji { font-size:22px; } .weatherText .cityLabel,.weatherText .metaLine,.weatherText strong .weatherFullValue { display:none; } .weatherText strong .weatherCompactValue { display:inline; } }
-@media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton,.headerSurface .settingsButton { width:26px; height:26px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } }
+@media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton,.headerSurface .settingsButton { width:36px; height:36px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } }
 @media(max-width:560px){ .headerSurface :global(.brand) > span:last-child { display:none; } }
 @media(prefers-reduced-motion:reduce){ .skyFrame,.skySceneNext { transition:none; } }

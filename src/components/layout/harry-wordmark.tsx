@@ -1,10 +1,10 @@
 import styles from "./harry-wordmark.module.css";
 
-export function HarryWordmark({ dark = false }: { dark?: boolean }) {
+export function HarryWordmark({ dark = false, compact = false }: { dark?: boolean; compact?: boolean }) {
   return (
-    <span className={`${styles.wordmark} ${dark ? styles.dark : ""}`}>
+    <span className={`${styles.wordmark} ${dark ? styles.dark : ""} ${compact ? styles.compact : ""}`}>
       <span className={styles.name}>Harry<span className={styles.up}>Up</span></span>
-      <span className={styles.tagline}>Level Up Your English.</span>
+      {!compact && <span className={styles.tagline}>Level Up Your English.</span>}
     </span>
   );
 }

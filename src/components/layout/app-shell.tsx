@@ -339,16 +339,16 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         </button>
         <Link href="/app/dashboard" className="brand" aria-label="HarryUp — Level Up Your English.">
           <span className="brand-mascot">
-            <HarryMascot size={40} />
+            <HarryMascot size={36} />
           </span>
-          <HarryWordmark />
+          <HarryWordmark compact />
         </Link>
         <div className="header-search">
           <Search size={17} />
           <input
             ref={searchInput}
             aria-label="Search lessons"
-            placeholder="Search lessons, topics or skills..."
+            placeholder="Tìm bài học, chủ đề, kỹ năng…"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -393,13 +393,21 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         </div>
         <div className="header-actions">
           {loginBonus > 0 && <span className="login-xp-toast" role="status">+5 XP · Đăng nhập hôm nay</span>}
-          <HeaderWeatherWidget />
-          <Link href="/app/progress" className={`stat-pill streak ${streakAtRisk ? "at-risk" : ""}`}
-            title={streakAtRisk ? `Học một bài hôm nay để giữ chuỗi ${streakCount} ngày!` : "Chuỗi ngày học"}>
-            <Flame size={18} fill={streakTier.colors[1]} color={streakTier.colors[0]} />
-            <strong>{streakCount ?? "…"}</strong>
-            <small>{streakAtRisk ? "giữ chuỗi nhé!" : "ngày liên tiếp"}</small>
+          {/* One pill for streak + level: the avatar beside it only opens the account menu. */}
+          <Link href="/app/progress" className={`stat-pill streak progress-pill ${streakAtRisk ? "at-risk" : ""}`}
+            aria-label={`Tiến độ: chuỗi ${streakCount ?? "…"} ngày, ${demoMode ? "cấp 3" : xpTotal === null ? "cấp đang tải" : `cấp ${liveProgress.level}`}, ${demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"} XP`}
+            title={streakAtRisk ? `Học một bài hôm nay để giữ chuỗi ${streakCount} ngày!` : demoMode ? `${xp % 500}/500 XP tới cấp tiếp theo` : xpTotal === null ? "Chuỗi ngày học" : `${rankForLevel(liveProgress.level)} · ${liveProgress.earned}/${liveProgress.required} XP tới cấp ${liveProgress.level + 1}`}>
+            <span className="progress-pill-streak">
+              <Flame size={18} fill={streakTier.colors[1]} color={streakTier.colors[0]} />
+              <strong>{streakCount ?? "…"}</strong>
+            </span>
+            <span className="progress-pill-level">
+              <b>{demoMode ? "Cấp 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</b>
+              <span className="level-bar"><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
+              <small>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"} XP</small>
+            </span>
           </Link>
+          <HeaderWeatherWidget />
           <div className="popover-wrap">
             {!demoMode ? <NotificationBell open={notificationsOpen} onToggle={() => { setNotificationsOpen(!notificationsOpen); setProfileOpen(false); }} /> : <><button
               className="icon-button notification-button"
@@ -435,11 +443,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
             >
               <span className="profile-trigger-avatar">
                 {demoMode ? <span className="profile-demo-avatar"><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AvatarFrame avatar={avatar} frame={avatarFrame} size={34} />}
-                <ChevronDown size={13} />
-              </span>
-              <span className="profile-trigger-progress">
-                <span><b>{demoMode ? "Cấp 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</b><small>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"} XP</small></span>
-                <span className="level-bar"><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
               </span>
             </button>
             {profileOpen && (
