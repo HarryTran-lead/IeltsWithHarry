@@ -545,7 +545,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     </div>)}
   </div> : null;
 
-  return <div className={`rw ${newsReader?"is-news":""} ${readingFont.variable} ${practiceFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
+  return <div className={`rw ${newsReader?"is-news":""} ${readingFont.variable} ${practiceFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px`, "--rw-zoom": sizes[size] / sizes[DEFAULT_SIZE] } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
