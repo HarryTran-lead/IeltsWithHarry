@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
-import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Copy, Eraser, EyeOff, Highlighter, Languages, MessageSquarePlus, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Sun, Trash2, Volume2, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Copy, Eraser, EyeOff, Languages, MessageSquarePlus, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Sun, Trash2, Volume2, X } from "lucide-react";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
 import { quickDefine } from "@/lib/vocabulary/quick-define";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
@@ -9,6 +9,7 @@ import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, optionKey, optionLabel, QuestionGroupView, type AnswerProps } from "./bank-questions";
 import { encodeReadingMarks, encodeReadingNotes, rangeAt, savedReadingMarks, savedReadingNotes, textOffset, type ReadingMark, type ReadingNote } from "./reading-highlights";
 import "./bank-test.css";
+import { ReadingToolSticker } from "./reading-tool-sticker";
 
 const canHighlight = () => typeof window !== "undefined" && "Highlight" in window && Boolean((CSS as unknown as { highlights?: unknown }).highlights);
 
@@ -617,12 +618,12 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""} ${showRail && notesOpen ? "has-notes" : ""} shows-${pane}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
       {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập">
         <span className="bt-rail-title">Công cụ</span>
-        <button type="button" className={tool === "highlight" ? "is-on" : ""} aria-pressed={tool === "highlight"} title="Bút tô sáng: bôi đen chữ là tô (phím H)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("highlight")}><Highlighter size={19} />Tô sáng<small>Phím H</small></button>
-        <button type="button" className={tool === "note" ? "is-on" : ""} aria-pressed={tool === "note"} title="Ghi chú: bôi đen chữ để ghi chú vào đó (phím N)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("note")}><MessageSquarePlus size={19} />Ghi chú<small>Phím N</small></button>
-        {lookupAllowed && <button type="button" className={tool === "lookup" ? "is-on" : ""} aria-pressed={tool === "lookup"} title="Tra từ: bôi đen một từ để xem nghĩa trong câu (phím T)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("lookup")}><Languages size={19} />Tra từ<small>Phím T</small></button>}
-        {viByParagraph && <button type="button" className={showVi ? "is-on" : ""} aria-pressed={showVi} title="Hiện bản dịch tiếng Việt dưới mỗi đoạn" onClick={() => setShowVi(!showVi)}><Languages size={19} />Bản dịch<small>{showVi ? "Đang hiện" : "Song ngữ"}</small></button>}
-        <button type="button" className={`bt-rail-notes ${notesOpen ? "is-open" : ""}`} aria-pressed={notesOpen} title="Mở cột ghi chú" onClick={() => notesOpen ? closeNotes() : setNotesOpen(true)}><NotebookPen size={17} />Sổ ghi<small>{sectionNotes.length || (notes.__general ? "1" : "0")}</small></button>
-        {marks.some((mark) => mark.section === section.id) && <button type="button" className="bt-rail-clear" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={17} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
+        <button type="button" className={tool === "highlight" ? "is-on" : ""} aria-pressed={tool === "highlight"} title="Bút tô sáng: bôi đen chữ là tô (phím H)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("highlight")}><ReadingToolSticker tool="highlight" />Tô sáng<small>Phím H</small></button>
+        <button type="button" className={tool === "note" ? "is-on" : ""} aria-pressed={tool === "note"} title="Ghi chú: bôi đen chữ để ghi chú vào đó (phím N)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("note")}><ReadingToolSticker tool="note" />Ghi chú<small>Phím N</small></button>
+        {lookupAllowed && <button type="button" className={tool === "lookup" ? "is-on" : ""} aria-pressed={tool === "lookup"} title="Tra từ: bôi đen một từ để xem nghĩa trong câu (phím T)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("lookup")}><ReadingToolSticker tool="lookup" />Tra từ<small>Phím T</small></button>}
+        {viByParagraph && <button type="button" className={showVi ? "is-on" : ""} aria-pressed={showVi} title="Hiện bản dịch tiếng Việt dưới mỗi đoạn" onClick={() => setShowVi(!showVi)}><ReadingToolSticker tool="translate" />Bản dịch<small>{showVi ? "Đang hiện" : "Song ngữ"}</small></button>}
+        <button type="button" className={`bt-rail-notes ${notesOpen ? "is-open" : ""}`} aria-pressed={notesOpen} title="Mở cột ghi chú" onClick={() => notesOpen ? closeNotes() : setNotesOpen(true)}><ReadingToolSticker tool="notebook" />Sổ ghi<small>{sectionNotes.length || (notes.__general ? "1" : "0")}</small></button>
+        {marks.some((mark) => mark.section === section.id) && <button type="button" className="bt-rail-clear" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><ReadingToolSticker tool="erase" />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
       </aside>}
       {!listening && <article className={`bt-passage ${tool ? `uses-${tool}` : ""}`} ref={passage} tabIndex={-1} onMouseUp={onPaneMouseUp}>
         <h2>{section.title}</h2>

@@ -240,12 +240,12 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-exam-mode .bt-context .bt-tools { position: relative; }
 .bx-exam-mode .bt-settings { position: absolute; top: 39px; right: 0; z-index: 45; display: flex; align-items: center; gap: 8px; min-width: 185px; padding: 10px; border: 1px solid #dbe5e4; border-radius: 8px; background: #fff; box-shadow: 0 12px 28px #152e3533; }
 .bx-exam-mode .bt-settings span { flex: 1; font-size: 12px; font-weight: 700; }
-.bx-exam-mode .bt-tool-rail { position: absolute; top: 0; bottom: 0; left: 0; z-index: 5; display: flex; flex-direction: column; gap: 10px; width: 82px; padding: 24px 8px; border-right: 1px solid #dde5e5; background: #fafbf9; }
+.bx-exam-mode .bt-tool-rail { position: absolute; top: 0; bottom: 0; left: 0; z-index: 5; display: flex; flex-direction: column; gap: 10px; width: 60px; padding: 12px 4px; border-right: 1px solid #dde5e5; background: #fafbf9; }
 .bx-exam-mode .bt-tool-rail button { display: grid; justify-items: center; gap: 3px; padding: 8px 2px; border: 1px solid #bee0d6; border-radius: 7px; background: #fff; color: #087d68; font: 700 11px Arial, sans-serif; cursor: pointer; }
 .bx-exam-mode .bt-tool-rail button small { color: #637c77; font-size: 10px; }
 .bx-exam-mode .bt-tool-rail button.is-on { border-color: #24966f; background: #e8f7ee; box-shadow: inset 0 0 0 1px #24966f; }
 .bx-exam-mode .bt-tool-rail button:focus-visible { outline: 3px solid #e5aa36; outline-offset: 2px; }
-.bx-exam-mode .bt-body.has-tools .bt-passage { padding-left: 106px; }
+.bx-exam-mode .bt-body.has-tools .bt-passage { padding-left: 76px; }
 .bx-exam-mode .bt-context-copy strong { color: #25344a; font-size: 15px; }
 .bx-exam-mode .bt-tools { justify-content: flex-end; flex-wrap: nowrap; gap: 5px; }
 .bx-exam-mode .bt-tools button { height: 32px; border-color: #d7dcdf; border-radius: 5px; background: #fff; }
@@ -527,7 +527,7 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 
 /* Dictionary docked at the foot of the passage column */
 .bt-lookup.is-docked { position: absolute; left: 0; bottom: 0; z-index: 24; width: calc(var(--bt-left) - 4px); max-width: none; max-height: 60%; overflow-y: auto; padding: 14px 18px 12px; border: 1px solid #e6dccf; border-bottom: 0; border-radius: 18px 18px 0 0; box-shadow: 0 -16px 32px -24px #5c3a1c; animation: bt-sheet-up .2s var(--ease-out); }
-.bx-exam-mode .bt-body.has-tools .bt-lookup.is-docked { left: 82px; width: calc(var(--bt-left) - 86px); }
+.bx-exam-mode .bt-body.has-tools .bt-lookup.is-docked { left: 60px; width: calc(var(--bt-left) - 64px); }
 @keyframes bt-sheet-up { from { opacity: 0; transform: translateY(16px); } }
 .bt-lookup-context { display: grid; gap: 4px; padding: 10px 12px; border-radius: 12px; background: #fff6f2; }
 .bt-lookup-context span { color: #b3473a; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
@@ -568,7 +568,7 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bt-part-cover { grid-column: 2; grid-row: 1 / span 2; width: 168px; height: 96px; border-radius: 10px; object-fit: cover; box-shadow: 0 8px 20px -14px #173d5f; }
 .bx-listening-mode .bt-body.has-notes { display: grid; grid-template-columns: minmax(0, 1fr) 300px; }
 .bx-listening-mode .bt-lookup.is-docked { left: 50%; width: min(620px, calc(100% - 120px)); transform: translateX(-50%); }
-@media (max-width: 1240px) { .bx-listening-mode .bt-body.has-tools .bt-questions { margin-left: 82px; } }
+@media (max-width: 1240px) { .bx-listening-mode .bt-body.has-tools .bt-questions { margin-left: 60px; } }
 @media (max-width: 650px) {
   .bt-part-cover { width: 96px; height: 60px; }
   .bt-skip-intro { height: 26px; padding: 0 8px; font-size: 11.5px; }
@@ -659,3 +659,16 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bt-lookup-para summary { margin-top: 6px; color: var(--bl-accent); font-size: 12.5px; font-weight: 700; cursor: pointer; }
 .bt-lookup-para small { display: block; margin-top: 4px; }
 .bt-passage-vi { margin: -6px 0 18px; padding: 8px 12px; border-left: 3px solid #8edab3; border-radius: 0 8px 8px 0; background: #f2faf5; color: #2f4f43; font-size: .94em; line-height: 1.65; }
+
+/* Compact reading tools with distinct, full-colour vector stickers. */
+.bx-exam-mode .bt-tool-rail { gap: 5px; overflow-y: auto; }
+.bx-exam-mode .bt-tool-rail button { position: relative; min-height: 46px; padding: 4px 2px; gap: 1px; font-size: 10px; line-height: 1.2; }
+.bx-exam-mode .bt-tool-rail .bt-rail-title { font-size: 8px; margin-bottom: 3px; }
+.bt-tool-sticker { display: block; flex: none; filter: drop-shadow(0 1px 1px #18324b24); }
+.bx-exam-mode .bt-tool-rail button small { display: none; }
+.bx-exam-mode .bt-tool-rail :is(.bt-rail-notes, .bt-rail-clear) small { display: block; position: absolute; top: 2px; right: 2px; max-width: 100%; padding: 1px 3px; border-radius: 6px; background: #fff7e8; color: #79532e; font-size: 8px; line-height: 1.2; opacity: 1; }
+.bx-exam-mode .bt-tool-rail :is(.bt-rail-notes, .bt-rail-clear) { margin-top: 0; }
+@media (max-width: 700px) {
+  .bx-exam-mode .bt-tool-rail button { min-height: 44px; font-size: 9px; }
+  .bt-tool-sticker { width: 24px; height: 24px; }
+}
