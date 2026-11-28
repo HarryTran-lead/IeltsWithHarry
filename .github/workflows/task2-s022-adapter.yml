@@ -1,0 +1,32 @@
+name: Task 2 Code-only Import Adapter CI
+on:
+  pull_request:
+    paths:
+      - 'scripts/task2-s022/**'
+      - 'docs/task2-s022-import-adapter.md'
+      - '.github/workflows/task2-s022-adapter.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  code-only-adapter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      TASK2_STAGE_ENV: "ci-only-no-database"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify no private Task 2 data committed
+        run: node scripts/task2-s021-public-preflight.mjs
+      - name: Verify code syntax
+        run: |
+          node --check scripts/task2-s022/import-adapter.mjs
+          node --check scripts/task2-s022/import-cli.mjs
+          node --check scripts/task2-s022/import-adapter.node.mjs
+      - name: Run 29 synthetic security and import tests
+        run: node --test scripts/task2-s022/import-adapter.node.mjs
+      - name: Assert production and staging unmodified
+        run: echo "NO_DB_WRITE NO_PRIVATE_DATA NO_DEPLOYMENT S02.2_ONLY"
