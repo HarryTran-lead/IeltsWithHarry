@@ -393,6 +393,40 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   color: #4d4a75;
   font-style: italic;
 }
+/* Post media */
+.community-post-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  max-width: 640px;
+  margin: 0 0 12px 56px;
+  overflow: hidden;
+  border-radius: var(--r-md);
+}
+.community-post-media.count-1 { grid-template-columns: minmax(0, 1fr); }
+.community-post-media.count-3 > :first-child { grid-column: 1 / -1; }
+.community-post-media > a,
+.community-post-media > video {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  height: 180px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.community-post-media.count-1 > a,
+.community-post-media.count-1 > video { height: 300px; }
+.community-post-media > video { background: #10233f; object-fit: contain; }
+.community-post-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: scale .35s var(--ease-out); }
+.community-post-media a:hover img { scale: 1.03; }
+.community-post-media a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+.community-post-media.detail { max-width: none; }
+.community-post-media.detail > a,
+.community-post-media.detail > video { height: auto; max-height: 560px; }
+.community-post-media.detail img { height: auto; max-height: 560px; object-fit: contain; }
+.community-post-media.detail:not(.count-1) img { height: 240px; object-fit: cover; }
 .community-solved {
   display: inline-flex;
   align-items: center;
@@ -856,6 +890,84 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   font-weight: 700;
 }
 .community-form-note { margin: 0; padding: 10px 12px; border-radius: var(--r-md); background: var(--sun-soft); color: #6f5718; font-size: var(--fs-xs); }
+.community-attachments {
+  display: grid;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+}
+.community-attachments-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.community-attachments-head > div:first-child { display: grid; gap: 3px; min-width: 0; }
+.community-attachments-head strong { display: flex; align-items: center; gap: 7px; color: var(--ink); font-size: var(--fs-sm); font-weight: 750; }
+.community-attachments-head strong .community-count-pill { font-size: var(--fs-2xs); }
+.community-attachments-head small { color: var(--subtle); font-size: var(--fs-2xs); }
+.community-attachment-actions { display: flex; gap: 8px; }
+.community-attachment-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #cce8e7;
+  border-radius: var(--r-md);
+  background: #fff;
+  color: var(--teal-strong);
+  font-size: var(--fs-xs);
+  font-weight: 750;
+  white-space: nowrap;
+  transition: border-color .2s, background-color .2s;
+}
+.community-attachment-actions button:hover:not(:disabled) { border-color: var(--teal); background: #effafa; }
+.community-attachment-actions button:disabled { opacity: .5; cursor: not-allowed; }
+.community-attachment-preview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.community-attachment-item {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: #fff;
+}
+.community-attachment-item img,
+.community-attachment-item video { display: block; width: 100%; height: 96px; object-fit: cover; background: #10233f; }
+.community-attachment-play {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  translate: -50% 0;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffffe0;
+  color: var(--navy);
+  pointer-events: none;
+}
+.community-attachment-item > button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 1px 5px #10233f38;
+}
+.community-attachment-item > button:hover:not(:disabled) { background: var(--coral-soft); color: #c2413a; }
+.community-attachment-item > button:disabled { opacity: .5; cursor: not-allowed; }
+.community-attachment-name { display: flex; align-items: center; gap: 4px; padding: 5px 7px; color: var(--muted); font-size: var(--fs-2xs); font-weight: 600; }
+.community-attachment-name svg { flex: none; color: var(--subtle); }
+.community-attachment-name span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.community-attachment-name small { flex: none; color: var(--subtle); font-weight: 500; }
+.community-upload-status { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--teal-strong); font-size: var(--fs-xs); font-weight: 700; }
+.community-upload-spinner { width: 14px; height: 14px; border: 2px solid #12a1ab40; border-top-color: var(--teal); border-radius: 50%; animation: community-spin .8s linear infinite; }
+@keyframes community-spin { to { rotate: 360deg; } }
 .community-dialog footer,
 .community-report-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 14px; border-top: 1px solid #efeee8; }
 .community-report-dialog { max-width: 440px; display: grid; gap: 14px; }
@@ -886,7 +998,19 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   .community-post-head { flex-wrap: wrap; }
   .community-post-tags { order: 3; flex-basis: 100%; justify-content: flex-start; }
   .community-post-body,
-  .community-post-actions { margin-left: 0; }
+  .community-post-actions,
+  .community-post-media { margin-left: 0; }
+  .community-post-media > a,
+  .community-post-media > video { height: 130px; }
+  .community-post-media.count-1 > a,
+  .community-post-media.count-1 > video { height: 210px; }
+  .community-post-media.detail > a,
+  .community-post-media.detail > video { height: auto; }
+  .community-post-media.detail:not(.count-1) img { height: 150px; }
+  .community-attachments { padding: 12px; }
+  .community-attachment-actions { width: 100%; }
+  .community-attachment-actions button { flex: 1; justify-content: center; }
+  .community-attachment-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .community-post-body h2 { font-size: var(--fs-md); }
   .community-post-actions > button,
   .community-post-actions > a { padding: 7px 8px; }
