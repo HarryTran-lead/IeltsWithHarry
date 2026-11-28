@@ -249,7 +249,12 @@ body > .rw-popover { z-index: 1100; }
 .rw.is-practice .rw-passage-pane { background: #fff; }
 .rw.is-practice .rw-nav { background: #fff; border-top: 1px solid var(--pr-line); box-shadow: none; }
 .rw.is-practice .rw-nav div button { border: 1.5px solid #cfd8df; border-radius: 999px; transition: background .2s, border-color .2s, transform .2s; background: #fff; color: var(--pr-ink); font-weight: 700; box-shadow: none; }
-.rw.is-practice .rw-nav div button:hover { border-color: var(--pr); color: var(--pr-strong); }
+/* The full-screen layer must not inherit the page margin above the reader, or the bottom bar is cut off. */
+.rw.rw.is-practice { margin: 0; }
+.rw.is-practice .rw-nav div { gap: 10px; padding: 5px 4px; align-items: center; }
+.rw.is-practice .rw-nav div button { width: 36px; min-width: 36px; height: 36px; padding: 0; translate: none; }
+.rw.is-practice .rw-nav div button:hover { translate: none; border-color: var(--pr); color: var(--pr-strong); box-shadow: 0 0 0 3px var(--pr-soft); }
+.rw.is-practice .rw-nav div button.is-answered:hover, .rw.is-practice .rw-nav div button.is-right:hover, .rw.is-practice .rw-nav div button.is-wrong:hover { color: #fff; }
 .rw.is-practice .rw-nav div button.is-answered { border-color: var(--pr); background: var(--pr); color: #fff; }
 .rw.is-practice .rw-nav div button.is-right { border-color: var(--pr-ok); background: var(--pr-ok); color: #fff; }
 .rw.is-practice .rw-nav div button.is-wrong { border-color: var(--pr-bad); background: var(--pr-bad); color: #fff; }
