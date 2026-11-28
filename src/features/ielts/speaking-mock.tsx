@@ -8,6 +8,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { deleteLocalRecordings, getLocalRecording, listLocalRecordingIndexes, putLocalRecording } from "@/lib/speaking-recordings";
+import { fetchPrivateAudio, type PrivateFailure } from "@/lib/speaking-l89-private-guard";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { CueCard } from "./bank-speaking";
 import { SpeakingCoachingPanel } from "./speaking-coaching-panel";
@@ -99,6 +100,9 @@ export function SpeakingMock() {
   const [recordingBusy, setRecordingBusy] = useState(false);
   const [expandedSession, setExpandedSession] = useState("");
   const [playback, setPlayback] = useState<{ key: string; url: string } | null>(null);
+  const playbackRequest = useRef(0);
+  const playbackOwner = useRef<string | null>(null);
+  const playbackAudioRef = useRef<HTMLAudioElement | null>(null);
   const sessionId = useRef("");
   const historySaved = useRef("");
   const db = useMemo(() => demoMode ? null : createClient(), []);
@@ -148,6 +152,20 @@ export function SpeakingMock() {
   // Leaving the page ends the test.
   useEffect(() => () => { run.current += 1; advance.current?.("done"); }, []);
   useEffect(() => () => { if (playback) URL.revokeObjectURL(playback.url); }, [playback]);
+  // Fail closed on account change; pause immediately, revoke blob URL on cleanup.
+  useEffect(() => {
+    if (!db) return;
+    const { data: { subscription } } = db.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_OUT" || ((event === "SIGNED_IN" || event === "USER_UPDATED") && playbackOwner.current && session?.user?.id !== playbackOwner.current)) {
+        playbackRequest.current++;
+        playbackOwner.current = null;
+        const player = playbackAudioRef.current;
+        if (player) { player.pause(); player.removeAttribute("src"); player.load(); }
+        setPlayback(null);
+      }
+    });
+    return () => { playbackRequest.current++; subscription.unsubscribe(); };
+  }, [db]);
 
   const saveRecordings = async (onlyPart2 = false) => {
     const savingSessionId = sessionId.current;
@@ -184,6 +202,11 @@ export function SpeakingMock() {
   };
 
   const playHistoryRecording = async (sessionIdToPlay: string, answerIndex: number) => {
+    const version = ++playbackRequest.current;
+    playbackAudioRef.current?.pause();
+    playbackAudioRef.current?.removeAttribute("src");
+    playbackAudioRef.current?.load();
+    setPlayback(null);
     setHistoryError("");
     try {
       const recording = recordingRefs.find((item) => item.session_id === sessionIdToPlay && item.answer_index === answerIndex);
@@ -191,13 +214,34 @@ export function SpeakingMock() {
       let blob: Blob | undefined | null;
       if (demoMode) blob = await getLocalRecording(sessionIdToPlay, answerIndex);
       else {
-        const downloaded = await db!.storage.from("speaking-recordings").download(recording.storage_path);
-        if (downloaded.error) throw downloaded.error;
-        blob = downloaded.data;
+        const result = await fetchPrivateAudio(db!, recording, () => version === playbackRequest.current);
+        if (!result.ok) {
+          if (result.code === "STALE_REQUEST") return;
+          const safeMessages: Partial<Record<PrivateFailure,string>> = {
+            AUTH_REQUIRED: "Cần đăng nhập để nghe bản ghi.",
+            OWNER_MISMATCH: "Tài khoản đã thay đổi. Không thể phát bản ghi cũ.",
+            PATH_INVALID: "Đường dẫn bản ghi không hợp lệ.",
+            FORBIDDEN: "Bạn không có quyền nghe bản ghi này.",
+            NOT_FOUND: "Bản ghi đã bị xoá hoặc không tồn tại.",
+            SESSION_EXPIRED: "Phiên đăng nhập đã hết hạn.",
+            RETRY_EXHAUSTED: "Không thể làm mới phiên đăng nhập.",
+            MEDIA_INVALID: "Bản ghi âm không hợp lệ.",
+            NETWORK_OR_STORAGE: "Không thể tải bản ghi. Hãy thử lại khi mạng ổn định."
+          };
+          throw new Error(safeMessages[result.code] ?? "Không tải được bản ghi.");
+        }
+        playbackOwner.current = result.owner;
+        blob = result.blob;
       }
+      if (version !== playbackRequest.current) return;
       if (!blob) throw new Error("Không tìm thấy bản ghi.");
-      setPlayback({ key: `${sessionIdToPlay}/${answerIndex}`, url: URL.createObjectURL(blob) });
-    } catch (error) { setHistoryError(error instanceof Error ? error.message : "Không phát được bản ghi."); }
+      const url = URL.createObjectURL(blob);
+      if (version !== playbackRequest.current) { URL.revokeObjectURL(url); return; }
+      setPlayback({ key: `${sessionIdToPlay}/${answerIndex}`, url });
+    } catch (error) {
+      if (version === playbackRequest.current)
+        setHistoryError(error instanceof Error ? error.message : "Không phát được bản ghi.");
+    }
   };
 
   const deleteSession = async (session: Session) => {
@@ -221,7 +265,12 @@ export function SpeakingMock() {
       setHistory((current) => current.filter((item) => item.id !== session.id));
       setRecordingRefs((current) => current.filter((item) => item.session_id !== session.id));
       if (expandedSession === session.id) setExpandedSession("");
-      if (playback?.key.startsWith(`${session.id}/`)) setPlayback(null);
+      if (playback?.key.startsWith(`${session.id}/`)) {
+        playbackRequest.current++;
+        playbackOwner.current = null;
+        playbackAudioRef.current?.pause();
+        setPlayback(null);
+      }
     } catch (error) { setHistoryError(error instanceof Error ? error.message : "Không xoá được phiên luyện tập."); }
     finally { setRecordingBusy(false); }
   };
@@ -350,7 +399,7 @@ export function SpeakingMock() {
           {expandedSession === item.id && <><button type="button" className="bx-ghost" disabled={recordingBusy} onClick={() => void deleteSession(item)}><Trash2 size={15} /> Xoá phiên và bản ghi</button>{!demoMode && item.answers.some((answer, index) => answer.part === 2 && recordingRefs.some((recording) => recording.session_id === item.id && recording.answer_index === index)) && <SpeakingCoachingPanel sessionId={item.id} hasPart2Recording />}{item.answers.map((answer, index) => {
             const key = `${item.id}/${index}`;
             const hasAudio = recordingRefs.some((recording) => recording.session_id === item.id && recording.answer_index === index);
-            return <article key={key} className="sm-entry"><b>Part {answer.part}: {answer.question}</b><p>{answer.transcript || "Không có bản chữ."}</p><small>{clock(answer.seconds)}</small>{hasAudio && <button type="button" className="bx-ghost" onClick={() => void playHistoryRecording(item.id, index)}><Volume2 size={15} /> Nghe bản ghi</button>}{playback?.key === key && <audio controls autoPlay src={playback.url} aria-label={`Bản ghi: ${answer.question}`} />}</article>;
+            return <article key={key} className="sm-entry"><b>Part {answer.part}: {answer.question}</b><p>{answer.transcript || "Không có bản chữ."}</p><small>{clock(answer.seconds)}</small>{hasAudio && <button type="button" className="bx-ghost" onClick={() => void playHistoryRecording(item.id, index)}><Volume2 size={15} /> Nghe bản ghi</button>}{playback?.key === key && <audio ref={playbackAudioRef} controls autoPlay src={playback.url} aria-label={`Bản ghi: ${answer.question}`} />}</article>;
           })}</>}
         </section>)}</div>
       </section>
