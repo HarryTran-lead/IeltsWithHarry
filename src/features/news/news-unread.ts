@@ -19,9 +19,14 @@ function startOfToday() {
   return day.toISOString();
 }
 
-/** When the learner last opened Daily News; a first visit counts from the start of today. */
+/**
+ * When the learner last opened Daily News, but never earlier than the start of
+ * today: the badge only reports stories added today that they have not seen yet.
+ */
 export function newsSeenBefore() {
-  return baseline ?? readSeen() ?? startOfToday();
+  const today = startOfToday();
+  const seen = baseline ?? readSeen();
+  return seen && seen > today ? seen : today;
 }
 
 /** Readable stories added to the catalog since `since`. */
@@ -39,7 +44,8 @@ function isDailyNews(pathname: string) {
 }
 
 /**
- * Number of new Daily News stories for the sidebar badge. Opening Daily News
+ * Number of Daily News stories added today since the last visit, for the
+ * sidebar badge. A new day starts again from zero. Opening Daily News
  * resets it to zero; afterwards it checks again every few minutes and when
  * the tab regains focus.
  */
