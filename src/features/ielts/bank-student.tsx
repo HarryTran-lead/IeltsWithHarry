@@ -1,4 +1,5 @@
 "use client";
+import { elapsedAttemptMs, pausableAttempt } from "@/lib/ielts-bank/attempt-clock";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -29,6 +30,10 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   // A Speaking card links straight to one question: open the practice room there instead of the cover page.
   const focusQuestion = search.get("q");
   const autoStarted = useRef("");
+  const [activeElapsed, setActiveElapsed] = useState(0);
+  const activeClock = useRef({ elapsed: 0, since: 0 });
+  const currentElapsed = useCallback(() => activeClock.current.elapsed + (activeClock.current.since ? Math.max(0, Date.now() - activeClock.current.since) : 0), []);
+  const initializeClock = (saved: Attempt) => { activeClock.current = { elapsed: elapsedAttemptMs("Reading", saved.started_at, saved.notes), since: document.visibilityState === "visible" ? Date.now() : 0 }; setActiveElapsed(activeClock.current.elapsed); };
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0), [serverOffset, setServerOffset] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
@@ -44,26 +49,56 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
         id: item.id,
         part: Number(item.notes?.__part) || 0,
         untimed: untimedAttempt(item.notes),
-        minutesLeft: Math.max(0, Math.ceil((new Date(item.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, item.notes) * 60000 - Date.now()) / 60000)),
+        minutesLeft: Math.max(0, Math.ceil((attemptMinutes(exam.skill, exam.duration_minutes, item.notes) * 60000 - elapsedAttemptMs(exam.skill, item.started_at, item.notes)) / 60000)),
       })));
     }).catch(() => { /* The cover page works without the list. */ });
     return () => { live = false; };
   }, [exam, attempt, resultId, attemptId]);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
   const [leaving, setLeaving] = useState(false);
-  const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); }, []);
+  const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); initializeClock(data.attempt); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); }, []);
   useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { setAttempt(null); setResult(null); setAnswers({}); setFlags([]); setActive(0); const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const part = Number(requestedPart); const section = data.exam.content?.sections?.filter((item: { questions: unknown[] }) => item.questions.length)?.[part - 1]; const saved = sessionStorage.getItem(`ielts-attempt:${examId}:${section?.id ?? "full"}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, requestedPart, loadAttempt]);
-  useEffect(() => { const interval = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(interval); }, []);
+  useEffect(() => { const interval = setInterval(() => { setClock(Date.now()); setActiveElapsed(currentElapsed()); }, 1000); return () => clearInterval(interval); }, [currentElapsed]);
   const sourceContent = attempt?.content || exam?.content;
   const content = useMemo(() => sourceContent && attempt ? attemptContent(sourceContent, attempt.notes) : sourceContent, [sourceContent, attempt]);
   const questions = useMemo(() => content?.sections.flatMap((s) => s.questions) || [], [content]);
   useEffect(() => { if (!attempt || attempt.state !== "in_progress" || !questions.length) return; const keydown = (event: KeyboardEvent) => { if ((event.target as HTMLElement)?.closest("input,textarea,select,button")) return; if (event.key === "ArrowRight") setActive((index) => Math.min(questions.length-1, index+1)); if (event.key === "ArrowLeft") setActive((index) => Math.max(0, index-1)); }; window.addEventListener("keydown", keydown); return () => window.removeEventListener("keydown", keydown); }, [attempt, questions.length]);
   const partMinutes = exam && attempt ? attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) : 0;
-  const remaining = attempt && partMinutes ? Math.max(0, partMinutes * 60 - Math.floor((clock + serverOffset - new Date(attempt.started_at).getTime()) / 1000)) : 0;
-  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => {}); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt, exam?.skill, loadAttempt]);
-  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, flags, notes, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date(Date.now() + serverOffset).toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => { /* The scored result remains available even if transcript reload fails. */ }); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, flags, notes, busy, exam, loadAttempt, serverOffset]);
+  const remaining = attempt && partMinutes ? Math.max(0, partMinutes * 60 - Math.floor((exam && pausableAttempt(exam.skill) ? activeElapsed : clock + serverOffset - new Date(attempt.started_at).getTime()) / 1000)) : 0;
+  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, elapsedMs: currentElapsed(), answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => {}); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt, exam?.skill, loadAttempt, currentElapsed]);
+  const draft = useRef({ answers, flags, notes });
+  useEffect(() => { draft.current = { answers, flags, notes }; }, [answers, flags, notes]);
+  const timerAttemptId = attempt?.state === "in_progress" && exam && pausableAttempt(exam.skill) ? attempt.id : null;
+  useEffect(() => {
+    if (!timerAttemptId) return;
+    if (!activeClock.current.since && document.visibilityState === "visible") activeClock.current.since = Date.now();
+    const save = () => {
+      void fetch("/api/ielts/bank/attempt", { method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
+        body: JSON.stringify({ action: "save", attemptId: timerAttemptId, elapsedMs: currentElapsed(), ...draft.current }) }).catch(() => {});
+    };
+    const pause = () => {
+      activeClock.current = { elapsed: currentElapsed(), since: 0 };
+      save();
+    };
+    const visibility = () => {
+      if (document.visibilityState === "hidden") pause();
+      else if (!activeClock.current.since) activeClock.current.since = Date.now();
+    };
+    const interval = window.setInterval(save, 10000);
+    window.addEventListener("pagehide", pause);
+    window.addEventListener("pageshow", visibility);
+    document.addEventListener("visibilitychange", visibility);
+    return () => {
+      pause();
+      window.clearInterval(interval);
+      window.removeEventListener("pagehide", pause);
+      window.removeEventListener("pageshow", visibility);
+      document.removeEventListener("visibilitychange", visibility);
+    };
+  }, [timerAttemptId, currentElapsed]);
+  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, elapsedMs: currentElapsed(), answers, flags, notes, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date(Date.now() + serverOffset).toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => { /* The scored result remains available even if transcript reload fails. */ }); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, flags, notes, busy, exam, loadAttempt, serverOffset, currentElapsed]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
-  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number; untimed?: boolean }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number; untimed?: boolean }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); initializeClock(data.attempt); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
   useEffect(() => {
     if (!exam || exam.skill !== "Speaking" || !focusQuestion || attempt || result || resultId || attemptId || autoStarted.current === exam.id) return;
     autoStarted.current = exam.id;
@@ -87,7 +122,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     if (!attempt) return;
     setBusy(true);
     try {
-      await api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes });
+      await api("attempt", { action: "save", attemptId: attempt.id, elapsedMs: currentElapsed(), answers, flags, notes });
       router.push(backHref);
     } catch (e) { setError(String(e)); setBusy(false); }
   };

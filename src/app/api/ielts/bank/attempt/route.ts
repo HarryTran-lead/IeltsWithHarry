@@ -1,3 +1,4 @@
+import { checkpointAttempt, elapsedAttemptMs, pausableAttempt } from "@/lib/ielts-bank/attempt-clock";
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
 import { attemptContent, attemptMinutes, contentSchema, customAttemptMinutes, publicContent, scoreAnswers, withLatestFiveStep } from "@/lib/ielts-bank/schema";
@@ -15,8 +16,8 @@ function withEvidence(result: ReturnType<typeof scoreAnswers>) {
 const bodySchema = z.discriminatedUnion("action", [
   z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.number().int().optional(), untimed: z.boolean().optional() }),
   z.object({ action: z.literal("schedule"), examId: z.uuid(), dueDate: z.iso.date() }),
-  z.object({ action: z.literal("save"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional() }),
-  z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional(), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
+  z.object({ action: z.literal("save"), attemptId: z.uuid(), elapsedMs: z.number().finite().min(0).max(86400000 * 365).optional(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional() }),
+  z.object({ action: z.literal("submit"), attemptId: z.uuid(), elapsedMs: z.number().finite().min(0).max(86400000 * 365).optional(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional(), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
 ]);
 export async function POST(request: Request) {
   try {
@@ -71,8 +72,9 @@ export async function POST(request: Request) {
       if (existingError || !existing) throw new Error("Attempt unavailable");
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
-      if (Date.now() > new Date(existing.started_at).getTime() + attemptMinutes(linkedExam.skill, linkedExam.duration_minutes, existing.notes) * 60000) return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, "expired", { notes: body.notes, flags: body.flags })));
-      const fixed = existing.notes as Record<string, string> | null;
+      const timedNotes = pausableAttempt(linkedExam.skill) ? checkpointAttempt(existing.notes || {}, body.elapsedMs) : existing.notes;
+      if (elapsedAttemptMs(linkedExam.skill, existing.started_at, timedNotes) >= attemptMinutes(linkedExam.skill, linkedExam.duration_minutes, existing.notes) * 60000) return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, "expired", { notes: body.notes, flags: body.flags, elapsedMs: body.elapsedMs })));
+      const fixed = timedNotes as Record<string, string> | null;
       const notes = { ...(body.notes || {}), ...Object.fromEntries(Object.entries(fixed || {}).filter(([key]) => key.startsWith("__"))) };
       const { data, error } = await client.from("ielts_attempts").update({ answers: body.answers, flags: body.flags || [], notes }).eq("id", body.attemptId).eq("user_id", user.id).eq("state", "in_progress").select("id").single();
       if (error || !data) throw new Error("Attempt unavailable");
@@ -84,7 +86,7 @@ export async function POST(request: Request) {
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
     }
-    const submitted = await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, difficulty: body.difficulty });
+    const submitted = await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, elapsedMs: body.elapsedMs, difficulty: body.difficulty });
     if (gradingEnabled() && !cloudflareGradingSelected()) {
       // Queue failures must never erase or roll back an already submitted essay.
       await enqueueWritingAttempt(body.attemptId, user.id).catch(() => undefined);
